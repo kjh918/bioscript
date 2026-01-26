@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bio-script"
+version = "0.1.0"
+description = "YAML-based bioinformatics tool runner generator"
+requires-python = ">=3.9"
+dependencies = ["pyyaml>=6.0"]
+
+[project.scripts]
+bio-script = "bioscript.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}

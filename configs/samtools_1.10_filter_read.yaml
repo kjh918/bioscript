@@ -1,0 +1,47 @@
+# =========================================================
+# samtools BAM filtering + index
+#  - MAPQ / flag / tag / expression 기반 필터
+# =========================================================
+tool:
+  name: samtools_filter_index
+  version: "1.10"
+  profile: "recal_bam_filter"
+
+io:
+  inputs:
+    SeqID:   { required: true }
+    BamDir:  { required: true }
+
+  outputs:
+    filtered_bam:
+      default: "[BamDir]/[SeqID].recal.filtered.bam"
+    filtered_bai:
+      default: "[BamDir]/[SeqID].recal.filtered.bam.bai"
+
+params:
+  Threads: { type: int, default: 8 }
+
+  # filtering parameters (필요 시 조정)
+  min_mapq:        { type: int, default: 20 }
+  include_flag:    { type: str, default: "0x2" }
+  exclude_flag1:   { type: str, default: "0x100" }
+  exclude_flag2:   { type: str, default: "0x4" }
+
+  # samtools expression filters
+  expr_sclen:      { type: str, default: "sclen < 20" }
+  expr_nm:         { type: str, default: "[NM] < 12" }
+
+cmd_line: >
+  samtools view -b -h
+  -q [min_mapq]
+  -f [include_flag]
+  -F [exclude_flag1]
+  -F [exclude_flag2]
+  -e "[expr_sclen]"
+  -e "[expr_nm]"
+  --threads [Threads]
+  [BamDir]/[SeqID].recal.bam
+  > [BamDir]/[SeqID].recal.filtered.bam
+  &&
+  samtools index --threads [Threads]
+  [BamDir]/[SeqID].recal.filtered.bam

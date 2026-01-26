@@ -1,0 +1,67 @@
+# =========================================================
+# (2) Picard realignment style (FastqToSam + BWA SAM + Merge)
+#     FASTQ -> fastqtosam.bam + bwa.mem.sam -> primary.bam(+bai)
+# =========================================================
+tool:
+  name: bwa_picard
+  version: "bwa_0.7.17-picard_3.1.0"
+  profile: "pe_merge"
+
+io:
+  inputs:
+    SeqID:             { required: true }
+    TrimFastqDir:      { required: true }
+    BamDir:            { required: true }
+    TmpDir:            { required: true }
+
+    ReferenceFasta:    { required: true }
+
+    ReadGroupID:       { required: true }
+    ReadGroupPlatform: { required: true }
+    ReadGroupLibrary:  { required: true }
+    ReadGroupCenter:   { required: true }
+
+  outputs:
+    unmapped_bam: { default: "[BamDir]/[SeqID].fastqtosam.bam" }
+    aligned_sam:  { default: "[BamDir]/[SeqID].bwa.mem.sam" }
+    primary_bam:  { default: "[BamDir]/[SeqID].primary.bam" }
+    primary_bai:  { default: "[BamDir]/[SeqID].primary.bai" }
+
+params:
+  # Picard / Java
+  java_bin:      { type: str, default: "java" }
+  picard_jar:    { type: str, default: "/storage/apps/bin/picard.jar" }
+  gc_threads:    { type: int, default: 14 }
+  xmx_mb:        { type: int, default: 16384 }
+
+  # BWA singularity
+  bind:          { type: str, default: "/storage,/data" }
+  bwa_sif:       { type: str, default: "/storage/images/bwa-0.7.17.sif" }
+  Threads:       { type: int, default: 8 }
+  bwa_args:      { type: str, default: "-M -Y -L 50,50" }
+
+  # MergeBamAlignment options (필요시 확장)
+  mba_args:
+    type: str
+    default: >
+      --CREATE_INDEX true --MAX_INSERTIONS_OR_DELETIONS -1 --CLIP_ADAPTERS false
+      --PRIMARY_ALIGNMENT_STRATEGY MostDistant --ATTRIBUTES_TO_RETAIN XS
+      --EXPECTED_ORIENTATIONS FR --EXPECTED_ORIENTATIONS RF
+
+cmd_line: >
+  [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [picard_jar] FastqToSam
+  --FASTQ [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz --FASTQ2 [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz
+  --SAMPLE_NAME [SeqID] --OUTPUT [BamDir]/[SeqID].fastqtosam.bam
+  --READ_GROUP_NAME [ReadGroupID] --PLATFORM [ReadGroupPlatform] --LIBRARY_NAME [ReadGroupLibrary] --SEQUENCING_CENTER [ReadGroupCenter]
+  --TMP_DIR [TmpDir]
+  &&
+  singularity exec -B [bind] [bwa_sif] bwa mem [bwa_args] -t [Threads]
+  -R "@RG\tID:[ReadGroupID]\tPL:[ReadGroupPlatform]\tLB:[ReadGroupLibrary]\tSM:[SeqID]\tCN:[ReadGroupCenter]"
+  [ReferenceFasta]
+  [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz
+  > [BamDir]/[SeqID].bwa.mem.sam
+  &&
+  [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [picard_jar] MergeBamAlignment
+  --UNMAPPED_BAM [BamDir]/[SeqID].fastqtosam.bam --ALIGNED_BAM [BamDir]/[SeqID].bwa.mem.sam
+  --REFERENCE_SEQUENCE [ReferenceFasta] --OUTPUT [BamDir]/[SeqID].primary.bam
+  [mba_args]

@@ -1,0 +1,52 @@
+# =========================================================
+# GATK 4 BQSR
+#  - BaseRecalibrator
+#  - ApplyBQSR
+# =========================================================
+tool:
+  name: gatk4
+  version: "4.4.0.0"
+  profile: "singularity_bqsr"
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    RecalInputBAM:  { required: true }
+    ReferenceFasta: { required: true }
+    BamDir:         { required: true }
+    qcResDir:       { required: true }
+
+    KnownSnp:       { required: true }
+    KnownIndel1:    { required: true }
+    KnownIndel2:    { required: true }
+
+  outputs:
+    recal_table:
+      default: "[qcResDir]/[SeqID].recal.table.txt"
+    recal_bam:
+      default: "[BamDir]/[SeqID].recal.bam"
+    recal_bai:
+      default: "[BamDir]/[SeqID].recal.bam.bai"
+
+params:
+  bind:       { type: str, default: "/storage,/data" }
+  sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+
+  gc_threads: { type: int, default: 14 }
+  xmx_mb:     { type: int, default: 16384 }
+
+cmd_line: >
+  singularity exec -B [bind] [sif] gatk BaseRecalibrator
+  --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m"
+  --input [RecalInputBAM]
+  --reference [ReferenceFasta]
+  --output [qcResDir]/[SeqID].recal.table.txt
+  --known-sites [KnownSnp]
+  --known-sites [KnownIndel1]
+  --known-sites [KnownIndel2]
+  &&
+  singularity exec -B [bind] [sif] gatk ApplyBQSR
+  --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m"
+  --input [RecalInputBAM]
+  --bqsr-recal-file [qcResDir]/[SeqID].recal.table.txt
+  --output [BamDir]/[SeqID].recal.bam

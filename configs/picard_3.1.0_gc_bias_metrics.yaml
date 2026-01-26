@@ -1,0 +1,49 @@
+# =========================================================
+# Picard 3.1.0 GC Bias Metrics
+#  - CollectGcBiasMetrics
+# =========================================================
+tool:
+  name: picard
+  version: "3.1.0"
+  profile: "gc_bias_metrics"
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    BamDir:         { required: true }
+    ReferenceFasta: { required: true }
+
+  outputs:
+    gc_bias_metrics_txt:
+      default: "[BamDir]/[SeqID].gc.bias.metrics.txt"
+    gc_bias_summary_txt:
+      default: "[BamDir]/[SeqID].gc.bias.summary.txt"
+    gc_bias_chart_pdf:
+      default: "[BamDir]/[SeqID].gc.bias.metrics.pdf"
+
+params:
+  java_bin:    { type: str, default: "java" }
+  picard_jar:  { type: str, default: "/storage/apps/bin/picard-3.1.0.jar" }
+
+  gc_threads:  { type: int, default: 14 }
+  xmx_mb:      { type: int, default: 16384 }
+
+  # Picard GC bias 옵션
+  min_gc:      { type: int, default: 0 }
+  max_gc:      { type: int, default: 100 }
+  window_size: { type: int, default: 100 }
+
+cmd_line: >
+  [java_bin]
+  -XX:ParallelGCThreads=[gc_threads]
+  -Xmx[xmx_mb]m
+  -jar [picard_jar]
+  CollectGcBiasMetrics
+  I=[BamDir]/[SeqID].analysisReady.bam
+  O=[BamDir]/[SeqID].gc.bias.metrics.txt
+  S=[BamDir]/[SeqID].gc.bias.summary.txt
+  CHART=[BamDir]/[SeqID].gc.bias.metrics.pdf
+  R=[ReferenceFasta]
+  MINIMUM_GC=[min_gc]
+  MAXIMUM_GC=[max_gc]
+  WINDOW_SIZE=[window_size]

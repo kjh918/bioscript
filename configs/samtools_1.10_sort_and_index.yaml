@@ -1,0 +1,24 @@
+# =========================================
+# (1) samtools sort + index
+# =========================================
+tool:
+  name: samtools
+  version: "1.10"
+  profile: "bam_sort_index"
+
+io:
+  inputs:
+    SeqID:   { required: true }
+    BamDir:  { required: true }
+
+  outputs:
+    sorted_bam: { default: "[BamDir]/[SeqID].sorted.bam" }
+    sorted_bai: { default: "[BamDir]/[SeqID].sorted.bam.bai" }
+
+params:
+  Threads: { type: int, default: 8 }
+
+cmd_line: >
+  samtools sort -@ [Threads] -o [BamDir]/[SeqID].sorted.bam [BamDir]/[SeqID].primary.bam
+  &&
+  samtools index -b -@ [Threads] [BamDir]/[SeqID].sorted.bam

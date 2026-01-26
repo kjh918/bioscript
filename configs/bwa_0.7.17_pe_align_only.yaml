@@ -1,0 +1,36 @@
+# =========================================
+# (1) BWA only align (FASTQ -> primary.bam)
+# =========================================
+tool:
+  name: bwa_mem
+  version: "0.7.17"
+  profile: "singularity_pe_align_only"
+
+io:
+  inputs:
+    SeqID:             { required: true }
+    TrimFastqDir:      { required: true }
+    BamDir:            { required: true }
+    BwaIndex:          { required: true }
+    ReadGroupID:       { required: true }
+    ReadGroupPlatform: { required: true }
+    ReadGroupLibrary:  { required: true }
+    ReadGroupCenter:   { required: true }
+
+  outputs:
+    primary_bam: { default: "[BamDir]/[SeqID].primary.bam" }
+
+params:
+  bind:    { type: str, default: "/storage,/data" }
+  sif:     { type: str, default: "/storage/images/bwa-0.7.17.sif" }
+  Threads: { type: int, default: 8 }
+
+  # bwa 옵션들 (필요 시 수정)
+  bwa_args: { type: str, default: "-M -Y -L 50,50" }
+
+cmd_line: >
+  singularity exec -B [bind] [sif] bwa mem [bwa_args] -t [Threads]
+  -R "@RG\tID:[ReadGroupID]\tPL:[ReadGroupPlatform]\tLB:[ReadGroupLibrary]\tSM:[SeqID]\tCN:[ReadGroupCenter]"
+  [BwaIndex]
+  [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz
+  | samtools view -bS -o [BamDir]/[SeqID].primary.bam -

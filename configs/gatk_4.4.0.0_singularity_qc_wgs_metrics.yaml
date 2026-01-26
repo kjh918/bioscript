@@ -1,0 +1,35 @@
+# =========================================================
+# (3) GATK4 CollectWgsMetrics (jar 호출)
+# =========================================================
+tool:
+  name: gatk4
+  version: "4.4.0.0"
+  profile: "singularity_qc_wgs_metrics"
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    BamDir:         { required: true }
+    qcResDir:       { required: true }
+    ReferenceFasta: { required: true }
+
+  outputs:
+    wgs_metrics_txt:
+      default: "[qcResDir]/[SeqID].collect.wgs.metrics.txt"
+
+params:
+  bind:       { type: str, default: "/storage,/data" }
+  sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+  gc_threads: { type: int, default: 14 }
+  xmx_mb:     { type: int, default: 16384 }
+
+  gatk_jar:   { type: str, default: "/gatk/gatk-package-4.4.0.0-local.jar" }
+  java_bin:   { type: str, default: "java" }
+
+cmd_line: >
+  singularity exec -B [bind] [sif] [java_bin]
+  -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m
+  -jar [gatk_jar] CollectWgsMetrics
+  --INPUT [BamDir]/[SeqID].analysisReady.bam
+  --OUTPUT [qcResDir]/[SeqID].collect.wgs.metrics.txt
+  --REFERENCE_SEQUENCE [ReferenceFasta]

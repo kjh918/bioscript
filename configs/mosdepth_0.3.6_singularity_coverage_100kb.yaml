@@ -1,0 +1,44 @@
+# =========================================================
+# (5) mosdepth coverage (singularity)
+#     mosdepth prefix를 qcResDir/SeqID 로 두면 여러 파일 생성됨
+# =========================================================
+tool:
+  name: mosdepth
+  version: "0.3.6"
+  profile: "singularity_coverage_100kb"
+
+io:
+  inputs:
+    SeqID:    { required: true }
+    BamDir:   { required: true }
+    qcResDir: { required: true }
+
+  outputs:
+    # mosdepth는 prefix 기반으로 여러 파일 생성
+    prefix:              { default: "[qcResDir]/[SeqID]" }
+    regions_bed_gz:      { default: "[qcResDir]/[SeqID].regions.bed.gz" }
+    regions_bed_gz_csi:  { default: "[qcResDir]/[SeqID].regions.bed.gz.csi" }
+    summary_txt:         { default: "[qcResDir]/[SeqID].mosdepth.summary.txt" }
+    global_dist_txt:     { default: "[qcResDir]/[SeqID].global.dist.txt" }
+
+params:
+  bind:       { type: str, default: "/storage,/data" }
+  sif:        { type: str, default: "/storage/images/mosdepth-0.3.6.sif" }
+  Threads:    { type: int, default: 8 }
+
+  by_bp:      { type: int, default: 100000 }
+  mapq:       { type: int, default: 20 }
+
+  # mosdepth 옵션 묶음
+  mosdepth_args:
+    type: str
+    default: "--no-per-base --fast-mode"
+
+cmd_line: >
+  singularity exec -B [bind] [sif] /opt/mosdepth
+  --threads [Threads]
+  [mosdepth_args]
+  --by [by_bp]
+  --mapq [mapq]
+  [qcResDir]/[SeqID]
+  [BamDir]/[SeqID].analysisReady.bam

@@ -1,0 +1,36 @@
+tool:
+  name: fastqc
+  version: "0.12.1"
+  profile: "singularity_pe_qc_extract"
+
+# output_dir: ./output_scripts
+
+io:
+  inputs:
+    SeqID:       { required: true }
+    RawFastqDir: { required: true }
+    qcResDir:    { required: true }
+
+  outputs:
+    # fastqc 기본 산출물(PE 2개)
+    r1_html: { default: "[qcResDir]/[SeqID]_R1_fastqc.html" }
+    r2_html: { default: "[qcResDir]/[SeqID]_R2_fastqc.html" }
+    r1_zip:  { default: "[qcResDir]/[SeqID]_R1_fastqc.zip" }
+    r2_zip:  { default: "[qcResDir]/[SeqID]_R2_fastqc.zip" }
+
+    # --extract 사용 시 압축 해제 폴더(PE 2개)
+    r1_dir:  { default: "[qcResDir]/[SeqID]_R1_fastqc" }
+    r2_dir:  { default: "[qcResDir]/[SeqID]_R2_fastqc" }
+
+params:
+  bind:    { type: str, default: "/storage,/data" }
+  sif:     { type: str, default: "/storage/images/fastqc-0.12.1.sif" }
+  threads: { type: int, default: 8 }
+
+  # 필요시 추가 옵션을 한 덩어리로 관리(예: "--nogroup" 등)
+  fastqc_args: { type: str, default: "--extract" }
+
+cmd_line: >
+  singularity exec -B [bind] [sif] fastqc [fastqc_args]
+  --threads [threads] --outdir [qcResDir]
+  [RawFastqDir]/[SeqID]_R1.fastq.gz [RawFastqDir]/[SeqID]_R2.fastq.gz

@@ -1,0 +1,38 @@
+# =========================================
+# (2) GATK MarkDuplicates (singularity)
+# =========================================
+tool:
+  name: gatk4
+  version: "4.4.0.0"
+  profile: "singularity_dedup"
+
+io:
+  inputs:
+    SeqID:    { required: true }
+    BamDir:   { required: true }
+    qcResDir: { required: true }
+
+  outputs:
+    dedup_bam:     { default: "[BamDir]/[SeqID].sorted.dedup.bam" }
+    dedup_bai:     { default: "[BamDir]/[SeqID].sorted.dedup.bam.bai" }
+    metrics_txt:   { default: "[qcResDir]/[SeqID].mark.duplicates.metrics.txt" }
+
+params:
+  bind:        { type: str, default: "/storage,/data" }
+  sif:         { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+
+  gc_threads:  { type: int, default: 14 }
+  xmx_mb:      { type: int, default: 16384 }
+
+  # MarkDuplicates 옵션들
+  md_args:
+    type: str
+    default: "--CREATE_INDEX true --REMOVE_SEQUENCING_DUPLICATES true"
+
+cmd_line: >
+  singularity exec -B [bind] [sif] gatk MarkDuplicates
+  --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m"
+  --INPUT [BamDir]/[SeqID].sorted.bam
+  --OUTPUT [BamDir]/[SeqID].sorted.dedup.bam
+  --METRICS_FILE [qcResDir]/[SeqID].mark.duplicates.metrics.txt
+  [md_args]

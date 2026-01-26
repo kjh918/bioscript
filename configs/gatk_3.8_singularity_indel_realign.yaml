@@ -1,0 +1,48 @@
+# =========================================================
+# GATK 3.8 Indel Realignment
+#  - RealignerTargetCreator
+#  - IndelRealigner
+# =========================================================
+tool:
+  name: gatk3
+  version: "3.8"
+  profile: "singularity_indel_realign"
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    BamDir:          { required: true }
+    qcResDir:        { required: true }
+    ReferenceFasta:  { required: true }
+    KnownIndel1:     { required: true }
+    KnownIndel2:     { required: true }
+
+  outputs:
+    target_intervals:
+      default: "[qcResDir]/[SeqID].realign.target.intervals"
+    realigned_bam:
+      default: "[BamDir]/[SeqID].sorted.dedup.realign.bam"
+
+params:
+  bind:    { type: str, default: "/storage,/data" }
+  sif:     { type: str, default: "/storage/images/gatk-3.8-1.sif" }
+
+  Threads: { type: int, default: 8 }
+  xmx_mb:  { type: int, default: 16384 }
+
+cmd_line: >
+  singularity exec -B [bind] [sif] java -Xmx[xmx_mb]m -jar /usr/GenomeAnalysisTK.jar
+  -T RealignerTargetCreator
+  -R [ReferenceFasta]
+  -I [BamDir]/[SeqID].sorted.dedup.bam
+  -o [qcResDir]/[SeqID].realign.target.intervals
+  -known [KnownIndel1] -known [KnownIndel2]
+  -nt [Threads]
+  &&
+  singularity exec -B [bind] [sif] java -Xmx[xmx_mb]m -jar /usr/GenomeAnalysisTK.jar
+  -T IndelRealigner
+  -R [ReferenceFasta]
+  -targetIntervals [qcResDir]/[SeqID].realign.target.intervals
+  -known [KnownIndel1] -known [KnownIndel2]
+  -I [BamDir]/[SeqID].sorted.dedup.bam
+  -o [BamDir]/[SeqID].sorted.dedup.realign.bam
