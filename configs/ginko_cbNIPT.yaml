@@ -1,0 +1,33 @@
+tool:
+  name: GinkgoAnalysis
+  version: "1.0.0"
+  profile: "cbNIPT_CopyNumber_Ginkgo"
+
+io:
+  inputs:
+    SeqID: { required: true }
+    ReadLength: { required: true }
+    ResultBaseDir: { default: "/data/cbNIPT/ginkgo_analysis" }
+  # outputs는 추적용으로 메인 디렉토리만 지정
+  outputs:
+    FinalResultRoot: { default: "[ResultBaseDir]/[SeqID]" }
+
+params:
+  threads: { type: int, default: 1 }
+  BinSizeList: { type: str, default: "100 150 200 250" }
+  GinkgoScript: { type: str, default: "/storage/home/kangsm/runScripts/cbNIPT/GCX.cbNIPT_Run.Ginkgo.Analysis.sh" }
+
+# [Logic] BinSize 순회 -> 분석 실행 -> 디렉토리 이동 및 정리
+cmd_line: >
+  for BinSize in [BinSizeList]; do
+    echo ">> Running Ginkgo for [SeqID] with BinSize: ${BinSize}kb" &&
+    [GinkgoScript] --SeqID [SeqID] --ReadLength [ReadLength] --BinSize ${BinSize} &&
+    
+    FinalDir=[ResultBaseDir]/[SeqID]/Binsize_${BinSize}kb &&
+    mkdir -p ${FinalDir} &&
+    
+    if [ -d "[ResultBaseDir]/[SeqID]_${BinSize}kb" ]; then
+      mv [ResultBaseDir]/[SeqID]_${BinSize}kb/* ${FinalDir}/ &&
+      rm -rf [ResultBaseDir]/[SeqID]_${BinSize}kb
+    fi;
+  done

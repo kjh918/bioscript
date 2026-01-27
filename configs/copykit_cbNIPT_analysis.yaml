@@ -1,0 +1,34 @@
+tool:
+  name: CopyKitAnalysis
+  version: "1.0.0"
+  profile: "cbNIPT_CopyNumber_Analysis"
+
+io:
+  inputs:
+    SeqID: { required: true }
+    SampleID: { required: true }
+    SamplePloidy: { required: true }
+    NGS_DataBaseDir: { default: "/storage/NGS_Data_Repo" }
+    ResultBaseDir: { required: true }
+  outputs:
+    # 분석 디렉토리 정의 (자동 생성 대상)
+    AnalysisRunDir: { default: "[ResultBaseDir]/[SampleID]" }
+
+params:
+  # parallel -j 2에 대응하는 threads
+  threads: { type: int, default: 2 }
+  BinSizeList: { type: str, default: "110kb 220kb" }
+  GenomeVersion: { type: str, default: "hg38" }
+  Rscript_path: { type: str, default: "/storage/home/kangsm/runScripts/cbNIPT/GCX.cbNIPT_Run.CopyKit.Analysis.R" }
+
+# [Logic] 디렉토리 생성 -> 심볼릭 링크 -> parallel 실행 순서
+cmd_line: >
+  mkdir -p [AnalysisRunDir] &&
+  ln -Tsf [NGS_DataBaseDir]/[SeqID]/bam/[SeqID].analysisReady.bam [AnalysisRunDir]/[SampleID].bam &&
+  ln -Tsf [NGS_DataBaseDir]/[SeqID]/bam/[SeqID].analysisReady.bam.bai [AnalysisRunDir]/[SampleID].bam.bai &&
+  parallel -j [threads] -k "Rscript [Rscript_path] 
+  --SeqID [SampleID] 
+  --AnalysisRunDir [AnalysisRunDir] 
+  --BinSize {} 
+  --Ploidy [SamplePloidy] 
+  --GenomeVersion [GenomeVersion]" ::: [BinSizeList]
