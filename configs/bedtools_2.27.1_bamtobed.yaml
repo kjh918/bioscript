@@ -1,0 +1,27 @@
+# =========================================================
+# 
+# 
+# =========================================================
+tool:
+  name: bedtools 
+  version: "2.27.1"
+  profile: "bamtobed"
+
+io:
+  inputs:
+    SeqID:             { required: true }
+    BamDir:            { required: true }
+    BamToBedDir:       { required: true }
+    
+  outputs:
+    bed:          { default: "[BamToBedDir]/[SeqID].bed" }
+
+params:
+  # Picard / Java
+  bedtools:      { type: str, default: "bedtools" }
+  Threads:       { type: int, default: 8 }
+  
+cmd_line: >
+  ${bedtools} bamtobed -i ${BamDir}/${SeqID}.analysisReady.bam > ${BamToBedDir}/${SeqID}.bed
+  &&
+  bgzip -@ ${Threads} ${BamToBedDir}/${SeqID}.bed

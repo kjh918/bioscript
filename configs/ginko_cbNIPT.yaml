@@ -1,33 +1,70 @@
 tool:
   name: GinkgoAnalysis
   version: "1.0.0"
-  profile: "cbNIPT_CopyNumber_Ginkgo"
+  profile: "path_override_runner"
 
 io:
   inputs:
-    SeqID: { required: true }
-    ReadLength: { required: true }
-    ResultBaseDir: { default: "/data/cbNIPT/ginkgo_analysis" }
-  # outputs는 추적용으로 메인 디렉토리만 지정
+    SeqID:           { required: true }
+    ReadLength:      { required: true }
+    # 모든 경로를 파라미터로 받음
+    GinkgoHomeDir:   { default: "/storage/apps/ginkgo" }
+    BamToBedDir:     { default: "/data/cbNIPT/bamToBeds" }
+    ResultBaseDir:   { default: "/data/cbNIPT/ginkgo_analysis" }
+    NormalDir:       { default: "/data/cbNIPT/bamToBeds" }
+    
   outputs:
     FinalResultRoot: { default: "[ResultBaseDir]/[SeqID]" }
 
 params:
-  threads: { type: int, default: 1 }
-  BinSizeList: { type: str, default: "100 150 200 250" }
-  GinkgoScript: { type: str, default: "/storage/home/kangsm/runScripts/cbNIPT/GCX.cbNIPT_Run.Ginkgo.Analysis.sh" }
+  BinSizeList:     { default: "100 150 200 250" }
+  NormalSamples:   { default: "Normal_01.bed.gz Normal_02.bed.gz Normal_03.bed.gz" }
+  Genome:          { default: "hg38" }
+  # 원본 analyze.sh 위치
+  OriginalAnalyzeSh: { default: "[GinkgoHomeDir]/scripts/analyze.sh" }
 
-# [Logic] BinSize 순회 -> 분석 실행 -> 디렉토리 이동 및 정리
 cmd_line: >
-  for BinSize in [BinSizeList]; do
-    echo ">> Running Ginkgo for [SeqID] with BinSize: ${BinSize}kb" &&
-    [GinkgoScript] --SeqID [SeqID] --ReadLength [ReadLength] --BinSize ${BinSize} &&
+  for BinSize in [BinSizeList]; do \
+    echo "==== Processing [SeqID] ([BinSize]kb) ===="; \
     
-    FinalDir=[ResultBaseDir]/[SeqID]/Binsize_${BinSize}kb &&
-    mkdir -p ${FinalDir} &&
+    # 1. 작업 디렉토리 설정
+    RunID=[SeqID]_${BinSize}kb; \
+    WorkDir=[GinkgoHomeDir]/uploads/${RunID}; \
+    mkdir -p ${WorkDir}; \
     
-    if [ -d "[ResultBaseDir]/[SeqID]_${BinSize}kb" ]; then
-      mv [ResultBaseDir]/[SeqID]_${BinSize}kb/* ${FinalDir}/ &&
-      rm -rf [ResultBaseDir]/[SeqID]_${BinSize}kb
-    fi;
+    # 2. 하드코딩된 'home=' 경로를 [GinkgoHomeDir]로 치환한 실행용 스크립트 생성 (Patch)
+    # 원본 analyze.sh의 첫 부분 home=... 을 우리가 설정한 경로로 바꿉니다.
+    sed "s|^home=.*|home=[GinkgoHomeDir]|" [OriginalAnalyzeSh] > ${WorkDir}/analyze_fixed.sh && \
+    chmod +x ${WorkDir}/analyze_fixed.sh; \
+    
+    # 3. 데이터 링크 및 Config 생성
+    for normal in [NormalSamples]; do \
+      ln -Tsf [NormalDir]/${normal} ${WorkDir}/${normal}; \
+    done; \
+    ln -Tsf [BamToBedDir]/[SeqID].bed.gz ${WorkDir}/[SeqID].bed.gz; \
+    ls ${WorkDir} | grep ".bed.gz$" > ${WorkDir}/list; \
+    
+    echo "chosen_genome=[Genome]" > ${WorkDir}/config; \
+    echo "binMeth=variable_${BinSize}000_[ReadLength]_bwa" >> ${WorkDir}/config; \
+    echo "distMeth=euclidean" >> ${WorkDir}/config; \
+    echo "clustMeth=ward" >> ${WorkDir}/config; \
+    echo "init=1" >> ${WorkDir}/config; \
+    echo "process=1" >> ${WorkDir}/config; \
+    echo "fix=1" >> ${WorkDir}/config; \
+    echo "sex=0" >> ${WorkDir}/config; \
+    echo "rmbadbins=1" >> ${WorkDir}/config; \
+    echo "color=1" >> ${WorkDir}/config; \
+    echo "segMeth=2" >> ${WorkDir}/config; \
+    echo "f=0" >> ${WorkDir}/config; \
+    
+    # 4. 패치된 스크립트 실행
+    bash ${WorkDir}/analyze_fixed.sh ${RunID}; \
+    
+    # 5. 결과 정리 및 이동
+    FinalDir=[ResultBaseDir]/[SeqID]/Binsize_${BinSize}kb; \
+    mkdir -p ${FinalDir}; \
+    if [ -d "${WorkDir}" ]; then \
+      mv ${WorkDir}/* ${FinalDir}/ && \
+      rm -rf ${WorkDir}; \
+    fi; \
   done

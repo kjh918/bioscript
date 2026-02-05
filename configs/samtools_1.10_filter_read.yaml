@@ -17,6 +17,10 @@ io:
       default: "[BamDir]/[SeqID].recal.filtered.bam"
     filtered_bai:
       default: "[BamDir]/[SeqID].recal.filtered.bam.bai"
+    analysis_ready_bam:
+      default: "[BamDir]/[SeqID].analysisReady.bam"
+    analysis_ready_bai:
+      default: "[BamDir]/[SeqID].analysisReady.bam.bai"
 
 params:
   Threads: { type: int, default: 8 }
@@ -45,3 +49,7 @@ cmd_line: >
   &&
   samtools index --threads [Threads]
   [BamDir]/[SeqID].recal.filtered.bam
+  &&
+  ln -Tsf  ${BamDir}/${SeqID}.recal.filtered.bam ${BamDir}/${SeqID}.analysisReady.bam
+  &&
+  ln -Tsf  ${BamDir}/${SeqID}.recal.filtered.bam.bai ${BamDir}/${SeqID}.analysisReady.bam.bai
