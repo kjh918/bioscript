@@ -1,0 +1,62 @@
+tool:
+  name: bcftools
+  version: "1.17+"
+  profile: "QC_PileupCall_Annotation"
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    Chromosome:     { required: true }  # 예: chr1 또는 1
+    InputBamDir:    { required: true }
+    ReferenceFasta: { required: true }
+    SitesVcfGz:     { required: true }  # mpileup target sites (vcf.gz + index)
+    PopAfAnnotTsv:  { required: true }  # annotate용 (chrom pos ref alt kova_AF kova_AN gnomad_AF gnomad_AN) tsv/tsv.gz
+    PopAfHeaderHdr: { required: true }  # INFO header (.hdr)
+    ResultDir:      { required: true }
+
+  outputs:
+    RawVcf:         { default: "[ResultDir]/[SeqID].[Chromosome].sites.raw.vcf.gz" }
+    AnnVcf:         { default: "[ResultDir]/[SeqID].[Chromosome].sites.af.vcf.gz" }
+    OutCountsTsvGz: { default: "[ResultDir]/[SeqID].[Chromosome].counts.tsv.gz" }
+
+params:
+  BcftoolsPath: { default: "/storage/apps/bcftools-1.3.1/bin/bcftools" }
+  BgzipPath:    { default: "bgzip" }
+  Threads:      { default: 4 }
+  MinBQ:        { default: 20 }
+  MinMQ:        { default: 30 }
+  TmpDir:       { default: "[ResultDir]/tmp" }
+
+  # annotate mapping (PopAfAnnotTsv 컬럼 순서 기준)
+  # 1 CHROM, 2 POS, 3 REF, 4 ALT, 5 kova_AF, 6 kova_AN, 7 gnomad_all_AF, 8 gnomad_all_AN
+  AnnotationQuery:
+    { default: "CHROM,POS,REF,ALT,INFO/AFPOP:=5,INFO/KOVA_AN:=6,INFO/GNOMAD_AF:=7,INFO/GNOMAD_AN:=8" }
+
+  # YAML에서 \t 가 깨질 수 있어서 |로 출력 후 sed로 탭 변환
+  VcfQuery:
+    { default: "%CHROM|%POS|%REF|%ALT|%INFO/AFPOP|%INFO/KOVA_AN|%INFO/GNOMAD_AF|%INFO/GNOMAD_AN|[%GT]|[%DP]|[%AD]\\n" }
+
+cmd_line: >
+  [BcftoolsPath] mpileup
+  -f [ReferenceFasta]
+  -T [SitesVcfGz]
+  -q [MinMQ]
+  -Q [MinBQ]
+  -a FORMAT/AD,FORMAT/DP
+  -Ou
+  [InputBamDir]/[SeqID].analysisReady.bam
+  |
+  [BcftoolsPath] call
+  -Aim
+  -Oz -o [RawVcf]
+  &&
+  [BcftoolsPath] index -f [RawVcf]
+  &&
+  [BcftoolsPath] annotate
+  -a [PopAfAnnotTsv]
+  -c [AnnotationQuery]
+  -h [PopAfHeaderHdr]
+  -Oz -o [AnnVcf]
+  [RawVcf]
+  &&
+  [BcftoolsPath] index -f [AnnVcf]

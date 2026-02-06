@@ -52,7 +52,7 @@ render() {
 
 # --- Finalize Outputs & Command ---
 AnalysisRunDir=$(render "${AnalysisRunDir}")
-CMD_LINE='mkdir -p [AnalysisRunDir] && ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam [AnalysisRunDir]/[SampleID].bam && ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam.bai [AnalysisRunDir]/[SampleID].bam.bai && Rscript [Rscript_path] \ --SeqID [SampleID] \ --AnalysisRunDir [AnalysisRunDir] \ --BinSize [BinSize] \ --Ploidy [SamplePloidy] \  --GenomeVersion [GenomeVersion]'
+CMD_LINE='mkdir -p [AnalysisRunDir] && ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam [AnalysisRunDir]/[SampleID].bam && ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam.bai [AnalysisRunDir]/[SampleID].bam.bai && Rscript [Rscript_path]  --SeqID [SampleID]  --AnalysisRunDir [AnalysisRunDir]  --BinSize [BinSize]  --Ploidy [SamplePloidy]  --GenomeVersion [GenomeVersion]'
 CMD=$(render "$CMD_LINE")
 
 echo -e "\n[RUNNING CMD]\n$CMD\n"

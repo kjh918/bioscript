@@ -1,0 +1,40 @@
+tool:
+  name: gatk
+  version: "4.4.0.0"
+  profile: "VariantCalling_HaplotypeCaller"
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    Chromosome:      { required: true }
+    InputBam:        { required: true }
+    ReferenceFasta:  { default: "/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa" }
+    DbsnpVcf:        { default: "/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz" }
+    ResultDir:       { required: true }
+  outputs:
+    # 최종 결과물만 추적
+    OutVcf:          { default: "[ResultDir]/[SeqID].[Chromosome].vcf.gz" }
+    OutGvcf:         { default: "[ResultDir]/[SeqID].[Chromosome].gvcf.gz" }
+
+params:
+  GatkPath:          { default: "/storage/apps/gatk-4.4.0.0/gatk" }
+  Threads:           { default: 4 }
+  Memory:            { default: "32g" }
+  Ploidy:            { default: 2 }
+  TmpDir:            { default: "[ResultDir]/tmp" }
+  # All-site 옵션 (기본값 false, 필요시 true로 변경)
+  IncludeNonVariant: { default: "false" }
+
+cmd_line: >
+  mkdir -p [TmpDir] && 
+  
+  [GatkPath] --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[Memory] -Djava.io.tmpdir=[TmpDir]" 
+  HaplotypeCaller 
+  -R [ReferenceFasta] -I [InputBam] -L [Chromosome] 
+  -ploidy [Ploidy] -stand-call-conf 30 --dbsnp [DbsnpVcf] 
+  -O [OutGvcf] -ERC GVCF && 
+  
+  [GatkPath] --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[Memory] -Djava.io.tmpdir=[TmpDir]" 
+  GenotypeGVCFs 
+  --include-non-variant-sites [IncludeNonVariant] 
+  -R [ReferenceFasta] -V [OutGvcf] -O [OutVcf]

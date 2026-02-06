@@ -17,7 +17,7 @@ io:
 params:
   # parallel -j 2에 대응하는 threads
   Threads: { type: int, default: 1 }
-  BinSize: { type: str, default: "200kb" }
+  BinSize: { type: str, default: "220kb" }
   GenomeVersion: { type: str, default: "hg38" }
   Rscript_path: { type: str, default: "/storage/home/kangsm/runScripts/cbNIPT/GCX.cbNIPT_Run.CopyKit.Analysis.R" }
   SamplePloidy: { type: int, default: 2 }
@@ -26,9 +26,9 @@ cmd_line: >
   mkdir -p [AnalysisRunDir] &&
   ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam [AnalysisRunDir]/[SampleID].bam &&
   ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam.bai [AnalysisRunDir]/[SampleID].bam.bai &&
-  Rscript [Rscript_path] \
-  --SeqID [SampleID] \
-  --AnalysisRunDir [AnalysisRunDir] \
-  --BinSize [BinSize] \
-  --Ploidy [SamplePloidy] \ 
+  Rscript [Rscript_path] 
+  --SeqID [SampleID] 
+  --AnalysisRunDir [AnalysisRunDir] 
+  --BinSize [BinSize] 
+  --Ploidy [SamplePloidy] 
   --GenomeVersion [GenomeVersion]

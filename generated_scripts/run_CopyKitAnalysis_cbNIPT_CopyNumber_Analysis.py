@@ -3,7 +3,7 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = 'mkdir -p [AnalysisRunDir] && ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam [AnalysisRunDir]/[SampleID].bam && ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam.bai [AnalysisRunDir]/[SampleID].bam.bai && Rscript [Rscript_path] \\ --SeqID [SampleID] \\ --AnalysisRunDir [AnalysisRunDir] \\ --BinSize [BinSize] \\ --Ploidy [SamplePloidy] \\  --GenomeVersion [GenomeVersion]'
+CMD_LINE = 'mkdir -p [AnalysisRunDir] && ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam [AnalysisRunDir]/[SampleID].bam && ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam.bai [AnalysisRunDir]/[SampleID].bam.bai && Rscript [Rscript_path]  --SeqID [SampleID]  --AnalysisRunDir [AnalysisRunDir]  --BinSize [BinSize]  --Ploidy [SamplePloidy]  --GenomeVersion [GenomeVersion]'
 REQUIRED_KEYS = ['SeqID', 'SampleID', 'SamplePloidy', 'NGS_DataBaseDir', 'AnalysisRunDir']
 DEFAULTS = {'Threads': '1', 'BinSize': '200kb', 'GenomeVersion': 'hg38', 'Rscript_path': '/storage/home/kangsm/runScripts/cbNIPT/GCX.cbNIPT_Run.CopyKit.Analysis.R', 'SamplePloidy': '2', 'AnalysisRunDir': '[ResultBaseDir]/[SampleID]'}
 OUTPUT_KEYS = ['AnalysisRunDir']
