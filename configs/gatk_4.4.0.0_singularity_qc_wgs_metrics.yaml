@@ -20,7 +20,7 @@ io:
 params:
   bind:       { type: str, default: "/storage,/data" }
   sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
-  gc_threads: { type: int, default: 14 }
+  Threads:    { type: int, default: 14 }
   xmx_mb:     { type: int, default: 16384 }
 
   gatk_jar:   { type: str, default: "/gatk/gatk-package-4.4.0.0-local.jar" }
@@ -28,7 +28,7 @@ params:
 
 cmd_line: >
   singularity exec -B [bind] [sif] [java_bin]
-  -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m
+  -XX:ParallelGCThreads=[Threads]    -Xmx[xmx_mb]m
   -jar [gatk_jar] CollectWgsMetrics
   --INPUT [BamDir]/[SeqID].analysisReady.bam
   --OUTPUT [qcResDir]/[SeqID].collect.wgs.metrics.txt

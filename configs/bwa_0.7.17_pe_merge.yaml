@@ -31,7 +31,6 @@ params:
   # Picard / Java
   java_bin:      { type: str, default: "java" }
   picard_jar:    { type: str, default: "/storage/apps/bin/picard.jar" }
-  gc_threads:    { type: int, default: 14 }
   xmx_mb:        { type: int, default: 16384 }
 
   # BWA singularity
@@ -49,7 +48,7 @@ params:
       --EXPECTED_ORIENTATIONS FR --EXPECTED_ORIENTATIONS RF
 
 cmd_line: >
-  [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [picard_jar] FastqToSam
+  [java_bin] -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m -jar [picard_jar] FastqToSam
   --FASTQ [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz --FASTQ2 [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz
   --SAMPLE_NAME [SeqID] --OUTPUT [BamDir]/[SeqID].fastqtosam.bam
   --READ_GROUP_NAME [ReadGroupID] --PLATFORM [ReadGroupPlatform] --LIBRARY_NAME [ReadGroupLibrary] --SEQUENCING_CENTER [ReadGroupCenter]
@@ -61,7 +60,7 @@ cmd_line: >
   [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz
   > [BamDir]/[SeqID].bwa.mem.sam
   &&
-  [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [picard_jar] MergeBamAlignment
+  [java_bin] -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m -jar [picard_jar] MergeBamAlignment
   --UNMAPPED_BAM [BamDir]/[SeqID].fastqtosam.bam --ALIGNED_BAM [BamDir]/[SeqID].bwa.mem.sam
   --REFERENCE_SEQUENCE [ReferenceFasta] --OUTPUT [BamDir]/[SeqID].primary.bam
   [mba_args]

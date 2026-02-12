@@ -3,10 +3,10 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = 'singularity exec -B [bind] [sif] gatk MarkDuplicates --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --INPUT [BamDir]/[SeqID].sorted.bam --OUTPUT [BamDir]/[SeqID].sorted.dedup.bam --METRICS_FILE [qcResDir]/[SeqID].mark.duplicates.metrics.txt [md_args]'
-REQUIRED_KEYS = ['SeqID', 'BamDir', 'qcResDir']
-DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'Threads': '14', 'xmx_mb': '16384', 'md_args': '--CREATE_INDEX true --REMOVE_SEQUENCING_DUPLICATES true', 'dedup_bam': '[BamDir]/[SeqID].sorted.dedup.bam', 'dedup_bai': '[BamDir]/[SeqID].sorted.dedup.bam.bai', 'metrics_txt': '[qcResDir]/[SeqID].mark.duplicates.metrics.txt'}
-OUTPUT_KEYS = ['dedup_bam', 'dedup_bai', 'metrics_txt']
+CMD_LINE = 'singularity exec -B [bind] [sif] fastp --thread [Threads] --in1 [RawFastqDir]/[SeqID]_R1.fastq.gz --in2 [RawFastqDir]/[SeqID]_R2.fastq.gz --out1 [out_read1] --out2 [out_read2] --json [json] --html [html] --trim_poly_g --detect_adapter_for_pe --length_required [length_required] --average_qual [average_qual] --qualified_quality_phred [qualified_quality_phred]'
+REQUIRED_KEYS = ['SeqID', 'RawFastqDir', 'TrimFastqDir', 'qcResDir']
+DEFAULTS = {'Threads': '8', 'sif': '/storage/images/fastp-0.23.4.sif', 'bind': '/storage,/data', 'length_required': '100', 'average_qual': '10', 'qualified_quality_phred': '15', 'out_read1': '[TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz', 'out_read2': '[TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz', 'json': '[qcResDir]/[SeqID].fastp.json', 'html': '[qcResDir]/[SeqID].fastp.html'}
+OUTPUT_KEYS = ['out_read1', 'out_read2', 'json', 'html']
 
 def render(s, ctx):
     def repl(m):
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['BamDir', 'SeqID', 'Threads', 'bind', 'dedup_bai', 'dedup_bam', 'md_args', 'metrics_txt', 'qcResDir', 'sif', 'xmx_mb']:
+    for k in ['RawFastqDir', 'SeqID', 'Threads', 'TrimFastqDir', 'average_qual', 'bind', 'html', 'json', 'length_required', 'out_read1', 'out_read2', 'qcResDir', 'qualified_quality_phred', 'sif']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

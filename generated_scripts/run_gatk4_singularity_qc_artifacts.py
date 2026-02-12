@@ -3,9 +3,9 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = 'singularity exec -B [bind] [sif] gatk CollectSequencingArtifactMetrics --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m" --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [artifacts_txt] --FILE_EXTENSION .txt --REFERENCE_SEQUENCE [ReferenceFasta]'
+CMD_LINE = 'singularity exec -B [bind] [sif] gatk CollectSequencingArtifactMetrics --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [artifacts_txt] --FILE_EXTENSION .txt --REFERENCE_SEQUENCE [ReferenceFasta]'
 REQUIRED_KEYS = ['SeqID', 'BamDir', 'qcResDir', 'ReferenceFasta']
-DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'gc_threads': '14', 'xmx_mb': '16384', 'artifacts_txt': '[qcResDir]/[SeqID].artifacts.txt'}
+DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'Threads': '14', 'xmx_mb': '16384', 'artifacts_txt': '[qcResDir]/[SeqID].artifacts.txt'}
 OUTPUT_KEYS = ['artifacts_txt']
 
 def render(s, ctx):
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['BamDir', 'ReferenceFasta', 'SeqID', 'artifacts_txt', 'bind', 'gc_threads', 'qcResDir', 'sif', 'xmx_mb']:
+    for k in ['BamDir', 'ReferenceFasta', 'SeqID', 'Threads', 'artifacts_txt', 'bind', 'qcResDir', 'sif', 'xmx_mb']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

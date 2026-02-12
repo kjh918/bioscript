@@ -3,10 +3,10 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = 'singularity exec -B [bind] [sif] gatk MarkDuplicates --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --INPUT [BamDir]/[SeqID].sorted.bam --OUTPUT [BamDir]/[SeqID].sorted.dedup.bam --METRICS_FILE [qcResDir]/[SeqID].mark.duplicates.metrics.txt [md_args]'
-REQUIRED_KEYS = ['SeqID', 'BamDir', 'qcResDir']
-DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'Threads': '14', 'xmx_mb': '16384', 'md_args': '--CREATE_INDEX true --REMOVE_SEQUENCING_DUPLICATES true', 'dedup_bam': '[BamDir]/[SeqID].sorted.dedup.bam', 'dedup_bai': '[BamDir]/[SeqID].sorted.dedup.bam.bai', 'metrics_txt': '[qcResDir]/[SeqID].mark.duplicates.metrics.txt'}
-OUTPUT_KEYS = ['dedup_bam', 'dedup_bai', 'metrics_txt']
+CMD_LINE = 'mkdir -p [TmpDir] && \n[GatkPath] --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[Memory] -Djava.io.tmpdir=[TmpDir]"  HaplotypeCaller  -R [ReferenceFasta] -I [InputBam] -L [Chromosome]  -ploidy [Ploidy] -stand-call-conf 30 --dbsnp [DbsnpVcf]  -O [OutGvcf] -ERC GVCF && \n[GatkPath] --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[Memory] -Djava.io.tmpdir=[TmpDir]"  GenotypeGVCFs  --include-non-variant-sites [IncludeNonVariant]  -R [ReferenceFasta] -V [OutGvcf] -O [OutVcf]'
+REQUIRED_KEYS = ['SeqID', 'Chromosome', 'InputBam', 'ResultDir']
+DEFAULTS = {'GatkPath': '/storage/apps/gatk-4.4.0.0/gatk', 'Threads': '4', 'Memory': '32g', 'Ploidy': '2', 'TmpDir': '[ResultDir]/tmp', 'IncludeNonVariant': 'false', 'OutVcf': '[ResultDir]/[SeqID].[Chromosome].vcf.gz', 'OutGvcf': '[ResultDir]/[SeqID].[Chromosome].gvcf.gz'}
+OUTPUT_KEYS = ['OutVcf', 'OutGvcf']
 
 def render(s, ctx):
     def repl(m):
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['BamDir', 'SeqID', 'Threads', 'bind', 'dedup_bai', 'dedup_bam', 'md_args', 'metrics_txt', 'qcResDir', 'sif', 'xmx_mb']:
+    for k in ['Chromosome', 'DbsnpVcf', 'GatkPath', 'IncludeNonVariant', 'InputBam', 'Memory', 'OutGvcf', 'OutVcf', 'Ploidy', 'ReferenceFasta', 'ResultDir', 'SeqID', 'Threads', 'TmpDir']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

@@ -1,70 +1,51 @@
 tool:
-  name: GinkgoAnalysis
+  name: Ginkgo_Final_Optimized
   version: "1.0.0"
-  profile: "path_override_runner"
+  profile: "absolute_path_runner"
 
 io:
   inputs:
     SeqID:           { required: true }
+    BinSize:         { required: true }
     ReadLength:      { required: true }
-    # 모든 경로를 파라미터로 받음
+    Threads:         { default: 1 }
+    # Ginkgo가 설치된 실제 절대 경로 (가장 중요!)
     GinkgoHomeDir:   { default: "/storage/apps/ginkgo" }
     BamToBedDir:     { default: "/data/cbNIPT/bamToBeds" }
-    ResultBaseDir:   { default: "/data/cbNIPT/ginkgo_analysis" }
     NormalDir:       { default: "/data/cbNIPT/bamToBeds" }
-    
+    ResultBaseDir:   { default: "/data/cbNIPT/ginkgo_analysis" }
+    Genome:          { default: "hg38" }
+
   outputs:
-    FinalResultRoot: { default: "[ResultBaseDir]/[SeqID]" }
+    # --- 여기서 모든 도구의 경로 앞에 [GinkgoHomeDir]을 붙여 절대 경로로 만듭니다 ---
+    BinMeth:         { default: "variable_[BinSize]000_[ReadLength]_bwa" }
+    WorkDir:         { default: "[ResultBaseDir]/[SeqID]/[SeqID]_[BinSize]kb" }
+    
+    BinUnsorted:     { default: "[GinkgoHomeDir]/scripts/binUnsorted" }
+    BinFile:         { default: "[GinkgoHomeDir]/genomes/[Genome]/original/[BinMeth]" }
+    BinCount:        { default: "$(wc -l < [BinFile])" }
+    
+    ProcessR:        { default: "[GinkgoHomeDir]/scripts/process.R" }
+    ReclustR:        { default: "[GinkgoHomeDir]/scripts/reclust.R" }
+    CNVCaller:       { default: "[GinkgoHomeDir]/scripts/CNVcaller" }
 
 params:
-  BinSizeList:     { default: "100 150 200 250" }
-  NormalSamples:   { default: "Normal_01.bed.gz Normal_02.bed.gz Normal_03.bed.gz" }
-  Genome:          { default: "hg38" }
-  # 원본 analyze.sh 위치
-  OriginalAnalyzeSh: { default: "[GinkgoHomeDir]/scripts/analyze.sh" }
+  NormalSamples:     { default: "Normal_01.bed.gz Normal_02.bed.gz Normal_03.bed.gz" }
+  # R 실행 인자 (경로 미포함 변수들만 정리)
+  R_Args_Base:       { default: "status.xml data 2 [BinMeth] ward euclidean 1 refDummy.bed_mapped 0 ploidyDummy.txt 0 1" }
+  R_Args_Reclust:    { default: "status.xml [BinMeth] ward euclidean 0 ploidyDummy.txt 0" }
 
 cmd_line: >
-  for BinSize in [BinSizeList]; do \
-    echo "==== Processing [SeqID] ([BinSize]kb) ===="; \
-    
-    # 1. 작업 디렉토리 설정
-    RunID=[SeqID]_${BinSize}kb; \
-    WorkDir=[GinkgoHomeDir]/uploads/${RunID}; \
-    mkdir -p ${WorkDir}; \
-    
-    # 2. 하드코딩된 'home=' 경로를 [GinkgoHomeDir]로 치환한 실행용 스크립트 생성 (Patch)
-    # 원본 analyze.sh의 첫 부분 home=... 을 우리가 설정한 경로로 바꿉니다.
-    sed "s|^home=.*|home=[GinkgoHomeDir]|" [OriginalAnalyzeSh] > ${WorkDir}/analyze_fixed.sh && \
-    chmod +x ${WorkDir}/analyze_fixed.sh; \
-    
-    # 3. 데이터 링크 및 Config 생성
-    for normal in [NormalSamples]; do \
-      ln -Tsf [NormalDir]/${normal} ${WorkDir}/${normal}; \
-    done; \
-    ln -Tsf [BamToBedDir]/[SeqID].bed.gz ${WorkDir}/[SeqID].bed.gz; \
-    ls ${WorkDir} | grep ".bed.gz$" > ${WorkDir}/list; \
-    
-    echo "chosen_genome=[Genome]" > ${WorkDir}/config; \
-    echo "binMeth=variable_${BinSize}000_[ReadLength]_bwa" >> ${WorkDir}/config; \
-    echo "distMeth=euclidean" >> ${WorkDir}/config; \
-    echo "clustMeth=ward" >> ${WorkDir}/config; \
-    echo "init=1" >> ${WorkDir}/config; \
-    echo "process=1" >> ${WorkDir}/config; \
-    echo "fix=1" >> ${WorkDir}/config; \
-    echo "sex=0" >> ${WorkDir}/config; \
-    echo "rmbadbins=1" >> ${WorkDir}/config; \
-    echo "color=1" >> ${WorkDir}/config; \
-    echo "segMeth=2" >> ${WorkDir}/config; \
-    echo "f=0" >> ${WorkDir}/config; \
-    
-    # 4. 패치된 스크립트 실행
-    bash ${WorkDir}/analyze_fixed.sh ${RunID}; \
-    
-    # 5. 결과 정리 및 이동
-    FinalDir=[ResultBaseDir]/[SeqID]/Binsize_${BinSize}kb; \
-    mkdir -p ${FinalDir}; \
-    if [ -d "${WorkDir}" ]; then \
-      mv ${WorkDir}/* ${FinalDir}/ && \
-      rm -rf ${WorkDir}; \
-    fi; \
-  done
+  mkdir -p [WorkDir] &&
+  ln -sf [NormalDir]/*.bed.gz [WorkDir]/ &&
+  ln -sf [BamToBedDir]/[SeqID].bed.gz [WorkDir]/ &&
+  
+  find [WorkDir] -maxdepth 1 -name "*.gz" | xargs -I {} bash -c 'N=$(basename "{}" | sed "s/\.bed.*//"); [BinUnsorted] [BinFile] [BinCount] <(zcat "{}" | awk "{if(\$1!~/^chr/) print \"chr\"\$0; else print \$0}") $N "{}"_mapped' &&
+  
+  find [WorkDir] -maxdepth 1 -name "*.bed" ! -name "*.gz" | xargs -I {} bash -c 'N=$(basename "{}" | sed "s/\.bed.*//"); [BinUnsorted] [BinFile] [BinCount] <(awk "{if(\$1!~/^chr/) print \"chr\"\$0; else print \$0}" "{}") $N "{}"_mapped' &&
+  
+  paste [WorkDir]/*_mapped > [WorkDir]/data &&
+  
+  [ProcessR] [GinkgoHomeDir]/genomes/[Genome]/original [WorkDir] [R_Args_Base] &&
+  [ReclustR] [GinkgoHomeDir]/genomes/[Genome]/original [WorkDir] [R_Args_Reclust] &&
+  [CNVCaller] [WorkDir]/SegCopy [WorkDir]/CNV1 [WorkDir]/CNV2 

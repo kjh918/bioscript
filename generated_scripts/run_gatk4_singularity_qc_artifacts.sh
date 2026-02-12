@@ -5,9 +5,9 @@ set -euo pipefail
 BamDir=''
 ReferenceFasta=''
 SeqID=''
+Threads=14
 artifacts_txt='[qcResDir]/[SeqID].artifacts.txt'
 bind=/storage,/data
-gc_threads=14
 qcResDir=''
 sif=/storage/images/gatk-4.4.0.0.sif
 xmx_mb=16384
@@ -19,9 +19,9 @@ while [[ $# -gt 0 ]]; do
     --BamDir) BamDir="$2"; shift 2;;
     --ReferenceFasta) ReferenceFasta="$2"; shift 2;;
     --SeqID) SeqID="$2"; shift 2;;
+    --Threads) Threads="$2"; shift 2;;
     --artifacts_txt) artifacts_txt="$2"; shift 2;;
     --bind) bind="$2"; shift 2;;
-    --gc_threads) gc_threads="$2"; shift 2;;
     --qcResDir) qcResDir="$2"; shift 2;;
     --sif) sif="$2"; shift 2;;
     --xmx_mb) xmx_mb="$2"; shift 2;;
@@ -39,9 +39,9 @@ render() {
     s="${s//\\[BamDir\\]/${BamDir}}"
     s="${s//\\[ReferenceFasta\\]/${ReferenceFasta}}"
     s="${s//\\[SeqID\\]/${SeqID}}"
+    s="${s//\\[Threads\\]/${Threads}}"
     s="${s//\\[artifacts_txt\\]/${artifacts_txt}}"
     s="${s//\\[bind\\]/${bind}}"
-    s="${s//\\[gc_threads\\]/${gc_threads}}"
     s="${s//\\[qcResDir\\]/${qcResDir}}"
     s="${s//\\[sif\\]/${sif}}"
     s="${s//\\[xmx_mb\\]/${xmx_mb}}"
@@ -52,7 +52,7 @@ render() {
 
 # --- Finalize Outputs & Command ---
 artifacts_txt=$(render "${artifacts_txt}")
-CMD_LINE='singularity exec -B [bind] [sif] gatk CollectSequencingArtifactMetrics --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m" --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [artifacts_txt] --FILE_EXTENSION .txt --REFERENCE_SEQUENCE [ReferenceFasta]'
+CMD_LINE='singularity exec -B [bind] [sif] gatk CollectSequencingArtifactMetrics --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [artifacts_txt] --FILE_EXTENSION .txt --REFERENCE_SEQUENCE [ReferenceFasta]'
 CMD=$(render "$CMD_LINE")
 
 echo -e "\n[RUNNING CMD]\n$CMD\n"

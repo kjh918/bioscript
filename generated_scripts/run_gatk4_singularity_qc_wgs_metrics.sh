@@ -5,9 +5,9 @@ set -euo pipefail
 BamDir=''
 ReferenceFasta=''
 SeqID=''
+Threads=14
 bind=/storage,/data
 gatk_jar=/gatk/gatk-package-4.4.0.0-local.jar
-gc_threads=14
 java_bin=java
 qcResDir=''
 sif=/storage/images/gatk-4.4.0.0.sif
@@ -21,9 +21,9 @@ while [[ $# -gt 0 ]]; do
     --BamDir) BamDir="$2"; shift 2;;
     --ReferenceFasta) ReferenceFasta="$2"; shift 2;;
     --SeqID) SeqID="$2"; shift 2;;
+    --Threads) Threads="$2"; shift 2;;
     --bind) bind="$2"; shift 2;;
     --gatk_jar) gatk_jar="$2"; shift 2;;
-    --gc_threads) gc_threads="$2"; shift 2;;
     --java_bin) java_bin="$2"; shift 2;;
     --qcResDir) qcResDir="$2"; shift 2;;
     --sif) sif="$2"; shift 2;;
@@ -43,9 +43,9 @@ render() {
     s="${s//\\[BamDir\\]/${BamDir}}"
     s="${s//\\[ReferenceFasta\\]/${ReferenceFasta}}"
     s="${s//\\[SeqID\\]/${SeqID}}"
+    s="${s//\\[Threads\\]/${Threads}}"
     s="${s//\\[bind\\]/${bind}}"
     s="${s//\\[gatk_jar\\]/${gatk_jar}}"
-    s="${s//\\[gc_threads\\]/${gc_threads}}"
     s="${s//\\[java_bin\\]/${java_bin}}"
     s="${s//\\[qcResDir\\]/${qcResDir}}"
     s="${s//\\[sif\\]/${sif}}"
@@ -58,7 +58,7 @@ render() {
 
 # --- Finalize Outputs & Command ---
 wgs_metrics_txt=$(render "${wgs_metrics_txt}")
-CMD_LINE='singularity exec -B [bind] [sif] [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [gatk_jar] CollectWgsMetrics --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [qcResDir]/[SeqID].collect.wgs.metrics.txt --REFERENCE_SEQUENCE [ReferenceFasta]'
+CMD_LINE='singularity exec -B [bind] [sif] [java_bin] -XX:ParallelGCThreads=[Threads]    -Xmx[xmx_mb]m -jar [gatk_jar] CollectWgsMetrics --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [qcResDir]/[SeqID].collect.wgs.metrics.txt --REFERENCE_SEQUENCE [ReferenceFasta]'
 CMD=$(render "$CMD_LINE")
 
 echo -e "\n[RUNNING CMD]\n$CMD\n"

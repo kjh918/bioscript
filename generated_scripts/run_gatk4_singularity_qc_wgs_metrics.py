@@ -3,9 +3,9 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = 'singularity exec -B [bind] [sif] [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [gatk_jar] CollectWgsMetrics --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [qcResDir]/[SeqID].collect.wgs.metrics.txt --REFERENCE_SEQUENCE [ReferenceFasta]'
+CMD_LINE = 'singularity exec -B [bind] [sif] [java_bin] -XX:ParallelGCThreads=[Threads]    -Xmx[xmx_mb]m -jar [gatk_jar] CollectWgsMetrics --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [qcResDir]/[SeqID].collect.wgs.metrics.txt --REFERENCE_SEQUENCE [ReferenceFasta]'
 REQUIRED_KEYS = ['SeqID', 'BamDir', 'qcResDir', 'ReferenceFasta']
-DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'gc_threads': '14', 'xmx_mb': '16384', 'gatk_jar': '/gatk/gatk-package-4.4.0.0-local.jar', 'java_bin': 'java', 'wgs_metrics_txt': '[qcResDir]/[SeqID].collect.wgs.metrics.txt'}
+DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'Threads': '14', 'xmx_mb': '16384', 'gatk_jar': '/gatk/gatk-package-4.4.0.0-local.jar', 'java_bin': 'java', 'wgs_metrics_txt': '[qcResDir]/[SeqID].collect.wgs.metrics.txt'}
 OUTPUT_KEYS = ['wgs_metrics_txt']
 
 def render(s, ctx):
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['BamDir', 'ReferenceFasta', 'SeqID', 'bind', 'gatk_jar', 'gc_threads', 'java_bin', 'qcResDir', 'sif', 'wgs_metrics_txt', 'xmx_mb']:
+    for k in ['BamDir', 'ReferenceFasta', 'SeqID', 'Threads', 'bind', 'gatk_jar', 'java_bin', 'qcResDir', 'sif', 'wgs_metrics_txt', 'xmx_mb']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

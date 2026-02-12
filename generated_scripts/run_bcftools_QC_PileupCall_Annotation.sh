@@ -3,15 +3,14 @@ set -euo pipefail
 
 # --- Defaults ---
 AnnVcf='[ResultDir]/[SeqID].[Chromosome].sites.af.vcf.gz'
-AnnotationQuery=CHROM,POS,REF,ALT,INFO/AFPOP:=5,INFO/KOVA_AN:=6,INFO/GNOMAD_AF:=7,INFO/GNOMAD_AN:=8
-BcftoolsPath=/storage/apps/bcftools-1.3.1/bin/bcftools
+AnnotationQuery=CHROM,POS,REF,ALT,INFO/KOVA_AF,INFO/KOVA_AN,INFO/GNOMAD_AF,INFO/GNOMAD_AN
+BcftoolsPath=/storage/home/jhkim/Apps/bcftools/bcftools
 BgzipPath=bgzip
 Chromosome=''
 InputBamDir=''
 MinBQ=20
 MinMQ=30
-OutCountsTsvGz='[ResultDir]/[SeqID].[Chromosome].counts.tsv.gz'
-PopAfAnnotTsv=''
+PopAfAnnotVcf=''
 PopAfHeaderHdr=''
 RawVcf='[ResultDir]/[SeqID].[Chromosome].sites.raw.vcf.gz'
 ReferenceFasta=''
@@ -20,7 +19,7 @@ SeqID=''
 SitesVcfGz=''
 Threads=4
 TmpDir='[ResultDir]/tmp'
-VcfQuery='%CHROM|%POS|%REF|%ALT|%INFO/AFPOP|%INFO/KOVA_AN|%INFO/GNOMAD_AF|%INFO/GNOMAD_AN|[%GT]|[%DP]|[%AD]\n'
+VcfQuery='%CHROM|%POS|%REF|%ALT|%INFO/KOVA_AF|%INFO/KOVA_AN|%INFO/GNOMAD_AF|%INFO/GNOMAD_AN|[%GT]|[%DP]|[%AD]\n'
 CWD="."
 
 # --- CLI Argument Parsing ---
@@ -34,8 +33,7 @@ while [[ $# -gt 0 ]]; do
     --InputBamDir) InputBamDir="$2"; shift 2;;
     --MinBQ) MinBQ="$2"; shift 2;;
     --MinMQ) MinMQ="$2"; shift 2;;
-    --OutCountsTsvGz) OutCountsTsvGz="$2"; shift 2;;
-    --PopAfAnnotTsv) PopAfAnnotTsv="$2"; shift 2;;
+    --PopAfAnnotVcf) PopAfAnnotVcf="$2"; shift 2;;
     --PopAfHeaderHdr) PopAfHeaderHdr="$2"; shift 2;;
     --RawVcf) RawVcf="$2"; shift 2;;
     --ReferenceFasta) ReferenceFasta="$2"; shift 2;;
@@ -64,8 +62,7 @@ render() {
     s="${s//\\[InputBamDir\\]/${InputBamDir}}"
     s="${s//\\[MinBQ\\]/${MinBQ}}"
     s="${s//\\[MinMQ\\]/${MinMQ}}"
-    s="${s//\\[OutCountsTsvGz\\]/${OutCountsTsvGz}}"
-    s="${s//\\[PopAfAnnotTsv\\]/${PopAfAnnotTsv}}"
+    s="${s//\\[PopAfAnnotVcf\\]/${PopAfAnnotVcf}}"
     s="${s//\\[PopAfHeaderHdr\\]/${PopAfHeaderHdr}}"
     s="${s//\\[RawVcf\\]/${RawVcf}}"
     s="${s//\\[ReferenceFasta\\]/${ReferenceFasta}}"
@@ -83,8 +80,7 @@ render() {
 # --- Finalize Outputs & Command ---
 RawVcf=$(render "${RawVcf}")
 AnnVcf=$(render "${AnnVcf}")
-OutCountsTsvGz=$(render "${OutCountsTsvGz}")
-CMD_LINE='[BcftoolsPath] mpileup -f [ReferenceFasta] -T [SitesVcfGz] -q [MinMQ] -Q [MinBQ] -a FORMAT/AD,FORMAT/DP -Ou [InputBamDir]/[SeqID].analysisReady.bam | [BcftoolsPath] call -Aim -Oz -o [RawVcf] && [BcftoolsPath] index -f [RawVcf] && [BcftoolsPath] annotate -a [PopAfAnnotTsv] -c [AnnotationQuery] -h [PopAfHeaderHdr] -Oz -o [AnnVcf] [RawVcf] && [BcftoolsPath] index -f [AnnVcf]'
+CMD_LINE='[BcftoolsPath] mpileup -f [ReferenceFasta] -T [SitesVcfGz] -q [MinMQ] -Q [MinBQ] -a FORMAT/AD,FORMAT/DP -Ou [InputBamDir]/[SeqID].analysisReady.bam | [BcftoolsPath] call -Am -Oz -o [RawVcf] && [BcftoolsPath] index -f [RawVcf] && [BcftoolsPath] annotate -a [PopAfAnnotVcf] -c [AnnotationQuery] -h [PopAfHeaderHdr] -Oz -o [AnnVcf] [RawVcf] && [BcftoolsPath] index -f [AnnVcf]'
 CMD=$(render "$CMD_LINE")
 
 echo -e "\n[RUNNING CMD]\n$CMD\n"

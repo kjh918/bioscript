@@ -3,7 +3,7 @@ set -euo pipefail
 
 # --- Defaults ---
 AnalysisRunDir='[ResultBaseDir]/[SampleID]'
-BinSize=200kb
+BinSize=220kb
 GenomeVersion=hg38
 NGS_DataBaseDir=''
 Rscript_path=/storage/home/kangsm/runScripts/cbNIPT/GCX.cbNIPT_Run.CopyKit.Analysis.R

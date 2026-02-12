@@ -4,6 +4,7 @@ set -euo pipefail
 # --- Defaults ---
 BamDir=''
 BamToBedDir=''
+SampleID=''
 SeqID=''
 Threads=8
 bed='[BamToBedDir]/[SeqID].bed'
@@ -15,6 +16,7 @@ while [[ $# -gt 0 ]]; do
   case "$1" in
     --BamDir) BamDir="$2"; shift 2;;
     --BamToBedDir) BamToBedDir="$2"; shift 2;;
+    --SampleID) SampleID="$2"; shift 2;;
     --SeqID) SeqID="$2"; shift 2;;
     --Threads) Threads="$2"; shift 2;;
     --bed) bed="$2"; shift 2;;
@@ -32,6 +34,7 @@ render() {
   for i in {1..3}; do
     s="${s//\\[BamDir\\]/${BamDir}}"
     s="${s//\\[BamToBedDir\\]/${BamToBedDir}}"
+    s="${s//\\[SampleID\\]/${SampleID}}"
     s="${s//\\[SeqID\\]/${SeqID}}"
     s="${s//\\[Threads\\]/${Threads}}"
     s="${s//\\[bed\\]/${bed}}"
@@ -43,7 +46,7 @@ render() {
 
 # --- Finalize Outputs & Command ---
 bed=$(render "${bed}")
-CMD_LINE='[bedtools] bamtobed -i [BamDir]/[SeqID].analysisReady.bam > [BamToBedDir]/[SeqID].bed && bgzip -@ [Threads] [BamToBedDir]/[SeqID].bed'
+CMD_LINE='bedtools bamtobed -i [BamDir]/[SeqID].analysisReady.bam > [BamDir]/[SeqID].bam.bed && bgzip -@ [Threads] [BamDir]/[SeqID].bam.bed && ln -Tsf [BamDir]/[SeqID].bam.bed.gz [BamDir]/[SampleID].bed.gz && cp [BamDir]/[SeqID].bam.bed.gz [BamToBedDir]/[SampleID].bed.gz'
 CMD=$(render "$CMD_LINE")
 
 echo -e "\n[RUNNING CMD]\n$CMD\n"

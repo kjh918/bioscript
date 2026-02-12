@@ -5,9 +5,9 @@ set -euo pipefail
 BamDir=''
 ReferenceFasta=''
 SeqID=''
+Threads=14
 bind=/storage,/data
 gatk_jar=/gatk/gatk-package-4.4.0.0-local.jar
-gc_threads=14
 insert_size_hist_pdf='[qcResDir]/[SeqID].insert.size.histogram.pdf'
 insert_size_metrics_txt='[qcResDir]/[SeqID].insert.size.metrics.txt'
 java_bin=java
@@ -23,9 +23,9 @@ while [[ $# -gt 0 ]]; do
     --BamDir) BamDir="$2"; shift 2;;
     --ReferenceFasta) ReferenceFasta="$2"; shift 2;;
     --SeqID) SeqID="$2"; shift 2;;
+    --Threads) Threads="$2"; shift 2;;
     --bind) bind="$2"; shift 2;;
     --gatk_jar) gatk_jar="$2"; shift 2;;
-    --gc_threads) gc_threads="$2"; shift 2;;
     --insert_size_hist_pdf) insert_size_hist_pdf="$2"; shift 2;;
     --insert_size_metrics_txt) insert_size_metrics_txt="$2"; shift 2;;
     --java_bin) java_bin="$2"; shift 2;;
@@ -47,9 +47,9 @@ render() {
     s="${s//\\[BamDir\\]/${BamDir}}"
     s="${s//\\[ReferenceFasta\\]/${ReferenceFasta}}"
     s="${s//\\[SeqID\\]/${SeqID}}"
+    s="${s//\\[Threads\\]/${Threads}}"
     s="${s//\\[bind\\]/${bind}}"
     s="${s//\\[gatk_jar\\]/${gatk_jar}}"
-    s="${s//\\[gc_threads\\]/${gc_threads}}"
     s="${s//\\[insert_size_hist_pdf\\]/${insert_size_hist_pdf}}"
     s="${s//\\[insert_size_metrics_txt\\]/${insert_size_metrics_txt}}"
     s="${s//\\[java_bin\\]/${java_bin}}"
@@ -65,7 +65,7 @@ render() {
 # --- Finalize Outputs & Command ---
 insert_size_metrics_txt=$(render "${insert_size_metrics_txt}")
 insert_size_hist_pdf=$(render "${insert_size_hist_pdf}")
-CMD_LINE='export LC_ALL=[lc_all] && singularity exec -B [bind] [sif] [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [gatk_jar] CollectInsertSizeMetrics --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [qcResDir]/[SeqID].insert.size.metrics.txt --Histogram_FILE [qcResDir]/[SeqID].insert.size.histogram.pdf --REFERENCE_SEQUENCE [ReferenceFasta]'
+CMD_LINE='export LC_ALL=[lc_all] && singularity exec -B [bind] [sif] [java_bin] -XX:ParallelGCThreads=[Threads]    -Xmx[xmx_mb]m -jar [gatk_jar] CollectInsertSizeMetrics --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [qcResDir]/[SeqID].insert.size.metrics.txt --Histogram_FILE [qcResDir]/[SeqID].insert.size.histogram.pdf --REFERENCE_SEQUENCE [ReferenceFasta]'
 CMD=$(render "$CMD_LINE")
 
 echo -e "\n[RUNNING CMD]\n$CMD\n"

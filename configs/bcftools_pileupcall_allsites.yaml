@@ -1,6 +1,6 @@
 tool:
   name: bcftools
-  version: "1.17+"
+  version: "1.23"
   profile: "QC_PileupCall_Annotation"
 
 io:
@@ -10,31 +10,29 @@ io:
     InputBamDir:    { required: true }
     ReferenceFasta: { required: true }
     SitesVcfGz:     { required: true }  # mpileup target sites (vcf.gz + index)
-    PopAfAnnotTsv:  { required: true }  # annotate용 (chrom pos ref alt kova_AF kova_AN gnomad_AF gnomad_AN) tsv/tsv.gz
+    PopAfAnnotVcf:  { required: true }  # annotate용 (chrom pos ref alt kova_AF kova_AN gnomad_AF gnomad_AN) vcf.gz
     PopAfHeaderHdr: { required: true }  # INFO header (.hdr)
     ResultDir:      { required: true }
 
   outputs:
     RawVcf:         { default: "[ResultDir]/[SeqID].[Chromosome].sites.raw.vcf.gz" }
     AnnVcf:         { default: "[ResultDir]/[SeqID].[Chromosome].sites.af.vcf.gz" }
-    OutCountsTsvGz: { default: "[ResultDir]/[SeqID].[Chromosome].counts.tsv.gz" }
 
 params:
-  BcftoolsPath: { default: "/storage/apps/bcftools-1.3.1/bin/bcftools" }
+  BcftoolsPath: { default: "/storage/home/jhkim/Apps/bcftools/bcftools" }
   BgzipPath:    { default: "bgzip" }
   Threads:      { default: 4 }
   MinBQ:        { default: 20 }
   MinMQ:        { default: 30 }
   TmpDir:       { default: "[ResultDir]/tmp" }
 
-  # annotate mapping (PopAfAnnotTsv 컬럼 순서 기준)
-  # 1 CHROM, 2 POS, 3 REF, 4 ALT, 5 kova_AF, 6 kova_AN, 7 gnomad_all_AF, 8 gnomad_all_AN
+  
   AnnotationQuery:
-    { default: "CHROM,POS,REF,ALT,INFO/AFPOP:=5,INFO/KOVA_AN:=6,INFO/GNOMAD_AF:=7,INFO/GNOMAD_AN:=8" }
+    { default: "CHROM,POS,REF,ALT,INFO/KOVA_AF,INFO/KOVA_AN,INFO/GNOMAD_AF,INFO/GNOMAD_AN" }
 
   # YAML에서 \t 가 깨질 수 있어서 |로 출력 후 sed로 탭 변환
   VcfQuery:
-    { default: "%CHROM|%POS|%REF|%ALT|%INFO/AFPOP|%INFO/KOVA_AN|%INFO/GNOMAD_AF|%INFO/GNOMAD_AN|[%GT]|[%DP]|[%AD]\\n" }
+    { default: "%CHROM|%POS|%REF|%ALT|%INFO/KOVA_AF|%INFO/KOVA_AN|%INFO/GNOMAD_AF|%INFO/GNOMAD_AN|[%GT]|[%DP]|[%AD]\\n" }
 
 cmd_line: >
   [BcftoolsPath] mpileup
@@ -47,13 +45,13 @@ cmd_line: >
   [InputBamDir]/[SeqID].analysisReady.bam
   |
   [BcftoolsPath] call
-  -Aim
+  -Am
   -Oz -o [RawVcf]
   &&
   [BcftoolsPath] index -f [RawVcf]
   &&
   [BcftoolsPath] annotate
-  -a [PopAfAnnotTsv]
+  -a [PopAfAnnotVcf]
   -c [AnnotationQuery]
   -h [PopAfHeaderHdr]
   -Oz -o [AnnVcf]

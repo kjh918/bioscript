@@ -1,0 +1,38 @@
+tool:
+  name: fastp
+  version: "0.23.4"
+  profile: "singularity_pe_trim"
+
+# output_dir: ./output_scripts
+
+io:
+  inputs:
+    SeqID:        { required: true }
+    RawFastqDir:  { required: true }
+    TrimFastqDir: { required: true }
+    qcResDir:    { required: true }
+
+  outputs:
+    # outputs는 실제 파일 경로 토큰으로만 잡아도 됨(필수 체크 용도)
+    out_read1: { default: '[TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz'}
+    out_read2: { default: '[TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz'}
+    json: { default: '[qcResDir]/[SeqID].fastp.json' }
+    html: { default: '[qcResDir]/[SeqID].fastp.html' }
+
+params:
+  Threads: { type: int, default: 8 }
+  sif:     { type: str, default: "/storage/images/fastp-0.23.4.sif" }
+  bind:    { type: str, default: "/storage,/data" }
+
+  length_required:          { type: int, default: 100 }
+  average_qual:             { type: int, default: 10 }
+  qualified_quality_phred:  { type: int, default: 15 }
+
+
+cmd_line: >
+  singularity exec -B [bind] [sif] fastp --thread [Threads]
+  --in1 [RawFastqDir]/[SeqID]_R1.fastq.gz --in2 [RawFastqDir]/[SeqID]_R2.fastq.gz
+  --out1 [out_read1] --out2 [out_read2]
+  --json [json] --html [html]
+  --trim_poly_g --detect_adapter_for_pe
+  --length_required [length_required] --average_qual [average_qual] --qualified_quality_phred [qualified_quality_phred]

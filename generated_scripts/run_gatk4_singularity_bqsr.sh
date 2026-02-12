@@ -9,8 +9,8 @@ KnownSnp=''
 RecalInputBAM=''
 ReferenceFasta=''
 SeqID=''
+Threads=14
 bind=/storage,/data
-gc_threads=14
 qcResDir=''
 recal_bai='[BamDir]/[SeqID].recal.bam.bai'
 recal_bam='[BamDir]/[SeqID].recal.bam'
@@ -29,8 +29,8 @@ while [[ $# -gt 0 ]]; do
     --RecalInputBAM) RecalInputBAM="$2"; shift 2;;
     --ReferenceFasta) ReferenceFasta="$2"; shift 2;;
     --SeqID) SeqID="$2"; shift 2;;
+    --Threads) Threads="$2"; shift 2;;
     --bind) bind="$2"; shift 2;;
-    --gc_threads) gc_threads="$2"; shift 2;;
     --qcResDir) qcResDir="$2"; shift 2;;
     --recal_bai) recal_bai="$2"; shift 2;;
     --recal_bam) recal_bam="$2"; shift 2;;
@@ -55,8 +55,8 @@ render() {
     s="${s//\\[RecalInputBAM\\]/${RecalInputBAM}}"
     s="${s//\\[ReferenceFasta\\]/${ReferenceFasta}}"
     s="${s//\\[SeqID\\]/${SeqID}}"
+    s="${s//\\[Threads\\]/${Threads}}"
     s="${s//\\[bind\\]/${bind}}"
-    s="${s//\\[gc_threads\\]/${gc_threads}}"
     s="${s//\\[qcResDir\\]/${qcResDir}}"
     s="${s//\\[recal_bai\\]/${recal_bai}}"
     s="${s//\\[recal_bam\\]/${recal_bam}}"
@@ -72,7 +72,7 @@ render() {
 recal_table=$(render "${recal_table}")
 recal_bam=$(render "${recal_bam}")
 recal_bai=$(render "${recal_bai}")
-CMD_LINE='singularity exec -B [bind] [sif] gatk BaseRecalibrator --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m" --input [RecalInputBAM] --reference [ReferenceFasta] --output [qcResDir]/[SeqID].recal.table.txt --known-sites [KnownSnp] --known-sites [KnownIndel1] --known-sites [KnownIndel2] && singularity exec -B [bind] [sif] gatk ApplyBQSR --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m" --input [RecalInputBAM] --bqsr-recal-file [qcResDir]/[SeqID].recal.table.txt --output [BamDir]/[SeqID].recal.bam'
+CMD_LINE='singularity exec -B [bind] [sif] gatk BaseRecalibrator --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --input [RecalInputBAM] --reference [ReferenceFasta] --output [qcResDir]/[SeqID].recal.table.txt --known-sites [KnownSnp] --known-sites [KnownIndel1] --known-sites [KnownIndel2] && singularity exec -B [bind] [sif] gatk ApplyBQSR --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --input [RecalInputBAM] --bqsr-recal-file [qcResDir]/[SeqID].recal.table.txt --output [BamDir]/[SeqID].recal.bam'
 CMD=$(render "$CMD_LINE")
 
 echo -e "\n[RUNNING CMD]\n$CMD\n"

@@ -3,10 +3,10 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = 'singularity exec -B [bind] [sif] gatk MarkDuplicates --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --INPUT [BamDir]/[SeqID].sorted.bam --OUTPUT [BamDir]/[SeqID].sorted.dedup.bam --METRICS_FILE [qcResDir]/[SeqID].mark.duplicates.metrics.txt [md_args]'
+CMD_LINE = 'singularity exec -B [bind] [sif] /opt/mosdepth --threads [Threads] [mosdepth_args] --by [bin] --mapq [mapq] [qcResDir]/[SeqID] [BamDir]/[SeqID].analysisReady.bam'
 REQUIRED_KEYS = ['SeqID', 'BamDir', 'qcResDir']
-DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'Threads': '14', 'xmx_mb': '16384', 'md_args': '--CREATE_INDEX true --REMOVE_SEQUENCING_DUPLICATES true', 'dedup_bam': '[BamDir]/[SeqID].sorted.dedup.bam', 'dedup_bai': '[BamDir]/[SeqID].sorted.dedup.bam.bai', 'metrics_txt': '[qcResDir]/[SeqID].mark.duplicates.metrics.txt'}
-OUTPUT_KEYS = ['dedup_bam', 'dedup_bai', 'metrics_txt']
+DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/mosdepth-0.3.6.sif', 'Threads': '8', 'bin': '100000', 'mapq': '20', 'mosdepth_args': '--no-per-base --fast-mode', 'prefix': '[qcResDir]/[SeqID]', 'regions_bed_gz': '[qcResDir]/[SeqID].regions.bed.gz', 'regions_bed_gz_csi': '[qcResDir]/[SeqID].regions.bed.gz.csi', 'summary_txt': '[qcResDir]/[SeqID].mosdepth.summary.txt', 'global_dist_txt': '[qcResDir]/[SeqID].global.dist.txt'}
+OUTPUT_KEYS = ['prefix', 'regions_bed_gz', 'regions_bed_gz_csi', 'summary_txt', 'global_dist_txt']
 
 def render(s, ctx):
     def repl(m):
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['BamDir', 'SeqID', 'Threads', 'bind', 'dedup_bai', 'dedup_bam', 'md_args', 'metrics_txt', 'qcResDir', 'sif', 'xmx_mb']:
+    for k in ['BamDir', 'SeqID', 'Threads', 'bin', 'bind', 'global_dist_txt', 'mapq', 'mosdepth_args', 'prefix', 'qcResDir', 'regions_bed_gz', 'regions_bed_gz_csi', 'sif', 'summary_txt']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

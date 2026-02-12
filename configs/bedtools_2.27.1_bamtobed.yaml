@@ -22,6 +22,10 @@ params:
   Threads:       { type: int, default: 8 }
   
 cmd_line: >
-  ${bedtools} bamtobed -i ${BamDir}/${SeqID}.analysisReady.bam > ${BamToBedDir}/${SeqID}.bed
-  &&
-  bgzip -@ ${Threads} ${BamToBedDir}/${SeqID}.bed
+    bedtools bamtobed -i ${BamDir}/${SeqID}.analysisReady.bam > ${BamDir}/${SeqID}.bam.bed
+    &&
+    bgzip -@ ${Threads} ${BamDir}/${SeqID}.bam.bed
+    &&
+    ln -Tsf ${BamDir}/${SeqID}.bam.bed.gz ${BamDir}/${SampleID}.bed.gz
+    &&
+    cp ${BamDir}/${SeqID}.bam.bed.gz ${BamToBedDir}/${SampleID}.bed.gz

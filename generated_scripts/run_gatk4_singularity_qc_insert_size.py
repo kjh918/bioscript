@@ -3,9 +3,9 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = 'export LC_ALL=[lc_all] && singularity exec -B [bind] [sif] [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [gatk_jar] CollectInsertSizeMetrics --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [qcResDir]/[SeqID].insert.size.metrics.txt --Histogram_FILE [qcResDir]/[SeqID].insert.size.histogram.pdf --REFERENCE_SEQUENCE [ReferenceFasta]'
+CMD_LINE = 'export LC_ALL=[lc_all] && singularity exec -B [bind] [sif] [java_bin] -XX:ParallelGCThreads=[Threads]    -Xmx[xmx_mb]m -jar [gatk_jar] CollectInsertSizeMetrics --INPUT [BamDir]/[SeqID].analysisReady.bam --OUTPUT [qcResDir]/[SeqID].insert.size.metrics.txt --Histogram_FILE [qcResDir]/[SeqID].insert.size.histogram.pdf --REFERENCE_SEQUENCE [ReferenceFasta]'
 REQUIRED_KEYS = ['SeqID', 'BamDir', 'qcResDir', 'ReferenceFasta']
-DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'gc_threads': '14', 'xmx_mb': '16384', 'gatk_jar': '/gatk/gatk-package-4.4.0.0-local.jar', 'java_bin': 'java', 'lc_all': 'en_US.UTF-8', 'insert_size_metrics_txt': '[qcResDir]/[SeqID].insert.size.metrics.txt', 'insert_size_hist_pdf': '[qcResDir]/[SeqID].insert.size.histogram.pdf'}
+DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'Threads': '14', 'xmx_mb': '16384', 'gatk_jar': '/gatk/gatk-package-4.4.0.0-local.jar', 'java_bin': 'java', 'lc_all': 'en_US.UTF-8', 'insert_size_metrics_txt': '[qcResDir]/[SeqID].insert.size.metrics.txt', 'insert_size_hist_pdf': '[qcResDir]/[SeqID].insert.size.histogram.pdf'}
 OUTPUT_KEYS = ['insert_size_metrics_txt', 'insert_size_hist_pdf']
 
 def render(s, ctx):
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['BamDir', 'ReferenceFasta', 'SeqID', 'bind', 'gatk_jar', 'gc_threads', 'insert_size_hist_pdf', 'insert_size_metrics_txt', 'java_bin', 'lc_all', 'qcResDir', 'sif', 'xmx_mb']:
+    for k in ['BamDir', 'ReferenceFasta', 'SeqID', 'Threads', 'bind', 'gatk_jar', 'insert_size_hist_pdf', 'insert_size_metrics_txt', 'java_bin', 'lc_all', 'qcResDir', 'sif', 'xmx_mb']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

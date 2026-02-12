@@ -3,10 +3,10 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = '[BcftoolsPath] mpileup -f [ReferenceFasta] -T [SitesVcfGz] -q [MinMQ] -Q [MinBQ] -a FORMAT/AD,FORMAT/DP -Ou [InputBamDir]/[SeqID].analysisReady.bam | [BcftoolsPath] call -Aim -Oz -o [RawVcf] && [BcftoolsPath] index -f [RawVcf] && [BcftoolsPath] annotate -a [PopAfAnnotTsv] -c [AnnotationQuery] -h [PopAfHeaderHdr] -Oz -o [AnnVcf] [RawVcf] && [BcftoolsPath] index -f [AnnVcf]'
-REQUIRED_KEYS = ['SeqID', 'Chromosome', 'InputBamDir', 'ReferenceFasta', 'SitesVcfGz', 'PopAfAnnotTsv', 'PopAfHeaderHdr', 'ResultDir']
-DEFAULTS = {'BcftoolsPath': '/storage/apps/bcftools-1.3.1/bin/bcftools', 'BgzipPath': 'bgzip', 'Threads': '4', 'MinBQ': '20', 'MinMQ': '30', 'TmpDir': '[ResultDir]/tmp', 'AnnotationQuery': 'CHROM,POS,REF,ALT,INFO/AFPOP:=5,INFO/KOVA_AN:=6,INFO/GNOMAD_AF:=7,INFO/GNOMAD_AN:=8', 'VcfQuery': '%CHROM|%POS|%REF|%ALT|%INFO/AFPOP|%INFO/KOVA_AN|%INFO/GNOMAD_AF|%INFO/GNOMAD_AN|[%GT]|[%DP]|[%AD]\\n', 'RawVcf': '[ResultDir]/[SeqID].[Chromosome].sites.raw.vcf.gz', 'AnnVcf': '[ResultDir]/[SeqID].[Chromosome].sites.af.vcf.gz', 'OutCountsTsvGz': '[ResultDir]/[SeqID].[Chromosome].counts.tsv.gz'}
-OUTPUT_KEYS = ['RawVcf', 'AnnVcf', 'OutCountsTsvGz']
+CMD_LINE = '[BcftoolsPath] mpileup -f [ReferenceFasta] -T [SitesVcfGz] -q [MinMQ] -Q [MinBQ] -a FORMAT/AD,FORMAT/DP -Ou [InputBamDir]/[SeqID].analysisReady.bam | [BcftoolsPath] call -Am -Oz -o [RawVcf] && [BcftoolsPath] index -f [RawVcf] && [BcftoolsPath] annotate -a [PopAfAnnotVcf] -c [AnnotationQuery] -h [PopAfHeaderHdr] -Oz -o [AnnVcf] [RawVcf] && [BcftoolsPath] index -f [AnnVcf]'
+REQUIRED_KEYS = ['SeqID', 'Chromosome', 'InputBamDir', 'ReferenceFasta', 'SitesVcfGz', 'PopAfAnnotVcf', 'PopAfHeaderHdr', 'ResultDir']
+DEFAULTS = {'BcftoolsPath': '/storage/home/jhkim/Apps/bcftools/bcftools', 'BgzipPath': 'bgzip', 'Threads': '4', 'MinBQ': '20', 'MinMQ': '30', 'TmpDir': '[ResultDir]/tmp', 'AnnotationQuery': 'CHROM,POS,REF,ALT,INFO/KOVA_AF,INFO/KOVA_AN,INFO/GNOMAD_AF,INFO/GNOMAD_AN', 'VcfQuery': '%CHROM|%POS|%REF|%ALT|%INFO/KOVA_AF|%INFO/KOVA_AN|%INFO/GNOMAD_AF|%INFO/GNOMAD_AN|[%GT]|[%DP]|[%AD]\\n', 'RawVcf': '[ResultDir]/[SeqID].[Chromosome].sites.raw.vcf.gz', 'AnnVcf': '[ResultDir]/[SeqID].[Chromosome].sites.af.vcf.gz'}
+OUTPUT_KEYS = ['RawVcf', 'AnnVcf']
 
 def render(s, ctx):
     def repl(m):
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['AnnVcf', 'AnnotationQuery', 'BcftoolsPath', 'BgzipPath', 'Chromosome', 'InputBamDir', 'MinBQ', 'MinMQ', 'OutCountsTsvGz', 'PopAfAnnotTsv', 'PopAfHeaderHdr', 'RawVcf', 'ReferenceFasta', 'ResultDir', 'SeqID', 'SitesVcfGz', 'Threads', 'TmpDir', 'VcfQuery']:
+    for k in ['AnnVcf', 'AnnotationQuery', 'BcftoolsPath', 'BgzipPath', 'Chromosome', 'InputBamDir', 'MinBQ', 'MinMQ', 'PopAfAnnotVcf', 'PopAfHeaderHdr', 'RawVcf', 'ReferenceFasta', 'ResultDir', 'SeqID', 'SitesVcfGz', 'Threads', 'TmpDir', 'VcfQuery']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

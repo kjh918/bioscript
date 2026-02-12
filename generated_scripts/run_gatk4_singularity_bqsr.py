@@ -3,9 +3,9 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = 'singularity exec -B [bind] [sif] gatk BaseRecalibrator --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m" --input [RecalInputBAM] --reference [ReferenceFasta] --output [qcResDir]/[SeqID].recal.table.txt --known-sites [KnownSnp] --known-sites [KnownIndel1] --known-sites [KnownIndel2] && singularity exec -B [bind] [sif] gatk ApplyBQSR --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m" --input [RecalInputBAM] --bqsr-recal-file [qcResDir]/[SeqID].recal.table.txt --output [BamDir]/[SeqID].recal.bam'
+CMD_LINE = 'singularity exec -B [bind] [sif] gatk BaseRecalibrator --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --input [RecalInputBAM] --reference [ReferenceFasta] --output [qcResDir]/[SeqID].recal.table.txt --known-sites [KnownSnp] --known-sites [KnownIndel1] --known-sites [KnownIndel2] && singularity exec -B [bind] [sif] gatk ApplyBQSR --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m" --input [RecalInputBAM] --bqsr-recal-file [qcResDir]/[SeqID].recal.table.txt --output [BamDir]/[SeqID].recal.bam'
 REQUIRED_KEYS = ['SeqID', 'RecalInputBAM', 'ReferenceFasta', 'BamDir', 'qcResDir', 'KnownSnp', 'KnownIndel1', 'KnownIndel2']
-DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'gc_threads': '14', 'xmx_mb': '16384', 'recal_table': '[qcResDir]/[SeqID].recal.table.txt', 'recal_bam': '[BamDir]/[SeqID].recal.bam', 'recal_bai': '[BamDir]/[SeqID].recal.bam.bai'}
+DEFAULTS = {'bind': '/storage,/data', 'sif': '/storage/images/gatk-4.4.0.0.sif', 'Threads': '14', 'xmx_mb': '16384', 'recal_table': '[qcResDir]/[SeqID].recal.table.txt', 'recal_bam': '[BamDir]/[SeqID].recal.bam', 'recal_bai': '[BamDir]/[SeqID].recal.bam.bai'}
 OUTPUT_KEYS = ['recal_table', 'recal_bam', 'recal_bai']
 
 def render(s, ctx):
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['BamDir', 'KnownIndel1', 'KnownIndel2', 'KnownSnp', 'RecalInputBAM', 'ReferenceFasta', 'SeqID', 'bind', 'gc_threads', 'qcResDir', 'recal_bai', 'recal_bam', 'recal_table', 'sif', 'xmx_mb']:
+    for k in ['BamDir', 'KnownIndel1', 'KnownIndel2', 'KnownSnp', 'RecalInputBAM', 'ReferenceFasta', 'SeqID', 'Threads', 'bind', 'qcResDir', 'recal_bai', 'recal_bam', 'recal_table', 'sif', 'xmx_mb']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

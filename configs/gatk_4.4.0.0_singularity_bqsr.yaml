@@ -32,12 +32,12 @@ params:
   bind:       { type: str, default: "/storage,/data" }
   sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
 
-  gc_threads: { type: int, default: 14 }
+  Threads:    { type: int, default: 14 }
   xmx_mb:     { type: int, default: 16384 }
 
 cmd_line: >
   singularity exec -B [bind] [sif] gatk BaseRecalibrator
-  --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m"
+  --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
   --input [RecalInputBAM]
   --reference [ReferenceFasta]
   --output [qcResDir]/[SeqID].recal.table.txt
@@ -46,7 +46,7 @@ cmd_line: >
   --known-sites [KnownIndel2]
   &&
   singularity exec -B [bind] [sif] gatk ApplyBQSR
-  --java-options "-XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m"
+  --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
   --input [RecalInputBAM]
   --bqsr-recal-file [qcResDir]/[SeqID].recal.table.txt
   --output [BamDir]/[SeqID].recal.bam

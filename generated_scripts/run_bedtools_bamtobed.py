@@ -3,7 +3,7 @@ import argparse, json, re, subprocess, os, shlex
 from pathlib import Path
 
 TOKEN_PAT = re.compile(r"\[([A-Za-z0-9_]*)\]")
-CMD_LINE = '[bedtools] bamtobed -i [BamDir]/[SeqID].analysisReady.bam > [BamToBedDir]/[SeqID].bed && bgzip -@ [Threads] [BamToBedDir]/[SeqID].bed'
+CMD_LINE = 'bedtools bamtobed -i [BamDir]/[SeqID].analysisReady.bam > [BamDir]/[SeqID].bam.bed && bgzip -@ [Threads] [BamDir]/[SeqID].bam.bed && ln -Tsf [BamDir]/[SeqID].bam.bed.gz [BamDir]/[SampleID].bed.gz && cp [BamDir]/[SeqID].bam.bed.gz [BamToBedDir]/[SampleID].bed.gz'
 REQUIRED_KEYS = ['SeqID', 'BamDir', 'BamToBedDir']
 DEFAULTS = {'bedtools': 'bedtools', 'Threads': '8', 'bed': '[BamToBedDir]/[SeqID].bed'}
 OUTPUT_KEYS = ['bed']
@@ -20,7 +20,7 @@ def render(s, ctx):
 
 def main():
     parser = argparse.ArgumentParser()
-    for k in ['BamDir', 'BamToBedDir', 'SeqID', 'Threads', 'bed', 'bedtools']:
+    for k in ['BamDir', 'BamToBedDir', 'SampleID', 'SeqID', 'Threads', 'bed', 'bedtools']:
         parser.add_argument(f"--{k}", default=DEFAULTS.get(k, ""))
     parser.add_argument("--cwd", default=".")
     parser.add_argument("--emit-outputs", default="")

@@ -16,7 +16,6 @@ aligned_sam='[BamDir]/[SeqID].bwa.mem.sam'
 bind=/storage,/data
 bwa_args='-M -Y -L 50,50'
 bwa_sif=/storage/images/bwa-0.7.17.sif
-gc_threads=14
 java_bin=java
 mba_args='--CREATE_INDEX true --MAX_INSERTIONS_OR_DELETIONS -1 --CLIP_ADAPTERS false --PRIMARY_ALIGNMENT_STRATEGY MostDistant --ATTRIBUTES_TO_RETAIN XS --EXPECTED_ORIENTATIONS FR --EXPECTED_ORIENTATIONS RF
 '
@@ -44,7 +43,6 @@ while [[ $# -gt 0 ]]; do
     --bind) bind="$2"; shift 2;;
     --bwa_args) bwa_args="$2"; shift 2;;
     --bwa_sif) bwa_sif="$2"; shift 2;;
-    --gc_threads) gc_threads="$2"; shift 2;;
     --java_bin) java_bin="$2"; shift 2;;
     --mba_args) mba_args="$2"; shift 2;;
     --picard_jar) picard_jar="$2"; shift 2;;
@@ -77,7 +75,6 @@ render() {
     s="${s//\\[bind\\]/${bind}}"
     s="${s//\\[bwa_args\\]/${bwa_args}}"
     s="${s//\\[bwa_sif\\]/${bwa_sif}}"
-    s="${s//\\[gc_threads\\]/${gc_threads}}"
     s="${s//\\[java_bin\\]/${java_bin}}"
     s="${s//\\[mba_args\\]/${mba_args}}"
     s="${s//\\[picard_jar\\]/${picard_jar}}"
@@ -95,7 +92,7 @@ unmapped_bam=$(render "${unmapped_bam}")
 aligned_sam=$(render "${aligned_sam}")
 primary_bam=$(render "${primary_bam}")
 primary_bai=$(render "${primary_bai}")
-CMD_LINE='[java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [picard_jar] FastqToSam --FASTQ [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz --FASTQ2 [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz --SAMPLE_NAME [SeqID] --OUTPUT [BamDir]/[SeqID].fastqtosam.bam --READ_GROUP_NAME [ReadGroupID] --PLATFORM [ReadGroupPlatform] --LIBRARY_NAME [ReadGroupLibrary] --SEQUENCING_CENTER [ReadGroupCenter] --TMP_DIR [TmpDir] && singularity exec -B [bind] [bwa_sif] bwa mem [bwa_args] -t [Threads] -R "@RG\tID:[ReadGroupID]\tPL:[ReadGroupPlatform]\tLB:[ReadGroupLibrary]\tSM:[SeqID]\tCN:[ReadGroupCenter]" [ReferenceFasta] [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz > [BamDir]/[SeqID].bwa.mem.sam && [java_bin] -XX:ParallelGCThreads=[gc_threads] -Xmx[xmx_mb]m -jar [picard_jar] MergeBamAlignment --UNMAPPED_BAM [BamDir]/[SeqID].fastqtosam.bam --ALIGNED_BAM [BamDir]/[SeqID].bwa.mem.sam --REFERENCE_SEQUENCE [ReferenceFasta] --OUTPUT [BamDir]/[SeqID].primary.bam [mba_args]'
+CMD_LINE='[java_bin] -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m -jar [picard_jar] FastqToSam --FASTQ [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz --FASTQ2 [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz --SAMPLE_NAME [SeqID] --OUTPUT [BamDir]/[SeqID].fastqtosam.bam --READ_GROUP_NAME [ReadGroupID] --PLATFORM [ReadGroupPlatform] --LIBRARY_NAME [ReadGroupLibrary] --SEQUENCING_CENTER [ReadGroupCenter] --TMP_DIR [TmpDir] && singularity exec -B [bind] [bwa_sif] bwa mem [bwa_args] -t [Threads] -R "@RG\tID:[ReadGroupID]\tPL:[ReadGroupPlatform]\tLB:[ReadGroupLibrary]\tSM:[SeqID]\tCN:[ReadGroupCenter]" [ReferenceFasta] [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz > [BamDir]/[SeqID].bwa.mem.sam && [java_bin] -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m -jar [picard_jar] MergeBamAlignment --UNMAPPED_BAM [BamDir]/[SeqID].fastqtosam.bam --ALIGNED_BAM [BamDir]/[SeqID].bwa.mem.sam --REFERENCE_SEQUENCE [ReferenceFasta] --OUTPUT [BamDir]/[SeqID].primary.bam [mba_args]'
 CMD=$(render "$CMD_LINE")
 
 echo -e "\n[RUNNING CMD]\n$CMD\n"
