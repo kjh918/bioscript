@@ -1,36 +1,42 @@
+# =========================================================
+# fastp: An ultra-fast all-in-one FASTQ preprocessor
+#  - Quality filtering, adapter trimming, polyG tail trimming
+#  - Singularity-based execution for reproducibility
+# =========================================================
 tool:
   name: fastp
   version: "0.23.4"
-  profile: "singularity_pe_trim"
-
-# output_dir: ./output_scripts
+  profile: "pe_trim_using_singularity"
 
 io:
   inputs:
-    SeqID:        { required: true }
-    RawFastqDir:  { required: true }
-    TrimFastqDir: { required: true }
-    qcResDir:    { required: true }
+    SeqID:        { required: true, help: "Sequence identifier used for file naming" }
+    RawFastqDir:  { required: true, help: "Directory containing the raw input FASTQ files. Suffix = [SeqID]_R1.fastq.gz and [SeqID]_R2.fastq.gz" }
+    TrimFastqDir: { required: true, help: "Directory where trimmed FASTQ files will be stored. Trimmed Read = Suffix = [SeqID].trimmed_R1.fastq.gz and [SeqID].trimmed_R2.fastq.gz" }
+    qcResDir:     { required: true, help: "Directory where fastp JSON and HTML reports will be stored" }
 
   outputs:
-    # outputs는 실제 파일 경로 토큰으로만 잡아도 됨(필수 체크 용도)
-    out_read1: { default: '[TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz'}
-    out_read2: { default: '[TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz'}
-    json: { default: '[qcResDir]/[SeqID].fastp.json' }
-    html: { default: '[qcResDir]/[SeqID].fastp.html' }
+    # 출력 파일은 [TrimFastqDir]와 [qcResDir] 내부에 생성됩니다.
+    out_read1: { default: "[TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz", help: "Trimmed Read 1 FASTQ file" }
+    out_read2: { default: "[TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz", help: "Trimmed Read 2 FASTQ file" }
+    json:      { default: "[qcResDir]/[SeqID].fastp.json", help: "fastp quality report in JSON format" }
+    html:      { default: "[qcResDir]/[SeqID].fastp.html", help: "fastp quality report in HTML format" }
 
 params:
-  Threads: { type: int, default: 8 }
-  sif:     { type: str, default: "/storage/images/fastp-0.23.4.sif" }
-  bind:    { type: str, default: "/storage,/data" }
+  # Binaries & Container
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  fastp_bin:       { type: str, default: "fastp", help: "fastp binary name or path inside the container" }
+  sif:             { type: str, default: "/storage/images/fastp-0.23.4.sif", help: "Path to fastp Singularity image file" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for Singularity execution" }
 
-  length_required:          { type: int, default: 100 }
-  average_qual:             { type: int, default: 10 }
-  qualified_quality_phred:  { type: int, default: 15 }
-
+  # Resource & Filtering Parameters
+  Threads:                 { type: int, default: 8, help: "Number of threads to be used by fastp" }
+  length_required:         { type: int, default: 100, help: "Reads shorter than this length will be discarded" }
+  average_qual:            { type: int, default: 10, help: "Reads with average quality score lower than this will be discarded" }
+  qualified_quality_phred: { type: int, default: 15, help: "The quality threshold that a base is considered as qualified" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] fastp --thread [Threads]
+  [singularity_bin] exec -B [bind] [sif] [fastp_bin] --thread [Threads]
   --in1 [RawFastqDir]/[SeqID]_R1.fastq.gz --in2 [RawFastqDir]/[SeqID]_R2.fastq.gz
   --out1 [out_read1] --out2 [out_read2]
   --json [json] --html [html]

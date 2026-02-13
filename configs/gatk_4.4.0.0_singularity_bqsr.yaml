@@ -1,52 +1,65 @@
 # =========================================================
-# GATK 4 BQSR
-#  - BaseRecalibrator
-#  - ApplyBQSR
+# GATK4 BQSR (Base Quality Score Recalibration)
+#  1. BaseRecalibrator: 보정 테이블(.table) 생성
+#  2. ApplyBQSR: 보정된 품질 점수를 BAM에 적용
 # =========================================================
 tool:
   name: gatk4
   version: "4.4.0.0"
-  profile: "singularity_bqsr"
+  profile: "bqsr_using_singularity"
 
 io:
   inputs:
-    SeqID:          { required: true }
-    RecalInputBAM:  { required: true }
-    ReferenceFasta: { required: true }
-    BamDir:         { required: true }
-    qcResDir:       { required: true }
+    SeqID:           { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:          { required: true, help: "Directory containing the input BAM and target output BAM" }
+    qcResDir:        { required: true, help: "Directory for the recalibration table output" }
+    ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
-    KnownSnp:       { required: true }
-    KnownIndel1:    { required: true }
-    KnownIndel2:    { required: true }
+    # Known Sites (보정의 기준이 되는 데이터베이스)
+    KnownSnp:        { required: true, help: "Path to known SNPs VCF (e.g., dbSNP)" }
+    KnownIndel1:     { required: true, help: "Path to known Indels VCF (e.g., Mills and 1000G)" }
+    KnownIndel2:     { required: true, help: "Path to additional known Indels VCF" }
 
   outputs:
     recal_table:
-      default: "[qcResDir]/[SeqID].recal.table.txt"
+      default: "[qcResDir]/[SeqID].[InputSuffix].recal_table.txt"
+      help: "Recalibration report table used by ApplyBQSR"
     recal_bam:
-      default: "[BamDir]/[SeqID].recal.bam"
+      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+      help: "Final recalibrated BAM file"
     recal_bai:
-      default: "[BamDir]/[SeqID].recal.bam.bai"
+      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai"
+      help: "Index file for the recalibrated BAM"
 
 params:
-  bind:       { type: str, default: "/storage,/data" }
-  sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+  # --- [Suffix 제어] ---
+  # 보통 MarkDuplicates 이후(dedup)를 입력으로 받습니다.
+  InputSuffix:  { type: str, default: "dedup", help: "Suffix of input BAM (e.g., dedup, sorted, primary)" }
+  OutputSuffix: { type: str, default: "recal", help: "Suffix for output BAM (e.g., recal, bqsr)" }
 
-  Threads:    { type: int, default: 14 }
-  xmx_mb:     { type: int, default: 16384 }
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  gatk_bin:        { type: str, default: "gatk", help: "GATK wrapper script or binary inside container" }
+  sif:             { type: str, default: "/storage/images/gatk-4.4.0.0.sif", help: "GATK singularity image file" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+
+  # --- [Resources] ---
+  Threads: { type: int, default: 14, help: "Threads for ParallelGC and GATK engine" }
+  xmx_mb:  { type: int, default: 16384, help: "Maximum Java heap memory (MB)" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] gatk BaseRecalibrator
+  [singularity_bin] exec -B [bind] [sif] [gatk_bin] BaseRecalibrator
   --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
-  --input [RecalInputBAM]
+  --input [BamDir]/[SeqID].[InputSuffix].bam
   --reference [ReferenceFasta]
-  --output [qcResDir]/[SeqID].recal.table.txt
+  --output [recal_table]
   --known-sites [KnownSnp]
   --known-sites [KnownIndel1]
   --known-sites [KnownIndel2]
   &&
-  singularity exec -B [bind] [sif] gatk ApplyBQSR
+  [singularity_bin] exec -B [bind] [sif] [gatk_bin] ApplyBQSR
   --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
-  --input [RecalInputBAM]
-  --bqsr-recal-file [qcResDir]/[SeqID].recal.table.txt
-  --output [BamDir]/[SeqID].recal.bam
+  --input [BamDir]/[SeqID].[InputSuffix].bam
+  --bqsr-recal-file [recal_table]
+  --output [recal_bam]
+  --create-output-bam-index true

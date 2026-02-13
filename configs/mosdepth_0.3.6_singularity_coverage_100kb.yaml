@@ -1,6 +1,8 @@
 # =========================================================
-# (5) mosdepth coverage (singularity)
-#     mosdepth prefix를 qcResDir/SeqID 로 두면 여러 파일 생성됨
+# mosdepth: Fast BAM/CRAM depth calculation
+#  - Generates global distribution and quantized/thresholded depth
+#  - Flexible input via InputSuffix (e.g., analysisReady, recal, sorted)
+#  - Prefix-based output management for multi-step QC
 # =========================================================
 tool:
   name: mosdepth
@@ -9,35 +11,40 @@ tool:
 
 io:
   inputs:
-    SeqID:    { required: true }
-    BamDir:   { required: true }
-    qcResDir: { required: true }
+    SeqID:    { required: true, help: "Sequence identifier used for file tracking" }
+    BamDir:   { required: true, help: "Directory containing the BAM file to be analyzed" }
+    qcResDir: { required: true, help: "Output directory for coverage results" }
 
   outputs:
-    # mosdepth는 prefix 기반으로 여러 파일 생성
-    prefix:              { default: "[qcResDir]/[SeqID]" }
-    regions_bed_gz:      { default: "[qcResDir]/[SeqID].regions.bed.gz" }
-    regions_bed_gz_csi:  { default: "[qcResDir]/[SeqID].regions.bed.gz.csi" }
-    summary_txt:         { default: "[qcResDir]/[SeqID].mosdepth.summary.txt" }
-    global_dist_txt:     { default: "[qcResDir]/[SeqID].global.dist.txt" }
+    # prefix 자체를 출력 토큰으로 정의하여 커맨드라인에서 참조
+    prefix:             { default: "[qcResDir]/[SeqID].[InputSuffix]", help: "Output prefix for all mosdepth result files" }
+    regions_bed_gz:     { default: "[prefix].regions.bed.gz", help: "Compressed BED file containing region depth" }
+    regions_bed_gz_csi: { default: "[prefix].regions.bed.gz.csi", help: "Index file for the regions BED" }
+    summary_txt:        { default: "[prefix].mosdepth.summary.txt", help: "Summary of mean depths per chromosome/region" }
+    global_dist_txt:    { default: "[prefix].global.dist.txt", help: "Global distribution of coverage" }
 
 params:
-  bind:       { type: str, default: "/storage,/data" }
-  sif:        { type: str, default: "/storage/images/mosdepth-0.3.6.sif" }
-  Threads:    { type: int, default: 8 }
-  bin:        { default: 100000 }
-  mapq:       { type: int, default: 20 }
+  # --- [Suffix 제어] ---
+  # 기본 분석 대상은 최종 분석 준비 완료(analysisReady) BAM입니다.
+  InputSuffix: { type: str, default: "analysisReady", help: "Suffix of the input BAM (e.g., analysisReady, recal, sorted)" }
 
-  # mosdepth 옵션 묶음
-  mosdepth_args:
-    type: str
-    default: "--no-per-base --fast-mode"
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  mosdepth_bin:    { type: str, default: "/opt/mosdepth", help: "Path to mosdepth binary inside container" }
+  sif:             { type: str, default: "/storage/images/mosdepth-0.3.6.sif", help: "mosdepth singularity image file" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+
+  # --- [Resources & Options] ---
+  Threads:       { type: int, default: 8, help: "Number of threads for decompression and processing" }
+  bin:           { type: int, default: 100000, help: "Window size for quantized output (used with --by)" }
+  mapq:          { type: int, default: 20, help: "Minimum mapping quality for a read to be counted" }
+  mosdepth_args: { type: str, default: "--no-per-base --fast-mode", help: "Additional mosdepth arguments" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] /opt/mosdepth
+  [singularity_bin] exec -B [bind] [sif] [mosdepth_bin]
   --threads [Threads]
   [mosdepth_args]
   --by [bin]
   --mapq [mapq]
-  [qcResDir]/[SeqID]
-  [BamDir]/[SeqID].analysisReady.bam
+  [prefix]
+  [BamDir]/[SeqID].[InputSuffix].bam

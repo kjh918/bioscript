@@ -1,42 +1,48 @@
 # =========================================================
-# (4) GATK4 CollectInsertSizeMetrics (jar 호출 + PDF histogram)
-#     + LC_ALL 설정은 cmd_line에 포함
+# GATK4 CollectInsertSizeMetrics (Modular Version)
+#  - Collects insert size metrics and generates PDF histogram
+#  - Includes LC_ALL locale setting for PDF generation compatibility
 # =========================================================
 tool:
   name: gatk4
   version: "4.4.0.0"
-  profile: "singularity_qc_insert_size"
+  profile: "qc_insert_size_using_singularity"
 
 io:
   inputs:
-    SeqID:          { required: true }
-    BamDir:         { required: true }
-    qcResDir:       { required: true }
-    ReferenceFasta: { required: true }
+    SeqID:           { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:          { required: true, help: "Directory containing the BAM file to be analyzed" }
+    qcResDir:        { required: true, help: "Output directory for QC metrics and PDF histogram" }
+    ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
   outputs:
     insert_size_metrics_txt:
-      default: "[qcResDir]/[SeqID].insert.size.metrics.txt"
+      default: "[qcResDir]/[SeqID].[InputSuffix].insert_size.metrics.txt"
+      help: "Text file containing detailed insert size statistics"
     insert_size_hist_pdf:
-      default: "[qcResDir]/[SeqID].insert.size.histogram.pdf"
+      default: "[qcResDir]/[SeqID].[InputSuffix].insert_size.histogram.pdf"
+      help: "PDF file containing the insert size distribution histogram"
 
 params:
-  bind:       { type: str, default: "/storage,/data" }
-  sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
-  Threads:    { type: int, default: 14 }
-  xmx_mb:     { type: int, default: 16384 }
 
-  gatk_jar:   { type: str, default: "/gatk/gatk-package-4.4.0.0-local.jar" }
-  java_bin:   { type: str, default: "java" }
-  lc_all:     { type: str, default: "en_US.UTF-8" }
+  InputSuffix:     { type: str, default: "analysisReady", help: "Suffix of the input BAM file (e.g., analysisReady, recal, primary)" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  java_bin:        { type: str, default: "java", help: "Path to java executable inside or outside container" }
+  gatk_jar:        { type: str, default: "/gatk/gatk-package-4.4.0.0-local.jar", help: "Path to GATK local jar file inside container" }
+  sif:             { type: str, default: "/storage/images/gatk-4.4.0.0.sif", help: "Path to GATK singularity image (.sif)" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+  
+  # --- [Resources & Environment] ---
+  Threads: { type: int, default: 14, help: "Number of threads for ParallelGC" }
+  xmx_mb:  { type: int, default: 16384, help: "Maximum Java heap memory (MB)" }
 
 cmd_line: >
-  export LC_ALL=[lc_all]
-  &&
-  singularity exec -B [bind] [sif] [java_bin]
-  -XX:ParallelGCThreads=[Threads]    -Xmx[xmx_mb]m
+  [singularity_bin] exec -B [bind] [sif] [java_bin]
+  -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m
   -jar [gatk_jar] CollectInsertSizeMetrics
-  --INPUT [BamDir]/[SeqID].analysisReady.bam
-  --OUTPUT [qcResDir]/[SeqID].insert.size.metrics.txt
-  --Histogram_FILE [qcResDir]/[SeqID].insert.size.histogram.pdf
+  --INPUT [BamDir]/[SeqID].[InputSuffix].bam
+  --OUTPUT [insert_size_metrics_txt]
+  --Histogram_FILE [insert_size_hist_pdf]
   --REFERENCE_SEQUENCE [ReferenceFasta]

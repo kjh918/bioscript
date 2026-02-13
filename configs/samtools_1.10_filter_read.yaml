@@ -1,55 +1,58 @@
 # =========================================================
-# samtools BAM filtering + index
-#  - MAPQ / flag / tag / expression 기반 필터
+# samtools BAM filtering + index (Modular Version)
+#  - Input/Output Suffix를 파라미터로 조절하여 재사용 가능
 # =========================================================
 tool:
   name: samtools_filter_index
   version: "1.10"
-  profile: "recal_bam_filter"
+  profile: "flexible_bam_filter"
 
 io:
   inputs:
-    SeqID:   { required: true }
-    BamDir:  { required: true }
+    SeqID:   { required: true, help: "Sequence identifier" }
+    BamDir:  { required: true, help: "Directory containing BAM files" }
 
   outputs:
+    # Suffix 변수를 사용하여 출력 경로를 동적으로 구성
     filtered_bam:
-      default: "[BamDir]/[SeqID].recal.filtered.bam"
+      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+      help: "Filtered BAM file"
     filtered_bai:
-      default: "[BamDir]/[SeqID].recal.filtered.bam.bai"
+      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai"
     analysis_ready_bam:
       default: "[BamDir]/[SeqID].analysisReady.bam"
     analysis_ready_bai:
       default: "[BamDir]/[SeqID].analysisReady.bam.bai"
 
 params:
-  Threads: { type: int, default: 8 }
+  # --- [Suffix 제어] ---
+  # 기본값을 recal로 두되, 상황에 따라 primary, sorted 등으로 변경 가능
+  InputSuffix:  { type: str, default: "recal", help: "Suffix of the input BAM (e.g., primary, sorted, recal)" }
+  OutputSuffix: { type: str, default: "filtered", help: "Suffix for the filtered output" }
 
-  # filtering parameters (필요 시 조정)
-  min_mapq:        { type: int, default: 20 }
-  include_flag:    { type: str, default: "0x2" }
-  exclude_flag1:   { type: str, default: "0x100" }
-  exclude_flag2:   { type: str, default: "0x4" }
+  # --- [Binaries & Resources] ---
+  samtools_bin: { type: str, default: "samtools" }
+  ln_bin:       { type: str, default: "ln" }
+  Threads:      { type: int, default: 8 }
 
-  # samtools expression filters
-  expr_sclen:      { type: str, default: "sclen < 20" }
-  expr_nm:         { type: str, default: "[NM] < 12" }
+  # --- [Filtering Parameters] ---
+  min_mapq:     { type: int, default: 20 }
+  include_flag: { type: str, default: "0x2" }
+  exclude_flag: { type: str, default: "0x104" } # 0x100 + 0x4 통합 관리 예시
+  expr_nm:      { type: str, default: "[NM] < 12" }
 
 cmd_line: >
-  samtools view -b -h
+  [samtools_bin] view -b -h
   -q [min_mapq]
   -f [include_flag]
-  -F [exclude_flag1]
-  -F [exclude_flag2]
-  -e "[expr_sclen]"
+  -F [exclude_flag]
   -e "[expr_nm]"
   --threads [Threads]
-  [BamDir]/[SeqID].recal.bam
-  > [BamDir]/[SeqID].recal.filtered.bam
+  [BamDir]/[SeqID].[InputSuffix].bam
+  > [filtered_bam]
   &&
-  samtools index --threads [Threads]
-  [BamDir]/[SeqID].recal.filtered.bam
+  [samtools_bin] index --threads [Threads] [filtered_bam]
   &&
-  ln -Tsf  ${BamDir}/${SeqID}.recal.filtered.bam ${BamDir}/${SeqID}.analysisReady.bam
+  [ln_bin] -Tsf [filtered_bam] [analysis_ready_bam]
   &&
-  ln -Tsf  ${BamDir}/${SeqID}.recal.filtered.bam.bai ${BamDir}/${SeqID}.analysisReady.bam.bai
+  [ln_bin] -Tsf [filtered_bai] [analysis_ready_bai]

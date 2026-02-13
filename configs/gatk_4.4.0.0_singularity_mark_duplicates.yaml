@@ -1,38 +1,55 @@
-# =========================================
-# (2) GATK MarkDuplicates (singularity)
-# =========================================
+# =========================================================
+# GATK4 MarkDuplicates (Modular Version)
+#  - Identifies and flags/removes PCR and optical duplicates
+#  - Singularity-based execution with resource optimization
+# =========================================================
 tool:
   name: gatk4
   version: "4.4.0.0"
-  profile: "singularity_dedup"
+  profile: "dedup_using_singularity"
 
 io:
   inputs:
-    SeqID:    { required: true }
-    BamDir:   { required: true }
-    qcResDir: { required: true }
+    SeqID:    { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:   { required: true, help: "Directory containing the input BAM file" }
+    qcResDir: { required: true, help: "Directory for duplicate metrics output" }
 
   outputs:
-    dedup_bam:     { default: "[BamDir]/[SeqID].sorted.dedup.bam" }
-    dedup_bai:     { default: "[BamDir]/[SeqID].sorted.dedup.bam.bai" }
-    metrics_txt:   { default: "[qcResDir]/[SeqID].mark.duplicates.metrics.txt" }
+    dedup_bam:
+      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+      help: "BAM file with marked/removed duplicates"
+    dedup_bai:
+      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai"
+      help: "Index file for the deduplicated BAM"
+    metrics_txt:
+      default: "[qcResDir]/[SeqID].[InputSuffix].[OutputSuffix].metrics.txt"
+      help: "Text file containing duplication metrics"
 
 params:
-  bind:        { type: str, default: "/storage,/data" }
-  sif:         { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+  InputSuffix:  { type: str, default: "sorted", help: "Suffix of the input BAM (e.g., sorted, primary)" }
+  OutputSuffix: { type: str, default: "dedup", help: "Suffix for the output file (e.g., dedup, md)" }
 
-  Threads:     { type: int, default: 14 }
-  xmx_mb:      { type: int, default: 16384 }
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  gatk_bin:        { type: str, default: "gatk", help: "GATK binary path inside container" }
+  sif:             { type: str, default: "/storage/images/gatk-4.4.0.0.sif", help: "GATK singularity image (.sif)" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
 
-  # MarkDuplicates 옵션들
-  md_args:
-    type: str
-    default: "--CREATE_INDEX true --REMOVE_SEQUENCING_DUPLICATES true"
+  # --- [Resources] ---
+  Threads: { type: int, default: 14, help: "Number of threads for ParallelGC" }
+  xmx_mb:  { type: int, default: 16384, help: "Maximum Java heap memory (MB)" }
+
+  # --- [MarkDuplicates Options] ---
+  remove_seq_dups: { type: str, default: "true", help: "Whether to remove sequencing duplicates" }
+  create_index:    { type: str, default: "true", help: "Whether to create a BAM index for the output" }
+  other_md_args:   { type: str, default: "", help: "Other additional GATK MarkDuplicates arguments" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] gatk MarkDuplicates
+  [singularity_bin] exec -B [bind] [sif] [gatk_bin] MarkDuplicates
   --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
-  --INPUT [BamDir]/[SeqID].sorted.bam
-  --OUTPUT [BamDir]/[SeqID].sorted.dedup.bam
-  --METRICS_FILE [qcResDir]/[SeqID].mark.duplicates.metrics.txt
-  [md_args]
+  --INPUT [BamDir]/[SeqID].[InputSuffix].bam
+  --OUTPUT [dedup_bam]
+  --METRICS_FILE [metrics_txt]
+  --CREATE_INDEX [create_index]
+  --REMOVE_SEQUENCING_DUPLICATES [remove_seq_dups]
+  [other_md_args]

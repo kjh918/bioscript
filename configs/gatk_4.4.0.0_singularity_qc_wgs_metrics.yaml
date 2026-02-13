@@ -1,35 +1,46 @@
 # =========================================================
-# (3) GATK4 CollectWgsMetrics (jar 호출)
+# GATK4 CollectWgsMetrics (Modular Version)
+#  - Collects metrics about coverage and performance of WGS
+#  - Flexible input via InputSuffix (e.g., analysisReady, recal, sorted)
+#  - Singularity-based execution with resource optimization
 # =========================================================
 tool:
   name: gatk4
   version: "4.4.0.0"
-  profile: "singularity_qc_wgs_metrics"
+  profile: "qc_wgs_metrics_using_singularity"
 
 io:
   inputs:
-    SeqID:          { required: true }
-    BamDir:         { required: true }
-    qcResDir:       { required: true }
-    ReferenceFasta: { required: true }
+    SeqID:           { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:          { required: true, help: "Directory containing the BAM file to be analyzed" }
+    qcResDir:        { required: true, help: "Output directory for WGS metrics" }
+    ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
   outputs:
+    # Suffix를 결과 파일명에도 포함하여 분석된 데이터의 상태를 명시
     wgs_metrics_txt:
-      default: "[qcResDir]/[SeqID].collect.wgs.metrics.txt"
+      default: "[qcResDir]/[SeqID].[InputSuffix].collect_wgs_metrics.txt"
+      help: "Text file containing detailed WGS coverage and performance metrics"
 
 params:
-  bind:       { type: str, default: "/storage,/data" }
-  sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
-  Threads:    { type: int, default: 14 }
-  xmx_mb:     { type: int, default: 16384 }
 
-  gatk_jar:   { type: str, default: "/gatk/gatk-package-4.4.0.0-local.jar" }
-  java_bin:   { type: str, default: "java" }
+  InputSuffix: { type: str, default: "analysisReady", help: "Suffix of the input BAM file (e.g., analysisReady, recal, sorted)" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  java_bin:        { type: str, default: "java", help: "Path to java executable inside container" }
+  gatk_jar:        { type: str, default: "/gatk/gatk-package-4.4.0.0-local.jar", help: "Path to GATK local jar inside container" }
+  sif:             { type: str, default: "/storage/images/gatk-4.4.0.0.sif", help: "Path to GATK singularity image (.sif)" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+  
+  # --- [Resources] ---
+  Threads: { type: int, default: 14, help: "Number of threads for ParallelGC" }
+  xmx_mb:  { type: int, default: 16384, help: "Maximum Java heap memory (MB)" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] [java_bin]
-  -XX:ParallelGCThreads=[Threads]    -Xmx[xmx_mb]m
+  [singularity_bin] exec -B [bind] [sif] [java_bin]
+  -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m
   -jar [gatk_jar] CollectWgsMetrics
-  --INPUT [BamDir]/[SeqID].analysisReady.bam
-  --OUTPUT [qcResDir]/[SeqID].collect.wgs.metrics.txt
+  --INPUT [BamDir]/[SeqID].[InputSuffix].bam
+  --OUTPUT [wgs_metrics_txt]
   --REFERENCE_SEQUENCE [ReferenceFasta]

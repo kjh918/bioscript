@@ -1,36 +1,56 @@
-# =========================================
-# (1) BWA only align (FASTQ -> primary.bam)
-# =========================================
+# =========================================================
+# BWA-MEM Paired-End Alignment Pipeline
+#  - Supports individual BWA flag control
+#  - Singularity-based execution with direct SAMtools piping
+#  - Flexible FASTQ input and BAM output via Suffix control
+# =========================================================
 tool:
   name: bwa_mem
   version: "0.7.17"
-  profile: "singularity_pe_align_only"
+  profile: "align_pe_using_singularity"
 
 io:
   inputs:
-    SeqID:             { required: true }
-    TrimFastqDir:      { required: true }
-    BamDir:            { required: true }
-    BwaIndex:          { required: true }
-    ReadGroupID:       { required: true }
-    ReadGroupPlatform: { required: true }
-    ReadGroupLibrary:  { required: true }
-    ReadGroupCenter:   { required: true }
+    SeqID:             { required: true, help: "Sequence identifier used for file naming and SM tag" }
+    TrimFastqDir:      { required: true, help: "Directory containing FASTQ files" }
+    BamDir:            { required: true, help: "Output directory for aligned BAM files" }
+    ReferenceFasta:    { required: true, help: "Path to the reference genome FASTA file" }
+    
+    # Read Group Info
+    ReadGroupID:       { required: true, help: "Read Group ID (ID tag)" }
+    ReadGroupPlatform: { required: true, help: "Sequencing platform (PL tag: e.g., ILLUMINA)" }
+    ReadGroupLibrary:  { required: true, help: "Library identifier (LB tag)" }
+    ReadGroupCenter:   { required: true, help: "Sequencing center name (CN tag)" }
 
   outputs:
-    primary_bam: { default: "[BamDir]/[SeqID].primary.bam" }
+    # Suffix를 적용하여 어떤 FASTQ에서 나온 BAM인지 명시
+    primary_bam: { default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam", help: "Output aligned BAM file" }
 
 params:
-  bind:    { type: str, default: "/storage,/data" }
-  sif:     { type: str, default: "/storage/images/bwa-0.7.17.sif" }
-  Threads: { type: int, default: 8 }
+  # --- [Suffix 제어] ---
+  InputSuffix:       { type: str, default: "trimmed", help: "Suffix of input FASTQs (e.g., trimmed, raw, filtered)" }
+  OutputSuffix:      { type: str, default: "primary", help: "Suffix for output BAM (e.g., primary, initial)" }
 
-  # bwa 옵션들 (필요 시 수정)
-  bwa_args: { type: str, default: "-M -Y -L 50,50" }
+  # --- [Binaries & Container] ---
+  singularity_bin:   { type: str, default: "singularity", help: "Path to singularity executable" }
+  bwa_bin:           { type: str, default: "bwa", help: "BWA binary path inside container" }
+  samtools_bin:      { type: str, default: "samtools", help: "SAMtools binary path (host or inside if mounted)" }
+  sif:               { type: str, default: "/storage/images/bwa-0.7.17.sif", help: "BWA singularity image (.sif)" }
+  bind:              { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+  
+  # --- [Resources] ---
+  Threads:           { type: int, default: 8, help: "Number of threads for BWA and SAMtools" }
+
+  # --- [BWA Options] ---
+  mark_short_split:  { type: str, default: "-M", help: "Mark shorter split hits as secondary (for Picard compatibility)" }
+  soft_clipping:     { type: str, default: "-Y", help: "Use soft clipping for supplementary alignments" }
+  clipping_penalty:  { type: str, default: "-L 50,50", help: "Penalty for 5'- and 3'-end clipping" }
+  other_args:        { type: str, default: "", help: "Other additional BWA MEM arguments" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] bwa mem [bwa_args] -t [Threads]
+  [singularity_bin] exec -B [bind] [sif] [bwa_bin] mem 
+  [mark_short_split] [soft_clipping] [clipping_penalty] [other_args] 
+  -t [Threads]
   -R "@RG\tID:[ReadGroupID]\tPL:[ReadGroupPlatform]\tLB:[ReadGroupLibrary]\tSM:[SeqID]\tCN:[ReadGroupCenter]"
-  [BwaIndex]
-  [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz
-  | samtools view -bS -o [BamDir]/[SeqID].primary.bam -
+  [ReferenceFasta] [TrimFastqDir]/[SeqID].[InputSuffix]_R1.fastq.gz [TrimFastqDir]/[SeqID].[InputSuffix]_R2.fastq.gz
+  | [samtools_bin] view -@ [Threads] -bS -o [primary_bam] -

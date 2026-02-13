@@ -1,3 +1,9 @@
+# =========================================================
+# bcftools Pileup + Call + Annotate Pipeline
+#  1. mpileup: 특정 Sites에 대해 BAM으로부터 Pileup 생성
+#  2. call: 변이 호출 (Consensus/Variant calling)
+#  3. annotate: 인구 집단 빈도(AF) 및 외부 DB 정보 주입
+# =========================================================
 tool:
   name: bcftools
   version: "1.23"
@@ -5,56 +11,65 @@ tool:
 
 io:
   inputs:
-    SeqID:          { required: true }
-    Chromosome:     { required: true }  # 예: chr1 또는 1
-    InputBamDir:    { required: true }
-    ReferenceFasta: { required: true }
-    SitesVcfGz:     { required: true }  # mpileup target sites (vcf.gz + index)
-    PopAfAnnotVcf:  { required: true }  # annotate용 (chrom pos ref alt kova_AF kova_AN gnomad_AF gnomad_AN) vcf.gz
-    PopAfHeaderHdr: { required: true }  # INFO header (.hdr)
-    ResultDir:      { required: true }
+    SeqID:           { required: true, help: "Sequence identifier for the sample" }
+    Chromosome:      { required: true, help: "Target chromosome or region" }
+    BamDir:          { required: true, help: "Directory containing the input BAM file" }
+    ResultDir:       { required: true, help: "Output directory for VCF results" }
+    
+    # Reference & Annotation DB
+    ReferenceFasta:  { required: true, help: "Path to reference genome FASTA" }
+    SitesVcfGz:      { required: true, help: "VCF file containing specific sites to genotype" }
+    PopAfAnnotVcf:   { required: true, help: "VCF/Tabix file for population AF annotation" }
+    PopAfHeaderHdr:  { required: true, help: "Header file describing the annotation columns" }
 
   outputs:
-    RawVcf:         { default: "[ResultDir]/[SeqID].[Chromosome].sites.raw.vcf.gz" }
-    AnnVcf:         { default: "[ResultDir]/[SeqID].[Chromosome].sites.af.vcf.gz" }
+    # Suffix와 Chromosome을 조합하여 명확한 결과 파일명 생성
+    raw_vcf:
+      default: "[ResultDir]/[SeqID].[Chromosome].[InputSuffix].raw.vcf.gz"
+      help: "Raw VCF file after pileup and calling"
+    ann_vcf:
+      default: "[ResultDir]/[SeqID].[Chromosome].[InputSuffix].ann.vcf.gz"
+      help: "Annotated VCF file with population AF"
 
 params:
-  BcftoolsPath: { default: "/storage/home/jhkim/Apps/bcftools/bcftools" }
-  BgzipPath:    { default: "bgzip" }
-  Threads:      { default: 4 }
-  MinBQ:        { default: 20 }
-  MinMQ:        { default: 30 }
-  TmpDir:       { default: "[ResultDir]/tmp" }
+  # --- [Suffix 제어] ---
+  InputSuffix: { type: str, default: "analysisReady", help: "Suffix of input BAM (e.g., analysisReady, recal)" }
 
+  # --- [Binaries & Resources] ---
+  bcftools_bin: { type: str, default: "/storage/home/jhkim/Apps/bcftools/bcftools", help: "Path to bcftools binary" }
+  Threads:      { type: int, default: 4, help: "Number of threads for compression/processing" }
+  MinBQ:        { type: int, default: 20, help: "Minimum base quality for mpileup" }
+  MinMQ:        { type: int, default: 30, help: "Minimum mapping quality for mpileup" }
   
+  # --- [Annotation Settings] ---
   AnnotationQuery:
-    { default: "CHROM,POS,REF,ALT,INFO/KOVA_AF,INFO/KOVA_AN,INFO/GNOMAD_AF,INFO/GNOMAD_AN" }
-
-  # YAML에서 \t 가 깨질 수 있어서 |로 출력 후 sed로 탭 변환
-  VcfQuery:
-    { default: "%CHROM|%POS|%REF|%ALT|%INFO/KOVA_AF|%INFO/KOVA_AN|%INFO/GNOMAD_AF|%INFO/GNOMAD_AN|[%GT]|[%DP]|[%AD]\\n" }
+    { type: str, default: "CHROM,POS,REF,ALT,INFO/KOVA_AF,INFO/KOVA_AN,INFO/GNOMAD_AF,INFO/GNOMAD_AN", help: "Columns to extract from annotation VCF" }
 
 cmd_line: >
-  [BcftoolsPath] mpileup
+  [bcftools_bin] mpileup
   -f [ReferenceFasta]
   -T [SitesVcfGz]
+  -r [Chromosome]
   -q [MinMQ]
   -Q [MinBQ]
   -a FORMAT/AD,FORMAT/DP
   -Ou
-  [InputBamDir]/[SeqID].analysisReady.bam
+  --threads [Threads]
+  [BamDir]/[SeqID].[InputSuffix].bam
   |
-  [BcftoolsPath] call
+  [bcftools_bin] call
   -Am
-  -Oz -o [RawVcf]
+  -Oz -o [raw_vcf]
+  --threads [Threads]
   &&
-  [BcftoolsPath] index -f [RawVcf]
+  [bcftools_bin] index -f [raw_vcf] --threads [Threads]
   &&
-  [BcftoolsPath] annotate
+  [bcftools_bin] annotate
   -a [PopAfAnnotVcf]
   -c [AnnotationQuery]
   -h [PopAfHeaderHdr]
-  -Oz -o [AnnVcf]
-  [RawVcf]
+  -Oz -o [ann_vcf]
+  [raw_vcf]
+  --threads [Threads]
   &&
-  [BcftoolsPath] index -f [AnnVcf]
+  [bcftools_bin] index -f [ann_vcf] --threads [Threads]

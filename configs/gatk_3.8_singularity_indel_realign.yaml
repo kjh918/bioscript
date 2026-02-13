@@ -1,48 +1,63 @@
 # =========================================================
-# GATK 3.8 Indel Realignment
-#  - RealignerTargetCreator
-#  - IndelRealigner
+# GATK 3.8 Indel Realignment (Modular Version)
+#  1. RealignerTargetCreator: 리얼라인먼트가 필요한 타겟 구간 선정
+#  2. IndelRealigner: 선정된 구간에 대해 로컬 재정렬 수행
+#  - Modular Suffix 구조로 설계되어 다양한 전단계 BAM 수용 가능
 # =========================================================
 tool:
   name: gatk3
   version: "3.8"
-  profile: "singularity_indel_realign"
+  profile: "indel_realign_using_singularity"
 
 io:
   inputs:
-    SeqID:           { required: true }
-    BamDir:          { required: true }
-    qcResDir:        { required: true }
-    ReferenceFasta:  { required: true }
-    KnownIndel1:     { required: true }
-    KnownIndel2:     { required: true }
+    SeqID:           { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:          { required: true, help: "Directory containing the input BAM and target output BAM" }
+    qcResDir:        { required: true, help: "Directory for the target intervals file output" }
+    ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
+
+    # Known Indels (리얼라인먼트의 기준이 되는 데이터베이스)
+    KnownIndel1:     { required: true, help: "Path to known Indels VCF (e.g., Mills and 1000G)" }
+    KnownIndel2:     { required: true, help: "Path to additional known Indels VCF" }
 
   outputs:
     target_intervals:
-      default: "[qcResDir]/[SeqID].realign.target.intervals"
+      default: "[qcResDir]/[SeqID].[InputSuffix].realign_target.intervals"
+      help: "Target intervals file identifying regions for realignment"
     realigned_bam:
-      default: "[BamDir]/[SeqID].sorted.dedup.realign.bam"
+      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+      help: "Final Indel-realigned BAM file"
 
 params:
-  bind:    { type: str, default: "/storage,/data" }
-  sif:     { type: str, default: "/storage/images/gatk-3.8-1.sif" }
+  # --- [Suffix 제어] ---
+  # 보통 MarkDuplicates 이후(dedup)를 입력으로 받습니다.
+  InputSuffix:  { type: str, default: "dedup", help: "Suffix of input BAM (e.g., dedup, sorted, primary)" }
+  OutputSuffix: { type: str, default: "realign", help: "Suffix for output BAM (e.g., realign, ir)" }
 
-  Threads: { type: int, default: 8 }
-  xmx_mb:  { type: int, default: 16384 }
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  java_bin:        { type: str, default: "java", help: "Java executable (inside container)" }
+  gatk_jar:        { type: str, default: "/usr/GenomeAnalysisTK.jar", help: "GATK 3.8 jar path inside container" }
+  sif:             { type: str, default: "/storage/images/gatk-3.8-1.sif", help: "GATK 3.8 singularity image file" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+
+  # --- [Resources] ---
+  Threads: { type: int, default: 8, help: "Number of threads for RealignerTargetCreator (-nt)" }
+  xmx_mb:  { type: int, default: 16384, help: "Maximum Java heap memory (MB)" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] java -Xmx[xmx_mb]m -jar /usr/GenomeAnalysisTK.jar
+  [singularity_bin] exec -B [bind] [sif] [java_bin] -Xmx[xmx_mb]m -jar [gatk_jar]
   -T RealignerTargetCreator
   -R [ReferenceFasta]
-  -I [BamDir]/[SeqID].sorted.dedup.bam
-  -o [qcResDir]/[SeqID].realign.target.intervals
+  -I [BamDir]/[SeqID].[InputSuffix].bam
+  -o [target_intervals]
   -known [KnownIndel1] -known [KnownIndel2]
   -nt [Threads]
   &&
-  singularity exec -B [bind] [sif] java -Xmx[xmx_mb]m -jar /usr/GenomeAnalysisTK.jar
+  [singularity_bin] exec -B [bind] [sif] [java_bin] -Xmx[xmx_mb]m -jar [gatk_jar]
   -T IndelRealigner
   -R [ReferenceFasta]
-  -targetIntervals [qcResDir]/[SeqID].realign.target.intervals
+  -targetIntervals [target_intervals]
   -known [KnownIndel1] -known [KnownIndel2]
-  -I [BamDir]/[SeqID].sorted.dedup.bam
-  -o [BamDir]/[SeqID].sorted.dedup.realign.bam
+  -I [BamDir]/[SeqID].[InputSuffix].bam
+  -o [realigned_bam]

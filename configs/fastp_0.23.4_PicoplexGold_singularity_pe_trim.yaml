@@ -1,41 +1,50 @@
+# =========================================================
+# fastp: Picoplex Gold Library PE Trimming
+#  - Optimized for Picoplex Gold (14bp front trimming)
+#  - Custom adapter sequences for R1/R2
+#  - Singularity-based execution for reproducibility
+# =========================================================
 tool:
   name: fastp
   version: "0.23.4"
-  profile: "PicoplexGold_singularity_pe_trim"
-
-# output_dir: ./output_scripts
+  profile: "PicoplexGold_pe_trim_using_singularity"
 
 io:
   inputs:
-    SeqID:        { required: true }
-    RawFastqDir:  { required: true }
-    TrimFastqDir: { required: true }
-    qcResDir:    { required: true }
+    SeqID:        { required: true, help: "Sequence identifier used for file naming and sample tracking" }
+    RawFastqDir:  { required: true, help: "Directory containing the raw input FASTQ files" }
+    TrimFastqDir: { required: true, help: "Target directory for the processed (trimmed) FASTQ files" }
+    qcResDir:     { required: true, help: "Directory for quality control reports (JSON/HTML)" }
 
   outputs:
-    # outputs는 실제 파일 경로 토큰으로만 잡아도 됨(필수 체크 용도)
-    out_read1: { default: '[TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz'}
-    out_read2: { default: '[TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz'}
-    json: { default: '[qcResDir]/[SeqID].fastp.json' }
-    html: { default: '[qcResDir]/[SeqID].fastp.html' }
+    out_read1: { default: '[TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz', help: "Final trimmed Read 1 FASTQ" }
+    out_read2: { default: '[TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz', help: "Final trimmed Read 2 FASTQ" }
+    json:      { default: '[qcResDir]/[SeqID].fastp.json', help: "JSON format quality report" }
+    html:      { default: '[qcResDir]/[SeqID].fastp.html', help: "HTML format quality report" }
 
 params:
-  Threads: { type: int, default: 8 }
-  sif:     { type: str, default: "/storage/images/fastp-0.23.4.sif" }
-  bind:    { type: str, default: "/storage,/data" }
+  # Binaries & Container
+  singularity_bin: { type: str, default: "singularity", help: "Path to the singularity executable" }
+  fastp_bin:       { type: str, default: "fastp", help: "fastp executable name or path inside container" }
+  sif:             { type: str, default: "/storage/images/fastp-0.23.4.sif", help: "Path to fastp Singularity image (.sif)" }
+  bind:            { type: str, default: "/storage,/data", help: "Directories to mount for Singularity" }
 
-  length_required:          { type: int, default: 100 }
-  average_qual:             { type: int, default: 10 }
-  qualified_quality_phred:  { type: int, default: 15 }
-  trim_front1:              { type: int, default: 14 }
-  trim_front2:              { type: int, default: 14 }
+  # Resource & Basic Filtering
+  Threads:                 { type: int, default: 8, help: "Number of threads for parallel processing" }
+  length_required:         { type: int, default: 100, help: "Minimum read length filter" }
+  average_qual:            { type: int, default: 10, help: "Minimum average quality filter" }
+  qualified_quality_phred: { type: int, default: 15, help: "Phred quality score threshold (base quality)" }
 
-  # adapter는 따옴표 없이 그대로(공백 없으니 안전)
-  adapter_sequence:     { type: str, default: "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA" }
-  adapter_sequence_r2:  { type: str, default: "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT" }
+  # Picoplex Gold Specific (14bp front trim)
+  trim_front1:             { type: int, default: 14, help: "Number of bases to trim from the start of Read 1" }
+  trim_front2:             { type: int, default: 14, help: "Number of bases to trim from the start of Read 2" }
+
+  # Adapter sequences
+  adapter_sequence:        { type: str, default: "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA", help: "Adapter sequence for Read 1" }
+  adapter_sequence_r2:     { type: str, default: "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT", help: "Adapter sequence for Read 2" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] fastp --thread [Threads]
+  [singularity_bin] exec -B [bind] [sif] [fastp_bin] --thread [Threads]
   --in1 [RawFastqDir]/[SeqID]_R1.fastq.gz --in2 [RawFastqDir]/[SeqID]_R2.fastq.gz
   --out1 [out_read1] --out2 [out_read2]
   --json [json] --html [html]

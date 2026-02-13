@@ -1,31 +1,42 @@
 # =========================================================
-# (1) GATK4 CollectSequencingArtifactMetrics
+# GATK4 CollectSequencingArtifactMetrics (Modular Version)
+#  - Collects metrics for sequencing artifacts (e.g., OxoG, UR)
+#  - Flexible input via InputSuffix (e.g., analysisReady, recal, primary)
+#  - Singularity-based execution with resource optimization
 # =========================================================
 tool:
   name: gatk4
   version: "4.4.0.0"
-  profile: "singularity_qc_artifacts"
+  profile: "qc_artifacts_using_singularity"
 
 io:
   inputs:
-    SeqID:          { required: true }
-    BamDir:         { required: true }    
-    qcResDir:       { required: true }
-    ReferenceFasta: { required: true }
+    SeqID:           { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:          { required: true, help: "Directory containing the BAM file to be analyzed" }
+    qcResDir:        { required: true, help: "Output directory for artifact metrics" }
+    ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
   outputs:
-    artifacts_txt: { default: "[qcResDir]/[SeqID].artifacts.txt" }
+    # Suffix를 결과 파일명에도 포함하여 어떤 BAM으로부터 분석되었는지 명시
+    artifacts_txt: { default: "[qcResDir]/[SeqID].[InputSuffix].artifacts.txt", help: "Base name for artifact metrics output files" }
 
 params:
-  bind:       { type: str, default: "/storage,/data" }
-  sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
-  Threads:    { type: int, default: 14 }
-  xmx_mb:     { type: int, default: 16384 }
+  InputSuffix: { type: str, default: "analysisReady", help: "Suffix of the input BAM file (default : analysisReady / e.g., recal, sorted)" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  gatk_bin:        { type: str, default: "gatk", help: "GATK wrapper script or binary path inside container" }
+  sif:             { type: str, default: "/storage/images/gatk-4.4.0.0.sif", help: "Path to GATK singularity image (.sif)" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+  
+  # --- [Resources] ---
+  Threads: { type: int, default: 14, help: "Number of threads for ParallelGC" }
+  xmx_mb:  { type: int, default: 16384, help: "Maximum Java heap memory (MB)" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] gatk CollectSequencingArtifactMetrics
+  [singularity_bin] exec -B [bind] [sif] [gatk_bin] CollectSequencingArtifactMetrics
   --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
-  --INPUT [BamDir]/[SeqID].analysisReady.bam
+  --INPUT [BamDir]/[SeqID].[InputSuffix].bam
   --OUTPUT [artifacts_txt]
   --FILE_EXTENSION .txt
   --REFERENCE_SEQUENCE [ReferenceFasta]

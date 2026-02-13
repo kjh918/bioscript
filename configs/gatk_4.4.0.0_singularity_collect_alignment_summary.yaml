@@ -1,34 +1,47 @@
 # =========================================================
-# (2) GATK4 CollectAlignmentSummaryMetrics (jar 호출)
+# GATK4 CollectAlignmentSummaryMetrics (Modular Version)
+#  - Produces a summary of alignment metrics from a BAM file
+#  - Flexible input via InputSuffix (e.g., analysisReady, recal, sorted)
+#  - Singularity-based execution with resource optimization
 # =========================================================
 tool:
   name: gatk4
   version: "4.4.0.0"
-  profile: "singularity_qc_alignment_summary"
+  profile: "qc_alignment_summary_using_singularity"
 
 io:
   inputs:
-    SeqID:    { required: true }
-    BamDir:   { required: true }
-    qcResDir: { required: true }
+    SeqID:           { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:          { required: true, help: "Directory containing the BAM file to be analyzed" }
+    qcResDir:        { required: true, help: "Output directory for alignment summary metrics" }
+    ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
   outputs:
+    # Suffix를 결과 파일명에도 포함하여 어떤 BAM으로부터 분석되었는지 명시
     alignment_summary_metrics_txt:
-      default: "[qcResDir]/[SeqID].alignment.summary.metrics.txt"
+      default: "[qcResDir]/[SeqID].[InputSuffix].alignment_summary_metrics.txt"
+      help: "Text file containing summarized alignment metrics"
 
 params:
-  bind:       { type: str, default: "/storage,/data" }
-  sif:        { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
-  Threads:    { type: int, default: 14 }
-  xmx_mb:     { type: int, default: 16384 }
+  # --- [Suffix 제어] ---
+  # 기본적으로 최종 분석 준비 완료(analysisReady) 파일을 입력으로 받습니다.
+  InputSuffix: { type: str, default: "analysisReady", help: "Suffix of the input BAM (e.g., analysisReady, recal, sorted)" }
 
-  # 컨테이너 내부 jar 경로(네가 쓴 그대로)
-  gatk_jar:   { type: str, default: "/gatk/gatk-package-4.4.0.0-local.jar" }
-  java_bin:   { type: str, default: "java" }
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  java_bin:        { type: str, default: "java", help: "Path to java executable inside container" }
+  gatk_jar:        { type: str, default: "/gatk/gatk-package-4.4.0.0-local.jar", help: "Path to GATK local jar inside container" }
+  sif:             { type: str, default: "/storage/images/gatk-4.4.0.0.sif", help: "Path to GATK singularity image (.sif)" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+  
+  # --- [Resources] ---
+  Threads: { type: int, default: 14, help: "Number of threads for ParallelGC" }
+  xmx_mb:  { type: int, default: 16384, help: "Maximum Java heap memory (MB)" }
 
 cmd_line: >
-  singularity exec -B [bind] [sif] [java_bin]
-  -XX:ParallelGCThreads=[Threads]    -Xmx[xmx_mb]m
+  [singularity_bin] exec -B [bind] [sif] [java_bin]
+  -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m
   -jar [gatk_jar] CollectAlignmentSummaryMetrics
-  --INPUT [BamDir]/[SeqID].analysisReady.bam
-  --OUTPUT [qcResDir]/[SeqID].alignment.summary.metrics.txt
+  --INPUT [BamDir]/[SeqID].[InputSuffix].bam
+  --OUTPUT [alignment_summary_metrics_txt]
+  --REFERENCE_SEQUENCE [ReferenceFasta]

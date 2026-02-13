@@ -1,37 +1,47 @@
 # =========================================================
 # Picard 3.1.0 GC Bias Metrics
-#  - CollectGcBiasMetrics
+#  - Collects metrics regarding GC bias in the sequence data
+#  - Generates text summaries and a PDF chart
+#  - Modular Suffix 구조로 설계되어 다양한 전단계 BAM 수용 가능
 # =========================================================
 tool:
   name: picard
   version: "3.1.0"
-  profile: "gc_bias_metrics"
+  profile: "qc_gc_bias_metrics"
 
 io:
   inputs:
-    SeqID:          { required: true }
-    BamDir:         { required: true }
-    ReferenceFasta: { required: true }
+    SeqID:           { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:          { required: true, help: "Directory containing the input BAM and results" }
+    ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
   outputs:
+    # Suffix를 결과 파일명에도 포함하여 분석된 데이터의 상태를 명시
     gc_bias_metrics_txt:
-      default: "[BamDir]/[SeqID].gc.bias.metrics.txt"
+      default: "[BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.txt"
+      help: "Detailed GC bias metrics for each GC bin"
     gc_bias_summary_txt:
-      default: "[BamDir]/[SeqID].gc.bias.summary.txt"
+      default: "[BamDir]/[SeqID].[InputSuffix].gc_bias_summary.txt"
+      help: "Summary metrics for GC bias"
     gc_bias_chart_pdf:
-      default: "[BamDir]/[SeqID].gc.bias.metrics.pdf"
+      default: "[BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.pdf"
+      help: "PDF chart visualizing normalized coverage by GC content"
 
 params:
-  java_bin:    { type: str, default: "java" }
-  picard_jar:  { type: str, default: "/storage/apps/bin/picard-3.1.0.jar" }
+  # --- [Suffix 제어] ---
+  # 기본적으로 최종 분석 준비 완료(analysisReady) 파일을 입력으로 받습니다.
+  InputSuffix: { type: str, default: "analysisReady", help: "Suffix of the input BAM (e.g., analysisReady, recal, dedup)" }
 
-  gc_threads:  { type: int, default: 14 }
-  xmx_mb:      { type: int, default: 16384 }
+  # --- [Binaries & Resources] ---
+  java_bin:    { type: str, default: "java", help: "Path to java executable" }
+  picard_jar:  { type: str, default: "/storage/apps/bin/picard-3.1.0.jar", help: "Path to Picard.jar file" }
+  gc_threads:  { type: int, default: 14, help: "Number of threads for Java ParallelGC" }
+  xmx_mb:      { type: int, default: 16384, help: "Maximum Java heap memory (MB)" }
 
-  # Picard GC bias 옵션
-  min_gc:      { type: int, default: 0 }
-  max_gc:      { type: int, default: 100 }
-  window_size: { type: int, default: 100 }
+  # --- [Picard GC Bias Options] ---
+  min_gc:      { type: int, default: 0, help: "Minimum GC content to include in metrics" }
+  max_gc:      { type: int, default: 100, help: "Maximum GC content to include in metrics" }
+  window_size: { type: int, default: 100, help: "Window size for GC content calculation" }
 
 cmd_line: >
   [java_bin]
@@ -39,10 +49,10 @@ cmd_line: >
   -Xmx[xmx_mb]m
   -jar [picard_jar]
   CollectGcBiasMetrics
-  I=[BamDir]/[SeqID].analysisReady.bam
-  O=[BamDir]/[SeqID].gc.bias.metrics.txt
-  S=[BamDir]/[SeqID].gc.bias.summary.txt
-  CHART=[BamDir]/[SeqID].gc.bias.metrics.pdf
+  I=[BamDir]/[SeqID].[InputSuffix].bam
+  O=[gc_bias_metrics_txt]
+  S=[gc_bias_summary_txt]
+  CHART=[gc_bias_chart_pdf]
   R=[ReferenceFasta]
   MINIMUM_GC=[min_gc]
   MAXIMUM_GC=[max_gc]

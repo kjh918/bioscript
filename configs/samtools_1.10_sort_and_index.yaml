@@ -1,6 +1,8 @@
-# =========================================
-# (1) samtools sort + index
-# =========================================
+# =========================================================
+# samtools sort + index pipeline
+#  - Coordinate sort of primary BAM
+#  - Generate BAM index (.bai) for downstream analysis
+# =========================================================
 tool:
   name: samtools
   version: "1.10"
@@ -8,17 +10,27 @@ tool:
 
 io:
   inputs:
-    SeqID:   { required: true }
-    BamDir:  { required: true }
+    SeqID:   { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:  { required: true, help: "Directory containing the primary (unsorted) BAM file" }
 
   outputs:
-    sorted_bam: { default: "[BamDir]/[SeqID].sorted.bam" }
-    sorted_bai: { default: "[BamDir]/[SeqID].sorted.bam.bai" }
+    # [수정] .dbam -> .bam 으로 오타를 교정했습니다.
+    sorted_bam: { default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam", help: "Coordinate sorted BAM file" }
+    sorted_bai: { default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai", help: "BAM index file (BAI)" }
 
 params:
-  Threads: { type: int, default: 8 }
+  # --- [Suffix 제어] ---
+  # 정렬 전 단계를 primary로, 결과를 sorted로 정의하여 명확성을 높였습니다.
+  InputSuffix:  { type: str, default: "primary", help: "Suffix of input BAM (e.g., primary, initial)" }
+  OutputSuffix: { type: str, default: "sorted", help: "Suffix for output BAM (e.g., sorted, coord_sorted)" }
+
+  # --- [Binaries] ---
+  samtools_bin: { type: str, default: "samtools", help: "Path to samtools executable or binary name" }
+  
+  # --- [Resources] ---
+  Threads: { type: int, default: 8, help: "Number of threads for sorting and indexing" }
 
 cmd_line: >
-  samtools sort -@ [Threads] -o [BamDir]/[SeqID].sorted.bam [BamDir]/[SeqID].primary.bam
+  [samtools_bin] sort -@ [Threads] -o [sorted_bam] [BamDir]/[SeqID].[InputSuffix].bam
   &&
-  samtools index -b -@ [Threads] [BamDir]/[SeqID].sorted.bam
+  [samtools_bin] index -b -@ [Threads] [sorted_bam]

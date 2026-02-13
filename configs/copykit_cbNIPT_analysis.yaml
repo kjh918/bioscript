@@ -1,33 +1,46 @@
+# =========================================================
+# CopyKit CNV Analysis Pipeline for cbNIPT (Modular Version)
+#  1. Create analysis directory
+#  2. Symbolic link of analysis-ready BAM files
+#  3. Run R-based CopyKit analysis script
+# =========================================================
 tool:
-  name: CopyKitAnalysis
+  name: CopyKit
   version: "1.0.0"
   profile: "cbNIPT_CopyNumber_Analysis"
 
 io:
   inputs:
-    SeqID:              { required: true }
-    SampleID:           { required: true }
-    SamplePloidy:       { required: true }
-    NGS_DataBaseDir:    { required: true }
-    AnalysisRunDir:     { required: true }
+    SeqID:            { required: true, help: "Original sequence identifier from mapping stage" }
+    NGS_DataBaseDir:  { required: true, help: "Directory containing the processed BAM files" }
+    ResultBaseDir:    { required: true, help: "Base directory where all sample results are stored" }
+
   outputs:
-    # 분석 디렉토리 정의 (자동 생성 대상)
-    AnalysisRunDir: { default: "[ResultBaseDir]/[SampleID]" }
+    # 분석용 개별 디렉토리를 정의합니다.
+    AnalysisRunDir:   { default: "[ResultBaseDir]/[SeqID]", help: "Target directory for this specific sample analysis" }
 
 params:
-  # parallel -j 2에 대응하는 threads
-  Threads: { type: int, default: 1 }
-  BinSize: { type: str, default: "220kb" }
-  GenomeVersion: { type: str, default: "hg38" }
-  Rscript_path: { type: str, default: "/storage/home/kangsm/runScripts/cbNIPT/GCX.cbNIPT_Run.CopyKit.Analysis.R" }
-  SamplePloidy: { type: int, default: 2 }
-# [Logic] 디렉토리 생성 -> 심볼릭 링크 -> parallel 실행 순서
+  # --- [Suffix 제어] ---
+  # 기본적으로 최종 분석 준비 완료(analysisReady) 파일을 사용합니다.
+  InputSuffix:    { type: str, default: "analysisReady", help: "Suffix of input BAM (e.g., analysisReady, recal, dedup)" }
+
+  # --- [Binaries & Scripts] ---
+  mkdir_bin:      { type: str, default: "mkdir", help: "Path to mkdir executable" }
+  rscript_bin:    { type: str, default: "Rscript", help: "Path to Rscript executable" }
+  Rscript_path:   { type: str, default: "/storage/home/kangsm/runScripts/cbNIPT/GCX.cbNIPT_Run.CopyKit.Analysis.R", help: "Path to the CopyKit analysis R script" }
+  
+  # --- [Resource & Algorithm Parameters] ---
+  Threads:        { type: int, default: 1, help: "Number of threads for parallel processing" }
+  BinSize:        { type: str, default: "220kb", help: "Bin size for copy number estimation (e.g., 220kb, 500kb)" }
+  GenomeVersion:  { type: str, default: "hg38", help: "Reference genome version (hg38/hg19)" }
+  SamplePloidy:   { type: int, default: 2, help: "Expected sample ploidy (Default: 2 for human)" }
+
 cmd_line: >
-  mkdir -p [AnalysisRunDir] &&
-  ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam [AnalysisRunDir]/[SampleID].bam &&
-  ln -Tsf [NGS_DataBaseDir]/[SeqID].analysisReady.bam.bai [AnalysisRunDir]/[SampleID].bam.bai &&
-  Rscript [Rscript_path] 
-  --SeqID [SampleID] 
+  [mkdir_bin] -p [AnalysisRunDir] &&
+  ln -Tsf [NGS_DataBaseDir]/[SeqID].[InputSuffix].bam [AnalysisRunDir]/[SeqID].bam &&
+  ln -Tsf [NGS_DataBaseDir]/[SeqID].[InputSuffix].bam.bai [AnalysisRunDir]/[SeqID].bam.bai &&
+  [rscript_bin] [Rscript_path] 
+  --SeqID [SeqID] 
   --AnalysisRunDir [AnalysisRunDir] 
   --BinSize [BinSize] 
   --Ploidy [SamplePloidy] 

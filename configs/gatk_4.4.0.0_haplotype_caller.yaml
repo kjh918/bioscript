@@ -1,40 +1,64 @@
+# =========================================================
+# GATK4 Variant Calling Pipeline
+#  1. HaplotypeCaller: GVCF 생성 (Sample-level)
+#  2. GenotypeGVCFs: 최종 VCF 생성 (Joint-calling ready)
+#  - Modular Suffix를 통해 다양한 분석 단계의 BAM 수용
+# =========================================================
 tool:
-  name: gatk
+  name: gatk4
   version: "4.4.0.0"
-  profile: "VariantCalling_HaplotypeCaller"
+  profile: "HaplotypeCaller_based_on_chrom"
 
 io:
   inputs:
-    SeqID:           { required: true }
-    Chromosome:      { required: true }
-    InputBam:        { required: true }
-    ReferenceFasta:  { default: "/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa" }
-    DbsnpVcf:        { default: "/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz" }
-    ResultDir:       { required: true }
+    SeqID:           { required: true, help: "Sequence identifier for sample tracking" }
+    Chromosome:      { required: true, help: "Target chromosome or interval (L option)" }
+    BamDir:          { required: true, help: "Directory containing the input BAM file" }
+    ResultDir:       { required: true, help: "Output directory for VCF and GVCF files" }
+    
+    # Reference & Database
+    ReferenceFasta:  { default: "/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa", help: "Reference genome FASTA" }
+    DbsnpVcf:        { default: "/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz", help: "Known variation database (dbSNP)" }
+
   outputs:
-    # 최종 결과물만 추적
-    OutVcf:          { default: "[ResultDir]/[SeqID].[Chromosome].vcf.gz" }
-    OutGvcf:         { default: "[ResultDir]/[SeqID].[Chromosome].gvcf.gz" }
+    # 최종 결과물 및 중간 GVCF 추적
+    OutGvcf:         { default: "[ResultDir]/[SeqID].[Chromosome].[InputSuffix].gvcf.gz", help: "Intermediate GVCF file" }
+    OutVcf:          { default: "[ResultDir]/[SeqID].[Chromosome].[InputSuffix].vcf.gz",  help: "Final Genotyped VCF file" }
 
 params:
-  GatkPath:          { default: "/storage/apps/gatk-4.4.0.0/gatk" }
-  Threads:           { default: 4 }
-  Memory:            { default: "32g" }
-  Ploidy:            { default: 2 }
-  TmpDir:            { default: "[ResultDir]/tmp" }
-  # All-site 옵션 (기본값 false, 필요시 true로 변경)
-  IncludeNonVariant: { default: "false" }
+  # --- [Suffix 제어] ---
+  # 기본적으로 분석 준비가 완료된(analysisReady) BAM을 사용합니다.
+  InputSuffix: { type: str, default: "analysisReady", help: "Suffix of input BAM (e.g., analysisReady, recal, dedup)" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  gatk_bin:        { type: str, default: "gatk", help: "GATK binary path inside container" }
+  sif:             { type: str, default: "/storage/images/gatk-4.4.0.0.sif", help: "GATK singularity image file" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+
+  # --- [Resources & Algorithm] ---
+  Threads:           { type: int, default: 4, help: "Threads for ParallelGC" }
+  Memory:            { type: str, default: "32g", help: "Java Xmx memory setting (e.g., 32g)" }
+  Ploidy:            { type: int, default: 2, help: "Sample ploidy (Default: 2)" }
+  TmpDir:            { type: str, default: "[ResultDir]/tmp/[SeqID]_[Chromosome]", help: "Temporary directory for GATK" }
+  IncludeNonVariant: { type: str, default: "false", help: "Whether to include non-variant sites in GenotypeGVCFs" }
 
 cmd_line: >
-  mkdir -p [TmpDir] && 
   
-  [GatkPath] --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[Memory] -Djava.io.tmpdir=[TmpDir]" 
+  [singularity_bin] exec -B [bind] [sif] [gatk_bin] --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[Memory] -Djava.io.tmpdir=[TmpDir]" 
   HaplotypeCaller 
-  -R [ReferenceFasta] -I [InputBam] -L [Chromosome] 
-  -ploidy [Ploidy] -stand-call-conf 30 --dbsnp [DbsnpVcf] 
-  -O [OutGvcf] -ERC GVCF && 
+  -R [ReferenceFasta] 
+  -I [BamDir]/[SeqID].[InputSuffix].bam 
+  -L [Chromosome] 
+  -ploidy [Ploidy] 
+  -stand-call-conf 30 
+  --dbsnp [DbsnpVcf] 
+  -O [OutGvcf] 
+  -ERC GVCF && 
   
-  [GatkPath] --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[Memory] -Djava.io.tmpdir=[TmpDir]" 
+  [singularity_bin] exec -B [bind] [sif] [gatk_bin] --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[Memory] -Djava.io.tmpdir=[TmpDir]" 
   GenotypeGVCFs 
   --include-non-variant-sites [IncludeNonVariant] 
-  -R [ReferenceFasta] -V [OutGvcf] -O [OutVcf]
+  -R [ReferenceFasta] 
+  -V [OutGvcf] 
+  -O [OutVcf]
