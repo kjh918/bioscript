@@ -72,7 +72,7 @@ if [[ -z "${qcResDir:-}" ]]; then echo "Error: --qcResDir is required"; usage; f
 if [[ -z "${ReferenceFasta:-}" ]]; then echo "Error: --ReferenceFasta is required"; usage; fi
 
 # --- [Output Paths] ---
-wgs_metrics_txt="${qcResDir}/${SeqID}.${InputSuffix}.collect_wgs_metrics.txt"
+wgs_metrics_txt="${qcResDir}/${SeqID}.collect_wgs_metrics.txt"
 
 # --- [Command Execution] ---
 # [Key]가 $Key 형태로 치환된 최종 커맨드입니다.

@@ -1,0 +1,38 @@
+# =========================================================
+# MultiQC: Aggregate Bioinformatics Analysis Reports
+#  - Collects results from FastQC, fastp, Picard, etc.
+#  - Uses a custom configuration for specific report layout
+#  - Singularity-based execution for environment consistency
+# =========================================================
+tool:
+  name: multiqc
+  version: "1.16"
+  profile: "report_using_singularity"
+
+io:
+  inputs:
+    SeqID:    { required: true, help: "Sequence identifier used for the report filename" }
+    qcResDir: { required: true, help: "Directory containing all QC data and target output directory" }
+
+  outputs:
+    # MultiQC가 생성하는 최종 HTML 리포트
+    report_html: { default: "[qcResDir]/[SeqID].QC.Results.html", help: "Final aggregated MultiQC HTML report" }
+
+params:
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
+  multiqc_bin:     { type: str, default: "multiqc",     help: "MultiQC binary name inside container" }
+  sif:             { type: str, default: "/storage/images/multiqc-1.16.sif", help: "MultiQC SIF image path" }
+  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+
+  # --- [MultiQC Options] ---
+  mqc_config:      { type: str, default: "/storage/home/kangsm/runScripts/NGS_config.MultiQC_Custom.yaml", help: "Path to custom MultiQC config file" }
+  mqc_filename:    { type: str, default: "[SeqID].QC.Results", help: "Base name for the output report file" }
+  mqc_args:        { type: str, default: "--force --data-dir", help: "Additional MultiQC flags" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [sif] [multiqc_bin] [mqc_args]
+  --filename [mqc_filename]
+  --outdir [qcResDir]
+  --config [mqc_config]
+  [qcResDir]

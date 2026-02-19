@@ -6,7 +6,7 @@ class BaseWriter:
         self.data = data
         self.io = data.get('io', {})
         self.params = data.get('params', {})
-        self.cmd = data.get('cmd_line', "").strip()
+        self.cmd = data.get('cmd_line', "").strip().replace('"',"'").replace('\t', '\\t')
 
     def _get_merged_vars(self, include_outputs=True):
         """치환을 위한 전체 변수 맵 (inputs + params + optional outputs)"""

@@ -18,6 +18,10 @@ def main() -> None:
     p_make.add_argument("-o", "--outdir", help="Override the output directory (default: ./output_scripts)")
 
     # 3. 'run' 커맨드 (추후 배포판 실행기를 위해 미리 예약 가능)
+    p_pipe = sub.add_parser("pipe", help="Generate standalone scripts (Py, Sh, Nf) from YAML config")
+    p_pipe.add_argument("-c", "--config", required=True, help="Path to the tool configuration YAML file")
+    p_pipe.add_argument("-o", "--outdir", help="Override the output directory (default: ./output_scripts)")
+
     # p_run = sub.add_parser("run", help="Execute generated scripts using DistributedPipeline")
 
     args = ap.parse_args()
@@ -45,5 +49,11 @@ def main() -> None:
             print(f"Error during build: {e}")
             sys.exit(1)
 
+    elif args.cmd == "pipe":
+        
+        pass
+
+    else:
+        pass 
 if __name__ == "__main__":
     main()

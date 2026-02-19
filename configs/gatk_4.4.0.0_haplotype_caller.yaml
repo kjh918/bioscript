@@ -22,12 +22,10 @@ io:
 
   outputs:
     # 최종 결과물 및 중간 GVCF 추적
-    OutGvcf:         { default: "[ResultDir]/[SeqID].[Chromosome].[InputSuffix].gvcf.gz", help: "Intermediate GVCF file" }
-    OutVcf:          { default: "[ResultDir]/[SeqID].[Chromosome].[InputSuffix].vcf.gz",  help: "Final Genotyped VCF file" }
+    OutGvcf:         { default: "[ResultDir]/[SeqID].[Chromosome].gvcf.gz", help: "Intermediate GVCF file" }
+    OutVcf:          { default: "[ResultDir]/[SeqID].[Chromosome].vcf.gz",  help: "Final Genotyped VCF file" }
 
 params:
-  # --- [Suffix 제어] ---
-  # 기본적으로 분석 준비가 완료된(analysisReady) BAM을 사용합니다.
   InputSuffix: { type: str, default: "analysisReady", help: "Suffix of input BAM (e.g., analysisReady, recal, dedup)" }
 
   # --- [Binaries & Container] ---

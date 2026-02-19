@@ -10,7 +10,7 @@ rule gatk4:
         qcResDir = ""
         ReferenceFasta = ""
     output:
-        wgs_metrics_txt = "[qcResDir]/[SeqID].[InputSuffix].collect_wgs_metrics.txt"
+        wgs_metrics_txt = "[qcResDir]/[SeqID].collect_wgs_metrics.txt"
     params:
         InputSuffix = "analysisReady"
         singularity_bin = "singularity"

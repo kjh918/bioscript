@@ -25,10 +25,10 @@ io:
       default: "[qcResDir]/[SeqID].[InputSuffix].recal_table.txt"
       help: "Recalibration report table used by ApplyBQSR"
     recal_bam:
-      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+      default: "[BamDir]/[SeqID].[OutputSuffix].bam"
       help: "Final recalibrated BAM file"
     recal_bai:
-      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai"
+      default: "[BamDir]/[SeqID].[OutputSuffix].bam.bai"
       help: "Index file for the recalibrated BAM"
 
 params:

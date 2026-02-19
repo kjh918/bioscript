@@ -17,10 +17,10 @@ io:
 
   outputs:
     insert_size_metrics_txt:
-      default: "[qcResDir]/[SeqID].[InputSuffix].insert_size.metrics.txt"
+      default: "[qcResDir]/[SeqID].insert_size.metrics.txt"
       help: "Text file containing detailed insert size statistics"
     insert_size_hist_pdf:
-      default: "[qcResDir]/[SeqID].[InputSuffix].insert_size.histogram.pdf"
+      default: "[qcResDir]/[SeqID].insert_size.histogram.pdf"
       help: "PDF file containing the insert size distribution histogram"
 
 params:
@@ -42,7 +42,7 @@ cmd_line: >
   [singularity_bin] exec -B [bind] [sif] [java_bin]
   -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m
   -jar [gatk_jar] CollectInsertSizeMetrics
-  --INPUT [BamDir]/[SeqID].[InputSuffix].bam
+  --INPUT [BamDir]/[SeqID].bam
   --OUTPUT [insert_size_metrics_txt]
   --Histogram_FILE [insert_size_hist_pdf]
   --REFERENCE_SEQUENCE [ReferenceFasta]

@@ -24,7 +24,7 @@ io:
 
   outputs:
     # Suffix를 적용하여 어떤 FASTQ에서 나온 BAM인지 명시
-    primary_bam: { default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam", help: "Output aligned BAM file" }
+    primary_bam: { default: "[BamDir]/[SeqID].[OutputSuffix].bam", help: "Output aligned BAM file" }
 
 params:
   # --- [Suffix 제어] ---

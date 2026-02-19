@@ -19,7 +19,7 @@ io:
   outputs:
     # Suffix를 결과 파일명에도 포함하여 분석된 데이터의 상태를 명시
     wgs_metrics_txt:
-      default: "[qcResDir]/[SeqID].[InputSuffix].collect_wgs_metrics.txt"
+      default: "[qcResDir]/[SeqID].collect_wgs_metrics.txt"
       help: "Text file containing detailed WGS coverage and performance metrics"
 
 params:

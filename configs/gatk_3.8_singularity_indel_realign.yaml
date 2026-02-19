@@ -22,10 +22,10 @@ io:
 
   outputs:
     target_intervals:
-      default: "[qcResDir]/[SeqID].[InputSuffix].realign_target.intervals"
+      default: "[qcResDir]/[SeqID].[OutputSuffix].realign_target.intervals"
       help: "Target intervals file identifying regions for realignment"
     realigned_bam:
-      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+      default: "[BamDir]/[SeqID].[OutputSuffix].bam"
       help: "Final Indel-realigned BAM file"
 
 params:

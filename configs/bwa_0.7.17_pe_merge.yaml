@@ -32,10 +32,10 @@ io:
       default: "[BamDir]/[SeqID].[InputSuffix].bwa_raw.sam"
       help: "Raw BWA alignment output without metadata"
     primary_bam:  
-      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+      default: "[BamDir]/[SeqID].[OutputSuffix].bam"
       help: "Final merged and coordinate-sorted BAM file"
     primary_bai:  
-      default: "[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bai"
+      default: "[BamDir]/[SeqID].[OutputSuffix].bai"
       help: "Index for the final merged BAM"
 
 params:
@@ -77,7 +77,7 @@ cmd_line: >
   [singularity_bin] exec -B [bind] [bwa_sif] [bwa_bin] mem 
   [mark_short_split] [soft_clipping] [clipping_penalty] [other_args] 
   -t [Threads]
-  -R "@RG\tID:[ReadGroupID]\tPL:[ReadGroupPlatform]\tLB:[ReadGroupLibrary]\tSM:[SeqID]\tCN:[ReadGroupCenter]"
+  -R "@RG\\tID:[ReadGroupID]\\tPL:[ReadGroupPlatform]\\tLB:[ReadGroupLibrary]\\tSM:[SeqID]\\tCN:[ReadGroupCenter]"
   [ReferenceFasta]
   [TrimFastqDir]/[SeqID].[InputSuffix]_R1.fastq.gz [TrimFastqDir]/[SeqID].[InputSuffix]_R2.fastq.gz
   > [aligned_sam]

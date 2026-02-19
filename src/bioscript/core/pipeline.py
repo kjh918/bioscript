@@ -34,7 +34,7 @@ class Task:
         
 
 class Pipeline:
-    def __init__(self, raw_dir: str, work_dir: Path, log_dir: Path, executor: Any, suffix: str='fastq'):
+    def __init__(self, raw_dir: str, work_dir: Path, log_dir: Path, executor: Any, suffix: str='fastq.gz'):
         self.raw_dir = Path(raw_dir) if raw_dir else None
         self.work_dir = Path(work_dir)
         self.log_dir = Path(log_dir)
@@ -72,22 +72,17 @@ class Pipeline:
             
             for i, task in enumerate(tasks, start=1):
                 # 1. 작업 디렉토리 (logs의 부모) 및 Job ID
-                task_work_dir = task.log_path.parent
+                task_work_dir = task.log_path
                 job_id = f"{sid}_{i:02d}_{task.name}"
 
-                # [MODIFIED] .done 파일 존재 시 Skip 로직
                 done_flag = task_work_dir / ".done"
                 if done_flag.exists():
                     print(f"[-] {job_id}: Already done. Skipping...")
                     master_script_lines.append(f"# Task: {task.name} - SKIPPED (Already Done)")
-                    # Skip 시 last_jid는 업데이트하지 않음 (이전 단계 JID 유지 혹은 None)
                     continue
                 
                 # 2. 개별 Task 스크립트 경로 (요청하신 대로 sid/analysis/logs/ 아래에 생성)
-                # 파일명: {order}_{name}_{sid}.sh
                 wrapper_p = task.log_path / f"{i:02d}_{task.name}_{sid}.sh"
-                
-                # 3. 래퍼 스크립트 물리적 생성
                 cmd = task.get_cmd()
                 self.executor.make_wrapper(cmd, wrapper_p, task_work_dir)
                 

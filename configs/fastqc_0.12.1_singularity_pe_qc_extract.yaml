@@ -34,10 +34,10 @@ params:
   bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity exec" }
 
   # --- [Resources & Options] ---
-  threads:         { type: int, default: 8, help: "Number of threads (FastQC processes files in parallel)" }
+  Threads:         { type: int, default: 8, help: "Number of threads (FastQC processes files in parallel)" }
   fastqc_args:     { type: str, default: "--extract", help: "Additional FastQC flags (e.g., --extract, --nogroup)" }
 
 cmd_line: >
   [singularity_bin] exec -B [bind] [sif] [fastqc_bin] [fastqc_args]
-  --threads [threads] --outdir [qcResDir]
+  --threads [Threads] --outdir [qcResDir]
   [RawFastqDir]/[SeqID]_R1.fastq.gz [RawFastqDir]/[SeqID]_R2.fastq.gz

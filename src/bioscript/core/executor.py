@@ -65,7 +65,7 @@ class SunGridExecutor:
             "#$ -S /bin/bash",
             "set -e",
             cmd,
-            "echo OK > .done"
+            f"echo OK > {os.path.dirname(wrapper_path)}/.done"
         ]
         wrapper_path.write_text("\n".join(script))
         wrapper_path.chmod(0o755)

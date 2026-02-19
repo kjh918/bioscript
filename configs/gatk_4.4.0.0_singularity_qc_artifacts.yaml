@@ -17,8 +17,7 @@ io:
     ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
   outputs:
-    # Suffix를 결과 파일명에도 포함하여 어떤 BAM으로부터 분석되었는지 명시
-    artifacts_txt: { default: "[qcResDir]/[SeqID].[InputSuffix].artifacts.txt", help: "Base name for artifact metrics output files" }
+    artifacts_txt: { default: "[qcResDir]/[SeqID].artifacts.txt", help: "Base name for artifact metrics output files" }
 
 params:
   InputSuffix: { type: str, default: "analysisReady", help: "Suffix of the input BAM file (default : analysisReady / e.g., recal, sorted)" }
