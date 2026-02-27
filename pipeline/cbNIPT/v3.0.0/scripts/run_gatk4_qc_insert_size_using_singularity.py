@@ -51,7 +51,7 @@ def main():
     insert_size_hist_pdf = f"{qcResDir}/{SeqID}.insert_size.histogram.pdf"
 
     # --- [Command Execution] ---
-    cmd = f"{singularity_bin} exec -B {bind} {sif} {java_bin} -XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m -jar {gatk_jar} CollectInsertSizeMetrics --INPUT {BamDir}/{SeqID}.bam --OUTPUT {insert_size_metrics_txt} --Histogram_FILE {insert_size_hist_pdf} --REFERENCE_SEQUENCE {ReferenceFasta}"
+    cmd = f"{singularity_bin} exec -B {bind} {sif} {java_bin} -XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m -jar {gatk_jar} CollectInsertSizeMetrics --INPUT {BamDir}/{SeqID}.{InputSuffix}.bam --OUTPUT {insert_size_metrics_txt} --Histogram_FILE {insert_size_hist_pdf} --REFERENCE_SEQUENCE {ReferenceFasta}"
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     

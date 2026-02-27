@@ -24,7 +24,7 @@ def main():
     parser.add_argument('--KnownSnp', required=True, default='', help='Path to known SNPs VCF (e.g., dbSNP) (Default: )')
     parser.add_argument('--KnownIndel1', required=True, default='', help='Path to known Indels VCF (e.g., Mills and 1000G) (Default: )')
     parser.add_argument('--KnownIndel2', required=True, default='', help='Path to additional known Indels VCF (Default: )')
-    parser.add_argument('--InputSuffix', required=False, default='dedup', help='Suffix of input BAM (e.g., dedup, sorted, primary) (Default: dedup)')
+    parser.add_argument('--InputSuffix', required=False, default='realign', help='Suffix of input BAM (e.g., dedup, sorted, primary) (Default: dedup)')
     parser.add_argument('--OutputSuffix', required=False, default='recal', help='Suffix for output BAM (e.g., recal, bqsr) (Default: recal)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--gatk_bin', required=False, default='gatk', help='GATK wrapper script or binary inside container (Default: gatk)')

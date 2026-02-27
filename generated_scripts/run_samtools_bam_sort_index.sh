@@ -15,6 +15,7 @@ usage() {
     echo "  --BamDir          Directory containing the primary (unsorted) BAM file"
     echo ""
     echo "Optional Parameters:"
+    echo "  --InputSuffix     Suffix of input BAM (e.g., primary, initial) (Default: primary)"
     echo "  --OutputSuffix    Suffix for output BAM (e.g., sorted, coord_sorted) (Default: sorted)"
     echo "  --samtools_bin    Path to samtools executable or binary name (Default: samtools)"
     echo "  --Threads         Number of threads for sorting and indexing (Default: 8)"
@@ -26,6 +27,7 @@ usage() {
 # YAML의 기본값들이 이곳에 Key="Value" 형태로 정의됩니다.
 SeqID=""
 BamDir=""
+InputSuffix="primary"
 OutputSuffix="sorted"
 samtools_bin="samtools"
 Threads="8"
@@ -35,6 +37,7 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --SeqID) SeqID="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
+        --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --samtools_bin) samtools_bin="$2"; shift 2 ;;
         --Threads) Threads="$2"; shift 2 ;;
@@ -49,7 +52,7 @@ if [[ -z "${SeqID:-}" ]]; then echo "Error: --SeqID is required"; usage; fi
 if [[ -z "${BamDir:-}" ]]; then echo "Error: --BamDir is required"; usage; fi
 
 # --- [Output Paths] ---
-sorted_bam="${BamDir}/${SeqID}.[OutputSudffix].bam"
+sorted_bam="${BamDir}/${SeqID}.${InputSuffix}.bam"
 sorted_bai="${BamDir}/${SeqID}.${OutputSuffix}.bam.bai"
 
 # --- [Command Execution] ---

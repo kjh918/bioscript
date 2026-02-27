@@ -15,13 +15,13 @@ io:
 
   outputs:
     # [수정] .dbam -> .bam 으로 오타를 교정했습니다.
-    sorted_bam: { default: "[BamDir]/[SeqID].[OutputSudffix].bam", help: "Coordinate sorted BAM file" }
+    sorted_bam: { default: "[BamDir]/[SeqID].[InputSuffix].bam", help: "Coordinate sorted BAM file" }
     sorted_bai: { default: "[BamDir]/[SeqID].[OutputSuffix].bam.bai", help: "BAM index file (BAI)" }
 
 params:
   # --- [Suffix 제어] ---
   # 정렬 전 단계를 primary로, 결과를 sorted로 정의하여 명확성을 높였습니다.
-  #InputSuffix:  { type: str, default: "primary", help: "Suffix of input BAM (e.g., primary, initial)" }
+  InputSuffix:  { type: str, default: "primary", help: "Suffix of input BAM (e.g., primary, initial)" }
   OutputSuffix: { type: str, default: "sorted", help: "Suffix for output BAM (e.g., sorted, coord_sorted)" }
 
   # --- [Binaries] ---

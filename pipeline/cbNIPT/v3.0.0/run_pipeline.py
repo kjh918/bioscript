@@ -122,6 +122,7 @@ if __name__ == "__main__":
                     'BamDir': work_dir / sid / "bam",
                     'qcResDir': work_dir / sid / "qc",
                     'ReferenceFasta': ReferenceFasta,
+                    'KnownSnp': KnownSnp,
                     'KnownIndel1': KnownIndel1,
                     'KnownIndel2': KnownIndel2,
                     "Threads": 8,
@@ -151,7 +152,7 @@ if __name__ == "__main__":
             ),
             Task(
                 name="gatk4_singularity_qc_alignment_summary",
-                runner_path= scripts / "09_gatk4_singularity_qc_alignment_summary.py",
+                runner_path= scripts / "run_gatk4_qc_alignment_summary_using_singularity.py",
                 log_path = work_dir / sid / "logs" / "09_gatk4_singularity_qc_alignment_summary", 
                 spec = {
                     'SeqID': sid,
@@ -163,7 +164,7 @@ if __name__ == "__main__":
             ),
             Task(
                 name="gatk4_singularity_qc_insert_size",
-                runner_path= scripts / "run_gatk4_qc_insert_size_using_singularity.py*",
+                runner_path= scripts / "run_gatk4_qc_insert_size_using_singularity.py",
                 log_path = work_dir / sid / "logs" / "10_gatk4_singularity_qc_insert_size", 
                 spec = {
                     'SeqID': sid,
@@ -175,7 +176,7 @@ if __name__ == "__main__":
             ),
             Task(
                 name="gatk4_singularity_qc_wgs_metrics",
-                runner_path= scripts / "run_gatk4_qc_wgs_metrics_using_singularity.py*",
+                runner_path= scripts / "runs_gatk4_qc_wgs_metrics_using_singularity.py",
                 log_path = work_dir / sid / "logs" / "11_gatk4_singularity_qc_wgs_metrics", 
                 spec = {
                     'SeqID': sid,
@@ -188,7 +189,7 @@ if __name__ == "__main__":
             Task(
                 name="mosdepth_singularity_coverage_100kb",
                 runner_path= scripts / "run_mosdepth_singularity_coverage.py",
-                log_path = work_dir / sid / "logs" / "11_mosdepth_singularity_coverage_100kb", 
+                log_path = work_dir / sid / "logs" / "12_mosdepth_singularity_coverage_100kb", 
                 spec = {
                     'SeqID': sid,
                     'BamDir': work_dir / sid /"bam",

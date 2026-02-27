@@ -19,6 +19,7 @@ process SAMTOOLS {
     // 로컬 변수 정의 (YAML params 기반)
     def SeqID = params.SeqID ?: ""
     def BamDir = params.BamDir ?: ""
+    def InputSuffix = params.InputSuffix ?: "primary"
     def OutputSuffix = params.OutputSuffix ?: "sorted"
     def samtools_bin = params.samtools_bin ?: "samtools"
     def Threads = params.Threads ?: "8"

@@ -48,10 +48,76 @@ def main() -> None:
         except Exception as e:
             print(f"Error during build: {e}")
             sys.exit(1)
+# bioscript/cli/main.py (일부 발췌)
 
     elif args.cmd == "pipe":
+        config_path = Path(args.config).resolve()
+        if not config_path.exists():
+            print(f"Error: Pipeline config file not found at {config_path}")
+            sys.exit(1)
+
+        print(f"[*] Initializing Pipeline Orchestrator with: {config_path.name}")
         
-        pass
+        # 1. Pipeline Config 로드 (전역 리소스 및 경로 설정)
+        import yaml
+        with open(config_path, 'r') as f:
+            pipe_cfg = yaml.safe_load(f)
+
+        # 2. 필수 엔진 임포트
+        from bioscript.core.executor import SunGridExecutor
+        from bioscript.core.pipeline import Pipeline, Task
+
+        # 3. Pipeline 엔진 초기화
+        work_dir = Path(pipe_cfg['project']['work_dir'])
+        scripts_dir = Path(pipe_cfg['project']['scripts_dir'])
+        
+        pipe = Pipeline(
+            raw_dir = Path(pipe_cfg['project']['raw_dir']),
+            work_dir = work_dir,
+            log_dir = work_dir / "logs",
+            executor = SunGridExecutor(
+                user = pipe_cfg['executor']['user'],
+                node = pipe_cfg['executor']['node'],
+                log_root = work_dir / "logs",
+                max_samples = pipe_cfg['executor'].get('max_samples', 5),
+                max_threads = pipe_cfg['executor'].get('max_threads', 40)
+            )
+        )
+
+        # 4. 샘플별 Task 할당 루프
+        # YAML에 정의된 순서대로 Task 리스트를 생성하여 연결합니다.
+        for sid in pipe.samples:
+            sample_tasks = []
+            
+            # YAML의 'workflow' 섹션에 정의된 도구 순서대로 순회
+            for step in pipe_cfg['workflow']:
+                tool_name = step['tool']
+                # 생성된 스크립트 경로 (예: run_fastp.py)
+                runner = scripts_dir / f"run_{tool_name}.py"
+                
+                # 각 단계별 특화 인자(spec) 구성
+                spec = { 'SeqID': sid }
+                spec.update(step.get('params', {}))
+                
+                # 경로 기반 인자들은 샘플 ID(sid)를 포함하여 동적 생성
+                # 예: work_dir/sid/bam
+                for k, v in step.get('io', {}).items():
+                    spec[k] = str(Path(v.replace("[sid]", sid)).absolute())
+
+                sample_tasks.append(
+                    Task(
+                        name = tool_name,
+                        runner_path = runner,
+                        log_path = work_dir / sid / "logs" / f"step_{tool_name}",
+                        spec = spec
+                    )
+                )
+            
+            pipe.add_tasks(sample_tasks)
+
+        # 5. 실행 (SGE hold_jid 자동 관리)
+        print(f"[*] Submitting {len(pipe.samples)} samples to SGE Cluster...")
+        pipe.run()
 
     else:
         pass 

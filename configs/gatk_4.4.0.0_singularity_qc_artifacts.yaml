@@ -17,7 +17,7 @@ io:
     ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
   outputs:
-    artifacts_txt: { default: "[qcResDir]/[SeqID].artifacts.txt", help: "Base name for artifact metrics output files" }
+    artifacts_txt: { default: "[qcResDir]/[SeqID].artifacts", help: "Base name for artifact metrics output files" }
 
 params:
   InputSuffix: { type: str, default: "analysisReady", help: "Suffix of the input BAM file (default : analysisReady / e.g., recal, sorted)" }

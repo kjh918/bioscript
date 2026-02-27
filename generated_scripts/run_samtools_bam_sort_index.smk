@@ -8,9 +8,10 @@ rule samtools:
         SeqID = ""
         BamDir = ""
     output:
-        sorted_bam = "[BamDir]/[SeqID].[OutputSudffix].bam"
+        sorted_bam = "[BamDir]/[SeqID].[InputSuffix].bam"
         sorted_bai = "[BamDir]/[SeqID].[OutputSuffix].bam.bai"
     params:
+        InputSuffix = "primary"
         OutputSuffix = "sorted"
         samtools_bin = "samtools"
         Threads = "8"

@@ -7,22 +7,20 @@ rule picard:
     input:
         SeqID = ""
         BamDir = ""
-        ReferenceFasta = ""
+        qcResDir = ""
     output:
-        gc_bias_metrics_txt = "[BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.txt"
-        gc_bias_summary_txt = "[BamDir]/[SeqID].[InputSuffix].gc_bias_summary.txt"
-        gc_bias_chart_pdf = "[BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.pdf"
+        out_bam = "[BamDir]/[SeqID].sorted.dedup.bam"
+        metrics = "[qcResDir]/[SeqID].mark.duplicates.metrics.txt"
     params:
-        InputSuffix = "analysisReady"
         java_bin = "java"
-        picard_jar = "/storage/apps/bin/picard-3.1.0.jar"
-        gc_threads = "14"
-        xmx_mb = "16384"
-        min_gc = "0"
-        max_gc = "100"
-        window_size = "100"
+        picard_jar = "/storage/apps/bin/picard.jar"
+        Threads = "14"
+        Memory = "16384m"
+        TmpDir = "/tmp"
+        create_index = "true"
+        remove_duplicates = "true"
     threads: 1
     shell:
         """
-        {params.java_bin} -XX:ParallelGCThreads={params.gc_threads} -Xmx{params.xmx_mb}m -jar {params.picard_jar} CollectGcBiasMetrics I={input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam O={output.gc_bias_metrics_txt} S={output.gc_bias_summary_txt} CHART={output.gc_bias_chart_pdf} R={input.ReferenceFasta} MINIMUM_GC={params.min_gc} MAXIMUM_GC={params.max_gc} WINDOW_SIZE={params.window_size}
+        {params.java_bin} -XX:ParallelGCThreads={threads} -Xmx{params.Memory} -jar {params.picard_jar} MarkDuplicates  INPUT={input.BamDir}/{input.SeqID}.sorted.bam  OUTPUT={output.out_bam}  METRICS_FILE={output.metrics}  CREATE_INDEX={params.create_index}  REMOVE_DUPLICATES={params.remove_duplicates}  TMP_DIR={params.TmpDir}
         """

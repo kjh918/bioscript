@@ -1,0 +1,41 @@
+# =========================================================
+# Picard MarkDuplicates
+#  - Identifies and removes duplicate reads
+#  - Generates duplication metrics for QC
+# =========================================================
+tool:
+  name: picard
+  version: "3.1.0"
+  profile: "qc_gc_bias_metrics"
+  description: "Picard 도구를 사용하여 중복 리드(Duplicate reads)를 식별하고 BAM 파일에서 완전히 제거합니다."
+
+io:
+  inputs:
+    SeqID:    { required: true, help: "Sequence identifier used for file naming" }
+    BamDir:   { required: true, help: "Directory containing the sorted input BAM files" }
+    qcResDir: { required: true, help: "Directory where duplication metrics will be saved" }
+
+  outputs:
+    out_bam: { default: "[BamDir]/[SeqID].sorted.dedup.bam", help: "Output deduplicated BAM file" }
+    metrics: { default: "[qcResDir]/[SeqID].mark.duplicates.metrics.txt", help: "Duplication metrics report file" }
+
+params:
+  # --- [Binaries & Java Options] ---
+  java_bin:        { type: str, default: "java", help: "Path to java executable" }
+  picard_jar:      { type: str, default: "/storage/apps/bin/picard.jar", help: "Path to picard.jar file" }
+  Threads:         { type: int, default: 14, help: "Number of parallel GC threads (-XX:ParallelGCThreads)" }
+  Memory:          { type: str, default: "16384m", help: "Maximum Java heap size (-Xmx)" }
+  TmpDir:          { type: str, default: "/tmp", help: "Directory for Picard temporary files" }
+
+  # --- [Tool Options] ---
+  create_index:      { type: str, default: "true", help: "Automatically create BAM index (.bai)" }
+  remove_duplicates: { type: str, default: "true", help: "If true, removes duplicates completely rather than just marking them" }
+
+cmd_line: >
+  [java_bin] -XX:ParallelGCThreads=[Threads] -Xmx[Memory] -jar [picard_jar] MarkDuplicates 
+  INPUT=[BamDir]/[SeqID].sorted.bam 
+  OUTPUT=[out_bam] 
+  METRICS_FILE=[metrics] 
+  CREATE_INDEX=[create_index] 
+  REMOVE_DUPLICATES=[remove_duplicates] 
+  TMP_DIR=[TmpDir]

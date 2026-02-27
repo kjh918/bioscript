@@ -9,27 +9,25 @@ process PICARD {
     publishDir "${params.outdir}/${sample_id}", mode: 'copy'
 
     input:
-    tuple val(sample_id), val(SeqID), path(BamDir), val(ReferenceFasta)
+    tuple val(sample_id), val(SeqID), path(BamDir), val(qcResDir)
 
     output:
-    path "*", emit: gc_bias_metrics_txt
-    path "*", emit: gc_bias_summary_txt
-    path "*", emit: gc_bias_chart_pdf
+    path "*", emit: out_bam
+    path "*", emit: metrics
 
     script:
     // 로컬 변수 정의 (YAML params 기반)
     def SeqID = params.SeqID ?: ""
     def BamDir = params.BamDir ?: ""
-    def ReferenceFasta = params.ReferenceFasta ?: ""
-    def InputSuffix = params.InputSuffix ?: "analysisReady"
+    def qcResDir = params.qcResDir ?: ""
     def java_bin = params.java_bin ?: "java"
-    def picard_jar = params.picard_jar ?: "/storage/apps/bin/picard-3.1.0.jar"
-    def gc_threads = params.gc_threads ?: "14"
-    def xmx_mb = params.xmx_mb ?: "16384"
-    def min_gc = params.min_gc ?: "0"
-    def max_gc = params.max_gc ?: "100"
-    def window_size = params.window_size ?: "100"
+    def picard_jar = params.picard_jar ?: "/storage/apps/bin/picard.jar"
+    def Threads = params.Threads ?: "14"
+    def Memory = params.Memory ?: "16384m"
+    def TmpDir = params.TmpDir ?: "/tmp"
+    def create_index = params.create_index ?: "true"
+    def remove_duplicates = params.remove_duplicates ?: "true"
     """
-    ${java_bin} -XX:ParallelGCThreads=${gc_threads} -Xmx${xmx_mb}m -jar ${picard_jar} CollectGcBiasMetrics I=${BamDir}/${SeqID}.${InputSuffix}.bam O=${gc_bias_metrics_txt} S=${gc_bias_summary_txt} CHART=${gc_bias_chart_pdf} R=${ReferenceFasta} MINIMUM_GC=${min_gc} MAXIMUM_GC=${max_gc} WINDOW_SIZE=${window_size}
+    ${java_bin} -XX:ParallelGCThreads=${Threads} -Xmx${Memory} -jar ${picard_jar} MarkDuplicates  INPUT=${BamDir}/${SeqID}.sorted.bam  OUTPUT=${out_bam}  METRICS_FILE=${metrics}  CREATE_INDEX=${create_index}  REMOVE_DUPLICATES=${remove_duplicates}  TMP_DIR=${TmpDir}
     """
 }

@@ -34,7 +34,7 @@ io:
 params:
   # --- [Suffix 제어] ---
   # 보통 MarkDuplicates 이후(dedup)를 입력으로 받습니다.
-  InputSuffix:  { type: str, default: "dedup", help: "Suffix of input BAM (e.g., dedup, sorted, primary)" }
+  InputSuffix:  { type: str, default: "realign", help: "Suffix of input BAM (e.g., dedup, sorted, primary)" }
   OutputSuffix: { type: str, default: "recal", help: "Suffix for output BAM (e.g., recal, bqsr)" }
 
   # --- [Binaries & Container] ---

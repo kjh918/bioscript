@@ -23,7 +23,7 @@ def main():
     parser.add_argument('--ReferenceFasta', required=True, default='', help='Path to the reference genome FASTA file (Default: )')
     parser.add_argument('--KnownIndel1', required=True, default='', help='Path to known Indels VCF (e.g., Mills and 1000G) (Default: )')
     parser.add_argument('--KnownIndel2', required=True, default='', help='Path to additional known Indels VCF (Default: )')
-    parser.add_argument('--InputSuffix', required=False, default='dedup', help='Suffix of input BAM (e.g., dedup, sorted, primary) (Default: dedup)')
+    parser.add_argument('--InputSuffix', required=False, default='sorted.dedup', help='Suffix of input BAM (e.g., dedup, sorted, primary) (Default: dedup)')
     parser.add_argument('--OutputSuffix', required=False, default='realign', help='Suffix for output BAM (e.g., realign, ir) (Default: realign)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--java_bin', required=False, default='java', help='Java executable (inside container) (Default: java)')

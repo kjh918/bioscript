@@ -42,7 +42,7 @@ cmd_line: >
   [singularity_bin] exec -B [bind] [sif] [java_bin]
   -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m
   -jar [gatk_jar] CollectInsertSizeMetrics
-  --INPUT [BamDir]/[SeqID].bam
+  --INPUT [BamDir]/[SeqID].[InputSuffix].bam
   --OUTPUT [insert_size_metrics_txt]
   --Histogram_FILE [insert_size_hist_pdf]
   --REFERENCE_SEQUENCE [ReferenceFasta]
