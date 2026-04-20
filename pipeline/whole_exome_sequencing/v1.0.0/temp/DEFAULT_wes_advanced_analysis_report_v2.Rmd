@@ -1,0 +1,684 @@
+---
+title: "DEFAULT_ORDER_ID WES Advanced Analysis Report"
+output: html_document
+---
+
+```{r setup, include=FALSE,echo=FALSE,message=FALSE,warning=FALSE}
+    knitr::opts_chunk$set(echo = TRUE)
+#---/ PACKAGES /------------------------------------------------------------------------------------
+    options(stringsAsFactors=FALSE)   
+    suppressPackageStartupMessages(library("yaml"))
+    suppressPackageStartupMessages(library("plyr"))
+    suppressPackageStartupMessages(library("dplyr"))
+    suppressPackageStartupMessages(library("Hmisc"))
+    suppressPackageStartupMessages(library("RMySQL"))
+    suppressPackageStartupMessages(library("lubridate"))
+    suppressPackageStartupMessages(library("ggplot2"))
+    suppressPackageStartupMessages(library("Cairo"))
+    suppressPackageStartupMessages(library("knitr"))
+    suppressPackageStartupMessages(library("kableExtra"))
+    options(bitmapType='cairo')
+    grDevices::X11.options(type='cairo')
+    options(device='x11')
+#---------------------------------------------------------------------------------------------------
+#---/ FUNCTIONS AND MODULES /-----------------------------------------------------------------------
+    source("resources/NGS_Fun.ReportModules_v2.R")
+    source("resources/WES_Fun.ReportModules.R")
+    cnf <- read_yaml("wes_report_config.yaml")   
+    indexing = function(x){ sapply(unique(x), function(z) list(z)) } 
+#---------------------------------------------------------------------------------------------------
+
+# >>>!!! USER SHOULD CHECK THIS PART 
+#---/ INFORMATION /---------------------------------------------------------------------------------
+    OrderID           <- "DEFAULT_ORDER_ID"
+    SeqFolderID       <- "DEFAULT_SEQ_FOLDER_ID"
+    LowQualitySeqID   <- DEFAULT_LOW_QUAL_SEQ_ID
+    ExcludeSeqID      <- DEFAULT_EXCLUDE_SEQ_ID
+    IncludeSeqID      <- DEFAULT_INCLUDE_SEQ_ID
+    REPORT_DATE       <- NULL
+    CLIENT_ID         <- DEFAULT_CLIENT_ID
+    VARIANT_CALL_MODE <- "DEFAULT_VARIANT_CALL_MODE"
+#---------------------------------------------------------------------------------------------------
+# <<<!!!
+
+#---/ PRE-LOAD DATA (1) /---------------------------------------------------------------------------
+    dbCon <- dbConnect(dbDriver("MySQL"), host=cnf$db$host, port=cnf$db$port, user=cnf$db$user, password=cnf$db$pw, db=cnf$db$db_info)
+    sinfo <- dbGetQuery(dbCon, sprintf("SELECT * FROM seqid_info     WHERE seq_folder = '%s'", SeqFolderID))
+    pinfo <- dbGetQuery(dbCon, sprintf("SELECT * FROM seqfolder_info WHERE seq_folder = '%s'", SeqFolderID))
+    dbDisconnect(dbCon)
+#---------------------------------------------------------------------------------------------------
+#---/ SAMPLE FILTERS /------------------------------------------------------------------------------
+    # exclude samples
+    if( !is.null(ExcludeSeqID) )
+    { 
+        exclude_seq_id <- unlist(strsplit(ExcludeSeqID, ","))
+        sinfo          <- sinfo %>% filter( seq_id %nin% exclude_seq_id )
+    }
+    # include samples
+    if( !is.null(IncludeSeqID) )
+    {
+        include_seq_id       <- unlist(strsplit(IncludeSeqID, ","))
+        query_include_seq_id <- paste(paste0("'", include_seq_id, "'"), collapse=",")
+        dbCon                <- dbConnect(dbDriver("MySQL"), host=cnf$db$host, port=cnf$db$port, user=cnf$db$user, password=cnf$db$pw, db=cnf$db$db_info)
+        sinfo_extra          <- dbGetQuery(dbCon, sprintf("SELECT * FROM seqid_info WHERE seq_id IN (%s)", query_include_seq_id))
+        dbDisconnect(dbCon)
+        sinfo <- rbind(sinfo, sinfo_extra)
+    }
+    # low quality samples
+    if( !is.null(LowQualitySeqID) )
+    { low_qual_seq_id <- unlist(strsplit(LowQualitySeqID, ",")) }else{ low_qual_seq_id <- NULL }
+    # final sample info
+    sinfo[is.na(sinfo)] <- ""
+    # sample info orders 
+    sinfo <- rbind(
+        sinfo %>% filter( sample_group != "" ) %>% arrange( sample_info, sample_group, seq_id ),
+        sinfo %>% filter( sample_group == "" ) %>% arrange( sample_info, seq_id )
+    )
+#---------------------------------------------------------------------------------------------------
+#---/ PRE-LOAD DATA (2) /---------------------------------------------------------------------------
+    ReportSeqID         <- paste(paste0("'", sinfo$seq_id, "'"), collapse=",")
+    dbCon               <- dbConnect(dbDriver("MySQL"), host=cnf$db$host, port=cnf$db$port, user=cnf$db$user, password=cnf$db$pw, db=cnf$db$db_data)
+    data_VarList        <- dbGetQuery(dbCon, sprintf("SELECT * FROM variants_somatic WHERE seq_id IN (%s) AND variant_call_mode = '%s'", ReportSeqID, VARIANT_CALL_MODE))
+    data_IndivMatch     <- dbGetQuery(dbCon, sprintf("SELECT * FROM indiv_match      WHERE seq_folder = '%s'", SeqFolderID))
+    data_HLA            <- dbGetQuery(dbCon, sprintf("SELECT * FROM hla_type         WHERE seq_id IN (%s)", ReportSeqID))
+    data_MSI            <- dbGetQuery(dbCon, sprintf("SELECT * FROM msi_status       WHERE seq_id IN (%s)", ReportSeqID))
+    data_TMB            <- dbGetQuery(dbCon, sprintf("SELECT * FROM tmb              WHERE seq_id IN (%s)", ReportSeqID))
+    dbDisconnect(dbCon)
+#---------------------------------------------------------------------------------------------------
+#---/ READ REPORT-ANALYSIS RESULTS /----------------------------------------------------------------
+    analysis_info        <- readRDS("data/analysis_run_info.rds")
+    analysis_info        <- lapply(analysis_info, function(y) y[which(y$SampleGroup != ""), ])
+    figure_info          <- readRDS("data/data_figures_list.rds")     
+    ClientPresetGenes    <- readRDS("data/client_preset_gene_list.rds")
+    preset_info          <- readRDS("data/preset_list_table.rds")
+    concord_res_list     <- readRDS("data/concordance_table_list.rds")
+    # Remove From Tonly-list When IN MATCHED-ANALYSIS
+    analysis_info$Tonly  <- analysis_info$Tonly %>% filter(SampleGroup %nin% analysis_info$MatchTS$SampleGroup )
+    concord_res_list$Tonly <- concord_res_list$Tonly %>% filter(Sample.Group %nin% concord_res_list$MatchTS$Sample.Group )
+    preset_gene_var_list <- lapply( indexing(names(analysis_info)), function(idx)
+    { if( nrow( analysis_info[[ idx ]] ) > 0 ){ readRDS(sprintf("data/preset_gene_variants_list_%s.rds", idx)) }else{ NA } })
+#---------------------------------------------------------------------------------------------------
+
+```
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+    body{ font-size: 12px; font-family: 'Nunito';}
+    h1{ font-size: 24px; font-family: 'Nunito'; font-weight: bold; }
+    h2{ font-size: 20px; font-family: 'Nunito'; font-weight: bold; }
+    h3{ font-size: 18px; font-family: 'Nunito'; }
+    h4{ font-size: 14px; font-family: 'Nunito'; }
+</style>
+
+<!-- COVER IMAGE : ADVANCED -->
+```{r reportCover, echo=FALSE,message=FALSE,fig.align='center',out.width="500px",out.height="700px"}
+    knitr::include_graphics("resources/cover_advanced_report.png")
+```
+
+```{r message=FALSE,echo=FALSE,warning=FALSE,results='asis'} 
+    NGS_report.Page.Breaks2()
+```
+
+<!-- INDIVIDUAL MATCHING ----------------------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">INDIVIDUAL MATCHING </div> 
+<hr>
+<br>
+
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Summary Heatmap </div> 
+
+```{r IndivMatch_Heatmap, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    cat("![](data/indiv_match_heatmap.png){width=70%} \n")
+```
+
+<br>
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Summary Table </div> 
+<br>
+
+```{r IndivMatch_Table, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    if( nrow(data_IndivMatch) < 1 )
+    {
+        cat('<div style="color: #000000; font-size: 13px; font-weight: bold;">No Sample Groups found for individual matching. </div>')
+    }else{
+        print( WES_report.Indiv.Match.Table( IndivMatchResult=data_IndivMatch, SampleInfo=sinfo ) )
+    }
+    #---/ page breaks /-----------------------------------------------------
+    NGS_report.Page.Breaks2()
+```
+
+<!-- VARIANT CONCORDANCE ----------------------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">VARIANTS CONCORDANCE </div> 
+<hr>
+<br> <br>
+
+<div style="color: #000000; font-size: 12px;">The variants concordance analysis was performed using only samples within same sample-group. </div> 
+<br>
+
+```{r Concordance_Term, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    print( WES_report.Concordance.Terms() )
+    #---/ page breaks /---------------------------------------------------------
+    NGS_report.Page.Breaks2()
+```
+
+<!-- CONCORDANCE : TumorOnly -->
+```{r VarConcordance_Tonly, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    if( nrow(concord_res_list[[ "Tonly" ]]) > 0 )
+    {
+        # title ----------------------------------------------------------------
+        cat('<div style="color: #000000; font-size: 18px; font-weight: bold;">Tumor-Only Called Variants </div>')
+        cat('<hr>')
+        # data -----------------------------------------------------------------
+        concord_res <- concord_res_list[[ "Tonly" ]]
+        concord_res_sample_group <- unique(as.character(concord_res$Sample.Group))
+
+        for( SG in concord_res_sample_group )
+        {
+            SampleGroupConcordRes <- concord_res[which(concord_res$Sample.Group == SG), ]
+
+            # sample group title -----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 14px; font-weight: bold;">%s </div>', SG))
+            # concordance result table -----------------------------------------
+            print( WES_report.Variant.Concordance.Table( ConcordanceResultTable=SampleGroupConcordRes ) )
+            cat('<br>')
+            # concordance venn-diagram -----------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Common Variants Venn-Diagram</div>'))
+            venn_png <- figure_info %>% filter( variant_call == "Tumor Only", report_category == "concordance_venn", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", venn_png, "35%" ))
+            # variant class flow -----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Variant Class Flow</div>'))
+            var_class_png <- figure_info %>% filter( variant_call == "Tumor Only", report_category == "variant_class_barplot", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", var_class_png, "80%" ))
+            cat('<br>')
+            # genomic change flow ----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Genomic Change Flow</div>'))
+            genochange_png <- figure_info %>% filter( variant_call == "Tumor Only", report_category == "genomic_change_barplot", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", genochange_png, "80%" ))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+
+```
+
+<!-- CONCORDANCE : Matched Normal Tissue -->
+```{r VarConcordance_MatchTS, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    if( nrow(concord_res_list[[ "MatchTS" ]]) > 0 )
+    {
+        # title ----------------------------------------------------------------
+        cat('<div style="color: #000000; font-size: 18px; font-weight: bold;">Matched Normal Tissue Called Variants </div>')
+        cat('<hr>')
+        # data -----------------------------------------------------------------
+        concord_res <- concord_res_list[[ "MatchTS" ]]
+        concord_res_sample_group <- unique(as.character(concord_res$Sample.Group))
+
+        for( SG in concord_res_sample_group )
+        {
+            SampleGroupConcordRes <- concord_res[which(concord_res$Sample.Group == SG), ]
+
+            # sample group title -----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 14px; font-weight: bold;">%s </div>', SG))
+            # concordance result table -----------------------------------------
+            print( WES_report.Variant.Concordance.Table( ConcordanceResultTable=SampleGroupConcordRes ) )
+            cat('<br>')
+            # concordance venn-diagram -----------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Common Variants Venn-Diagram</div>'))
+            venn_png <- figure_info %>% filter( variant_call == "Matched Normal Tissue", report_category == "concordance_venn", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", venn_png, "35%"))
+            # variant class flow -----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Variant Class Flow</div>'))
+            var_class_png <- figure_info %>% filter( variant_call == "Matched Normal Tissue", report_category == "variant_class_barplot", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", var_class_png, "80%" ))
+            cat('<br>')
+            # genomic change flow ----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Genomic Change Flow</div>'))
+            genochange_png <- figure_info %>% filter( variant_call == "Matched Normal Tissue", report_category == "genomic_change_barplot", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", genochange_png, "80%" ))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+
+```
+
+<!-- CONCORDANCE : Matched Normal Organoid -->
+```{r VarConcordance_MatchORG, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    if( nrow(concord_res_list[[ "MatchORG" ]]) > 0 )
+    {
+        # title ----------------------------------------------------------------
+        cat('<div style="color: #000000; font-size: 18px; font-weight: bold;">Matched Normal Organoid Called Variants </div>')
+        cat('<hr>')
+        # data -----------------------------------------------------------------
+        concord_res <- concord_res_list[[ "MatchORG" ]]
+        concord_res_sample_group <- unique(as.character(concord_res$Sample.Group))
+
+        for( SG in concord_res_sample_group )
+        {
+            SampleGroupConcordRes <- concord_res[which(concord_res$Sample.Group == SG), ]
+
+            # sample group title -----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 14px; font-weight: bold;">%s </div>', SG))
+            # concordance result table -----------------------------------------
+            print( WES_report.Variant.Concordance.Table( ConcordanceResultTable=SampleGroupConcordRes ) )
+            cat('<br>')
+            # concordance venn-diagram -----------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Common Variants Venn-Diagram</div>'))
+            venn_png <- figure_info %>% filter( variant_call == "Matched Normal Organoid", report_category == "concordance_venn", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", venn_png, "50%" ))
+            # variant class flow -----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Variant Class Flow</div>'))
+            var_class_png <- figure_info %>% filter( variant_call == "Matched Normal Organoid", report_category == "variant_class_barplot", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", var_class_png, "80%"))
+            cat('<br>')
+            # genomic change flow ----------------------------------------------
+            cat(sprintf('<div style="color: #000000; font-size: 10px; font-weight: bold;">Genomic Change Flow</div>'))
+            genochange_png <- figure_info %>% filter( variant_call == "Matched Normal Organoid", report_category == "genomic_change_barplot", sample_group == SG ) %>% .$png
+            cat(sprintf("![](%s){width=%s} \n", genochange_png, "80%" ))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+
+```
+
+
+<!-- MUTATION RATE CORRELATION ----------------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">MUTATION RATE CORRELATION </div> 
+<hr>
+<br> 
+<div style="color: #000000; font-size: 12px;">- The mutation rate correlation analysis was performed using only samples within same sample-group. </div> 
+<div style="color: #000000; font-size: 12px;">- If the tissue-origin sample is contained in sample group, it will be shown on X-axis basically. </div> 
+<br>
+<br>
+<br>
+<div style="color: #000000; font-size: 14px; font-weight: bold;">Variant Allele Frequency (VAF) Correlation plot legend </div> 
+<br>
+
+```{r VafCorPlot_Legend, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    print( WES_report.Vaf.Corr.Plot.Legnd() )
+    #---/ page breaks /---------------------------------------------------------
+    NGS_report.Page.Breaks2()
+```
+
+<!-- VAF PLOT : Tumor Only -->
+```{r VafCorPlot_Tonly, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    vaf_plot_list <- figure_info %>% filter( variant_call == "Tumor Only", report_category == "vaf_correlation" )
+    
+    # printing -----------------------------------------------------------------
+    if( nrow(vaf_plot_list) > 0 )
+    {
+        vaf_plot_list$pagebreak <- sapply(1:nrow(vaf_plot_list), function(z) ifelse(z %% 3 == 0, TRUE, FALSE ) )
+        vaf_plot_list[nrow(vaf_plot_list), "pagebreak"] <- TRUE
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Tumor-Only Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(vaf_plot_list) )
+        {
+            print( WES_report.Vaf.Corr.Plot.Title.Table( 
+                CancerCode  = vaf_plot_list[j, "cancer_code"],
+                SampleGroup = vaf_plot_list[j, "sample_group"],
+                VariantCallMethod = "Tumor Only"
+            ) )
+            cat(sprintf("![](%s){width=%s} \n", vaf_plot_list[j, "png"], "90%" ))
+            if( vaf_plot_list[j, "pagebreak"] )
+            {
+                NGS_report.Page.Breaks2()
+            }else{
+                cat('<br>')
+                cat('<br>')
+                cat('<br>')
+            }
+        }
+    }else{
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">No Sample-Pairs to compare VAF correlation.</div>')
+        cat('<br>')
+        cat('<br>')
+        NGS_report.Page.Breaks2()
+    }
+```
+
+<!-- VAF PLOT : Matched Normal Tissue -->
+```{r VafCorPlot_MatchTS, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    vaf_plot_list_TS <- figure_info %>% filter( variant_call == "Matched Normal Tissue", report_category == "vaf_correlation" )
+    if( nrow(vaf_plot_list_TS) > 0 )
+    {
+        vaf_plot_list_TS$pagebreak <- sapply(1:nrow(vaf_plot_list_TS), function(z) ifelse(z %% 3 == 0, TRUE, FALSE ) )
+        vaf_plot_list_TS[nrow(vaf_plot_list_TS), "pagebreak"] <- TRUE
+        # printing -------------------------------------------------------------
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Tissue Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(vaf_plot_list_TS) )
+        {
+            print( WES_report.Vaf.Corr.Plot.Title.Table( 
+                CancerCode  = vaf_plot_list_TS[j, "cancer_code"],
+                SampleGroup = vaf_plot_list_TS[j, "sample_group"],
+                VariantCallMethod = "Match Normal Tissue"
+            ) )
+            cat(sprintf("![](%s){width=%s} \n", vaf_plot_list_TS[j, "png"], "90%" ))
+            if( vaf_plot_list_TS[j, "pagebreak"])
+            {
+                NGS_report.Page.Breaks2()
+            }else{
+                cat('<br>')
+                cat('<br>')
+                cat('<br>')
+            }
+        }
+    }
+```
+
+<!-- VAF PLOT : Matched Normal Organoid -->
+```{r VafCorPlot_MatchORG, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    vaf_plot_list_ORG <- figure_info %>% filter( variant_call == "Matched Normal Organoid", report_category == "vaf_correlation" )
+    if( nrow(vaf_plot_list_ORG) > 0 )
+    {
+        vaf_plot_list_ORG$pagebreak <- sapply(1:nrow(vaf_plot_list_ORG), function(z) ifelse(z %% 3 == 0, TRUE, FALSE ) )
+        vaf_plot_list_ORG[nrow(vaf_plot_list_ORG), "pagebreak"] <- TRUE
+        # printing -------------------------------------------------------------
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Organoid Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(vaf_plot_list_ORG) )
+        {
+            print( WES_report.Vaf.Corr.Plot.Title.Table( 
+                CancerCode  = vaf_plot_list_ORG[j, "cancer_code"],
+                SampleGroup = vaf_plot_list_ORG[j, "sample_group"],
+                VariantCallMethod = "Match Normal Organoid"
+            ) )
+            cat(sprintf("![](%s){width=%s} \n", vaf_plot_list_ORG[j, "png"], "90%" ))
+            if( vaf_plot_list_ORG[j, "pagebreak"])
+            {
+                NGS_report.Page.Breaks2()
+            }else{
+                cat('<br>')
+                cat('<br>')
+                cat('<br>')
+            }
+        }
+    }
+```
+
+<!-- ONCOPLOT 1 -------------------------------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">ONCOPLOT (I) </div> 
+<br>
+<div style="color: #000000; font-size: 12px;">Oncoplot will be provided only when there are more than 5 samples within each cancer type. </div> 
+<br>
+
+<!-- VAF PLOT : Tumor Only -->
+```{r Oncoplot1_Tonly, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    oncoplot_list <- figure_info %>% filter( variant_call == "Tumor Only", report_category == "oncoplot_1" )
+    # printing -----------------------------------------------------------------
+    if( nrow(oncoplot_list) > 0 )
+    {
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Tumor-Only Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(oncoplot_list) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = oncoplot_list[j, "cancer_code"],
+                PresetName = oncoplot_list[j, "preset_name"],
+                VariantCallMethod = "Tumor Only"
+            ) )
+            cat('<br>')
+            cat(sprintf("![](%s){width=%s}\n", oncoplot_list[j, "png"], "70%" ))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+```
+
+<!-- VAF PLOT : Matched Normal Tissue -->
+```{r Oncoplot1_MatchTS, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    oncoplot_list_TS <- figure_info %>% filter( variant_call == "Matched Normal Tissue", report_category == "oncoplot_1" )
+    # printing -----------------------------------------------------------------
+    if( nrow(oncoplot_list_TS) > 0 )
+    {
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Tissue Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(oncoplot_list_TS) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = oncoplot_list_TS[j, "cancer_code"],
+                PresetName = oncoplot_list_TS[j, "preset_name"],
+                VariantCallMethod = "Matched Normal Tissue"
+            ) )
+            cat('<br>')
+            cat(sprintf("![](%s){width=%s}\n", oncoplot_list_TS[j, "png"], "70%" ))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+```
+
+<!-- VAF PLOT : Matched Normal Tissue -->
+```{r Oncoplot1_MatchORG, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    oncoplot_list_ORG <- figure_info %>% filter( variant_call == "Matched Normal Organoid", report_category == "oncoplot_1" )
+    # printing -----------------------------------------------------------------
+    if( nrow(oncoplot_list_ORG) > 0 )
+    {
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Organoid Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(oncoplot_list_ORG) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = oncoplot_list_ORG[j, "cancer_code"],
+                PresetName = oncoplot_list_ORG[j, "preset_name"],
+                VariantCallMethod = "Matched Normal Organoid"
+            ) )
+            cat('<br>')
+            cat(sprintf("![](%s){width=%s}\n", oncoplot_list_ORG[j, "png"], "70%" ))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+```
+
+<!-- ONCOPLOT 2 -------------------------------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">ONCOPLOT (II) </div> 
+<br>
+<div style="color: #000000; font-size: 12px;">- Oncoplot will be provided only when there are more than 10 samples within each cancer type. </div> 
+<div style="color: #000000; font-size: 12px;">- Full-size images will be provided as separate png files.  </div> 
+<br>
+
+```{r Oncoplot2_Tonly, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    oncoplot_list <- figure_info %>% filter( variant_call == "Tumor Only", report_category == "oncoplot_2" )
+    # printing -----------------------------------------------------------------
+    if( nrow(oncoplot_list) > 0 )
+    {
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Tumor-Only Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(oncoplot_list) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = oncoplot_list[j, "cancer_code"],
+                PresetName = oncoplot_list[j, "preset_name"],
+                VariantCallMethod = "Tumor Only"
+            ) )
+            cat('<br>')
+            cat(sprintf("![](%s){width=%s}\n", oncoplot_list[j, "png"], "80%"))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+```
+
+<!-- VAF PLOT : Matched Normal Tissue -->
+```{r Oncoplot2_MatchTS, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    oncoplot_list_TS <- figure_info %>% filter( variant_call == "Matched Normal Tissue", report_category == "oncoplot_2" )
+    # printing -----------------------------------------------------------------
+    if( nrow(oncoplot_list_TS) > 0 )
+    {
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Tissue Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(oncoplot_list_TS) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = oncoplot_list_TS[j, "cancer_code"],
+                PresetName = oncoplot_list_TS[j, "preset_name"],
+                VariantCallMethod = "Matched Normal Tissue"
+            ) )
+            cat('<br>')
+            cat(sprintf("![](%s){width=%s}\n", oncoplot_list_TS[j, "png"],"80%" ))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+```
+
+<!-- VAF PLOT : Matched Normal Tissue -->
+```{r Oncoplot2_MatchORG, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    # vaf plot list ------------------------------------------------------------
+    oncoplot_list_ORG <- figure_info %>% filter( variant_call == "Matched Normal Organoid", report_category == "oncoplot_2" )
+    # printing -----------------------------------------------------------------
+    if( nrow(oncoplot_list_ORG) > 0 )
+    {
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Organoid Called Variants </div>')
+        cat('<hr>')
+        #-----------------------------------------------------------------------
+        for( j in 1:nrow(oncoplot_list_ORG) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = oncoplot_list_ORG[j, "cancer_code"],
+                PresetName = oncoplot_list_ORG[j, "preset_name"],
+                VariantCallMethod = "Matched Normal Organoid"
+            ) )
+            cat('<br>')
+            cat(sprintf("![](%s){width=%s}\n", oncoplot_list_ORG[j, "png"],"80%" ))
+            #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+        }
+    }
+```
+
+<!-- HLA TYPES --------------------------------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">HLA TYPES </div> 
+<br>
+
+```{r HLA_NoMatchNotice, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    cat('<div style="color: #C73500; font-size: 12px;">RED: Alleles are not matched between HLA-LA and OptiType.</div>')
+```
+
+<hr>
+
+```{r HLA, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    HLA_CANCER_CODE_LIST <- sort(unique(sinfo[which(sinfo$seq_id %in% data_HLA$seq_id), "sample_info" ]))
+    HLA_NO_MATCH <- data.frame()
+    for( HLA_SG in HLA_CANCER_CODE_LIST )
+    {
+        # prepare results ------------------------------------------------------
+        HLA_RES_List <- WES_report.HLA.Type.Table.Prepare( HlaResult=data_HLA, SampleInfo=sinfo, CancerCode=HLA_SG)
+        # printing -------------------------------------------------------------
+        cat(sprintf('<div style="color: #000000; font-size: 16px; font-weight: bold;">%s</div>', HLA_SG))
+        cat('<br>')
+        print( WES_report.HLA_Type.Table( 
+            HlaResultTable      = HLA_RES_List$result_table, 
+            HlaResultGroupIndex = HLA_RES_List$sample_group_index,
+            HlaResultNoMatch    = HLA_RES_List$no_match
+        ) )
+        HLA_NO_MATCH <- rbind(HLA_NO_MATCH, HLA_RES_List$no_match)
+        #---/ page breaks /-------------------------------------------------
+            NGS_report.Page.Breaks2()
+    }
+    if( nrow(HLA_NO_MATCH) > 0 )
+    {
+        cat(sprintf('<div style="color: #000000; font-size: 16px; font-weight: bold;">Not Matched Alleles Detailed Information</div>'))
+        print( WES_report.HLA_Type.No.Match.Samples.Table( HlaResultNoMatch=HLA_NO_MATCH, SampleInfo=sinfo ) )
+        #---/ page breaks /-----------------------------------------------------
+        NGS_report.Page.Breaks2()
+    }
+```
+
+<!-- MICROSATELLITE INSTABILITY (MSI)----------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">MICROSATELLITE INSTABILITY (MSI)</div> 
+<br>
+<div style="color: #000000; font-size: 12px;">If there are both tumor-only variant call and matched-normal variant call, only the MSI result based on the matched-normal variant call will be reported.</div> 
+<br>
+<div style="color: #000000; font-size: 12px; font-weight: bold;">MSI unstable (MSI-H) cut-off</div> 
+
+```{r MSI_Cutoff, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    print( WES_report.MSI.Cutoff() )
+```
+
+<hr>
+
+```{r MSI, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    MSI_CANCER_CODE_LIST <- sort(unique(sinfo[which(sinfo$seq_id %in% data_MSI$seq_id), "sample_info" ]))
+    for( MSI_CODE in MSI_CANCER_CODE_LIST )
+    {
+        # printing -------------------------------------------------------------
+        cat(sprintf('<div style="color: #000000; font-size: 16px; font-weight: bold;">%s</div>', MSI_CODE))
+        cat('<br>')
+        #cat('<br>')
+        print( WES_report.MSI.Result.Table( MsiResult=data_MSI, SampleInfo=sinfo, CancerCode=MSI_CODE ) )
+        #---/ page breaks /-----------------------------------------------------
+        NGS_report.Page.Breaks2()
+    }
+```
+
+
+<!-- TUMOR MUTATIONAL BURDEN (TMB) ------------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">TUMOR MUTATIONAL BURDEN (TMB)</div> 
+<br>
+<div style="color: #000000; font-size: 12px;"> - If there are both tumor-only variant call and matched-normal variant call, only the TMB result based on the matched-normal variant call will be reported.</div> 
+<div style="color: #000000; font-size: 12px;"> - Generally, TMB based on tuor-only variant call is higher than based on matched-normal variant call.</div>
+<div style="color: #000000; font-size: 12px; font-weight: bold;"> - TMB-High cut-off : TMB > 10 </div>
+<hr>
+
+```{r TMB, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    TMB_CANCER_CODE_LIST <- sort(unique(sinfo[which(sinfo$seq_id %in% data_TMB$seq_id), "sample_info" ]))
+    for( i in 1:length(TMB_CANCER_CODE_LIST) )
+    {
+        # printing -------------------------------------------------------------
+        cat(sprintf('<div style="color: #000000; font-size: 16px; font-weight: bold;">%s</div>', TMB_CANCER_CODE_LIST[i]))
+        cat('<br>')
+        #cat('<br>')
+        print( WES_report.TMB.Result.Table( TmbResult=data_TMB, SampleInfo=sinfo, CancerCode=TMB_CANCER_CODE_LIST[i], TonlyMode=VARIANT_CALL_MODE ) )
+        #---/ page breaks /-----------------------------------------------------
+        NGS_report.Page.Breaks2()
+    }
+```
+
+
+<!-- APPENDIX ---------------------------------------------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">APPENDIX </div> 
+<hr>
+
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Analysis Resources </div> 
+```{r appendix2, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    print( WES_report.appendix.ref.swtools.advanced() )
+    #---/ page breaks /---------------------------------------------------------
+    NGS_report.Page.Breaks2()
+```
+
+
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Organoid Science Preset Genes </div> 
+ 
+```{r appendix3, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    print( WES_report.appendix.client.preset.genes( ClientID=CLIENT_ID, cnf=cnf ) )
+```
+
+
+<!-- END OF ADVANCED ANALYSIS REPORT -->
+

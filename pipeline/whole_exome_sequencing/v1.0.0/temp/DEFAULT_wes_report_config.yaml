@@ -1,0 +1,21 @@
+# RUO WES ANALYSIS SERVICE REPORT CONFIG
+
+# NGS
+ngs:
+  ngs_application: WES
+  ngs_material: gDNA
+  ngs_library: NGS_LIBRARY_HERE
+  ngs_read_type: PE
+  ngs_read_length: 151
+  ngs_platform: ILLUMINA Novaseq
+  
+# database
+db:
+  host: 192.168.0.34
+  user: gcx
+  pw: gencurix!!
+  port: 3306
+  db_info: gcx_ngs_service
+  db_data: gcx_wes
+  db_resource: public_database
+
