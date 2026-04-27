@@ -1,0 +1,57 @@
+# =========================================================
+# SortMeRNA: Ribosomal RNA Filter
+#  - Filters rRNA from FastQ files using reference databases
+#  - Supports multiple reference Fastas and pre-built indices
+# =========================================================
+tool:
+  name: sortmerna
+  version: "4.3.7"
+  profile: "rrna_filtering"
+  description: |
+    SortMeRNA는 시퀀싱 리드를 참조 rRNA 데이터베이스와 대조하여 
+    rRNA 리드를 식별하고 제거합니다. 
+    Nextflow NF-Core 스타일의 파일 명명 규칙(non_rRNA.fastq.gz)을 따르며,
+    다중 참조 서열(RFAM, SILVA 등)을 동시에 지원합니다.
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    FastqDir:       { required: true }
+    qcResDir:       { required: true, help: "Log 및 결과 파일 저장 경로" }
+    
+    # [References] 
+    # Python 코드에서 ["--ref path1", "--ref path2"] 형태로 전달
+    RefArgs:        { required: true, help: "List of --ref references" }
+    IndexDir:       { required: false, help: "Pre-built index directory (--idx-dir)" }
+
+  outputs:
+    # 필터링된 결과 (Nextflow 스크립트의 mv 로직 반영)
+    non_rrna_r1:    { default: "[qcResDir]/[SeqID]_1.non_rRNA.fastq.gz" }
+    non_rrna_r2:    { default: "[qcResDir]/[SeqID]_2.non_rRNA.fastq.gz" }
+    sortmerna_log:  { default: "[qcResDir]/[SeqID].sortmerna.log" }
+
+params:
+  # --- [Resources] ---
+  Threads:         { type: int, default: 8 }
+  
+  # --- [Options] ---
+  InputSuffix:     { type: str, default: "fastq.gz" }
+  # Paired-end 처리를 위한 기본 플래그
+  paired_cmd:      { type: str, default: "--paired_in --out2" }
+  extra_args:      { type: str, default: "" }
+
+
+cmd_line: >
+  sortmerna [RefArgs]
+  --reads [FastqDir]/[SeqID]_1.[InputSuffix]
+  --reads [FastqDir]/[SeqID]_2.[InputSuffix]
+  --threads [Threads]
+  --workdir .
+  --aligned [qcResDir]/rRNA_reads
+  --fastx
+  --other [qcResDir]/non_rRNA_reads
+  [paired_cmd]
+  [extra_args] &&
+  mv [qcResDir]/non_rRNA_reads_fwd.f*q.gz [non_rrna_r1] &&
+  mv [qcResDir]/non_rRNA_reads_rev.f*q.gz [non_rrna_r2] &&
+  mv [qcResDir]/rRNA_reads.log [sortmerna_log]

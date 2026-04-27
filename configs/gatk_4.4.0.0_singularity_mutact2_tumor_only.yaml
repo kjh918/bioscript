@@ -1,0 +1,67 @@
+# =========================================================
+# GATK4 Mutect2: Tumor-Only Somatic Calling
+#  - Calls somatic variants without a matched normal sample
+#  - Uses gnomAD as germline resource and PoN for artifact filtering
+# =========================================================
+tool:
+  name: gatk4_mutect2
+  version: "4.4.0.0"
+  profile: "tumor_only_with_f1r2"
+  description: |
+    정상 샘플이 없는 상태에서 체세포 변이(Somatic)를 호출합니다.
+    gnomAD(Germline Resource)와 PoN(Panel of Normals)을 참조하여 
+    Germline 및 Artifact를 일차적으로 필터링하며, 
+    후속 Read Orientation Bias 필터링을 위해 f1r2.tar.gz를 생성합니다.
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    BamDir:          { required: true }
+    vcfDir:          { required: true, help: "Raw VCF 결과 저장 경로" }
+    qcResDir:        { required: true, help: "f1r2.tar.gz 및 중간 파일 저장 경로" }
+    ReferenceFasta:  { required: true }
+    TargetInterval:  { required: true, help: "Target BED 또는 interval_list" }
+    
+    # [Tumor-Only 필수 리소스]
+    VcfGnomad:       { required: true, help: "gnomAD germline resource VCF" }
+    VcfPon:          { required: true, help: "Panel of Normals VCF" }
+
+  outputs:
+    raw_vcf:      { default: "[vcfDir]/[SeqID].mutect2.vcf", help: "Filtered 전의 원본 VCF" }
+    f1r2_tar_gz:  { default: "[qcResDir]/[SeqID].f1r2.tar.gz", help: "Read orientation bias 통계 파일" }
+    mutect_stats: { default: "[vcfDir]/[SeqID].mutect2.vcf.stats", help: "필터링에 필요한 통계 메타데이터" }
+
+params:
+  # --- [Suffix 제어] ---
+  InputSuffix:     { type: str, default: "analysisReady" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  gatk4_sif:       { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+  
+  # --- [Resources] ---
+  xmx_mb:          { type: int, default: 32768, help: "Java Max Heap Size (MB)" }
+  Threads:         { type: int, default: 14, help: "Parallel GC 및 OpenMP 스레드 수" }
+  
+  # --- [Mutect2 상세 옵션] ---
+  pairHMM:         { type: str, default: "AVX_LOGLESS_CACHING_OMP" }
+  f1r2_max_depth:  { type: int, default: 2500 }
+  min_base_q:      { type: int, default: 20 }
+  extra_args:      { type: str, default: "" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [gatk4_sif] gatk Mutect2
+  --java-options "-XX:+UseParallelGC -XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
+  -pairHMM [pairHMM]
+  --reference [ReferenceFasta]
+  --intervals [TargetInterval]
+  --input [BamDir]/[SeqID].[InputSuffix].bam
+  --germline-resource [VcfGnomad]
+  --panel-of-normals [VcfPon]
+  --f1r2-tar-gz [f1r2_tar_gz]
+  --f1r2-max-depth [f1r2_max_depth]
+  --min-base-quality-score [min_base_q]
+  --base-quality-score-threshold [min_base_q]
+  --output [raw_vcf]
+  [extra_args]

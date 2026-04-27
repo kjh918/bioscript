@@ -1,0 +1,58 @@
+# =========================================================
+# GATK4 FilterMutectCalls
+#  - Integrates contamination and orientation bias models
+#  - Applies somatic filters to raw Mutect2 VCF
+# =========================================================
+tool:
+  name: gatk4_filter_mutect_calls
+  version: "4.4.0.0"
+  profile: "somatic_variant_filtering"
+  description: |
+    Mutect2의 원본 VCF에 각종 필터를 적용하여 최종 Somatic 변이를 산출합니다.
+    CalculateContamination에서 계산된 오염도와 LearnReadOrientationModel에서
+    학습된 방향성 아티팩트 모델을 사용하여 위양성(False Positive)을 제거합니다.
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    vcfDir:          { required: true, help: "입력 및 출력 VCF가 위치한 경로" }
+    qcResDir:        { required: true, help: "Contamination 및 OB-prior 파일 경로" }
+    ReferenceFasta:  { required: true }
+    TargetInterval:  { required: true }
+    
+    # [필터링 필수 리소스]
+    ContaminationTable: { required: true, help: "[SeqID].contamination.table" }
+
+  outputs:
+    filtered_vcf: 
+      default: "[vcfDir]/[SeqID].mutect2.[Suffix]filtered.vcf"
+      help: "최종 필터링된 VCF 파일"
+
+params:
+  # --- [Suffix 제어] ---
+  # 일반 모드: Suffix=""
+  # Germline 유지 모드: Suffix="keep.germline."
+  Suffix:          { type: str, default: "", help: "File name suffix (e.g., 'keep.germline.')" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  gatk4_sif:       { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+  
+  # --- [Resources] ---
+  xmx_mb:          { type: int, default: 16384, help: "16GB memory from original script" }
+  Threads:         { type: int, default: 14 }
+
+  # --- [Other Flags] ---
+  extra_args:      { type: str, default: "" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [gatk4_sif] gatk FilterMutectCalls
+  --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
+  -V [vcfDir]/[SeqID].mutect2.[Suffix]vcf
+  -L [TargetInterval]
+  --reference [ReferenceFasta]
+  --contamination-table [ContaminationTable]
+  --ob-priors [qcResDir]/[SeqID].[Suffix]read-orientation-model.tar.gz
+  -O [filtered_vcf]
+  [extra_args]

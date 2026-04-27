@@ -1,0 +1,49 @@
+# =========================================================
+# Alfred QC: Multi-sample BAM Statistics
+#  - Genome-wide and target-specific alignment metrics
+#  - Extracts chromosome mapping (CM) and target coverage (TC)
+# =========================================================
+tool:
+  name: alfred
+  version: "0.2.6"
+  profile: "bam_qc_extraction"
+  description: |
+    Alfred는 시퀀싱 정렬 데이터의 품질을 다각도로 평가합니다.
+    특히 TSV 결과 파일에서 CM(Chr Mapping) 섹션과 TC(Target Coverage) 
+    섹션을 파싱하여 MultiQC 연동이나 DB 임포트용 텍스트를 생성합니다.
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    BamDir:         { required: true }
+    qcResDir:       { required: true }
+    ReferenceFasta: { required: true }
+    TargetBed:      { required: true, help: "Target BED file for WES metrics" }
+    
+    # 분석 대상 BAM 지정용 Suffix
+    InputSuffix:     { required: true, default: "analysisReady" }
+
+  outputs:
+    # Alfred 기본 출력
+    alfred_raw_tsv: { default: "[qcResDir]/[SeqID].alfred.qc.tsv.gz" }
+    # 파싱된 요약 파일들
+    chr_map_stats:   { default: "[qcResDir]/[SeqID].alfred.chr.map.stats.txt" }
+    target_coverage: { default: "[qcResDir]/[SeqID].alfred.target.coverage.txt" }
+
+params:
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  alfred_sif:      { type: str, default: "/storage/images/alfred-0.2.6.sif" }
+  alfred_bin:      { type: str, default: "/opt/alfred/bin/alfred" }
+  bind:            { type: str, default: "/storage,/data" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [alfred_sif] [alfred_bin] qc
+  --reference [ReferenceFasta]
+  --bed [TargetBed]
+  --outfile [alfred_raw_tsv]
+  [BamDir]/[SeqID].[InputSuffix].bam
+  &&
+  zgrep "^CM" [alfred_raw_tsv] | cut -f 2- > [chr_map_stats]
+  &&
+  zgrep "^TC" [alfred_raw_tsv] | cut -f 2- > [target_coverage]

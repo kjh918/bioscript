@@ -42,6 +42,7 @@ params:
   # --- [MarkDuplicates Options] ---
   remove_seq_dups: { type: str, default: "true", help: "Whether to remove sequencing duplicates" }
   create_index:    { type: str, default: "true", help: "Whether to create a BAM index for the output" }
+  optical_duplicate_pixel_distance: { type: str, default: "2500", help: "Pixel distance for optical duplicate detection" }
   other_md_args:   { type: str, default: "", help: "Other additional GATK MarkDuplicates arguments" }
 
 cmd_line: >
@@ -52,4 +53,5 @@ cmd_line: >
   --METRICS_FILE [metrics_txt]
   --CREATE_INDEX [create_index]
   --REMOVE_SEQUENCING_DUPLICATES [remove_seq_dups]
+  --OPTICAL_DUPLICATE_PIXEL_DISTANCE [optical_duplicate_pixel_distance]
   [other_md_args]

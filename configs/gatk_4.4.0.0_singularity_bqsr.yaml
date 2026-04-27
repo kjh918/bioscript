@@ -16,7 +16,8 @@ io:
     ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
 
     # Known Sites (보정의 기준이 되는 데이터베이스)
-    KnownSnp:        { required: true, help: "Path to known SNPs VCF (e.g., dbSNP)" }
+    KnownSnp1:        { required: true, help: "Path to known SNPs VCF (e.g., dbSNP)" }
+    KnownSnp2:        { required: true, help: "Path to known SNPs VCF (e.g., dbSNP)" }
     KnownIndel1:     { required: true, help: "Path to known Indels VCF (e.g., Mills and 1000G)" }
     KnownIndel2:     { required: true, help: "Path to additional known Indels VCF" }
 
@@ -34,8 +35,8 @@ io:
 params:
   # --- [Suffix 제어] ---
   # 보통 MarkDuplicates 이후(dedup)를 입력으로 받습니다.
-  InputSuffix:  { type: str, default: "realign", help: "Suffix of input BAM (e.g., dedup, sorted, primary)" }
-  OutputSuffix: { type: str, default: "recal", help: "Suffix for output BAM (e.g., recal, bqsr)" }
+  InputSuffix:  { type: str, default: "merged.dup.marked.realign", help: "Suffix of input BAM (e.g., dedup, sorted, primary)" }
+  OutputSuffix: { type: str, default: "merged.dup.marked.realign.recal", help: "Suffix for output BAM (e.g., recal, bqsr)" }
 
   # --- [Binaries & Container] ---
   singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
@@ -53,7 +54,8 @@ cmd_line: >
   --input [BamDir]/[SeqID].[InputSuffix].bam
   --reference [ReferenceFasta]
   --output [recal_table]
-  --known-sites [KnownSnp]
+  --known-sites [KnownSnp1]
+  --known-sites [KnownSnp2]
   --known-sites [KnownIndel1]
   --known-sites [KnownIndel2]
   &&

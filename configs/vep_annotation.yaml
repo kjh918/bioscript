@@ -1,0 +1,65 @@
+# =========================================================
+# VEP Flexible Annotation Module (hg38 / hg19)
+#  - Supports Optional COSMIC & ClinVar
+#  - Parameters for all reference-specific files
+# =========================================================
+tool:
+  name: vep_flexible
+  version: "110"
+  profile: "universal_annotation"
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    vcfDir:          { required: true }
+    VcfTag:          { required: true, help: "Input VCF tag (e.g. mutect2.bias.filtered)" }
+    
+    # [Resource Paths - Parameterized]
+    vepCacheDir:     { required: true }
+    vepPluginDir:    { required: true }
+    genomeFasta:     { required: true }
+    
+    # [Annotation Resources]
+    clinvarData:     { required: true, help: "ClinVar VCF path (Assembly-specific)" }
+    cosmicData:      { required: false, help: "COSMIC VCF path (Assembly-specific, optional)" }
+    alphaMissense:   { required: true }
+    caddSnp:         { required: true }
+    caddIndel:       { required: true }
+
+  outputs:
+    vep_vcf:   { default: "[vcfDir]/[SeqID].[VcfTag].vep.refseq.vcf" }
+    vep_stats: { default: "[vcfDir]/[SeqID].[VcfTag].vep.refseq.vcf_summary.txt" }
+
+params:
+  # --- [Basic Settings] ---
+  assembly:        { type: str, default: "GRCh38", help: "GRCh38 or GRCh37" }
+  species:         { type: str, default: "homo_sapiens" }
+  Threads:         { type: int, default: 8 }
+  buffer_size:     { type: int, default: 50000 }
+
+  # --- [Optional Flags - 파이썬에서 주입] ---
+  # COSMIC 주석이 필요 없을 경우 이 변수를 빈 문자열("")로 설정하면 됩니다.
+  cosmic_args:     { type: str, default: "", help: "Custom flag for COSMIC (e.g. --custom file=...)" }
+  clinvar_args:    { type: str, default: "--custom file=[clinvarData],short_name=ClinVar,format=vcf,fields=CLNSIG%CLNDN%ORIGIN" }
+  
+  # --- [Binaries] ---
+  singularity_bin: { type: str, default: "singularity" }
+  vep_sif:         { type: str, default: "/storage/images/vep-110.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [vep_sif] vep
+  --force_overwrite --offline --cache
+  --dir_cache [vepCacheDir] --dir_plugins [vepPluginDir] --fasta [genomeFasta]
+  --species [species] --assembly [assembly]
+  --input_file [vcfDir]/[SeqID].[VcfTag].vcf
+  --output_file [vep_vcf]
+  --vcf --stats_text --refseq --show_ref_allele --uploaded_allele --use_transcript_ref
+  --variant_class --sift b --polyphen b --gene_phenotype --numbers --hgvs --hgvsg
+  --symbol --canonical --biotype --regulatory --mirna --check_existing
+  --max_af --af_1kg --af_gnomade --exclude_predicted --pick --flag_pick
+  --fork [Threads] --buffer_size [buffer_size]
+  [clinvar_args]
+  [cosmic_args]
+  --plugin AlphaMissense,file=[alphaMissense]
+  --plugin CADD,snv=[caddSnp],indels=[caddIndel]

@@ -1,0 +1,44 @@
+# =========================================================
+# RiboDetector: rRNA sequence detection and depletion
+#  - Deep learning-based rRNA removal
+#  - CPU-optimized version
+# =========================================================
+tool:
+  name: ribodetector
+  version: "0.3.3"
+  profile: "rrna_depletion"
+  description: |
+    RiboDetector는 딥러닝 모델을 사용하여 RNA-seq 데이터에서 
+    rRNA 리드를 매우 높은 정확도로 식별하고 제거합니다. 
+    이 모듈은 rRNA가 제거된 'Cleaned' FASTQ 파일을 생성하여 
+    이후 매핑 단계의 효율성을 높입니다.
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    FastqDir:       { required: true }
+    OutputDir:      { required: true, help: "결과 FASTQ가 저장될 경로" }
+
+  outputs:
+    # rRNA가 제거된 최종 출력 파일
+    non_rrna_r1:    { default: "[OutputDir]/[SeqID].nonrrna.1.fq" }
+    non_rrna_r2:    { default: "[OutputDir]/[SeqID].nonrrna.2.fq" }
+
+params:
+  # --- [Resources] ---
+  Threads:         { type: int, default: 10 }
+  
+  # --- [RiboDetector Options] ---
+  ReadLen:         { type: int, default: 100, help: "시퀀싱 리드 길이" }
+  ChunkSize:       { type: int, default: 256, help: "모델 로딩 및 처리 청크 크기" }
+  ExcludeMode:     { type: str, default: "rrna", help: "제거할 타입 (rrna)" }
+  InputSuffix:     { type: str, default: "fastq.gz" }
+
+cmd_line: >
+  ribodetector_cpu
+  -t [Threads]
+  -l [ReadLen]
+  -i [FastqDir]/[SeqID]_R1.[InputSuffix] [FastqDir]/[SeqID]_R2.[InputSuffix]
+  -e [ExcludeMode]
+  --chunk_size [ChunkSize]
+  -o [non_rrna_r1] [non_rrna_r2]

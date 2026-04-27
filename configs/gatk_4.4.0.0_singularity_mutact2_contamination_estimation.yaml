@@ -1,0 +1,55 @@
+# =========================================================
+# GATK4 Contamination Estimation Workflow
+#  1. GetPileupSummaries: 알려진 변이 사이트의 리드 통계 추출
+#  2. CalculateContamination: 샘플 내 오염 비율 계산
+# =========================================================
+tool:
+  name: gatk4_contamination_estimation
+  version: "4.4.0.0"
+  profile: "contamination_calculation"
+  description: |
+    이 모듈은 Tumor-only 분석에서 특히 중요한 샘플 오염도를 측정합니다.
+    gnomAD 사이트에서의 대립유전자 분율(AF)을 분석하여 다른 샘플로부터의 
+    데이터 혼입 비율을 추정하며, 결과는 FilterMutectCalls 단계에서 
+    거짓 양성(False Positive)을 제거하는 데 사용됩니다.
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    BamDir:          { required: true }
+    qcResDir:        { required: true, help: "결과 테이블(.table) 저장 경로" }
+    ReferenceFasta:  { required: true }
+    TargetInterval:  { required: true, help: "분석 대상 영역 (Interval_list)" }
+    VcfGnomad:       { required: true, help: "gnomAD germline resource VCF (Required for pileup)" }
+
+  outputs:
+    pileup_table:    { default: "[qcResDir]/[SeqID].targeted_sequencing.table", help: "Pileup summary statistics" }
+    contamination_table: { default: "[qcResDir]/[SeqID].contamination.table", help: "Final contamination estimation" }
+
+params:
+  # --- [Suffix & Basic] ---
+  InputSuffix:     { type: str, default: "analysisReady" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  gatk4_sif:       { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+  
+  # --- [Resources] ---
+  Threads:         { type: int, default: 14 }
+  pileup_xmx:      { type: int, default: 8192,  help: "Xmx for GetPileupSummaries (8G)" }
+  contam_xmx:      { type: int, default: 16384, help: "Xmx for CalculateContamination (16G)" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [gatk4_sif] gatk GetPileupSummaries
+  --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[pileup_xmx]m"
+  -I [BamDir]/[SeqID].[InputSuffix].bam
+  -V [VcfGnomad]
+  -L [TargetInterval]
+  -R [ReferenceFasta]
+  -O [pileup_table]
+  &&
+  [singularity_bin] exec -B [bind] [gatk4_sif] gatk CalculateContamination
+  --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[contam_xmx]m"
+  -I [pileup_table]
+  -O [contamination_table]

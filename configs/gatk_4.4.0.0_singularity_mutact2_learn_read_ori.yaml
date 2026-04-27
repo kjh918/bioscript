@@ -1,0 +1,46 @@
+# =========================================================
+# GATK4 LearnReadOrientationModel
+#  - Learns the prior probability of read orientation artifacts
+#  - Essential for filtering OxoG and FFPE artifacts
+# =========================================================
+tool:
+  name: gatk4_learn_read_orientation_model
+  version: "4.4.0.0"
+  profile: "orientation_bias_learning"
+  description: |
+    Mutect2에서 생성된 f1r2.tar.gz 데이터를 기반으로 
+    시퀀싱 과정에서 발생하는 방향성 바이어스(예: OxoG, FFPE)를 학습합니다.
+    결과물은 FilterMutectCalls 단계에서 아티팩트를 제거하는 모델로 사용됩니다.
+
+io:
+  inputs:
+    SeqID:    { required: true }
+    qcResDir: { required: true, help: "f1r2 파일이 있고 모델을 저장할 디렉토리" }
+
+  outputs:
+    # [Suffix]를 활용하여 normal용과 keep.germline용 모두 대응
+    read_orientation_model:
+      default: "[qcResDir]/[SeqID].[OutputSuffix].read-orientation-model.tar.gz"
+      help: "Learned orientation bias model"
+
+params:
+  # --- [Suffix 제어] ---
+  # 일반 모드일 경우: InputSuffix="", OutputSuffix=""
+  # KeepGermline 모드일 경우: InputSuffix="keep.germline.", OutputSuffix="keep.germline"
+  InputSuffix:  { type: str, default: "", help: "Input f1r2 suffix (with dot if exists)" }
+  OutputSuffix: { type: str, default: "", help: "Output model suffix" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  gatk4_sif:       { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+  
+  # --- [Resources] ---
+  xmx_mb:  { type: int, default: 8192, help: "8GB memory from original script" }
+  Threads: { type: int, default: 14, help: "ParallelGCThreads" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [gatk4_sif] gatk LearnReadOrientationModel
+  --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
+  -I [qcResDir]/[SeqID].[InputSuffix]f1r2.tar.gz
+  -O [read_orientation_model]

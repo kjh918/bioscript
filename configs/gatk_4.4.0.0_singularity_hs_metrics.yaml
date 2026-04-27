@@ -1,0 +1,47 @@
+# =========================================================
+# GATK4 CollectHsMetrics
+#  - WES/Targeted Sequencing의 하이브리드 선택(HS) 지표 산출
+#  - 온-타겟 비율, 풍부도(Enrichment), 80% Base Quality 등을 리포트
+# =========================================================
+tool:
+  name: gatk4_hs_metrics
+  version: "4.4.0.0"
+  profile: "wes_target_efficiency"
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    BamDir:          { required: true }
+    qcResDir:        { required: true }
+    ReferenceFasta:  { required: true }
+    
+    # [WES 필수 파일]
+    BaitIntervals:   { required: true, help: "Target capture kit bait intervals (Picard-style)" }
+    TargetIntervals: { required: true, help: "Target capture kit target intervals (Picard-style)" }
+    
+    # 분석 대상 BAM 지정용 Suffix
+    InputSuffix:     { required: true, default: "analysisReady", help: "Target BAM suffix" }
+
+  outputs:
+    hs_metrics: 
+      default: "[qcResDir]/[SeqID].[InputSuffix].HS.metrics.txt"
+      help: "Hybrid Selection (HS) metrics report"
+
+params:
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  gatk4_sif:       { type: str, default: "/storage/images/gatk-4.4.0.0.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+  
+  # --- [Resources] ---
+  xmx_mb:  { type: int, default: 16384 }
+  Threads: { type: int, default: 14 }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [gatk4_sif] gatk CollectHsMetrics
+  --java-options "-XX:ParallelGCThreads=[Threads] -Xmx[xmx_mb]m"
+  --INPUT [BamDir]/[SeqID].[InputSuffix].bam
+  --OUTPUT [hs_metrics]
+  --REFERENCE_SEQUENCE [ReferenceFasta]
+  --BAIT_INTERVALS [BaitIntervals]
+  --TARGET_INTERVALS [TargetIntervals]

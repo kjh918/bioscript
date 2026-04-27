@@ -1,0 +1,49 @@
+# =========================================================
+# Mosdepth: Fast BAM/CRAM Depth Calculation
+#  - Calculates genome-wide or target-specific coverage
+#  - Optimized for speed using HTSlib
+# =========================================================
+tool:
+  name: mosdepth
+  version: "0.3.6"
+  profile: "target_coverage_calculation"
+  description: |
+    Mosdepth는 NGS 정렬 데이터의 커버리지를 매우 빠르게 계산합니다.
+    주어진 BED 영역별 평균 깊이, 누적 분포, 요약 통계를 생성합니다.
+    MAPQ 필터를 통해 신뢰도가 낮은 매핑은 통계에서 제외할 수 있습니다.
+
+io:
+  inputs:
+    SeqID:    { required: true, help: "Sequence identifier used for file tracking" }
+    BamDir:   { required: true, help: "Directory containing the BAM file to be analyzed" }
+    qcResDir:       { required: true, help: "Directory for quality control results" }
+    TargetBed:      { required: true, help: "Target intervals (BED) for coverage calculation" }
+    
+  outputs:
+    # Mosdepth가 생성하는 핵심 결과 파일들
+    global_dist:  { default: "[qcResDir]/[SeqID].mosdepth.global.dist.txt" }
+    region_dist:  { default: "[qcResDir]/[SeqID].mosdepth.region.dist.txt" }
+    summary_txt:  { default: "[qcResDir]/[SeqID].mosdepth.summary.txt" }
+    regions_bed:  { default: "[qcResDir]/[SeqID].regions.bed.gz" }
+
+params:
+  # --- [Binaries & Container] ---
+  InputSuffix:     { type: str, default: "analysisReady" }
+  singularity_bin: { type: str, default: "singularity" }
+  mosdepth_sif:    { type: str, default: "/storage/images/mosdepth-0.3.6.sif" }
+  mosdepth_bin:    { type: str, default: "/opt/mosdepth" }
+  bind:            { type: str, default: "/storage,/data" }
+  
+  # --- [Options] ---
+  Threads:         { type: int, default: 4, help: "Number of threads for decompression" }
+  MapQ:            { type: int, default: 20, help: "Mapping quality threshold (default: 20)" }
+  extra_args:      { type: str, default: "", help: "Additional mosdepth flags (e.g., --no-per-base)" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [mosdepth_sif] [mosdepth_bin]
+  --threads [Threads]
+  --by [TargetBed]
+  --mapq [MapQ]
+  [extra_args]
+  [qcResDir]/[SeqID]
+  [BamDir]/[SeqID].[InputSuffix].bam

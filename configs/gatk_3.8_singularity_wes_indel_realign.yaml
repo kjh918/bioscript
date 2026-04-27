@@ -1,5 +1,5 @@
 # =========================================================
-# GATK 3.8 Indel Realignment (Modular Version)
+# GATK 3.8 Indel Realignment for WES (Modular Version)
 #  1. RealignerTargetCreator: 리얼라인먼트가 필요한 타겟 구간 선정
 #  2. IndelRealigner: 선정된 구간에 대해 로컬 재정렬 수행
 #  - Modular Suffix 구조로 설계되어 다양한 전단계 BAM 수용 가능
@@ -8,6 +8,12 @@ tool:
   name: gatk3
   version: "3.8"
   profile: "indel_realign_using_singularity"
+  decription: |
+    GATK 3.8의 Indel Realignment은 WES 데이터에서 인델 주변의 매핑 오류를 개선하여 
+    변이 검출의 정확도를 높이는 과정입니다. 이 YAML은 RealignerTargetCreator와 
+    IndelRealigner 두 단계로 구성되어 있으며, 입력 BAM 파일의 Suffix를 유연하게 
+    제어할 수 있도록 설계되었습니다.
+
 
 io:
   inputs:
@@ -15,6 +21,7 @@ io:
     BamDir:          { required: true, help: "Directory containing the input BAM and target output BAM" }
     qcResDir:        { required: true, help: "Directory for the target intervals file output" }
     ReferenceFasta:  { required: true, help: "Path to the reference genome FASTA file" }
+    TargetBed:       { required: true, help: "Interval list or BED file for WES" }
     
     # Known Indels (리얼라인먼트의 기준이 되는 데이터베이스)
     KnownIndel1:     { required: true, help: "Path to known Indels VCF (e.g., Mills and 1000G)" }
@@ -22,7 +29,7 @@ io:
 
   outputs:
     target_intervals:
-      default: "[qcResDir]/[SeqID].[OutputSuffix].realign_target.intervals"
+      default: "[qcResDir]/[SeqID].[OutputSuffix].realignertargetcreator.intervals"
       help: "Target intervals file identifying regions for realignment"
     realigned_bam:
       default: "[BamDir]/[SeqID].[OutputSuffix].bam"
@@ -31,8 +38,8 @@ io:
 params:
   # --- [Suffix 제어] ---
   # 보통 MarkDuplicates 이후(dedup)를 입력으로 받습니다.
-  InputSuffix:  { type: str, default: "dedup", help: "Suffix of input BAM (e.g., dedup, sorted, primary)" }
-  OutputSuffix: { type: str, default: "realign", help: "Suffix for output BAM (e.g., realign, ir)" }
+  InputSuffix:  { type: str, default: "merged.dup.marked", help: "Suffix of input BAM (e.g., dedup, sorted, primary)" }
+  OutputSuffix: { type: str, default: "merged.dup.marked.realign", help: "Suffix for output BAM (e.g., realign, ir)" }
 
   # --- [Binaries & Container] ---
   singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
@@ -49,6 +56,7 @@ cmd_line: >
   [singularity_bin] exec -B [bind] [sif] [java_bin] -Xmx[xmx_mb]m -jar [gatk_jar]
   -T RealignerTargetCreator
   -R [ReferenceFasta]
+  -L [TargetBed]
   -I [BamDir]/[SeqID].[InputSuffix].bam
   -o [target_intervals]
   -known [KnownIndel1] -known [KnownIndel2]

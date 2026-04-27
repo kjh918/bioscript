@@ -1,0 +1,55 @@
+# =========================================================
+# SOBDetector: Somatic Orientation Bias Filter
+#  - Post-filtering for Mutect2 somatic variants
+#  - Uses BAM and VCF to re-evaluate orientation bias
+# =========================================================
+tool:
+  name: sob_detector
+  version: "1.0.4" # 환경에 맞는 버전을 기입하세요
+  profile: "somatic_artifact_cleanup"
+  description: |
+    SOBDetector는 VCF의 변이와 원본 BAM의 리드 방향을 대조하여 
+    방향성 바이어스(Orientation Bias) 아티팩트를 정밀하게 탐지합니다. 
+    GATK의 기본 필터링 이후에 적용하여 위양성(False Positive)을 더욱 줄여줍니다.
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    vcfDir:          { required: true, help: "필터링할 VCF가 위치한 경로" }
+    BamDir:          { required: true, help: "분석용 BAM(analysisReady) 경로" }
+
+  outputs:
+    # 최종 결과물: bias 필터링까지 완료된 VCF
+    bias_filtered_vcf: 
+      default: "[vcfDir]/[SeqID].mutect2.bias.filtered.vcf"
+      help: "SOBDetector에 의해 아티팩트가 제거된 최종 VCF"
+
+params:
+  # --- [Suffix & Input Tracking] ---
+  # FilterMutectCalls의 결과물을 입력으로 받으므로 기본값은 'filtered'
+  InputVcfSuffix:  { type: str, default: "filtered" }
+  InputBamSuffix:  { type: str, default: "analysisReady" }
+
+  # --- [Binaries & Runtime] ---
+  # SOBDetector가 jar 형태인지, 컨테이너 형태인지에 따라 수정 가능
+  singularity_bin: { type: str, default: "singularity" }
+  sob_sif:         { type: str, default: "/storage/images/sobdetector.sif" }
+  sob_bin:         { type: str, default: "SOBDetector" }
+  bind:            { type: str, default: "/storage,/data" }
+
+  # --- [Filters & Options] ---
+  minBaseQ:        { type: int, default: 20 }
+  minMapQ:         { type: int, default: 20 }
+  only_passed:     { type: str, default: "false", help: "PASS 필터된 변이만 처리할지 여부" }
+  extra_args:      { type: str, default: "" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [sob_sif] [sob_bin] 
+  --input-type VCF
+  --input-variants [vcfDir]/[SeqID].mutect2.[InputVcfSuffix].vcf
+  --input-bam [BamDir]/[SeqID].[InputBamSuffix].bam
+  --output-variants [bias_filtered_vcf]
+  --minBaseQuality [minBaseQ]
+  --minMappingQuality [minMapQ]
+  --only-passed [only_passed]
+  [extra_args]

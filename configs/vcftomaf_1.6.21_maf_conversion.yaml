@@ -1,0 +1,55 @@
+# =========================================================
+# vcf2maf: VCF to Mutation Annotation Format (MAF)
+#  - Converts VEP-annotated VCF to MAF
+#  - Retains specific INFO and VEP CSQ fields for downstream analysis
+# =========================================================
+tool:
+  name: vcf2maf
+  version: "1.6.21"
+  profile: "maf_conversion"
+  description: |
+    VEP 주석이 완료된 VCF 파일을 분석 친화적인 MAF 포맷으로 변환합니다.
+    사용자 정의 INFO 필드(Mutect2 통계 등)와 VEP ANN 필드(CADD, ClinVar, COSMIC 등)를 
+    MAF의 컬럼으로 보존합니다. --inhibit-vep를 사용하여 재주석을 방지합니다.
+
+io:
+  inputs:
+    SeqID:           { required: true }
+    vcfDir:          { required: true }
+    VcfTag:          { required: true, help: "Input VCF tag (e.g. mutect2.filtered.vep.refseq)" }
+    NormalID:        { required: true, default: "NORMAL", help: "Normal sample ID" }
+    genomeFasta:     { required: true }
+
+  outputs:
+    output_maf:
+      default: "[vcfDir]/[SeqID].[VcfTag].maf"
+      help: "Final MAF file for cBioPortal or R/maftools"
+
+params:
+  # --- [Retain Fields - RefSeq 버전이 기본값으로 설정됨] ---
+  retain_info: 
+    type: str
+    default: "DP,GERMQ,MBQ,MFRL,MMQ,MPOS,POPAF,PON,ROQ,TLOD,FILTER,pArtifact,artiStatus"
+    help: "MAF에 컬럼으로 남길 VCF INFO 필드 리스트"
+    
+  retain_ann:
+    type: str
+    default: "HGVSg,am_class,am_pathogenicity,CADD_PHRED,CADD_RAW,ClinVar_CLNSIG,ClinVar_CLNDN,ClinVar_ORIGIN,gnomADe_AF,gnomADe_AFR_AF,gnomADe_AMR_AF,gnomADe_ASJ_AF,gnomADe_EAS_AF,gnomADe_FIN_AF,gnomADe_NFE_AF,gnomADe_OTH_AF,gnomADe_SAS_AF,MAX_AF,MAX_AF_POPS,TRANSCRIPTION_FACTORS,COSMIC,COSMIC_HGVSC,COSMIC_LEGACY_ID,COSMIC_TIER"
+    help: "MAF에 컬럼으로 남길 VEP ANN(CSQ) 필드 리스트"
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  vcf2maf_sif:     { type: str, default: "/storage/images/vcf2maf.sif" }
+  vcf2maf_bin:     { type: str, default: "vcf2maf.pl" }
+  bind:            { type: str, default: "/storage,/data" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [vcf2maf_sif] [vcf2maf_bin]
+  --inhibit-vep
+  --input-vcf [vcfDir]/[SeqID].[VcfTag].vcf
+  --output-maf [output_maf]
+  --tumor-id [SeqID]
+  --normal-id [NormalID]
+  --ref-fasta [genomeFasta]
+  --retain-info [retain_info]
+  --retain-ann [retain_ann]

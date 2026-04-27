@@ -1,0 +1,47 @@
+# =========================================================
+# FastQ Screen: Contamination Detection
+#  - Detects origin of reads (Human, Mouse, Rat, etc.)
+#  - Author: jhkim
+# =========================================================
+tool:
+  name: fastq_screen
+  version: "0.15.3"
+  profile: "singularity_fastq_screen"
+  description: |
+    FastQ Screen은 FASTQ 리드를 여러 참조 유전체에 매핑하여 
+    데이터 내의 오염(Contamination) 여부 및 라이브러리 구성을 시각화합니다.
+    주요 타겟: Human, Mouse, Rat, E.Coli, PhiX, Adapters, Vectors 등.
+
+io:
+  inputs:
+    SeqID:           { required: true, help: "샘플 식별자 (Sample ID)" }
+    RawFastqDir:     { required: true, help: "원본 FASTQ 파일이 위치한 경로" }
+    qcResDir:        { required: true, help: "결과 리포트가 저장될 디렉토리 (QC_DIR)" }
+
+  outputs:
+    # FastQ Screen의 전형적인 결과물 리스트
+    screen_txt: { default: "[qcResDir]/[SeqID]_R1_screen.txt", help: "텍스트 형태의 매핑 요약 결과" }
+    screen_png: { default: "[qcResDir]/[SeqID]_R1_screen.png", help: "시각화된 매핑 비율 차트" }
+    screen_html: { default: "[qcResDir]/[SeqID]_R1_screen.html", help: "인터랙티브 HTML 리포트" }
+
+params:
+  # --- [Binaries & Container] ---
+  singularity_bin:   { type: str, default: "singularity", help: "Singularity 실행 경로" }
+  fastq_screen_bin:  { type: str, default: "fastq_screen", help: "컨테이너 내부 실행 바이너리 명" }
+  sif:               { type: str, default: "/storage/images/fastqScreen-0.15.3.sif", help: "SIF 이미지 경로" }
+  bind:              { type: str, default: "/storage,/data", help: "Singularity 바운드 경로" }
+
+  # --- [FastQ Screen Options] ---
+  aligner:           { type: str, default: "bowtie2", help: "사용할 Aligner (기본: bowtie2)" }
+  config_path:       { type: str, default: "/storage/home/kangsm/runScripts/NGS_config.FastqScreen.conf", help: "FastQ Screen 설정 파일 경로" }
+  Threads:           { type: int, default: 15, help: "분석에 사용할 스레드 수" }
+  extra_args:        { type: str, default: "--force", help: "추가 플래그 (예: --force, --subset 100000)" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [sif] [fastq_screen_bin]
+  --aligner [aligner]
+  --conf [config_path]
+  --outdir [qcResDir]
+  --threads [Threads]
+  [extra_args]
+  [RawFastqDir]/[SeqID]_R1.fastq.gz
