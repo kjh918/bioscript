@@ -1,0 +1,51 @@
+# =========================================================
+# Salmon: Highly-accurate & Fast Transcript Quantification
+#  - Automated library type inference (-l A)
+#  - Quasi-mapping based quantification
+# =========================================================
+tool:
+  name: salmon_quant
+  version: "1.10.1"
+  profile: "transcript_quantification"
+  description: |
+    Salmon은 참조 트랜스크립톰 인덱스를 사용하여 리드의 발현량을 정량화합니다.
+    '-l A' 옵션은 Salmon이 데이터의 일부를 미리 매핑하여 
+    라이브러리의 방향성(Strandedness: IU, ISF, ISR 등)을 자동으로 판별하게 합니다.
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    FastqDir:       { required: true }
+    OutputDir:      { required: true, help: "정량화 결과(quant 폴더)가 저장될 경로" }
+    # Salmon 전용 Index 디렉토리
+    SalmonIndex:    { required: true, help: "Path to Salmon index directory" }
+
+  outputs:
+    # Salmon은 결과 디렉토리 내에 특정 파일들을 생성함
+    quant_sf:       { default: "[OutputDir]/[SeqID]_quant/quant.sf", help: "Transcript-level quantification file" }
+    quant_log:      { default: "[OutputDir]/[SeqID]_quant/logs/salmon_quant.log" }
+    lib_format:     { default: "[OutputDir]/[SeqID]_quant/lib_format_counts.json", help: "Inferred library type info" }
+
+params:
+  # --- [Resources] ---
+  Threads:         { type: int, default: 12 }
+  
+  # --- [Salmon Options] ---
+  # 'A'는 Auto-detect를 의미함
+  libType:         { type: str, default: "A", help: "Library type (A: Auto-detect)" }
+  InputSuffix:     { type: str, default: "fastq.gz" }
+  # Mapping 정확도를 높이기 위한 검증 옵션
+  validateMappings: { type: str, default: "--validateMappings" }
+  extra_args:      { type: str, default: "" }
+
+
+cmd_line: >
+  salmon quant
+  --threads [Threads]
+  --index [SalmonIndex]
+  --libType [libType]
+  -1 [FastqDir]/[SeqID]_R1.[InputSuffix]
+  -2 [FastqDir]/[SeqID]_R2.[InputSuffix]
+  [validateMappings]
+  -o [OutputDir]/[SeqID]_quant
+  [extra_args]
