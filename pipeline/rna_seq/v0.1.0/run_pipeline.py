@@ -87,8 +87,10 @@ if __name__ == "__main__":
                     "Threads": 4,
                 }
             ),
+
+
             Task(
-                name="bwa_picard_align_merge",
+                name="bbsplit",
                 runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
                 log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
                 spec = {
@@ -105,137 +107,23 @@ if __name__ == "__main__":
                 }
             ),
             Task(
-                name="samtools_bam_sort_index",
-                runner_path= scripts / "run_samtools_bam_sort_index.py",
-                log_path = work_dir / sid / "logs" / "03_samtools_bam_sort_index", 
+                name="sortmerna",
+                runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
+                log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
                 spec = {
                     'SeqID': sid,
+                    'TrimFastqDir': work_dir / sid / "fastq_trimmed",
                     'BamDir': work_dir / sid / "bam",
-                    "Threads": 2,
-                }
-            ),
-            Task(
-                name="gatk4_singularity_dedup",
-                runner_path= scripts / "run_gatk4_dedup_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "04_gatk4_singularity_dedup", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="gatk3_singularity_indel_realign",
-                runner_path= scripts / "run_gatk3_indel_realign_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "05_gatk3_singularity_indel_realign", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
+                    'TmpDir': work_dir / sid / "tmp",
                     'ReferenceFasta': ReferenceFasta,
-                    'KnownIndel1': KnownIndel1,
-                    'KnownIndel2': KnownIndel2,
+                    'ReadGroupID': sid,
+                    'ReadGroupPlatform': 'ILLUMINA',
+                    'ReadGroupLibrary': 'PicoPLEXGold',
+                    'ReadGroupCenter': 'GCX',
                     "Threads": 8,
                 }
             ),
-            Task(
-                name="gatk4_singularity_bqsr",
-                runner_path= scripts / "run_gatk4_bqsr_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "06_gatk4_singularity_bqsr", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
-                    'KnownSnp': KnownSnp,
-                    'KnownIndel1': KnownIndel1,
-                    'KnownIndel2': KnownIndel2,
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="samtools_filter_index_recal_bam_filter",
-                runner_path= scripts / "run_samtools_filter_bam.py",
-                log_path = work_dir / sid / "logs" / "07_samtools_filter_index_recal_bam_filter", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="gatk4_singularity_qc_artifacts",
-                runner_path= scripts / "run_gatk4_qc_artifacts_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "08_gatk4_singularity_qc_artifacts", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="gatk4_singularity_qc_alignment_summary",
-                runner_path= scripts / "run_gatk4_qc_alignment_summary_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "09_gatk4_singularity_qc_alignment_summary", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="gatk4_singularity_qc_insert_size",
-                runner_path= scripts / "run_gatk4_qc_insert_size_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "10_gatk4_singularity_qc_insert_size", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="gatk4_singularity_qc_wgs_metrics",
-                runner_path= scripts / "runs_gatk4_qc_wgs_metrics_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "11_gatk4_singularity_qc_wgs_metrics", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="mosdepth_singularity_coverage_100kb",
-                runner_path= scripts / "run_mosdepth_singularity_coverage.py",
-                log_path = work_dir / sid / "logs" / "12_mosdepth_singularity_coverage_100kb", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid /"bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="copykit",
-                runner_path= scripts / "run_copykit_cbnipt_copynumber_analysis.py",
-                log_path = work_dir / sid / "logs" / "13_copykit_cbnipt_copynumber_analysis.py", 
-                spec = {
-                    'SeqID': sid,
-                    'NGS_DataBaseDir': work_dir / sid / "bam",
-                    'ResultBaseDir': work_dir / sid / "copykit",
-                    'ReferenceFasta': ReferenceFasta,
-                    "Threads": 8,
-                }
-            ),
+
         ]
         
         pipe.add_tasks(tasks)

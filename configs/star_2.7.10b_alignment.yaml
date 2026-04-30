@@ -1,0 +1,52 @@
+# =========================================================
+# STAR: Spliced Transcripts Alignment to a Reference
+#  - Fast and accurate RNA-seq alignment
+#  - Generates coordinate-sorted BAM and gene counts
+# =========================================================
+tool:
+  name: star_alignment
+  version: "2.7.11a"
+  profile: "rna_seq_mapping"
+
+io:
+  inputs:
+    SeqID:          { required: true }
+    FastqDir:       { required: true }
+    BamDir:         { required: true }
+    # STAR 전용 Index 폴더 (미리 생성되어 있어야 함)
+    StarIndex:      { required: true, help: "Path to STAR index directory" }
+
+  outputs:
+    aligned_bam:    { default: "[BamDir]/[SeqID].Aligned.sortedByCoord.out.bam" }
+    gene_counts:    { default: "[BamDir]/[SeqID].ReadsPerGene.out.tab" }
+    mapping_log:    { default: "[BamDir]/[SeqID].Log.final.out" }
+
+params:
+  # --- [Resources] ---
+  # STAR는 hg38 기준 최소 30GB 이상의 RAM이 필요합니다.
+  Threads:         { type: int, default: 12 }
+  
+  # --- [STAR Options] ---
+  InputSuffix:     { type: str, default: "fastq.gz" }
+  outSAMtype:      { type: str, default: "BAM SortedByCoordinate" }
+  quantMode:       { type: str, default: "GeneCounts" }
+  outSAMattributes: { type: str, default: "Standard" }
+  # 정렬되지 않은 리드를 따로 저장할지 여부
+  outReadsUnmapped: { type: str, default: "None" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  star_sif:        { type: str, default: "/storage/images/star-2.7.11.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [star_sif] STAR
+  --runThreadN [Threads]
+  --genomeDir [StarIndex]
+  --readFilesIn [FastqDir]/[SeqID]_R1.[InputSuffix] [FastqDir]/[SeqID]_R2.[InputSuffix]
+  --readFilesCommand zcat
+  --outFileNamePrefix [BamDir]/[SeqID].
+  --outSAMtype [outSAMtype]
+  --quantMode [quantMode]
+  --outSAMattributes [outSAMattributes]
+  --outReadsUnmapped [outReadsUnmapped]

@@ -37,10 +37,15 @@ params:
   # Mapping 정확도를 높이기 위한 검증 옵션
   validateMappings: { type: str, default: "--validateMappings" }
   extra_args:      { type: str, default: "" }
+  
+  singularity_bin: { type: str, default: "singularity" }
+  star_sif:        { type: str, default: "/storage/images/star-2.7.11.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+
 
 
 cmd_line: >
-  salmon quant
+  [singularity_bin] exec -B [bind] [salmon_sif] salmon quant
   --threads [Threads]
   --index [SalmonIndex]
   --libType [libType]
