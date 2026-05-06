@@ -100,7 +100,7 @@ class Pipeline:
             return []
         if suffix == 'bam':
             return sorted(list(set([f.name.split('.')[0] for f in self.raw_dir.glob("*.bam")])))
-        return sorted(list(set([f.name.split('_R1')[0] for f in self.raw_dir.glob(f"*_R1.{suffix}")])))
+        return sorted(list(set([f.name.split('_R1')[0] for f in self.raw_dir.glob(f"**/*_R1.{suffix}")])))
 
     def add_tasks(self, tasks: List[Task]):
         """샘플 ID별로 Task 리스트 그룹화"""

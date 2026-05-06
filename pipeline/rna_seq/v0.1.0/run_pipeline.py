@@ -19,15 +19,15 @@ def get_parser():
     
     # 클러스터(SGE) 설정 옵션
     parser.add_argument("--sge-user", default="jhkim", help="SGE 실행 유저 이름 (기본값: jhkim)")
-    parser.add_argument("--sge-node", default="all.q@ngsmaster", help="SGE 큐/노드 이름 (기본값: all.q@ngsmaster)")
+    parser.add_argument("--sge-node", default="all.q@ngsnode1", help="SGE 큐/노드 이름 (기본값: all.q@ngsmaster)")
     parser.add_argument("--max-samples", type=int, default=3, help="동시 실행할 최대 샘플 수 (기본값: 3)")
     parser.add_argument("--max-threads", type=int, default=24, help="최대 사용 스레드 수 (기본값: 24)")
     
     # 레퍼런스 설정 옵션 (기본값 세팅)
-    parser.add_argument("--ref-fasta", default="/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa", help="Reference FASTA 경로")
-    parser.add_argument("--known-snp", default="/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz", help="Known SNP VCF 경로")
-    parser.add_argument("--known-indel1", default="/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.known_indels.vcf.gz", help="Known Indel 1 VCF 경로")
-    parser.add_argument("--known-indel2", default="/storage/references_and_index/hg38/vcf/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz", help="Known Indel 2 VCF 경로")
+    #parser.add_argument("--ref-fasta", default="/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa", help="Reference FASTA 경로")
+    #parser.add_argument("--known-snp", default="/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz", help="Known SNP VCF 경로")
+    #parser.add_argument("--known-indel1", default="/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.known_indels.vcf.gz", help="Known Indel 1 VCF 경로")
+    #parser.add_argument("--known-indel2", default="/storage/references_and_index/hg38/vcf/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz", help="Known Indel 2 VCF 경로")
 
 
     return parser
@@ -41,11 +41,6 @@ if __name__ == "__main__":
     RawFastqDir = args.raw_dir
     work_dir = Path(args.work_dir)
     scripts = Path(os.path.dirname(__file__)) / 'scripts'
-
-    ReferenceFasta = args.ref_fasta
-    KnownSnp = args.known_snp
-    KnownIndel1 = args.known_indel1
-    KnownIndel2 = args.known_indel2
 
     # --- [3] Pipeline Setting ---
     pipe = Pipeline(
@@ -62,7 +57,7 @@ if __name__ == "__main__":
     )
         
     # --- [4] Tasks Setting ---
-    for sid in pipe.samples:
+    for sid in pipe.samples[:1]:
         tasks = [
             Task(
                 name="fastqc",
@@ -77,7 +72,7 @@ if __name__ == "__main__":
             ),
             Task(
                 name="fastp",
-                runner_path= scripts / "run_fastp_picoplexgold_pe_trim_using_singularity.py",
+                runner_path= scripts / "run_fastp_pe_trim_using_singularity.py",
                 log_path = work_dir / sid / "logs" / "01_fastp", 
                 spec = {
                     'SeqID': sid,
@@ -87,42 +82,82 @@ if __name__ == "__main__":
                     "Threads": 4,
                 }
             ),
-
-
             Task(
-                name="bbsplit",
-                runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
-                log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
+                name="star",
+                runner_path= scripts / "run_star_alignment_rna_seq_mapping.py",
+                log_path = work_dir / sid / "logs" / "02_star", 
                 spec = {
                     'SeqID': sid,
-                    'TrimFastqDir': work_dir / sid / "fastq_trimmed",
+                    'FastqDir': work_dir / sid / "fastq_trimmed",
                     'BamDir': work_dir / sid / "bam",
-                    'TmpDir': work_dir / sid / "tmp",
-                    'ReferenceFasta': ReferenceFasta,
-                    'ReadGroupID': sid,
-                    'ReadGroupPlatform': 'ILLUMINA',
-                    'ReadGroupLibrary': 'PicoPLEXGold',
-                    'ReadGroupCenter': 'GCX',
-                    "Threads": 8,
+                    #'StarIndex': args.star_index,
+                    'StarIndex': "/storage/references_and_index/hg38/star-rsem-index/PE-150",
+                    "Threads": 20,
                 }
             ),
             Task(
-                name="sortmerna",
-                runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
-                log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
+                name="rsem",
+                runner_path= scripts / "run_rsem_calculate_expression_quanti.py",
+                log_path = work_dir / sid / "logs" / "03_rsem", 
                 spec = {
                     'SeqID': sid,
-                    'TrimFastqDir': work_dir / sid / "fastq_trimmed",
-                    'BamDir': work_dir / sid / "bam",
-                    'TmpDir': work_dir / sid / "tmp",
-                    'ReferenceFasta': ReferenceFasta,
-                    'ReadGroupID': sid,
-                    'ReadGroupPlatform': 'ILLUMINA',
-                    'ReadGroupLibrary': 'PicoPLEXGold',
-                    'ReadGroupCenter': 'GCX',
-                    "Threads": 8,
+                    'TranscriptomeBam': work_dir / sid / "bam",
+                    'RsemIndex': "/storage/references_and_index/hg38/star-rsem-index/PE-150/hg38",
+                    'OutputDir': work_dir / sid / "quanti" / "rsem", 
+                    "Threads": 20,
                 }
             ),
+            Task(
+                name="salmon",
+                runner_path= scripts / "run_salmon_transcript_quanti.py",
+                log_path = work_dir / sid / "logs" / "04_salmon", 
+                spec = {
+                    'SeqID': sid,
+                    'BamDir': work_dir / sid / "bam",
+                    'SalmonIndex': "/storage/references_and_index/hg38/star-rsem-index/PE-150/hg38.transcripts.fa",
+                    'OutputDir': work_dir / sid / "quanti" / "salmon", 
+                    "Threads": 20,
+                }
+            ),
+
+
+
+
+
+            #Task(
+            #    name="bbsplit",
+            #    runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
+            #    log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
+            #    spec = {
+            #        'SeqID': sid,
+            #        'TrimFastqDir': work_dir / sid / "fastq_trimmed",
+            #        'BamDir': work_dir / sid / "bam",
+            #        'TmpDir': work_dir / sid / "tmp",
+            #        'ReferenceFasta': ReferenceFasta,
+            #        'ReadGroupID': sid,
+            #        'ReadGroupPlatform': 'ILLUMINA',
+            #        'ReadGroupLibrary': 'PicoPLEXGold',
+            #        'ReadGroupCenter': 'GCX',
+            #        "Threads": 8,
+            #    }
+            #),
+            #Task(
+            #    name="sortmerna",
+            #    runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
+            #    log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
+            #    spec = {
+            #        'SeqID': sid,
+            #        'TrimFastqDir': work_dir / sid / "fastq_trimmed",
+            #        'BamDir': work_dir / sid / "bam",
+            #        'TmpDir': work_dir / sid / "tmp",
+            #        'ReferenceFasta': ReferenceFasta,
+            #        'ReadGroupID': sid,
+            #        'ReadGroupPlatform': 'ILLUMINA',
+            #        'ReadGroupLibrary': 'PicoPLEXGold',
+            #        'ReadGroupCenter': 'GCX',
+            #        "Threads": 8,
+            #    }
+            #),
 
         ]
         

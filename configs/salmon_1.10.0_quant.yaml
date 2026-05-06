@@ -4,9 +4,9 @@
 #  - Quasi-mapping based quantification
 # =========================================================
 tool:
-  name: salmon_quant
-  version: "1.10.1"
-  profile: "transcript_quantification"
+  name: salmon
+  version: "1.10.0"
+  profile: "transcript_quanti"
   description: |
     Salmon은 참조 트랜스크립톰 인덱스를 사용하여 리드의 발현량을 정량화합니다.
     '-l A' 옵션은 Salmon이 데이터의 일부를 미리 매핑하여 
@@ -15,8 +15,8 @@ tool:
 io:
   inputs:
     SeqID:          { required: true }
-    FastqDir:       { required: true }
-    OutputDir:      { required: true, help: "정량화 결과(quant 폴더)가 저장될 경로" }
+    BamDir:       { required: true, help: "Directory containing input BAM files" }
+    OutputDir:      { required: true, help: "Path to output directory" }
     # Salmon 전용 Index 디렉토리
     SalmonIndex:    { required: true, help: "Path to Salmon index directory" }
 
@@ -33,24 +33,17 @@ params:
   # --- [Salmon Options] ---
   # 'A'는 Auto-detect를 의미함
   libType:         { type: str, default: "A", help: "Library type (A: Auto-detect)" }
-  InputSuffix:     { type: str, default: "fastq.gz" }
-  # Mapping 정확도를 높이기 위한 검증 옵션
-  validateMappings: { type: str, default: "--validateMappings" }
+  InputSuffix:     { type: str, default: ".Aligned.toTranscriptome.out.bam" }
   extra_args:      { type: str, default: "" }
   
-  singularity_bin: { type: str, default: "singularity" }
-  star_sif:        { type: str, default: "/storage/images/star-2.7.11.sif" }
-  bind:            { type: str, default: "/storage,/data" }
-
+  samlon_bin:        { type: str, default: "/storage/apps/salmon-1.10.0/bin/salmon" }
 
 
 cmd_line: >
-  [singularity_bin] exec -B [bind] [salmon_sif] salmon quant
+  [samlon_bin] quant
+  -t [SalmonIndex]
   --threads [Threads]
-  --index [SalmonIndex]
   --libType [libType]
-  -1 [FastqDir]/[SeqID]_R1.[InputSuffix]
-  -2 [FastqDir]/[SeqID]_R2.[InputSuffix]
-  [validateMappings]
-  -o [OutputDir]/[SeqID]_quant
+  -a [BamDir]/[SeqID][InputSuffix]
+  -o [OutputDir]
   [extra_args]

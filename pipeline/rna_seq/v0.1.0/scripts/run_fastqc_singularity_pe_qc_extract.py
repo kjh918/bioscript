@@ -49,7 +49,7 @@ def main():
     r2_dir = f"{qcResDir}/{SeqID}_R2_fastqc"
 
     # --- [Command Execution] ---
-    cmd = f"{singularity_bin} exec -B {bind} {sif} {fastqc_bin} {fastqc_args} --threads {Threads} --outdir {qcResDir} {RawFastqDir}/{SeqID}_R1.fastq.gz {RawFastqDir}/{SeqID}_R2.fastq.gz"
+    cmd = f"{singularity_bin} exec -B {bind} {sif} {fastqc_bin} {fastqc_args} --threads {Threads} --outdir {qcResDir} {RawFastqDir}/{SeqID}/{SeqID}_R1.fastq.gz {RawFastqDir}/{SeqID}/{SeqID}_R2.fastq.gz"
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     

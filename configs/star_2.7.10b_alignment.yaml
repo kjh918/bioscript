@@ -18,6 +18,7 @@ io:
 
   outputs:
     aligned_bam:    { default: "[BamDir]/[SeqID].Aligned.sortedByCoord.out.bam" }
+    aligned_transcriptome_bam:    { default: "[BamDir]/[SeqID].Aligned.toTranscriptome.out.bam" }
     gene_counts:    { default: "[BamDir]/[SeqID].ReadsPerGene.out.tab" }
     mapping_log:    { default: "[BamDir]/[SeqID].Log.final.out" }
 
@@ -27,12 +28,15 @@ params:
   Threads:         { type: int, default: 12 }
   
   # --- [STAR Options] ---
-  InputSuffix:     { type: str, default: "fastq.gz" }
+  InputSuffix:     { type: str, default: ".trimmed" }
   outSAMtype:      { type: str, default: "BAM SortedByCoordinate" }
   quantMode:       { type: str, default: "GeneCounts" }
-  outSAMattributes: { type: str, default: "Standard" }
-  # 정렬되지 않은 리드를 따로 저장할지 여부
-  outReadsUnmapped: { type: str, default: "None" }
+  outSAMattributes: { type: str, default: "NH HI AS nM XS NM" }
+  chimSegmentMin:         { type: int, default: 10 }
+  twopassMode:            { type: str, default: "Basic" }
+  quantMode:        { type: str, default: "TranscriptomeSAM" }
+  outFilterMismatchNmax: { type: int, default: 10 }
+  outSAMunmapped: { type: str, default: "Within" }
 
   # --- [Binaries & Container] ---
   singularity_bin: { type: str, default: "singularity" }
@@ -43,10 +47,13 @@ cmd_line: >
   [singularity_bin] exec -B [bind] [star_sif] STAR
   --runThreadN [Threads]
   --genomeDir [StarIndex]
-  --readFilesIn [FastqDir]/[SeqID]_R1.[InputSuffix] [FastqDir]/[SeqID]_R2.[InputSuffix]
+  --readFilesIn [FastqDir]/[SeqID][InputSuffix]_R1.fastq.gz [FastqDir]/[SeqID][InputSuffix]_R2.fastq.gz
   --readFilesCommand zcat
+  --quantMode [quantMode]
+  --twopassMode [twopassMode]
+  --chimSegmentMin [chimSegmentMin]
+  --outFilterMismatchNmax [outFilterMismatchNmax]
   --outFileNamePrefix [BamDir]/[SeqID].
   --outSAMtype [outSAMtype]
-  --quantMode [quantMode]
   --outSAMattributes [outSAMattributes]
-  --outReadsUnmapped [outReadsUnmapped]
+  --outSAMunmapped [outSAMunmapped]

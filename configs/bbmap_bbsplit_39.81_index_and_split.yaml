@@ -1,0 +1,47 @@
+tool:
+  name: bbmap_bbsplit
+  version: "39.81"
+  profile: "integrated_indexing_and_splitting"
+  description: |
+    Primary FASTA와 추가 참조 FASTA들을 입력받아 인덱스를 즉석에서 생성하고,
+    입력된 리드를 각 참조 서열별로 분류하여 저장합니다. 
+    인덱스를 따로 빌드할 필요 없이 FASTA 경로만으로 즉시 운영이 가능합니다.
+
+io:
+  inputs:
+    SeqID:           { required: true, help: "Sample identifier for naming outputs" }
+    Read1:           { required: true }
+    Read2:           { required: true }
+    PrimaryRef:      { required: true, help: "Path to primary reference fasta" }
+    # 예: "ref_human=/path/to/human.fa ref_mouse=/path/to/mouse.fa"
+    OtherRefsArgs:   { required: true, help: "Formatted string of additional references" }
+    OutputDir:       { required: true, help: "Directory for results and statistics" }
+
+params:
+  # [Rule 0] Default 값 제거. 잘못된 값 입력 시 에러 발생 유도.
+  MemoryMB:          { required: true, help: "Java heap memory (e.g., 32768)" }
+  Threads:           { required: true, help: "Number of CPU threads" }
+  BBMapPath:         { required: true, help: "Directory path containing bbsplit.sh" }
+  # 출력 파일 패턴 (예: [OutputDir]/[SeqID]_%_#.fastq.gz)
+  BaseNamePattern:   { required: true }
+  ExtraArgs:         { required: false, default: "ambiguous2=all" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin: { type: str, default: "singularity" }
+  bbmap_sif:       { type: str, default: "/storage/home/jhkim/Apps/bbmap_39.81.sif" }
+  bind:            { type: str, default: "/storage,/data" }
+  
+setup: >
+  singularity pull bbmap_39.81.sif \\ndocker://quay.io/biocontainers/bbmap:39.81--h9b5c0a0_1
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [bbmap_sif] bbsplit.sh
+  -Xmx[MemoryMB]M
+  ref_primary=[PrimaryRef]
+  [OtherRefsArgs]
+  in1=[Read1]
+  in2=[Read2]
+  basename=[BaseNamePattern]
+  refstats=[OutputDir]/[SeqID].refstats.txt
+  threads=[Threads]
+  [ExtraArgs]
