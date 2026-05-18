@@ -57,7 +57,7 @@ if __name__ == "__main__":
     )
         
     # --- [4] Tasks Setting ---
-    for sid in pipe.samples[:1]:
+    for sid in pipe.samples:
         tasks = [
             Task(
                 name="fastqc",
@@ -92,6 +92,7 @@ if __name__ == "__main__":
                     'BamDir': work_dir / sid / "bam",
                     #'StarIndex': args.star_index,
                     'StarIndex': "/storage/references_and_index/hg38/star-rsem-index/PE-150",
+                    'outSAMtype':'BAM Unsorted',
                     "Threads": 20,
                 }
             ),
