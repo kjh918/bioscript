@@ -28,7 +28,7 @@ process FASTP {
     def sif = params.sif ?: "/storage/images/fastp-0.23.4.sif"
     def bind = params.bind ?: "/storage,/data"
     def Threads = params.Threads ?: "8"
-    def length_required = params.length_required ?: "100"
+    def length_required = params.length_required ?: "15"
     def average_qual = params.average_qual ?: "10"
     def qualified_quality_phred = params.qualified_quality_phred ?: "15"
     """

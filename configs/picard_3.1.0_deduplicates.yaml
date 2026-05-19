@@ -6,7 +6,7 @@
 tool:
   name: picard
   version: "3.1.0"
-  profile: "qc_gc_bias_metrics"
+  profile: "qc_deduplicates"
   description: "Picard 도구를 사용하여 중복 리드(Duplicate reads)를 식별하고 BAM 파일에서 완전히 제거합니다."
 
 io:

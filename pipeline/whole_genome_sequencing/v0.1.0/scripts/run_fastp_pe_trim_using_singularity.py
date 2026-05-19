@@ -26,7 +26,7 @@ def main():
     parser.add_argument('--sif', required=False, default='/storage/images/fastp-0.23.4.sif', help='Path to fastp Singularity image file (Default: /storage/images/fastp-0.23.4.sif)')
     parser.add_argument('--bind', required=False, default='/storage,/data', help='Mount paths for Singularity execution (Default: /storage,/data)')
     parser.add_argument('--Threads', required=False, default='8', help='Number of threads to be used by fastp (Default: 8)')
-    parser.add_argument('--length_required', required=False, default='100', help='Reads shorter than this length will be discarded (Default: 100)')
+    parser.add_argument('--length_required', required=False, default='15', help='Reads shorter than this length will be discarded (Default: 15)')
     parser.add_argument('--average_qual', required=False, default='10', help='Reads with average quality score lower than this will be discarded (Default: 10)')
     parser.add_argument('--qualified_quality_phred', required=False, default='15', help='The quality threshold that a base is considered as qualified (Default: 15)')
     

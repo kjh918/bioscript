@@ -20,7 +20,7 @@ rule fastp:
         sif = "/storage/images/fastp-0.23.4.sif"
         bind = "/storage,/data"
         Threads = "8"
-        length_required = "100"
+        length_required = "15"
         average_qual = "10"
         qualified_quality_phred = "15"
     threads: 1

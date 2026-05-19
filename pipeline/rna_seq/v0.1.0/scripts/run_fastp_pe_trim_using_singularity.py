@@ -26,7 +26,7 @@ def main():
     parser.add_argument('--sif', required=False, default='/storage/images/fastp-0.23.4.sif', help='Path to fastp Singularity image (.sif) (Default: /storage/images/fastp-0.23.4.sif)')
     parser.add_argument('--bind', required=False, default='/storage,/data', help='Directories to mount for Singularity (Default: /storage,/data)')
     parser.add_argument('--Threads', required=False, default='8', help='Number of threads for parallel processing (Default: 8)')
-    parser.add_argument('--length_required', required=False, default='100', help='Minimum read length filter (Default: 100)')
+    parser.add_argument('--length_required', required=False, default='15', help='Minimum read length filter (Default: 15)')
     parser.add_argument('--average_qual', required=False, default='10', help='Minimum average quality filter (Default: 10)')
     parser.add_argument('--qualified_quality_phred', required=False, default='15', help='Phred quality score threshold (base quality) (Default: 15)')
     parser.add_argument('--adapter_sequence', required=False, default='AGATCGGAAGAGCACACGTCTGAACTCCAGTCA', help='Adapter sequence for Read 1 (Default: AGATCGGAAGAGCACACGTCTGAACTCCAGTCA)')

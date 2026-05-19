@@ -38,6 +38,8 @@ def main():
     group_filter.add_argument('--MaskLowerQ', type=float, default=0.01, help='하위 Coverage 필터 (기본 0.01)')
     group_filter.add_argument('--MaskUpperQ', type=float, default=0.99, help='상위 Coverage 필터 (기본 0.99)')
 
+    group_filter.add_argument('--Threads', type=int, default=4, help='Threads')
+
     args = parser.parse_args()
 
     # 분석 시작 로그

@@ -1,0 +1,68 @@
+# =========================================================
+# Bedtools GenomeCov & bedGraphToBigWig Pipeline
+#  - Computes genome-wide coverage from alignments or intervals
+#  - Automatically converts generated bedGraph files to BigWig format
+# =========================================================
+tool:
+  name: bedtools_genomecov_to_bigwig
+  version: "v2.27.1"
+  profile: "genome_coverage_and_signal_generation"
+  description: |
+    Calculates chromosome-wide or genome-wide coverage profiles from alignment files (BAM) 
+    or feature intervals (BED/GFF/VCF), and seamlessly converts the intermediate bedGraph 
+    output into an optimized BigWig binary signal format for genome browser visualization.
+  install: |
+    singularity pull mulled-v2.sif \
+    https://depot.galaxyproject.org/singularity/mulled-v2-0706fce4651afdd140e6493139959dc8d83d2674:379771e663a512eeb057976c09bef0978a8c85cc-0
+
+io:
+  inputs:
+    SeqID:
+      required: true
+      help: "Unique sample identifier used to generate the output file names."
+    InputFile:
+      required: true
+      help: "Path to the input alignment (BAM) or interval file (BED/GFF/VCF) to compute coverage from."
+    GenomeSizes:
+      required: true
+      help: "Path to the tab-delimited chromosome sizes reference file."
+    Extension:
+      required: true
+      help: "Intermediate file extension reflecting bedGraph data structure (must be 'bedgraph' or 'bg')."
+    OutputDir:
+      required: true
+      help: "Target directory where the generated genome coverage (bedGraph and BigWig) files will be saved."
+
+params:
+  # [MODIFIED] Populated robust production default settings to guarantee immediate operational stability out of the box.
+  Threads:
+    { type: int, default: 4, helpt: 'Threads'}
+  InputFlag:
+    { type: str, default: "-ibam", help: "The conditional input flag choice: Use '-ibam' for BAM files or '-i' for interval files." }
+  GenomeSizesFlag:
+    { type: str, default: "", help: "The chromosome layout configuration string for bedtools: Pass '-g [GenomeSizes]' for interval files or '' for BAM files." }
+  ScaleArgs:
+    { type: str, default: "-bg", help: "Pre-calculated scale arguments (e.g., '-scale 0.05 -bg'). Note: '-bg' is required to match bedGraph format specifications." }
+  SortCmd:
+    { type: str, default: "| LC_ALL=C sort --buffer-size=8G -k1,1 -k2,2n", help: "Downstream shell sort pipeline instruction. Pass '' if sorting is disabled." }
+  singularity_bin: 
+    { type: str, default: "singularity", help: "Absolute path to the singularity/apptainer runtime executable binary." }
+  bedtools_sif:        
+    { type: str, default: "/storage/images/bedtools-2.27.1.sif", help: "Absolute path to the Bedtools Singularity Image File (.sif)." }
+  bigwig_sif:        
+    { type: str, default: "/storage/images/ucsc-bedgraphtobigwig-445.sif", help: "Absolute path to the Singularity Image File containing the bedGraphToBigWig UCSC utility." }
+  bind:            
+    { type: str, default: "/storage,/data", help: "Comma-separated host-to-container file system mount paths." }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] [bedtools_sif] bedtools genomecov
+  [InputFlag] [InputFile]
+  [GenomeSizesFlag]
+  [ScaleArgs]
+  [SortCmd]
+  --parallel=[Threads]
+  > [OutputDir]/[SeqID].[Extension] &&
+  [singularity_bin] exec -B [bind] [bigwig_sif] bedGraphToBigWig
+  [OutputDir]/[SeqID].[Extension]
+  [GenomeSizes]
+  [OutputDir]/[SeqID].bw

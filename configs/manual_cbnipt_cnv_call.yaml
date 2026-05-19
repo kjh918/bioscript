@@ -1,0 +1,31 @@
+# =========================================================
+# cbNIPT CNV Call CLI Task Specification
+#  - Rule 0: Default 설정을 배제하여 명시적 인자 주입 강제
+# =========================================================
+tool:
+  name: "cbnipt_cnv_call_cli"
+  version: "1.0.0"
+  profile: "cnv_calling"
+  description: "Performs cbNIPT manual CNV calling for an individual BAM file via a targeted CLI script."
+
+io:
+  inputs:
+    SeqID: { required: true, help: "The parsed identifier extracted from the BAM filename." }
+    BamPath: { required: true, help: "Absolute path to the specific analysis-ready BAM file." }
+    ReferenceFasta: { required: true, help: "Absolute path to the hg38 reference genome FASTA file." }
+    OutDir: { required: true, help: "Absolute path to the specific run output directory." }
+  outputs:
+    OutDir: { required: true, help: "Absolute path to the specific run output directory." }
+
+params:
+  PythonBin: { type: str, default: '/storage/home/jhkim/Apps/Python-3.11.13/python', help: "Absolute path to the target Python interpreter environment." }
+  CliScript: { type: str, default: '/storage/home/jhkim/scripts/bioscript/manual/cbnipt_manual_cnv_call/scripts/cli.py', help: "Absolute path to the target cli.py script tool." }
+  Threads: { type: int, default: 4, help: "The parsed identifier extracted from the BAM filename." }
+
+cmd_line: >
+  [PythonBin] [CliScript]
+  --SeqID [SeqID]
+  --BamPath [BamPath]
+  --ReferenceFasta [ReferenceFasta]
+  --OutDir [OutDir]
+  --Threads [Threads]

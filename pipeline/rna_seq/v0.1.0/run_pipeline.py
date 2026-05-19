@@ -96,18 +96,18 @@ if __name__ == "__main__":
                     "Threads": 20,
                 }
             ),
-            Task(
-                name="rsem",
-                runner_path= scripts / "run_rsem_calculate_expression_quanti.py",
-                log_path = work_dir / sid / "logs" / "03_rsem", 
-                spec = {
-                    'SeqID': sid,
-                    'TranscriptomeBam': work_dir / sid / "bam",
-                    'RsemIndex': "/storage/references_and_index/hg38/star-rsem-index/PE-150/hg38",
-                    'OutputDir': work_dir / sid / "quanti" / "rsem", 
-                    "Threads": 20,
-                }
-            ),
+            #Task(
+            #    name="rsem",
+            #    runner_path= scripts / "run_rsem_calculate_expression_quanti.py",
+            #    log_path = work_dir / sid / "logs" / "03_rsem", 
+            #    spec = {
+            #        'SeqID': sid,
+            #        'TranscriptomeBam': work_dir / sid / "bam",
+            #        'RsemIndex': "/storage/references_and_index/hg38/star-rsem-index/PE-150/hg38",
+            #        'OutputDir': work_dir / sid / "quanti" / "rsem", 
+            #        "Threads": 20,
+            #    }
+            #),
             Task(
                 name="salmon",
                 runner_path= scripts / "run_salmon_transcript_quanti.py",
