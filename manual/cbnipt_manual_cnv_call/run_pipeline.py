@@ -19,7 +19,7 @@ def get_parser():
     
     # 클러스터(SGE) 설정 옵션
     parser.add_argument("--sge-user", default="jhkim", help="SGE 실행 유저 이름 (기본값: jhkim)")
-    parser.add_argument("--sge-node", default="all.q@ngsnode1", help="SGE 큐/노드 이름 (기본값: all.q@ngsmaster)")
+    parser.add_argument("--sge-node", default="all.q@ngsmaster", help="SGE 큐/노드 이름 (기본값: all.q@ngsmaster)")
     parser.add_argument("--max-samples", type=int, default=3, help="동시 실행할 최대 샘플 수 (기본값: 3)")
     parser.add_argument("--max-threads", type=int, default=24, help="최대 사용 스레드 수 (기본값: 24)")
     
@@ -67,7 +67,7 @@ if __name__ == "__main__":
                 log_path = work_dir / sid / "logs" / "00.manual", 
                 spec = {
                     'SeqID': sid,
-                    'BamPath': f"{RawFastqDir}/{sid}.analysisReady.bam" ,
+                    'BamPath': f"{RawFastqDir}/{sid}.bam" ,
                     'ReferenceFasta': "/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa",
                     'OutDir': work_dir / sid,
                     "Threads": 4,

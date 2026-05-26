@@ -86,27 +86,55 @@ def process_bam_to_coverage(bam_path, bins_df, min_mapq=20):
     
     # [참고] 나중에 apply_final_filters에서 breadth_ratio < 0.5인 행을 drop하게 됩니다.
     return bins_df, filter_stats
-
 def apply_low_quality_filter(df, filter_stats, min_depth=1, min_coverage=0.5):
     """
-    Breadth of Coverage와 Depth를 기준으로 불량 빈을 제거합니다.
-    순차적으로 필터링하여 각 단계에서 '추가로' 제거된 개수를 기록합니다.
+    [REVISED] 
+    상염색체(Autosomes)는 Breadth of Coverage와 Depth를 기준으로 불량 빈을 엄격히 제거하지만,
+    성염색체(chrX, chrY)는 생물학적 성별/Plody 판정을 위해 필터링 대상에서 완전히 예외(보호) 처리합니다.
     """
+    if df is None or df.empty:
+        return pd.DataFrame(), pd.DataFrame([filter_stats])
+        
     initial_count = len(df)
     
-    # 1. Depth 필터링 (데이터가 아예 없거나 너무 적은 경우)
-    df_after_depth = df[df["raw_count"] >= min_depth].copy()
-    filter_stats["low_depth_count"] = initial_count - len(df_after_depth)
+    # [STEP 1] 성염색체와 상염색체 영역 분리
+    sex_chrom_mask = df["chrom"].isin(["chrX", "chrY"])
+    df_autosomes = df[~sex_chrom_mask].copy()
+    df_sex_chroms = df[sex_chrom_mask].copy()
     
-    # 2. Breadth 필터링 (데이터는 있으나 특정 지점에 몰려 있는 경우)
-    # [수정] 이전 단계에서 남은 df_after_depth를 기준으로 계산해야 합니다.
-    df_filtered = df_after_depth[df_after_depth["breadth_ratio"] >= min_coverage].copy()
-    filter_stats["low_breadth_bins_count"] = len(df_after_depth) - len(df_filtered)
+    # -----------------------------------------------------------------
+    # [STEP 2] 상염색체(Autosomes)에만 엄격한 퀄리티 필터 적용
+    # -----------------------------------------------------------------
+    autosome_initial_count = len(df_autosomes)
+    
+    # 1. Depth 필터링
+    df_auto_after_depth = df_autosomes[df_autosomes["raw_count"] >= min_depth].copy()
+    filter_stats["low_depth_count"] = autosome_initial_count - len(df_auto_after_depth)
+    
+    # 2. Breadth 필터링
+    df_auto_filtered = df_auto_after_depth[df_auto_after_depth["breadth_ratio"] >= min_coverage].copy()
+    filter_stats["low_breadth_bins_count"] = len(df_auto_after_depth) - len(df_auto_filtered)
+    
+    # -----------------------------------------------------------------
+    # [STEP 3] 필터링된 상염색체 데이터와 '온전한 성염색체 데이터' 결합
+    # -----------------------------------------------------------------
+    df_filtered = pd.concat([df_auto_filtered, df_sex_chroms], ignore_index=True)
+    
+    # 원래 분석 파이프라인의 순서 정렬 상태(염색체 및 시작 좌표 순) 복원
+    def chrom_key(c):
+        c_str = str(c).replace('chr', '')
+        if c_str == 'X': return 23
+        if c_str == 'Y': return 24
+        try: return int(c_str)
+        except: return 99
+
+    df_filtered['chrom_sort_key'] = df_filtered['chrom'].apply(chrom_key)
+    df_filtered = df_filtered.sort_values(by=['chrom_sort_key', 'start']).drop(columns=['chrom_sort_key']).reset_index(drop=True)
     
     total_removed = initial_count - len(df_filtered)
-    log(f"Applied low quality filter: {total_removed} bins removed "
-        f"(Depth < {min_depth}: {filter_stats['low_depth_count']}, "
-        f"Breadth < {min_coverage*100}%: {filter_stats['low_breadth_bins_count']})")
+    log(f"Applied localized quality filter (Sex Chromosomes Protected): {total_removed} bins removed "
+        f"(Autosome Depth < {min_depth}: {filter_stats['low_depth_count']}, "
+        f"Autosome Breadth < {min_coverage*100}%: {filter_stats['low_breadth_bins_count']})")
     
     return df_filtered, pd.DataFrame([filter_stats])
 
