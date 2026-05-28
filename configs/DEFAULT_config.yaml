@@ -1,0 +1,54 @@
+
+info:
+  user: WRITER_NAME 
+  date: DATE
+  logs: |
+    CODE LOG
+
+tool:
+  name: TOOL_NAME
+  version: TASK_VERSION
+  profile: TOOL_FUNCTION
+  description: |
+    SUMMARY TOOL DESCRIPTION
+  setup: |
+    SETUP PROCESS
+  
+io:
+  inputs:
+    SeqID:
+      { required: true, help: "Unique sample identifier used to generate the output file names"}
+    InputFileDir:
+      { required: true, help: "Path of Input sample data." }
+    qcResDir:
+      { required: true, help: "Path of QC Results." }
+    OutputDir:
+      { required: true, help: "Path of Output files."}
+  outputs:
+    OutputSummary:
+      { required: true, help: "Path of Output files."}
+
+params:
+  # --- [File Suffix Info] ---
+  InputSuffix:
+    { type: str, default: "", help: "File name input-suffix (e.g., '.bam')" }
+  OutputSuffix:
+    { type: str, default: "", help: "File name output-suffix (e.g., '.summary.txt')" }
+
+  # --- [Binaries & Container] ---
+  singularity_bin:
+    { type: str, default: "singularity" }
+  bind:
+    { type: str, default: "/storage,/data" }
+  
+  # --- [Resources] ---
+  xmx_mb:
+    { type: int, default: 16384, help: "16GB memory from original script" }
+  Threads:
+    { type: int, default: 8, help: "Threads (default : 8)" }
+  extra_args:
+    { type: str, default: "", help: "Extra arguments" }
+
+cmd_line: >
+  [singularity_bin] exec -B [bind] 
+  [extra_args]

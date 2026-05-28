@@ -29,6 +29,7 @@ def _fetch_sites_with_handle(vcf_handle, chrom, start, end):
     except: pass
     return pd.DataFrame(sites)
 
+
 def _summarize_and_classify_bin(fragment_df, site_df, bin_id, hetero_range):
     if fragment_df.empty: return pd.DataFrame(), pd.DataFrame()
     pos_stats = {
@@ -50,7 +51,7 @@ def _summarize_and_classify_bin(fragment_df, site_df, bin_id, hetero_range):
     report_df = pd.DataFrame(pos_stats.values())
     if report_df.empty: return pd.DataFrame(), pd.DataFrame()
     
-    # [MODIFIED] 1. 필터링 전 원천(Raw) 데이터 총량 합산 보존 (정규화 자산)
+    # [1] 필터링 전 원천(Raw) 데이터 총량 합산 보존
     raw_ref_sum = int(report_df["ref_depth"].sum())
     raw_alt_sum = int(report_df["alt_depth"].sum())
     raw_total_depth = raw_ref_sum + raw_alt_sum
@@ -59,18 +60,18 @@ def _summarize_and_classify_bin(fragment_df, site_df, bin_id, hetero_range):
     # 포지션별 기본 지표 연산
     report_df["observed_baf"] = (report_df["alt_depth"] / (report_df["ref_depth"] + report_df["alt_depth"])).fillna(0)
     
-    # [MODIFIED] 2. QC 조건 만족 데이터 격리 관리 오퍼레이션
-    # 포지션당 읽힌 독립 파편 수가 2개 이상인 클린 지점만 추출
+    # [FIXED] Homo/Hetero 정의를 QC 필터링보다 먼저 선언해야 합니다!
+    h_min, h_max = hetero_range
+    report_df['group'] = 'Other'
+    report_df.loc[(report_df['pop_af'] >= h_min) & (report_df['pop_af'] <= h_max), 'group'] = 'Hetero'
+    report_df.loc[(report_df['pop_af'] <= 0.1) | (report_df['pop_af'] >= 0.9), 'group'] = 'Homo'
+    
+    # [2] QC 조건 만족 데이터 격리 관리 오퍼레이션 (이제 'group' 컬럼이 무조건 존재함)
     qc_mask = report_df['total_fragments'] >= 2
     qc_group = report_df[qc_mask]
     
     # QC 패스 순수 프래그먼트 양 격리 카운트 
     qc_pass_fragments = int(qc_group["total_fragments"].sum()) if not qc_group.empty else 0
-
-    h_min, h_max = hetero_range
-    report_df['group'] = 'Other'
-    report_df.loc[(report_df['pop_af'] >= h_min) & (report_df['pop_af'] <= h_max), 'group'] = 'Hetero'
-    report_df.loc[(report_df['pop_af'] <= 0.1) | (report_df['pop_af'] >= 0.9), 'group'] = 'Homo'
 
     # QC 통과 그룹 내에서만 안정적인 BAF 평균/메디안/개수 집계
     summary_grouped = qc_group.groupby('group')['observed_baf'].agg(['mean', 'median', 'count']) if not qc_group.empty else pd.DataFrame()
@@ -84,7 +85,7 @@ def _summarize_and_classify_bin(fragment_df, site_df, bin_id, hetero_range):
         else:
             res[f"{g.lower()}_baf_mean"] = res[f"{g.lower()}_baf_median"] = res[f"{g.lower()}_sites_count"] = 0
             
-    # [MODIFIED] 3. 마스터 요약 프레임에 자산 연동 및 분모 제어 스케일링 적용
+    # [3] 마스터 요약 프레임에 자산 연동 및 분모 제어 스케일링 적용
     total_trans = int(fragment_df['is_trans'].sum())
     total_cis = int(fragment_df['is_cis_alt'].sum())
     
@@ -96,7 +97,7 @@ def _summarize_and_classify_bin(fragment_df, site_df, bin_id, hetero_range):
     res["raw_total_fragments_sum"] = raw_total_fragments_sum
     res["qc_pass_fragments"] = qc_pass_fragments  # 정규화 모듈용 명시적 격리 지표
     
-    # QC 패스된 알짜배기 분모 풀 기준의 스케일링 비율 연산 (Double Counting 오류 차단)
+    # QC 패스된 알짜배기 분모 풀 기준의 스케일링 비율 연산
     denom = qc_pass_fragments if qc_pass_fragments > 0 else 1
     report_df['TER'] = (report_df['trans_support'] / denom).fillna(0)
     report_df['CER'] = (report_df['cis_support'] / denom).fillna(0)

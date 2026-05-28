@@ -67,7 +67,7 @@ if __name__ == "__main__":
                 log_path = work_dir / sid / "logs" / "00.manual", 
                 spec = {
                     'SeqID': sid,
-                    'BamPath': f"{RawFastqDir}/{sid}.bam" ,
+                    'BamPath': f"{RawFastqDir}/{sid}.analysisReady.bam" ,
                     'ReferenceFasta': "/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa",
                     'OutDir': work_dir / sid,
                     "Threads": 4,

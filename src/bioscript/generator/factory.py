@@ -22,6 +22,26 @@ class BioPipelineFactory:
             self.data = yaml.safe_load(f)
         self.tmpl_dir = Path(__file__).parent / "templates"
 
+    def _build_setup_sh(self, out_path, clean_tool, clean_profile, meta, setup_content):
+        file_name = f"setup_{clean_tool}_{clean_profile}.sh"
+        target_file = out_path / file_name
+        
+        script_lines = [
+            "#!/bin/bash",
+            "# ==========================================",
+            f"# Tool Setup : {meta['name']} (v{meta['version']})",
+            f"# Profile    : {meta['profile']}",
+            f"# Writer     : {meta['writer_name']} ({meta['date']})",
+            "# ==========================================",
+            "",
+            setup_content if setup_content else "# No specific setup required.",
+            ""
+        ]
+        
+        target_file.write_text("\n".join(script_lines), encoding='utf-8')
+        target_file.chmod(0o755)
+        print(f"[*] Created & Executable set: {target_file.name}")
+
     def render_smart(self, template_text, mapping, meta):
         """
         1단계: 메타데이터 치환 (shebang, threads 등)
@@ -59,18 +79,28 @@ class BioPipelineFactory:
         out_path = Path(out_dir)
         out_path.mkdir(parents=True, exist_ok=True)
         
-        # 공통 메타데이터 추출
-        tool_raw = self.data['tool'].get('name', 'unknown')
-        profile_raw = self.data['tool'].get('profile', 'default')
+        # [MODIFIED] 변경 이유: info, tool 블록을 안전하게 가져오기 위해 변수 분리
+        info_data = self.data.get('info', {})
+        tool_data = self.data.get('tool', {})
+        params_data = self.data.get('params', {})
         
+        tool_raw = tool_data.get('name', 'Unknown_Tool')
+        profile_raw = tool_data.get('profile', 'default')
+        
+        # [MODIFIED] 변경 이유: 대소문자 혼용(Threads vs threads) 방어 로직
+        thread_node = params_data.get('Threads') or params_data.get('threads') or {}
+        threads_val = thread_node.get('default', 1) if isinstance(thread_node, dict) else (thread_node or 1)
+
+        # [MODIFIED] 변경 이유: 템플릿의 주석 블록 치환을 위해 info(user, date)와 description 추가
         common_meta = {
             "meta_tag": flags.META_TAG,
             "name": tool_raw,
-            "version": self.data['tool'].get('version', '0.1.0'),
+            "version": tool_data.get('version', '0.1.0'),
             "profile": profile_raw,
-            "threads": self.data.get('params', {}).get('threads', {}).get('default', 1) 
-                       if isinstance(self.data.get('params', {}).get('threads'), dict) 
-                       else self.data.get('params', {}).get('threads', 1)
+            "description": tool_data.get('description', '').strip(),
+            "writer_name": info_data.get('user', 'Unknown'),
+            "date": info_data.get('date', 'Unknown'),
+            "threads": threads_val
         }
 
         # 파일명 정규화 (소문자화 및 공백 제거)
@@ -107,3 +137,6 @@ class BioPipelineFactory:
             target_file.chmod(0o755)
             
             print(f"[*] Created & Executable set: {target_file.name}")
+            
+        setup_content = tool_data.get('setup', '').strip()
+        self._build_setup_sh(out_path, clean_tool, clean_profile, common_meta, setup_content)

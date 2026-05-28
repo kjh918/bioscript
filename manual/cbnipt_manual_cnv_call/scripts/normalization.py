@@ -75,16 +75,13 @@ def normalize_by_chrom_with_sex(df, value_col, sex_threshold=0.001):
         norm_results.append(group)
 
     return pd.concat(norm_results).reset_index(drop=True)
-import numpy as np
-import pandas as pd
-from utils import log
-
 def normalize_all_metrics_with_sex_log2(df, depth_col="raw_total_depth", qc_frag_col="qc_pass_fragments", sex_threshold=0.0001):
     """
-    [REVISED PERFECT VERSION]
+    [REVISED PERFECT VERSION + Zero-Drop 방어]
     1. Trans 지표는 고품질 클린 자산인 qc_frag_col (qc_pass_fragments)을 분모로 정밀 제어합니다.
     2. Hetero/Homo 사이트 지표는 게놈 와이드 물리 뎁스 및 ADO 생존율 모니터링을 위해 depth_col (raw_total_depth)을 분모로 이원화합니다.
     3. 성별 판별 기반의 Log2 Space (2n=0.0, 1n=-1.0) 공식을 적용합니다.
+    4. [NEW] 성염색체(chrX, Y)는 원래 물리량이 적어 0이 자주 나오므로, 플롯 붕괴 방지를 위해 대조군 5%의 안전 쿠션(Pseudocount)을 적용합니다.
     """
     # [CHECK] 필수 컬럼 검증
     target_cols = ["total_trans_fragments", "hetero_sites_count", "homo_sites_count"]
@@ -138,6 +135,21 @@ def normalize_all_metrics_with_sex_log2(df, depth_col="raw_total_depth", qc_frag
         ref_med_hetero = max(ref_df["density_hetero"].median() if not ref_df.empty else global_med_hetero, 1e-8)
         ref_med_homo = max(ref_df["density_homo"].median() if not ref_df.empty else global_med_homo, 1e-8)
         
+        # -----------------------------------------------------------------
+        # [NEW] 염색체 타입에 따른 하한선(Pseudocount) 이원화
+        # -----------------------------------------------------------------
+        if chrom in ["chrX", "chrY"]:
+            # 성염색체: 본래 물리량이 적어 0이 자주 나오므로 대조군의 5%를 하한선으로 방어 (그래프 붕괴 방지)
+            p_trans = ref_med_trans * 0.05
+            p_hetero = ref_med_hetero * 0.05
+            p_homo = ref_med_homo * 0.05
+        else:
+            # 상염색체: 0이 나오면 진짜 결실(Deletion)이므로, 순수 수학적 에러만 막는 극소값 사용
+            p_trans = 1e-10
+            p_hetero = 1e-10
+            p_homo = 1e-10
+        # -----------------------------------------------------------------
+        
         target_log2 = 0.0 
                 
         if chrom == "chrX":
@@ -147,17 +159,17 @@ def normalize_all_metrics_with_sex_log2(df, depth_col="raw_total_depth", qc_frag
             if is_male_cell:
                 target_log2 = -1.0
             else:
-                # 여성 Y 노이즈 보존 처리
-                group["trans_log2_norm"] = np.log2((group["density_trans"] + 1e-10) / ref_med_trans)
-                group["hetero_log2_norm"] = np.log2((group["density_hetero"] + 1e-10) / ref_med_hetero)
-                group["homo_log2_norm"] = np.log2((group["density_homo"] + 1e-10) / ref_med_homo)
+                # 여성 Y 노이즈 보존 처리 (성염색체 전용 p_value 적용)
+                group["trans_log2_norm"] = np.log2((group["density_trans"] + p_trans) / ref_med_trans)
+                group["hetero_log2_norm"] = np.log2((group["density_hetero"] + p_hetero) / ref_med_hetero)
+                group["homo_log2_norm"] = np.log2((group["density_homo"] + p_homo) / ref_med_homo)
                 norm_results.append(group)
                 continue
         
-        # 각 지표 고유의 대조군 비율 계산 후 생물학적 축(target_log2) 동기화
-        group["trans_log2_norm"] = np.log2((group["density_trans"] + 1e-10) / ref_med_trans) + target_log2
-        group["hetero_log2_norm"] = np.log2((group["density_hetero"] + 1e-10) / ref_med_hetero) + target_log2
-        group["homo_log2_norm"] = np.log2((group["density_homo"] + 1e-10) / ref_med_homo) + target_log2
+        # 각 지표 고유의 대조군 비율 계산 후 생물학적 축(target_log2) 동기화 (이원화 p_value 적용)
+        group["trans_log2_norm"] = np.log2((group["density_trans"] + p_trans) / ref_med_trans) + target_log2
+        group["hetero_log2_norm"] = np.log2((group["density_hetero"] + p_hetero) / ref_med_hetero) + target_log2
+        group["homo_log2_norm"] = np.log2((group["density_homo"] + p_homo) / ref_med_homo) + target_log2
         
         norm_results.append(group)
 
