@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4 (4.4.0.0)
 # Profile: dedup_using_singularity
@@ -16,6 +16,9 @@ usage() {
     echo "  --qcResDir        Directory for duplicate metrics output"
     echo ""
     echo "Optional Parameters:"
+    echo "  --dedup_bam       BAM file with marked/removed duplicates (Default: [BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam)"
+    echo "  --dedup_bai       Index file for the deduplicated BAM (Default: [BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai)"
+    echo "  --metrics_txt     Text file containing duplication metrics (Default: [qcResDir]/[SeqID].[InputSuffix].[OutputSuffix].metrics.txt)"
     echo "  --InputSuffix     Suffix of the input BAM (e.g., sorted, primary) (Default: sorted)"
     echo "  --OutputSuffix    Suffix for the output file (e.g., dedup, md) (Default: dedup)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
@@ -37,6 +40,9 @@ usage() {
 SeqID=""
 BamDir=""
 qcResDir=""
+dedup_bam="[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+dedup_bai="[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai"
+metrics_txt="[qcResDir]/[SeqID].[InputSuffix].[OutputSuffix].metrics.txt"
 InputSuffix="sorted"
 OutputSuffix="dedup"
 singularity_bin="singularity"
@@ -56,6 +62,9 @@ while [[ $# -gt 0 ]]; do
         --SeqID) SeqID="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
+        --dedup_bam) dedup_bam="$2"; shift 2 ;;
+        --dedup_bai) dedup_bai="$2"; shift 2 ;;
+        --metrics_txt) metrics_txt="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
@@ -91,7 +100,20 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${gatk_bin} MarkDuplicates --java
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${dedup_bai:-}" ]]; then
+  if [[ "${dedup_bai}" == *.* ]]; then mkdir -p "$(dirname "${dedup_bai}")"; else mkdir -p "${dedup_bai}"; fi
+fi
+if [[ -n "${dedup_bam:-}" ]]; then
+  if [[ "${dedup_bam}" == *.* ]]; then mkdir -p "$(dirname "${dedup_bam}")"; else mkdir -p "${dedup_bam}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${metrics_txt:-}" ]]; then
+  if [[ "${metrics_txt}" == *.* ]]; then mkdir -p "$(dirname "${metrics_txt}")"; else mkdir -p "${metrics_txt}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
 
 eval "$cmd"

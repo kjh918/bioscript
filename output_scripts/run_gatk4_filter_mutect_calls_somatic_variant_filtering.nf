@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = gatk4_filter_mutect_calls
-// THREADS = 1
+// THREADS = 14
 
 process GATK4_FILTER_MUTECT_CALLS {
     tag "$sample_id"

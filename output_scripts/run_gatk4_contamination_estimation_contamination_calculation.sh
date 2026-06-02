@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_contamination_estimation
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4_contamination_estimation (4.4.0.0)
 # Profile: contamination_calculation
@@ -19,6 +19,8 @@ usage() {
     echo "  --VcfGnomad       gnomAD germline resource VCF (Required for pileup)"
     echo ""
     echo "Optional Parameters:"
+    echo "  --pileup_table    Pileup summary statistics (Default: [qcResDir]/[SeqID].targeted_sequencing.table)"
+    echo "  --contamination_table Final contamination estimation (Default: [qcResDir]/[SeqID].contamination.table)"
     echo "  --InputSuffix     No description (Default: analysisReady)"
     echo "  --singularity_bin No description (Default: singularity)"
     echo "  --gatk4_sif       No description (Default: /storage/images/gatk-4.4.0.0.sif)"
@@ -38,6 +40,8 @@ qcResDir=""
 ReferenceFasta=""
 TargetInterval=""
 VcfGnomad=""
+pileup_table="[qcResDir]/[SeqID].targeted_sequencing.table"
+contamination_table="[qcResDir]/[SeqID].contamination.table"
 InputSuffix="analysisReady"
 singularity_bin="singularity"
 gatk4_sif="/storage/images/gatk-4.4.0.0.sif"
@@ -55,6 +59,8 @@ while [[ $# -gt 0 ]]; do
         --ReferenceFasta) ReferenceFasta="$2"; shift 2 ;;
         --TargetInterval) TargetInterval="$2"; shift 2 ;;
         --VcfGnomad) VcfGnomad="$2"; shift 2 ;;
+        --pileup_table) pileup_table="$2"; shift 2 ;;
+        --contamination_table) contamination_table="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --gatk4_sif) gatk4_sif="$2"; shift 2 ;;
@@ -87,7 +93,17 @@ cmd="${singularity_bin} exec -B ${bind} ${gatk4_sif} gatk GetPileupSummaries --j
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${pileup_table:-}" ]]; then
+  if [[ "${pileup_table}" == *.* ]]; then mkdir -p "$(dirname "${pileup_table}")"; else mkdir -p "${pileup_table}"; fi
+fi
+if [[ -n "${contamination_table:-}" ]]; then
+  if [[ "${contamination_table}" == *.* ]]; then mkdir -p "$(dirname "${contamination_table}")"; else mkdir -p "${contamination_table}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
 
 eval "$cmd"

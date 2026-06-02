@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = rsem
 # VERSION = 1.3.3
-# THREADS = 1
+# THREADS = 12
 # PROFILE = calculate_expression_quanti
 
 """
@@ -57,7 +57,9 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(OutputDir) if '.' in os.path.basename(OutputDir) else OutputDir, exist_ok=True)
+    if OutputDir:
+        _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

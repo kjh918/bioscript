@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = qc_artifacts_using_singularity
 
 """
@@ -21,6 +21,7 @@ def main():
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the BAM file to be analyzed (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='Output directory for artifact metrics (Default: )')
     parser.add_argument('--ReferenceFasta', required=True, default='', help='Path to the reference genome FASTA file (Default: )')
+    parser.add_argument('--artifacts_txt', required=False, default='[qcResDir]/[SeqID].artifacts', help='Base name for artifact metrics output files (Default: [qcResDir]/[SeqID].artifacts)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of the input BAM file (default : analysisReady / e.g., recal, sorted) (Default: analysisReady)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--gatk_bin', required=False, default='gatk', help='GATK wrapper script or binary path inside container (Default: gatk)')
@@ -36,6 +37,7 @@ def main():
     BamDir = args.BamDir
     qcResDir = args.qcResDir
     ReferenceFasta = args.ReferenceFasta
+    artifacts_txt = args.artifacts_txt
     InputSuffix = args.InputSuffix
     singularity_bin = args.singularity_bin
     gatk_bin = args.gatk_bin
@@ -45,6 +47,7 @@ def main():
     xmx_mb = args.xmx_mb
 
     # --- [Output Paths] ---
+    if not artifacts_txt:
     artifacts_txt = f"{qcResDir}/{SeqID}.artifacts"
 
     # --- [Command Execution] ---
@@ -52,8 +55,15 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if artifacts_txt:
+        _tgt = os.path.dirname(artifacts_txt) if os.path.splitext(artifacts_txt)[1] else artifacts_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

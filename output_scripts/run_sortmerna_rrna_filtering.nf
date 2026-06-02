@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = sortmerna
-// THREADS = 1
+// THREADS = 8
 
 process SORTMERNA {
     tag "$sample_id"

@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = sortmerna
 # VERSION = 4.3.7
-# THREADS = 1
+# THREADS = 8
 # PROFILE = rrna_filtering
 
 """
@@ -22,6 +22,9 @@ def main():
     parser.add_argument('--qcResDir', required=True, default='', help='Log 및 결과 파일 저장 경로 (Default: )')
     parser.add_argument('--RefArgs', required=True, default='', help='List of --ref references (Default: )')
     parser.add_argument('--IndexDir', required=False, default='', help='Pre-built index directory (--idx-dir) (Default: )')
+    parser.add_argument('--non_rrna_r1', required=False, default='[qcResDir]/[SeqID]_1.non_rRNA.fastq.gz', help='No description (Default: [qcResDir]/[SeqID]_1.non_rRNA.fastq.gz)')
+    parser.add_argument('--non_rrna_r2', required=False, default='[qcResDir]/[SeqID]_2.non_rRNA.fastq.gz', help='No description (Default: [qcResDir]/[SeqID]_2.non_rRNA.fastq.gz)')
+    parser.add_argument('--sortmerna_log', required=False, default='[qcResDir]/[SeqID].sortmerna.log', help='No description (Default: [qcResDir]/[SeqID].sortmerna.log)')
     parser.add_argument('--Threads', required=False, default='8', help='No description (Default: 8)')
     parser.add_argument('--InputSuffix', required=False, default='fastq.gz', help='No description (Default: fastq.gz)')
     parser.add_argument('--paired_cmd', required=False, default='--paired_in --out2', help='No description (Default: --paired_in --out2)')
@@ -35,14 +38,20 @@ def main():
     qcResDir = args.qcResDir
     RefArgs = args.RefArgs
     IndexDir = args.IndexDir
+    non_rrna_r1 = args.non_rrna_r1
+    non_rrna_r2 = args.non_rrna_r2
+    sortmerna_log = args.sortmerna_log
     Threads = args.Threads
     InputSuffix = args.InputSuffix
     paired_cmd = args.paired_cmd
     extra_args = args.extra_args
 
     # --- [Output Paths] ---
+    if not non_rrna_r1:
     non_rrna_r1 = f"{qcResDir}/{SeqID}_1.non_rRNA.fastq.gz"
+    if not non_rrna_r2:
     non_rrna_r2 = f"{qcResDir}/{SeqID}_2.non_rRNA.fastq.gz"
+    if not sortmerna_log:
     sortmerna_log = f"{qcResDir}/{SeqID}.sortmerna.log"
 
     # --- [Command Execution] ---
@@ -50,9 +59,24 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(FastqDir) if '.' in os.path.basename(FastqDir) else FastqDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
-    os.makedirs(os.path.dirname(IndexDir) if '.' in os.path.basename(IndexDir) else IndexDir, exist_ok=True)
+    if non_rrna_r1:
+        _tgt = os.path.dirname(non_rrna_r1) if os.path.splitext(non_rrna_r1)[1] else non_rrna_r1
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if FastqDir:
+        _tgt = os.path.dirname(FastqDir) if os.path.splitext(FastqDir)[1] else FastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if non_rrna_r2:
+        _tgt = os.path.dirname(non_rrna_r2) if os.path.splitext(non_rrna_r2)[1] else non_rrna_r2
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if sortmerna_log:
+        _tgt = os.path.dirname(sortmerna_log) if os.path.splitext(sortmerna_log)[1] else sortmerna_log
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if IndexDir:
+        _tgt = os.path.dirname(IndexDir) if os.path.splitext(IndexDir)[1] else IndexDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

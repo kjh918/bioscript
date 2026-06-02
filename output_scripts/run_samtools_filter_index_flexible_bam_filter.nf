@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = samtools_filter_index
-// THREADS = 1
+// THREADS = 8
 
 process SAMTOOLS_FILTER_INDEX {
     tag "$sample_id"

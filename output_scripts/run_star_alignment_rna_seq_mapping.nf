@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = star_alignment
-// THREADS = 1
+// THREADS = 12
 
 process STAR_ALIGNMENT {
     tag "$sample_id"

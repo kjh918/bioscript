@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_filter_mutect_calls
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 rule gatk4_filter_mutect_calls:
     input:
@@ -21,7 +21,7 @@ rule gatk4_filter_mutect_calls:
         xmx_mb = "16384"
         Threads = "14"
         extra_args = ""
-    threads: 1
+    threads: 14
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.gatk4_sif} gatk FilterMutectCalls --java-options '-XX:ParallelGCThreads={threads} -Xmx{params.xmx_mb}m' -V {input.vcfDir}/{input.SeqID}.mutect2.{params.Suffix}vcf -L {input.TargetInterval} --reference {input.ReferenceFasta} --contamination-table {input.ContaminationTable} --ob-priors {input.qcResDir}/{input.SeqID}.{params.Suffix}read-orientation-model.tar.gz -O {output.filtered_vcf} {params.extra_args}

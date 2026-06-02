@@ -75,6 +75,8 @@ def normalize_by_chrom_with_sex(df, value_col, sex_threshold=0.001):
         norm_results.append(group)
 
     return pd.concat(norm_results).reset_index(drop=True)
+
+
 def normalize_all_metrics_with_sex_log2(df, depth_col="raw_total_depth", qc_frag_col="qc_pass_fragments", sex_threshold=0.0001):
     """
     [REVISED PERFECT VERSION + Zero-Drop 방어]

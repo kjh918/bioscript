@@ -1,0 +1,105 @@
+---
+title: ""
+output: html_document
+---
+
+```{r setup, include=FALSE,message=FALSE,echo=FALSE}
+    knitr::opts_chunk$set(echo = TRUE)
+#---/ PACKAGES /------------------------------------------------------------------------------------
+    library(plyr)
+    library(dplyr)
+    library(knitr)
+    library(kableExtra)
+    library(Hmisc)
+    library(Cairo)
+    options(bitmapType='cairo')
+    grDevices::X11.options(type='cairo')
+    options(device='x11')
+#---------------------------------------------------------------------------------------------------
+#---/ FUNCTIONS NAD MODULES /-----------------------------------------------------------------------
+    source("resources/WES_Fun.ReportModules.R")
+#---------------------------------------------------------------------------------------------------
+
+## >>> USER INPUT PARAMS
+#----/ SEQ_FOLDER /---------------------------------------------------------------------------------
+    OrderID         <- "DEFAULT_ORDER_ID"
+    Result_Germline <- FALSE
+    Standard        <- TRUE
+    Advanced        <- TRUE
+    CumOncoplot     <- TRUE
+    PresetMafXlsx   <- TRUE
+    NoHumanData     <- FALSE
+#---------------------------------------------------------------------------------------------------
+## <<< USER INPUT PARAMS
+
+#---/ ANALYSIS INFO /-------------------------------------------------------------------------------
+    analysis_run_info <- readRDS("data/analysis_run_info.rds")
+    if( nrow(analysis_run_info$Tonly)    > 0 ){ Result_Tonly    <- TRUE }else{ Result_Tonly    <- FALSE }
+    if( nrow(analysis_run_info$MatchTS)  > 0 ){ Result_MatchTS  <- TRUE }else{ Result_MatchTS  <- FALSE }
+    if( nrow(analysis_run_info$MatchORG) > 0 ){ Result_MatchORG <- TRUE }else{ Result_MatchORG <- FALSE }
+    #if( nrow(analysis_run_info$TonlyGF)  > 0 ){ Result_TonlyGF  <- TRUE }else{ Result_TonlyGF  <- FALSE }
+    Result_TonlyGF <- FALSE
+#---------------------------------------------------------------------------------------------------
+
+```
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+    body{ font-size: 12px; font-family: 'Nunito';}
+    h1{ font-size: 24px; font-family: 'Nunito'; font-weight: bold; }
+    h2{ font-size: 20px; font-family: 'Nunito'; font-weight: bold; }
+    h3{ font-size: 18px; font-family: 'Nunito'; }
+    h4{ font-size: 14px; font-family: 'Nunito'; }
+</style>
+
+<!-- TITLE --> 
+
+```{r DataList_Title, echo=FALSE,message=FALSE,results='asis'}
+    cat('<br>')
+    cat(sprintf('<div style="color: #000000; font-size: 18px; font-weight: bold">%s DATA LIST</div>', OrderID))
+    cat('<hr>')
+```
+
+<!-- DATA FOLDER STRUCTURE -->
+
+<div style="color: #000000; font-size: 14px; font-weight: bold">Result Folders and Files </div> 
+<br>
+
+<pre style="border: 1px solid #82B366; font-size: 10px; font-family: 'JetBrains Mono';">
+&#160;[ ORDER ID ]
+&#160;&#160;&#160;&#160;├── bam
+&#160;&#160;&#160;&#160;├── fastq
+&#160;&#160;&#160;&#160;├── maf
+&#160;&#160;&#160;&#160;├── report
+&#160;&#160;&#160;&#160;└── vcf
+</pre>
+
+<br>
+
+<!-- FILE LIST -->
+
+```{r DataList_FASTQ, warning=FALSE,echo=FALSE,message=FALSE,results='asis'}
+    # FASTQ
+    cat('<div style="color: #000000; font-size: 14px; font-weight: bold">FASTQ </div>')
+    print( WES_report.Export.File.List.FASTQ() )
+    cat('<br>')
+    # BAM
+    cat('<div style="color: #000000; font-size: 14px; font-weight: bold">BAM </div>')
+    print( WES_report.Export.File.List.BAM() )
+    cat('<br>')
+    # VCF 
+    cat('<div style="color: #000000; font-size: 14px; font-weight: bold">VCF </div>')
+    print( WES_report.Export.File.List.VCF( TONLY=Result_Tonly, TS_N=Result_MatchTS, ORG_N=Result_MatchORG, TONLY_GF=Result_TonlyGF, GERMLINE=Result_Germline ) )
+    cat('<br>')
+    # MAF 
+    cat('<div style="color: #000000; font-size: 14px; font-weight: bold">MAF </div>')
+    print( WES_report.Export.File.List.MAF( TONLY=Result_Tonly, TS_N=Result_MatchTS, ORG_N=Result_MatchORG, TONLY_GF=Result_TonlyGF, GERMLINE=Result_Germline ) )
+    cat('<br>')
+    # REPORT
+    cat('<div style="color: #000000; font-size: 14px; font-weight: bold">REPORT </div>')
+    print( WES_report.Export.File.List.REPORT( STANDARD=Standard, ADVANCED=Advanced, ONCOPLOT_PNG=CumOncoplot, MAF_XLSX=PresetMafXlsx, NONHUMAN=NoHumanData ) )
+
+```
+
+

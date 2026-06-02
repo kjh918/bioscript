@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bwa_mem
 # VERSION = 0.7.17
-# THREADS = 1
+# THREADS = 8
 # PROFILE = align_pe_using_singularity
 
 """
@@ -25,6 +25,7 @@ def main():
     parser.add_argument('--ReadGroupPlatform', required=True, default='', help='Sequencing platform (PL tag: e.g., ILLUMINA) (Default: )')
     parser.add_argument('--ReadGroupLibrary', required=True, default='', help='Library identifier (LB tag) (Default: )')
     parser.add_argument('--ReadGroupCenter', required=True, default='', help='Sequencing center name (CN tag) (Default: )')
+    parser.add_argument('--primary_bam', required=False, default='[BamDir]/[SeqID].[OutputSuffix].bam', help='Output aligned BAM file (Default: [BamDir]/[SeqID].[OutputSuffix].bam)')
     parser.add_argument('--InputSuffix', required=False, default='trimmed', help='Suffix of input FASTQs (e.g., trimmed, raw, filtered) (Default: trimmed)')
     parser.add_argument('--OutputSuffix', required=False, default='primary', help='Suffix for output BAM (e.g., primary, initial) (Default: primary)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
@@ -49,6 +50,7 @@ def main():
     ReadGroupPlatform = args.ReadGroupPlatform
     ReadGroupLibrary = args.ReadGroupLibrary
     ReadGroupCenter = args.ReadGroupCenter
+    primary_bam = args.primary_bam
     InputSuffix = args.InputSuffix
     OutputSuffix = args.OutputSuffix
     singularity_bin = args.singularity_bin
@@ -63,6 +65,7 @@ def main():
     other_args = args.other_args
 
     # --- [Output Paths] ---
+    if not primary_bam:
     primary_bam = f"{BamDir}/{SeqID}.{OutputSuffix}.bam"
 
     # --- [Command Execution] ---
@@ -70,8 +73,15 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(TrimFastqDir) if '.' in os.path.basename(TrimFastqDir) else TrimFastqDir, exist_ok=True)
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
+    if primary_bam:
+        _tgt = os.path.dirname(primary_bam) if os.path.splitext(primary_bam)[1] else primary_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if TrimFastqDir:
+        _tgt = os.path.dirname(TrimFastqDir) if os.path.splitext(TrimFastqDir)[1] else TrimFastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

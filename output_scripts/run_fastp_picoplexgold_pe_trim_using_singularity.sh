@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = fastp
 # VERSION = 0.23.4
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: fastp (0.23.4)
 # Profile: PicoplexGold_pe_trim_using_singularity
@@ -17,6 +17,10 @@ usage() {
     echo "  --qcResDir        Directory for quality control reports (JSON/HTML)"
     echo ""
     echo "Optional Parameters:"
+    echo "  --out_read1       Final trimmed Read 1 FASTQ (Default: [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz)"
+    echo "  --out_read2       Final trimmed Read 2 FASTQ (Default: [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz)"
+    echo "  --json            JSON format quality report (Default: [qcResDir]/[SeqID].fastp.json)"
+    echo "  --html            HTML format quality report (Default: [qcResDir]/[SeqID].fastp.html)"
     echo "  --singularity_bin Path to the singularity executable (Default: singularity)"
     echo "  --fastp_bin       fastp executable name or path inside container (Default: fastp)"
     echo "  --sif             Path to fastp Singularity image (.sif) (Default: /storage/images/fastp-0.23.4.sif)"
@@ -39,6 +43,10 @@ SeqID=""
 RawFastqDir=""
 TrimFastqDir=""
 qcResDir=""
+out_read1="[TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz"
+out_read2="[TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz"
+json="[qcResDir]/[SeqID].fastp.json"
+html="[qcResDir]/[SeqID].fastp.html"
 singularity_bin="singularity"
 fastp_bin="fastp"
 sif="/storage/images/fastp-0.23.4.sif"
@@ -59,6 +67,10 @@ while [[ $# -gt 0 ]]; do
         --RawFastqDir) RawFastqDir="$2"; shift 2 ;;
         --TrimFastqDir) TrimFastqDir="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
+        --out_read1) out_read1="$2"; shift 2 ;;
+        --out_read2) out_read2="$2"; shift 2 ;;
+        --json) json="$2"; shift 2 ;;
+        --html) html="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --fastp_bin) fastp_bin="$2"; shift 2 ;;
         --sif) sif="$2"; shift 2 ;;
@@ -96,8 +108,26 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${fastp_bin} --thread ${Threads} 
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${RawFastqDir}")" 2>/dev/null || mkdir -p "${RawFastqDir}"
-mkdir -p "$(dirname "${TrimFastqDir}")" 2>/dev/null || mkdir -p "${TrimFastqDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${out_read1:-}" ]]; then
+  if [[ "${out_read1}" == *.* ]]; then mkdir -p "$(dirname "${out_read1}")"; else mkdir -p "${out_read1}"; fi
+fi
+if [[ -n "${html:-}" ]]; then
+  if [[ "${html}" == *.* ]]; then mkdir -p "$(dirname "${html}")"; else mkdir -p "${html}"; fi
+fi
+if [[ -n "${json:-}" ]]; then
+  if [[ "${json}" == *.* ]]; then mkdir -p "$(dirname "${json}")"; else mkdir -p "${json}"; fi
+fi
+if [[ -n "${TrimFastqDir:-}" ]]; then
+  if [[ "${TrimFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${TrimFastqDir}")"; else mkdir -p "${TrimFastqDir}"; fi
+fi
+if [[ -n "${RawFastqDir:-}" ]]; then
+  if [[ "${RawFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${RawFastqDir}")"; else mkdir -p "${RawFastqDir}"; fi
+fi
+if [[ -n "${out_read2:-}" ]]; then
+  if [[ "${out_read2}" == *.* ]]; then mkdir -p "$(dirname "${out_read2}")"; else mkdir -p "${out_read2}"; fi
+fi
 
 eval "$cmd"

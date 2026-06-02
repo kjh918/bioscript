@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = gatk4_hs_metrics
-// THREADS = 1
+// THREADS = 14
 
 process GATK4_HS_METRICS {
     tag "$sample_id"

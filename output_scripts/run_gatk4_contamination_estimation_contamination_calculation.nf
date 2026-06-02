@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = gatk4_contamination_estimation
-// THREADS = 1
+// THREADS = 14
 
 process GATK4_CONTAMINATION_ESTIMATION {
     tag "$sample_id"

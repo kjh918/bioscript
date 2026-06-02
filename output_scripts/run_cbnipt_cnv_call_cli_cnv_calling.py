@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = cbnipt_cnv_call_cli
 # VERSION = 1.0.0
-# THREADS = 1
+# THREADS = 4
 # PROFILE = cnv_calling
 
 """
@@ -37,14 +37,15 @@ def main():
     Threads = args.Threads
 
     # --- [Output Paths] ---
-    OutDir = f""
 
     # --- [Command Execution] ---
     cmd = f"{PythonBin} {CliScript} --SeqID {SeqID} --BamPath {BamPath} --ReferenceFasta {ReferenceFasta} --OutDir {OutDir} --Threads {Threads}"
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(OutDir) if '.' in os.path.basename(OutDir) else OutDir, exist_ok=True)
+    if OutDir:
+        _tgt = os.path.dirname(OutDir) if os.path.splitext(OutDir)[1] else OutDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

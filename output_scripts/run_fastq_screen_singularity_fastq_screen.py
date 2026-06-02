@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = fastq_screen
 # VERSION = 0.15.3
-# THREADS = 1
+# THREADS = 15
 # PROFILE = singularity_fastq_screen
 
 """
@@ -20,6 +20,9 @@ def main():
     parser.add_argument('--SeqID', required=True, default='', help='샘플 식별자 (Sample ID) (Default: )')
     parser.add_argument('--RawFastqDir', required=True, default='', help='원본 FASTQ 파일이 위치한 경로 (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='결과 리포트가 저장될 디렉토리 (QC_DIR) (Default: )')
+    parser.add_argument('--screen_txt', required=False, default='[qcResDir]/[SeqID]_R1_screen.txt', help='텍스트 형태의 매핑 요약 결과 (Default: [qcResDir]/[SeqID]_R1_screen.txt)')
+    parser.add_argument('--screen_png', required=False, default='[qcResDir]/[SeqID]_R1_screen.png', help='시각화된 매핑 비율 차트 (Default: [qcResDir]/[SeqID]_R1_screen.png)')
+    parser.add_argument('--screen_html', required=False, default='[qcResDir]/[SeqID]_R1_screen.html', help='인터랙티브 HTML 리포트 (Default: [qcResDir]/[SeqID]_R1_screen.html)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Singularity 실행 경로 (Default: singularity)')
     parser.add_argument('--fastq_screen_bin', required=False, default='fastq_screen', help='컨테이너 내부 실행 바이너리 명 (Default: fastq_screen)')
     parser.add_argument('--sif', required=False, default='/storage/images/fastqScreen-0.15.3.sif', help='SIF 이미지 경로 (Default: /storage/images/fastqScreen-0.15.3.sif)')
@@ -35,6 +38,9 @@ def main():
     SeqID = args.SeqID
     RawFastqDir = args.RawFastqDir
     qcResDir = args.qcResDir
+    screen_txt = args.screen_txt
+    screen_png = args.screen_png
+    screen_html = args.screen_html
     singularity_bin = args.singularity_bin
     fastq_screen_bin = args.fastq_screen_bin
     sif = args.sif
@@ -45,8 +51,11 @@ def main():
     extra_args = args.extra_args
 
     # --- [Output Paths] ---
+    if not screen_txt:
     screen_txt = f"{qcResDir}/{SeqID}_R1_screen.txt"
+    if not screen_png:
     screen_png = f"{qcResDir}/{SeqID}_R1_screen.png"
+    if not screen_html:
     screen_html = f"{qcResDir}/{SeqID}_R1_screen.html"
 
     # --- [Command Execution] ---
@@ -54,8 +63,21 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(RawFastqDir) if '.' in os.path.basename(RawFastqDir) else RawFastqDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if screen_html:
+        _tgt = os.path.dirname(screen_html) if os.path.splitext(screen_html)[1] else screen_html
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if screen_txt:
+        _tgt = os.path.dirname(screen_txt) if os.path.splitext(screen_txt)[1] else screen_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if screen_png:
+        _tgt = os.path.dirname(screen_png) if os.path.splitext(screen_png)[1] else screen_png
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if RawFastqDir:
+        _tgt = os.path.dirname(RawFastqDir) if os.path.splitext(RawFastqDir)[1] else RawFastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

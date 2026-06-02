@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = qc_wgs_metrics_using_singularity
 
 """
@@ -21,6 +21,7 @@ def main():
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the BAM file to be analyzed (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='Output directory for WGS metrics (Default: )')
     parser.add_argument('--ReferenceFasta', required=True, default='', help='Path to the reference genome FASTA file (Default: )')
+    parser.add_argument('--wgs_metrics_txt', required=False, default='[qcResDir]/[SeqID].collect_wgs_metrics.txt', help='Text file containing detailed WGS coverage and performance metrics (Default: [qcResDir]/[SeqID].collect_wgs_metrics.txt)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of the input BAM file (e.g., analysisReady, recal, sorted) (Default: analysisReady)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--java_bin', required=False, default='java', help='Path to java executable inside container (Default: java)')
@@ -37,6 +38,7 @@ def main():
     BamDir = args.BamDir
     qcResDir = args.qcResDir
     ReferenceFasta = args.ReferenceFasta
+    wgs_metrics_txt = args.wgs_metrics_txt
     InputSuffix = args.InputSuffix
     singularity_bin = args.singularity_bin
     java_bin = args.java_bin
@@ -47,6 +49,7 @@ def main():
     xmx_mb = args.xmx_mb
 
     # --- [Output Paths] ---
+    if not wgs_metrics_txt:
     wgs_metrics_txt = f"{qcResDir}/{SeqID}.collect_wgs_metrics.txt"
 
     # --- [Command Execution] ---
@@ -54,8 +57,15 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if wgs_metrics_txt:
+        _tgt = os.path.dirname(wgs_metrics_txt) if os.path.splitext(wgs_metrics_txt)[1] else wgs_metrics_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

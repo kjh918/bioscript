@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = samtools
-// THREADS = 1
+// THREADS = 8
 
 process SAMTOOLS {
     tag "$sample_id"

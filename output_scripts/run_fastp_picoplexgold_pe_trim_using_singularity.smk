@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = fastp
 # VERSION = 0.23.4
-# THREADS = 1
+# THREADS = 8
 
 rule fastp:
     input:
@@ -27,7 +27,7 @@ rule fastp:
         trim_front2 = "14"
         adapter_sequence = "AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
         adapter_sequence_r2 = "AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT"
-    threads: 1
+    threads: 8
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.sif} {params.fastp_bin} --thread {threads} --in1 {input.RawFastqDir}/{input.SeqID}_R1.fastq.gz --in2 {input.RawFastqDir}/{input.SeqID}_R2.fastq.gz --out1 {output.out_read1} --out2 {output.out_read2} --json {output.json} --html {output.html} --trim_poly_g --detect_adapter_for_pe --adapter_sequence {params.adapter_sequence} --adapter_sequence_r2 {params.adapter_sequence_r2} --length_required {params.length_required} --average_qual {params.average_qual} --qualified_quality_phred {params.qualified_quality_phred} --trim_front1 {params.trim_front1} --trim_front2 {params.trim_front2}

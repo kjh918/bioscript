@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = cbnipt_cnv_call_cli
 # VERSION = 1.0.0
-# THREADS = 1
+# THREADS = 4
 
 # Tool Info: cbnipt_cnv_call_cli (1.0.0)
 # Profile: cnv_calling
@@ -66,6 +66,8 @@ cmd="${PythonBin} ${CliScript} --SeqID ${SeqID} --BamPath ${BamPath} --Reference
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${OutDir}")" 2>/dev/null || mkdir -p "${OutDir}"
+if [[ -n "${OutDir:-}" ]]; then
+  if [[ "${OutDir}" == *.* ]]; then mkdir -p "$(dirname "${OutDir}")"; else mkdir -p "${OutDir}"; fi
+fi
 
 eval "$cmd"

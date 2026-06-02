@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bcftools
 # VERSION = 1.23
-# THREADS = 1
+# THREADS = 4
 
 # Tool Info: bcftools (1.23)
 # Profile: QC_PileupCall_Annotation
@@ -21,6 +21,8 @@ usage() {
     echo "  --PopAfHeaderHdr  Header file describing the annotation columns"
     echo ""
     echo "Optional Parameters:"
+    echo "  --raw_vcf         Raw VCF file after pileup and calling (Default: [ResultDir]/[SeqID].[Chromosome].[InputSuffix].raw.vcf.gz)"
+    echo "  --ann_vcf         Annotated VCF file with population AF (Default: [ResultDir]/[SeqID].[Chromosome].[InputSuffix].ann.vcf.gz)"
     echo "  --InputSuffix     Suffix of input BAM (e.g., analysisReady, recal) (Default: analysisReady)"
     echo "  --bcftools_bin    Path to bcftools binary (Default: /storage/home/jhkim/Apps/bcftools/bcftools)"
     echo "  --Threads         Number of threads for compression/processing (Default: 4)"
@@ -41,6 +43,8 @@ ReferenceFasta=""
 SitesVcfGz=""
 PopAfAnnotVcf=""
 PopAfHeaderHdr=""
+raw_vcf="[ResultDir]/[SeqID].[Chromosome].[InputSuffix].raw.vcf.gz"
+ann_vcf="[ResultDir]/[SeqID].[Chromosome].[InputSuffix].ann.vcf.gz"
 InputSuffix="analysisReady"
 bcftools_bin="/storage/home/jhkim/Apps/bcftools/bcftools"
 Threads="4"
@@ -59,6 +63,8 @@ while [[ $# -gt 0 ]]; do
         --SitesVcfGz) SitesVcfGz="$2"; shift 2 ;;
         --PopAfAnnotVcf) PopAfAnnotVcf="$2"; shift 2 ;;
         --PopAfHeaderHdr) PopAfHeaderHdr="$2"; shift 2 ;;
+        --raw_vcf) raw_vcf="$2"; shift 2 ;;
+        --ann_vcf) ann_vcf="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --bcftools_bin) bcftools_bin="$2"; shift 2 ;;
         --Threads) Threads="$2"; shift 2 ;;
@@ -92,7 +98,17 @@ cmd="${bcftools_bin} mpileup -f ${ReferenceFasta} -T ${SitesVcfGz} -r ${Chromoso
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${ResultDir}")" 2>/dev/null || mkdir -p "${ResultDir}"
+if [[ -n "${raw_vcf:-}" ]]; then
+  if [[ "${raw_vcf}" == *.* ]]; then mkdir -p "$(dirname "${raw_vcf}")"; else mkdir -p "${raw_vcf}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${ResultDir:-}" ]]; then
+  if [[ "${ResultDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultDir}")"; else mkdir -p "${ResultDir}"; fi
+fi
+if [[ -n "${ann_vcf:-}" ]]; then
+  if [[ "${ann_vcf}" == *.* ]]; then mkdir -p "$(dirname "${ann_vcf}")"; else mkdir -p "${ann_vcf}"; fi
+fi
 
 eval "$cmd"

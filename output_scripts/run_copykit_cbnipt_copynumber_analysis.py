@@ -20,6 +20,7 @@ def main():
     parser.add_argument('--SeqID', required=True, default='', help='Original sequence identifier from mapping stage (Default: )')
     parser.add_argument('--NGS_DataBaseDir', required=True, default='', help='Directory containing the processed BAM files (Default: )')
     parser.add_argument('--ResultBaseDir', required=True, default='', help='Base directory where all sample results are stored (Default: )')
+    parser.add_argument('--AnalysisRunDir', required=False, default='[ResultBaseDir]/[SeqID]', help='Target directory for this specific sample analysis (Default: [ResultBaseDir]/[SeqID])')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of input BAM (e.g., analysisReady, recal, dedup) (Default: analysisReady)')
     parser.add_argument('--mkdir_bin', required=False, default='mkdir', help='Path to mkdir executable (Default: mkdir)')
     parser.add_argument('--rscript_bin', required=False, default='Rscript', help='Path to Rscript executable (Default: Rscript)')
@@ -35,6 +36,7 @@ def main():
     SeqID = args.SeqID
     NGS_DataBaseDir = args.NGS_DataBaseDir
     ResultBaseDir = args.ResultBaseDir
+    AnalysisRunDir = args.AnalysisRunDir
     InputSuffix = args.InputSuffix
     mkdir_bin = args.mkdir_bin
     rscript_bin = args.rscript_bin
@@ -45,6 +47,7 @@ def main():
     SamplePloidy = args.SamplePloidy
 
     # --- [Output Paths] ---
+    if not AnalysisRunDir:
     AnalysisRunDir = f"{ResultBaseDir}/{SeqID}"
 
     # --- [Command Execution] ---
@@ -52,9 +55,15 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(NGS_DataBaseDir) if '.' in os.path.basename(NGS_DataBaseDir) else NGS_DataBaseDir, exist_ok=True)
-    os.makedirs(os.path.dirname(ResultBaseDir) if '.' in os.path.basename(ResultBaseDir) else ResultBaseDir, exist_ok=True)
-    os.makedirs(os.path.dirname(AnalysisRunDir) if '.' in os.path.basename(AnalysisRunDir) else AnalysisRunDir, exist_ok=True)
+    if NGS_DataBaseDir:
+        _tgt = os.path.dirname(NGS_DataBaseDir) if os.path.splitext(NGS_DataBaseDir)[1] else NGS_DataBaseDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if ResultBaseDir:
+        _tgt = os.path.dirname(ResultBaseDir) if os.path.splitext(ResultBaseDir)[1] else ResultBaseDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if AnalysisRunDir:
+        _tgt = os.path.dirname(AnalysisRunDir) if os.path.splitext(AnalysisRunDir)[1] else AnalysisRunDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

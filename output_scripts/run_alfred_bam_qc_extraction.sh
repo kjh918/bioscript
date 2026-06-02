@@ -19,6 +19,9 @@ usage() {
     echo "  --InputSuffix     No description"
     echo ""
     echo "Optional Parameters:"
+    echo "  --alfred_raw_tsv  No description (Default: [qcResDir]/[SeqID].alfred.qc.tsv.gz)"
+    echo "  --chr_map_stats   No description (Default: [qcResDir]/[SeqID].alfred.chr.map.stats.txt)"
+    echo "  --target_coverage No description (Default: [qcResDir]/[SeqID].alfred.target.coverage.txt)"
     echo "  --singularity_bin No description (Default: singularity)"
     echo "  --alfred_sif      No description (Default: /storage/images/alfred-0.2.6.sif)"
     echo "  --alfred_bin      No description (Default: /opt/alfred/bin/alfred)"
@@ -35,6 +38,9 @@ qcResDir=""
 ReferenceFasta=""
 TargetBed=""
 InputSuffix="analysisReady"
+alfred_raw_tsv="[qcResDir]/[SeqID].alfred.qc.tsv.gz"
+chr_map_stats="[qcResDir]/[SeqID].alfred.chr.map.stats.txt"
+target_coverage="[qcResDir]/[SeqID].alfred.target.coverage.txt"
 singularity_bin="singularity"
 alfred_sif="/storage/images/alfred-0.2.6.sif"
 alfred_bin="/opt/alfred/bin/alfred"
@@ -49,6 +55,9 @@ while [[ $# -gt 0 ]]; do
         --ReferenceFasta) ReferenceFasta="$2"; shift 2 ;;
         --TargetBed) TargetBed="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
+        --alfred_raw_tsv) alfred_raw_tsv="$2"; shift 2 ;;
+        --chr_map_stats) chr_map_stats="$2"; shift 2 ;;
+        --target_coverage) target_coverage="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --alfred_sif) alfred_sif="$2"; shift 2 ;;
         --alfred_bin) alfred_bin="$2"; shift 2 ;;
@@ -79,7 +88,20 @@ cmd="${singularity_bin} exec -B ${bind} ${alfred_sif} ${alfred_bin} qc --referen
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${chr_map_stats:-}" ]]; then
+  if [[ "${chr_map_stats}" == *.* ]]; then mkdir -p "$(dirname "${chr_map_stats}")"; else mkdir -p "${chr_map_stats}"; fi
+fi
+if [[ -n "${target_coverage:-}" ]]; then
+  if [[ "${target_coverage}" == *.* ]]; then mkdir -p "$(dirname "${target_coverage}")"; else mkdir -p "${target_coverage}"; fi
+fi
+if [[ -n "${alfred_raw_tsv:-}" ]]; then
+  if [[ "${alfred_raw_tsv}" == *.* ]]; then mkdir -p "$(dirname "${alfred_raw_tsv}")"; else mkdir -p "${alfred_raw_tsv}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"

@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4 (4.4.0.0)
 # Profile: bqsr_using_singularity
@@ -21,6 +21,9 @@ usage() {
     echo "  --KnownIndel2     Path to additional known Indels VCF"
     echo ""
     echo "Optional Parameters:"
+    echo "  --recal_table     Recalibration report table used by ApplyBQSR (Default: [qcResDir]/[SeqID].[InputSuffix].recal_table.txt)"
+    echo "  --recal_bam       Final recalibrated BAM file (Default: [BamDir]/[SeqID].[OutputSuffix].bam)"
+    echo "  --recal_bai       Index file for the recalibrated BAM (Default: [BamDir]/[SeqID].[OutputSuffix].bam.bai)"
     echo "  --InputSuffix     Suffix of input BAM (e.g., dedup, sorted, primary) (Default: merged.dup.marked.realign)"
     echo "  --OutputSuffix    Suffix for output BAM (e.g., recal, bqsr) (Default: merged.dup.marked.realign.recal)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
@@ -43,6 +46,9 @@ KnownSnp1=""
 KnownSnp2=""
 KnownIndel1=""
 KnownIndel2=""
+recal_table="[qcResDir]/[SeqID].[InputSuffix].recal_table.txt"
+recal_bam="[BamDir]/[SeqID].[OutputSuffix].bam"
+recal_bai="[BamDir]/[SeqID].[OutputSuffix].bam.bai"
 InputSuffix="merged.dup.marked.realign"
 OutputSuffix="merged.dup.marked.realign.recal"
 singularity_bin="singularity"
@@ -63,6 +69,9 @@ while [[ $# -gt 0 ]]; do
         --KnownSnp2) KnownSnp2="$2"; shift 2 ;;
         --KnownIndel1) KnownIndel1="$2"; shift 2 ;;
         --KnownIndel2) KnownIndel2="$2"; shift 2 ;;
+        --recal_table) recal_table="$2"; shift 2 ;;
+        --recal_bam) recal_bam="$2"; shift 2 ;;
+        --recal_bai) recal_bai="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
@@ -99,7 +108,20 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${gatk_bin} BaseRecalibrator --ja
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${recal_bam:-}" ]]; then
+  if [[ "${recal_bam}" == *.* ]]; then mkdir -p "$(dirname "${recal_bam}")"; else mkdir -p "${recal_bam}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${recal_table:-}" ]]; then
+  if [[ "${recal_table}" == *.* ]]; then mkdir -p "$(dirname "${recal_table}")"; else mkdir -p "${recal_table}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${recal_bai:-}" ]]; then
+  if [[ "${recal_bai}" == *.* ]]; then mkdir -p "$(dirname "${recal_bai}")"; else mkdir -p "${recal_bai}"; fi
+fi
 
 eval "$cmd"

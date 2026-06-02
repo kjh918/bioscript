@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = bedtools_genomecov_to_bigwig
-// THREADS = 1
+// THREADS = 4
 
 process BEDTOOLS_GENOMECOV_TO_BIGWIG {
     tag "$sample_id"

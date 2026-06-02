@@ -92,6 +92,8 @@ cmd="${singularity_bin} exec -B ${bind} ${bbmap_sif} bbsplit.sh -Xmx${MemoryMB}M
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${OutputDir}")" 2>/dev/null || mkdir -p "${OutputDir}"
+if [[ -n "${OutputDir:-}" ]]; then
+  if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
+fi
 
 eval "$cmd"

@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_mutect2
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4_mutect2 (4.4.0.0)
 # Profile: tumor_only_with_f1r2
@@ -21,6 +21,9 @@ usage() {
     echo "  --VcfPon          Panel of Normals VCF"
     echo ""
     echo "Optional Parameters:"
+    echo "  --raw_vcf         Filtered 전의 원본 VCF (Default: [vcfDir]/[SeqID].mutect2.vcf)"
+    echo "  --f1r2_tar_gz     Read orientation bias 통계 파일 (Default: [qcResDir]/[SeqID].f1r2.tar.gz)"
+    echo "  --mutect_stats    필터링에 필요한 통계 메타데이터 (Default: [vcfDir]/[SeqID].mutect2.vcf.stats)"
     echo "  --InputSuffix     No description (Default: analysisReady)"
     echo "  --singularity_bin No description (Default: singularity)"
     echo "  --gatk4_sif       No description (Default: /storage/images/gatk-4.4.0.0.sif)"
@@ -45,6 +48,9 @@ ReferenceFasta=""
 TargetInterval=""
 VcfGnomad=""
 VcfPon=""
+raw_vcf="[vcfDir]/[SeqID].mutect2.vcf"
+f1r2_tar_gz="[qcResDir]/[SeqID].f1r2.tar.gz"
+mutect_stats="[vcfDir]/[SeqID].mutect2.vcf.stats"
 InputSuffix="analysisReady"
 singularity_bin="singularity"
 gatk4_sif="/storage/images/gatk-4.4.0.0.sif"
@@ -67,6 +73,9 @@ while [[ $# -gt 0 ]]; do
         --TargetInterval) TargetInterval="$2"; shift 2 ;;
         --VcfGnomad) VcfGnomad="$2"; shift 2 ;;
         --VcfPon) VcfPon="$2"; shift 2 ;;
+        --raw_vcf) raw_vcf="$2"; shift 2 ;;
+        --f1r2_tar_gz) f1r2_tar_gz="$2"; shift 2 ;;
+        --mutect_stats) mutect_stats="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --gatk4_sif) gatk4_sif="$2"; shift 2 ;;
@@ -105,8 +114,23 @@ cmd="${singularity_bin} exec -B ${bind} ${gatk4_sif} gatk Mutect2 --java-options
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${vcfDir}")" 2>/dev/null || mkdir -p "${vcfDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${mutect_stats:-}" ]]; then
+  if [[ "${mutect_stats}" == *.* ]]; then mkdir -p "$(dirname "${mutect_stats}")"; else mkdir -p "${mutect_stats}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${f1r2_tar_gz:-}" ]]; then
+  if [[ "${f1r2_tar_gz}" == *.* ]]; then mkdir -p "$(dirname "${f1r2_tar_gz}")"; else mkdir -p "${f1r2_tar_gz}"; fi
+fi
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
+fi
+if [[ -n "${raw_vcf:-}" ]]; then
+  if [[ "${raw_vcf}" == *.* ]]; then mkdir -p "$(dirname "${raw_vcf}")"; else mkdir -p "${raw_vcf}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"

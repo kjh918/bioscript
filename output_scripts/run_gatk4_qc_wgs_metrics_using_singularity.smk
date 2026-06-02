@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 rule gatk4:
     input:
@@ -20,7 +20,7 @@ rule gatk4:
         bind = "/storage,/data"
         Threads = "14"
         xmx_mb = "16384"
-    threads: 1
+    threads: 14
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.sif} {params.java_bin} -XX:ParallelGCThreads={threads} -Xmx{params.xmx_mb}m -jar {params.gatk_jar} CollectWgsMetrics --INPUT {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam --OUTPUT {output.wgs_metrics_txt} --REFERENCE_SEQUENCE {input.ReferenceFasta}

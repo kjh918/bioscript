@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 rule gatk4:
     input:
@@ -26,7 +26,7 @@ rule gatk4:
         bind = "/storage,/data"
         Threads = "14"
         xmx_mb = "16384"
-    threads: 1
+    threads: 14
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.sif} {params.gatk_bin} BaseRecalibrator --java-options '-XX:ParallelGCThreads={threads} -Xmx{params.xmx_mb}m' --input {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam --reference {input.ReferenceFasta} --output {output.recal_table} --known-sites {input.KnownSnp1} --known-sites {input.KnownSnp2} --known-sites {input.KnownIndel1} --known-sites {input.KnownIndel2} && {params.singularity_bin} exec -B {params.bind} {params.sif} {params.gatk_bin} ApplyBQSR --java-options '-XX:ParallelGCThreads={threads} -Xmx{params.xmx_mb}m' --input {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam --bqsr-recal-file {output.recal_table} --output {output.recal_bam} --create-output-bam-index true

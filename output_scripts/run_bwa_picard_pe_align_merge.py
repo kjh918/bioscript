@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bwa_picard
 # VERSION = bwa_0.7.17-picard_3.1.0
-# THREADS = 1
+# THREADS = 8
 # PROFILE = pe_align_merge
 
 """
@@ -26,6 +26,10 @@ def main():
     parser.add_argument('--ReadGroupPlatform', required=True, default='', help='Sequencing platform (PL tag) (Default: )')
     parser.add_argument('--ReadGroupLibrary', required=True, default='', help='Library identifier (LB tag) (Default: )')
     parser.add_argument('--ReadGroupCenter', required=True, default='', help='Sequencing center (CN tag) (Default: )')
+    parser.add_argument('--unmapped_bam', required=False, default='[BamDir]/[SeqID][InputSuffix].fastqtosam.bam', help='Intermediate unmapped BAM containing original metadata (Default: [BamDir]/[SeqID][InputSuffix].fastqtosam.bam)')
+    parser.add_argument('--aligned_sam', required=False, default='[BamDir]/[SeqID][InputSuffix].bwa.mem.sam', help='Raw BWA alignment output without metadata (Default: [BamDir]/[SeqID][InputSuffix].bwa.mem.sam)')
+    parser.add_argument('--primary_bam', required=False, default='[BamDir]/[SeqID][OutputSuffix].bam', help='Final merged and coordinate-sorted BAM file (Default: [BamDir]/[SeqID][OutputSuffix].bam)')
+    parser.add_argument('--primary_bai', required=False, default='[BamDir]/[SeqID][OutputSuffix].bai', help='Index for the final merged BAM (Default: [BamDir]/[SeqID][OutputSuffix].bai)')
     parser.add_argument('--InputSuffix', required=False, default='.trimmed', help='Suffix of input FASTQs (e.g., trimmed, raw) (Default: .trimmed)')
     parser.add_argument('--OutputSuffix', required=False, default='.primary', help='Suffix for the final merged result (Default: .primary)')
     parser.add_argument('--java_bin', required=False, default='java', help='Path to Java executable (Default: java)')
@@ -57,6 +61,10 @@ def main():
     ReadGroupPlatform = args.ReadGroupPlatform
     ReadGroupLibrary = args.ReadGroupLibrary
     ReadGroupCenter = args.ReadGroupCenter
+    unmapped_bam = args.unmapped_bam
+    aligned_sam = args.aligned_sam
+    primary_bam = args.primary_bam
+    primary_bai = args.primary_bai
     InputSuffix = args.InputSuffix
     OutputSuffix = args.OutputSuffix
     java_bin = args.java_bin
@@ -77,9 +85,13 @@ def main():
     mba_other_flags = args.mba_other_flags
 
     # --- [Output Paths] ---
+    if not unmapped_bam:
     unmapped_bam = f"{BamDir}/{SeqID}{InputSuffix}.fastqtosam.bam"
+    if not aligned_sam:
     aligned_sam = f"{BamDir}/{SeqID}{InputSuffix}.bwa.mem.sam"
+    if not primary_bam:
     primary_bam = f"{BamDir}/{SeqID}{OutputSuffix}.bam"
+    if not primary_bai:
     primary_bai = f"{BamDir}/{SeqID}{OutputSuffix}.bai"
 
     # --- [Command Execution] ---
@@ -87,9 +99,27 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(TrimFastqDir) if '.' in os.path.basename(TrimFastqDir) else TrimFastqDir, exist_ok=True)
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(TmpDir) if '.' in os.path.basename(TmpDir) else TmpDir, exist_ok=True)
+    if primary_bai:
+        _tgt = os.path.dirname(primary_bai) if os.path.splitext(primary_bai)[1] else primary_bai
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if primary_bam:
+        _tgt = os.path.dirname(primary_bam) if os.path.splitext(primary_bam)[1] else primary_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if TmpDir:
+        _tgt = os.path.dirname(TmpDir) if os.path.splitext(TmpDir)[1] else TmpDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if aligned_sam:
+        _tgt = os.path.dirname(aligned_sam) if os.path.splitext(aligned_sam)[1] else aligned_sam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if TrimFastqDir:
+        _tgt = os.path.dirname(TrimFastqDir) if os.path.splitext(TrimFastqDir)[1] else TrimFastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if unmapped_bam:
+        _tgt = os.path.dirname(unmapped_bam) if os.path.splitext(unmapped_bam)[1] else unmapped_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

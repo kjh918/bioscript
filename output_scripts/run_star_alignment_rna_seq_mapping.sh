@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = star_alignment
 # VERSION = 2.7.11a
-# THREADS = 1
+# THREADS = 12
 
 # Tool Info: star_alignment (2.7.11a)
 # Profile: rna_seq_mapping
@@ -17,6 +17,10 @@ usage() {
     echo "  --StarIndex       Path to STAR index directory"
     echo ""
     echo "Optional Parameters:"
+    echo "  --aligned_bam     No description (Default: [BamDir]/[SeqID].Aligned.sortedByCoord.out.bam)"
+    echo "  --aligned_transcriptome_bam No description (Default: [BamDir]/[SeqID].Aligned.toTranscriptome.out.bam)"
+    echo "  --gene_counts     No description (Default: [BamDir]/[SeqID].ReadsPerGene.out.tab)"
+    echo "  --mapping_log     No description (Default: [BamDir]/[SeqID].Log.final.out)"
     echo "  --Threads         No description (Default: 12)"
     echo "  --InputSuffix     No description (Default: .trimmed)"
     echo "  --outSAMtype      No description (Default: BAM SortedByCoordinate)"
@@ -39,6 +43,10 @@ SeqID=""
 FastqDir=""
 BamDir=""
 StarIndex=""
+aligned_bam="[BamDir]/[SeqID].Aligned.sortedByCoord.out.bam"
+aligned_transcriptome_bam="[BamDir]/[SeqID].Aligned.toTranscriptome.out.bam"
+gene_counts="[BamDir]/[SeqID].ReadsPerGene.out.tab"
+mapping_log="[BamDir]/[SeqID].Log.final.out"
 Threads="12"
 InputSuffix=".trimmed"
 outSAMtype="BAM SortedByCoordinate"
@@ -59,6 +67,10 @@ while [[ $# -gt 0 ]]; do
         --FastqDir) FastqDir="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
         --StarIndex) StarIndex="$2"; shift 2 ;;
+        --aligned_bam) aligned_bam="$2"; shift 2 ;;
+        --aligned_transcriptome_bam) aligned_transcriptome_bam="$2"; shift 2 ;;
+        --gene_counts) gene_counts="$2"; shift 2 ;;
+        --mapping_log) mapping_log="$2"; shift 2 ;;
         --Threads) Threads="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --outSAMtype) outSAMtype="$2"; shift 2 ;;
@@ -96,7 +108,23 @@ cmd="${singularity_bin} exec -B ${bind} ${star_sif} STAR --runThreadN ${Threads}
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${FastqDir}")" 2>/dev/null || mkdir -p "${FastqDir}"
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
+if [[ -n "${aligned_transcriptome_bam:-}" ]]; then
+  if [[ "${aligned_transcriptome_bam}" == *.* ]]; then mkdir -p "$(dirname "${aligned_transcriptome_bam}")"; else mkdir -p "${aligned_transcriptome_bam}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${aligned_bam:-}" ]]; then
+  if [[ "${aligned_bam}" == *.* ]]; then mkdir -p "$(dirname "${aligned_bam}")"; else mkdir -p "${aligned_bam}"; fi
+fi
+if [[ -n "${FastqDir:-}" ]]; then
+  if [[ "${FastqDir}" == *.* ]]; then mkdir -p "$(dirname "${FastqDir}")"; else mkdir -p "${FastqDir}"; fi
+fi
+if [[ -n "${mapping_log:-}" ]]; then
+  if [[ "${mapping_log}" == *.* ]]; then mkdir -p "$(dirname "${mapping_log}")"; else mkdir -p "${mapping_log}"; fi
+fi
+if [[ -n "${gene_counts:-}" ]]; then
+  if [[ "${gene_counts}" == *.* ]]; then mkdir -p "$(dirname "${gene_counts}")"; else mkdir -p "${gene_counts}"; fi
+fi
 
 eval "$cmd"

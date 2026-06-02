@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = fastqc
-// THREADS = 1
+// THREADS = 8
 
 process FASTQC {
     tag "$sample_id"

@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = salmon
 # VERSION = 1.10.0
-# THREADS = 1
+# THREADS = 12
 
 rule salmon:
     input:
@@ -19,7 +19,7 @@ rule salmon:
         InputSuffix = ".Aligned.toTranscriptome.out.bam"
         extra_args = ""
         samlon_bin = "/storage/apps/salmon-1.10.0/bin/salmon"
-    threads: 1
+    threads: 12
     shell:
         """
         {params.samlon_bin} quant -t {input.SalmonIndex} --threads {threads} --libType {params.libType} -a {input.BamDir}/{input.SeqID}{params.InputSuffix} -o {input.OutputDir} {params.extra_args}

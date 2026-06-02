@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bcftools
 # VERSION = 1.23
-# THREADS = 1
+# THREADS = 4
 # PROFILE = QC_PileupCall_Annotation
 
 """
@@ -25,6 +25,8 @@ def main():
     parser.add_argument('--SitesVcfGz', required=True, default='', help='VCF file containing specific sites to genotype (Default: )')
     parser.add_argument('--PopAfAnnotVcf', required=True, default='', help='VCF/Tabix file for population AF annotation (Default: )')
     parser.add_argument('--PopAfHeaderHdr', required=True, default='', help='Header file describing the annotation columns (Default: )')
+    parser.add_argument('--raw_vcf', required=False, default='[ResultDir]/[SeqID].[Chromosome].[InputSuffix].raw.vcf.gz', help='Raw VCF file after pileup and calling (Default: [ResultDir]/[SeqID].[Chromosome].[InputSuffix].raw.vcf.gz)')
+    parser.add_argument('--ann_vcf', required=False, default='[ResultDir]/[SeqID].[Chromosome].[InputSuffix].ann.vcf.gz', help='Annotated VCF file with population AF (Default: [ResultDir]/[SeqID].[Chromosome].[InputSuffix].ann.vcf.gz)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of input BAM (e.g., analysisReady, recal) (Default: analysisReady)')
     parser.add_argument('--bcftools_bin', required=False, default='/storage/home/jhkim/Apps/bcftools/bcftools', help='Path to bcftools binary (Default: /storage/home/jhkim/Apps/bcftools/bcftools)')
     parser.add_argument('--Threads', required=False, default='4', help='Number of threads for compression/processing (Default: 4)')
@@ -43,6 +45,8 @@ def main():
     SitesVcfGz = args.SitesVcfGz
     PopAfAnnotVcf = args.PopAfAnnotVcf
     PopAfHeaderHdr = args.PopAfHeaderHdr
+    raw_vcf = args.raw_vcf
+    ann_vcf = args.ann_vcf
     InputSuffix = args.InputSuffix
     bcftools_bin = args.bcftools_bin
     Threads = args.Threads
@@ -51,7 +55,9 @@ def main():
     AnnotationQuery = args.AnnotationQuery
 
     # --- [Output Paths] ---
+    if not raw_vcf:
     raw_vcf = f"{ResultDir}/{SeqID}.{Chromosome}.{InputSuffix}.raw.vcf.gz"
+    if not ann_vcf:
     ann_vcf = f"{ResultDir}/{SeqID}.{Chromosome}.{InputSuffix}.ann.vcf.gz"
 
     # --- [Command Execution] ---
@@ -59,8 +65,18 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(ResultDir) if '.' in os.path.basename(ResultDir) else ResultDir, exist_ok=True)
+    if raw_vcf:
+        _tgt = os.path.dirname(raw_vcf) if os.path.splitext(raw_vcf)[1] else raw_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if ResultDir:
+        _tgt = os.path.dirname(ResultDir) if os.path.splitext(ResultDir)[1] else ResultDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if ann_vcf:
+        _tgt = os.path.dirname(ann_vcf) if os.path.splitext(ann_vcf)[1] else ann_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

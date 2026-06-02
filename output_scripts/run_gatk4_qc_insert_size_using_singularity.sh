@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4 (4.4.0.0)
 # Profile: qc_insert_size_using_singularity
@@ -17,6 +17,8 @@ usage() {
     echo "  --ReferenceFasta  Path to the reference genome FASTA file"
     echo ""
     echo "Optional Parameters:"
+    echo "  --insert_size_metrics_txt Text file containing detailed insert size statistics (Default: [qcResDir]/[SeqID].insert_size.metrics.txt)"
+    echo "  --insert_size_hist_pdf PDF file containing the insert size distribution histogram (Default: [qcResDir]/[SeqID].insert_size.histogram.pdf)"
     echo "  --InputSuffix     Suffix of the input BAM file (e.g., analysisReady, recal, primary) (Default: analysisReady)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
     echo "  --java_bin        Path to java executable inside or outside container (Default: java)"
@@ -35,6 +37,8 @@ SeqID=""
 BamDir=""
 qcResDir=""
 ReferenceFasta=""
+insert_size_metrics_txt="[qcResDir]/[SeqID].insert_size.metrics.txt"
+insert_size_hist_pdf="[qcResDir]/[SeqID].insert_size.histogram.pdf"
 InputSuffix="analysisReady"
 singularity_bin="singularity"
 java_bin="java"
@@ -51,6 +55,8 @@ while [[ $# -gt 0 ]]; do
         --BamDir) BamDir="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
         --ReferenceFasta) ReferenceFasta="$2"; shift 2 ;;
+        --insert_size_metrics_txt) insert_size_metrics_txt="$2"; shift 2 ;;
+        --insert_size_hist_pdf) insert_size_hist_pdf="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --java_bin) java_bin="$2"; shift 2 ;;
@@ -82,7 +88,17 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${java_bin} -XX:ParallelGCThreads
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${insert_size_hist_pdf:-}" ]]; then
+  if [[ "${insert_size_hist_pdf}" == *.* ]]; then mkdir -p "$(dirname "${insert_size_hist_pdf}")"; else mkdir -p "${insert_size_hist_pdf}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${insert_size_metrics_txt:-}" ]]; then
+  if [[ "${insert_size_metrics_txt}" == *.* ]]; then mkdir -p "$(dirname "${insert_size_metrics_txt}")"; else mkdir -p "${insert_size_metrics_txt}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"

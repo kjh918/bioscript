@@ -16,6 +16,7 @@ usage() {
     echo "  --BamDir          분석용 BAM(analysisReady) 경로"
     echo ""
     echo "Optional Parameters:"
+    echo "  --bias_filtered_vcf SOBDetector에 의해 아티팩트가 제거된 최종 VCF (Default: [vcfDir]/[SeqID].mutect2.bias.filtered.vcf)"
     echo "  --InputVcfSuffix  No description (Default: filtered)"
     echo "  --InputBamSuffix  No description (Default: analysisReady)"
     echo "  --singularity_bin No description (Default: singularity)"
@@ -35,6 +36,7 @@ usage() {
 SeqID=""
 vcfDir=""
 BamDir=""
+bias_filtered_vcf="[vcfDir]/[SeqID].mutect2.bias.filtered.vcf"
 InputVcfSuffix="filtered"
 InputBamSuffix="analysisReady"
 singularity_bin="singularity"
@@ -52,6 +54,7 @@ while [[ $# -gt 0 ]]; do
         --SeqID) SeqID="$2"; shift 2 ;;
         --vcfDir) vcfDir="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
+        --bias_filtered_vcf) bias_filtered_vcf="$2"; shift 2 ;;
         --InputVcfSuffix) InputVcfSuffix="$2"; shift 2 ;;
         --InputBamSuffix) InputBamSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
@@ -83,7 +86,14 @@ cmd="${singularity_bin} exec -B ${bind} ${sob_sif} ${sob_bin}  --input-type VCF 
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${vcfDir}")" 2>/dev/null || mkdir -p "${vcfDir}"
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
+if [[ -n "${bias_filtered_vcf:-}" ]]; then
+  if [[ "${bias_filtered_vcf}" == *.* ]]; then mkdir -p "$(dirname "${bias_filtered_vcf}")"; else mkdir -p "${bias_filtered_vcf}"; fi
+fi
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"

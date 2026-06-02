@@ -20,6 +20,9 @@ def main():
     parser.add_argument('--SeqID', required=True, default='', help='Sequence identifier used for file naming (Default: )')
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the input BAM and results (Default: )')
     parser.add_argument('--ReferenceFasta', required=True, default='', help='Path to the reference genome FASTA file (Default: )')
+    parser.add_argument('--gc_bias_metrics_txt', required=False, default='[BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.txt', help='Detailed GC bias metrics for each GC bin (Default: [BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.txt)')
+    parser.add_argument('--gc_bias_summary_txt', required=False, default='[BamDir]/[SeqID].[InputSuffix].gc_bias_summary.txt', help='Summary metrics for GC bias (Default: [BamDir]/[SeqID].[InputSuffix].gc_bias_summary.txt)')
+    parser.add_argument('--gc_bias_chart_pdf', required=False, default='[BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.pdf', help='PDF chart visualizing normalized coverage by GC content (Default: [BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.pdf)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of the input BAM (e.g., analysisReady, recal, dedup) (Default: analysisReady)')
     parser.add_argument('--java_bin', required=False, default='java', help='Path to java executable (Default: java)')
     parser.add_argument('--picard_jar', required=False, default='/storage/apps/bin/picard-3.1.0.jar', help='Path to Picard.jar file (Default: /storage/apps/bin/picard-3.1.0.jar)')
@@ -35,6 +38,9 @@ def main():
     SeqID = args.SeqID
     BamDir = args.BamDir
     ReferenceFasta = args.ReferenceFasta
+    gc_bias_metrics_txt = args.gc_bias_metrics_txt
+    gc_bias_summary_txt = args.gc_bias_summary_txt
+    gc_bias_chart_pdf = args.gc_bias_chart_pdf
     InputSuffix = args.InputSuffix
     java_bin = args.java_bin
     picard_jar = args.picard_jar
@@ -45,8 +51,11 @@ def main():
     window_size = args.window_size
 
     # --- [Output Paths] ---
+    if not gc_bias_metrics_txt:
     gc_bias_metrics_txt = f"{BamDir}/{SeqID}.{InputSuffix}.gc_bias_metrics.txt"
+    if not gc_bias_summary_txt:
     gc_bias_summary_txt = f"{BamDir}/{SeqID}.{InputSuffix}.gc_bias_summary.txt"
+    if not gc_bias_chart_pdf:
     gc_bias_chart_pdf = f"{BamDir}/{SeqID}.{InputSuffix}.gc_bias_metrics.pdf"
 
     # --- [Command Execution] ---
@@ -54,7 +63,18 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if gc_bias_chart_pdf:
+        _tgt = os.path.dirname(gc_bias_chart_pdf) if os.path.splitext(gc_bias_chart_pdf)[1] else gc_bias_chart_pdf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if gc_bias_summary_txt:
+        _tgt = os.path.dirname(gc_bias_summary_txt) if os.path.splitext(gc_bias_summary_txt)[1] else gc_bias_summary_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if gc_bias_metrics_txt:
+        _tgt = os.path.dirname(gc_bias_metrics_txt) if os.path.splitext(gc_bias_metrics_txt)[1] else gc_bias_metrics_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

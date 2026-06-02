@@ -1,0 +1,577 @@
+---
+title: "DEFAULT_ORDER_ID WES Standard Analysis Report"
+output: html_document
+---
+
+```{r setup, include=FALSE,message=FALSE,echo=FALSE}
+    knitr::opts_chunk$set(echo = TRUE)
+#---/ PACKAGES /------------------------------------------------------------------------------------
+    options(stringsAsFactors=FALSE)   
+    suppressPackageStartupMessages(library("yaml"))
+    suppressPackageStartupMessages(library("plyr"))
+    suppressPackageStartupMessages(library("dplyr"))
+    suppressPackageStartupMessages(library("Hmisc"))
+    suppressPackageStartupMessages(library("RMySQL"))
+    suppressPackageStartupMessages(library("lubridate"))
+    suppressPackageStartupMessages(library("ggplot2"))
+    suppressPackageStartupMessages(library("Cairo"))
+    options(bitmapType='cairo')
+    grDevices::X11.options(type='cairo')
+    options(device='x11')
+#---------------------------------------------------------------------------------------------------
+#---/ FUNCTIONS AND MODULES /-----------------------------------------------------------------------
+    source("resources/NGS_Fun.ReportModules_v2.R")
+    source("resources/WES_Fun.ReportModules.R")
+    cnf <- read_yaml("wes_report_config.yaml")   
+    indexing = function(x){ sapply(unique(x), function(z) list(z)) } 
+#---------------------------------------------------------------------------------------------------
+
+# >>>!!! USER SHOULD CHECK THIS PART 
+#---/ INFORMATION /---------------------------------------------------------------------------------
+    OrderID           <- "DEFAULT_ORDER_ID"
+    SeqFolderID       <- "DEFAULT_SEQ_FOLDER_ID"
+    LowQualitySeqID   <- DEFAULT_LOW_QUAL_SEQ_ID
+    ExcludeSeqID      <- DEFAULT_EXCLUDE_SEQ_ID
+    IncludeSeqID      <- DEFAULT_INCLUDE_SEQ_ID
+    REPORT_DATE       <- NULL
+    CLIENT_ID         <- DEFAULT_CLIENT_ID
+    VARIANT_CALL_MODE <- "DEFAULT_VARIANT_CALL_MODE"
+#---------------------------------------------------------------------------------------------------
+# <<<!!!
+
+#---/ PRE-LOAD DATA (1) /---------------------------------------------------------------------------
+    dbCon <- dbConnect(dbDriver("MySQL"), host=cnf$db$host, port=cnf$db$port, user=cnf$db$user, password=cnf$db$pw, db=cnf$db$db_info)
+    sinfo <- dbGetQuery(dbCon, sprintf("SELECT * FROM seqid_info     WHERE seq_folder = '%s'", SeqFolderID))
+    pinfo <- dbGetQuery(dbCon, sprintf("SELECT * FROM seqfolder_info WHERE seq_folder = '%s'", SeqFolderID))
+    dbDisconnect(dbCon)
+#---------------------------------------------------------------------------------------------------
+
+#---/ SAMPLE FILTERS /------------------------------------------------------------------------------
+    # exclude samples
+    if( !is.null(ExcludeSeqID) )
+    { 
+        exclude_seq_id <- unlist(strsplit(ExcludeSeqID, ","))
+        sinfo          <- sinfo %>% filter( seq_id %nin% exclude_seq_id )
+    }
+    # include samples
+    if( !is.null(IncludeSeqID) )
+    {
+        include_seq_id       <- unlist(strsplit(IncludeSeqID, ","))
+        query_include_seq_id <- paste(paste0("'", include_seq_id, "'"), collapse=",")
+        dbCon                <- dbConnect(dbDriver("MySQL"), host=cnf$db$host, port=cnf$db$port, user=cnf$db$user, password=cnf$db$pw, db=cnf$db$db_info)
+        sinfo_extra          <- dbGetQuery(dbCon, sprintf("SELECT * FROM seqid_info WHERE seq_id IN (%s)", query_include_seq_id))
+        dbDisconnect(dbCon)
+        sinfo <- rbind(sinfo, sinfo_extra)
+    }
+    # low quality samples
+    if( !is.null(LowQualitySeqID) )
+    { low_qual_seq_id <- unlist(strsplit(LowQualitySeqID, ",")) }else{ low_qual_seq_id <- NULL }
+    # final sample info
+    sinfo[is.na(sinfo)] <- ""
+    # sample info orders 
+    sinfo <- rbind(
+        sinfo %>% filter( sample_group != "" ) %>% arrange( sample_info, sample_group, seq_id ),
+        sinfo %>% filter( sample_group == "" ) %>% arrange( sample_info, seq_id )
+    )
+#---------------------------------------------------------------------------------------------------
+
+#---/ PRE-LOAD DATA (2) /---------------------------------------------------------------------------
+    ReportSeqID         <- paste(paste0("'", sinfo$seq_id, "'"), collapse=",")
+    dbCon               <- dbConnect(dbDriver("MySQL"), host=cnf$db$host, port=cnf$db$port, user=cnf$db$user, password=cnf$db$pw, db=cnf$db$db_data)
+    data_QC             <- dbGetQuery(dbCon, sprintf("SELECT * FROM qc_report        WHERE seq_id IN (%s)", ReportSeqID))
+    data_VarStatSummary <- dbGetQuery(dbCon, sprintf("SELECT * FROM variants_summary WHERE seq_id IN (%s)", ReportSeqID))
+    data_VarList        <- dbGetQuery(dbCon, sprintf("SELECT * FROM variants_somatic WHERE seq_id IN (%s)", ReportSeqID))
+    dbDisconnect(dbCon)
+#---------------------------------------------------------------------------------------------------
+
+#---/ READ REPORT-ANALYSIS RESULTS /----------------------------------------------------------------
+    analysis_info        <- readRDS("data/analysis_run_info.rds")
+    figure_info          <- readRDS("data/data_figures_list.rds")     
+    ClientPresetGenes    <- readRDS("data/client_preset_gene_list.rds")
+    preset_info          <- readRDS("data/preset_list_table.rds")
+    preset_gene_var_list <- lapply( indexing(names(analysis_info)), function(idx)
+    { 
+        rds_name = sprintf("data/preset_gene_variants_list_%s.rds", idx)
+        if( file.exists(rds_name) )
+        {
+            pgvl = readRDS(rds_name)
+            chk  = lapply(pgvl, function(z) ifelse( nrow(z) == 0 ,FALSE, TRUE) )
+            pgvl = pgvl[which(chk==TRUE)]
+        }else{
+            pgvl = NA
+        }
+        return(pgvl)
+    })
+
+#---------------------------------------------------------------------------------------------------
+ 
+```
+
+<style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto+Condensed&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+    body{ font-size: 12px; font-family: 'Nunito';}
+    h1{ font-size: 24px; font-family: 'Nunito'; font-weight: bold; }
+    h2{ font-size: 20px; font-family: 'Nunito'; font-weight: bold; }
+    h3{ font-size: 18px; font-family: 'Nunito'; }
+    h4{ font-size: 14px; font-family: 'Nunito'; }
+</style>
+
+<!-- COVER IMAGE : STANDARD -->
+```{r reportCover, echo=FALSE,message=FALSE,fig.align='center',out.width="500px",out.height="700px"}
+    knitr::include_graphics("resources/cover_standard_report.png")
+```
+
+```{r message=FALSE,echo=FALSE,warning=FALSE,results='asis'} 
+    NGS_report.Page.Breaks2()
+```
+
+<!-- ORDER INFORMATION ------------------------------------------------------------------------- -->
+<div style="color: #000000; font-size: 20px; font-weight: bold;">ORDER INFORMATION </div> 
+<hr>
+<br>
+
+```{r Order_Info, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    print( NGS_report.Order.Info.Table(
+        SeqFolderId = SeqFolderID,
+        ReportDate  = ifelse( is.null(REPORT_DATE), as.character(today()), as_date(REPORT_DATE) ),
+        HeaderColor = "#82B366",
+        db_host = cnf$db$host, db_user = cnf$db$user, db_password = cnf$db$pw, db_port = cnf$db$port, db_name = cnf$db$db_info
+    ))
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- SEQUENCING INFORMATION -------------------------------------------------------------------- -->
+<div style="color: #000000; font-size: 20px; font-weight: bold;">SEQUENCING INFORMATION </div> 
+<hr>
+<br>
+
+```{r NGS_Info, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    print( NGS_report.NGS.Info.Table(
+        SeqFolderId = SeqFolderID,
+        Application = cnf$ngs$ngs_application,
+        Material    = cnf$ngs$ngs_material,
+        NgsLibrary  = cnf$ngs$ngs_library,
+        ReadType    = cnf$ngs$ngs_read_type,
+        ReadLength  = cnf$ngs$ngs_read_length,
+        Platform    = cnf$ngs$ngs_platform,
+        db_host = cnf$db$host, db_user = cnf$db$user, db_password = cnf$db$pw, db_port = cnf$db$port, db_name = cnf$db$db_info
+    ))
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- SAMPLE INFORMATION ------------------------------------------------------------------------ -->
+<div style="color: #000000; font-size: 20px; font-weight: bold;">SAMPLE INFORMATION </div> 
+<hr>
+
+```{r Sample_Info, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    print( WES_report.Sample.Info.Table.OrganoidScience( SampleInfo = sinfo, FontSize = 10 ) )
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- ANALYSIS WORKFLOW ------------------------------------------------------------------------- -->
+<div style="color: #000000; font-size: 20px; font-weight: bold;">ANALYSIS WORKFLOW </div> 
+<br>
+
+```{r Pipeline, message=FALSE,echo=FALSE,warning=FALSE,results='asis',fig.align='center',fig.width=8,out.width='95%'}
+    cat("![](resources/workflow_diagram_wes.png) \n")
+```
+
+```{r message=FALSE,echo=FALSE,warning=FALSE,results='asis'} 
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- SEQUENCING QC REPORT ---------------------------------------------------------------------- -->
+<div style="color: #000000; font-size: 20px; font-weight: bold;">SEQUENCING QC REPORT </div> 
+<hr>
+<!-- Seq Stats Summary -->
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Sequencing Statistics Summary </div> 
+<div style="color: #e64522; font-size: 10px;">&ast; RED: Low library size NGS data products</div>
+<br>
+
+```{r WES_QC_Summary, echo=FALSE,message=FALSE,warning=FALSE,results='asis'}
+    print( WES_report.NGS.QC.Stat.Summary.Table( DataQC=data_QC, SampleInfo=sinfo, LowQualSeqID=low_qual_seq_id ) )
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- GC Contents Barplot -->
+<div style="color: #000000; font-size: 16px; font-weight: bold;">GC Contents </div> 
+<br>
+
+```{r GC_Ratio_Plot, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    cat("![](data/gc_contents_plot.png) \n")
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- Duplicates Ratio Barplot -->
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Duplicates Rate </div> 
+<br>
+
+```{r DupRatio_Plot, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    cat("![](data/dup_ratio_plot.png) \n")
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- Alignment Stats Barplot -->
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Alignment Stats </div> 
+<br>
+
+```{r AlignStats_Plot, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    cat("![](data/align_stats_plot.png) \n")
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- Coverage Stats Barplot -->
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Target Coverage Stats </div> 
+<br>
+
+```{r Coverage_Plot, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    cat("![](data/target_cov_plot.png) \n")
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+
+<!-- VARIANTS STATISTICS ----------------------------------------------------------------------- -->
+<div style="color: #000000; font-size: 20px; font-weight: bold;">VARIANTS STATISTICS </div> 
+<hr>
+<br>
+<div style="color: #000000; font-size: 14px; font-weight: bold;">Variant Filters </div> 
+<br>
+
+```{r Appendix_VarStatFilters, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    WES_report_appendix.Variant.Filter.Genes()
+    cat("<br>")
+    WES_report_appendix.Essential.Gene.List()
+    cat("<br>")
+    cat("<br>")
+    WES_report_appendix.Variant.Filter.Frequency()
+    #---/ page breaks /--------------------------------------------------------#
+    NGS_report.Page.Breaks2()
+```
+
+<!-- TUMOR ONLY CALL VARIANTS -->
+
+```{r VarStat_Tonly, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    if( VARIANT_CALL_MODE == "TonlyGermlineFiltered" ){ TONLY_MODE = "tumor_only_gerline_filtered" }else{ TONLY_MODE = "tumor_only" }
+    # title ----------------------------------------------------------------
+    cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Tumor-Only Called Variants </div>')
+    cat('<hr>')
+    # unfiltered synonymous ------------------------------------------------
+    cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">A. Unfiltered Synonymous Varriants </div>')
+    print( WES_report.Variant.Stat.Summary.Table(
+        VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                VariantStatData   = data_VarStatSummary, 
+                                VariantGroup      = "synonymous", 
+                                SampleInfo        = sinfo, 
+                                VariantCallMethod = "tumor_only" 
+                            ),
+        SampleOrder       = NULL,
+        SampleInfo        = sinfo
+    ) ) 
+    NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+    # unfiltered non-synonymous --------------------------------------------
+    cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">B. Unfiltered Non-Synonymous Varriants </div>')
+    print( WES_report.Variant.Stat.Summary.Table(
+        VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                VariantStatData   = data_VarStatSummary, 
+                                VariantGroup      = "non_synonymous", 
+                                SampleInfo        = sinfo, 
+                                VariantCallMethod = "tumor_only" 
+                            ),
+        SampleOrder       = NULL,
+        SampleInfo        = sinfo
+    ) ) 
+    NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+    # filtered non-synonymous (somatic variants) ---------------------------
+    cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">C. Filtered Non-Synonymous Varriants ( SOMATIC VARIANTS ) </div>')
+    print( WES_report.Variant.Stat.Summary.Table(
+        VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                VariantStatData   = data_VarStatSummary, 
+                                VariantGroup      = "filtered_somatic_only", 
+                                SampleInfo        = sinfo, 
+                                VariantCallMethod = TONLY_MODE 
+                            ),
+        SampleOrder       = NULL,
+        SampleInfo        = sinfo
+    ) ) 
+    NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+```
+
+<!-- MATCHED NORMAL TISSUE CALL VARIANTS -->
+
+```{r VarStat_MatchTS, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    if( nrow(analysis_info$MatchTS) > 0 )
+    {
+        # match_ts_sinfo -------------------------------------------------------
+        match_ts_sinfo <- sinfo %>% filter( sample_group %in% analysis_info$MatchTS[ which(analysis_info$MatchTS$Match_TS), "SampleGroup" ] ) %>%
+            filter( matched_normal %in% c(0,1))
+        # title ----------------------------------------------------------------
+        cat(sprintf('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Tissue Called Variants </div>'))
+        cat('<hr>')
+        # unfiltered synonymous ------------------------------------------------
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">A. Unfiltered Synonymous Varriants </div>')
+        print( WES_report.Variant.Stat.Summary.Table(
+            VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                    VariantStatData   = data_VarStatSummary, 
+                                    VariantGroup      = "synonymous", 
+                                    SampleInfo        = match_ts_sinfo, 
+                                    VariantCallMethod = "match_normal_tissue" 
+                                ),
+            SampleOrder       = NULL,
+            SampleInfo        = match_ts_sinfo
+        ) ) 
+        NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+        # unfiltered non-synonymous --------------------------------------------
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">B. Unfiltered Non-Synonymous Varriants </div>')
+        print( WES_report.Variant.Stat.Summary.Table(
+            VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                    VariantStatData   = data_VarStatSummary, 
+                                    VariantGroup      = "non_synonymous", 
+                                    SampleInfo        = match_ts_sinfo, 
+                                    VariantCallMethod = "match_normal_tissue" 
+                                ),
+            SampleOrder       = NULL,
+            SampleInfo        = match_ts_sinfo
+        ) ) 
+        NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+        # filtered non-synonymous (somatic variants) ---------------------------
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">C. Filtered Non-Synonymous Varriants ( SOMATIC VARIANTS ) </div>')
+        print( WES_report.Variant.Stat.Summary.Table(
+            VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                    VariantStatData   = data_VarStatSummary, 
+                                    VariantGroup      = "filtered_somatic_only", 
+                                    SampleInfo        = match_ts_sinfo, 
+                                    VariantCallMethod = "match_normal_tissue" 
+                                ),
+            SampleOrder       = NULL,
+            SampleInfo        = match_ts_sinfo
+        ) ) 
+        NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+    }
+```
+
+<!-- MATCHED NORMAL ORGANOID VARIANTS -->
+
+```{r VarStat_MatchORG, message=FALSE,warning=FALSE,echo=FALSE,results='asis'}
+    if( nrow(analysis_info$MatchORG) > 0 )
+    {
+        # numbering ------------------------------------------------------------
+        if( nrow(analysis_info$MatchTS) > 0 ){ NUMBER = "III" }else{ NUMBER = "II" }
+        # match_org_sinfo ------------------------------------------------------
+        match_org_sinfo <- sinfo %>% filter( sample_group %in% analysis_info$MatchORG[ which(analysis_info$MatchORG$Match_ORG), "SampleGroup" ] )
+        # title ----------------------------------------------------------------
+        cat(sprintf('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Organoid Called Variants </div>'))
+        cat('<hr>')
+        # unfiltered synonymous ------------------------------------------------
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">A. Unfiltered Synonymous Varriants </div>')
+        print( WES_report.Variant.Stat.Summary.Table(
+            VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                    VariantStatData   = data_VarStatSummary, 
+                                    VariantGroup      = "synonymous", 
+                                    SampleInfo        = match_org_sinfo, 
+                                    VariantCallMethod = "match_normal_organoid" 
+                                ),
+            SampleOrder       = NULL,
+            SampleInfo        = match_org_sinfo
+        ) ) 
+        NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+        # unfiltered non-synonymous --------------------------------------------
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">B. Unfiltered Non-Synonymous Varriants </div>')
+        print( WES_report.Variant.Stat.Summary.Table(
+            VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                    VariantStatData   = data_VarStatSummary, 
+                                    VariantGroup      = "non_synonymous", 
+                                    SampleInfo        = match_org_sinfo, 
+                                    VariantCallMethod = "match_normal_organoid" 
+                                ),
+            SampleOrder       = NULL,
+            SampleInfo        = match_org_sinfo
+        ) ) 
+        NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+        # filtered non-synonymous (somatic variants) ---------------------------
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">C. Filtered Non-Synonymous Varriants ( SOMATIC VARIANTS ) </div>')
+        print( WES_report.Variant.Stat.Summary.Table(
+            VariantStatTable  = WES_report.Reformat.Variant.Stats( 
+                                    VariantStatData   = data_VarStatSummary, 
+                                    VariantGroup      = "filtered_somatic_only", 
+                                    SampleInfo        = match_org_sinfo, 
+                                    VariantCallMethod = "match_normal_organoid" 
+                                ),
+            SampleOrder       = NULL,
+            SampleInfo        = match_org_sinfo
+        ) ) 
+        NGS_report.Page.Breaks2() #---/ page breaks /---------------------------
+    }
+```
+
+
+<!-- PRESET GENES VARIANTS (ORGANOID SCIENCED ONLY) -------------------------------------------- -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">PRESET GENES VARAINTS </div> 
+<div style="color: #000000; font-size: 12px;"> &ast; Preset Genes Listed in Appendix. </div> 
+<div style="color: #000000; font-size: 12px;"> &ast; Heatmap is displayed only when there are two or more samples. </div> 
+<br>
+
+```{r PresetGeneVar_Tonly, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    if( all(!is.na(preset_gene_var_list$Tonly)) )
+    {
+        Presets_Tonly <- preset_info[which(preset_info$index %in% names(preset_gene_var_list$Tonly)), ]
+
+        # title ----------------------------------------------------------------
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Tumor-Only Called Variants </div>')
+        cat('<hr>')
+        # variant list table ---------------------------------------------------
+        for( k in 1:nrow(Presets_Tonly) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = Presets_Tonly[k, "cancer_code"],
+                PresetName = Presets_Tonly[k, "preset_name"],
+                VariantCallMethod = "Tumor Only"
+            ) )
+            print( WES_report.PresetGeneVariantsTable( PresetGeneVarTable=preset_gene_var_list$Tonly[[ Presets_Tonly[k, "index"] ]] ) )
+            NGS_report.Page.Breaks2() #---/ page breaks /-----------------------
+        }
+        # heatmap --------------------------------------------------------------
+        heatmap_list_Tonly     <- figure_info %>% filter( report_category == "preset_variants_heatmap", variant_call == "Tumor Only" )
+        cancer_code_list_Tonly <- unique(heatmap_list_Tonly$cancer_code)
+        
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">Preset Gene Variants Heatmap</div>')
+        for( CODE in cancer_code_list_Tonly )
+        {
+            heatmap_list_Tonly_CancerCode <- heatmap_list_Tonly %>% filter( cancer_code == CODE ) 
+            for( j in 1:nrow(heatmap_list_Tonly_CancerCode) )
+            {
+                print( WES_report.Preset.Gene.Variants.Title.Table( 
+                    CancerCode = heatmap_list_Tonly_CancerCode[j, "cancer_code"],
+                    PresetName = heatmap_list_Tonly_CancerCode[j, "preset_name"],
+                    VariantCallMethod = "Tumor Only"
+                ) )
+                cat(sprintf("![](%s){width=%s} \n", heatmap_list_Tonly_CancerCode[j, "png"], "35%"))
+                if( j == 1 ){ cat('<br>') }
+            }
+            NGS_report.Page.Breaks2() #---/ page breaks /-----------------------
+        }
+    }
+```
+
+```{r PresetGeneVar_MatchTS, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    if( all(!is.na(preset_gene_var_list$MatchTS)) )
+    {
+        Presets_MatchTS <- preset_info[which(preset_info$index %in% names(preset_gene_var_list$MatchTS)), ]
+
+        # title ----------------------------------------------------------------
+        cat('<div style="color: #000000; font-size: 16px; font-weight: bold;">Matched Normal Tissue Called Variants </div>')
+        cat('<hr>')
+        # variant list table ---------------------------------------------------
+        for( k in 1:nrow(Presets_MatchTS) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = Presets_MatchTS[k, "cancer_code"],
+                PresetName = Presets_MatchTS[k, "preset_name"],
+                VariantCallMethod = "match_normal_tissue"
+            ) )
+            print( WES_report.PresetGeneVariantsTable( PresetGeneVarTable=preset_gene_var_list$MatchTS[[ Presets_MatchTS[k, "index"] ]] ) )
+            NGS_report.Page.Breaks2() #---/ page breaks /-----------------------
+        }
+        # heatmap --------------------------------------------------------------
+        heatmap_list_MatchTS     <- figure_info %>% filter( report_category == "preset_variants_heatmap", variant_call == "Matched Normal Tissue" )
+        cancer_code_list_MatchTS <- unique(heatmap_list_MatchTS$cancer_code)
+        
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">Preset Gene Variants Heatmap</div>')
+        for( CODE in cancer_code_list_MatchTS )
+        {
+            heatmap_list_MatchTS_CancerCode <- heatmap_list_MatchTS %>% filter( cancer_code == CODE ) 
+            for( j in 1:nrow(heatmap_list_MatchTS_CancerCode) )
+            {
+                print( WES_report.Preset.Gene.Variants.Title.Table( 
+                    CancerCode = heatmap_list_MatchTS_CancerCode[j, "cancer_code"],
+                    PresetName = heatmap_list_MatchTS_CancerCode[j, "preset_name"],
+                    VariantCallMethod = "match_normal_tissue"
+                ) )
+                cat(sprintf("![](%s){width=%s} \n", heatmap_list_MatchTS_CancerCode[j, "png"], "40%"))
+                if( j == 1 ){ cat('<br>') }
+            }
+            NGS_report.Page.Breaks2() #---/ page breaks /-----------------------
+        }
+    }
+```
+
+```{r PresetGeneVar_MatchORG, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    if( all(!is.na(preset_gene_var_list$MatchORG)) )
+    {
+        Presets_MatchORG <- preset_info[which(preset_info$index %in% names(preset_gene_var_list$MatchORG)), ]
+        # numbering
+        if( all(!is.na(preset_gene_var_list$MatchTS)) ){ NUMBER = "III" }else{ NUMBER = "II" }
+        # title ----------------------------------------------------------------
+        cat(sprintf('<div style="color: #000000; font-size: 16px; font-weight: bold;">TMatched Normal Organoid Called Variants </div>'))
+        cat('<hr>')
+        # variant list table ---------------------------------------------------
+        for( k in 1:nrow(Presets_MatchORG) )
+        {
+            print( WES_report.Preset.Gene.Variants.Title.Table( 
+                CancerCode = Presets_MatchORG[k, "cancer_code"],
+                PresetName = Presets_MatchORG[k, "preset_name"],
+                VariantCallMethod = "match_normal_organoid"
+            ) )
+            print( WES_report.PresetGeneVariantsTable( PresetGeneVarTable=preset_gene_var_list$MatchORG[[ Presets_MatchORG[k, "index"] ]] ) )
+            NGS_report.Page.Breaks2() #---/ page breaks /-----------------------
+        }
+        # heatmap --------------------------------------------------------------
+        heatmap_list_MatchORG     <- figure_info %>% filter( report_category == "preset_variants_heatmap", variant_call == "Matched Normal Organoid" )
+        cancer_code_list_MatchORG <- unique(heatmap_list_MatchORG$cancer_code)
+        
+        cat('<div style="color: #000000; font-size: 14px; font-weight: bold;">Preset Gene Variants Heatmap</div>')
+        for( CODE in cancer_code_list_MatchORG )
+        {
+            heatmap_list_MatchORG_CancerCode <- heatmap_list_MatchORG %>% filter( cancer_code == CODE ) 
+            for( j in 1:nrow(heatmap_list_MatchORG_CancerCode) )
+            {
+                print( WES_report.Preset.Gene.Variants.Title.Table( 
+                    CancerCode = heatmap_list_MatchORG_CancerCode[j, "cancer_code"],
+                    PresetName = heatmap_list_MatchORG_CancerCode[j, "preset_name"],
+                    VariantCallMethod = "match_normal_organoid"
+                ) )
+                cat(sprintf('![](%s){width=%s} \n', heatmap_list_MatchORG_CancerCode[j, "png"], "40%"))
+                if( j == 1 ){ cat('<br>') }
+            }
+            NGS_report.Page.Breaks2() #---/ page breaks /-----------------------
+        }
+    }
+```
+
+
+<!-- STANDARD REPORT APPENDIX -->
+
+<div style="color: #000000; font-size: 20px; font-weight: bold;">APPENDIX </div> 
+<hr>
+
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Definition of Terms </div> 
+
+```{r appendix1, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    print( WES_report.appendix.Terms.Eng() )
+```
+
+<br>
+
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Analysis Resources </div> 
+```{r appendix2, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    print( WES_report.appendix.ref.swtool.standard() )
+    #---/ page breaks /---------------------------------------------------------
+    NGS_report.Page.Breaks2()
+```
+
+
+<div style="color: #000000; font-size: 16px; font-weight: bold;">Preset Genes </div> 
+ 
+```{r appendix3, message=FALSE,echo=FALSE,warning=FALSE,results='asis'}
+    print( WES_report.appendix.client.preset.genes( ClientID=CLIENT_ID, cnf=cnf ) )
+```

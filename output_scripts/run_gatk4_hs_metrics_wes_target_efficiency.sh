@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_hs_metrics
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4_hs_metrics (4.4.0.0)
 # Profile: wes_target_efficiency
@@ -20,6 +20,7 @@ usage() {
     echo "  --InputSuffix     Target BAM suffix"
     echo ""
     echo "Optional Parameters:"
+    echo "  --hs_metrics      Hybrid Selection (HS) metrics report (Default: [qcResDir]/[SeqID].[InputSuffix].HS.metrics.txt)"
     echo "  --singularity_bin No description (Default: singularity)"
     echo "  --gatk4_sif       No description (Default: /storage/images/gatk-4.4.0.0.sif)"
     echo "  --bind            No description (Default: /storage,/data)"
@@ -38,6 +39,7 @@ ReferenceFasta=""
 BaitIntervals=""
 TargetIntervals=""
 InputSuffix="analysisReady"
+hs_metrics="[qcResDir]/[SeqID].[InputSuffix].HS.metrics.txt"
 singularity_bin="singularity"
 gatk4_sif="/storage/images/gatk-4.4.0.0.sif"
 bind="/storage,/data"
@@ -54,6 +56,7 @@ while [[ $# -gt 0 ]]; do
         --BaitIntervals) BaitIntervals="$2"; shift 2 ;;
         --TargetIntervals) TargetIntervals="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
+        --hs_metrics) hs_metrics="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --gatk4_sif) gatk4_sif="$2"; shift 2 ;;
         --bind) bind="$2"; shift 2 ;;
@@ -84,7 +87,14 @@ cmd="${singularity_bin} exec -B ${bind} ${gatk4_sif} gatk CollectHsMetrics --jav
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${hs_metrics:-}" ]]; then
+  if [[ "${hs_metrics}" == *.* ]]; then mkdir -p "$(dirname "${hs_metrics}")"; else mkdir -p "${hs_metrics}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
 
 eval "$cmd"

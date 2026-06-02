@@ -19,6 +19,7 @@ def main():
     # --- [Argument Parsing] ---
     parser.add_argument('--SeqID', required=True, default='', help='Sequence identifier used for the report filename (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='Directory containing all QC data and target output directory (Default: )')
+    parser.add_argument('--report_html', required=False, default='[qcResDir]/[SeqID].QC.Results.html', help='Final aggregated MultiQC HTML report (Default: [qcResDir]/[SeqID].QC.Results.html)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--multiqc_bin', required=False, default='multiqc', help='MultiQC binary name inside container (Default: multiqc)')
     parser.add_argument('--sif', required=False, default='/storage/images/multiqc-1.16.sif', help='MultiQC SIF image path (Default: /storage/images/multiqc-1.16.sif)')
@@ -32,6 +33,7 @@ def main():
     # --- [Variable Declarations: Key = Value] ---
     SeqID = args.SeqID
     qcResDir = args.qcResDir
+    report_html = args.report_html
     singularity_bin = args.singularity_bin
     multiqc_bin = args.multiqc_bin
     sif = args.sif
@@ -41,6 +43,7 @@ def main():
     mqc_args = args.mqc_args
 
     # --- [Output Paths] ---
+    if not report_html:
     report_html = f"{qcResDir}/{SeqID}.QC.Results.html"
 
     # --- [Command Execution] ---
@@ -48,7 +51,12 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if report_html:
+        _tgt = os.path.dirname(report_html) if os.path.splitext(report_html)[1] else report_html
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

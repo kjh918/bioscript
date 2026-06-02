@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = bedtools
-// THREADS = 1
+// THREADS = 8
 
 process BEDTOOLS {
     tag "$sample_id"

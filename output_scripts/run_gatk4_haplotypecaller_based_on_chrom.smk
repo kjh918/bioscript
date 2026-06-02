@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 4
 
 rule gatk4:
     input:
@@ -25,7 +25,7 @@ rule gatk4:
         Ploidy = "2"
         TmpDir = "[ResultDir]/tmp/[SeqID]_[Chromosome]"
         IncludeNonVariant = "false"
-    threads: 1
+    threads: 4
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.sif} {params.gatk_bin} --java-options '-XX:ParallelGCThreads={threads} -Xmx{params.Memory} -Djava.io.tmpdir={params.TmpDir}'  HaplotypeCaller  -R {input.ReferenceFasta}  -I {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam  -L {input.Chromosome}  -ploidy {params.Ploidy}  -stand-call-conf 30  --dbsnp {input.DbsnpVcf}  -O {output.OutGvcf}  -ERC GVCF &&

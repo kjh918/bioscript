@@ -20,8 +20,8 @@ def get_parser():
     # 클러스터(SGE) 설정 옵션
     parser.add_argument("--sge-user", default="jhkim", help="SGE 실행 유저 이름 (기본값: jhkim)")
     parser.add_argument("--sge-node", default="all.q@ngsnode1", help="SGE 큐/노드 이름 (기본값: all.q@ngsmaster)")
-    parser.add_argument("--max-samples", type=int, default=3, help="동시 실행할 최대 샘플 수 (기본값: 3)")
-    parser.add_argument("--max-threads", type=int, default=24, help="최대 사용 스레드 수 (기본값: 24)")
+    parser.add_argument("--max-samples", type=int, default=5, help="동시 실행할 최대 샘플 수 (기본값: 3)")
+    parser.add_argument("--max-threads", type=int, default=100, help="최대 사용 스레드 수 (기본값: 24)")
     
     # 레퍼런스 설정 옵션 (기본값 세팅)
     #parser.add_argument("--ref-fasta", default="/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa", help="Reference FASTA 경로")
@@ -51,9 +51,9 @@ if __name__ == "__main__":
             user=args.sge_user,
             node=args.sge_node,
             log_root= work_dir / "logs",
-            max_samples=args.max_samples,  
-            max_threads=args.max_threads  
-        )
+        ),
+        max_samples=args.max_samples,  
+        max_threads=args.max_threads  
     )
         
     # --- [4] Tasks Setting ---
@@ -96,18 +96,6 @@ if __name__ == "__main__":
                     "Threads": 20,
                 }
             ),
-            #Task(
-            #    name="rsem",
-            #    runner_path= scripts / "run_rsem_calculate_expression_quanti.py",
-            #    log_path = work_dir / sid / "logs" / "03_rsem", 
-            #    spec = {
-            #        'SeqID': sid,
-            #        'TranscriptomeBam': work_dir / sid / "bam",
-            #        'RsemIndex': "/storage/references_and_index/hg38/star-rsem-index/PE-150/hg38",
-            #        'OutputDir': work_dir / sid / "quanti" / "rsem", 
-            #        "Threads": 20,
-            #    }
-            #),
             Task(
                 name="salmon",
                 runner_path= scripts / "run_salmon_transcript_quanti.py",
@@ -120,6 +108,19 @@ if __name__ == "__main__":
                     "Threads": 20,
                 }
             ),
+
+            #Task(
+            #    name="rsem",
+            #    runner_path= scripts / "run_rsem_calculate_expression_quanti.py",
+            #    log_path = work_dir / sid / "logs" / "03_rsem", 
+            #    spec = {
+            #        'SeqID': sid,
+            #        'TranscriptomeBam': work_dir / sid / "bam",
+            #        'RsemIndex': "/storage/references_and_index/hg38/star-rsem-index/PE-150/hg38",
+            #        'OutputDir': work_dir / sid / "quanti" / "rsem", 
+            #        "Threads": 20,
+            #    }
+            #),
 
 
 

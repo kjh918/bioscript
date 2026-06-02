@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = picard
-// THREADS = 1
+// THREADS = 14
 
 process PICARD {
     tag "$sample_id"

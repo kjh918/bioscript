@@ -22,6 +22,7 @@ def main():
     parser.add_argument('--VcfTag', required=True, default='', help='Input VCF tag (e.g. mutect2.filtered.vep.refseq) (Default: )')
     parser.add_argument('--NormalID', required=True, default='NORMAL', help='Normal sample ID (Default: NORMAL)')
     parser.add_argument('--genomeFasta', required=True, default='', help='No description (Default: )')
+    parser.add_argument('--output_maf', required=False, default='[vcfDir]/[SeqID].[VcfTag].maf', help='Final MAF file for cBioPortal or R/maftools (Default: [vcfDir]/[SeqID].[VcfTag].maf)')
     parser.add_argument('--retain_info', required=False, default='DP,GERMQ,MBQ,MFRL,MMQ,MPOS,POPAF,PON,ROQ,TLOD,FILTER,pArtifact,artiStatus', help='MAF에 컬럼으로 남길 VCF INFO 필드 리스트 (Default: DP,GERMQ,MBQ,MFRL,MMQ,MPOS,POPAF,PON,ROQ,TLOD,FILTER,pArtifact,artiStatus)')
     parser.add_argument('--retain_ann', required=False, default='HGVSg,am_class,am_pathogenicity,CADD_PHRED,CADD_RAW,ClinVar_CLNSIG,ClinVar_CLNDN,ClinVar_ORIGIN,gnomADe_AF,gnomADe_AFR_AF,gnomADe_AMR_AF,gnomADe_ASJ_AF,gnomADe_EAS_AF,gnomADe_FIN_AF,gnomADe_NFE_AF,gnomADe_OTH_AF,gnomADe_SAS_AF,MAX_AF,MAX_AF_POPS,TRANSCRIPTION_FACTORS,COSMIC,COSMIC_HGVSC,COSMIC_LEGACY_ID,COSMIC_TIER', help='MAF에 컬럼으로 남길 VEP ANN(CSQ) 필드 리스트 (Default: HGVSg,am_class,am_pathogenicity,CADD_PHRED,CADD_RAW,ClinVar_CLNSIG,ClinVar_CLNDN,ClinVar_ORIGIN,gnomADe_AF,gnomADe_AFR_AF,gnomADe_AMR_AF,gnomADe_ASJ_AF,gnomADe_EAS_AF,gnomADe_FIN_AF,gnomADe_NFE_AF,gnomADe_OTH_AF,gnomADe_SAS_AF,MAX_AF,MAX_AF_POPS,TRANSCRIPTION_FACTORS,COSMIC,COSMIC_HGVSC,COSMIC_LEGACY_ID,COSMIC_TIER)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='No description (Default: singularity)')
@@ -37,6 +38,7 @@ def main():
     VcfTag = args.VcfTag
     NormalID = args.NormalID
     genomeFasta = args.genomeFasta
+    output_maf = args.output_maf
     retain_info = args.retain_info
     retain_ann = args.retain_ann
     singularity_bin = args.singularity_bin
@@ -45,6 +47,7 @@ def main():
     bind = args.bind
 
     # --- [Output Paths] ---
+    if not output_maf:
     output_maf = f"{vcfDir}/{SeqID}.{VcfTag}.maf"
 
     # --- [Command Execution] ---
@@ -52,7 +55,12 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(vcfDir) if '.' in os.path.basename(vcfDir) else vcfDir, exist_ok=True)
+    if vcfDir:
+        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if output_maf:
+        _tgt = os.path.dirname(output_maf) if os.path.splitext(output_maf)[1] else output_maf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

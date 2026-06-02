@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = bwa_picard
-// THREADS = 1
+// THREADS = 8
 
 process BWA_PICARD {
     tag "$sample_id"

@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = samtools_filter_index
 # VERSION = 1.10
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: samtools_filter_index (1.10)
 # Profile: flexible_bam_filter
@@ -15,6 +15,10 @@ usage() {
     echo "  --BamDir          Directory containing BAM files"
     echo ""
     echo "Optional Parameters:"
+    echo "  --filtered_bam    Filtered BAM file (Default: [BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam)"
+    echo "  --filtered_bai    No description (Default: [BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai)"
+    echo "  --analysis_ready_bam No description (Default: [BamDir]/[SeqID].analysisReady.bam)"
+    echo "  --analysis_ready_bai No description (Default: [BamDir]/[SeqID].analysisReady.bam.bai)"
     echo "  --InputSuffix     Suffix of the input BAM (e.g., primary, sorted, recal) (Default: recal)"
     echo "  --OutputSuffix    Suffix for the filtered output (Default: filtered)"
     echo "  --samtools_bin    No description (Default: samtools)"
@@ -32,6 +36,10 @@ usage() {
 # YAML의 기본값들이 이곳에 Key="Value" 형태로 정의됩니다.
 SeqID=""
 BamDir=""
+filtered_bam="[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam"
+filtered_bai="[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai"
+analysis_ready_bam="[BamDir]/[SeqID].analysisReady.bam"
+analysis_ready_bai="[BamDir]/[SeqID].analysisReady.bam.bai"
 InputSuffix="recal"
 OutputSuffix="filtered"
 samtools_bin="samtools"
@@ -47,6 +55,10 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --SeqID) SeqID="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
+        --filtered_bam) filtered_bam="$2"; shift 2 ;;
+        --filtered_bai) filtered_bai="$2"; shift 2 ;;
+        --analysis_ready_bam) analysis_ready_bam="$2"; shift 2 ;;
+        --analysis_ready_bai) analysis_ready_bai="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --samtools_bin) samtools_bin="$2"; shift 2 ;;
@@ -79,6 +91,20 @@ cmd="${samtools_bin} view -b -h -q ${min_mapq} -f ${include_flag} -F ${exclude_f
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
+if [[ -n "${filtered_bam:-}" ]]; then
+  if [[ "${filtered_bam}" == *.* ]]; then mkdir -p "$(dirname "${filtered_bam}")"; else mkdir -p "${filtered_bam}"; fi
+fi
+if [[ -n "${analysis_ready_bam:-}" ]]; then
+  if [[ "${analysis_ready_bam}" == *.* ]]; then mkdir -p "$(dirname "${analysis_ready_bam}")"; else mkdir -p "${analysis_ready_bam}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${analysis_ready_bai:-}" ]]; then
+  if [[ "${analysis_ready_bai}" == *.* ]]; then mkdir -p "$(dirname "${analysis_ready_bai}")"; else mkdir -p "${analysis_ready_bai}"; fi
+fi
+if [[ -n "${filtered_bai:-}" ]]; then
+  if [[ "${filtered_bai}" == *.* ]]; then mkdir -p "$(dirname "${filtered_bai}")"; else mkdir -p "${filtered_bai}"; fi
+fi
 
 eval "$cmd"

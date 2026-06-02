@@ -16,6 +16,9 @@ usage() {
     echo "  --ReferenceFasta  Path to the reference genome FASTA file"
     echo ""
     echo "Optional Parameters:"
+    echo "  --gc_bias_metrics_txt Detailed GC bias metrics for each GC bin (Default: [BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.txt)"
+    echo "  --gc_bias_summary_txt Summary metrics for GC bias (Default: [BamDir]/[SeqID].[InputSuffix].gc_bias_summary.txt)"
+    echo "  --gc_bias_chart_pdf PDF chart visualizing normalized coverage by GC content (Default: [BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.pdf)"
     echo "  --InputSuffix     Suffix of the input BAM (e.g., analysisReady, recal, dedup) (Default: analysisReady)"
     echo "  --java_bin        Path to java executable (Default: java)"
     echo "  --picard_jar      Path to Picard.jar file (Default: /storage/apps/bin/picard-3.1.0.jar)"
@@ -33,6 +36,9 @@ usage() {
 SeqID=""
 BamDir=""
 ReferenceFasta=""
+gc_bias_metrics_txt="[BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.txt"
+gc_bias_summary_txt="[BamDir]/[SeqID].[InputSuffix].gc_bias_summary.txt"
+gc_bias_chart_pdf="[BamDir]/[SeqID].[InputSuffix].gc_bias_metrics.pdf"
 InputSuffix="analysisReady"
 java_bin="java"
 picard_jar="/storage/apps/bin/picard-3.1.0.jar"
@@ -48,6 +54,9 @@ while [[ $# -gt 0 ]]; do
         --SeqID) SeqID="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
         --ReferenceFasta) ReferenceFasta="$2"; shift 2 ;;
+        --gc_bias_metrics_txt) gc_bias_metrics_txt="$2"; shift 2 ;;
+        --gc_bias_summary_txt) gc_bias_summary_txt="$2"; shift 2 ;;
+        --gc_bias_chart_pdf) gc_bias_chart_pdf="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --java_bin) java_bin="$2"; shift 2 ;;
         --picard_jar) picard_jar="$2"; shift 2 ;;
@@ -79,6 +88,17 @@ cmd="${java_bin} -XX:ParallelGCThreads=${gc_threads} -Xmx${xmx_mb}m -jar ${picar
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${gc_bias_chart_pdf:-}" ]]; then
+  if [[ "${gc_bias_chart_pdf}" == *.* ]]; then mkdir -p "$(dirname "${gc_bias_chart_pdf}")"; else mkdir -p "${gc_bias_chart_pdf}"; fi
+fi
+if [[ -n "${gc_bias_summary_txt:-}" ]]; then
+  if [[ "${gc_bias_summary_txt}" == *.* ]]; then mkdir -p "$(dirname "${gc_bias_summary_txt}")"; else mkdir -p "${gc_bias_summary_txt}"; fi
+fi
+if [[ -n "${gc_bias_metrics_txt:-}" ]]; then
+  if [[ "${gc_bias_metrics_txt}" == *.* ]]; then mkdir -p "$(dirname "${gc_bias_metrics_txt}")"; else mkdir -p "${gc_bias_metrics_txt}"; fi
+fi
 
 eval "$cmd"

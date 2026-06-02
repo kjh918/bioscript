@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bwa_picard
 # VERSION = bwa_0.7.17-picard_3.1.0
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: bwa_picard (bwa_0.7.17-picard_3.1.0)
 # Profile: pe_align_merge
@@ -22,6 +22,10 @@ usage() {
     echo "  --ReadGroupCenter Sequencing center (CN tag)"
     echo ""
     echo "Optional Parameters:"
+    echo "  --unmapped_bam    Intermediate unmapped BAM containing original metadata (Default: [BamDir]/[SeqID][InputSuffix].fastqtosam.bam)"
+    echo "  --aligned_sam     Raw BWA alignment output without metadata (Default: [BamDir]/[SeqID][InputSuffix].bwa.mem.sam)"
+    echo "  --primary_bam     Final merged and coordinate-sorted BAM file (Default: [BamDir]/[SeqID][OutputSuffix].bam)"
+    echo "  --primary_bai     Index for the final merged BAM (Default: [BamDir]/[SeqID][OutputSuffix].bai)"
     echo "  --InputSuffix     Suffix of input FASTQs (e.g., trimmed, raw) (Default: .trimmed)"
     echo "  --OutputSuffix    Suffix for the final merged result (Default: .primary)"
     echo "  --java_bin        Path to Java executable (Default: java)"
@@ -55,6 +59,10 @@ ReadGroupID=""
 ReadGroupPlatform=""
 ReadGroupLibrary=""
 ReadGroupCenter=""
+unmapped_bam="[BamDir]/[SeqID][InputSuffix].fastqtosam.bam"
+aligned_sam="[BamDir]/[SeqID][InputSuffix].bwa.mem.sam"
+primary_bam="[BamDir]/[SeqID][OutputSuffix].bam"
+primary_bai="[BamDir]/[SeqID][OutputSuffix].bai"
 InputSuffix=".trimmed"
 OutputSuffix=".primary"
 java_bin="java"
@@ -86,6 +94,10 @@ while [[ $# -gt 0 ]]; do
         --ReadGroupPlatform) ReadGroupPlatform="$2"; shift 2 ;;
         --ReadGroupLibrary) ReadGroupLibrary="$2"; shift 2 ;;
         --ReadGroupCenter) ReadGroupCenter="$2"; shift 2 ;;
+        --unmapped_bam) unmapped_bam="$2"; shift 2 ;;
+        --aligned_sam) aligned_sam="$2"; shift 2 ;;
+        --primary_bam) primary_bam="$2"; shift 2 ;;
+        --primary_bai) primary_bai="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --java_bin) java_bin="$2"; shift 2 ;;
@@ -134,8 +146,26 @@ cmd="${java_bin} -XX:ParallelGCThreads=${Threads} -Xmx${xmx_mb}m -jar ${picard_j
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${TrimFastqDir}")" 2>/dev/null || mkdir -p "${TrimFastqDir}"
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${TmpDir}")" 2>/dev/null || mkdir -p "${TmpDir}"
+if [[ -n "${primary_bai:-}" ]]; then
+  if [[ "${primary_bai}" == *.* ]]; then mkdir -p "$(dirname "${primary_bai}")"; else mkdir -p "${primary_bai}"; fi
+fi
+if [[ -n "${primary_bam:-}" ]]; then
+  if [[ "${primary_bam}" == *.* ]]; then mkdir -p "$(dirname "${primary_bam}")"; else mkdir -p "${primary_bam}"; fi
+fi
+if [[ -n "${TmpDir:-}" ]]; then
+  if [[ "${TmpDir}" == *.* ]]; then mkdir -p "$(dirname "${TmpDir}")"; else mkdir -p "${TmpDir}"; fi
+fi
+if [[ -n "${aligned_sam:-}" ]]; then
+  if [[ "${aligned_sam}" == *.* ]]; then mkdir -p "$(dirname "${aligned_sam}")"; else mkdir -p "${aligned_sam}"; fi
+fi
+if [[ -n "${TrimFastqDir:-}" ]]; then
+  if [[ "${TrimFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${TrimFastqDir}")"; else mkdir -p "${TrimFastqDir}"; fi
+fi
+if [[ -n "${unmapped_bam:-}" ]]; then
+  if [[ "${unmapped_bam}" == *.* ]]; then mkdir -p "$(dirname "${unmapped_bam}")"; else mkdir -p "${unmapped_bam}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"

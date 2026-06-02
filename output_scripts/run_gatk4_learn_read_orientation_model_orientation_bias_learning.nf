@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = gatk4_learn_read_orientation_model
-// THREADS = 1
+// THREADS = 14
 
 process GATK4_LEARN_READ_ORIENTATION_MODEL {
     tag "$sample_id"

@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_contamination_estimation
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = contamination_calculation
 
 """
@@ -23,6 +23,8 @@ def main():
     parser.add_argument('--ReferenceFasta', required=True, default='', help='No description (Default: )')
     parser.add_argument('--TargetInterval', required=True, default='', help='분석 대상 영역 (Interval_list) (Default: )')
     parser.add_argument('--VcfGnomad', required=True, default='', help='gnomAD germline resource VCF (Required for pileup) (Default: )')
+    parser.add_argument('--pileup_table', required=False, default='[qcResDir]/[SeqID].targeted_sequencing.table', help='Pileup summary statistics (Default: [qcResDir]/[SeqID].targeted_sequencing.table)')
+    parser.add_argument('--contamination_table', required=False, default='[qcResDir]/[SeqID].contamination.table', help='Final contamination estimation (Default: [qcResDir]/[SeqID].contamination.table)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='No description (Default: analysisReady)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='No description (Default: singularity)')
     parser.add_argument('--gatk4_sif', required=False, default='/storage/images/gatk-4.4.0.0.sif', help='No description (Default: /storage/images/gatk-4.4.0.0.sif)')
@@ -40,6 +42,8 @@ def main():
     ReferenceFasta = args.ReferenceFasta
     TargetInterval = args.TargetInterval
     VcfGnomad = args.VcfGnomad
+    pileup_table = args.pileup_table
+    contamination_table = args.contamination_table
     InputSuffix = args.InputSuffix
     singularity_bin = args.singularity_bin
     gatk4_sif = args.gatk4_sif
@@ -49,7 +53,9 @@ def main():
     contam_xmx = args.contam_xmx
 
     # --- [Output Paths] ---
+    if not pileup_table:
     pileup_table = f"{qcResDir}/{SeqID}.targeted_sequencing.table"
+    if not contamination_table:
     contamination_table = f"{qcResDir}/{SeqID}.contamination.table"
 
     # --- [Command Execution] ---
@@ -57,8 +63,18 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if pileup_table:
+        _tgt = os.path.dirname(pileup_table) if os.path.splitext(pileup_table)[1] else pileup_table
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if contamination_table:
+        _tgt = os.path.dirname(contamination_table) if os.path.splitext(contamination_table)[1] else contamination_table
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

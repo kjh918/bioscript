@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = gatk4
-// THREADS = 1
+// THREADS = 4
 
 process GATK4 {
     tag "$sample_id"

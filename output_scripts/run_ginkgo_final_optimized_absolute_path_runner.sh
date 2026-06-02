@@ -22,6 +22,14 @@ usage() {
     echo "  --NormalDir       No description (Default: /data/cbNIPT/bamToBeds)"
     echo "  --ResultBaseDir   No description (Default: /data/cbNIPT/ginkgo_analysis)"
     echo "  --Genome          No description (Default: hg38)"
+    echo "  --BinMeth         No description (Default: variable_[BinSize]000_[ReadLength]_bwa)"
+    echo "  --WorkDir         No description (Default: [ResultBaseDir]/[SeqID]/[SeqID]_[BinSize]kb)"
+    echo "  --BinUnsorted     No description (Default: [GinkgoHomeDir]/scripts/binUnsorted)"
+    echo "  --BinFile         No description (Default: [GinkgoHomeDir]/genomes/[Genome]/original/[BinMeth])"
+    echo "  --BinCount        No description (Default: $(wc -l < [BinFile]))"
+    echo "  --ProcessR        No description (Default: [GinkgoHomeDir]/scripts/process.R)"
+    echo "  --ReclustR        No description (Default: [GinkgoHomeDir]/scripts/reclust.R)"
+    echo "  --CNVCaller       No description (Default: [GinkgoHomeDir]/scripts/CNVcaller)"
     echo "  --NormalSamples   No description (Default: Normal_01.bed.gz Normal_02.bed.gz Normal_03.bed.gz)"
     echo "  --R_Args_Base     No description (Default: status.xml data 2 [BinMeth] ward euclidean 1 refDummy.bed_mapped 0 ploidyDummy.txt 0 1)"
     echo "  --R_Args_Reclust  No description (Default: status.xml [BinMeth] ward euclidean 0 ploidyDummy.txt 0)"
@@ -40,6 +48,14 @@ BamToBedDir="/data/cbNIPT/bamToBeds"
 NormalDir="/data/cbNIPT/bamToBeds"
 ResultBaseDir="/data/cbNIPT/ginkgo_analysis"
 Genome="hg38"
+BinMeth="variable_[BinSize]000_[ReadLength]_bwa"
+WorkDir="[ResultBaseDir]/[SeqID]/[SeqID]_[BinSize]kb"
+BinUnsorted="[GinkgoHomeDir]/scripts/binUnsorted"
+BinFile="[GinkgoHomeDir]/genomes/[Genome]/original/[BinMeth]"
+BinCount="$(wc -l < [BinFile])"
+ProcessR="[GinkgoHomeDir]/scripts/process.R"
+ReclustR="[GinkgoHomeDir]/scripts/reclust.R"
+CNVCaller="[GinkgoHomeDir]/scripts/CNVcaller"
 NormalSamples="Normal_01.bed.gz Normal_02.bed.gz Normal_03.bed.gz"
 R_Args_Base="status.xml data 2 [BinMeth] ward euclidean 1 refDummy.bed_mapped 0 ploidyDummy.txt 0 1"
 R_Args_Reclust="status.xml [BinMeth] ward euclidean 0 ploidyDummy.txt 0"
@@ -56,6 +72,14 @@ while [[ $# -gt 0 ]]; do
         --NormalDir) NormalDir="$2"; shift 2 ;;
         --ResultBaseDir) ResultBaseDir="$2"; shift 2 ;;
         --Genome) Genome="$2"; shift 2 ;;
+        --BinMeth) BinMeth="$2"; shift 2 ;;
+        --WorkDir) WorkDir="$2"; shift 2 ;;
+        --BinUnsorted) BinUnsorted="$2"; shift 2 ;;
+        --BinFile) BinFile="$2"; shift 2 ;;
+        --BinCount) BinCount="$2"; shift 2 ;;
+        --ProcessR) ProcessR="$2"; shift 2 ;;
+        --ReclustR) ReclustR="$2"; shift 2 ;;
+        --CNVCaller) CNVCaller="$2"; shift 2 ;;
         --NormalSamples) NormalSamples="$2"; shift 2 ;;
         --R_Args_Base) R_Args_Base="$2"; shift 2 ;;
         --R_Args_Reclust) R_Args_Reclust="$2"; shift 2 ;;
@@ -91,10 +115,41 @@ ${ProcessR} ${GinkgoHomeDir}/genomes/${Genome}/original ${WorkDir} ${R_Args_Base
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${GinkgoHomeDir}")" 2>/dev/null || mkdir -p "${GinkgoHomeDir}"
-mkdir -p "$(dirname "${BamToBedDir}")" 2>/dev/null || mkdir -p "${BamToBedDir}"
-mkdir -p "$(dirname "${NormalDir}")" 2>/dev/null || mkdir -p "${NormalDir}"
-mkdir -p "$(dirname "${ResultBaseDir}")" 2>/dev/null || mkdir -p "${ResultBaseDir}"
-mkdir -p "$(dirname "${WorkDir}")" 2>/dev/null || mkdir -p "${WorkDir}"
+if [[ -n "${ReclustR:-}" ]]; then
+  if [[ "${ReclustR}" == *.* ]]; then mkdir -p "$(dirname "${ReclustR}")"; else mkdir -p "${ReclustR}"; fi
+fi
+if [[ -n "${GinkgoHomeDir:-}" ]]; then
+  if [[ "${GinkgoHomeDir}" == *.* ]]; then mkdir -p "$(dirname "${GinkgoHomeDir}")"; else mkdir -p "${GinkgoHomeDir}"; fi
+fi
+if [[ -n "${WorkDir:-}" ]]; then
+  if [[ "${WorkDir}" == *.* ]]; then mkdir -p "$(dirname "${WorkDir}")"; else mkdir -p "${WorkDir}"; fi
+fi
+if [[ -n "${NormalDir:-}" ]]; then
+  if [[ "${NormalDir}" == *.* ]]; then mkdir -p "$(dirname "${NormalDir}")"; else mkdir -p "${NormalDir}"; fi
+fi
+if [[ -n "${BinFile:-}" ]]; then
+  if [[ "${BinFile}" == *.* ]]; then mkdir -p "$(dirname "${BinFile}")"; else mkdir -p "${BinFile}"; fi
+fi
+if [[ -n "${CNVCaller:-}" ]]; then
+  if [[ "${CNVCaller}" == *.* ]]; then mkdir -p "$(dirname "${CNVCaller}")"; else mkdir -p "${CNVCaller}"; fi
+fi
+if [[ -n "${BamToBedDir:-}" ]]; then
+  if [[ "${BamToBedDir}" == *.* ]]; then mkdir -p "$(dirname "${BamToBedDir}")"; else mkdir -p "${BamToBedDir}"; fi
+fi
+if [[ -n "${ProcessR:-}" ]]; then
+  if [[ "${ProcessR}" == *.* ]]; then mkdir -p "$(dirname "${ProcessR}")"; else mkdir -p "${ProcessR}"; fi
+fi
+if [[ -n "${BinMeth:-}" ]]; then
+  if [[ "${BinMeth}" == *.* ]]; then mkdir -p "$(dirname "${BinMeth}")"; else mkdir -p "${BinMeth}"; fi
+fi
+if [[ -n "${BinUnsorted:-}" ]]; then
+  if [[ "${BinUnsorted}" == *.* ]]; then mkdir -p "$(dirname "${BinUnsorted}")"; else mkdir -p "${BinUnsorted}"; fi
+fi
+if [[ -n "${BinCount:-}" ]]; then
+  if [[ "${BinCount}" == *.* ]]; then mkdir -p "$(dirname "${BinCount}")"; else mkdir -p "${BinCount}"; fi
+fi
+if [[ -n "${ResultBaseDir:-}" ]]; then
+  if [[ "${ResultBaseDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultBaseDir}")"; else mkdir -p "${ResultBaseDir}"; fi
+fi
 
 eval "$cmd"

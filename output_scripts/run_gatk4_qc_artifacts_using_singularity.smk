@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 rule gatk4:
     input:
@@ -19,7 +19,7 @@ rule gatk4:
         bind = "/storage,/data"
         Threads = "14"
         xmx_mb = "16384"
-    threads: 1
+    threads: 14
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.sif} {params.gatk_bin} CollectSequencingArtifactMetrics --java-options '-XX:ParallelGCThreads={threads} -Xmx{params.xmx_mb}m' --INPUT {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam --OUTPUT {output.artifacts_txt} --FILE_EXTENSION .txt --REFERENCE_SEQUENCE {input.ReferenceFasta}

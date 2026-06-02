@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bedtools_genomecov_to_bigwig
 # VERSION = v2.27.1
-# THREADS = 1
+# THREADS = 4
 # PROFILE = genome_coverage_and_signal_generation
 
 """
@@ -57,7 +57,9 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(OutputDir) if '.' in os.path.basename(OutputDir) else OutputDir, exist_ok=True)
+    if OutputDir:
+        _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

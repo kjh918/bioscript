@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_learn_read_orientation_model
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = orientation_bias_learning
 
 """
@@ -19,6 +19,7 @@ def main():
     # --- [Argument Parsing] ---
     parser.add_argument('--SeqID', required=True, default='', help='No description (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='f1r2 파일이 있고 모델을 저장할 디렉토리 (Default: )')
+    parser.add_argument('--read_orientation_model', required=False, default='[qcResDir]/[SeqID].[OutputSuffix].read-orientation-model.tar.gz', help='Learned orientation bias model (Default: [qcResDir]/[SeqID].[OutputSuffix].read-orientation-model.tar.gz)')
     parser.add_argument('--InputSuffix', required=False, default='', help='Input f1r2 suffix (with dot if exists) (Default: )')
     parser.add_argument('--OutputSuffix', required=False, default='', help='Output model suffix (Default: )')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='No description (Default: singularity)')
@@ -32,6 +33,7 @@ def main():
     # --- [Variable Declarations: Key = Value] ---
     SeqID = args.SeqID
     qcResDir = args.qcResDir
+    read_orientation_model = args.read_orientation_model
     InputSuffix = args.InputSuffix
     OutputSuffix = args.OutputSuffix
     singularity_bin = args.singularity_bin
@@ -41,6 +43,7 @@ def main():
     Threads = args.Threads
 
     # --- [Output Paths] ---
+    if not read_orientation_model:
     read_orientation_model = f"{qcResDir}/{SeqID}.{OutputSuffix}.read-orientation-model.tar.gz"
 
     # --- [Command Execution] ---
@@ -48,7 +51,12 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if read_orientation_model:
+        _tgt = os.path.dirname(read_orientation_model) if os.path.splitext(read_orientation_model)[1] else read_orientation_model
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

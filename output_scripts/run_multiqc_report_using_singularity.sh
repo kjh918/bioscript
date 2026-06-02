@@ -15,6 +15,7 @@ usage() {
     echo "  --qcResDir        Directory containing all QC data and target output directory"
     echo ""
     echo "Optional Parameters:"
+    echo "  --report_html     Final aggregated MultiQC HTML report (Default: [qcResDir]/[SeqID].QC.Results.html)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
     echo "  --multiqc_bin     MultiQC binary name inside container (Default: multiqc)"
     echo "  --sif             MultiQC SIF image path (Default: /storage/images/multiqc-1.16.sif)"
@@ -30,6 +31,7 @@ usage() {
 # YAML의 기본값들이 이곳에 Key="Value" 형태로 정의됩니다.
 SeqID=""
 qcResDir=""
+report_html="[qcResDir]/[SeqID].QC.Results.html"
 singularity_bin="singularity"
 multiqc_bin="multiqc"
 sif="/storage/images/multiqc-1.16.sif"
@@ -43,6 +45,7 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --SeqID) SeqID="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
+        --report_html) report_html="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --multiqc_bin) multiqc_bin="$2"; shift 2 ;;
         --sif) sif="$2"; shift 2 ;;
@@ -70,6 +73,11 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${multiqc_bin} ${mqc_args} --file
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${report_html:-}" ]]; then
+  if [[ "${report_html}" == *.* ]]; then mkdir -p "$(dirname "${report_html}")"; else mkdir -p "${report_html}"; fi
+fi
 
 eval "$cmd"

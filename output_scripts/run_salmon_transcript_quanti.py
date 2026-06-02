@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = salmon
 # VERSION = 1.10.0
-# THREADS = 1
+# THREADS = 12
 # PROFILE = transcript_quanti
 
 """
@@ -21,6 +21,9 @@ def main():
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing input BAM files (Default: )')
     parser.add_argument('--OutputDir', required=True, default='', help='Path to output directory (Default: )')
     parser.add_argument('--SalmonIndex', required=True, default='', help='Path to Salmon index directory (Default: )')
+    parser.add_argument('--quant_sf', required=False, default='[OutputDir]/[SeqID]_quant/quant.sf', help='Transcript-level quantification file (Default: [OutputDir]/[SeqID]_quant/quant.sf)')
+    parser.add_argument('--quant_log', required=False, default='[OutputDir]/[SeqID]_quant/logs/salmon_quant.log', help='No description (Default: [OutputDir]/[SeqID]_quant/logs/salmon_quant.log)')
+    parser.add_argument('--lib_format', required=False, default='[OutputDir]/[SeqID]_quant/lib_format_counts.json', help='Inferred library type info (Default: [OutputDir]/[SeqID]_quant/lib_format_counts.json)')
     parser.add_argument('--Threads', required=False, default='12', help='No description (Default: 12)')
     parser.add_argument('--libType', required=False, default='A', help='Library type (A: Auto-detect) (Default: A)')
     parser.add_argument('--InputSuffix', required=False, default='.Aligned.toTranscriptome.out.bam', help='No description (Default: .Aligned.toTranscriptome.out.bam)')
@@ -34,6 +37,9 @@ def main():
     BamDir = args.BamDir
     OutputDir = args.OutputDir
     SalmonIndex = args.SalmonIndex
+    quant_sf = args.quant_sf
+    quant_log = args.quant_log
+    lib_format = args.lib_format
     Threads = args.Threads
     libType = args.libType
     InputSuffix = args.InputSuffix
@@ -41,8 +47,11 @@ def main():
     samlon_bin = args.samlon_bin
 
     # --- [Output Paths] ---
+    if not quant_sf:
     quant_sf = f"{OutputDir}/{SeqID}_quant/quant.sf"
+    if not quant_log:
     quant_log = f"{OutputDir}/{SeqID}_quant/logs/salmon_quant.log"
+    if not lib_format:
     lib_format = f"{OutputDir}/{SeqID}_quant/lib_format_counts.json"
 
     # --- [Command Execution] ---
@@ -50,8 +59,21 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(OutputDir) if '.' in os.path.basename(OutputDir) else OutputDir, exist_ok=True)
+    if quant_log:
+        _tgt = os.path.dirname(quant_log) if os.path.splitext(quant_log)[1] else quant_log
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if OutputDir:
+        _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if quant_sf:
+        _tgt = os.path.dirname(quant_sf) if os.path.splitext(quant_sf)[1] else quant_sf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if lib_format:
+        _tgt = os.path.dirname(lib_format) if os.path.splitext(lib_format)[1] else lib_format
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

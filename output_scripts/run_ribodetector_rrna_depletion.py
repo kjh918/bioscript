@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = ribodetector
 # VERSION = 0.3.3
-# THREADS = 1
+# THREADS = 10
 # PROFILE = rrna_depletion
 
 """
@@ -20,6 +20,8 @@ def main():
     parser.add_argument('--SeqID', required=True, default='', help='No description (Default: )')
     parser.add_argument('--FastqDir', required=True, default='', help='No description (Default: )')
     parser.add_argument('--OutputDir', required=True, default='', help='결과 FASTQ가 저장될 경로 (Default: )')
+    parser.add_argument('--non_rrna_r1', required=False, default='[OutputDir]/[SeqID].nonrrna.1.fq', help='No description (Default: [OutputDir]/[SeqID].nonrrna.1.fq)')
+    parser.add_argument('--non_rrna_r2', required=False, default='[OutputDir]/[SeqID].nonrrna.2.fq', help='No description (Default: [OutputDir]/[SeqID].nonrrna.2.fq)')
     parser.add_argument('--Threads', required=False, default='10', help='No description (Default: 10)')
     parser.add_argument('--ReadLen', required=False, default='100', help='시퀀싱 리드 길이 (Default: 100)')
     parser.add_argument('--ChunkSize', required=False, default='256', help='모델 로딩 및 처리 청크 크기 (Default: 256)')
@@ -32,6 +34,8 @@ def main():
     SeqID = args.SeqID
     FastqDir = args.FastqDir
     OutputDir = args.OutputDir
+    non_rrna_r1 = args.non_rrna_r1
+    non_rrna_r2 = args.non_rrna_r2
     Threads = args.Threads
     ReadLen = args.ReadLen
     ChunkSize = args.ChunkSize
@@ -39,7 +43,9 @@ def main():
     InputSuffix = args.InputSuffix
 
     # --- [Output Paths] ---
+    if not non_rrna_r1:
     non_rrna_r1 = f"{OutputDir}/{SeqID}.nonrrna.1.fq"
+    if not non_rrna_r2:
     non_rrna_r2 = f"{OutputDir}/{SeqID}.nonrrna.2.fq"
 
     # --- [Command Execution] ---
@@ -47,8 +53,18 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(FastqDir) if '.' in os.path.basename(FastqDir) else FastqDir, exist_ok=True)
-    os.makedirs(os.path.dirname(OutputDir) if '.' in os.path.basename(OutputDir) else OutputDir, exist_ok=True)
+    if non_rrna_r1:
+        _tgt = os.path.dirname(non_rrna_r1) if os.path.splitext(non_rrna_r1)[1] else non_rrna_r1
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if non_rrna_r2:
+        _tgt = os.path.dirname(non_rrna_r2) if os.path.splitext(non_rrna_r2)[1] else non_rrna_r2
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if OutputDir:
+        _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if FastqDir:
+        _tgt = os.path.dirname(FastqDir) if os.path.splitext(FastqDir)[1] else FastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

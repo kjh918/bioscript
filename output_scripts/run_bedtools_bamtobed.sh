@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bedtools
 # VERSION = 2.27.1
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: bedtools (2.27.1)
 # Profile: bamtobed
@@ -16,6 +16,8 @@ usage() {
     echo "  --BamToBedDir     Target directory for final delivery of BED files"
     echo ""
     echo "Optional Parameters:"
+    echo "  --bed_gz          Compressed BED file in the working directory (Default: [BamDir]/[SeqID].[InputSuffix].bed.gz)"
+    echo "  --final_bed       Final BED file delivered to the target directory (Default: [BamToBedDir]/[SeqID].bed.gz)"
     echo "  --InputSuffix     Suffix of the input BAM (e.g., analysisReady, recal, sorted) (Default: analysisReady)"
     echo "  --bedtools_bin    Path to bedtools binary (Default: bedtools)"
     echo "  --bgzip_bin       Path to bgzip binary (Default: bgzip)"
@@ -31,6 +33,8 @@ usage() {
 SeqID=""
 BamDir=""
 BamToBedDir=""
+bed_gz="[BamDir]/[SeqID].[InputSuffix].bed.gz"
+final_bed="[BamToBedDir]/[SeqID].bed.gz"
 InputSuffix="analysisReady"
 bedtools_bin="bedtools"
 bgzip_bin="bgzip"
@@ -44,6 +48,8 @@ while [[ $# -gt 0 ]]; do
         --SeqID) SeqID="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
         --BamToBedDir) BamToBedDir="$2"; shift 2 ;;
+        --bed_gz) bed_gz="$2"; shift 2 ;;
+        --final_bed) final_bed="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --bedtools_bin) bedtools_bin="$2"; shift 2 ;;
         --bgzip_bin) bgzip_bin="$2"; shift 2 ;;
@@ -72,7 +78,17 @@ cmd="${bedtools_bin} bamtobed -i ${BamDir}/${SeqID}.${InputSuffix}.bam > ${BamDi
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${BamToBedDir}")" 2>/dev/null || mkdir -p "${BamToBedDir}"
+if [[ -n "${bed_gz:-}" ]]; then
+  if [[ "${bed_gz}" == *.* ]]; then mkdir -p "$(dirname "${bed_gz}")"; else mkdir -p "${bed_gz}"; fi
+fi
+if [[ -n "${final_bed:-}" ]]; then
+  if [[ "${final_bed}" == *.* ]]; then mkdir -p "$(dirname "${final_bed}")"; else mkdir -p "${final_bed}"; fi
+fi
+if [[ -n "${BamToBedDir:-}" ]]; then
+  if [[ "${BamToBedDir}" == *.* ]]; then mkdir -p "$(dirname "${BamToBedDir}")"; else mkdir -p "${BamToBedDir}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"

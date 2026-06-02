@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 4
 
 # Tool Info: gatk4 (4.4.0.0)
 # Profile: HaplotypeCaller_based_on_chrom
@@ -19,6 +19,8 @@ usage() {
     echo "Optional Parameters:"
     echo "  --ReferenceFasta  Reference genome FASTA (Default: /storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa)"
     echo "  --DbsnpVcf        Known variation database (dbSNP) (Default: /storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz)"
+    echo "  --OutGvcf         Intermediate GVCF file (Default: [ResultDir]/[SeqID].[Chromosome].gvcf.gz)"
+    echo "  --OutVcf          Final Genotyped VCF file (Default: [ResultDir]/[SeqID].[Chromosome].vcf.gz)"
     echo "  --InputSuffix     Suffix of input BAM (e.g., analysisReady, recal, dedup) (Default: analysisReady)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
     echo "  --gatk_bin        GATK binary path inside container (Default: gatk)"
@@ -41,6 +43,8 @@ BamDir=""
 ResultDir=""
 ReferenceFasta="/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa"
 DbsnpVcf="/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz"
+OutGvcf="[ResultDir]/[SeqID].[Chromosome].gvcf.gz"
+OutVcf="[ResultDir]/[SeqID].[Chromosome].vcf.gz"
 InputSuffix="analysisReady"
 singularity_bin="singularity"
 gatk_bin="gatk"
@@ -61,6 +65,8 @@ while [[ $# -gt 0 ]]; do
         --ResultDir) ResultDir="$2"; shift 2 ;;
         --ReferenceFasta) ReferenceFasta="$2"; shift 2 ;;
         --DbsnpVcf) DbsnpVcf="$2"; shift 2 ;;
+        --OutGvcf) OutGvcf="$2"; shift 2 ;;
+        --OutVcf) OutVcf="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --gatk_bin) gatk_bin="$2"; shift 2 ;;
@@ -95,8 +101,20 @@ ${singularity_bin} exec -B ${bind} ${sif} ${gatk_bin} --java-options '-XX:Parall
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${ResultDir}")" 2>/dev/null || mkdir -p "${ResultDir}"
-mkdir -p "$(dirname "${TmpDir}")" 2>/dev/null || mkdir -p "${TmpDir}"
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${TmpDir:-}" ]]; then
+  if [[ "${TmpDir}" == *.* ]]; then mkdir -p "$(dirname "${TmpDir}")"; else mkdir -p "${TmpDir}"; fi
+fi
+if [[ -n "${OutVcf:-}" ]]; then
+  if [[ "${OutVcf}" == *.* ]]; then mkdir -p "$(dirname "${OutVcf}")"; else mkdir -p "${OutVcf}"; fi
+fi
+if [[ -n "${ResultDir:-}" ]]; then
+  if [[ "${ResultDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultDir}")"; else mkdir -p "${ResultDir}"; fi
+fi
+if [[ -n "${OutGvcf:-}" ]]; then
+  if [[ "${OutGvcf}" == *.* ]]; then mkdir -p "$(dirname "${OutGvcf}")"; else mkdir -p "${OutGvcf}"; fi
+fi
 
 eval "$cmd"

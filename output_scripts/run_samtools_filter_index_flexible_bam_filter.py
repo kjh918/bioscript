@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = samtools_filter_index
 # VERSION = 1.10
-# THREADS = 1
+# THREADS = 8
 # PROFILE = flexible_bam_filter
 
 """
@@ -19,6 +19,10 @@ def main():
     # --- [Argument Parsing] ---
     parser.add_argument('--SeqID', required=True, default='', help='Sequence identifier (Default: )')
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing BAM files (Default: )')
+    parser.add_argument('--filtered_bam', required=False, default='[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam', help='Filtered BAM file (Default: [BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam)')
+    parser.add_argument('--filtered_bai', required=False, default='[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai', help='No description (Default: [BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai)')
+    parser.add_argument('--analysis_ready_bam', required=False, default='[BamDir]/[SeqID].analysisReady.bam', help='No description (Default: [BamDir]/[SeqID].analysisReady.bam)')
+    parser.add_argument('--analysis_ready_bai', required=False, default='[BamDir]/[SeqID].analysisReady.bam.bai', help='No description (Default: [BamDir]/[SeqID].analysisReady.bam.bai)')
     parser.add_argument('--InputSuffix', required=False, default='recal', help='Suffix of the input BAM (e.g., primary, sorted, recal) (Default: recal)')
     parser.add_argument('--OutputSuffix', required=False, default='filtered', help='Suffix for the filtered output (Default: filtered)')
     parser.add_argument('--samtools_bin', required=False, default='samtools', help='No description (Default: samtools)')
@@ -34,6 +38,10 @@ def main():
     # --- [Variable Declarations: Key = Value] ---
     SeqID = args.SeqID
     BamDir = args.BamDir
+    filtered_bam = args.filtered_bam
+    filtered_bai = args.filtered_bai
+    analysis_ready_bam = args.analysis_ready_bam
+    analysis_ready_bai = args.analysis_ready_bai
     InputSuffix = args.InputSuffix
     OutputSuffix = args.OutputSuffix
     samtools_bin = args.samtools_bin
@@ -45,9 +53,13 @@ def main():
     expr_nm = args.expr_nm
 
     # --- [Output Paths] ---
+    if not filtered_bam:
     filtered_bam = f"{BamDir}/{SeqID}.{InputSuffix}.{OutputSuffix}.bam"
+    if not filtered_bai:
     filtered_bai = f"{BamDir}/{SeqID}.{InputSuffix}.{OutputSuffix}.bam.bai"
+    if not analysis_ready_bam:
     analysis_ready_bam = f"{BamDir}/{SeqID}.analysisReady.bam"
+    if not analysis_ready_bai:
     analysis_ready_bai = f"{BamDir}/{SeqID}.analysisReady.bam.bai"
 
     # --- [Command Execution] ---
@@ -55,7 +67,21 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
+    if filtered_bam:
+        _tgt = os.path.dirname(filtered_bam) if os.path.splitext(filtered_bam)[1] else filtered_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if analysis_ready_bam:
+        _tgt = os.path.dirname(analysis_ready_bam) if os.path.splitext(analysis_ready_bam)[1] else analysis_ready_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if analysis_ready_bai:
+        _tgt = os.path.dirname(analysis_ready_bai) if os.path.splitext(analysis_ready_bai)[1] else analysis_ready_bai
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if filtered_bai:
+        _tgt = os.path.dirname(filtered_bai) if os.path.splitext(filtered_bai)[1] else filtered_bai
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

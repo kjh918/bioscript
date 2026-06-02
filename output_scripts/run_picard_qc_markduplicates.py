@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = picard
 # VERSION = 3.1.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = qc_markduplicates
 
 """
@@ -20,6 +20,8 @@ def main():
     parser.add_argument('--SeqID', required=True, default='', help='Sequence identifier used for file naming (Default: )')
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the sorted input BAM files (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='Directory where duplication metrics will be saved (Default: )')
+    parser.add_argument('--out_bam', required=False, default='[BamDir]/[SeqID].sorted.markdup.bam', help='Output deduplicated BAM file (Default: [BamDir]/[SeqID].sorted.markdup.bam)')
+    parser.add_argument('--metrics', required=False, default='[qcResDir]/[SeqID].mark.duplicates.metrics.txt', help='Duplication metrics report file (Default: [qcResDir]/[SeqID].mark.duplicates.metrics.txt)')
     parser.add_argument('--java_bin', required=False, default='java', help='Path to java executable (Default: java)')
     parser.add_argument('--picard_jar', required=False, default='/storage/apps/bin/picard.jar', help='Path to picard.jar file (Default: /storage/apps/bin/picard.jar)')
     parser.add_argument('--Threads', required=False, default='14', help='Number of parallel GC threads (-XX:ParallelGCThreads) (Default: 14)')
@@ -34,6 +36,8 @@ def main():
     SeqID = args.SeqID
     BamDir = args.BamDir
     qcResDir = args.qcResDir
+    out_bam = args.out_bam
+    metrics = args.metrics
     java_bin = args.java_bin
     picard_jar = args.picard_jar
     Threads = args.Threads
@@ -43,7 +47,9 @@ def main():
     remove_duplicates = args.remove_duplicates
 
     # --- [Output Paths] ---
+    if not out_bam:
     out_bam = f"{BamDir}/{SeqID}.sorted.markdup.bam"
+    if not metrics:
     metrics = f"{qcResDir}/{SeqID}.mark.duplicates.metrics.txt"
 
     # --- [Command Execution] ---
@@ -51,9 +57,21 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
-    os.makedirs(os.path.dirname(TmpDir) if '.' in os.path.basename(TmpDir) else TmpDir, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if TmpDir:
+        _tgt = os.path.dirname(TmpDir) if os.path.splitext(TmpDir)[1] else TmpDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if out_bam:
+        _tgt = os.path.dirname(out_bam) if os.path.splitext(out_bam)[1] else out_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if metrics:
+        _tgt = os.path.dirname(metrics) if os.path.splitext(metrics)[1] else metrics
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

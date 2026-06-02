@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = rsem
 # VERSION = 1.3.3
-# THREADS = 1
+# THREADS = 12
 
 # Tool Info: rsem (1.3.3)
 # Profile: calculate_expression_quanti
@@ -86,6 +86,8 @@ cmd="${singularity_bin} exec -B ${bind} ${rsem_sif} rsem-calculate-expression ${
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${OutputDir}")" 2>/dev/null || mkdir -p "${OutputDir}"
+if [[ -n "${OutputDir:-}" ]]; then
+  if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
+fi
 
 eval "$cmd"

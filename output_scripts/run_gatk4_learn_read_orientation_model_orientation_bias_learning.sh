@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_learn_read_orientation_model
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4_learn_read_orientation_model (4.4.0.0)
 # Profile: orientation_bias_learning
@@ -15,6 +15,7 @@ usage() {
     echo "  --qcResDir        f1r2 파일이 있고 모델을 저장할 디렉토리"
     echo ""
     echo "Optional Parameters:"
+    echo "  --read_orientation_model Learned orientation bias model (Default: [qcResDir]/[SeqID].[OutputSuffix].read-orientation-model.tar.gz)"
     echo "  --InputSuffix     Input f1r2 suffix (with dot if exists) (Default: )"
     echo "  --OutputSuffix    Output model suffix (Default: )"
     echo "  --singularity_bin No description (Default: singularity)"
@@ -30,6 +31,7 @@ usage() {
 # YAML의 기본값들이 이곳에 Key="Value" 형태로 정의됩니다.
 SeqID=""
 qcResDir=""
+read_orientation_model="[qcResDir]/[SeqID].[OutputSuffix].read-orientation-model.tar.gz"
 InputSuffix=""
 OutputSuffix=""
 singularity_bin="singularity"
@@ -43,6 +45,7 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --SeqID) SeqID="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
+        --read_orientation_model) read_orientation_model="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
@@ -70,6 +73,11 @@ cmd="${singularity_bin} exec -B ${bind} ${gatk4_sif} gatk LearnReadOrientationMo
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${read_orientation_model:-}" ]]; then
+  if [[ "${read_orientation_model}" == *.* ]]; then mkdir -p "$(dirname "${read_orientation_model}")"; else mkdir -p "${read_orientation_model}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
 
 eval "$cmd"

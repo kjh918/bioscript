@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 rule gatk4:
     input:
@@ -25,7 +25,7 @@ rule gatk4:
         create_index = "true"
         optical_duplicate_pixel_distance = "2500"
         other_md_args = ""
-    threads: 1
+    threads: 14
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.sif} {params.gatk_bin} MarkDuplicates --java-options '-XX:ParallelGCThreads={threads} -Xmx{params.xmx_mb}m' --INPUT {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam --OUTPUT {output.dedup_bam} --METRICS_FILE {output.metrics_txt} --CREATE_INDEX {params.create_index} --REMOVE_SEQUENCING_DUPLICATES {params.remove_seq_dups} --OPTICAL_DUPLICATE_PIXEL_DISTANCE {params.optical_duplicate_pixel_distance} {params.other_md_args}

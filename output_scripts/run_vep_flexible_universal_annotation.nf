@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = vep_flexible
-// THREADS = 1
+// THREADS = 8
 
 process VEP_FLEXIBLE {
     tag "$sample_id"

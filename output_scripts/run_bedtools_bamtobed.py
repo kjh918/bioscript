@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bedtools
 # VERSION = 2.27.1
-# THREADS = 1
+# THREADS = 8
 # PROFILE = bamtobed
 
 """
@@ -20,6 +20,8 @@ def main():
     parser.add_argument('--SeqID', required=True, default='', help='Sequence identifier used for file naming (Default: )')
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the input BAM file (Default: )')
     parser.add_argument('--BamToBedDir', required=True, default='', help='Target directory for final delivery of BED files (Default: )')
+    parser.add_argument('--bed_gz', required=False, default='[BamDir]/[SeqID].[InputSuffix].bed.gz', help='Compressed BED file in the working directory (Default: [BamDir]/[SeqID].[InputSuffix].bed.gz)')
+    parser.add_argument('--final_bed', required=False, default='[BamToBedDir]/[SeqID].bed.gz', help='Final BED file delivered to the target directory (Default: [BamToBedDir]/[SeqID].bed.gz)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of the input BAM (e.g., analysisReady, recal, sorted) (Default: analysisReady)')
     parser.add_argument('--bedtools_bin', required=False, default='bedtools', help='Path to bedtools binary (Default: bedtools)')
     parser.add_argument('--bgzip_bin', required=False, default='bgzip', help='Path to bgzip binary (Default: bgzip)')
@@ -33,6 +35,8 @@ def main():
     SeqID = args.SeqID
     BamDir = args.BamDir
     BamToBedDir = args.BamToBedDir
+    bed_gz = args.bed_gz
+    final_bed = args.final_bed
     InputSuffix = args.InputSuffix
     bedtools_bin = args.bedtools_bin
     bgzip_bin = args.bgzip_bin
@@ -41,7 +45,9 @@ def main():
     Threads = args.Threads
 
     # --- [Output Paths] ---
+    if not bed_gz:
     bed_gz = f"{BamDir}/{SeqID}.{InputSuffix}.bed.gz"
+    if not final_bed:
     final_bed = f"{BamToBedDir}/{SeqID}.bed.gz"
 
     # --- [Command Execution] ---
@@ -49,8 +55,18 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(BamToBedDir) if '.' in os.path.basename(BamToBedDir) else BamToBedDir, exist_ok=True)
+    if bed_gz:
+        _tgt = os.path.dirname(bed_gz) if os.path.splitext(bed_gz)[1] else bed_gz
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if final_bed:
+        _tgt = os.path.dirname(final_bed) if os.path.splitext(final_bed)[1] else final_bed
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamToBedDir:
+        _tgt = os.path.dirname(BamToBedDir) if os.path.splitext(BamToBedDir)[1] else BamToBedDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = mosdepth
 # VERSION = 0.3.6
-# THREADS = 1
+# THREADS = 4
 
 rule mosdepth:
     input:
@@ -23,7 +23,7 @@ rule mosdepth:
         Threads = "4"
         MapQ = "20"
         extra_args = ""
-    threads: 1
+    threads: 4
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.mosdepth_sif} {params.mosdepth_bin} --threads {threads} --by {input.TargetBed} --mapq {params.MapQ} {params.extra_args} {input.qcResDir}/{input.SeqID} {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam

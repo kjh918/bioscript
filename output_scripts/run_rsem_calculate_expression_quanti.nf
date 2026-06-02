@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = rsem
-// THREADS = 1
+// THREADS = 12
 
 process RSEM {
     tag "$sample_id"

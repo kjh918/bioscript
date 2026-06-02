@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_filter_mutect_calls
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = somatic_variant_filtering
 
 """
@@ -23,6 +23,7 @@ def main():
     parser.add_argument('--ReferenceFasta', required=True, default='', help='No description (Default: )')
     parser.add_argument('--TargetInterval', required=True, default='', help='No description (Default: )')
     parser.add_argument('--ContaminationTable', required=True, default='', help='[SeqID].contamination.table (Default: )')
+    parser.add_argument('--filtered_vcf', required=False, default='[vcfDir]/[SeqID].mutect2.[Suffix]filtered.vcf', help='최종 필터링된 VCF 파일 (Default: [vcfDir]/[SeqID].mutect2.[Suffix]filtered.vcf)')
     parser.add_argument('--Suffix', required=False, default='', help='File name suffix (e.g., \'keep.germline.\') (Default: )')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='No description (Default: singularity)')
     parser.add_argument('--gatk4_sif', required=False, default='/storage/images/gatk-4.4.0.0.sif', help='No description (Default: /storage/images/gatk-4.4.0.0.sif)')
@@ -40,6 +41,7 @@ def main():
     ReferenceFasta = args.ReferenceFasta
     TargetInterval = args.TargetInterval
     ContaminationTable = args.ContaminationTable
+    filtered_vcf = args.filtered_vcf
     Suffix = args.Suffix
     singularity_bin = args.singularity_bin
     gatk4_sif = args.gatk4_sif
@@ -49,6 +51,7 @@ def main():
     extra_args = args.extra_args
 
     # --- [Output Paths] ---
+    if not filtered_vcf:
     filtered_vcf = f"{vcfDir}/{SeqID}.mutect2.{Suffix}filtered.vcf"
 
     # --- [Command Execution] ---
@@ -56,8 +59,15 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(vcfDir) if '.' in os.path.basename(vcfDir) else vcfDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if vcfDir:
+        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if filtered_vcf:
+        _tgt = os.path.dirname(filtered_vcf) if os.path.splitext(filtered_vcf)[1] else filtered_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

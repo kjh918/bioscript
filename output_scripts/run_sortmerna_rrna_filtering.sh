@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = sortmerna
 # VERSION = 4.3.7
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: sortmerna (4.3.7)
 # Profile: rrna_filtering
@@ -18,6 +18,9 @@ usage() {
     echo ""
     echo "Optional Parameters:"
     echo "  --IndexDir        Pre-built index directory (--idx-dir) (Default: )"
+    echo "  --non_rrna_r1     No description (Default: [qcResDir]/[SeqID]_1.non_rRNA.fastq.gz)"
+    echo "  --non_rrna_r2     No description (Default: [qcResDir]/[SeqID]_2.non_rRNA.fastq.gz)"
+    echo "  --sortmerna_log   No description (Default: [qcResDir]/[SeqID].sortmerna.log)"
     echo "  --Threads         No description (Default: 8)"
     echo "  --InputSuffix     No description (Default: fastq.gz)"
     echo "  --paired_cmd      No description (Default: --paired_in --out2)"
@@ -33,6 +36,9 @@ FastqDir=""
 qcResDir=""
 RefArgs=""
 IndexDir=""
+non_rrna_r1="[qcResDir]/[SeqID]_1.non_rRNA.fastq.gz"
+non_rrna_r2="[qcResDir]/[SeqID]_2.non_rRNA.fastq.gz"
+sortmerna_log="[qcResDir]/[SeqID].sortmerna.log"
 Threads="8"
 InputSuffix="fastq.gz"
 paired_cmd="--paired_in --out2"
@@ -46,6 +52,9 @@ while [[ $# -gt 0 ]]; do
         --qcResDir) qcResDir="$2"; shift 2 ;;
         --RefArgs) RefArgs="$2"; shift 2 ;;
         --IndexDir) IndexDir="$2"; shift 2 ;;
+        --non_rrna_r1) non_rrna_r1="$2"; shift 2 ;;
+        --non_rrna_r2) non_rrna_r2="$2"; shift 2 ;;
+        --sortmerna_log) sortmerna_log="$2"; shift 2 ;;
         --Threads) Threads="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --paired_cmd) paired_cmd="$2"; shift 2 ;;
@@ -74,8 +83,23 @@ cmd="sortmerna ${RefArgs} --reads ${FastqDir}/${SeqID}_1.${InputSuffix} --reads 
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${FastqDir}")" 2>/dev/null || mkdir -p "${FastqDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
-mkdir -p "$(dirname "${IndexDir}")" 2>/dev/null || mkdir -p "${IndexDir}"
+if [[ -n "${non_rrna_r1:-}" ]]; then
+  if [[ "${non_rrna_r1}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r1}")"; else mkdir -p "${non_rrna_r1}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${FastqDir:-}" ]]; then
+  if [[ "${FastqDir}" == *.* ]]; then mkdir -p "$(dirname "${FastqDir}")"; else mkdir -p "${FastqDir}"; fi
+fi
+if [[ -n "${non_rrna_r2:-}" ]]; then
+  if [[ "${non_rrna_r2}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r2}")"; else mkdir -p "${non_rrna_r2}"; fi
+fi
+if [[ -n "${sortmerna_log:-}" ]]; then
+  if [[ "${sortmerna_log}" == *.* ]]; then mkdir -p "$(dirname "${sortmerna_log}")"; else mkdir -p "${sortmerna_log}"; fi
+fi
+if [[ -n "${IndexDir:-}" ]]; then
+  if [[ "${IndexDir}" == *.* ]]; then mkdir -p "$(dirname "${IndexDir}")"; else mkdir -p "${IndexDir}"; fi
+fi
 
 eval "$cmd"

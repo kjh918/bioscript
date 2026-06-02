@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_hs_metrics
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 rule gatk4_hs_metrics:
     input:
@@ -20,7 +20,7 @@ rule gatk4_hs_metrics:
         bind = "/storage,/data"
         xmx_mb = "16384"
         Threads = "14"
-    threads: 1
+    threads: 14
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.gatk4_sif} gatk CollectHsMetrics --java-options '-XX:ParallelGCThreads={threads} -Xmx{params.xmx_mb}m' --INPUT {input.BamDir}/{input.SeqID}.{input.InputSuffix}.bam --OUTPUT {output.hs_metrics} --REFERENCE_SEQUENCE {input.ReferenceFasta} --BAIT_INTERVALS {input.BaitIntervals} --TARGET_INTERVALS {input.TargetIntervals}

@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = fastp
-// THREADS = 1
+// THREADS = 8
 
 process FASTP {
     tag "$sample_id"

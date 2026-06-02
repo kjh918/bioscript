@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = ribodetector
-// THREADS = 1
+// THREADS = 10
 
 process RIBODETECTOR {
     tag "$sample_id"

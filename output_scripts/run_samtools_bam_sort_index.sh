@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = samtools
 # VERSION = 1.10
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: samtools (1.10)
 # Profile: bam_sort_index
@@ -15,6 +15,8 @@ usage() {
     echo "  --BamDir          Directory containing the primary (unsorted) BAM file"
     echo ""
     echo "Optional Parameters:"
+    echo "  --sorted_bam      Coordinate sorted BAM file (Default: [BamDir]/[SeqID].[InputSuffix].bam)"
+    echo "  --sorted_bai      BAM index file (BAI) (Default: [BamDir]/[SeqID].[OutputSuffix].bam.bai)"
     echo "  --InputSuffix     Suffix of input BAM (e.g., primary, initial) (Default: primary)"
     echo "  --OutputSuffix    Suffix for output BAM (e.g., sorted, coord_sorted) (Default: sorted)"
     echo "  --samtools_bin    Path to samtools executable or binary name (Default: samtools)"
@@ -27,6 +29,8 @@ usage() {
 # YAML의 기본값들이 이곳에 Key="Value" 형태로 정의됩니다.
 SeqID=""
 BamDir=""
+sorted_bam="[BamDir]/[SeqID].[InputSuffix].bam"
+sorted_bai="[BamDir]/[SeqID].[OutputSuffix].bam.bai"
 InputSuffix="primary"
 OutputSuffix="sorted"
 samtools_bin="samtools"
@@ -37,6 +41,8 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --SeqID) SeqID="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
+        --sorted_bam) sorted_bam="$2"; shift 2 ;;
+        --sorted_bai) sorted_bai="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --samtools_bin) samtools_bin="$2"; shift 2 ;;
@@ -62,6 +68,14 @@ cmd="${samtools_bin} sort -@ ${Threads} -o ${sorted_bam} ${BamDir}/${SeqID}.bam 
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${sorted_bam:-}" ]]; then
+  if [[ "${sorted_bam}" == *.* ]]; then mkdir -p "$(dirname "${sorted_bam}")"; else mkdir -p "${sorted_bam}"; fi
+fi
+if [[ -n "${sorted_bai:-}" ]]; then
+  if [[ "${sorted_bai}" == *.* ]]; then mkdir -p "$(dirname "${sorted_bai}")"; else mkdir -p "${sorted_bai}"; fi
+fi
 
 eval "$cmd"

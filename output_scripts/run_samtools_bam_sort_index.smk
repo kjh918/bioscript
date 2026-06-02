@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = samtools
 # VERSION = 1.10
-# THREADS = 1
+# THREADS = 8
 
 rule samtools:
     input:
@@ -15,7 +15,7 @@ rule samtools:
         OutputSuffix = "sorted"
         samtools_bin = "samtools"
         Threads = "8"
-    threads: 1
+    threads: 8
     shell:
         """
         {params.samtools_bin} sort -@ {threads} -o {output.sorted_bam} {input.BamDir}/{input.SeqID}.bam && {params.samtools_bin} index -b -@ {threads} {output.sorted_bam}

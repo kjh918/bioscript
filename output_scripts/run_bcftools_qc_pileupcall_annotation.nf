@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = bcftools
-// THREADS = 1
+// THREADS = 4
 
 process BCFTOOLS {
     tag "$sample_id"

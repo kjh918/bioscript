@@ -20,6 +20,8 @@ usage() {
     echo "  --KnownIndel2     Path to additional known Indels VCF"
     echo ""
     echo "Optional Parameters:"
+    echo "  --target_intervals Target intervals file identifying regions for realignment (Default: [qcResDir]/[SeqID].[OutputSuffix].realignertargetcreator.intervals)"
+    echo "  --realigned_bam   Final Indel-realigned BAM file (Default: [BamDir]/[SeqID].[OutputSuffix].bam)"
     echo "  --InputSuffix     Suffix of input BAM (e.g., dedup, sorted, primary) (Default: merged.dup.marked)"
     echo "  --OutputSuffix    Suffix for output BAM (e.g., realign, ir) (Default: merged.dup.marked.realign)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
@@ -42,6 +44,8 @@ ReferenceFasta=""
 TargetBed=""
 KnownIndel1=""
 KnownIndel2=""
+target_intervals="[qcResDir]/[SeqID].[OutputSuffix].realignertargetcreator.intervals"
+realigned_bam="[BamDir]/[SeqID].[OutputSuffix].bam"
 InputSuffix="merged.dup.marked"
 OutputSuffix="merged.dup.marked.realign"
 singularity_bin="singularity"
@@ -62,6 +66,8 @@ while [[ $# -gt 0 ]]; do
         --TargetBed) TargetBed="$2"; shift 2 ;;
         --KnownIndel1) KnownIndel1="$2"; shift 2 ;;
         --KnownIndel2) KnownIndel2="$2"; shift 2 ;;
+        --target_intervals) target_intervals="$2"; shift 2 ;;
+        --realigned_bam) realigned_bam="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
@@ -97,7 +103,17 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${java_bin} -Xmx${xmx_mb}m -jar $
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${realigned_bam:-}" ]]; then
+  if [[ "${realigned_bam}" == *.* ]]; then mkdir -p "$(dirname "${realigned_bam}")"; else mkdir -p "${realigned_bam}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${target_intervals:-}" ]]; then
+  if [[ "${target_intervals}" == *.* ]]; then mkdir -p "$(dirname "${target_intervals}")"; else mkdir -p "${target_intervals}"; fi
+fi
 
 eval "$cmd"

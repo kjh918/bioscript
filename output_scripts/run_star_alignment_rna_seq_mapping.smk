@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = star_alignment
 # VERSION = 2.7.11a
-# THREADS = 1
+# THREADS = 12
 
 rule star_alignment:
     input:
@@ -27,7 +27,7 @@ rule star_alignment:
         singularity_bin = "singularity"
         star_sif = "/storage/images/star-2.7.11.sif"
         bind = "/storage,/data"
-    threads: 1
+    threads: 12
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.star_sif} STAR --runThreadN {threads} --genomeDir {input.StarIndex} --readFilesIn {input.FastqDir}/{input.SeqID}{params.InputSuffix}_R1.fastq.gz {input.FastqDir}/{input.SeqID}{params.InputSuffix}_R2.fastq.gz --readFilesCommand zcat --quantMode {params.quantMode} --twopassMode {params.twopassMode} --chimSegmentMin {params.chimSegmentMin} --outFilterMismatchNmax {params.outFilterMismatchNmax} --outFileNamePrefix {input.BamDir}/{input.SeqID}. --outSAMtype {params.outSAMtype} --outSAMattributes {params.outSAMattributes} --outSAMunmapped {params.outSAMunmapped}

@@ -18,6 +18,7 @@ usage() {
     echo "  --genomeFasta     No description"
     echo ""
     echo "Optional Parameters:"
+    echo "  --output_maf      Final MAF file for cBioPortal or R/maftools (Default: [vcfDir]/[SeqID].[VcfTag].maf)"
     echo "  --retain_info     MAF에 컬럼으로 남길 VCF INFO 필드 리스트 (Default: DP,GERMQ,MBQ,MFRL,MMQ,MPOS,POPAF,PON,ROQ,TLOD,FILTER,pArtifact,artiStatus)"
     echo "  --retain_ann      MAF에 컬럼으로 남길 VEP ANN(CSQ) 필드 리스트 (Default: HGVSg,am_class,am_pathogenicity,CADD_PHRED,CADD_RAW,ClinVar_CLNSIG,ClinVar_CLNDN,ClinVar_ORIGIN,gnomADe_AF,gnomADe_AFR_AF,gnomADe_AMR_AF,gnomADe_ASJ_AF,gnomADe_EAS_AF,gnomADe_FIN_AF,gnomADe_NFE_AF,gnomADe_OTH_AF,gnomADe_SAS_AF,MAX_AF,MAX_AF_POPS,TRANSCRIPTION_FACTORS,COSMIC,COSMIC_HGVSC,COSMIC_LEGACY_ID,COSMIC_TIER)"
     echo "  --singularity_bin No description (Default: singularity)"
@@ -35,6 +36,7 @@ vcfDir=""
 VcfTag=""
 NormalID="NORMAL"
 genomeFasta=""
+output_maf="[vcfDir]/[SeqID].[VcfTag].maf"
 retain_info="DP,GERMQ,MBQ,MFRL,MMQ,MPOS,POPAF,PON,ROQ,TLOD,FILTER,pArtifact,artiStatus"
 retain_ann="HGVSg,am_class,am_pathogenicity,CADD_PHRED,CADD_RAW,ClinVar_CLNSIG,ClinVar_CLNDN,ClinVar_ORIGIN,gnomADe_AF,gnomADe_AFR_AF,gnomADe_AMR_AF,gnomADe_ASJ_AF,gnomADe_EAS_AF,gnomADe_FIN_AF,gnomADe_NFE_AF,gnomADe_OTH_AF,gnomADe_SAS_AF,MAX_AF,MAX_AF_POPS,TRANSCRIPTION_FACTORS,COSMIC,COSMIC_HGVSC,COSMIC_LEGACY_ID,COSMIC_TIER"
 singularity_bin="singularity"
@@ -50,6 +52,7 @@ while [[ $# -gt 0 ]]; do
         --VcfTag) VcfTag="$2"; shift 2 ;;
         --NormalID) NormalID="$2"; shift 2 ;;
         --genomeFasta) genomeFasta="$2"; shift 2 ;;
+        --output_maf) output_maf="$2"; shift 2 ;;
         --retain_info) retain_info="$2"; shift 2 ;;
         --retain_ann) retain_ann="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
@@ -79,6 +82,11 @@ cmd="${singularity_bin} exec -B ${bind} ${vcf2maf_sif} ${vcf2maf_bin} --inhibit-
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${vcfDir}")" 2>/dev/null || mkdir -p "${vcfDir}"
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
+fi
+if [[ -n "${output_maf:-}" ]]; then
+  if [[ "${output_maf}" == *.* ]]; then mkdir -p "$(dirname "${output_maf}")"; else mkdir -p "${output_maf}"; fi
+fi
 
 eval "$cmd"

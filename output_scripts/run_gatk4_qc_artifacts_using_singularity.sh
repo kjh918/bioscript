@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4 (4.4.0.0)
 # Profile: qc_artifacts_using_singularity
@@ -17,6 +17,7 @@ usage() {
     echo "  --ReferenceFasta  Path to the reference genome FASTA file"
     echo ""
     echo "Optional Parameters:"
+    echo "  --artifacts_txt   Base name for artifact metrics output files (Default: [qcResDir]/[SeqID].artifacts)"
     echo "  --InputSuffix     Suffix of the input BAM file (default : analysisReady / e.g., recal, sorted) (Default: analysisReady)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
     echo "  --gatk_bin        GATK wrapper script or binary path inside container (Default: gatk)"
@@ -34,6 +35,7 @@ SeqID=""
 BamDir=""
 qcResDir=""
 ReferenceFasta=""
+artifacts_txt="[qcResDir]/[SeqID].artifacts"
 InputSuffix="analysisReady"
 singularity_bin="singularity"
 gatk_bin="gatk"
@@ -49,6 +51,7 @@ while [[ $# -gt 0 ]]; do
         --BamDir) BamDir="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
         --ReferenceFasta) ReferenceFasta="$2"; shift 2 ;;
+        --artifacts_txt) artifacts_txt="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --gatk_bin) gatk_bin="$2"; shift 2 ;;
@@ -78,7 +81,14 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${gatk_bin} CollectSequencingArti
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${artifacts_txt:-}" ]]; then
+  if [[ "${artifacts_txt}" == *.* ]]; then mkdir -p "$(dirname "${artifacts_txt}")"; else mkdir -p "${artifacts_txt}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"

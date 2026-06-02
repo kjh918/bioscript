@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = salmon
 # VERSION = 1.10.0
-# THREADS = 1
+# THREADS = 12
 
 # Tool Info: salmon (1.10.0)
 # Profile: transcript_quanti
@@ -17,6 +17,9 @@ usage() {
     echo "  --SalmonIndex     Path to Salmon index directory"
     echo ""
     echo "Optional Parameters:"
+    echo "  --quant_sf        Transcript-level quantification file (Default: [OutputDir]/[SeqID]_quant/quant.sf)"
+    echo "  --quant_log       No description (Default: [OutputDir]/[SeqID]_quant/logs/salmon_quant.log)"
+    echo "  --lib_format      Inferred library type info (Default: [OutputDir]/[SeqID]_quant/lib_format_counts.json)"
     echo "  --Threads         No description (Default: 12)"
     echo "  --libType         Library type (A: Auto-detect) (Default: A)"
     echo "  --InputSuffix     No description (Default: .Aligned.toTranscriptome.out.bam)"
@@ -32,6 +35,9 @@ SeqID=""
 BamDir=""
 OutputDir=""
 SalmonIndex=""
+quant_sf="[OutputDir]/[SeqID]_quant/quant.sf"
+quant_log="[OutputDir]/[SeqID]_quant/logs/salmon_quant.log"
+lib_format="[OutputDir]/[SeqID]_quant/lib_format_counts.json"
 Threads="12"
 libType="A"
 InputSuffix=".Aligned.toTranscriptome.out.bam"
@@ -45,6 +51,9 @@ while [[ $# -gt 0 ]]; do
         --BamDir) BamDir="$2"; shift 2 ;;
         --OutputDir) OutputDir="$2"; shift 2 ;;
         --SalmonIndex) SalmonIndex="$2"; shift 2 ;;
+        --quant_sf) quant_sf="$2"; shift 2 ;;
+        --quant_log) quant_log="$2"; shift 2 ;;
+        --lib_format) lib_format="$2"; shift 2 ;;
         --Threads) Threads="$2"; shift 2 ;;
         --libType) libType="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
@@ -74,7 +83,20 @@ cmd="${samlon_bin} quant -t ${SalmonIndex} --threads ${Threads} --libType ${libT
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${OutputDir}")" 2>/dev/null || mkdir -p "${OutputDir}"
+if [[ -n "${quant_log:-}" ]]; then
+  if [[ "${quant_log}" == *.* ]]; then mkdir -p "$(dirname "${quant_log}")"; else mkdir -p "${quant_log}"; fi
+fi
+if [[ -n "${OutputDir:-}" ]]; then
+  if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
+fi
+if [[ -n "${quant_sf:-}" ]]; then
+  if [[ "${quant_sf}" == *.* ]]; then mkdir -p "$(dirname "${quant_sf}")"; else mkdir -p "${quant_sf}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${lib_format:-}" ]]; then
+  if [[ "${lib_format}" == *.* ]]; then mkdir -p "$(dirname "${lib_format}")"; else mkdir -p "${lib_format}"; fi
+fi
 
 eval "$cmd"

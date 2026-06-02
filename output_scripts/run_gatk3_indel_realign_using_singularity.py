@@ -24,6 +24,8 @@ def main():
     parser.add_argument('--TargetBed', required=True, default='', help='Interval list or BED file for WES (Default: )')
     parser.add_argument('--KnownIndel1', required=True, default='', help='Path to known Indels VCF (e.g., Mills and 1000G) (Default: )')
     parser.add_argument('--KnownIndel2', required=True, default='', help='Path to additional known Indels VCF (Default: )')
+    parser.add_argument('--target_intervals', required=False, default='[qcResDir]/[SeqID].[OutputSuffix].realignertargetcreator.intervals', help='Target intervals file identifying regions for realignment (Default: [qcResDir]/[SeqID].[OutputSuffix].realignertargetcreator.intervals)')
+    parser.add_argument('--realigned_bam', required=False, default='[BamDir]/[SeqID].[OutputSuffix].bam', help='Final Indel-realigned BAM file (Default: [BamDir]/[SeqID].[OutputSuffix].bam)')
     parser.add_argument('--InputSuffix', required=False, default='merged.dup.marked', help='Suffix of input BAM (e.g., dedup, sorted, primary) (Default: merged.dup.marked)')
     parser.add_argument('--OutputSuffix', required=False, default='merged.dup.marked.realign', help='Suffix for output BAM (e.g., realign, ir) (Default: merged.dup.marked.realign)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
@@ -44,6 +46,8 @@ def main():
     TargetBed = args.TargetBed
     KnownIndel1 = args.KnownIndel1
     KnownIndel2 = args.KnownIndel2
+    target_intervals = args.target_intervals
+    realigned_bam = args.realigned_bam
     InputSuffix = args.InputSuffix
     OutputSuffix = args.OutputSuffix
     singularity_bin = args.singularity_bin
@@ -55,7 +59,9 @@ def main():
     xmx_mb = args.xmx_mb
 
     # --- [Output Paths] ---
+    if not target_intervals:
     target_intervals = f"{qcResDir}/{SeqID}.{OutputSuffix}.realignertargetcreator.intervals"
+    if not realigned_bam:
     realigned_bam = f"{BamDir}/{SeqID}.{OutputSuffix}.bam"
 
     # --- [Command Execution] ---
@@ -63,8 +69,18 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if realigned_bam:
+        _tgt = os.path.dirname(realigned_bam) if os.path.splitext(realigned_bam)[1] else realigned_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if target_intervals:
+        _tgt = os.path.dirname(target_intervals) if os.path.splitext(target_intervals)[1] else target_intervals
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

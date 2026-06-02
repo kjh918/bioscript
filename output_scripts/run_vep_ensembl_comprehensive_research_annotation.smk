@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = vep_ensembl
 # VERSION = 110
-# THREADS = 1
+# THREADS = 8
 
 rule vep_ensembl:
     input:
@@ -29,7 +29,7 @@ rule vep_ensembl:
         singularity_bin = "singularity"
         vep_sif = "/storage/images/vep-110.sif"
         bind = "/storage,/data"
-    threads: 1
+    threads: 8
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.vep_sif} vep --force_overwrite --offline --cache --dir_cache {input.vepCacheDir} --fasta {input.genomeFasta} --bam {input.vepBam} --species {params.species} --assembly {params.assembly} --input_file {input.vcfDir}/{input.SeqID}.{input.VcfTag}.vcf --output_file {output.vep_vcf} --vcf --stats_text --hgvs --hgvsg --canonical --exclude_predicted --ccds --uniprot --domains --fork {threads} --buffer_size {params.buffer_size} {params.clinvar_args} {params.cosmic_args} --plugin AlphaMissense,file={input.alphaMissense} --plugin CADD,snv={input.caddSnp},indels={input.caddIndel}

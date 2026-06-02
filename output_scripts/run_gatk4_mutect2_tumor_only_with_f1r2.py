@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_mutect2
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = tumor_only_with_f1r2
 
 """
@@ -25,6 +25,9 @@ def main():
     parser.add_argument('--TargetInterval', required=True, default='', help='Target BED 또는 interval_list (Default: )')
     parser.add_argument('--VcfGnomad', required=True, default='', help='gnomAD germline resource VCF (Default: )')
     parser.add_argument('--VcfPon', required=True, default='', help='Panel of Normals VCF (Default: )')
+    parser.add_argument('--raw_vcf', required=False, default='[vcfDir]/[SeqID].mutect2.vcf', help='Filtered 전의 원본 VCF (Default: [vcfDir]/[SeqID].mutect2.vcf)')
+    parser.add_argument('--f1r2_tar_gz', required=False, default='[qcResDir]/[SeqID].f1r2.tar.gz', help='Read orientation bias 통계 파일 (Default: [qcResDir]/[SeqID].f1r2.tar.gz)')
+    parser.add_argument('--mutect_stats', required=False, default='[vcfDir]/[SeqID].mutect2.vcf.stats', help='필터링에 필요한 통계 메타데이터 (Default: [vcfDir]/[SeqID].mutect2.vcf.stats)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='No description (Default: analysisReady)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='No description (Default: singularity)')
     parser.add_argument('--gatk4_sif', required=False, default='/storage/images/gatk-4.4.0.0.sif', help='No description (Default: /storage/images/gatk-4.4.0.0.sif)')
@@ -47,6 +50,9 @@ def main():
     TargetInterval = args.TargetInterval
     VcfGnomad = args.VcfGnomad
     VcfPon = args.VcfPon
+    raw_vcf = args.raw_vcf
+    f1r2_tar_gz = args.f1r2_tar_gz
+    mutect_stats = args.mutect_stats
     InputSuffix = args.InputSuffix
     singularity_bin = args.singularity_bin
     gatk4_sif = args.gatk4_sif
@@ -59,8 +65,11 @@ def main():
     extra_args = args.extra_args
 
     # --- [Output Paths] ---
+    if not raw_vcf:
     raw_vcf = f"{vcfDir}/{SeqID}.mutect2.vcf"
+    if not f1r2_tar_gz:
     f1r2_tar_gz = f"{qcResDir}/{SeqID}.f1r2.tar.gz"
+    if not mutect_stats:
     mutect_stats = f"{vcfDir}/{SeqID}.mutect2.vcf.stats"
 
     # --- [Command Execution] ---
@@ -68,9 +77,24 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(vcfDir) if '.' in os.path.basename(vcfDir) else vcfDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if mutect_stats:
+        _tgt = os.path.dirname(mutect_stats) if os.path.splitext(mutect_stats)[1] else mutect_stats
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if f1r2_tar_gz:
+        _tgt = os.path.dirname(f1r2_tar_gz) if os.path.splitext(f1r2_tar_gz)[1] else f1r2_tar_gz
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vcfDir:
+        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if raw_vcf:
+        _tgt = os.path.dirname(raw_vcf) if os.path.splitext(raw_vcf)[1] else raw_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

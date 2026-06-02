@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = mosdepth
-// THREADS = 1
+// THREADS = 8
 
 process MOSDEPTH {
     tag "$sample_id"

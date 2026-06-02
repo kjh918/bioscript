@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = dedup_using_singularity
 
 """
@@ -20,6 +20,9 @@ def main():
     parser.add_argument('--SeqID', required=True, default='', help='Sequence identifier used for file naming (Default: )')
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the input BAM file (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='Directory for duplicate metrics output (Default: )')
+    parser.add_argument('--dedup_bam', required=False, default='[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam', help='BAM file with marked/removed duplicates (Default: [BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam)')
+    parser.add_argument('--dedup_bai', required=False, default='[BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai', help='Index file for the deduplicated BAM (Default: [BamDir]/[SeqID].[InputSuffix].[OutputSuffix].bam.bai)')
+    parser.add_argument('--metrics_txt', required=False, default='[qcResDir]/[SeqID].[InputSuffix].[OutputSuffix].metrics.txt', help='Text file containing duplication metrics (Default: [qcResDir]/[SeqID].[InputSuffix].[OutputSuffix].metrics.txt)')
     parser.add_argument('--InputSuffix', required=False, default='sorted', help='Suffix of the input BAM (e.g., sorted, primary) (Default: sorted)')
     parser.add_argument('--OutputSuffix', required=False, default='dedup', help='Suffix for the output file (e.g., dedup, md) (Default: dedup)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
@@ -39,6 +42,9 @@ def main():
     SeqID = args.SeqID
     BamDir = args.BamDir
     qcResDir = args.qcResDir
+    dedup_bam = args.dedup_bam
+    dedup_bai = args.dedup_bai
+    metrics_txt = args.metrics_txt
     InputSuffix = args.InputSuffix
     OutputSuffix = args.OutputSuffix
     singularity_bin = args.singularity_bin
@@ -53,8 +59,11 @@ def main():
     other_md_args = args.other_md_args
 
     # --- [Output Paths] ---
+    if not dedup_bam:
     dedup_bam = f"{BamDir}/{SeqID}.{InputSuffix}.{OutputSuffix}.bam"
+    if not dedup_bai:
     dedup_bai = f"{BamDir}/{SeqID}.{InputSuffix}.{OutputSuffix}.bam.bai"
+    if not metrics_txt:
     metrics_txt = f"{qcResDir}/{SeqID}.{InputSuffix}.{OutputSuffix}.metrics.txt"
 
     # --- [Command Execution] ---
@@ -62,8 +71,21 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if dedup_bai:
+        _tgt = os.path.dirname(dedup_bai) if os.path.splitext(dedup_bai)[1] else dedup_bai
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if dedup_bam:
+        _tgt = os.path.dirname(dedup_bam) if os.path.splitext(dedup_bam)[1] else dedup_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if metrics_txt:
+        _tgt = os.path.dirname(metrics_txt) if os.path.splitext(metrics_txt)[1] else metrics_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

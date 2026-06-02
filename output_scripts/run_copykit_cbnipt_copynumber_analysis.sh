@@ -16,6 +16,7 @@ usage() {
     echo "  --ResultBaseDir   Base directory where all sample results are stored"
     echo ""
     echo "Optional Parameters:"
+    echo "  --AnalysisRunDir  Target directory for this specific sample analysis (Default: [ResultBaseDir]/[SeqID])"
     echo "  --InputSuffix     Suffix of input BAM (e.g., analysisReady, recal, dedup) (Default: analysisReady)"
     echo "  --mkdir_bin       Path to mkdir executable (Default: mkdir)"
     echo "  --rscript_bin     Path to Rscript executable (Default: Rscript)"
@@ -33,6 +34,7 @@ usage() {
 SeqID=""
 NGS_DataBaseDir=""
 ResultBaseDir=""
+AnalysisRunDir="[ResultBaseDir]/[SeqID]"
 InputSuffix="analysisReady"
 mkdir_bin="mkdir"
 rscript_bin="Rscript"
@@ -48,6 +50,7 @@ while [[ $# -gt 0 ]]; do
         --SeqID) SeqID="$2"; shift 2 ;;
         --NGS_DataBaseDir) NGS_DataBaseDir="$2"; shift 2 ;;
         --ResultBaseDir) ResultBaseDir="$2"; shift 2 ;;
+        --AnalysisRunDir) AnalysisRunDir="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --mkdir_bin) mkdir_bin="$2"; shift 2 ;;
         --rscript_bin) rscript_bin="$2"; shift 2 ;;
@@ -77,8 +80,14 @@ cmd="${mkdir_bin} -p ${AnalysisRunDir} && ln -Tsf ${NGS_DataBaseDir}/${SeqID}.${
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${NGS_DataBaseDir}")" 2>/dev/null || mkdir -p "${NGS_DataBaseDir}"
-mkdir -p "$(dirname "${ResultBaseDir}")" 2>/dev/null || mkdir -p "${ResultBaseDir}"
-mkdir -p "$(dirname "${AnalysisRunDir}")" 2>/dev/null || mkdir -p "${AnalysisRunDir}"
+if [[ -n "${NGS_DataBaseDir:-}" ]]; then
+  if [[ "${NGS_DataBaseDir}" == *.* ]]; then mkdir -p "$(dirname "${NGS_DataBaseDir}")"; else mkdir -p "${NGS_DataBaseDir}"; fi
+fi
+if [[ -n "${ResultBaseDir:-}" ]]; then
+  if [[ "${ResultBaseDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultBaseDir}")"; else mkdir -p "${ResultBaseDir}"; fi
+fi
+if [[ -n "${AnalysisRunDir:-}" ]]; then
+  if [[ "${AnalysisRunDir}" == *.* ]]; then mkdir -p "$(dirname "${AnalysisRunDir}")"; else mkdir -p "${AnalysisRunDir}"; fi
+fi
 
 eval "$cmd"

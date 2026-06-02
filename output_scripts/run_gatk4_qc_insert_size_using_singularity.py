@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 # PROFILE = qc_insert_size_using_singularity
 
 """
@@ -21,6 +21,8 @@ def main():
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the BAM file to be analyzed (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='Output directory for QC metrics and PDF histogram (Default: )')
     parser.add_argument('--ReferenceFasta', required=True, default='', help='Path to the reference genome FASTA file (Default: )')
+    parser.add_argument('--insert_size_metrics_txt', required=False, default='[qcResDir]/[SeqID].insert_size.metrics.txt', help='Text file containing detailed insert size statistics (Default: [qcResDir]/[SeqID].insert_size.metrics.txt)')
+    parser.add_argument('--insert_size_hist_pdf', required=False, default='[qcResDir]/[SeqID].insert_size.histogram.pdf', help='PDF file containing the insert size distribution histogram (Default: [qcResDir]/[SeqID].insert_size.histogram.pdf)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of the input BAM file (e.g., analysisReady, recal, primary) (Default: analysisReady)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--java_bin', required=False, default='java', help='Path to java executable inside or outside container (Default: java)')
@@ -37,6 +39,8 @@ def main():
     BamDir = args.BamDir
     qcResDir = args.qcResDir
     ReferenceFasta = args.ReferenceFasta
+    insert_size_metrics_txt = args.insert_size_metrics_txt
+    insert_size_hist_pdf = args.insert_size_hist_pdf
     InputSuffix = args.InputSuffix
     singularity_bin = args.singularity_bin
     java_bin = args.java_bin
@@ -47,7 +51,9 @@ def main():
     xmx_mb = args.xmx_mb
 
     # --- [Output Paths] ---
+    if not insert_size_metrics_txt:
     insert_size_metrics_txt = f"{qcResDir}/{SeqID}.insert_size.metrics.txt"
+    if not insert_size_hist_pdf:
     insert_size_hist_pdf = f"{qcResDir}/{SeqID}.insert_size.histogram.pdf"
 
     # --- [Command Execution] ---
@@ -55,8 +61,18 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if insert_size_hist_pdf:
+        _tgt = os.path.dirname(insert_size_hist_pdf) if os.path.splitext(insert_size_hist_pdf)[1] else insert_size_hist_pdf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if insert_size_metrics_txt:
+        _tgt = os.path.dirname(insert_size_metrics_txt) if os.path.splitext(insert_size_metrics_txt)[1] else insert_size_metrics_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

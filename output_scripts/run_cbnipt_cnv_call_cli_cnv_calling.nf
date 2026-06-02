@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = cbnipt_cnv_call_cli
-// THREADS = 1
+// THREADS = 4
 
 process CBNIPT_CNV_CALL_CLI {
     tag "$sample_id"

@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = salmon
-// THREADS = 1
+// THREADS = 12
 
 process SALMON {
     tag "$sample_id"

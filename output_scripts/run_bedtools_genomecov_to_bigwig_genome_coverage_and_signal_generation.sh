@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bedtools_genomecov_to_bigwig
 # VERSION = v2.27.1
-# THREADS = 1
+# THREADS = 4
 
 # Tool Info: bedtools_genomecov_to_bigwig (v2.27.1)
 # Profile: genome_coverage_and_signal_generation
@@ -87,6 +87,8 @@ cmd="${singularity_bin} exec -B ${bind} ${bedtools_sif} bedtools genomecov ${Inp
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${OutputDir}")" 2>/dev/null || mkdir -p "${OutputDir}"
+if [[ -n "${OutputDir:-}" ]]; then
+  if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
+fi
 
 eval "$cmd"

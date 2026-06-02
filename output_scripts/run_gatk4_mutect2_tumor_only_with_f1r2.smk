@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_mutect2
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 rule gatk4_mutect2:
     input:
@@ -28,7 +28,7 @@ rule gatk4_mutect2:
         f1r2_max_depth = "2500"
         min_base_q = "20"
         extra_args = ""
-    threads: 1
+    threads: 14
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.gatk4_sif} gatk Mutect2 --java-options '-XX:+UseParallelGC -XX:ParallelGCThreads={threads} -Xmx{params.xmx_mb}m' -pairHMM {params.pairHMM} --reference {input.ReferenceFasta} --intervals {input.TargetInterval} --input {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam --germline-resource {input.VcfGnomad} --panel-of-normals {input.VcfPon} --f1r2-tar-gz {output.f1r2_tar_gz} --f1r2-max-depth {params.f1r2_max_depth} --min-base-quality-score {params.min_base_q} --base-quality-score-threshold {params.min_base_q} --output {output.raw_vcf} {params.extra_args}

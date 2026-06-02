@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = bwa_mem
-// THREADS = 1
+// THREADS = 8
 
 process BWA_MEM {
     tag "$sample_id"

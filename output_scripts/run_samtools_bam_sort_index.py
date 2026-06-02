@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = samtools
 # VERSION = 1.10
-# THREADS = 1
+# THREADS = 8
 # PROFILE = bam_sort_index
 
 """
@@ -19,6 +19,8 @@ def main():
     # --- [Argument Parsing] ---
     parser.add_argument('--SeqID', required=True, default='', help='Sequence identifier used for file naming (Default: )')
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the primary (unsorted) BAM file (Default: )')
+    parser.add_argument('--sorted_bam', required=False, default='[BamDir]/[SeqID].[InputSuffix].bam', help='Coordinate sorted BAM file (Default: [BamDir]/[SeqID].[InputSuffix].bam)')
+    parser.add_argument('--sorted_bai', required=False, default='[BamDir]/[SeqID].[OutputSuffix].bam.bai', help='BAM index file (BAI) (Default: [BamDir]/[SeqID].[OutputSuffix].bam.bai)')
     parser.add_argument('--InputSuffix', required=False, default='primary', help='Suffix of input BAM (e.g., primary, initial) (Default: primary)')
     parser.add_argument('--OutputSuffix', required=False, default='sorted', help='Suffix for output BAM (e.g., sorted, coord_sorted) (Default: sorted)')
     parser.add_argument('--samtools_bin', required=False, default='samtools', help='Path to samtools executable or binary name (Default: samtools)')
@@ -29,13 +31,17 @@ def main():
     # --- [Variable Declarations: Key = Value] ---
     SeqID = args.SeqID
     BamDir = args.BamDir
+    sorted_bam = args.sorted_bam
+    sorted_bai = args.sorted_bai
     InputSuffix = args.InputSuffix
     OutputSuffix = args.OutputSuffix
     samtools_bin = args.samtools_bin
     Threads = args.Threads
 
     # --- [Output Paths] ---
+    if not sorted_bam:
     sorted_bam = f"{BamDir}/{SeqID}.{InputSuffix}.bam"
+    if not sorted_bai:
     sorted_bai = f"{BamDir}/{SeqID}.{OutputSuffix}.bam.bai"
 
     # --- [Command Execution] ---
@@ -43,7 +49,15 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if sorted_bam:
+        _tgt = os.path.dirname(sorted_bam) if os.path.splitext(sorted_bam)[1] else sorted_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if sorted_bai:
+        _tgt = os.path.dirname(sorted_bai) if os.path.splitext(sorted_bai)[1] else sorted_bai
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

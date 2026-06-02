@@ -18,6 +18,10 @@ def main() -> None:
     p_make.add_argument("-o", "--outdir", help="Override the output directory (default: ./output_scripts)")
 
     # 3. 'run' 커맨드 (추후 배포판 실행기를 위해 미리 예약 가능)
+    r_pipe = sub.add_parser("run", help="Generate standalone scripts (Py, Sh, Nf) from YAML config")
+    r_pipe.add_argument("-c", "--config", required=True, help="Path to the tool configuration YAML file")
+    r_pipe.add_argument("-o", "--outdir", help="Override the output directory (default: ./output_scripts)")
+
     p_pipe = sub.add_parser("pipe", help="Generate standalone scripts (Py, Sh, Nf) from YAML config")
     p_pipe.add_argument("-c", "--config", required=True, help="Path to the tool configuration YAML file")
     p_pipe.add_argument("-o", "--outdir", help="Override the output directory (default: ./output_scripts)")

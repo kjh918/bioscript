@@ -20,6 +20,7 @@ def main():
     parser.add_argument('--SeqID', required=True, default='', help='No description (Default: )')
     parser.add_argument('--vcfDir', required=True, default='', help='필터링할 VCF가 위치한 경로 (Default: )')
     parser.add_argument('--BamDir', required=True, default='', help='분석용 BAM(analysisReady) 경로 (Default: )')
+    parser.add_argument('--bias_filtered_vcf', required=False, default='[vcfDir]/[SeqID].mutect2.bias.filtered.vcf', help='SOBDetector에 의해 아티팩트가 제거된 최종 VCF (Default: [vcfDir]/[SeqID].mutect2.bias.filtered.vcf)')
     parser.add_argument('--InputVcfSuffix', required=False, default='filtered', help='No description (Default: filtered)')
     parser.add_argument('--InputBamSuffix', required=False, default='analysisReady', help='No description (Default: analysisReady)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='No description (Default: singularity)')
@@ -37,6 +38,7 @@ def main():
     SeqID = args.SeqID
     vcfDir = args.vcfDir
     BamDir = args.BamDir
+    bias_filtered_vcf = args.bias_filtered_vcf
     InputVcfSuffix = args.InputVcfSuffix
     InputBamSuffix = args.InputBamSuffix
     singularity_bin = args.singularity_bin
@@ -49,6 +51,7 @@ def main():
     extra_args = args.extra_args
 
     # --- [Output Paths] ---
+    if not bias_filtered_vcf:
     bias_filtered_vcf = f"{vcfDir}/{SeqID}.mutect2.bias.filtered.vcf"
 
     # --- [Command Execution] ---
@@ -56,8 +59,15 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(vcfDir) if '.' in os.path.basename(vcfDir) else vcfDir, exist_ok=True)
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
+    if bias_filtered_vcf:
+        _tgt = os.path.dirname(bias_filtered_vcf) if os.path.splitext(bias_filtered_vcf)[1] else bias_filtered_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vcfDir:
+        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

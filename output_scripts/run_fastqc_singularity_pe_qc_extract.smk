@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = fastqc
 # VERSION = 0.12.1
-# THREADS = 1
+# THREADS = 8
 
 rule fastqc:
     input:
@@ -22,7 +22,7 @@ rule fastqc:
         bind = "/storage,/data"
         Threads = "8"
         fastqc_args = "--extract"
-    threads: 1
+    threads: 8
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.sif} {params.fastqc_bin} {params.fastqc_args} --threads {threads} --outdir {input.qcResDir} {input.RawFastqDir}/{input.SeqID}_R1.fastq.gz {input.RawFastqDir}/{input.SeqID}_R2.fastq.gz

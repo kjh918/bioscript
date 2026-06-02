@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = vep_ensembl
 # VERSION = 110
-# THREADS = 1
+# THREADS = 8
 # PROFILE = comprehensive_research_annotation
 
 """
@@ -28,6 +28,8 @@ def main():
     parser.add_argument('--alphaMissense', required=True, default='', help='No description (Default: )')
     parser.add_argument('--caddSnp', required=True, default='', help='No description (Default: )')
     parser.add_argument('--caddIndel', required=True, default='', help='No description (Default: )')
+    parser.add_argument('--vep_vcf', required=False, default='[vcfDir]/[SeqID].[VcfTag].vep.ensembl.vcf', help='No description (Default: [vcfDir]/[SeqID].[VcfTag].vep.ensembl.vcf)')
+    parser.add_argument('--vep_stats', required=False, default='[vcfDir]/[SeqID].[VcfTag].vep.ensembl.vcf_summary.txt', help='No description (Default: [vcfDir]/[SeqID].[VcfTag].vep.ensembl.vcf_summary.txt)')
     parser.add_argument('--assembly', required=False, default='GRCh38', help='GRCh38 or GRCh37 (Default: GRCh38)')
     parser.add_argument('--species', required=False, default='homo_sapiens', help='No description (Default: homo_sapiens)')
     parser.add_argument('--Threads', required=False, default='8', help='No description (Default: 8)')
@@ -52,6 +54,8 @@ def main():
     alphaMissense = args.alphaMissense
     caddSnp = args.caddSnp
     caddIndel = args.caddIndel
+    vep_vcf = args.vep_vcf
+    vep_stats = args.vep_stats
     assembly = args.assembly
     species = args.species
     Threads = args.Threads
@@ -63,7 +67,9 @@ def main():
     bind = args.bind
 
     # --- [Output Paths] ---
+    if not vep_vcf:
     vep_vcf = f"{vcfDir}/{SeqID}.{VcfTag}.vep.ensembl.vcf"
+    if not vep_stats:
     vep_stats = f"{vcfDir}/{SeqID}.{VcfTag}.vep.ensembl.vcf_summary.txt"
 
     # --- [Command Execution] ---
@@ -71,8 +77,18 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(vcfDir) if '.' in os.path.basename(vcfDir) else vcfDir, exist_ok=True)
-    os.makedirs(os.path.dirname(vepCacheDir) if '.' in os.path.basename(vepCacheDir) else vepCacheDir, exist_ok=True)
+    if vcfDir:
+        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vep_vcf:
+        _tgt = os.path.dirname(vep_vcf) if os.path.splitext(vep_vcf)[1] else vep_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vep_stats:
+        _tgt = os.path.dirname(vep_stats) if os.path.splitext(vep_stats)[1] else vep_stats
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vepCacheDir:
+        _tgt = os.path.dirname(vepCacheDir) if os.path.splitext(vepCacheDir)[1] else vepCacheDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

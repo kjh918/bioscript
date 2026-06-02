@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = bwa_mem
 # VERSION = 0.7.17
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: bwa_mem (0.7.17)
 # Profile: align_pe_using_singularity
@@ -21,6 +21,7 @@ usage() {
     echo "  --ReadGroupCenter Sequencing center name (CN tag)"
     echo ""
     echo "Optional Parameters:"
+    echo "  --primary_bam     Output aligned BAM file (Default: [BamDir]/[SeqID].[OutputSuffix].bam)"
     echo "  --InputSuffix     Suffix of input FASTQs (e.g., trimmed, raw, filtered) (Default: trimmed)"
     echo "  --OutputSuffix    Suffix for output BAM (e.g., primary, initial) (Default: primary)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
@@ -47,6 +48,7 @@ ReadGroupID=""
 ReadGroupPlatform=""
 ReadGroupLibrary=""
 ReadGroupCenter=""
+primary_bam="[BamDir]/[SeqID].[OutputSuffix].bam"
 InputSuffix="trimmed"
 OutputSuffix="primary"
 singularity_bin="singularity"
@@ -71,6 +73,7 @@ while [[ $# -gt 0 ]]; do
         --ReadGroupPlatform) ReadGroupPlatform="$2"; shift 2 ;;
         --ReadGroupLibrary) ReadGroupLibrary="$2"; shift 2 ;;
         --ReadGroupCenter) ReadGroupCenter="$2"; shift 2 ;;
+        --primary_bam) primary_bam="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --OutputSuffix) OutputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
@@ -109,7 +112,14 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${bwa_bin} mem  ${mark_short_spli
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${TrimFastqDir}")" 2>/dev/null || mkdir -p "${TrimFastqDir}"
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
+if [[ -n "${primary_bam:-}" ]]; then
+  if [[ "${primary_bam}" == *.* ]]; then mkdir -p "$(dirname "${primary_bam}")"; else mkdir -p "${primary_bam}"; fi
+fi
+if [[ -n "${TrimFastqDir:-}" ]]; then
+  if [[ "${TrimFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${TrimFastqDir}")"; else mkdir -p "${TrimFastqDir}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"

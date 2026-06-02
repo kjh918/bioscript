@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = fastq_screen
 # VERSION = 0.15.3
-# THREADS = 1
+# THREADS = 15
 
 # Tool Info: fastq_screen (0.15.3)
 # Profile: singularity_fastq_screen
@@ -16,6 +16,9 @@ usage() {
     echo "  --qcResDir        결과 리포트가 저장될 디렉토리 (QC_DIR)"
     echo ""
     echo "Optional Parameters:"
+    echo "  --screen_txt      텍스트 형태의 매핑 요약 결과 (Default: [qcResDir]/[SeqID]_R1_screen.txt)"
+    echo "  --screen_png      시각화된 매핑 비율 차트 (Default: [qcResDir]/[SeqID]_R1_screen.png)"
+    echo "  --screen_html     인터랙티브 HTML 리포트 (Default: [qcResDir]/[SeqID]_R1_screen.html)"
     echo "  --singularity_bin Singularity 실행 경로 (Default: singularity)"
     echo "  --fastq_screen_bin 컨테이너 내부 실행 바이너리 명 (Default: fastq_screen)"
     echo "  --sif             SIF 이미지 경로 (Default: /storage/images/fastqScreen-0.15.3.sif)"
@@ -33,6 +36,9 @@ usage() {
 SeqID=""
 RawFastqDir=""
 qcResDir=""
+screen_txt="[qcResDir]/[SeqID]_R1_screen.txt"
+screen_png="[qcResDir]/[SeqID]_R1_screen.png"
+screen_html="[qcResDir]/[SeqID]_R1_screen.html"
 singularity_bin="singularity"
 fastq_screen_bin="fastq_screen"
 sif="/storage/images/fastqScreen-0.15.3.sif"
@@ -48,6 +54,9 @@ while [[ $# -gt 0 ]]; do
         --SeqID) SeqID="$2"; shift 2 ;;
         --RawFastqDir) RawFastqDir="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
+        --screen_txt) screen_txt="$2"; shift 2 ;;
+        --screen_png) screen_png="$2"; shift 2 ;;
+        --screen_html) screen_html="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --fastq_screen_bin) fastq_screen_bin="$2"; shift 2 ;;
         --sif) sif="$2"; shift 2 ;;
@@ -79,7 +88,20 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${fastq_screen_bin} --aligner ${a
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${RawFastqDir}")" 2>/dev/null || mkdir -p "${RawFastqDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${screen_html:-}" ]]; then
+  if [[ "${screen_html}" == *.* ]]; then mkdir -p "$(dirname "${screen_html}")"; else mkdir -p "${screen_html}"; fi
+fi
+if [[ -n "${screen_txt:-}" ]]; then
+  if [[ "${screen_txt}" == *.* ]]; then mkdir -p "$(dirname "${screen_txt}")"; else mkdir -p "${screen_txt}"; fi
+fi
+if [[ -n "${screen_png:-}" ]]; then
+  if [[ "${screen_png}" == *.* ]]; then mkdir -p "$(dirname "${screen_png}")"; else mkdir -p "${screen_png}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${RawFastqDir:-}" ]]; then
+  if [[ "${RawFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${RawFastqDir}")"; else mkdir -p "${RawFastqDir}"; fi
+fi
 
 eval "$cmd"

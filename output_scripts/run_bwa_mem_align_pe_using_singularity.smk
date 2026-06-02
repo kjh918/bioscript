@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = bwa_mem
 # VERSION = 0.7.17
-# THREADS = 1
+# THREADS = 8
 
 rule bwa_mem:
     input:
@@ -28,7 +28,7 @@ rule bwa_mem:
         soft_clipping = "-Y"
         clipping_penalty = "-L 50,50"
         other_args = ""
-    threads: 1
+    threads: 8
     shell:
         """
         {params.singularity_bin} exec -B {params.bind} {params.sif} {params.bwa_bin} mem  {params.mark_short_split} {params.soft_clipping} {params.clipping_penalty} {params.other_args}  -t {threads} -R '@RG\tID:{input.ReadGroupID}\tPL:{input.ReadGroupPlatform}\tLB:{input.ReadGroupLibrary}\tSM:{input.SeqID}\tCN:{input.ReadGroupCenter}' {input.ReferenceFasta} {input.TrimFastqDir}/{input.SeqID}.{params.InputSuffix}_R1.fastq.gz {input.TrimFastqDir}/{input.SeqID}.{params.InputSuffix}_R2.fastq.gz | {params.samtools_bin} view -@ {threads} -bS -o {output.primary_bam} -

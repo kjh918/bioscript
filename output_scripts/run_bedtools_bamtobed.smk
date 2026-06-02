@@ -1,7 +1,7 @@
 # [METADATA]
 # TOOL_NAME = bedtools
 # VERSION = 2.27.1
-# THREADS = 1
+# THREADS = 8
 
 rule bedtools:
     input:
@@ -18,7 +18,7 @@ rule bedtools:
         ln_bin = "ln"
         cp_bin = "cp"
         Threads = "8"
-    threads: 1
+    threads: 8
     shell:
         """
         {params.bedtools_bin} bamtobed -i {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bam > {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bed && {params.bgzip_bin} -f -@ {threads} {input.BamDir}/{input.SeqID}.{params.InputSuffix}.bed && {params.ln_bin} -Tsf {output.bed_gz} {input.BamDir}/{input.SeqID}.bed.gz && {params.cp_bin} {output.bed_gz} {output.final_bed}

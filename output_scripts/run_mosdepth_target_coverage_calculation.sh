@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = mosdepth
 # VERSION = 0.3.6
-# THREADS = 1
+# THREADS = 4
 
 # Tool Info: mosdepth (0.3.6)
 # Profile: target_coverage_calculation
@@ -17,6 +17,10 @@ usage() {
     echo "  --TargetBed       Target intervals (BED) for coverage calculation"
     echo ""
     echo "Optional Parameters:"
+    echo "  --global_dist     No description (Default: [qcResDir]/[SeqID].mosdepth.global.dist.txt)"
+    echo "  --region_dist     No description (Default: [qcResDir]/[SeqID].mosdepth.region.dist.txt)"
+    echo "  --summary_txt     No description (Default: [qcResDir]/[SeqID].mosdepth.summary.txt)"
+    echo "  --regions_bed     No description (Default: [qcResDir]/[SeqID].regions.bed.gz)"
     echo "  --InputSuffix     No description (Default: analysisReady)"
     echo "  --singularity_bin No description (Default: singularity)"
     echo "  --mosdepth_sif    No description (Default: /storage/images/mosdepth-0.3.6.sif)"
@@ -35,6 +39,10 @@ SeqID=""
 BamDir=""
 qcResDir=""
 TargetBed=""
+global_dist="[qcResDir]/[SeqID].mosdepth.global.dist.txt"
+region_dist="[qcResDir]/[SeqID].mosdepth.region.dist.txt"
+summary_txt="[qcResDir]/[SeqID].mosdepth.summary.txt"
+regions_bed="[qcResDir]/[SeqID].regions.bed.gz"
 InputSuffix="analysisReady"
 singularity_bin="singularity"
 mosdepth_sif="/storage/images/mosdepth-0.3.6.sif"
@@ -51,6 +59,10 @@ while [[ $# -gt 0 ]]; do
         --BamDir) BamDir="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
         --TargetBed) TargetBed="$2"; shift 2 ;;
+        --global_dist) global_dist="$2"; shift 2 ;;
+        --region_dist) region_dist="$2"; shift 2 ;;
+        --summary_txt) summary_txt="$2"; shift 2 ;;
+        --regions_bed) regions_bed="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --mosdepth_sif) mosdepth_sif="$2"; shift 2 ;;
@@ -84,7 +96,23 @@ cmd="${singularity_bin} exec -B ${bind} ${mosdepth_sif} ${mosdepth_bin} --thread
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${region_dist:-}" ]]; then
+  if [[ "${region_dist}" == *.* ]]; then mkdir -p "$(dirname "${region_dist}")"; else mkdir -p "${region_dist}"; fi
+fi
+if [[ -n "${summary_txt:-}" ]]; then
+  if [[ "${summary_txt}" == *.* ]]; then mkdir -p "$(dirname "${summary_txt}")"; else mkdir -p "${summary_txt}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${regions_bed:-}" ]]; then
+  if [[ "${regions_bed}" == *.* ]]; then mkdir -p "$(dirname "${regions_bed}")"; else mkdir -p "${regions_bed}"; fi
+fi
+if [[ -n "${global_dist:-}" ]]; then
+  if [[ "${global_dist}" == *.* ]]; then mkdir -p "$(dirname "${global_dist}")"; else mkdir -p "${global_dist}"; fi
+fi
 
 eval "$cmd"

@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4_filter_mutect_calls
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4_filter_mutect_calls (4.4.0.0)
 # Profile: somatic_variant_filtering
@@ -19,6 +19,7 @@ usage() {
     echo "  --ContaminationTable [SeqID].contamination.table"
     echo ""
     echo "Optional Parameters:"
+    echo "  --filtered_vcf    최종 필터링된 VCF 파일 (Default: [vcfDir]/[SeqID].mutect2.[Suffix]filtered.vcf)"
     echo "  --Suffix          File name suffix (e.g., 'keep.germline.') (Default: )"
     echo "  --singularity_bin No description (Default: singularity)"
     echo "  --gatk4_sif       No description (Default: /storage/images/gatk-4.4.0.0.sif)"
@@ -38,6 +39,7 @@ qcResDir=""
 ReferenceFasta=""
 TargetInterval=""
 ContaminationTable=""
+filtered_vcf="[vcfDir]/[SeqID].mutect2.[Suffix]filtered.vcf"
 Suffix=""
 singularity_bin="singularity"
 gatk4_sif="/storage/images/gatk-4.4.0.0.sif"
@@ -55,6 +57,7 @@ while [[ $# -gt 0 ]]; do
         --ReferenceFasta) ReferenceFasta="$2"; shift 2 ;;
         --TargetInterval) TargetInterval="$2"; shift 2 ;;
         --ContaminationTable) ContaminationTable="$2"; shift 2 ;;
+        --filtered_vcf) filtered_vcf="$2"; shift 2 ;;
         --Suffix) Suffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --gatk4_sif) gatk4_sif="$2"; shift 2 ;;
@@ -86,7 +89,14 @@ cmd="${singularity_bin} exec -B ${bind} ${gatk4_sif} gatk FilterMutectCalls --ja
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${vcfDir}")" 2>/dev/null || mkdir -p "${vcfDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
+fi
+if [[ -n "${filtered_vcf:-}" ]]; then
+  if [[ "${filtered_vcf}" == *.* ]]; then mkdir -p "$(dirname "${filtered_vcf}")"; else mkdir -p "${filtered_vcf}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
 
 eval "$cmd"

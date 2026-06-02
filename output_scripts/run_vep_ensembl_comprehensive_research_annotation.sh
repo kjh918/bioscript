@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = vep_ensembl
 # VERSION = 110
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: vep_ensembl (110)
 # Profile: comprehensive_research_annotation
@@ -24,6 +24,8 @@ usage() {
     echo ""
     echo "Optional Parameters:"
     echo "  --cosmicData      No description (Default: )"
+    echo "  --vep_vcf         No description (Default: [vcfDir]/[SeqID].[VcfTag].vep.ensembl.vcf)"
+    echo "  --vep_stats       No description (Default: [vcfDir]/[SeqID].[VcfTag].vep.ensembl.vcf_summary.txt)"
     echo "  --assembly        GRCh38 or GRCh37 (Default: GRCh38)"
     echo "  --species         No description (Default: homo_sapiens)"
     echo "  --Threads         No description (Default: 8)"
@@ -50,6 +52,8 @@ cosmicData=""
 alphaMissense=""
 caddSnp=""
 caddIndel=""
+vep_vcf="[vcfDir]/[SeqID].[VcfTag].vep.ensembl.vcf"
+vep_stats="[vcfDir]/[SeqID].[VcfTag].vep.ensembl.vcf_summary.txt"
 assembly="GRCh38"
 species="homo_sapiens"
 Threads="8"
@@ -74,6 +78,8 @@ while [[ $# -gt 0 ]]; do
         --alphaMissense) alphaMissense="$2"; shift 2 ;;
         --caddSnp) caddSnp="$2"; shift 2 ;;
         --caddIndel) caddIndel="$2"; shift 2 ;;
+        --vep_vcf) vep_vcf="$2"; shift 2 ;;
+        --vep_stats) vep_stats="$2"; shift 2 ;;
         --assembly) assembly="$2"; shift 2 ;;
         --species) species="$2"; shift 2 ;;
         --Threads) Threads="$2"; shift 2 ;;
@@ -112,7 +118,17 @@ cmd="${singularity_bin} exec -B ${bind} ${vep_sif} vep --force_overwrite --offli
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${vcfDir}")" 2>/dev/null || mkdir -p "${vcfDir}"
-mkdir -p "$(dirname "${vepCacheDir}")" 2>/dev/null || mkdir -p "${vepCacheDir}"
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
+fi
+if [[ -n "${vep_vcf:-}" ]]; then
+  if [[ "${vep_vcf}" == *.* ]]; then mkdir -p "$(dirname "${vep_vcf}")"; else mkdir -p "${vep_vcf}"; fi
+fi
+if [[ -n "${vep_stats:-}" ]]; then
+  if [[ "${vep_stats}" == *.* ]]; then mkdir -p "$(dirname "${vep_stats}")"; else mkdir -p "${vep_stats}"; fi
+fi
+if [[ -n "${vepCacheDir:-}" ]]; then
+  if [[ "${vepCacheDir}" == *.* ]]; then mkdir -p "$(dirname "${vepCacheDir}")"; else mkdir -p "${vepCacheDir}"; fi
+fi
 
 eval "$cmd"

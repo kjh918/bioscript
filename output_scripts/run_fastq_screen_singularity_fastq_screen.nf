@@ -1,6 +1,6 @@
 // [METADATA]
 // TOOL_NAME = fastq_screen
-// THREADS = 1
+// THREADS = 15
 
 process FASTQ_SCREEN {
     tag "$sample_id"

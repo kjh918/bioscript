@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 4
 # PROFILE = HaplotypeCaller_based_on_chrom
 
 """
@@ -23,6 +23,8 @@ def main():
     parser.add_argument('--ResultDir', required=True, default='', help='Output directory for VCF and GVCF files (Default: )')
     parser.add_argument('--ReferenceFasta', required=False, default='/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa', help='Reference genome FASTA (Default: /storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa)')
     parser.add_argument('--DbsnpVcf', required=False, default='/storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz', help='Known variation database (dbSNP) (Default: /storage/references_and_index/hg38/vcf/Homo_sapiens_assembly38.dbsnp138.vcf.gz)')
+    parser.add_argument('--OutGvcf', required=False, default='[ResultDir]/[SeqID].[Chromosome].gvcf.gz', help='Intermediate GVCF file (Default: [ResultDir]/[SeqID].[Chromosome].gvcf.gz)')
+    parser.add_argument('--OutVcf', required=False, default='[ResultDir]/[SeqID].[Chromosome].vcf.gz', help='Final Genotyped VCF file (Default: [ResultDir]/[SeqID].[Chromosome].vcf.gz)')
     parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of input BAM (e.g., analysisReady, recal, dedup) (Default: analysisReady)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--gatk_bin', required=False, default='gatk', help='GATK binary path inside container (Default: gatk)')
@@ -43,6 +45,8 @@ def main():
     ResultDir = args.ResultDir
     ReferenceFasta = args.ReferenceFasta
     DbsnpVcf = args.DbsnpVcf
+    OutGvcf = args.OutGvcf
+    OutVcf = args.OutVcf
     InputSuffix = args.InputSuffix
     singularity_bin = args.singularity_bin
     gatk_bin = args.gatk_bin
@@ -55,7 +59,9 @@ def main():
     IncludeNonVariant = args.IncludeNonVariant
 
     # --- [Output Paths] ---
+    if not OutGvcf:
     OutGvcf = f"{ResultDir}/{SeqID}.{Chromosome}.gvcf.gz"
+    if not OutVcf:
     OutVcf = f"{ResultDir}/{SeqID}.{Chromosome}.vcf.gz"
 
     # --- [Command Execution] ---
@@ -64,9 +70,21 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(BamDir) if '.' in os.path.basename(BamDir) else BamDir, exist_ok=True)
-    os.makedirs(os.path.dirname(ResultDir) if '.' in os.path.basename(ResultDir) else ResultDir, exist_ok=True)
-    os.makedirs(os.path.dirname(TmpDir) if '.' in os.path.basename(TmpDir) else TmpDir, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if TmpDir:
+        _tgt = os.path.dirname(TmpDir) if os.path.splitext(TmpDir)[1] else TmpDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if OutVcf:
+        _tgt = os.path.dirname(OutVcf) if os.path.splitext(OutVcf)[1] else OutVcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if ResultDir:
+        _tgt = os.path.dirname(ResultDir) if os.path.splitext(ResultDir)[1] else ResultDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if OutGvcf:
+        _tgt = os.path.dirname(OutGvcf) if os.path.splitext(OutGvcf)[1] else OutGvcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

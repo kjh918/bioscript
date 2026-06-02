@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = mosdepth
 # VERSION = 0.3.6
-# THREADS = 1
+# THREADS = 8
 
 # Tool Info: mosdepth (0.3.6)
 # Profile: singularity_coverage
@@ -16,6 +16,11 @@ usage() {
     echo "  --qcResDir        Output directory for coverage results"
     echo ""
     echo "Optional Parameters:"
+    echo "  --prefix          Output prefix for all mosdepth result files (Default: [qcResDir]/[SeqID].[InputSuffix])"
+    echo "  --regions_bed_gz  Compressed BED file containing region depth (Default: [prefix].regions.bed.gz)"
+    echo "  --regions_bed_gz_csi Index file for the regions BED (Default: [prefix].regions.bed.gz.csi)"
+    echo "  --summary_txt     Summary of mean depths per chromosome/region (Default: [prefix].mosdepth.summary.txt)"
+    echo "  --global_dist_txt Global distribution of coverage (Default: [prefix].global.dist.txt)"
     echo "  --InputSuffix     Suffix of the input BAM (e.g., analysisReady, recal, sorted) (Default: analysisReady)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
     echo "  --mosdepth_bin    Path to mosdepth binary inside container (Default: /opt/mosdepth)"
@@ -34,6 +39,11 @@ usage() {
 SeqID=""
 BamDir=""
 qcResDir=""
+prefix="[qcResDir]/[SeqID].[InputSuffix]"
+regions_bed_gz="[prefix].regions.bed.gz"
+regions_bed_gz_csi="[prefix].regions.bed.gz.csi"
+summary_txt="[prefix].mosdepth.summary.txt"
+global_dist_txt="[prefix].global.dist.txt"
 InputSuffix="analysisReady"
 singularity_bin="singularity"
 mosdepth_bin="/opt/mosdepth"
@@ -50,6 +60,11 @@ while [[ $# -gt 0 ]]; do
         --SeqID) SeqID="$2"; shift 2 ;;
         --BamDir) BamDir="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
+        --prefix) prefix="$2"; shift 2 ;;
+        --regions_bed_gz) regions_bed_gz="$2"; shift 2 ;;
+        --regions_bed_gz_csi) regions_bed_gz_csi="$2"; shift 2 ;;
+        --summary_txt) summary_txt="$2"; shift 2 ;;
+        --global_dist_txt) global_dist_txt="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --mosdepth_bin) mosdepth_bin="$2"; shift 2 ;;
@@ -84,7 +99,26 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${mosdepth_bin} --threads ${Threa
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${global_dist_txt:-}" ]]; then
+  if [[ "${global_dist_txt}" == *.* ]]; then mkdir -p "$(dirname "${global_dist_txt}")"; else mkdir -p "${global_dist_txt}"; fi
+fi
+if [[ -n "${regions_bed_gz:-}" ]]; then
+  if [[ "${regions_bed_gz}" == *.* ]]; then mkdir -p "$(dirname "${regions_bed_gz}")"; else mkdir -p "${regions_bed_gz}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${summary_txt:-}" ]]; then
+  if [[ "${summary_txt}" == *.* ]]; then mkdir -p "$(dirname "${summary_txt}")"; else mkdir -p "${summary_txt}"; fi
+fi
+if [[ -n "${regions_bed_gz_csi:-}" ]]; then
+  if [[ "${regions_bed_gz_csi}" == *.* ]]; then mkdir -p "$(dirname "${regions_bed_gz_csi}")"; else mkdir -p "${regions_bed_gz_csi}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${prefix:-}" ]]; then
+  if [[ "${prefix}" == *.* ]]; then mkdir -p "$(dirname "${prefix}")"; else mkdir -p "${prefix}"; fi
+fi
 
 eval "$cmd"

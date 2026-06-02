@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = fastp
 # VERSION = 0.23.4
-# THREADS = 1
+# THREADS = 8
 # PROFILE = pe_trim_using_singularity
 
 """
@@ -21,6 +21,10 @@ def main():
     parser.add_argument('--RawFastqDir', required=True, default='', help='Directory containing the raw input FASTQ files. Suffix = [SeqID]_R1.fastq.gz and [SeqID]_R2.fastq.gz (Default: )')
     parser.add_argument('--TrimFastqDir', required=True, default='', help='Directory where trimmed FASTQ files will be stored. Trimmed Read = Suffix = [SeqID].trimmed_R1.fastq.gz and [SeqID].trimmed_R2.fastq.gz (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='Directory where fastp JSON and HTML reports will be stored (Default: )')
+    parser.add_argument('--out_read1', required=False, default='[TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz', help='Trimmed Read 1 FASTQ file (Default: [TrimFastqDir]/[SeqID].trimmed_R1.fastq.gz)')
+    parser.add_argument('--out_read2', required=False, default='[TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz', help='Trimmed Read 2 FASTQ file (Default: [TrimFastqDir]/[SeqID].trimmed_R2.fastq.gz)')
+    parser.add_argument('--json', required=False, default='[qcResDir]/[SeqID].fastp.json', help='fastp quality report in JSON format (Default: [qcResDir]/[SeqID].fastp.json)')
+    parser.add_argument('--html', required=False, default='[qcResDir]/[SeqID].fastp.html', help='fastp quality report in HTML format (Default: [qcResDir]/[SeqID].fastp.html)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--fastp_bin', required=False, default='fastp', help='fastp binary name or path inside the container (Default: fastp)')
     parser.add_argument('--sif', required=False, default='/storage/images/fastp-0.23.4.sif', help='Path to fastp Singularity image file (Default: /storage/images/fastp-0.23.4.sif)')
@@ -37,6 +41,10 @@ def main():
     RawFastqDir = args.RawFastqDir
     TrimFastqDir = args.TrimFastqDir
     qcResDir = args.qcResDir
+    out_read1 = args.out_read1
+    out_read2 = args.out_read2
+    json = args.json
+    html = args.html
     singularity_bin = args.singularity_bin
     fastp_bin = args.fastp_bin
     sif = args.sif
@@ -47,9 +55,13 @@ def main():
     qualified_quality_phred = args.qualified_quality_phred
 
     # --- [Output Paths] ---
+    if not out_read1:
     out_read1 = f"{TrimFastqDir}/{SeqID}.trimmed_R1.fastq.gz"
+    if not out_read2:
     out_read2 = f"{TrimFastqDir}/{SeqID}.trimmed_R2.fastq.gz"
+    if not json:
     json = f"{qcResDir}/{SeqID}.fastp.json"
+    if not html:
     html = f"{qcResDir}/{SeqID}.fastp.html"
 
     # --- [Command Execution] ---
@@ -57,9 +69,27 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    os.makedirs(os.path.dirname(RawFastqDir) if '.' in os.path.basename(RawFastqDir) else RawFastqDir, exist_ok=True)
-    os.makedirs(os.path.dirname(TrimFastqDir) if '.' in os.path.basename(TrimFastqDir) else TrimFastqDir, exist_ok=True)
-    os.makedirs(os.path.dirname(qcResDir) if '.' in os.path.basename(qcResDir) else qcResDir, exist_ok=True)
+    if html:
+        _tgt = os.path.dirname(html) if os.path.splitext(html)[1] else html
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if out_read1:
+        _tgt = os.path.dirname(out_read1) if os.path.splitext(out_read1)[1] else out_read1
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if json:
+        _tgt = os.path.dirname(json) if os.path.splitext(json)[1] else json
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if out_read2:
+        _tgt = os.path.dirname(out_read2) if os.path.splitext(out_read2)[1] else out_read2
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if RawFastqDir:
+        _tgt = os.path.dirname(RawFastqDir) if os.path.splitext(RawFastqDir)[1] else RawFastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if TrimFastqDir:
+        _tgt = os.path.dirname(TrimFastqDir) if os.path.splitext(TrimFastqDir)[1] else TrimFastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)
 

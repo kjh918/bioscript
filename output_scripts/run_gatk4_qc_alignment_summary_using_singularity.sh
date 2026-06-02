@@ -2,7 +2,7 @@
 # [METADATA]
 # TOOL_NAME = gatk4
 # VERSION = 4.4.0.0
-# THREADS = 1
+# THREADS = 14
 
 # Tool Info: gatk4 (4.4.0.0)
 # Profile: qc_alignment_summary_using_singularity
@@ -17,6 +17,7 @@ usage() {
     echo "  --ReferenceFasta  Path to the reference genome FASTA file"
     echo ""
     echo "Optional Parameters:"
+    echo "  --alignment_summary_metrics_txt Text file containing summarized alignment metrics (Default: [qcResDir]/[SeqID].[InputSuffix].alignment_summary_metrics.txt)"
     echo "  --InputSuffix     Suffix of the input BAM (e.g., analysisReady, recal, sorted) (Default: analysisReady)"
     echo "  --singularity_bin Path to singularity executable (Default: singularity)"
     echo "  --java_bin        Path to java executable inside container (Default: java)"
@@ -35,6 +36,7 @@ SeqID=""
 BamDir=""
 qcResDir=""
 ReferenceFasta=""
+alignment_summary_metrics_txt="[qcResDir]/[SeqID].[InputSuffix].alignment_summary_metrics.txt"
 InputSuffix="analysisReady"
 singularity_bin="singularity"
 java_bin="java"
@@ -51,6 +53,7 @@ while [[ $# -gt 0 ]]; do
         --BamDir) BamDir="$2"; shift 2 ;;
         --qcResDir) qcResDir="$2"; shift 2 ;;
         --ReferenceFasta) ReferenceFasta="$2"; shift 2 ;;
+        --alignment_summary_metrics_txt) alignment_summary_metrics_txt="$2"; shift 2 ;;
         --InputSuffix) InputSuffix="$2"; shift 2 ;;
         --singularity_bin) singularity_bin="$2"; shift 2 ;;
         --java_bin) java_bin="$2"; shift 2 ;;
@@ -81,7 +84,14 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${java_bin} -XX:ParallelGCThreads
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-mkdir -p "$(dirname "${BamDir}")" 2>/dev/null || mkdir -p "${BamDir}"
-mkdir -p "$(dirname "${qcResDir}")" 2>/dev/null || mkdir -p "${qcResDir}"
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${alignment_summary_metrics_txt:-}" ]]; then
+  if [[ "${alignment_summary_metrics_txt}" == *.* ]]; then mkdir -p "$(dirname "${alignment_summary_metrics_txt}")"; else mkdir -p "${alignment_summary_metrics_txt}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 
 eval "$cmd"
