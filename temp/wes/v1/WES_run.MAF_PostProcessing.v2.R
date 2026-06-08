@@ -1,6 +1,6 @@
-#   script version v1.3
-#   update 2026-06-02
-#   summary of change : Fix ALL_EFFECTS duplication bug and optimize in-place transformation
+#   script version v1.4
+#   update 2026-06-04
+#   summary of change : Fix 'Names must be unique' error by removing pre-existing target columns before DB join/rename
 
 #---| PACKAGES |-----------------------------------------------------------------------------------#
 options(stringsAsFactors=FALSE)   
@@ -141,11 +141,10 @@ suppressPackageStartupMessages(library("lubridate"))
 #---| REFORMAT FUNCTION |--------------------------------------------------------------------------#
     MergeMAF <- function( refseq_maf, ens_maf, RequiredFields, RenameFields, OutputMafFields, geneInfo, kovaDB )
     {
-        # [MODIFIED] 필수 데이터 검증 예외 처리 강화
         if (!"all_effects" %in% colnames(refseq_maf)) stop("[ERROR] 'all_effects' column is missing in refseq_maf.")
         if (!"all_effects" %in% colnames(ens_maf)) stop("[ERROR] 'all_effects' column is missing in ens_maf.")
 
-        # [MODIFIED] 중복 할당 제거: 신규 변수를 생성하지 않고 기존 'all_effects' 컬럼 내에 인플레이스로 파싱하여 대입
+        print(1)
         refseq_maf$all_effects = sapply(refseq_maf$all_effects, function(y) { 
             if(is.na(y) || as.character(y) == "") return("")
             paste(sapply(unlist(strsplit(as.character(y),";")), function(z) tail(unlist(strsplit(z, ",")), 1)), collapse=";") 
@@ -163,8 +162,10 @@ suppressPackageStartupMessages(library("lubridate"))
         reformatMAF <- refseq_maf %>% 
             left_join(ens_maf %>% select(VKEY, any_of(names(RenameFields))), by='VKEY', suffix = c("", "_ens")) %>%
             dplyr::rename(any_of(rename_vector))
-            
+        
+        # [MODIFIED] HGNC_ID, ENTREZ 등 DB 정보와 충돌할 수 있는 컬럼을 사전에 제거하여 Uniqueness 오류 원천 차단
         reformatMAF <- reformatMAF %>% 
+            select(-any_of(c("HGNC_ID", "HGNC_STATUS", "HGNC_SYMBOL", "HGNC_NAME", "LOCUS_GROUP", "HGNC_LOCUS_TYPE", "LOCATION", "ENTREZ", "UCSC_ID", "UNIPROT", "OMIM", "ORPHANET"))) %>%
             mutate( geneInfo[match( ens2hgnc[match(ENSEMBL_GENE_ID, ens2hgnc$ens_geneid), "hgnc_id"], geneInfo$input_id ), c(4,2,5,6,7,8,9,10,12,14,16,19)] ) %>%
             dplyr::rename( 
                 HGNC_ID=hgnc_id, HGNC_STATUS=status, HGNC_SYMBOL=symbol, HGNC_NAME=name, LOCUS_GROUP=locus_group, 
@@ -308,7 +309,6 @@ if( writeDB ) {
     
     if( writeSomaticVarinatsOnlyMAF ) {
         preDataClear <- dbGetQuery(dbCon, sprintf("DELETE FROM variants_somatic WHERE seq_folder = '%s' AND seq_id = '%s' AND variant_call_mode = '%s'", SEQ_FOLDER, SEQ_ID, VAR_CALL_MODE))
-        # [MODIFIED] Germline 모드 여부에 맞춰 데이터 객체를 동적으로 바인딩하여 변수 누락 원천 차단
         target_somatic_data <- if(is_gemlineMAF) mf_nonsyn else mf_nonsyn_filtered
         writeData <- dbWriteTable(dbCon, name="variants_somatic", value=data.frame(variant_call_mode=VAR_CALL_MODE, target_somatic_data), row.names=FALSE, append=TRUE)
         write(sprintf("%s | filtered somatic variants IMPORTED INTO DB", format(now() ,format = "%Y-%m-%d %H:%M:%S")), LOG_FILE, append=T)

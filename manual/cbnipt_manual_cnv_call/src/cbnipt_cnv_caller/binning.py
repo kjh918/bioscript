@@ -36,9 +36,11 @@ def annotate_bin_metadata(df, fasta_path, mappability_bw=None):
         seq = fa[r.chrom][r.start:r.end].seq.upper()
         eff_len = sum(base in "ACGT" for base in seq)
         gc = (seq.count("G") + seq.count("C")) / eff_len if eff_len > 0 else np.nan
+        
         mappability = bw.stats(r.chrom, r.start, r.end, type="mean")[0] if bw else 1.0
         mappability = mappability if mappability is not None else 0.0
         mappability = float(np.clip(mappability, 0.0, 1.0))
+        
         results.append({
             'gc': gc,
             'mappability': mappability
@@ -47,19 +49,17 @@ def annotate_bin_metadata(df, fasta_path, mappability_bw=None):
     if bw: bw.close()
     return pd.concat([df, pd.DataFrame(results)], axis=1)
 
-
 def apply_final_filters(df, args):
     """
     모든 정적/동적 지표를 결합하여 분석에 사용할 최종 빈(Bin)을 선별합니다.
     """
     log(f"Applying final filters... (Input bins: {len(df)})")
 
-    # 1. [정적 필터] 유전체 구조 기준
-    # GC 함량 범위 및 Mappability 기준 통과 여부
+    # 1. [정적 필터] 유전체 구조 기준 (GC 함량 및 Mappability)
     mask = (df['gc'].between(args.MinGC, args.MaxGC))
     mask &= (df['mappability'] >= args.MinMappability)
     
-    # Blacklist BED 파일이 적용되었다면 해당 구간 제외
+    # 2. Blacklist BED 파일 적용 여부 확인 (있을 경우 제외)
     if 'is_blacklisted' in df.columns:
         mask &= (df['is_blacklisted'] == False)
 
