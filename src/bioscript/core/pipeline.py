@@ -91,56 +91,82 @@ class Pipeline:
         self.executor = executor
         self.suffix = suffix
         
+        # [MODIFIED] Global Task(샘플 무관)와 Sample Task를 분리하여 저장
+        self.global_tasks: List[Task] = []
         self.sample_tasks: Dict[str, List[Task]] = {}
         self.samples = self._discover_samples(suffix=self.suffix)
 
     def _discover_samples(self, suffix: str) -> List[str]:
-        """RawFastqDir에서 파일 패턴에 따라 샘플 ID 추출"""
+        # (기존 코드 동일)
         if not self.raw_dir or not self.raw_dir.exists():
             return []
         if suffix == 'bam':
             return sorted(list(set([f.name.split('.')[0] for f in self.raw_dir.glob("*.bam")])))
-        return sorted(list(set([f.name.split('_R1')[0] for f in self.raw_dir.glob(f"*_R1.{suffix}")])))
-
+        return sorted(list(set([f.name.split('_R1')[0] for f in self.raw_dir.glob(f"**/*_R1.{suffix}")])))
 
     def add_tasks(self, tasks: List[Task]):
-        """샘플 ID별로 Task 리스트 그룹화"""
+        """샘플 ID별로 Task 리스트 그룹화 및 Global Task 분리"""
         for t in tasks:
             sid = t.spec.get('SeqID')
             if sid:
+                # SeqID가 있으면 샘플 종속 Task
                 if sid not in self.sample_tasks:
                     self.sample_tasks[sid] = []
                 self.sample_tasks[sid].append(t)
-    
-    def run(self, run_integrity: bool):
-        # [MODIFIED] 클러스터 대기열에 병렬로 밀어넣을 FIFO 슬롯 윈도우 생성 (호스트 자원 제어용)
-        active_slots: List[Dict[str, Any]] = [] 
+            else:
+                # [MODIFIED] SeqID가 없으면 1회성 Global Task로 분류
+                self.global_tasks.append(t)
+
+    def run(self, run_integrity: bool = True):
+        global_last_jid = None
         
+        # =========================================================
+        # 1. Global Tasks (Reference Indexing, DB Setup 등) 먼저 처리
+        # =========================================================
+        if self.global_tasks:
+            print("[*] Submitting Global/Reference Tasks...")
+            master_global_lines = ["#!/bin/bash", "# Master Script for Global Tasks", ""]
+            
+            for i, task in enumerate(self.global_tasks, start=1):
+                job_id = f"GLOBAL_{i:02d}_{task.name}"
+                
+                if (task.log_path / ".done").exists():
+                    master_global_lines.append(f"# Global Task: {task.name} - SKIPPED")
+                    continue
+                
+                wrapper_p = task.log_path / f"{i:02d}_{task.name}_global.sh"
+                self.executor.make_wrapper(task.get_cmd(), wrapper_p, task.log_path)
+                
+                # Global Task들을 순차적으로(chaining) 제출
+                global_last_jid = self.executor.qsub(
+                    job_id=job_id,
+                    script_path=wrapper_p,
+                    log_path=task.log_path,
+                    threads=task.spec.get('Threads') or task.spec.get('threads') or 1,
+                    hold_jid=global_last_jid
+                )
+                
+                hold_opt = f"-hold_jid {global_last_jid}" if global_last_jid else ""
+                master_global_lines.append(f"qsub -N {job_id} {hold_opt} {wrapper_p}")
+            
+            # Global Task용 마스터 스크립트 별도 저장
+            global_master_path = self.executor.session_dir / "run_00_GLOBAL_TASKS.sh"
+            global_master_path.write_text("\n".join(master_global_lines))
+            global_master_path.chmod(0o755)
+            print(f"[*] Global tasks submitted. (Last JID: {global_last_jid})")
+
+        # =========================================================
+        # 2. Sample Tasks 처리 (Global Task 완료 시점부터 시작)
+        # =========================================================
         for sid, tasks in self.sample_tasks.items():
-            last_jid = None
+            print(f"[*] Processing Sample: {sid}")
+            
+            # [MODIFIED] 핵심: 샘플의 첫 작업은 Global Task가 끝날 때까지 대기(-hold_jid)해야 함
+            last_jid = global_last_jid 
+            
             all_sample_files = [] 
             master_script_lines = [f"#!/bin/bash", f"# Master Script for {sid}", ""]
             
-            # 기완료 여부 확인
-            will_run = any(not (task.log_path / ".done").exists() for task in tasks)
-            inter_sample_holds = []
-            
-            if will_run:
-                # 샘플 내 최고 스레드 요구량 계산
-                sample_peak_threads = max(task.spec.get('Threads', 0) for task in tasks)
-                if sample_peak_threads <= 0:
-                    raise ValueError(f"[STRICT_ERROR] Missing 'Threads' specifications for sample tasks: {sid}")
-                if sample_peak_threads > self.executor.max_threads:
-                    raise ValueError(f"[STRICT_ERROR] Sample '{sid}' requires {sample_peak_threads} threads, exceeding max_threads limit ({self.executor.max_threads}).")
-                
-                # [MODIFIED] max_samples 혹은 max_threads 임계치를 초과할 경우, 이전 슬롯의 마지막 Job ID를 체인 의존성(-hold_jid)으로 연동
-                while len(active_slots) >= self.executor.max_samples or (sum(slot['threads'] for slot in active_slots) + sample_peak_threads) > self.executor.max_threads:
-                    retired_slot = active_slots.pop(0)
-                    if retired_slot['last_jid']:
-                        inter_sample_holds.append(retired_slot['last_jid'])
-
-            # 1. 일반 분석 Task들 대기열에 즉시 제출
-            is_first_submitted_task = True
             for i, task in enumerate(tasks, start=1):
                 all_sample_files.extend(task.outputs)
                 job_id = f"{sid}_{i:02d}_{task.name}"
@@ -150,42 +176,30 @@ class Pipeline:
                     continue
                 
                 wrapper_p = task.log_path / f"{i:02d}_{task.name}_{sid}.sh"
-                self.executor.make_wrapper(task.get_cmd(), wrapper_p, self.work_dir)
+                self.executor.make_wrapper(task.get_cmd(), wrapper_p, task.log_path)
                 
-                # [MODIFIED] 샘플 내 첫 번째로 실행되는 작업에만 샘플 간 병렬 제어 hold 백엔드 주입
-                if is_first_submitted_task:
-                    hold_value = ",".join(inter_sample_holds) if inter_sample_holds else None
-                    is_first_submitted_task = False
-                else:
-                    hold_value = last_jid
-                
-                # SGE에 작업 제출 (호출 즉시 SGE Job ID 반환, Python은 대기하지 않음)
+                # last_jid가 초기엔 global_last_jid를 가리키므로 첫 샘플 작업이 안전하게 대기함
                 last_jid = self.executor.qsub(
                     job_id=job_id,
                     script_path=wrapper_p,
                     log_path=task.log_path,
-                    threads=task.spec.get('Threads'),
-                    hold_jid=hold_value
+                    threads=task.spec.get('Threads') or task.spec.get('threads') or 1,
+                    hold_jid=last_jid 
                 )
                 
-                hold_opt = f"-hold_jid {hold_value}" if hold_value else ""
+                hold_opt = f"-hold_jid {last_jid}" if last_jid else ""
                 master_script_lines.append(f"qsub -N {job_id} {hold_opt} {wrapper_p}")
 
-            # [MODIFIED] 해당 샘플의 최종 Job ID를 활성 슬롯 자산에 등록
-            if will_run and last_jid:
-                active_slots.append({"last_jid": last_jid, "threads": sample_peak_threads})
-
-            # 2. 무결성 체크 작업 제출
-            if run_integrity and all_sample_files:
-                # 내부적으로 _submit_integrity_task 구현체가 수집된 last_jid를 hold로 잡고 qsub 호출하도록 연동되어야 함
+            # 무결성 검사 제출 (기존과 동일)
+            if run_integrity and all_sample_files and last_jid:
                 self._submit_integrity_task(sid, all_sample_files, last_jid, master_script_lines)
 
-            # 마스터 스크립트 파일 물리 저장
+            # 샘플별 마스터 스크립트 저장
             master_path = self.executor.session_dir / f"run_{sid}.sh"
             master_path.write_text("\n".join(master_script_lines))
             master_path.chmod(0o755)
             
-            print(f"[*] {sid}: Pipeline slots mapped and pushed to SGE queue state. (Last JID: {last_jid})")
+            print(f"[*] {sid}: Pipeline submitted to SGE. (Last JID: {last_jid})")
 
     def _submit_integrity_task(self, sid, files, hold_jid, master_lines):
         """MD5 체크섬 전용 쉘 스크립트를 생성하고 SGE에 마지막 작업으로 등록"""

@@ -1,0 +1,41 @@
+info:
+  user: jhkim
+  date: 260609
+  logs: |
+    - Initial creation for Reference Bin generation (Global Task)
+
+tool:
+  name: cbNIPT_MakeBins
+  version: "1.0.0"
+  profile: Generate reference genome bins
+  setup: |
+    # (필요 시 conda 환경 활성화 등)
+
+io:
+  inputs:
+    ReferenceFasta: { required: true, type: str, help: "참조 유전체 FASTA 파일 경로" }
+    MappabilityBW: { required: true, type: str, help: "Mappability BigWig 파일" }
+  outputs:
+    OutBinFile: { required: true, type: str, help: "생성된 빈 정보를 저장할 경로 (예: hg38_100kb_bins.bed.gz)" }
+
+params:
+  BinSize: { required: false, type: int, default: 100000, help: "Bin 크기 (100kb)" }
+  MinMappability: { required: false, type: float, default: 0.9, help: "최소 Mappability 점수" }
+  MinGC: { required: false, type: float, default: 0.3, help: "최소 GC 함량 필터" }
+  MaxGC: { required: false, type: float, default: 0.7, help: "최대 GC 함량 필터" }
+  IncludeSexChrom: { required: false, type: str, default: "--IncludeSexChrom", help: "성염색체 포함 여부 플래그 (제외 시 빈 문자열)" }
+  
+  # 실행기 설정
+  python_bin: { required: false, type: str, default: "python", help: "Python executable" }
+  script_path: { required: true, type: str, help: "Path to the CNV analyzer script" }
+
+cmd_line: >
+  [python_bin] [script_path] make-bins
+  --ReferenceFasta [ReferenceFasta]
+  --MappabilityBW [MappabilityBW]
+  --OutBinFile [OutBinFile]
+  --BinSize [BinSize]
+  --MinMappability [MinMappability]
+  --MinGC [MinGC]
+  --MaxGC [MaxGC]
+  [IncludeSexChrom]

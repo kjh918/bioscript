@@ -9,19 +9,6 @@ def log(msg):
 def ensure_dir(path): 
     os.makedirs(path, exist_ok=True)
 
-def fetch_sites_with_handle(vcf_handle, chrom, start, end):
-    sites = []
-    try:
-        for record in vcf_handle.fetch(chrom, start, end):
-            kova = record.info.get("KOVA_AF")
-            kova_af = kova[0] if kova and isinstance(kova, (list, tuple)) else (kova if kova else 0.0)
-            gnomad = record.info.get("GNOMAD_AF")
-            gnomad_af = gnomad[0] if gnomad and isinstance(gnomad, (list, tuple)) else (gnomad if gnomad else 0.0)
-            pop_af = kova_af if kova_af > 0 else gnomad_af
-            if pop_af > 0:
-                sites.append({"chrom": record.chrom, "pos": record.pos, "ref": record.ref, "alt": record.alts[0], "pop_af": pop_af})
-    except: pass
-    return pd.DataFrame(sites)
 
 BIN_SUMMARY_SCHEMA = {
     "bin_id": "object",
@@ -178,45 +165,3 @@ def process_bin_with_handles(bam_handle, bin_info, site_df, min_mapq, min_baseq,
 # -------------------------------------------------------------------------
 # [최적화 2] 독립 병렬 워커: TSV 대신 Parquet 파일로 고속 Disk-Spill 저장
 # -------------------------------------------------------------------------
-def _parallel_chrom_worker(chrom_df, bam_path, vcf_file, min_mapq, tmp_dir):
-    chrom = chrom_df['chrom'].iloc[0]
-    
-    if not os.path.exists(vcf_file):
-        return None, None
-        
-    # [포인트] 확장자를 .parquet로 변경
-    tmp_pos_path = os.path.join(tmp_dir, f"tmp_pos_{chrom}.parquet")
-    tmp_sum_path = os.path.join(tmp_dir, f"tmp_sum_{chrom}.parquet")
-    
-    local_position_reports = []
-    local_bin_summaries = []
-    
-    with pysam.AlignmentFile(bam_path, "rb", threads=1) as bam_handle, \
-         pysam.VariantFile(vcf_file) as vcf_handle:
-         
-        for r in chrom_df.itertuples():
-            site_df = fetch_sites_with_handle(vcf_handle, r.chrom, r.start, r.end)
-            if site_df.empty: continue
-
-            report_df, summary_df = process_bin_with_handles(
-                bam_handle, {"chrom": r.chrom, "start": r.start, "end": r.end}, site_df, 
-                min_mapq=min_mapq, min_baseq=20, hetero_range=(0.4, 0.6)
-            )
-            
-            if not report_df.empty and not summary_df.empty:
-                local_position_reports.append(report_df)
-                summary_dict = summary_df.iloc[0].to_dict()
-                summary_dict.update({"chrom": r.chrom, "start": r.start, "end": r.end})
-                local_bin_summaries.append(summary_dict)
-
-    # 파이썬 리스트 메모리 해제 및 Parquet 엔진으로 직렬화 저장 (pyarrow 엔진 사용)
-    if local_position_reports:
-        pd.concat(local_position_reports, ignore_index=True).to_parquet(tmp_pos_path, engine='pyarrow', index=False)
-    if local_bin_summaries:
-        pd.DataFrame(local_bin_summaries).to_parquet(tmp_sum_path, engine='pyarrow', index=False)
-
-    del local_position_reports
-    del local_bin_summaries
-
-    return (tmp_pos_path if os.path.exists(tmp_pos_path) else None, 
-            tmp_sum_path if os.path.exists(tmp_sum_path) else None)

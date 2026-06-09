@@ -2,70 +2,65 @@ import os
 from pathlib import Path
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt  # 시각화를 위한 필수 라이브러리
+import matplotlib.pyplot as plt
 
-# 커스텀 정규화 모듈 임포트
-from normalization import normalize_all_metrics_with_sex_log2
-
-path = '/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/manual.new'
+# 경로 설정
+path = '/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results'
 
 # 모든 샘플의 정규화 결과를 하나로 모으기 위한 리스트
 sample_set = [
-    #'cbNIPT_24_04_01_DS',
+    'cbNIPT_24_04_01_DS',
     'cbNIPT_24_04_02_DS',
-    'cbNIPT_24_04_02_DS_Ratio_1-1-Insilico_cbNIPT_24_04_04',
-    'cbNIPT_24_04_02_DS_Ratio_1-1-Insilico_cbNIPT_24_04_05',
-    'cbNIPT_24_04_02_DS_Ratio_1-1-Insilico_cbNIPT_24_04_06',
-    'cbNIPT_24_04_02_DS_Ratio_1-2-Insilico_cbNIPT_24_04_04',
-    'cbNIPT_24_04_02_DS_Ratio_1-2-Insilico_cbNIPT_24_04_05',
-    'cbNIPT_24_04_02_DS_Ratio_1-2-Insilico_cbNIPT_24_04_06',
-    'cbNIPT_24_04_02_DS_Ratio_2-1-Insilico_cbNIPT_24_04_04',
-    'cbNIPT_24_04_02_DS_Ratio_2-1-Insilico_cbNIPT_24_04_05',
-    'cbNIPT_24_04_02_DS_Ratio_2-1-Insilico_cbNIPT_24_04_06',
-    #'cbNIPT_24_04_03_DS',
-    #'cbNIPT_24_04_04',
-    #'cbNIPT_24_04_05',
-    #'cbNIPT_24_04_06',
-    #'cbNIPT_24_04_07',
-    #'cbNIPT_24_04_08',
-    #'cbNIPT_24_04_09',
+    'cbNIPT_24_04_03_DS',
+    'cbNIPT_24_04_04',
+    'cbNIPT_24_04_05',
+    'cbNIPT_24_04_06',
+    'cbNIPT_24_04_07',
+    'cbNIPT_24_04_08',
+    'cbNIPT_24_04_09',
+    'cbNIPT_24_04_10',
+    'cbNIPT_24_04_11',
+    'cbNIPT_24_04_12',
+    'cbNIPT_24_04_13',
+    'cbNIPT_24_04_14',
+    'cbNIPT_24_04_15',
 ]
 
 sample_summary_accumulator = []
+
 for sample in sample_set:
-    path_list = Path(path).glob(f'**/baf/{sample}.position_baf_detail.tsv')
+    # [변경] normalized.tsv 파일 직접 탐색
+    file_paths = list(Path(path).glob(f'**/data/{sample}.normalized.tsv'))
     
-    for trans_fragment_path in path_list:
-        DataId = str(Path(trans_fragment_path).name).split('.')[0]
-        summary_path = str(trans_fragment_path).replace(".position_baf_detail.tsv", ".summary.tsv")
-        print(f"[Process] Loading: {summary_path}")
+    if not file_paths:
+        print(f"[-] Cannot find normalized.tsv for {sample}")
+        continue
         
-        if not os.path.exists(summary_path):
-            summary_path = str(trans_fragment_path).replace(".position_baf_detail.tsv", ".position_baf_detail.summary.tsv")
-            
-        try:
-            summary_df = pd.read_csv(summary_path, sep='\t')
-        except FileNotFoundError:
-            continue
+    target_path = file_paths[0]
+    print(f"[Process] Loading: {target_path}")
+    
+    try:
+        df = pd.read_csv(target_path, sep='\t')
         
-        try:
-            norm_df = normalize_all_metrics_with_sex_log2(
-                df=summary_df, 
-                depth_col="raw_total_depth", 
-                sex_threshold=0.0001
-            )
-            
-            # ADO 감별을 위해 이형(Hetero) 및 동형(Homo) 마커 개수만 추출
-            chrom_mean = norm_df.groupby('chrom')[['hetero_sites_count', 'homo_sites_count']].mean().reset_index()
-            chrom_mean['Sample_ID'] = DataId
-            sample_summary_accumulator.append(chrom_mean)
-            
-        except Exception as e:
-            print(f"[-] Error processing {DataId}: {e}")
-            continue
+        # 100kb Bin 단위의 데이터를 염색체 단위로 합산
+        # 파일 내의 'hetero_sites', 'homo_sites' 컬럼명을 직접 활용합니다.
+        chrom_sum = df.groupby('chrom')[['hetero_sites_count', 'homo_sites_count']].sum().reset_index()
+        
+        # 정규화 엔진 호환을 위해 컬럼명 통일
+        #chrom_sum.rename(columns={
+        #    'hetero_sites': 'hetero_like_count',
+        #    'homo_sites': 'homo_like_count'
+        #}, inplace=True)
+        
+        chrom_sum['Sample_ID'] = sample
+        sample_summary_accumulator.append(chrom_sum)
+        
+    except Exception as e:
+        print(f"[-] Error processing {sample}: {e}")
+        continue
 
 # -----------------------------------------------------------------
-# [EXPECTED DELTA NORMALIZATION ENGINE]
+# [EXPECTED DELTA NORMALIZATION ENGINE] (기존 로직 완벽 보존)
 # -----------------------------------------------------------------
 if sample_summary_accumulator:
     master_df = pd.concat(sample_summary_accumulator, ignore_index=True)
@@ -96,7 +91,7 @@ if sample_summary_accumulator:
     master_df['Hetero_Delta_Log2'] = np.log2((master_df['Ratio_Hetero'] + 1e-9) / (master_df['Expected_Hetero'] + 1e-9))
     master_df['Homo_Delta_Log2'] = np.log2((master_df['Ratio_Homo'] + 1e-9) / (master_df['Expected_Homo'] + 1e-9))
     
-    # 성염색체 제외 및 정렬
+    # 성염색체 제외 및 정렬 (히트맵 가독성을 위해 상염색체만 유지)
     master_df = master_df[~master_df['chrom'].isin(['chrX', 'chrY'])]
     
     def chrom_key_auto(c):
@@ -121,7 +116,6 @@ if sample_summary_accumulator:
     
     # 공통 히트맵 플로팅 함수
     def draw_heatmap(ax, matrix, title):
-        # 0을 기준으로 파란색(-)과 빨간색(+)이 대칭되도록 RdBu_r 컬러맵 사용
         cax = ax.imshow(matrix.values, cmap='RdBu_r', aspect='auto', vmin=-1.0, vmax=1.0)
         
         ax.set_xticks(np.arange(len(matrix.columns)))
@@ -133,7 +127,6 @@ if sample_summary_accumulator:
         for i in range(len(matrix.index)):
             for j in range(len(matrix.columns)):
                 val = matrix.values[i, j]
-                # 글씨 가독성을 위해 색이 진한 양극단에서는 흰색 텍스트 사용
                 text_color = "white" if abs(val) > 0.6 else "black"
                 ax.text(j, i, f"{val:.2f}", ha="center", va="center", color=text_color, fontsize=10)
                 
@@ -141,22 +134,18 @@ if sample_summary_accumulator:
         cbar.set_label('Log2(Observed / Expected)', rotation=270, labelpad=20, fontsize=11, fontweight='bold')
         ax.set_title(title, fontsize=16, fontweight='bold', pad=15)
         
-        # 격자선
         ax.set_xticks(np.arange(-.5, len(matrix.columns), 1), minor=True)
         ax.set_yticks(np.arange(-.5, len(matrix.index), 1), minor=True)
         ax.grid(which="minor", color="gray", linestyle='-', linewidth=0.5, alpha=0.5)
         ax.tick_params(which="minor", bottom=False, left=False)
 
-    # 상단: Hetero 차이값 히트맵
     draw_heatmap(axes[0], hetero_matrix, "Hetero Sites Difference from Expected (Log2 FC)")
-    
-    # 하단: Homo 차이값 히트맵
     draw_heatmap(axes[1], homo_matrix, "Homo Sites Difference from Expected (Log2 FC)")
     
     axes[1].set_xlabel("Samples", fontsize=14, labelpad=10)
     fig.text(0.04, 0.5, 'Chromosomes', va='center', rotation='vertical', fontsize=14, fontweight='bold')
     
-    plt.tight_layout(rect=[0.05, 0, 1, 1]) # 왼쪽 Y축 라벨 여백 확보
+    plt.tight_layout(rect=[0.05, 0, 1, 1]) 
     
     output_heatmap_map = os.path.join(path, "Hetero_Homo_Delta_Heatmaps.png")
     plt.savefig(output_heatmap_map, dpi=300)

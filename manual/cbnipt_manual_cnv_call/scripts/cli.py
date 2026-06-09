@@ -35,7 +35,7 @@ def run_make_bins(args):
     # 헤더 '#' 처리 (IGV 및 tabix 호환성)
     filtered_bins.rename(columns={'chrom': '#chrom'}, inplace=True)
     
-    temp_out = args.OutBinFile.replace('.gz', '') if args.OutBinFile.endswith('.gz') else args.OutBinFile
+    temp_out = f'{args.OutBinFile}/{os.path.basename(args.ReferenceFasta)}.bin_{str(round(args.BinSize/1000,0))}K.bed'
     os.makedirs(os.path.dirname(os.path.abspath(temp_out)), exist_ok=True)
     filtered_bins.to_csv(temp_out, sep="\t", index=False)
     
@@ -101,6 +101,7 @@ def main():
     parser_cnv = subparsers.add_parser('call-cnv', help='Run CNV pipeline on a single BAM using pre-computed bins')
     
     parser_cnv.add_argument('--SeqID', required=True, help='분석 고유 ID')
+    parser_cnv.add_argument("--VcfFile", type=str, required=True, help="Path to the merged VCF file (.vcf.gz)")
     parser_cnv.add_argument('--BamPath', required=True, help='분석할 단일 BAM 파일 경로')
     parser_cnv.add_argument('--AnnotatedBins', required=True, help='make-bins로 생성한 사전 계산 빈 파일(.bed.gz)')
     parser_cnv.add_argument('--OutDir', required=True, help='결과 저장 디렉토리')

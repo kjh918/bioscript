@@ -91,11 +91,13 @@ class Pipeline:
         self.executor = executor
         self.suffix = suffix
         
+        # [MODIFIED] Global Task(샘플 무관)와 Sample Task를 분리하여 저장
+        self.global_tasks: List[Task] = []
         self.sample_tasks: Dict[str, List[Task]] = {}
         self.samples = self._discover_samples(suffix=self.suffix)
 
     def _discover_samples(self, suffix: str) -> List[str]:
-        """RawFastqDir에서 파일 패턴에 따라 샘플 ID 추출"""
+        # (기존 코드 동일)
         if not self.raw_dir or not self.raw_dir.exists():
             return []
         if suffix == 'bam':
@@ -103,28 +105,72 @@ class Pipeline:
         return sorted(list(set([f.name.split('_R1')[0] for f in self.raw_dir.glob(f"**/*_R1.{suffix}")])))
 
     def add_tasks(self, tasks: List[Task]):
-        """샘플 ID별로 Task 리스트 그룹화"""
+        """샘플 ID별로 Task 리스트 그룹화 및 Global Task 분리"""
         for t in tasks:
             sid = t.spec.get('SeqID')
             if sid:
+                # SeqID가 있으면 샘플 종속 Task
                 if sid not in self.sample_tasks:
                     self.sample_tasks[sid] = []
                 self.sample_tasks[sid].append(t)
+            else:
+                # [MODIFIED] SeqID가 없으면 1회성 Global Task로 분류
+                self.global_tasks.append(t)
 
     def run(self, run_integrity: bool = True):
+        global_last_jid = None
+        
+        # =========================================================
+        # 1. Global Tasks (Reference Indexing, DB Setup 등) 먼저 처리
+        # =========================================================
+        if self.global_tasks:
+            print("[*] Submitting Global/Reference Tasks...")
+            master_global_lines = ["#!/bin/bash", "# Master Script for Global Tasks", ""]
+            
+            for i, task in enumerate(self.global_tasks, start=1):
+                job_id = f"GLOBAL_{i:02d}_{task.name}"
+                
+                if (task.log_path / ".done").exists():
+                    master_global_lines.append(f"# Global Task: {task.name} - SKIPPED")
+                    continue
+                
+                wrapper_p = task.log_path / f"{i:02d}_{task.name}_global.sh"
+                self.executor.make_wrapper(task.get_cmd(), wrapper_p, task.log_path)
+                
+                # Global Task들을 순차적으로(chaining) 제출
+                global_last_jid = self.executor.qsub(
+                    job_id=job_id,
+                    script_path=wrapper_p,
+                    log_path=task.log_path,
+                    threads=task.spec.get('Threads') or task.spec.get('threads') or 1,
+                    hold_jid=global_last_jid
+                )
+                
+                hold_opt = f"-hold_jid {global_last_jid}" if global_last_jid else ""
+                master_global_lines.append(f"qsub -N {job_id} {hold_opt} {wrapper_p}")
+            
+            # Global Task용 마스터 스크립트 별도 저장
+            global_master_path = self.executor.session_dir / "run_00_GLOBAL_TASKS.sh"
+            global_master_path.write_text("\n".join(master_global_lines))
+            global_master_path.chmod(0o755)
+            print(f"[*] Global tasks submitted. (Last JID: {global_last_jid})")
+
+        # =========================================================
+        # 2. Sample Tasks 처리 (Global Task 완료 시점부터 시작)
+        # =========================================================
         for sid, tasks in self.sample_tasks.items():
-            print(sid)
-            last_jid = None
+            print(f"[*] Processing Sample: {sid}")
+            
+            # [MODIFIED] 핵심: 샘플의 첫 작업은 Global Task가 끝날 때까지 대기(-hold_jid)해야 함
+            last_jid = global_last_jid 
+            
             all_sample_files = [] 
             master_script_lines = [f"#!/bin/bash", f"# Master Script for {sid}", ""]
-            # 1. 일반 분석 Task들 순차 제출
+            
             for i, task in enumerate(tasks, start=1):
-                # 나중에 체크할 파일 목록 미리 수집
                 all_sample_files.extend(task.outputs)
-                
                 job_id = f"{sid}_{i:02d}_{task.name}"
                 
-                # Skip 로직 (이미 완료된 단계는 건너뜀)
                 if (task.log_path / ".done").exists():
                     master_script_lines.append(f"# Task: {task.name} - SKIPPED")
                     continue
@@ -132,26 +178,23 @@ class Pipeline:
                 wrapper_p = task.log_path / f"{i:02d}_{task.name}_{sid}.sh"
                 self.executor.make_wrapper(task.get_cmd(), wrapper_p, task.log_path)
                 
-                # SGE에 던지고 JID(Job ID)를 받아둠
+                # last_jid가 초기엔 global_last_jid를 가리키므로 첫 샘플 작업이 안전하게 대기함
                 last_jid = self.executor.qsub(
                     job_id=job_id,
                     script_path=wrapper_p,
                     log_path=task.log_path,
-                    threads=task.spec.get('Threads', 1),
-                    hold_jid=last_jid  # 이전 작업이 끝나야 실행됨
+                    threads=task.spec.get('Threads') or task.spec.get('threads') or 1,
+                    hold_jid=last_jid 
                 )
                 
-                # 재현용 마스터 스크립트에 기록
                 hold_opt = f"-hold_jid {last_jid}" if last_jid else ""
                 master_script_lines.append(f"qsub -N {job_id} {hold_opt} {wrapper_p}")
 
-            # 2. [핵심] 마지막 md5sum 체크를 '태스크'로 만들어 제출
-            # 이 단계는 파이썬이 수행하는 게 아니라, SGE 서버가 '나중에' 수행합니다.
-            if run_integrity and all_sample_files:
-                # 마지막 분석 작업(last_jid)이 성공적으로 끝나야만 실행되도록 hold 설정
+            # 무결성 검사 제출 (기존과 동일)
+            if run_integrity and all_sample_files and last_jid:
                 self._submit_integrity_task(sid, all_sample_files, last_jid, master_script_lines)
 
-            # 마스터 스크립트 저장
+            # 샘플별 마스터 스크립트 저장
             master_path = self.executor.session_dir / f"run_{sid}.sh"
             master_path.write_text("\n".join(master_script_lines))
             master_path.chmod(0o755)
