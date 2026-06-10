@@ -150,7 +150,7 @@ class CnvPipeline:
         
         # 2. 데이터 추출 (BAM 단일 패스 -> Coverage + BAF 동시 추출)
         df_merged_evidence = self.extract_genetic_evidence(df_bins)
-        print(df_merged_evidence)
+        
         # 3. GC 편향 보정 (LOWESS) 및 정규화
         df_global = self.correct_gc_and_normalize(df_merged_evidence)
         

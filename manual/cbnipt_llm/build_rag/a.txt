@@ -1,6 +1,6 @@
 ▶ Starting MedGen information search for 'down syndrome'...
   -> [Debug] NCBI MedGen ESearch query: "down syndrome"
-  -> [Debug] ESearch retrieved MedGen UIDs: 10
+  -> [Debug] ESearch retrieved MedGen UIDs: 1
   -> [Scraping] Fetching full contents for UID: 4385...
 [DEBUG] UID 4385의 전체 HTML 데이터 구조:
 ============================================================
@@ -23,7 +23,7 @@
   <meta content="1" name="ncbi_resultcount"/>
   <meta content="retrieve" name="ncbi_op"/>
   <meta content="fullreport" name="ncbi_pdid"/>
-  <meta content="CE8CAD87A266E1B1_0254SID" name="ncbi_sessionid"/>
+  <meta content="CE8D1955A28C5691_0165SID" name="ncbi_sessionid"/>
   <meta content="4385" name="ncbi_uidlist"/>
   <meta content="clinical" name="ncbi_filter"/>
   <meta content="false" name="ncbi_stat"/>
@@ -41,7 +41,7 @@
   </script>
   <link href="//static.pubmed.gov/portal/portal3rc.fcgi/4218191/css/4207974/4206132.css" rel="stylesheet" type="text/css" xml:base="http://127.0.0.1/sites/static/header_footer/" xmlns="http://www.w3.org/1999/xhtml"/>
   <link href="//www.ncbi.nlm.nih.gov/favicon.ico" rel="shortcut icon"/>
-  <meta content="CE8CAD87A2667E510000000000FE00E2.m_28" name="ncbi_phid"/>
+  <meta content="CE8D1955A28BEBA10000000000A50096.m_30" name="ncbi_phid"/>
   <script type="text/javascript">
    <!--
 var ScriptPath = '/portal/';
@@ -3767,8 +3767,10 @@ Click for more information.">
                           <span class="chiclet unavailable" title="GeneReviews">
                            G
                           </span>
-                          <span class="chiclet unavailable" title="ClinVar">
-                           V
+                          <span class="chiclet Vcolor" title="ClinVar">
+                           <a data-ga-action="GTR" data-ga-category="Term Hierarchy" data-ga-label="V" href="/clinvar?LinkName=medgen_clinvar&amp;from_uid=3441" ref="ncbi_uid=3441" target="_blank">
+                            V
+                           </a>
                           </span>
                          </span>
                          <span class="TLline">
@@ -3981,8 +3983,10 @@ Click for more information.">
                               <span class="chiclet unavailable" title="GeneReviews">
                                G
                               </span>
-                              <span class="chiclet unavailable" title="ClinVar">
-                               V
+                              <span class="chiclet Vcolor" title="ClinVar">
+                               <a data-ga-action="GTR" data-ga-category="Term Hierarchy" data-ga-label="V" href="/clinvar?LinkName=medgen_clinvar&amp;from_uid=56261" ref="ncbi_uid=56261" target="_blank">
+                                V
+                               </a>
                               </span>
                              </span>
                              <span class="TLline">
@@ -4037,8 +4041,10 @@ Click for more information.">
                               <span class="chiclet unavailable" title="GeneReviews">
                                G
                               </span>
-                              <span class="chiclet unavailable" title="ClinVar">
-                               V
+                              <span class="chiclet Vcolor" title="ClinVar">
+                               <a data-ga-action="GTR" data-ga-category="Term Hierarchy" data-ga-label="V" href="/clinvar?LinkName=medgen_clinvar&amp;from_uid=4385" ref="ncbi_uid=4385" target="_blank">
+                                V
+                               </a>
                               </span>
                              </span>
                              <span class="TLline">
@@ -4139,8 +4145,10 @@ Click for more information.">
                               <span class="chiclet unavailable" title="GeneReviews">
                                G
                               </span>
-                              <span class="chiclet unavailable" title="ClinVar">
-                               V
+                              <span class="chiclet Vcolor" title="ClinVar">
+                               <a data-ga-action="GTR" data-ga-category="Term Hierarchy" data-ga-label="V" href="/clinvar?LinkName=medgen_clinvar&amp;from_uid=1384417" ref="ncbi_uid=1384417" target="_blank">
+                                V
+                               </a>
                               </span>
                              </span>
                              <span class="TLline">
@@ -4665,8 +4673,8 @@ doi: 10.1002/ajmg.c.31439.
                   </a>
                  </div>
                  <div>
-                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (11066)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Etiology%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
-                   See all (11066)
+                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (11067)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Etiology%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
+                   See all (11067)
                   </a>
                  </div>
                  <h3 class="subhead">
@@ -4799,8 +4807,8 @@ doi: 10.1002/ajmg.a.36861.
                   </a>
                  </div>
                  <div>
-                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (9756)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Diagnosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
-                   See all (9756)
+                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (9757)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Diagnosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
+                   See all (9757)
                   </a>
                  </div>
                  <h3 class="subhead">
@@ -4955,8 +4963,8 @@ doi: 10.1001/jama.2021.0669.
                   </a>
                  </div>
                  <div>
-                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (2597)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Therapy%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
-                   See all (2597)
+                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (2598)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Therapy%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
+                   See all (2598)
                   </a>
                  </div>
                  <h3 class="subhead">
@@ -5104,8 +5112,8 @@ doi: 10.3104/reports.104.
                   </a>
                  </div>
                  <div>
-                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (4004)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Prognosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
-                   See all (4004)
+                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (4005)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Prognosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
+                   See all (4005)
                   </a>
                  </div>
                  <h3 class="subhead">
@@ -5254,8 +5262,8 @@ doi: 10.1016/0002-9378(91)90090-e.
                   </a>
                  </div>
                  <div>
-                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (5942)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Clinical%20prediction%20guides%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
-                   See all (5942)
+                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (5943)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Clinical%20prediction%20guides%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
+                   See all (5943)
                   </a>
                  </div>
                 </div>
@@ -5431,8 +5439,8 @@ doi: 10.1111/jir.12606.
                   </a>
                  </div>
                  <div>
-                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (331)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20systematic%5Bsb%5D%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
-                   See all (331)
+                  <a data-ga-action="pubMedSearchLink" data-ga-category="link_click" data-ga-label="See all (330)" href="https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20systematic%5Bsb%5D%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D" target="_blank" title="PubMed search">
+                   See all (330)
                   </a>
                  </div>
                 </div>
@@ -5822,7 +5830,7 @@ doi: 10.1111/jir.12606.
            </div>
            <ul id="activity">
             <li class="ra_rcd ralinkpopper two_line">
-             <a class="htb ralinkpopperctrl" href="/portal/utils/pageresolver.fcgi?recordid=6a266e26f5ed52007032fa60" ref="log$=activity&amp;linkpos=1">
+             <a class="htb ralinkpopperctrl" href="/portal/utils/pageresolver.fcgi?recordid=6a28c56cf5ed5200708accd6" ref="log$=activity&amp;linkpos=1">
               Down syndrome
              </a>
              <div class="ralinkpop offscreen_noflow">
@@ -5858,7 +5866,7 @@ doi: 10.1111/jir.12606.
        <!--<component id="NCBIBreadcrumbs"/>
     <component id="NCBIHelpDesk"/>-->
        <noscript>
-        <img alt="" src="/stat?jsdisabled=true&amp;ncbi_app=entrez&amp;ncbi_db=medgen&amp;ncbi_pdid=FullReport&amp;ncbi_phid=CE8CAD87A2667E510000000000FE00E2"/>
+        <img alt="" src="/stat?jsdisabled=true&amp;ncbi_app=entrez&amp;ncbi_db=medgen&amp;ncbi_pdid=FullReport&amp;ncbi_phid=CE8D1955A28BEBA10000000000A50096"/>
        </noscript>
       </div>
       <div class="footer" id="footer" xml:base="http://127.0.0.1/sites/static/header_footer/" xmlns="http://www.w3.org/1999/xhtml">
@@ -6120,13 +6128,13 @@ doi: 10.1111/jir.12606.
      <input id="p$a" name="p$a" type="hidden"/>
      <input id="p$l" name="p$l" type="hidden" value="EntrezSystem2"/>
      <input id="p$st" name="p$st" type="hidden" value="medgen"/>
-     <input disabled="disabled" id="SessionId" name="SessionId" type="hidden" value="CE8CAD87A266E1B1_0254SID"/>
+     <input disabled="disabled" id="SessionId" name="SessionId" type="hidden" value="CE8D1955A28C5691_0165SID"/>
      <input disabled="disabled" id="Snapshot" name="Snapshot" type="hidden" value="/projects/Phenotype/MedGen/MedGen@6.23"/>
     </form>
    </div>
   </div>
-  <!-- CE8CAD87A266E1B1_0254SID /projects/Phenotype/MedGen/MedGen@6.23 portal105 v4.1.r705435 Wed, Jan 07 2026 01:27:30 -->
-  <span data-token="CE8CAD87A266E1B1_0254SID" id="portal-csrf-token" style="display:none">
+  <!-- CE8D1955A28C5691_0165SID /projects/Phenotype/MedGen/MedGen@6.23 portal106 v4.1.r705435 Wed, Jan 07 2026 01:27:30 -->
+  <span data-token="CE8D1955A28C5691_0165SID" id="portal-csrf-token" style="display:none">
   </span>
   <script src="/portal/js/portal.js" type="text/javascript">
   </script>
@@ -6137,3 +6145,7 @@ doi: 10.1111/jir.12606.
 
 ============================================================
 
+Term Hierarchy
+
+▶ Search complete: 1 items found
+▶ Results successfully saved to: /storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Results/output.json

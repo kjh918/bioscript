@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import ruptures as rpt
 from utils import log
+#from scipy.signal import find_peaks, gaussian_filter1d
 
 def segment_one_cell(meta, signal, penalty):
     """
@@ -60,6 +61,34 @@ def segment_one_cell(meta, signal, penalty):
         raise RuntimeError("No segments were generated. Check input signal or penalty.")
         
     return pd.DataFrame(segments)
+
+def estimate_ploidy(seg_df, max_ploidy=4):
+    """
+    Segmentation 결과의 seg_mean 분포를 기반으로 
+    가장 가능성 높은 Ploidy(보통 2 또는 3)를 추정합니다.
+    """
+    # 1. seg_mean 분포 추출 (가중치: 각 세그먼트의 bin 개수)
+    values = seg_df["seg_mean"].values
+    weights = seg_df["n_bins"].values
+    
+    # 2. 히스토그램 생성 (Log2 Space에서 2n은 0.0 부근에 피크)
+    hist, bin_edges = np.histogram(values, bins=50, weights=weights, density=True)
+    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+    
+    # 3. 노이즈 완화를 위한 가우시안 평탄화
+    smoothed = gaussian_filter1d(hist, sigma=1)
+    peaks, _ = find_peaks(smoothed, height=np.max(smoothed)*0.1)
+    
+    if len(peaks) == 0:
+        return 2 # 기본값
+    
+    # 4. 가장 높은 피크의 위치가 0(Ratio 1.0)에 가장 가까운 Ploidy를 찾음
+    best_peak_val = bin_centers[peaks[np.argmax(smoothed[peaks])]]
+    
+    # 2^best_peak_val 이 Ratio인데, 2n이 1.0(Log2 0)이라고 가정할 때
+    # Ploidy = 2 * 2^(best_peak_val) 에 가장 가까운 정수를 찾음
+    estimated = np.round(2 * (2 ** best_peak_val))
+    return int(np.clip(estimated, 1, max_ploidy))
 
 def assign_cn_state(seg_df, baseline_ploidy):
     """

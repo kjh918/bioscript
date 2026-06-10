@@ -5,7 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # 커스텀 정규화 모듈 임포트
-from normalization import normalize_all_metrics_with_sex_log2
+#from normalization import normalize_all_metrics_with_sex_log2
 
 path = '/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/manual.new'
 
@@ -33,24 +33,24 @@ for sample in sample_set:
         except FileNotFoundError:
             continue
         
-        try:
-            # 1. 정규화 수행
-            norm_df = normalize_all_metrics_with_sex_log2(
-                df=summary_df, 
-                depth_col="raw_total_depth", 
-                sex_threshold=0.0001
-            )
+        #try:
+        #    # 1. 정규화 수행
+        #    #norm_df = normalize_all_metrics_with_sex_log2(
+        #    #    df=summary_df, 
+        #    #    depth_col="raw_total_depth", 
+        #    #    sex_threshold=0.0001
+        #    #)
             
-            # 2. [핵심 변경] chrom 단위가 아닌 bin_id 단위로 데이터 추출
-            # Bin ID 원본 순서를 유지하기 위해 복사
-            bin_data = norm_df[['bin_id', 'chrom', 'hetero_sites_count', 'homo_sites_count']].copy()
-            bin_data['Sample_ID'] = DataId
+        #    # 2. [핵심 변경] chrom 단위가 아닌 bin_id 단위로 데이터 추출
+        #    # Bin ID 원본 순서를 유지하기 위해 복사
+        #    bin_data = norm_df[['bin_id', 'chrom', 'hetero_sites_count', 'homo_sites_count']].copy()
+        #    bin_data['Sample_ID'] = DataId
             
-            sample_summary_accumulator.append(bin_data)
+        #    sample_summary_accumulator.append(bin_data)
             
-        except Exception as e:
-            print(f"[-] Error processing {DataId}: {e}")
-            continue
+        #except Exception as e:
+        #    print(f"[-] Error processing {DataId}: {e}")
+        #    continue
 
 # -----------------------------------------------------------------
 # [BIN-LEVEL EXPECTED DELTA NORMALIZATION ENGINE]

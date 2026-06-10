@@ -11,10 +11,13 @@ from statsmodels.nonparametric.smoothers_lowess import lowess
 BIN_SUMMARY_SCHEMA = {
     "bin_id": "object",
     "raw_count": "int32",               "breadth_ratio": "float32",
-    
+
     "total_sites": "int32",             # Population 기준 Informative SNP 총 개수
     "ref_sum": "int32",                 "alt_sum": "int32",
     "total_depth": "int32",             "bin_BAF": "float32",
+    
+    "pop_hetero_count": "int32",        # AF 0.4~0.6 인 마커 수 (total_sites와 동일)
+    "pop_homo_count": "int32",          # AF <=0.1 or >=0.9 인 마커 수 (Reference 유사/고정 영역)
     
     # [NEW] 관측된 절대 개수 (신뢰도 가중치용)
     "hetero_like_count": "int32",       "imbalance_count": "int32",
@@ -28,101 +31,7 @@ BIN_SUMMARY_SCHEMA = {
     "total_trans_fragments": "int32",   "total_cis_fragments": "int32",
     "raw_bin_TER": "float32",           "raw_bin_CER": "float32"
 }
-def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_ratio, thresholds):
-    res = {k: (0 if 'int' in v else 0.0) for k, v in BIN_SUMMARY_SCHEMA.items()}
-    res["bin_id"] = bin_id
-    res["raw_count"] = raw_count
-    res["breadth_ratio"] = breadth_ratio
-    
-    if fragment_df.empty or site_df.empty: 
-        return pd.DataFrame(), pd.DataFrame([res])
-    
-    # 1. 포지션별 기본 통계 적재
-    pos_stats = {
-        row.pos: {
-            "bin_id": bin_id, "chrom": row.chrom, "pos": row.pos, "ref": row.ref, "alt": row.alt, "pop_af": row.pop_af,
-            "ref_depth": 0, "alt_depth": 0, "cis_support": 0, "trans_support": 0, "total_fragments": 0
-        } for row in site_df.itertuples()
-    }
-    
-    # Fragment 정보 파싱
-    for frag in fragment_df.to_dict('records'):
-        for pos, data in frag['obs_dict'].items():
-            if pos not in pos_stats: continue
-            stat = pos_stats[pos]
-            stat["total_fragments"] += 1
-            if data['base'] == stat['alt'].upper(): stat["alt_depth"] += 1
-            elif data['base'] == stat['ref'].upper(): stat["ref_depth"] += 1
-            if frag['is_cis_alt']: stat["cis_support"] += 1
-            if frag['is_trans']: stat["trans_support"] += 1
 
-    report_df = pd.DataFrame(pos_stats.values())
-    if report_df.empty: return pd.DataFrame(), pd.DataFrame([res])
-
-    # Site-level 계산
-    report_df["total_depth"] = report_df["ref_depth"] + report_df["alt_depth"]
-    report_df["BAF"] = (report_df["alt_depth"] / report_df["total_depth"]).fillna(0)
-    
-    cond_pop = [
-        (report_df['pop_af'] >= thresholds['hetero_min']) & (report_df['pop_af'] <= thresholds['hetero_max']),
-        (report_df['pop_af'] <= thresholds['homo_max']) | (report_df['pop_af'] >= thresholds['homo_min'])
-    ]
-    report_df['pop_class'] = np.select(cond_pop, ['pop_hetero_informative', 'pop_homo_like'], default='intermediate')
-    
-    cond_baf = [
-        (report_df['BAF'] >= thresholds['hetero_min']) & (report_df['BAF'] <= thresholds['hetero_max']),
-        (report_df['BAF'] <= thresholds['homo_max']) | (report_df['BAF'] >= thresholds['homo_min'])
-    ]
-    report_df['baf_class'] = np.select(cond_baf, ['hetero_like', 'homo_like'], default='imbalance')
-    
-    # Bin-level Summary (pop_hetero_informative 기준 추출)
-    target_df = report_df[report_df['pop_class'] == 'pop_hetero_informative']
-    total_sites = len(target_df)
-    
-    res["total_sites"] = total_sites
-    if total_sites > 0:
-        res["ref_sum"] = int(target_df['ref_depth'].sum())
-        res["alt_sum"] = int(target_df['alt_depth'].sum())
-        res["total_depth"] = int(target_df['total_depth'].sum())
-        res["bin_BAF"] = float(res["alt_sum"] / res["total_depth"]) if res["total_depth"] > 0 else 0.0
-        
-        # [NEW] 절대 카운트(Count) 먼저 추출
-        baf_counts = target_df['baf_class'].value_counts()
-        res["hetero_like_count"] = int(baf_counts.get('hetero_like', 0))
-        res["imbalance_count"] = int(baf_counts.get('imbalance', 0))
-        res["homo_like_count"] = int(baf_counts.get('homo_like', 0))
-        
-        # [NEW] 추출된 카운트를 바탕으로 비율(Rate) 계산
-        res["hetero_like_rate"] = float(res["hetero_like_count"] / total_sites)
-        res["imbalance_rate"] = float(res["imbalance_count"] / total_sites)
-        res["homo_like_rate"] = float(res["homo_like_count"] / total_sites)
-        
-        res["MAD_BAF"] = float(np.median(np.abs(target_df['BAF'] - 0.5)))
-        
-    # Fragment Phasing Summary
-    qc_mask = report_df['total_fragments'] >= 2
-    qc_pass_fragments = int(report_df[qc_mask]["total_fragments"].sum()) if not report_df[qc_mask].empty else 0
-    
-    res.update({
-        "total_fragments_sum": int(report_df["total_fragments"].sum()),
-        "qc_pass_fragments": qc_pass_fragments,
-        "total_trans_fragments": int(fragment_df['is_trans'].sum()),
-        "total_cis_fragments": int(fragment_df['is_cis_alt'].sum())
-    })
-    
-    denom = qc_pass_fragments if qc_pass_fragments > 0 else 1
-    res["raw_bin_TER"] = float(res["total_trans_fragments"] / denom)
-    res["raw_bin_CER"] = float(res["total_cis_fragments"] / denom)
-
-    summary_df = pd.DataFrame([res])
-    for col, dtype in BIN_SUMMARY_SCHEMA.items():
-        if col in summary_df.columns:
-            summary_df[col] = summary_df[col].astype(dtype)
-            
-    return report_df, summary_df
-
-
-# [수정] 인자에 thresholds 추가
 def process_bin_with_handles(bam_handle, bin_info, site_df, min_mapq, min_baseq, thresholds):
     """
     One-Pass BAM 처리
@@ -198,6 +107,105 @@ def process_bin_with_handles(bam_handle, bin_info, site_df, min_mapq, min_baseq,
             
     return summarize_and_classify_bin(pd.DataFrame(frag_list), bin_sites, f"{chrom}:{start}-{end}", raw_count, breadth_ratio, thresholds)
  
+
+def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_ratio, thresholds):
+    res = {k: (0 if 'int' in v else 0.0) for k, v in BIN_SUMMARY_SCHEMA.items()}
+    res["bin_id"] = bin_id
+    res["raw_count"] = raw_count
+    res["breadth_ratio"] = breadth_ratio
+    
+    if fragment_df.empty or site_df.empty: 
+        return pd.DataFrame(), pd.DataFrame([res])
+    
+    # 1. 포지션별 기본 통계 적재
+    pos_stats = {
+        row.pos: {
+            "bin_id": bin_id, "chrom": row.chrom, "pos": row.pos, "ref": row.ref, "alt": row.alt, "pop_af": row.pop_af,
+            "ref_depth": 0, "alt_depth": 0, "cis_support": 0, "trans_support": 0, "total_fragments": 0
+        } for row in site_df.itertuples()
+    }
+    
+    # Fragment 정보 파싱
+    for frag in fragment_df.to_dict('records'):
+        for pos, data in frag['obs_dict'].items():
+            if pos not in pos_stats: continue
+            stat = pos_stats[pos]
+            stat["total_fragments"] += 1
+            if data['base'] == stat['alt'].upper(): stat["alt_depth"] += 1
+            elif data['base'] == stat['ref'].upper(): stat["ref_depth"] += 1
+            if frag['is_cis_alt']: stat["cis_support"] += 1
+            if frag['is_trans']: stat["trans_support"] += 1
+
+    report_df = pd.DataFrame(pos_stats.values())
+    if report_df.empty: return pd.DataFrame(), pd.DataFrame([res])
+
+    # Site-level 계산
+    report_df["total_depth"] = report_df["ref_depth"] + report_df["alt_depth"]
+    report_df["BAF"] = (report_df["alt_depth"] / report_df["total_depth"]).fillna(0)
+    
+    cond_pop = [
+        (report_df['pop_af'] >= thresholds['hetero_min']) & (report_df['pop_af'] <= thresholds['hetero_max']),
+        (report_df['pop_af'] <= thresholds['homo_max']) | (report_df['pop_af'] >= thresholds['homo_min'])
+    ]
+    report_df['pop_class'] = np.select(cond_pop, ['pop_hetero_informative', 'pop_homo_like'], default='intermediate')
+    
+    cond_baf = [
+        (report_df['BAF'] >= thresholds['hetero_min']) & (report_df['BAF'] <= thresholds['hetero_max']),
+        (report_df['BAF'] <= thresholds['homo_max']) | (report_df['BAF'] >= thresholds['homo_min'])
+    ]
+    report_df['baf_class'] = np.select(cond_baf, ['hetero_like', 'homo_like'], default='imbalance')
+    
+    # Bin-level Summary (pop_hetero_informative 기준 추출)
+    pop_counts = report_df['pop_class'].value_counts()
+    res["pop_hetero_count"] = int(pop_counts.get('pop_hetero_informative', 0))
+    res["pop_homo_count"] = int(pop_counts.get('pop_homo_like', 0))
+    target_df = report_df[report_df['pop_class'] == 'pop_hetero_informative']
+    total_sites = len(target_df)
+    
+    res["total_sites"] = total_sites
+    if total_sites > 0:
+        res["ref_sum"] = int(target_df['ref_depth'].sum())
+        res["alt_sum"] = int(target_df['alt_depth'].sum())
+        res["total_depth"] = int(target_df['total_depth'].sum())
+        res["bin_BAF"] = float(res["alt_sum"] / res["total_depth"]) if res["total_depth"] > 0 else 0.0
+        
+        # [NEW] 절대 카운트(Count) 먼저 추출
+        baf_counts = target_df['baf_class'].value_counts()
+        res["hetero_like_count"] = int(baf_counts.get('hetero_like', 0))
+        res["imbalance_count"] = int(baf_counts.get('imbalance', 0))
+        res["homo_like_count"] = int(baf_counts.get('homo_like', 0))
+        
+        # [NEW] 추출된 카운트를 바탕으로 비율(Rate) 계산
+        res["hetero_like_rate"] = float(res["hetero_like_count"] / total_sites)
+        res["imbalance_rate"] = float(res["imbalance_count"] / total_sites)
+        res["homo_like_rate"] = float(res["homo_like_count"] / total_sites)
+        
+        res["MAD_BAF"] = float(np.median(np.abs(target_df['BAF'] - 0.5)))
+        
+    # Fragment Phasing Summary
+    qc_mask = report_df['total_fragments'] >= 2
+    qc_pass_fragments = int(report_df[qc_mask]["total_fragments"].sum()) if not report_df[qc_mask].empty else 0
+    
+    res.update({
+        "total_fragments_sum": int(report_df["total_fragments"].sum()),
+        "qc_pass_fragments": qc_pass_fragments,
+        "total_trans_fragments": int(fragment_df['is_trans'].sum()),
+        "total_cis_fragments": int(fragment_df['is_cis_alt'].sum())
+    })
+    
+    denom = qc_pass_fragments if qc_pass_fragments > 0 else 1
+    res["raw_bin_TER"] = float(res["total_trans_fragments"] / denom)
+    res["raw_bin_CER"] = float(res["total_cis_fragments"] / denom)
+
+    summary_df = pd.DataFrame([res])
+    for col, dtype in BIN_SUMMARY_SCHEMA.items():
+        if col in summary_df.columns:
+            summary_df[col] = summary_df[col].astype(dtype)
+            
+    return report_df, summary_df
+
+
+# [수정] 인자에 thresholds 추가
 # -------------------------------------------------------------------------
 # 기존 필터링 및 GC 보정 함수 (그대로 사용 가능합니다)
 # -------------------------------------------------------------------------

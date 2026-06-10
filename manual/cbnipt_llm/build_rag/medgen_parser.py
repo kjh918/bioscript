@@ -251,7 +251,7 @@ def fetch_medgen_details(disease_name: str, max_results: int) -> List[Dict[str, 
         print("="*60)
         print(soup.prettify()) 
         print("="*60 + "\n")
-        exit()
+        #exit()
         target_div = soup.find("div", class_='portlet_content')
         #print(target_div)
         #exit()
@@ -263,7 +263,7 @@ def fetch_medgen_details(disease_name: str, max_results: int) -> List[Dict[str, 
         target_div = soup.find("h1", class_='nl',id='Term_Hierarchy')
         definition_text = target_div.get_text(separator=" ", strip=True)
         print(definition_text)
-        exit() # HTML 구조 확인 후 파싱을 진행하려면 이 줄을 삭제하세요.
+        #exit() # HTML 구조 확인 후 파싱을 진행하려면 이 줄을 삭제하세요.
         
         '''
         <div class="portlet_content ln">
@@ -279,7 +279,6 @@ def fetch_medgen_details(disease_name: str, max_results: int) -> List[Dict[str, 
         disease_title = title_div.text.strip() if title_div else "Unknown Disease"
         
         # 2. 텍스트 섹션 
-        definition = extract_medgen_section(soup, ["definition"])
         synonyms = extract_medgen_section(soup, ["synonym"])
         
         # 3. Term Hierarchy
@@ -292,7 +291,7 @@ def fetch_medgen_details(disease_name: str, max_results: int) -> List[Dict[str, 
         parsed_record = {
             "medgen_uid": uid,
             "disease_name": disease_title,
-            "definition": definition,
+            "definition": definition_text,
             "synonyms": synonyms,
             "term_hierarchy": term_hierarchy,
             "literature": literature,
