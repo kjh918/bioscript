@@ -1,0 +1,35 @@
+CFG:
+  min_depth: 2
+  min_coverage: 0.5
+  
+  y_presence_threshold: 0.15 # XY 판단 기준 (chrY/autosome)
+  sex_mono_x_ratio: 0.75 # XX에서 chrX/auto : 0.75 -> Turner(X0)
+  sex_xxx_ratio: 1.25 # XX에서 chrX/auto : 1.25 -> XXX
+  sex_xxy_ratio: 0.75 # XY에서 chrX/auto : 0.75 -> Klinefelter(XXY)
+  sex_mono_y_ratio: 0.25 # XY에서 chrY/auto : 0.25 -> chrY loss
+  sex_xyy_ratio: 0.75 # XY에서 chrY/auto : 0.75 -> XYY
+  sex_mono_x_ratio: 0.75
+  
+  robust_z_hreshold: 2.5
+  pval_threshold: 0.05
+  homo_rate_threshold: 0.6
+  ter_z_thresh: 2.0
+  y_noise_threshold: 0.10
+  
+  mosaic_log2_min: 0.10
+  mosaic_log2_max: 0.45
+  mosaic_bin_shift_min: 0.55
+  mosaic_score_thresh: 0.45
+
+  w_copy: 0.35
+  w_baf: 0.25
+  w_ter: 0.15
+  w_cer: 0.15
+  w_pval: 0.10
+  call_thresh_high: 0.50
+  call_thresh_low: 0.25
+
+CALL_COLORS:
+  "NORMAL": "#4CAF50"
+  "SUSPICIOUS": "#FF9800"
+  "ABNORMAL": "#F44336"

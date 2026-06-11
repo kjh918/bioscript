@@ -2,7 +2,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 import pandas as pd
-from utils import log
+import os 
+
+from .utils import log, sort_chroms
+from .rules import CALL_COLORS, CFG
 
 def plot_gc_correction(gc_stats, out_path):
     if gc_stats is None: return
@@ -13,7 +16,167 @@ def plot_gc_correction(gc_stats, out_path):
     plt.plot(x[idx], fit[idx], color='red', lw=2, label="Lowess Fit")
     plt.title("GC Bias Correction (LOWESS)"); plt.legend(); plt.savefig(out_path); plt.close()
 
+def plot_bin_distribution(df_f, call_df, sample_id, out_dir):
+    if "log2_chrom_norm" not in df_f.columns: return
+    abn_chroms = call_df[call_df["call"].isin(["ABNORMAL", "SUSPICIOUS"])]["chrom"].tolist()
+    if not abn_chroms: return
+
+    n = len(abn_chroms)
+    fig, axes = plt.subplots(1, n, figsize=(max(6, 5 * n), 6), squeeze=False)
+    fig.suptitle(f"Bin Distribution — Abnormal/Suspicious ({sample_id})", fontsize=12, fontweight="bold")
+    auto_vals = df_f[~df_f["chrom"].isin(["chrX", "chrY"])]["log2_chrom_norm"].dropna().values
+
+    for ax, chrom in zip(axes[0], abn_chroms):
+        chrom_vals = df_f[df_f["chrom"] == chrom]["log2_chrom_norm"].dropna().values
+        parts = ax.violinplot([auto_vals, chrom_vals], positions=[0, 1], showmedians=True, showextrema=True)
+        for body, vc in zip(parts["bodies"], ["#90CAF9", "#CE93D8" if chrom in ("chrX","chrY") else "#EF9A9A"]):
+            body.set_facecolor(vc); body.set_alpha(0.7)
+
+        ax.scatter([0]*len(auto_vals), auto_vals, alpha=0.1, s=5, color="#1565C0")
+        ax.scatter([1]*len(chrom_vals), chrom_vals, alpha=0.4, s=8, color="#6A1B9A" if chrom in ("chrX","chrY") else "#B71C1C")
+
+        row = call_df[call_df["chrom"] == chrom].iloc[0]
+        ax.axhline(0.0, color="blue", linestyle=":", linewidth=1.0, label="Expected (0.0)")
+        if chrom not in ("chrX", "chrY"):
+            ax.axhline(0.585, color="red", linestyle=":", linewidth=1, label="Trisomy (+0.585)")
+            ax.axhline(-1.0, color="gray", linestyle=":", linewidth=1, label="Monosomy (-1.0)")
+
+        ax.set_xticks([0, 1])
+        ax.set_xticklabels(["Autosomes", f"{chrom}\n({row['call']})"], fontsize=10, fontweight="bold")
+        ax.set_title(f"{chrom}\n{row.get('detail','')}", fontsize=9, color=CALL_COLORS.get(row['call'], "black"), fontweight="bold")
+        ax.legend(fontsize=7, loc="upper right")
+        ax.grid(axis="y", linestyle="--", alpha=0.3)
+
+    plt.tight_layout()
+    fig.savefig(os.path.join(out_dir, "02_bin_distribution.png"), dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+def plot_score_heatmap(call_df, sample_id, sex, out_dir):
+    score_cols = ["copy_score", "baf_score", "ter_score", "cer_score", "mosaic_score", "final_score"]
+    col_labels = ["Copy\n(Log2FC)", "BAF\nPattern", "TER\n(Trans)", "CER\n(Cis)", "MOSAIC\nIndex", "FINAL"]
+    chroms = sort_chroms(call_df["chrom"].tolist())
+    mat = call_df.set_index("chrom").reindex(chroms)[score_cols].values.T
+
+    fig, ax = plt.subplots(figsize=(max(14, len(chroms) * 0.8), 6))
+    fig.suptitle(f"Anomaly & Mosaic Score Components — {sample_id}  [Sex: {sex}]", fontsize=12, fontweight="bold")
+    im = ax.imshow(mat, cmap="RdBu_r", aspect="auto", vmin=-1, vmax=1)
+
+    for i in range(len(score_cols)):
+        for j, c in enumerate(chroms):
+            val = mat[i, j]
+            ax.text(j, i, f"{val:.2f}", ha="center", va="center", color="white" if abs(val)>0.6 else "black", fontsize=8, fontweight="bold")
+            if i == len(score_cols) - 1:
+                call = call_df[call_df["chrom"] == c]["call"].values[0]
+                lw = 3 if call == "ABNORMAL" else (2 if call == "SUSPICIOUS" else 0)
+                if lw: ax.add_patch(plt.Rectangle((j-0.5, i-0.5), 1, 1, linewidth=lw, edgecolor="red" if call=="ABNORMAL" else "orange", facecolor="none"))
+
+    for j, c in enumerate(chroms):
+        if c in ("chrX", "chrY"): ax.add_patch(plt.Rectangle((j-0.5, -0.5), 1, len(score_cols), linewidth=0, facecolor="purple", alpha=0.08, zorder=0))
+
+    ax.set_xticks(range(len(chroms))); ax.set_yticks(range(len(score_cols)))
+    ax.set_xticklabels(chroms, rotation=45, ha="right", fontsize=9, fontweight="bold")
+    ax.set_yticklabels(col_labels, fontsize=9, fontweight="bold")
+    plt.colorbar(im, ax=ax, pad=0.02).set_label("Score Metric Range", fontsize=9)
+    plt.tight_layout()
+    fig.savefig(os.path.join(out_dir, "03_anomaly_score_heatmap.png"), dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+
+def plot_chromosome_overview(df_f, summary, call_df, sex, sample_id, out_dir):
+    all_chroms = sort_chroms(df_f["chrom"].unique().tolist())
+    chrom_x    = {c: i for i, c in enumerate(all_chroms)}
+    cn_col = "log2_chrom_norm" if "log2_chrom_norm" in df_f.columns else "raw_count"
     
+    panels = [
+        (cn_col,             "Copy Number Signal",    "steelblue",     (-2.0, 2.0)),
+        ("hetero_like_rate", "Hetero-like Rate",       "mediumseagreen",(0, 1)),
+        ("homo_like_rate",   "Homo-like Rate (LOH)",  "tomato",        (0, 1)),
+        ("raw_bin_TER",      "Trans Error Rate",       "darkorange",    (0, None)),
+        ("raw_bin_CER",      "Cis Phasing Rate",       "mediumpurple",  (0, None)),
+    ]
+
+    # [수정 1] 높이(Height) 대폭 압축: 4.5 -> 2.5 로 변경
+    fig, axes = plt.subplots(len(panels), 1, figsize=(max(18, len(all_chroms) * 0.8), 2.5 * len(panels)), sharex=True)
+    
+    # [수정 2] 메인 타이틀 폰트 크기 확대: 14 -> 18
+    fig.suptitle(f"Chromosome Overview — {sample_id}  [Sex: {sex}]", fontsize=11, fontweight="bold")
+
+    for ax, (col, title, color, ylim) in zip(axes, panels):
+        if col not in df_f.columns: continue
+        for sc in ["chrX", "chrY"]:
+            if sc in chrom_x: ax.axvspan(chrom_x[sc] - 0.5, chrom_x[sc] + 0.5, alpha=0.10, color="purple", zorder=0)
+
+        for chrom, grp in df_f.groupby("chrom"):
+            xi = chrom_x[chrom]
+            # 점 크기(s)를 7 -> 10으로 살짝 키워 시인성 확보
+            ax.scatter(xi + np.random.uniform(-0.3, 0.3, len(grp)), grp[col], alpha=0.3, s=10, color="purple" if chrom in ("chrX", "chrY") else color)
+
+        med_col = f"{col}_median"
+        if med_col in summary.columns:
+            xs = [chrom_x[c] for c in all_chroms if c in summary["chrom"].values]
+            ys = [summary.loc[summary["chrom"] == c, med_col].values[0] for c in all_chroms if c in summary["chrom"].values]
+            ax.plot(xs, ys, color="black", linewidth=2.0, alpha=0.7, zorder=5) # 선 굵기 증가
+            ax.scatter(xs, ys, color="black", s=40, zorder=6) # 중앙값 점 크기 증가
+
+        ax.axhline(0, color="gray", linewidth=1.0, linestyle="--", alpha=0.6)
+
+        for _, row in call_df.iterrows():
+            if row["chrom"] not in chrom_x: continue
+            xi = chrom_x[row["chrom"]]
+            if row["call"] == "ABNORMAL": ax.axvspan(xi - 0.5, xi + 0.5, alpha=0.18, color="red", zorder=0)
+            elif row["call"] == "SUSPICIOUS": ax.axvspan(xi - 0.5, xi + 0.5, alpha=0.12, color="orange", zorder=0)
+
+        # [수정 3] Y축 라벨 폰트(13) 및 눈금(11) 크기 확대
+        ax.set_ylabel(title, fontsize=13, fontweight="bold", labelpad=12)
+        ax.tick_params(axis='y', labelsize=11)
+        
+        if ylim[1] is not None: ax.set_ylim(ylim)
+        ax.grid(axis="y", linestyle="--", alpha=0.4)
+
+    # [수정 4] X축 염색체 이름 폰트 크기 확대: 9 -> 13
+    axes[-1].set_xticks(range(len(all_chroms)))
+    axes[-1].set_xticklabels(all_chroms, rotation=45, ha="right", fontsize=13, fontweight="bold")
+    
+    plt.tight_layout()
+    # 타이틀과 첫 번째 그래프 간격이 겹치지 않도록 미세 조정
+    fig.subplots_adjust(top=0.92) 
+    fig.savefig(os.path.join(out_dir, "01_chromosome_overview.png"), dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+def plot_final_call(call_df, sex, sample_id, out_dir):
+    chroms = sort_chroms(call_df["chrom"].tolist())
+    cdf    = call_df.set_index("chrom").reindex(chroms).reset_index()
+
+    fig, ax = plt.subplots(figsize=(max(16, len(chroms)), 7))
+    bar_colors = [{"NORMAL":"#AB47BC","SUSPICIOUS":"#FF9800","ABNORMAL":"#F44336"}.get(r["call"], "gray") if r["chrom"] in ("chrX", "chrY") else CALL_COLORS.get(r["call"], "gray") for _, r in cdf.iterrows()]
+    
+    ax.bar(range(len(chroms)), cdf["final_score"].values, color=bar_colors, edgecolor="black", linewidth=0.6, width=0.75)
+    ax.axhline(CFG["call_thresh_high"], color="red", linestyle="--", linewidth=1.5)
+    ax.axhline(CFG["call_thresh_low"],  color="orange", linestyle="--", linewidth=1.2)
+    ax.axhline(-CFG["call_thresh_high"], color="red", linestyle="--", linewidth=1.5)
+    ax.axhline(-CFG["call_thresh_low"],  color="orange", linestyle="--", linewidth=1.2)
+    ax.axhline(0, color="black", linewidth=0.8)
+
+    for i, (_, row) in enumerate(cdf.iterrows()):
+        if row["call"] != "NORMAL":
+            ypos = row["final_score"]
+            offset = 0.05 if ypos >= 0 else -0.12
+            ax.text(i, ypos + offset, row["call"], ha="center", fontsize=8, fontweight="bold", color=CALL_COLORS[row["call"]])
+            detail = row.get("detail", "")
+            if detail: ax.text(i, ypos + offset - 0.13, detail.split("  ")[0], ha="center", fontsize=6.5, color="gray")
+
+    ax.set_xticks(range(len(chroms)))
+    ax.set_xticklabels(chroms, rotation=45, ha="right", fontsize=10, fontweight="bold")
+    ax.set_ylabel("Final Anomaly Score", fontsize=11, fontweight="bold")
+    ax.set_ylim(-1.15, 1.15)
+    ax.set_title(f"Final Chromosome Call — {sample_id}  [Sex: {sex}]", fontsize=13, fontweight="bold")
+    ax.grid(axis="y", linestyle="--", alpha=0.35)
+    plt.tight_layout()
+    fig.savefig(os.path.join(out_dir, "04_final_call.png"), dpi=200, bbox_inches="tight")
+    plt.close(fig)
+
+
+
 def plot_comprehensive_baf_logr_qc(bins_df, segments_df, output_path, run_id):
     """
     [3-Panel Comprehensive View]

@@ -1,25 +1,49 @@
 import numpy as np
 import pandas as pd
-from utils import log 
-import pandas as pd
-import numpy as np
-from utils import log
+from .utils import log
+from .rules import CFG
 
-def normalize_by_chrom_with_sex(df, value_col, sex_threshold=0.001):
-    """
-    [MODIFIED] 
-    1. Default 인자 제거: value_col, sex_threshold 미지정 시 에러 발생.
-    2. Log2 Space 적용: 2n=0.0, 1n=-1.0 기준으로 타겟 설정.
-    3. Fail-fast: 필수 컬럼 및 데이터 부재 시 즉시 Exception 발생.
-    """
+
+def normalize_and_estimate_sex(df, value_col="raw_count"):
+    """상염색체 기준 LOO 정규화 및 생물학적 성별 비율 계산"""
+    autosome_df = df[~df["chrom"].isin(["chrX", "chrY"])]
+    global_median = autosome_df[value_col].median()
     
-    # [CHECK] 필수 컬럼 및 인자 검증
+    y_bins = df[df["chrom"] == "chrY"]
+    y_median = y_bins[value_col].median() if not y_bins.empty else 0.0
+    y_ratio = y_median / global_median if global_median > 0 else 0.0
+    
+    x_bins = df[df["chrom"] == "chrX"]
+    x_median = x_bins[value_col].median() if not x_bins.empty else 0.0
+    x_ratio = x_median / global_median if global_median > 0 else 0.0
+
+    is_male = y_ratio > CFG["y_presence_threshold"]
+    sex_tag = "XY" if is_male else "XX"
+
+    norm_results = []
+    for chrom, group in df.groupby("chrom", sort=False):
+        ref_df = df[~df["chrom"].isin(["chrX", "chrY", chrom])]
+        current_median = ref_df[value_col].median() if not ref_df.empty else global_median
+        
+        # [핵심 수정] 타겟 평탄화 로직 완전 제거! 
+        # 관측된 생물학적 Log2 비율을 그대로 저장합니다. (남성 XY의 경우 알아서 -1.0으로 계산됨)
+        observed_log2 = np.log2((group[value_col] + 1e-9) / (current_median + 1e-9))
+        group["log2_chrom_norm"] = observed_log2
+        
+        norm_results.append(group)
+
+    return pd.concat(norm_results).reset_index(drop=True), sex_tag, x_ratio, y_ratio
+
+def normalize_by_chrom_with_sex(df, value_col="raw_count", sex_ratio_thresh=0.15):
+    """
+    원시 TSV 데이터를 읽어 성별 추정 및 Leave-One-Out(LOO) Log2 정규화를 수행합니다.
+    """
     if value_col not in df.columns:
         raise KeyError(f"Column '{value_col}' not found in DataFrame.")
     if "chrom" not in df.columns:
         raise KeyError("Column 'chrom' not found in DataFrame.")
     
-    # [MODIFIED] 상염색체 중앙값 계산 (Baseline)
+    # 1. 상염색체 중앙값 계산 (Global Baseline)
     autosome_df = df[~df["chrom"].isin(["chrX", "chrY"])]
     if autosome_df.empty:
         raise ValueError("No autosomal data found to establish global baseline.")
@@ -27,54 +51,53 @@ def normalize_by_chrom_with_sex(df, value_col, sex_threshold=0.001):
     global_median = autosome_df[value_col].median()
     log(f"Global Baseline (Autosomal Median): {global_median:.4f}")
 
-    # [MODIFIED] 성별 판별 로직 (기준값 예외처리 포함)
+    # 2. 성별 판별 로직 (비율 기반)
     y_bins = df[df["chrom"] == "chrY"]
-    if y_bins.empty:
-        log("No chrY data found. Inferring as Female (or data loss).")
-        y_median = -np.inf
+    if y_bins.empty or global_median == 0:
+        log("No chrY data or zero baseline found. Inferring as Female.")
+        y_median = 0.0
+        y_ratio = 0.0
     else:
         y_median = y_bins[value_col].median()
+        y_ratio = y_median / global_median
         
-    is_male_cell = y_median > (global_median + sex_threshold)
-    gender_tag = "Male" if is_male_cell else "Female"
-    log(f"Inferred Sex: {gender_tag} (chrY Median: {y_median:.4f}, Threshold: {sex_threshold})")
+    is_male_cell = y_ratio > sex_ratio_thresh
+    gender_tag = "Male (XY)" if is_male_cell else "Female (XX)"
+    log(f"Inferred Sex: {gender_tag} (chrY/Auto Ratio: {y_ratio:.3f}, Thresh: {sex_ratio_thresh})")
 
     norm_results = []
     
-    # [MODIFIED] 염색체별 루프 진행
+    # 3. 염색체별 LOO 정규화 루프
     for chrom, group in df.groupby("chrom", sort=False):
-        # Leave-one-out 방식의 참조군 설정
         ref_df = df[~df["chrom"].isin(["chrX", "chrY", chrom])]
-        
-        # 만약 참조할 상염색체가 부족할 경우 글로벌 중앙값 강제 사용
         current_median = ref_df[value_col].median() if not ref_df.empty else global_median
         
-        # [MODIFIED] Log2 Space Target 설정 (2n=0, 1n=-1)
-        target_log2 = 0.0 # Default for Autosomes (2n)
+        # Log2 Space Target (Expected Log2FC)
+        expected_log2 = 0.0 # Default for Autosomes (2n)
                 
         if chrom == "chrX":
-            # 남성 1n (-1.0), 여성 2n (0.0)
-            target_log2 = -1.0 if is_male_cell else 0.0
+            expected_log2 = -1.0 if is_male_cell else 0.0 # XY: 1n, XX: 2n
             
         elif chrom == "chrY":
             if is_male_cell:
-                # 남성 Y 1n (-1.0)
-                target_log2 = -1.0
+                expected_log2 = -1.0 # XY: 1n
             else:
-                # [MODIFIED] 여성 Y: 조작 없이 글로벌 기준 대비 노이즈 유지
-                # 2n Baseline(0.0) 상태를 유지하기 위해 global_median만 감쇄
-                group["log2_chrom_norm"] = group[value_col] - global_median
+                # 여성 Y: 데이터 소실/노이즈 보존 (관측치 Log2FC 그대로 투영)
+                group["log2_chrom_norm"] = np.log2((group[value_col] + 1e-9) / (global_median + 1e-9))
                 norm_results.append(group)
                 log(f"Processed {chrom:5}: Noise preserved relative to global.")
                 continue
         
-        # 정규화 계산: (관측치 - 주변 중앙값) + 생물학적 기대값(Log2)
-        group["log2_chrom_norm"] = group[value_col] - current_median + target_log2
+        # [수학적 교정] (관측치 / 중앙값)의 Log2 - (생물학적 기대 Log2)
+        # 이렇게 하면, 남성 chrX라도 정상(1-copy)이면 log2_chrom_norm이 0.0으로 맞춰집니다.
+        observed_log2 = np.log2((group[value_col] + 1e-9) / (current_median + 1e-9))
+        group["log2_chrom_norm"] = observed_log2 - expected_log2
         
-        log(f"Normalized {chrom:5}: Target(Log2)={target_log2:4.1f}, Ref_Median={current_median:7.4f}")
+        log(f"Normalized {chrom:5}: Expected(Log2)={expected_log2:4.1f}, Ref_Median={current_median:7.1f}")
         norm_results.append(group)
 
-    return pd.concat(norm_results).reset_index(drop=True)
+    return pd.concat(norm_results).reset_index(drop=True), gender_tag, y_ratio
+
 
 
 def normalize_all_metrics_with_sex_log2(df, depth_col="raw_total_depth", qc_frag_col="qc_pass_fragments", sex_threshold=0.0001):

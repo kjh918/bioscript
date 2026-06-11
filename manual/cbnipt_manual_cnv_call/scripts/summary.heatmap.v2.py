@@ -15,6 +15,10 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from scipy import stats
 from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))  
+
+from src.cbnipt_cnv_caller.visualization import 
+
 
 # ═══════════════════════════════════════════════════════════════
 # 0. 전역 구성 매개변수
