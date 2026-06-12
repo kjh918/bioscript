@@ -12,40 +12,34 @@ BIN_SUMMARY_SCHEMA = {
     "bin_id": "object",
     "raw_count": "int32",               "breadth_ratio": "float32",
 
-    "total_sites": "int32",             # Population 기준 Informative SNP 총 개수
-    "ref_sum": "int32",                 "alt_sum": "int32",
+    "total_sites": "int32",             
+    "ref_sum": "int32",                 "alt_sum": "int32",         "other_sum": "int32",
     "total_depth": "int32",             "bin_BAF": "float32",
     
-    "pop_hetero_count": "int32",        # AF 0.4~0.6 인 마커 수 (total_sites와 동일)
-    "pop_homo_count": "int32",          # AF <=0.1 or >=0.9 인 마커 수 (Reference 유사/고정 영역)
+    "pop_hetero_count": "int32",        "pop_homo_count": "int32",  
     
-    # [NEW] 관측된 절대 개수 (신뢰도 가중치용)
-    "hetero_like_count": "int32",       "imbalance_count": "int32",
-    "homo_like_count": "int32",
+    "hetero_like_count": "int32",       "imbalance_count": "int32", "homo_like_count": "int32",
+    "hetero_like_rate": "float32",      "imbalance_rate": "float32","homo_like_rate": "float32", 
+    "MAD_BAF": "float32",
     
-    # 관측된 비율
-    "hetero_like_rate": "float32",      "imbalance_rate": "float32",
-    "homo_like_rate": "float32",        "MAD_BAF": "float32",
+    # [NEW] 노이즈 척도
+    "on_target_noise_rate": "float32",  "off_target_noise_rate": "float32",
     
     "total_fragments_sum": "int32",     "qc_pass_fragments": "int32",
     "total_trans_fragments": "int32",   "total_cis_fragments": "int32",
-    "raw_bin_TER": "float32",           "raw_bin_CER": "float32"
+    
+    "raw_bin_TER": "float32",           "raw_bin_CER": "float32",
+    "adj_bin_TER": "float32",           "adj_bin_CER": "float32"
 }
 
+
 def process_bin_with_handles(bam_handle, bin_info, site_df, min_mapq, min_baseq, thresholds):
-    """
-    One-Pass BAM 처리
-    Midpoint 카운팅과 Breadth of Coverage 계산, VCF 파싱을 단 하나의 for 루프에서 동시에 해결합니다.
-    """
     chrom, start, end = bin_info['chrom'], bin_info['start'], bin_info['end']
     bin_len = end - start
     
-    # [CRITICAL FIX] bin_sites가 무조건 존재하도록 강제 할당
     if site_df.empty or 'chrom' not in site_df.columns:
-        # 변이가 없거나 컬럼이 깨져서 들어와도 빈 DataFrame으로 안전하게 초기화
         bin_sites = pd.DataFrame(columns=["chrom", "pos", "ref", "alt", "pop_af"])
     else:
-        # 정상적인 경우 필터링 진행
         bin_sites = site_df[(site_df['chrom'] == chrom) & (site_df['pos'] > start) & (site_df['pos'] < end)]
         
     site_lookup = {row.pos: {"ref": row.ref, "alt": row.alt} for row in bin_sites.itertuples()} if not bin_sites.empty else {}
@@ -53,23 +47,28 @@ def process_bin_with_handles(bam_handle, bin_info, site_df, min_mapq, min_baseq,
     fragments = {}
     raw_count = 0  
     coverage_mask = np.zeros(bin_len, dtype=bool)
+    
+    total_mapped_bases = 0
+    total_nm_errors = 0
 
     for read in bam_handle.fetch(chrom, start, end):
         if read.is_unmapped or read.is_duplicate or read.is_secondary or read.is_supplementary: continue
         if read.mapping_quality < min_mapq: continue
         
-        # 1. Breadth 계산
+        # 전체 매핑 염기 수와 NM 태그(에러 수) 수집
+        total_mapped_bases += read.query_alignment_length
+        if read.has_tag("NM"):
+            total_nm_errors += read.get_tag("NM")
+        
         ref_start = max(read.reference_start, start)
         ref_end = min(read.reference_end, end)
         if ref_start < ref_end:
             coverage_mask[ref_start - start : ref_end - start] = True
             
-        # 2. Midpoint 카운팅
         mid = (read.reference_start + read.reference_end) // 2
         if start <= mid < end:
             raw_count += 1
 
-        # 3. VCF Phasing 및 BAF 추출 (변이가 없으면 이 아래는 자동 스킵)
         if not site_lookup: continue
 
         qname = read.query_name
@@ -105,27 +104,28 @@ def process_bin_with_handles(bam_handle, bin_info, site_df, min_mapq, min_baseq,
                 "is_trans": (n_total >= 2 and 0 < n_alt < n_total)
             })
             
-    return summarize_and_classify_bin(pd.DataFrame(frag_list), bin_sites, f"{chrom}:{start}-{end}", raw_count, breadth_ratio, thresholds)
- 
+    return summarize_and_classify_bin(pd.DataFrame(frag_list), bin_sites, f"{chrom}:{start}-{end}", raw_count, breadth_ratio, thresholds, total_mapped_bases, total_nm_errors)
 
-def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_ratio, thresholds):
+def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_ratio, thresholds, total_mapped_bases, total_nm_errors):
     res = {k: (0 if 'int' in v else 0.0) for k, v in BIN_SUMMARY_SCHEMA.items()}
     res["bin_id"] = bin_id
     res["raw_count"] = raw_count
     res["breadth_ratio"] = breadth_ratio
     
+    mut_dist_df = pd.DataFrame() 
+
     if fragment_df.empty or site_df.empty: 
-        return pd.DataFrame(), pd.DataFrame([res])
+        return pd.DataFrame(), pd.DataFrame([res]), mut_dist_df
     
-    # 1. 포지션별 기본 통계 적재
+    # 1. 포지션별 기본 통계 적재 (other_depth 추가)
     pos_stats = {
         row.pos: {
             "bin_id": bin_id, "chrom": row.chrom, "pos": row.pos, "ref": row.ref, "alt": row.alt, "pop_af": row.pop_af,
-            "ref_depth": 0, "alt_depth": 0, "cis_support": 0, "trans_support": 0, "total_fragments": 0
+            "ref_depth": 0, "alt_depth": 0, "other_depth": 0,
+            "cis_support": 0, "trans_support": 0, "total_fragments": 0
         } for row in site_df.itertuples()
     }
     
-    # Fragment 정보 파싱
     for frag in fragment_df.to_dict('records'):
         for pos, data in frag['obs_dict'].items():
             if pos not in pos_stats: continue
@@ -133,14 +133,15 @@ def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_
             stat["total_fragments"] += 1
             if data['base'] == stat['alt'].upper(): stat["alt_depth"] += 1
             elif data['base'] == stat['ref'].upper(): stat["ref_depth"] += 1
+            else: stat["other_depth"] += 1
+                
             if frag['is_cis_alt']: stat["cis_support"] += 1
             if frag['is_trans']: stat["trans_support"] += 1
 
     report_df = pd.DataFrame(pos_stats.values())
-    if report_df.empty: return pd.DataFrame(), pd.DataFrame([res])
+    if report_df.empty: return pd.DataFrame(), pd.DataFrame([res]), mut_dist_df
 
-    # Site-level 계산
-    report_df["total_depth"] = report_df["ref_depth"] + report_df["alt_depth"]
+    report_df["total_depth"] = report_df["ref_depth"] + report_df["alt_depth"] + report_df["other_depth"]
     report_df["BAF"] = (report_df["alt_depth"] / report_df["total_depth"]).fillna(0)
     
     cond_pop = [
@@ -155,7 +156,6 @@ def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_
     ]
     report_df['baf_class'] = np.select(cond_baf, ['hetero_like', 'homo_like'], default='imbalance')
     
-    # Bin-level Summary (pop_hetero_informative 기준 추출)
     pop_counts = report_df['pop_class'].value_counts()
     res["pop_hetero_count"] = int(pop_counts.get('pop_hetero_informative', 0))
     res["pop_homo_count"] = int(pop_counts.get('pop_homo_like', 0))
@@ -166,23 +166,51 @@ def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_
     if total_sites > 0:
         res["ref_sum"] = int(target_df['ref_depth'].sum())
         res["alt_sum"] = int(target_df['alt_depth'].sum())
+        res["other_sum"] = int(target_df['other_depth'].sum())
         res["total_depth"] = int(target_df['total_depth'].sum())
+        
+        # Mutation Signature Calculation
+        complement_map = {'A': 'T', 'T': 'A', 'C': 'G', 'G': 'C'}
+        mutation_types = []
+        for r_row in target_df.itertuples():
+            ref = r_row.ref.upper()
+            alt = r_row.alt.upper()
+            if ref in ['A', 'C', 'G', 'T'] and alt in ['A', 'C', 'G', 'T'] and ref != alt:
+                if ref in ['A', 'G']:
+                    std_ref, std_alt = complement_map[ref], complement_map[alt]
+                else:
+                    std_ref, std_alt = ref, alt
+                mutation_types.append(f"{std_ref}>{std_alt}")
+
+        if mutation_types:
+            mut_counts = pd.Series(mutation_types).value_counts()
+            mut_dist_df = pd.DataFrame(mut_counts).reset_index()
+            mut_dist_df.columns = ['mutation_type', 'count']
+            mut_dist_df['bin_id'] = bin_id
+            mut_dist_df['percentage'] = mut_dist_df['count'] / len(mutation_types)
+            for s_type in ['C>A', 'C>G', 'C>T', 'T>A', 'T>C', 'T>G']:
+                if s_type not in mut_dist_df['mutation_type'].values:
+                    mut_dist_df = pd.concat([mut_dist_df, pd.DataFrame([{'mutation_type': s_type, 'count': 0, 'bin_id': bin_id, 'percentage': 0.0}])], ignore_index=True)
+            mut_dist_df = mut_dist_df.sort_values('mutation_type').reset_index(drop=True)
+        
+        # Noise Rates
+        res["on_target_noise_rate"] = float(res["other_sum"] / res["total_depth"]) if res["total_depth"] > 0 else 0.0
+        off_target_errors = max(0, total_nm_errors - res["alt_sum"] - res["other_sum"])
+        off_target_bases = max(1, total_mapped_bases - res["total_depth"])
+        res["off_target_noise_rate"] = float(off_target_errors / off_target_bases)
+        
         res["bin_BAF"] = float(res["alt_sum"] / res["total_depth"]) if res["total_depth"] > 0 else 0.0
         
-        # [NEW] 절대 카운트(Count) 먼저 추출
         baf_counts = target_df['baf_class'].value_counts()
         res["hetero_like_count"] = int(baf_counts.get('hetero_like', 0))
         res["imbalance_count"] = int(baf_counts.get('imbalance', 0))
         res["homo_like_count"] = int(baf_counts.get('homo_like', 0))
         
-        # [NEW] 추출된 카운트를 바탕으로 비율(Rate) 계산
         res["hetero_like_rate"] = float(res["hetero_like_count"] / total_sites)
         res["imbalance_rate"] = float(res["imbalance_count"] / total_sites)
         res["homo_like_rate"] = float(res["homo_like_count"] / total_sites)
-        
         res["MAD_BAF"] = float(np.median(np.abs(target_df['BAF'] - 0.5)))
         
-    # Fragment Phasing Summary
     qc_mask = report_df['total_fragments'] >= 2
     qc_pass_fragments = int(report_df[qc_mask]["total_fragments"].sum()) if not report_df[qc_mask].empty else 0
     
@@ -196,13 +224,17 @@ def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_
     denom = qc_pass_fragments if qc_pass_fragments > 0 else 1
     res["raw_bin_TER"] = float(res["total_trans_fragments"] / denom)
     res["raw_bin_CER"] = float(res["total_cis_fragments"] / denom)
+    
+    # [NEW] Hetero/Homo 발생 확률 기반 Adjusted 에러율 보정
+    res["adj_bin_TER"] = float(res["raw_bin_TER"] / (res["hetero_like_rate"] + 1e-4))
+    res["adj_bin_CER"] = float(res["raw_bin_CER"] / (res["hetero_like_rate"] + res["homo_like_rate"] + 1e-4))
 
     summary_df = pd.DataFrame([res])
     for col, dtype in BIN_SUMMARY_SCHEMA.items():
         if col in summary_df.columns:
             summary_df[col] = summary_df[col].astype(dtype)
             
-    return report_df, summary_df
+    return report_df, summary_df, mut_dist_df
 
 
 # [수정] 인자에 thresholds 추가
@@ -262,21 +294,16 @@ def fetch_sites_with_handle(vcf_handle, chrom, start, end):
     return df
 
 def _parallel_chrom_worker(chrom_df, bam_path, vcf_file, min_mapq, thresholds, tmp_dir):
-    """
-    [수정 사항]
-    1. 파라미터로 thresholds 딕셔너리를 받습니다.
-    2. site_df가 비어있어도 BAM Coverage를 구하기 위해 continue 하지 않고 무조건 함수를 호출합니다.
-    """
     chrom = chrom_df['chrom'].iloc[0]
-    
-    if not os.path.exists(vcf_file):
-        return None, None
+    if not os.path.exists(vcf_file): return None, None, None
         
     tmp_pos_path = os.path.join(tmp_dir, f"tmp_pos_{chrom}.parquet")
     tmp_sum_path = os.path.join(tmp_dir, f"tmp_sum_{chrom}.parquet")
+    tmp_mut_path = os.path.join(tmp_dir, f"tmp_mut_{chrom}.parquet") # [NEW]
     
     local_position_reports = []
     local_bin_summaries = []
+    local_mut_distributions = []
     
     with pysam.AlignmentFile(bam_path, "rb", threads=1) as bam_handle, \
          pysam.VariantFile(vcf_file) as vcf_handle:
@@ -284,37 +311,38 @@ def _parallel_chrom_worker(chrom_df, bam_path, vcf_file, min_mapq, thresholds, t
         for r in chrom_df.itertuples():
             site_df = fetch_sites_with_handle(vcf_handle, r.chrom, r.start, r.end)
 
-            report_df, summary_df = process_bin_with_handles(
+            report_df, summary_df, mut_dist_df = process_bin_with_handles(
                 bam_handle, 
                 {"chrom": r.chrom, "start": r.start, "end": r.end}, 
                 site_df, 
                 min_mapq=min_mapq, 
                 min_baseq=20, 
-                thresholds=thresholds  # <- hetero_range 대신 thresholds 딕셔너리 전달
+                thresholds=thresholds 
             )
             
-            # 변이가 있는 경우에만 Position Report 적재
-            if not report_df.empty:
-                local_position_reports.append(report_df)
+            if not report_df.empty: local_position_reports.append(report_df)
+            if not mut_dist_df.empty: local_mut_distributions.append(mut_dist_df)
                 
-            # Summary는 Coverage 정보를 항상 담고 있으므로 무조건 적재
             if not summary_df.empty:
                 summary_dict = summary_df.iloc[0].to_dict()
                 summary_dict.update({"chrom": r.chrom, "start": r.start, "end": r.end})
                 local_bin_summaries.append(summary_dict)
 
-    # 파이썬 리스트 메모리 해제 및 Parquet 엔진으로 직렬화 저장
     if local_position_reports:
         pd.concat(local_position_reports, ignore_index=True).to_parquet(tmp_pos_path, engine='pyarrow', index=False)
-        
     if local_bin_summaries:
         pd.DataFrame(local_bin_summaries).to_parquet(tmp_sum_path, engine='pyarrow', index=False)
+    if local_mut_distributions:
+        pd.concat(local_mut_distributions, ignore_index=True).to_parquet(tmp_mut_path, engine='pyarrow', index=False)
 
-    del local_position_reports
-    del local_bin_summaries
+    del local_position_reports, local_bin_summaries, local_mut_distributions
 
-    return (tmp_pos_path if os.path.exists(tmp_pos_path) else None, 
-            tmp_sum_path if os.path.exists(tmp_sum_path) else None)
+    return (
+        tmp_pos_path if os.path.exists(tmp_pos_path) else None, 
+        tmp_sum_path if os.path.exists(tmp_sum_path) else None,
+        tmp_mut_path if os.path.exists(tmp_mut_path) else None
+    )
+
 
 def gc_correct_lowess(df, frac=0.2):
     x, y = df["gc"].values, np.log2(df["raw_count"].values + 1)

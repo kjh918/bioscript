@@ -21,13 +21,13 @@ CFG:
   mosaic_bin_shift_min: 0.55
   mosaic_score_thresh: 0.45
 
-  w_copy: 0.35
+  w_copy: 0.4
   w_baf: 0.25
   w_ter: 0.15
   w_cer: 0.15
   w_pval: 0.10
-  call_thresh_high: 0.50
-  call_thresh_low: 0.25
+  call_thresh_high: 0.70
+  call_thresh_low: 0.5
 
 CALL_COLORS:
   "NORMAL": "#4CAF50"

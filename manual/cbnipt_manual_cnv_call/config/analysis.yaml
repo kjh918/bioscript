@@ -1,0 +1,32 @@
+info:
+  user: jhkim
+  date: 260612
+  logs: |
+    - Initial creation for cbNIPT unified anomaly detection and visualization
+
+tool:
+  name: cbNIPT_CNV_Caller
+  version: "1.0.0"
+  profile: Run anomaly detection and generate plots for a single sample
+  setup: |
+    # (필요 시 conda 환경 활성화 등)
+
+io:
+  inputs:
+    SeqID: { required: true, type: str, help: "분석 고유 ID (Sample ID)" }
+    NormTsvPath: { required: true, type: str, help: "정규화 카운트가 포함된 입력 TSV 파일 경로" }
+  
+  outputs:
+    OutDir: { required: true, type: str, help: "최종 결과물(TSV, Plots)이 저장될 디렉토리" }
+    # Pipeline 무결성 검사를 위해 핵심 출력 파일 명시
+    StdTsv: { required: false, type: str, default: "[OutDir]/[SeqID].standardized.tsv", help: "표준화 완료된 최종 TSV" }
+
+params:
+  python_bin: { required: false, type: str, default: "/storage/home/jhkim/Apps/Python-3.11.13/python", help: "Python 인터프리터 절대 경로" }
+  script_path: { required: true, type: str, help: "실제 분석을 수행할 Python 스크립트 경로" }
+
+cmd_line: >
+  [python_bin] [script_path]
+  --SeqID [SeqID]
+  --NormTsvPath [NormTsvPath]
+  --OutDir [OutDir]

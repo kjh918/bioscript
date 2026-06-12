@@ -1,0 +1,21 @@
+
+sequencer_id:
+  0: 
+    sequencer_name: 'NO_SEQUENCER'
+    facility_id: 0
+  1:
+    sequencer_name: 'Nextseq550Dx'
+    facility_id: 1
+  2:
+    sequencer_name: 'Novaseq'
+    facility_id: 10
+  3:
+    sequencer_name: 'Novaseq'
+    facility_id: 14
+  4:
+    sequencer_name: 'Novaseq 6000'
+    facility_id: 22
+  5:
+    sequencer_name: 'Novaseq'
+    facility_id: 16
+

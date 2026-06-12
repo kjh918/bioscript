@@ -70,7 +70,7 @@ def process_and_run(raw_tsv_path: str):
     print(f"\n[Done] All process successfully completed. Output: {out_dir}")
 
 if __name__ == "__main__":
-    file_list = glob("/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/cbNIPT_24_04_09/data/cbNIPT_24_04_09.normalized.tsv")
+    file_list = glob("/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/cbNIPT_24_04_02_DS_Ratio_1-1-Insilico_cbNIPT_24_04_04/data/cbNIPT_24_04_02_DS_Ratio_1-1-Insilico_cbNIPT_24_04_04.normalized.tsv")
     if not file_list: print("No files found to process.")
     else:
         for TSV_PATH in file_list[:1]: 
