@@ -3,14 +3,13 @@ CFG:
   min_coverage: 0.5
   
   y_presence_threshold: 0.15 # XY 판단 기준 (chrY/autosome)
-  sex_mono_x_ratio: 0.75 # XX에서 chrX/auto : 0.75 -> Turner(X0)
   sex_xxx_ratio: 1.25 # XX에서 chrX/auto : 1.25 -> XXX
   sex_xxy_ratio: 0.75 # XY에서 chrX/auto : 0.75 -> Klinefelter(XXY)
   sex_mono_y_ratio: 0.25 # XY에서 chrY/auto : 0.25 -> chrY loss
   sex_xyy_ratio: 0.75 # XY에서 chrY/auto : 0.75 -> XYY
   sex_mono_x_ratio: 0.75
   
-  robust_z_hreshold: 2.5
+  robust_z_threshold: 2.5
   pval_threshold: 0.05
   homo_rate_threshold: 0.6
   ter_z_thresh: 2.0

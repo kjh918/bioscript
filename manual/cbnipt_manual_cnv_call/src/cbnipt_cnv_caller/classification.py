@@ -1,211 +1,235 @@
 import numpy as np
 import pandas as pd
-from .utils import log, safe_log2fc, chrom_key
-from .rules import CFG
 
-def apply_qc_and_impute(df, min_depth=5, min_coverage=0.1):
-    """
-    [MODIFIED] Deletion 탐지를 위해 Low Quality Bin을 삭제하지 않고,
-    극단적인 Deletion 시그널(Zero-Imputation)로 변환하여 유지합니다.
-    """
-    if df is None or df.empty: return pd.DataFrame()
-    
-    df_imputed = df.copy()
-    
-    # 1. 퀄리티 미달 Bin 찾기 (Coverage가 거의 없는 구간 = Deletion 후보)
-    # 단, 센트로미어(Centromere) 등 원래 매핑이 안 되는 블랙리스트 구간은 사전에 제외되었다고 가정합니다.
-    bad_mask = (df_imputed["raw_count"] < min_depth) | (df_imputed["breadth_ratio"] < min_coverage)
-    
-    # 성염색체 보호 (여성 chrY 등은 정상적으로 비어있을 수 있으므로 Imputation 제외)
-    sex_chrom_mask = df_imputed["chrom"].isin(["chrX", "chrY"])
-    target_mask = bad_mask & (~sex_chrom_mask)
-    
-    # 2. 강제 Imputation (범죄 현장 보존)
-    # DNA가 아예 없다는 것은 완벽한 결실(Log2FC 최하점)이며, 대립유전자는 100% 한쪽으로 쏠린(Homo) 상태로 간주
-    df_imputed.loc[target_mask, "log2_chrom_norm"] = -3.0  # 극단적 결실 시그널
-    df_imputed.loc[target_mask, "hetero_like_rate"] = 0.0  # Hetero 불가능
-    df_imputed.loc[target_mask, "homo_like_rate"] = 1.0    # 극단적 LOH 상태
-    
-    # [Tip] 추가로 'is_imputed' 플래그를 달아두면 나중에 해석하기 편합니다.
-    df_imputed["is_imputed"] = False
-    df_imputed.loc[target_mask, "is_imputed"] = True
-    
-    # 정렬 후 반환
-    df_imputed["_k"] = df_imputed["chrom"].apply(chrom_key)
-    return df_imputed.sort_values(["_k", "start"]).drop(columns=["_k"]).reset_index(drop=True)
+from utils import log, safe_log2fc, chrom_key
+from rules import CFG
 
 
+# ═══════════════════════════════════════════════════════════════
+# 1. 염색체별 요약 통계 생성
+# ═══════════════════════════════════════════════════════════════
 def compute_chrom_summary(df):
-    base_cols = ["log2_chrom_norm", "hetero_like_rate", "homo_like_rate", "imbalance_rate", "bin_BAF"]
-    base_cols = ['log2_chrom_norm']
-    
-    # 2. [핵심 업데이트] TER과 CER을 Hetero/Homo 비율로 보정 (Adjusted Metrics)
-    if "raw_bin_TER" in df.columns and "hetero_like_rate" in df.columns:
-        # Trans 에러는 Hetero 구간에서만 발견되므로 hetero_like_rate로 나누어 밀도 보정
-        # (+1e-4는 분모가 0이 되어 무한대가 되는 것을 방지하는 안전장치)
-        df["adj_bin_TER"] = df["raw_bin_TER"] / (df["hetero_like_rate"] + 1e-4)
-        base_cols.append("adj_bin_TER")
-        
-    if "raw_bin_CER" in df.columns and "homo_like_rate" in df.columns:
-        # Cis(ALT)는 변이가 존재하는 모든 구간(Hetero+Homo)에서 발견되므로 총 변이율로 보정
-        total_variant_rate = df["hetero_like_rate"] + df["homo_like_rate"]
-        df["adj_bin_CER"] = df["raw_bin_CER"] / (total_variant_rate + 1e-4)
-        base_cols.append("adj_bin_CER")
+    """
+    bin 단위 DataFrame → 염색체별 중앙값/평균 요약.
+    존재하는 컬럼만 동적으로 집계합니다.
 
-    cols = [c for c in base_cols if c in df.columns]
+    [전제] df의 log2_chrom_norm 은 normalize_by_chrom_with_sex() 에서
+           observed_log2 - expected_log2 로 이미 보정되어 있습니다.
+           즉 정상 염색체는 0.0 근방, 이상 염색체만 이탈하므로
+           robust-Z 기준이 명확합니다.
+    """
+    candidate_cols = [
+        "log2_chrom_norm",
+        "bin_BAF",
+        "hetero_like_rate",
+        "homo_like_rate",
+        "imbalance_rate",
+        "adj_bin_TER",
+        "adj_bin_CER",
+    ]
+    base_cols = [c for c in candidate_cols if c in df.columns]
+
     rows = []
     for chrom, grp in df.groupby("chrom"):
         row = {"chrom": chrom, "n_bins": len(grp)}
-        for c in cols: row[f"{c}_median"], row[f"{c}_mean"] = grp[c].median(), grp[c].mean()
+        for c in base_cols:
+            row[f"{c}_median"] = grp[c].median()
+            row[f"{c}_mean"]   = grp[c].mean()
         rows.append(row)
+
     summary = pd.DataFrame(rows)
     summary["_k"] = summary["chrom"].apply(chrom_key)
     return summary.sort_values("_k").drop(columns=["_k"]).reset_index(drop=True)
 
+
+# ═══════════════════════════════════════════════════════════════
+# 2. BAF 시그널 및 모자이시즘 점수
+# ═══════════════════════════════════════════════════════════════
 def compute_baf_signal(summary):
     result = {}
     for _, row in summary.iterrows():
         c, scores, n = row["chrom"], 0.0, 0
+
         baf = row.get("bin_BAF_median", np.nan)
-        if not np.isnan(baf) and c not in ("chrX", "chrY"): scores += min(abs(baf - 0.5) / 0.17, 1.0); n += 1
+        if not np.isnan(baf) and c not in ("chrX", "chrY"):
+            scores += min(abs(baf - 0.5) / 0.17, 1.0)
+            n += 1
+
         homo = row.get("homo_like_rate_mean", np.nan)
-        if not np.isnan(homo): scores += min(max(homo - CFG["homo_rate_threshold"], 0) / (1 - CFG["homo_rate_threshold"]), 1.0); n += 1
+        if not np.isnan(homo):
+            scores += min(
+                max(homo - CFG["homo_rate_threshold"], 0) / (1 - CFG["homo_rate_threshold"]),
+                1.0)
+            n += 1
+
         imbal = row.get("imbalance_rate_mean", np.nan)
-        if not np.isnan(imbal) and c not in ("chrX", "chrY"): scores += min(imbal * 2, 1.0); n += 1
+        if not np.isnan(imbal) and c not in ("chrX", "chrY"):
+            scores += min(imbal * 2, 1.0)
+            n += 1
+
         result[c] = scores / n if n > 0 else 0.0
     return result
 
-def compute_mosaic_score(baf_median, hetero_mean, homo_mean, ter_score, cer_score):
-    """
-    [MODIFIED] Copy Number(Log2FC)와 Z-Score를 완전히 배제하고, 
-    대립유전자(Allele) 및 Phasing 지표의 변동성만을 기반으로 Mosaicism을 산출합니다.
-    """
-    if np.isnan(baf_median) or np.isnan(hetero_mean) or np.isnan(homo_mean):
+
+def compute_mosaic_score(baf_median, hetero_mean, homo_mean, ter_rz, cer_rz):
+    if any(np.isnan(v) for v in [baf_median, hetero_mean, homo_mean]):
         return 0.0
-        
-    # 1. BAF 편차 증가: 0.5 기준에서 멀어질수록(늘어날수록) Mosaic 점수 상승
-    baf_dev = abs(baf_median - 0.5)
-    baf_comp = np.clip(baf_dev / 0.17, 0.0, 1.0)
-    
-    # 2. Hetero 비율 증가: 높아질수록 Mosaic 점수 상승
+
+    baf_comp    = np.clip(abs(baf_median - 0.5) / 0.17, 0.0, 1.0)
     hetero_comp = np.clip(hetero_mean / 0.50, 0.0, 1.0)
-    
-    # 3. Homo 비율 감소: 낮아질수록 Mosaic 점수 상승 (반비례 역산)
-    homo_comp = np.clip(1.0 - (homo_mean / CFG["homo_rate_threshold"]), 0.0, 1.0)
-    
-    # 4. 통합 연산 (가중치 재분배)
-    support = (0.35 * baf_comp) + (0.25 * hetero_comp) + (0.20 * homo_comp) + (0.10 * abs(ter_score)) + (0.10 * abs(cer_score))
-    
+    homo_comp   = np.clip(1.0 - (homo_mean / CFG["homo_rate_threshold"]), 0.0, 1.0)
+
+    support = (0.35 * baf_comp
+               + 0.25 * hetero_comp
+               + 0.20 * homo_comp
+               + 0.10 * abs(ter_rz)
+               + 0.10 * abs(cer_rz))
     return float(np.clip(support, 0.0, 1.0))
 
+
 # ═══════════════════════════════════════════════════════════════
-# 3. 통합 진단 엔진 (상염색체 + 성염색체 하드 컷오프)
-# ═══════════════════════════════════════════════════════════════
-# ═══════════════════════════════════════════════════════════════
-# 3. 통합 진단 엔진 (Copy, BAF, Homo, Hetero 순수 생물학적 지표 주도형)
+# 3. 통합 진단 엔진
 # ═══════════════════════════════════════════════════════════════
 def analyze_all_chromosomes(summary, sex, x_ratio, y_ratio):
-    results = []
-    auto_summary = summary[~summary["chrom"].isin(["chrX", "chrY"])]
-    baf_sig = compute_baf_signal(summary)
-    
-    def get_auto_mad(col):
-        vals = auto_summary[col].dropna().values
-        if len(vals) < 2: return 1e-9
+    """
+    Parameters
+    ----------
+    summary  : compute_chrom_summary() 결과 DataFrame
+    sex      : normalize_by_chrom_with_sex() 가 반환한 gender_tag
+               ("Male (XY)" / "Female (XX)" / "XY" / "XX")
+    x_ratio  : raw_count 기준 chrX_median / autosome_median
+    y_ratio  : raw_count 기준 chrY_median / autosome_median
+
+    [핵심 설계]
+    normalize_by_chrom_with_sex() 에서 이미
+        log2_chrom_norm = log2(obs / ref_median) - expected_log2
+    를 수행했으므로 정상 염색체는 0.0 근방에 분포합니다.
+    따라서 여기서는 expected_log2를 **다시 빼지 않고**,
+    상염색체 분포를 기준으로 순수 robust-Z만 계산합니다.
+    → robust-Z ≈ 0 : 정상,  |rz| > threshold : 이상
+    """
+    results     = []
+    auto_mask   = ~summary["chrom"].isin(["chrX", "chrY"])
+    auto_summary = summary[auto_mask]
+    baf_sig      = compute_baf_signal(summary)
+
+    # ── 상염색체 log2 분포의 MAD 추정 ────────────────────────────
+    def auto_mad(col):
+        vals = auto_summary[col].dropna().values if col in auto_summary.columns else np.array([])
+        if len(vals) < 2:
+            return 1e-9
         return max(np.median(np.abs(vals - np.median(vals))), 1e-9)
 
+    # ── 특정 메트릭의 robust-Z ────────────────────────────────────
+    def metric_rz(col, val):
+        if col not in auto_summary.columns or np.isnan(val):
+            return 0.0
+        vals = auto_summary[col].dropna().values
+        if len(vals) < 2:
+            return 0.0
+        med = np.median(vals)
+        mad = max(np.median(np.abs(vals - med)), 1e-9)
+        return float((val - med) / (1.4826 * mad))
+
+    thresh = CFG.get("robust_z_threshold", 2.5)
+
     for _, row in summary.iterrows():
-        chrom = row["chrom"]
+        chrom    = row["chrom"]
         log2_val = row.get("log2_chrom_norm_median", np.nan)
-        
-        expected_log2 = 0.0 # 상염색체 및 여성 XX는 0.0 (2-copy)
-        if sex == "XY":
-            if chrom == "chrX": expected_log2 = -1.0 
-            elif chrom == "chrY": expected_log2 = -1.0 
-        
-        # ─────────────────────────────────────────────────────────
-        # 1. Copy Number Score (물리적 증감, -1.0 ~ 1.0)
-        # ─────────────────────────────────────────────────────────
-        rz = (log2_val - expected_log2) / (1.4826 * get_auto_mad("log2_chrom_norm_median")) if not np.isnan(log2_val) else np.nan
-        copy_s = float(np.clip(rz / (CFG.get("robust_z_threshold", 2.5) * 2), -1.0, 1.0)) if not np.isnan(rz) else 0.0
+
+        # ── Robust-Z (상염색체 0.0 기준) ─────────────────────────
+        # normalize_by_chrom_with_sex 가 이미 expected_log2를 뺐으므로
+        # 여기서는 단순히 상염색체 중앙값(≈0) 대비 이탈 정도만 봅니다.
+        if not np.isnan(log2_val):
+            rz = (log2_val - 0.0) / (1.4826 * auto_mad("log2_chrom_norm_median"))
+        else:
+            rz = np.nan
+
+        # copy_s : [-1, 1] 클립 (|rz| = thresh 일 때 ±0.5, thresh*2 일 때 ±1.0)
+        copy_s    = float(np.clip(rz / (thresh * 2), -1.0, 1.0)) if not np.isnan(rz) else 0.0
         direction = np.sign(copy_s) if copy_s != 0 else 1.0
 
-        # ─────────────────────────────────────────────────────────
-        # 2. BAF Score (대립유전자 균형 붕괴, 0.0 ~ 1.0)
-        # ─────────────────────────────────────────────────────────
+        # ── BAF 시그널 ────────────────────────────────────────────
         baf_s = baf_sig.get(chrom, 0.0)
 
-        # ─────────────────────────────────────────────────────────
-        # 3. Homo-like Score (결실 및 LOH 증거, 0.0 ~ 1.0)
-        # ─────────────────────────────────────────────────────────
-        homo_mean = row.get("homo_like_rate_mean", np.nan)
-        homo_penalty = 0.0
-        
-        if not np.isnan(homo_mean) and chrom not in ["chrX", "chrY"]:
-            # Homo가 1.0일 때 페널티 0.0, 작아질수록 페널티 최대 1.0까지 증가
-            homo_penalty = 1.0 - homo_mean
-
-        # ─────────────────────────────────────────────────────────
-        # 4. Hetero-like Score (0에서 멀어질수록 페널티 증가)
-        # ─────────────────────────────────────────────────────────
+        # ── Homo / Hetero 패널티 ──────────────────────────────────
+        homo_mean   = row.get("homo_like_rate_mean",   np.nan)
         hetero_mean = row.get("hetero_like_rate_mean", np.nan)
+
+        homo_penalty   = 0.0
         hetero_penalty = 0.0
-        
-        if not np.isnan(hetero_mean) and chrom not in ["chrX", "chrY"]:
-            # Hetero가 0.0일 때 페널티 0.0, 커질수록 페널티 최대 1.0까지 증가
+        if not np.isnan(homo_mean) and chrom not in ("chrX", "chrY"):
+            homo_penalty   = 1.0 - homo_mean
+        if not np.isnan(hetero_mean) and chrom not in ("chrX", "chrY"):
             hetero_penalty = hetero_mean
 
-        # ─────────────────────────────────────────────────────────
-        # [품질 지표 추출] TER, CER은 메인 스코어에서 제외, 모자이시즘에만 활용
-        # ─────────────────────────────────────────────────────────
-        def get_rz_score(col):
-            val = row.get(col, np.nan)
-            if np.isnan(val): return 0.0
-            vals = auto_summary[col].dropna().values
-            if len(vals) < 2: return 0.05  # 1e-9 대신 기본 노이즈 할당
-        
-            calculated_mad = np.median(np.abs(vals - np.median(vals)))
-            return max(calculated_mad, 0.08)
-        
-        ter_s = get_rz_score("adj_bin_TER_median")
-        cer_s = get_rz_score("adj_bin_CER_median")
-        
-        # ─────────────────────────────────────────────────────────
-        # 5. 최종 Abnormality Score 병합
-        # (Copy: 40%, BAF: 25%, Homo: 20%, Hetero: 15%)
-        # ─────────────────────────────────────────────────────────
-        final_score = (0.65 * copy_s) + \
-                      (0.15 * baf_s * direction) + \
-                      (0.10 * homo_penalty * (-1.0 if copy_s < 0 else 1.0)) + \
-                      (0.10 * hetero_penalty * direction)
-        
-        # Mosaic Score 계산 (TER, CER 포함)
-        baf_median = row.get("bin_BAF_median", np.nan)
-        mosaic_s = compute_mosaic_score(baf_median, hetero_mean, homo_mean, ter_s, cer_s)
-        
-        call = "ABNORMAL" if abs(final_score) >= CFG.get("call_thresh_high", 0.50) else ("SUSPICIOUS" if abs(final_score) >= CFG.get("call_thresh_low", 0.25) else "NORMAL")
-        
-        detail = f"Log2={log2_val:+.2f} | BAF={baf_median:.2f} | Hm={homo_mean:.2f}" if not np.isnan(log2_val) else ""
+        # ── TER / CER robust-Z (모자이시즘 전용) ──────────────────
+        ter_rz = metric_rz("adj_bin_TER_median", row.get("adj_bin_TER_median", np.nan))
+        cer_rz = metric_rz("adj_bin_CER_median", row.get("adj_bin_CER_median", np.nan))
 
-        # [하드 컷오프 오버라이드 로직 유지]
+        # ── Final Score ───────────────────────────────────────────
+        final_score = (
+            0.65 * copy_s
+            + 0.15 * baf_s          * direction
+            + 0.10 * homo_penalty   * (-1.0 if copy_s < 0 else 1.0)
+            + 0.10 * hetero_penalty * direction
+        )
+
+        # ── Mosaic Score ──────────────────────────────────────────
+        baf_median = row.get("bin_BAF_median", np.nan)
+        mosaic_s   = compute_mosaic_score(
+            baf_median, hetero_mean, homo_mean, ter_rz, cer_rz)
+
+        # ── Call ──────────────────────────────────────────────────
+        call = ("ABNORMAL"    if abs(final_score) >= CFG.get("call_thresh_high", 0.70)
+                else "SUSPICIOUS" if abs(final_score) >= CFG.get("call_thresh_low", 0.50)
+                else "NORMAL")
+
+        detail = ""
+        if not np.isnan(log2_val):
+            baf_str  = f"{baf_median:.2f}"  if not np.isnan(baf_median)  else "N/A"
+            homo_str = f"{homo_mean:.2f}"   if not np.isnan(homo_mean)   else "N/A"
+            detail   = f"Log2={log2_val:+.2f} | RZ={rz:+.2f} | BAF={baf_str} | Hm={homo_str}"
+
+        # ── 성염색체 하드 컷오프 (raw_count 비율 기준) ────────────
+        # x_ratio / y_ratio 는 pipeline 에서 raw_count 기준으로 계산되어 전달됩니다.
         if chrom == "chrX":
-            if sex == "XX":
-                if x_ratio <= CFG["sex_mono_x_ratio"]: call, detail, final_score = "ABNORMAL", "Turner(X0)", -0.7
-                elif x_ratio >= CFG["sex_xxx_ratio"]: call, detail, final_score = "ABNORMAL", "XXX Syndrome", 0.7
-            elif sex == "XY":
-                if x_ratio >= CFG["sex_xxy_ratio"]: call, detail, final_score = "ABNORMAL", "XXY Syndrome", 0.7
-                elif x_ratio <= 0.25: call, detail, final_score = "ABNORMAL", "chrX Loss", -0.7
+            if sex in ("XX", "Female (XX)", "Female"):
+                if x_ratio <= CFG["sex_mono_x_ratio"]:
+                    call, detail, final_score = "ABNORMAL", "Turner(X0)", -0.7
+                elif x_ratio >= CFG["sex_xxx_ratio"]:
+                    call, detail, final_score = "ABNORMAL", "XXX Syndrome", 0.7
+            elif sex in ("XY", "Male (XY)", "Male"):
+                if x_ratio >= CFG["sex_xxy_ratio"]:
+                    call, detail, final_score = "ABNORMAL", "XXY Syndrome", 0.7
+                elif x_ratio <= 0.25:
+                    call, detail, final_score = "ABNORMAL", "chrX Loss", -0.7
+
         elif chrom == "chrY":
-            if sex == "XY":
-                if y_ratio >= CFG["sex_xyy_ratio"]: call, detail, final_score = "ABNORMAL", "XYY Syndrome", 0.7
-                elif y_ratio <= CFG["sex_mono_y_ratio"]: call, detail, final_score = "ABNORMAL", "chrY Loss", -0.7
-            elif sex == "XX":
-                if y_ratio >= CFG["y_noise_threshold"]: call, detail, final_score = "SUSPICIOUS", "SRY Contamination", 0.4
+            if sex in ("XY", "Male (XY)", "Male"):
+                if y_ratio >= CFG["sex_xyy_ratio"]:
+                    call, detail, final_score = "ABNORMAL", "XYY Syndrome", 0.7
+                elif y_ratio <= CFG["sex_mono_y_ratio"]:
+                    call, detail, final_score = "ABNORMAL", "chrY Loss", -0.7
+            elif sex in ("XX", "Female (XX)", "Female"):
+                if y_ratio >= CFG["y_noise_threshold"]:
+                    call, detail, final_score = "SUSPICIOUS", "SRY Contamination", 0.4
 
         results.append(dict(
-            chrom=chrom, log2fc=log2_val, robust_z=rz, expected_copy=f"Exp({expected_log2:.1f})",
-            copy_score=copy_s, baf_score=baf_s, ter_score=ter_s, cer_score=cer_s, pval_score=0.0,
-            mosaic_score=mosaic_s, final_score=final_score, call=call, detail=detail, sex_note=""
+            chrom         = chrom,
+            log2fc        = log2_val,
+            robust_z      = rz,
+            expected_copy = "Exp(0.0)",   # normalize 단계에서 이미 보정됨
+            copy_score    = copy_s,
+            baf_score     = baf_s,
+            ter_score     = ter_rz,
+            cer_score     = cer_rz,
+            pval_score    = 0.0,
+            mosaic_score  = mosaic_s,
+            final_score   = final_score,
+            call          = call,
+            detail        = detail,
+            sex_note      = "",
         ))
-        
+
     return pd.DataFrame(results)

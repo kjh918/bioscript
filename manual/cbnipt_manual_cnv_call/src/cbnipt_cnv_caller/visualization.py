@@ -12,6 +12,8 @@ if current_dir not in sys.path:
 from utils import log, sort_chroms
 from rules import CALL_COLORS, CFG
 
+
+
 def plot_gc_correction(gc_stats, out_path):
     if gc_stats is None: return
     x, y, fit = gc_stats
@@ -21,18 +23,23 @@ def plot_gc_correction(gc_stats, out_path):
     plt.plot(x[idx], fit[idx], color='red', lw=2, label="Lowess Fit")
     plt.title("GC Bias Correction (LOWESS)"); plt.legend(); plt.savefig(out_path); plt.close()
 
+
 def plot_bin_distribution(df_f, call_df, sample_id, out_dir):
-    if "log2_chrom_norm" not in df_f.columns: return
+    # Copy Number (2.0) 기준으로 스케일 변경
+    use_cn_scale = "copy_number_signal" in df_f.columns
+    cn_col = "copy_number_signal" if use_cn_scale else "log2_chrom_norm"
+    
+    if cn_col not in df_f.columns: return
     abn_chroms = call_df[call_df["call"].isin(["ABNORMAL", "SUSPICIOUS"])]["chrom"].tolist()
     if not abn_chroms: return
 
     n = len(abn_chroms)
     fig, axes = plt.subplots(1, n, figsize=(max(6, 5 * n), 6), squeeze=False)
     fig.suptitle(f"Bin Distribution — Abnormal/Suspicious ({sample_id})", fontsize=12, fontweight="bold")
-    auto_vals = df_f[~df_f["chrom"].isin(["chrX", "chrY"])]["log2_chrom_norm"].dropna().values
+    auto_vals = df_f[~df_f["chrom"].isin(["chrX", "chrY"])][cn_col].dropna().values
 
     for ax, chrom in zip(axes[0], abn_chroms):
-        chrom_vals = df_f[df_f["chrom"] == chrom]["log2_chrom_norm"].dropna().values
+        chrom_vals = df_f[df_f["chrom"] == chrom][cn_col].dropna().values
         parts = ax.violinplot([auto_vals, chrom_vals], positions=[0, 1], showmedians=True, showextrema=True)
         for body, vc in zip(parts["bodies"], ["#90CAF9", "#CE93D8" if chrom in ("chrX","chrY") else "#EF9A9A"]):
             body.set_facecolor(vc); body.set_alpha(0.7)
@@ -41,10 +48,15 @@ def plot_bin_distribution(df_f, call_df, sample_id, out_dir):
         ax.scatter([1]*len(chrom_vals), chrom_vals, alpha=0.4, s=8, color="#6A1B9A" if chrom in ("chrX","chrY") else "#B71C1C")
 
         row = call_df[call_df["chrom"] == chrom].iloc[0]
-        ax.axhline(0.0, color="blue", linestyle=":", linewidth=1.0, label="Expected (0.0)")
-        if chrom not in ("chrX", "chrY"):
-            ax.axhline(0.585, color="red", linestyle=":", linewidth=1, label="Trisomy (+0.585)")
-            ax.axhline(-1.0, color="gray", linestyle=":", linewidth=1, label="Monosomy (-1.0)")
+        
+        # 2.0 Baseline 가이드라인
+        if use_cn_scale:
+            ax.axhline(2.0, color="blue", linestyle=":", linewidth=1.5, label="Expected (2.0)")
+            if chrom not in ("chrX", "chrY"):
+                ax.axhline(3.0, color="red", linestyle=":", linewidth=1, label="Trisomy (3.0)")
+                ax.axhline(1.0, color="gray", linestyle=":", linewidth=1, label="Monosomy (1.0)")
+        else:
+            ax.axhline(0.0, color="blue", linestyle=":", linewidth=1.0, label="Expected (0.0)")
 
         ax.set_xticks([0, 1])
         ax.set_xticklabels(["Autosomes", f"{chrom}\n({row['call']})"], fontsize=10, fontweight="bold")
@@ -56,9 +68,10 @@ def plot_bin_distribution(df_f, call_df, sample_id, out_dir):
     fig.savefig(os.path.join(out_dir, "02_bin_distribution.png"), dpi=200, bbox_inches="tight")
     plt.close(fig)
 
+
 def plot_score_heatmap(call_df, sample_id, sex, out_dir):
     score_cols = ["copy_score", "baf_score", "ter_score", "cer_score", "mosaic_score", "final_score"]
-    col_labels = ["Copy\n(Log2FC)", "BAF\nPattern", "TER\n(Trans)", "CER\n(Cis)", "MOSAIC\nIndex", "FINAL"]
+    col_labels = ["Copy\n(Signal)", "BAF\nPattern", "TER\n(Trans)", "CER\n(Cis)", "MOSAIC\nIndex", "FINAL"]
     chroms = sort_chroms(call_df["chrom"].tolist())
     mat = call_df.set_index("chrom").reindex(chroms)[score_cols].values.T
 
@@ -90,40 +103,42 @@ def plot_score_heatmap(call_df, sample_id, sex, out_dir):
 def plot_chromosome_overview(df_f, summary, call_df, sex, sample_id, out_dir):
     all_chroms = sort_chroms(df_f["chrom"].unique().tolist())
     chrom_x    = {c: i for i, c in enumerate(all_chroms)}
-    cn_col = "log2_chrom_norm" if "log2_chrom_norm" in df_f.columns else "raw_count"
     
+    use_cn_scale = "copy_number_signal" in df_f.columns
+    if use_cn_scale:
+        cn_col, cn_title, cn_ylim, base_val = "copy_number_signal", "Copy Number\n(Baseline=2.0)", (0.0, 5.0), 2.0
+    else:
+        cn_col, cn_title, cn_ylim, base_val = "log2_chrom_norm", "Copy Number Signal\n(Log2FC)", (-2.0, 2.0), 0.0
+    
+    # [수정 사항] Trans, Cis 패널을 날리고 핵심 3개 패널만 직관적으로 표출
     panels = [
-        (cn_col,             "Copy Number Signal",    "steelblue",     (-2.0, 2.0)),
-        ("hetero_like_rate", "Hetero-like Rate",       "mediumseagreen",(0, 1)),
-        ("homo_like_rate",   "Homo-like Rate (LOH)",  "tomato",        (0, 1)),
-        ("raw_bin_TER",      "Trans Error Rate",       "darkorange",    (0, None)),
-        ("raw_bin_CER",      "Cis Phasing Rate",       "mediumpurple",  (0, None)),
+        (cn_col,             cn_title,               "steelblue",      cn_ylim, base_val),
+        ("hetero_like_rate", "Hetero-like Rate",       "mediumseagreen", (0, 1), 0.0),
+        ("homo_like_rate",   "Homo-like Rate (LOH)",   "tomato",         (0, 1), 0.0),
     ]
 
-    # [수정 1] 높이(Height) 대폭 압축: 4.5 -> 2.5 로 변경
-    fig, axes = plt.subplots(len(panels), 1, figsize=(max(18, len(all_chroms) * 0.8), 2.5 * len(panels)), sharex=True)
-    
-    # [수정 2] 메인 타이틀 폰트 크기 확대: 14 -> 18
-    fig.suptitle(f"Chromosome Overview — {sample_id}  [Sex: {sex}]", fontsize=11, fontweight="bold")
+    fig, axes = plt.subplots(len(panels), 1, figsize=(max(18, len(all_chroms) * 0.8), 3.0 * len(panels)), sharex=True)
+    fig.suptitle(f"Chromosome Overview — {sample_id}  [Sex: {sex}]", fontsize=15, fontweight="bold")
 
-    for ax, (col, title, color, ylim) in zip(axes, panels):
+    for ax, (col, title, color, ylim, b_val) in zip(axes, panels):
         if col not in df_f.columns: continue
         for sc in ["chrX", "chrY"]:
             if sc in chrom_x: ax.axvspan(chrom_x[sc] - 0.5, chrom_x[sc] + 0.5, alpha=0.10, color="purple", zorder=0)
 
+        xs, ys = [], []
         for chrom, grp in df_f.groupby("chrom"):
             xi = chrom_x[chrom]
-            # 점 크기(s)를 7 -> 10으로 살짝 키워 시인성 확보
             ax.scatter(xi + np.random.uniform(-0.3, 0.3, len(grp)), grp[col], alpha=0.3, s=10, color="purple" if chrom in ("chrX", "chrY") else color)
+            # 동적으로 중앙값 선을 그리기 위한 데이터 적재
+            xs.append(xi)
+            ys.append(grp[col].median())
 
-        med_col = f"{col}_median"
-        if med_col in summary.columns:
-            xs = [chrom_x[c] for c in all_chroms if c in summary["chrom"].values]
-            ys = [summary.loc[summary["chrom"] == c, med_col].values[0] for c in all_chroms if c in summary["chrom"].values]
-            ax.plot(xs, ys, color="black", linewidth=2.0, alpha=0.7, zorder=5) # 선 굵기 증가
-            ax.scatter(xs, ys, color="black", s=40, zorder=6) # 중앙값 점 크기 증가
-
-        ax.axhline(0, color="gray", linewidth=1.0, linestyle="--", alpha=0.6)
+        # 중앙값 라인 그리기
+        ax.plot(xs, ys, color="black", linewidth=2.0, alpha=0.7, zorder=5)
+        ax.scatter(xs, ys, color="black", s=40, zorder=6)
+        
+        # 중심 가이드 라인
+        ax.axhline(b_val, color="gray", linewidth=1.0, linestyle="--", alpha=0.6)
 
         for _, row in call_df.iterrows():
             if row["chrom"] not in chrom_x: continue
@@ -131,22 +146,19 @@ def plot_chromosome_overview(df_f, summary, call_df, sex, sample_id, out_dir):
             if row["call"] == "ABNORMAL": ax.axvspan(xi - 0.5, xi + 0.5, alpha=0.18, color="red", zorder=0)
             elif row["call"] == "SUSPICIOUS": ax.axvspan(xi - 0.5, xi + 0.5, alpha=0.12, color="orange", zorder=0)
 
-        # [수정 3] Y축 라벨 폰트(13) 및 눈금(11) 크기 확대
         ax.set_ylabel(title, fontsize=13, fontweight="bold", labelpad=12)
         ax.tick_params(axis='y', labelsize=11)
-        
         if ylim[1] is not None: ax.set_ylim(ylim)
         ax.grid(axis="y", linestyle="--", alpha=0.4)
 
-    # [수정 4] X축 염색체 이름 폰트 크기 확대: 9 -> 13
     axes[-1].set_xticks(range(len(all_chroms)))
     axes[-1].set_xticklabels(all_chroms, rotation=45, ha="right", fontsize=13, fontweight="bold")
     
     plt.tight_layout()
-    # 타이틀과 첫 번째 그래프 간격이 겹치지 않도록 미세 조정
     fig.subplots_adjust(top=0.92) 
     fig.savefig(os.path.join(out_dir, "01_chromosome_overview.png"), dpi=200, bbox_inches="tight")
     plt.close(fig)
+
 
 def plot_final_call(call_df, sex, sample_id, out_dir):
     chroms = sort_chroms(call_df["chrom"].tolist())
@@ -156,17 +168,17 @@ def plot_final_call(call_df, sex, sample_id, out_dir):
     bar_colors = [{"NORMAL":"#AB47BC","SUSPICIOUS":"#FF9800","ABNORMAL":"#F44336"}.get(r["call"], "gray") if r["chrom"] in ("chrX", "chrY") else CALL_COLORS.get(r["call"], "gray") for _, r in cdf.iterrows()]
     
     ax.bar(range(len(chroms)), cdf["final_score"].values, color=bar_colors, edgecolor="black", linewidth=0.6, width=0.75)
-    ax.axhline(CFG["call_thresh_high"], color="red", linestyle="--", linewidth=1.5)
-    ax.axhline(CFG["call_thresh_low"],  color="orange", linestyle="--", linewidth=1.2)
-    ax.axhline(-CFG["call_thresh_high"], color="red", linestyle="--", linewidth=1.5)
-    ax.axhline(-CFG["call_thresh_low"],  color="orange", linestyle="--", linewidth=1.2)
+    ax.axhline(CFG.get("call_thresh_high", 0.7), color="red", linestyle="--", linewidth=1.5)
+    ax.axhline(CFG.get("call_thresh_low", 0.5),  color="orange", linestyle="--", linewidth=1.2)
+    ax.axhline(-CFG.get("call_thresh_high", 0.7), color="red", linestyle="--", linewidth=1.5)
+    ax.axhline(-CFG.get("call_thresh_low", 0.5),  color="orange", linestyle="--", linewidth=1.2)
     ax.axhline(0, color="black", linewidth=0.8)
 
     for i, (_, row) in enumerate(cdf.iterrows()):
         if row["call"] != "NORMAL":
             ypos = row["final_score"]
             offset = 0.05 if ypos >= 0 else -0.12
-            ax.text(i, ypos + offset, row["call"], ha="center", fontsize=8, fontweight="bold", color=CALL_COLORS[row["call"]])
+            ax.text(i, ypos + offset, row["call"], ha="center", fontsize=8, fontweight="bold", color=CALL_COLORS.get(row["call"], "black"))
             detail = row.get("detail", "")
             if detail: ax.text(i, ypos + offset - 0.13, detail.split("  ")[0], ha="center", fontsize=6.5, color="gray")
 
@@ -181,19 +193,10 @@ def plot_final_call(call_df, sex, sample_id, out_dir):
     plt.close(fig)
 
 
-
 def plot_comprehensive_baf_logr_qc(bins_df, segments_df, output_path, run_id):
-    """
-    [3-Panel Comprehensive View]
-    Top: Copy Number (Log2 Ratio)
-    Middle: B-Allele Frequency (BAF)
-    Bottom: Allelic Imbalance & Hetero Rates (QC)
-    모든 패널은 실제 물리적 유전체 좌표(Physical position)를 공유합니다.
-    """
     if bins_df is None or segments_df is None or output_path is None or run_id is None:
         raise ValueError("All inputs are mandatory.")
 
-    # [DATA] 인간 표준 24개 염색체 리스트 및 표준 최대 크기 (bp)
     ALL_CHROMOSOMES = [f"chr{i}" for i in range(1, 23)] + ['chrX', 'chrY']
     CHROM_MAX_SIZES = {
         'chr1': 248956422, 'chr2': 242193529, 'chr3': 198295559, 'chr4': 190214555,
@@ -204,13 +207,15 @@ def plot_comprehensive_baf_logr_qc(bins_df, segments_df, output_path, run_id):
         'chr21': 46709983, 'chr22': 50818468, 'chrX': 156040895, 'chrY': 57227415
     }
 
-    # 3개의 행(Panel)을 가진 Figure 생성 (높이 비율 2:2:1)
     fig, axes = plt.subplots(3, 1, figsize=(28, 14), sharex=True, gridspec_kw={'height_ratios': [2, 2, 1]})
     ax_logr, ax_baf, ax_qc = axes
 
+    # Copy Number (2.0) 기준으로 스케일 변경
+    use_cn_scale = "copy_number_signal" in bins_df.columns
+    cn_col = "copy_number_signal" if use_cn_scale else "log2_chrom_norm"
+
     current_genome_offset = 0
-    chrom_ticks = []
-    chrom_names = []
+    chrom_ticks, chrom_names = [], []
 
     for chrom in ALL_CHROMOSOMES:
         chrom_max_end = CHROM_MAX_SIZES.get(chrom, 100000000) 
@@ -220,17 +225,15 @@ def plot_comprehensive_baf_logr_qc(bins_df, segments_df, output_path, run_id):
             bin_mids = (group["start"].values + group["end"].values) / 2
             abs_x_positions = current_genome_offset + bin_mids
             
-            # [Panel 1] Log2 Ratio (Depth)
-            ax_logr.scatter(abs_x_positions, group["log2_chrom_norm"], 
+            # [Panel 1] 실제 Copy Number 점찍기
+            ax_logr.scatter(abs_x_positions, group[cn_col], 
                             s=1.5, c='lightgrey', alpha=0.6, edgecolors='none', zorder=1)
             
-            # [Panel 2] BAF (Variant)
-            # BAF는 0.5를 기준으로 대칭이 되도록 가이드라인을 그립니다.
+            # [Panel 2] BAF 
             ax_baf.scatter(abs_x_positions, group["bin_BAF"], 
                            s=2.0, c='purple', alpha=0.5, edgecolors='none')
             
-            # [Panel 3] QC & Imbalance Rates (0~1 scale)
-            # 신뢰할 수 있는 구간(total_sites >= 5)만 라인으로 연결
+            # [Panel 3] QC & Imbalance
             qc_valid = group[group['total_sites'] >= 5]
             if not qc_valid.empty:
                 abs_x_qc = current_genome_offset + (qc_valid["start"].values + qc_valid["end"].values) / 2
@@ -239,49 +242,62 @@ def plot_comprehensive_baf_logr_qc(bins_df, segments_df, output_path, run_id):
 
             chrom_max_end = max(chrom_max_end, group["end"].max())
 
-        # [Panel 1] 세그먼트 오버레이
+        # [Panel 1] 세그먼트 오버레이 (안전한 get 사용)
         chrom_segs = segments_df[segments_df["chrom"] == chrom]
         for _, seg in chrom_segs.iterrows():
             seg_start_x = current_genome_offset + seg["start"]
             seg_end_x = current_genome_offset + seg["end"]
             
-            color = 'black'
-            if seg["copy_number"] < 2: color = 'blue'
-            elif seg["copy_number"] > 2: color = 'red'
+            # seg_mean이나 seg_median 이름 꼬임 방지
+            seg_val_log2 = seg.get("seg_median", seg.get("seg_mean", 0.0))
             
-            ax_logr.hlines(y=seg["seg_mean"], xmin=seg_start_x, xmax=seg_end_x, colors=color, linewidth=4, zorder=4)
+            if use_cn_scale:
+                # Log2 공간에 있는 세그먼트 값을 실제 Copy Number로 복원
+                y_val = 2.0 * (2 ** seg_val_log2)
+            else:
+                y_val = seg_val_log2
+            
+            color = 'black'
+            if seg.get("copy_number", 2) < 2: color = 'blue'
+            elif seg.get("copy_number", 2) > 2: color = 'red'
+            
+            ax_logr.hlines(y=y_val, xmin=seg_start_x, xmax=seg_end_x, colors=color, linewidth=4, zorder=4)
 
-        # Tick & 가이드라인 설정
         chrom_ticks.append(current_genome_offset + (chrom_max_end / 2))
         chrom_names.append(chrom.replace("chr", ""))
         current_genome_offset += chrom_max_end
         
-        # 각 패널에 염색체 경계선 추가
         for ax in axes:
             ax.axvline(x=current_genome_offset, color='black', linestyle='--', linewidth=0.5, alpha=0.6)
 
-    # --- [Panel 1] 데코레이션 (Log2 Ratio) ---
-    ax_logr.set_ylim(-2.5, 3.0)
-    ax_logr.axhline(0, color='grey', linestyle='-', linewidth=1.0, alpha=0.5)
-    ax_logr.axhline(0.58, color='red', linestyle=':', linewidth=1.0, alpha=0.5) # Duplication expected log2
-    ax_logr.axhline(-1.0, color='blue', linestyle=':', linewidth=1.0, alpha=0.5) # Deletion expected log2
-    ax_logr.set_ylabel("Log2 Ratio\n(Normalized Depth)", fontsize=12)
+    # --- [Panel 1] 데코레이션 (Copy Number Scale) ---
+    if use_cn_scale:
+        ax_logr.set_ylim(-0.5, 5.5)
+        ax_logr.axhline(2.0, color='gray', linestyle='-', linewidth=1.0, alpha=0.5)
+        ax_logr.axhline(3.0, color='red', linestyle=':', linewidth=1.0, alpha=0.5) # Trisomy
+        ax_logr.axhline(1.0, color='blue', linestyle=':', linewidth=1.0, alpha=0.5) # Monosomy
+        ax_logr.set_ylabel("Copy Number\n(Baseline=2.0)", fontsize=12)
+        ax_logr.set_yticks([0, 1, 2, 3, 4, 5])
+    else:
+        ax_logr.set_ylim(-2.5, 3.0)
+        ax_logr.axhline(0.0, color='gray', linestyle='-', linewidth=1.0, alpha=0.5)
+        ax_logr.set_ylabel("Log2 Ratio\n(Normalized Depth)", fontsize=12)
+
     ax_logr.set_title(f"Comprehensive Multi-omic CNV Profile: {run_id}", fontsize=16, fontweight='bold')
     
     # --- [Panel 2] 데코레이션 (BAF) ---
     ax_baf.set_ylim(-0.05, 1.05)
-    ax_baf.axhline(0.5, color='gray', linestyle='-', linewidth=1.0, alpha=0.5) # Normal Hetero
-    ax_baf.axhline(0.33, color='orange', linestyle=':', linewidth=1.0, alpha=0.5) # Trisomy (3n) BAF
-    ax_baf.axhline(0.66, color='orange', linestyle=':', linewidth=1.0, alpha=0.5) # Trisomy (3n) BAF
+    ax_baf.axhline(0.5, color='gray', linestyle='-', linewidth=1.0, alpha=0.5) 
+    ax_baf.axhline(0.33, color='orange', linestyle=':', linewidth=1.0, alpha=0.5) 
+    ax_baf.axhline(0.66, color='orange', linestyle=':', linewidth=1.0, alpha=0.5) 
     ax_baf.set_ylabel("B-Allele Frequency\n(Variant Space)", fontsize=12)
     
-    # --- [Panel 3] 데코레이션 (Rates & QC) ---
+    # --- [Panel 3] 데코레이션 (Rates) ---
     ax_qc.set_ylim(-0.05, 1.05)
     ax_qc.set_ylabel("AI / LOH Rates\n(0 to 1)", fontsize=12)
     ax_qc.set_xlabel("Chromosomes (Physical Position)", fontsize=14)
     ax_qc.legend(loc='upper right')
 
-    # 공통 X축 데코레이션
     ax_qc.set_xticks(chrom_ticks)
     ax_qc.set_xticklabels(chrom_names, fontsize=11, fontweight='bold')
     ax_qc.set_xlim(0, current_genome_offset)
