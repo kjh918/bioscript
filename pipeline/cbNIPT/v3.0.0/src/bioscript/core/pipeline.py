@@ -1,6 +1,12 @@
+import re
 import shlex
 from pathlib import Path
 from typing import Dict, Any, List, Optional
+import re
+import shlex
+import os
+from pathlib import Path
+from typing import Dict, Any, List
 
 class Task:
     def __init__(self, name: str, runner_path: Path, spec: Dict[str, Any], log_path: Path):
@@ -9,30 +15,74 @@ class Task:
         self.spec = spec
         self.log_path = Path(log_path)
         self.log_path.mkdir(parents=True, exist_ok=True)
-        # 확장자에 따른 실행 타입 결정
+        
+        # [핵심] 러너 파이썬 파일을 읽고 spec을 주입하여 실제 출력 경로 리스트 생성
+        self.outputs = self._parse_outputs_from_runner()
+        
         self.exec_type = "/storage/apps/miniconda3/bin/python" if self.runner_path.suffix == ".py" else "bash"
 
+    def _parse_outputs_from_runner(self) -> List[str]:
+        """
+        러너 스크립트(.py)의 '# --- [Output Paths] ---' 섹션을 분석
+        spec 딕셔너리 내용을 바탕으로 {변수}를 실제 값으로 치환함
+        """
+        if not self.runner_path.exists() or self.runner_path.suffix != ".py":
+            return []
+
+        content = self.runner_path.read_text()
+        
+        # 1. Output 섹션 추출
+        pattern = r"# --- \[Output Paths\] ---(.*?)# --- \["
+        match = re.search(pattern, content, re.DOTALL)
+        if not match:
+            return []
+
+        output_section = match.group(1)
+        
+        # 2. 치환용 변수 맵 준비 (Path 객체는 문자열로 변환)
+        # 예: 'qcResDir': PosixPath('/storage/.../fastq_raw') -> '/storage/.../fastq_raw'
+        vars_map = {k: str(v) for k, v in self.spec.items()}
+
+        lines = output_section.strip().split('\n')
+        resolved_paths = []
+
+        for line in lines:
+            if '=' not in line: continue
+            
+            # 따옴표 내부의 템플릿 추출 (f"{qcResDir}/{SeqID}_R1_fastqc.html")
+            path_match = re.search(r'["\'](.*?)["\']', line)
+            if path_match:
+                template = path_match.group(1)
+                
+                # 3. f-string 스타일의 {변수}를 spec 값으로 치환
+                def replace_var(m):
+                    var_name = m.group(1)
+                    # spec에 해당 키가 있으면 치환, 없으면 원래 형태 유지
+                    return vars_map.get(var_name, f"{{{var_name}}}")
+                
+                # {qcResDir} -> /storage/home/.../fastq_raw 로 치환됨
+                resolved_path = re.sub(r"\{([A-Za-z0-9_]+)\}", replace_var, template)
+                resolved_paths.append(resolved_path)
+
+        return resolved_paths
+
     def get_cmd(self) -> str:
-        """spec 딕셔너리를 --key value 형태의 CLI 인자로 변환 (가독성을 위한 줄바꿈 포함)"""
+        """spec 딕셔너리를 --key value 형태의 CLI 인자로 변환"""
         args = []
         for k, v in self.spec.items():
             if v is not None:
-                # 1. 인자 리스트 구성 (각 인자를 --key 'value' 형태로 한 덩어리씩 저장)
+                # 인자 값 이스케이프 및 문자열화
                 args.append(f"--{k} {shlex.quote(str(v))}")
                 
-                # 2. 'Dir'로 끝나는 파라미터는 실행 전 디렉토리 자동 생성
-                if k.endswith('Dir'):
+                # 'Dir' 파라미터 자동 생성 로직
+                if k.endswith('Dir'): 
                     Path(v).mkdir(parents=True, exist_ok=True)
         
-        # 3. 가독성을 위해 백슬래시(\)와 줄바꿈(\n), 들여쓰기(indent)를 넣어 조립
+        arg_str = " \\\n    ".join(args)
         if args:
-            arg_str = " \\\n    ".join(args)
             return f"{self.exec_type} {shlex.quote(str(self.runner_path))} \\\n    {arg_str}"
-        else:
-            # 인자가 없는 경우
-            return f"{self.exec_type} {shlex.quote(str(self.runner_path))}"
-        
-
+        return f"{self.exec_type} {shlex.quote(str(self.runner_path))}"
+    
 class Pipeline:
     def __init__(self, raw_dir: str, work_dir: Path, log_dir: Path, executor: Any, suffix: str='fastq.gz'):
         self.raw_dir = Path(raw_dir) if raw_dir else None
@@ -41,74 +91,159 @@ class Pipeline:
         self.executor = executor
         self.suffix = suffix
         
-        # 샘플별 Task 리스트를 저장할 딕셔너리
+        self.global_tasks: List[Task] = []
         self.sample_tasks: Dict[str, List[Task]] = {}
         self.samples = self._discover_samples(suffix=self.suffix)
 
     def _discover_samples(self, suffix: str) -> List[str]:
-        """RawFastqDir에서 R1 파일을 찾아 샘플 ID 추출"""
         if not self.raw_dir or not self.raw_dir.exists():
             return []
         if suffix == 'bam':
-            return sorted(list(set([f.name.split('.')[0] for f in self.raw_dir.glob(f"*.bam")])))
-        # _R1.fastq.gz 패턴 기준 (필요시 수정)
-        return sorted(list(set([f.name.split('_R1')[0] for f in self.raw_dir.glob(f"*_R1.{suffix}")])))
-        
+            return sorted(list(set([f.name.split('.')[0] for f in self.raw_dir.glob("*.bam")])))
+        return sorted(list(set([f.name.split('_R1')[0] for f in self.raw_dir.glob(f"**/*_R1.{suffix}")])))
 
     def add_tasks(self, tasks: List[Task]):
-        """샘플 ID별로 Task 리스트 그룹화"""
         for t in tasks:
             sid = t.spec.get('SeqID')
             if sid:
                 if sid not in self.sample_tasks:
                     self.sample_tasks[sid] = []
                 self.sample_tasks[sid].append(t)
+            else:
+                self.global_tasks.append(t)
 
-    def run(self):
-        """샘플별로 각 분석 단계의 logs/에 .sh를 만들고, 중앙에 run_{sid}.sh 생성"""
-        for sid, tasks in self.sample_tasks.items():
-            last_jid = None
-            master_script_lines = [f"#!/bin/bash", f"# Master Script for {sid}", ""]
+    def run(self, run_integrity: bool = True):
+        global_last_jid = None
+        
+        # =========================================================
+        # 1. Global Tasks 먼저 제출 (자원 제한 없이 최우선 실행)
+        # =========================================================
+        if self.global_tasks:
+            print("[*] Submitting Global/Reference Tasks...")
+            master_global_lines = ["#!/bin/bash", "# Master Script for Global Tasks", ""]
             
-            for i, task in enumerate(tasks, start=1):
-                # 1. 작업 디렉토리 (logs의 부모) 및 Job ID
-                task_work_dir = task.log_path
-                job_id = f"{sid}_{i:02d}_{task.name}"
-
-                done_flag = task_work_dir / ".done"
-                if done_flag.exists():
-                    print(f"[-] {job_id}: Already done. Skipping...")
-                    master_script_lines.append(f"# Task: {task.name} - SKIPPED (Already Done)")
+            for i, task in enumerate(self.global_tasks, start=1):
+                job_id = f"GLOBAL_{i:02d}_{task.name}"
+                
+                if (task.log_path / ".done").exists():
+                    master_global_lines.append(f"# Global Task: {task.name} - SKIPPED")
                     continue
                 
-                # 2. 개별 Task 스크립트 경로 (요청하신 대로 sid/analysis/logs/ 아래에 생성)
-                wrapper_p = task.log_path / f"{i:02d}_{task.name}_{sid}.sh"
-                cmd = task.get_cmd()
-                self.executor.make_wrapper(cmd, wrapper_p, task_work_dir)
+                wrapper_p = task.log_path / f"{i:02d}_{task.name}_global.sh"
+                self.executor.make_wrapper(task.get_cmd(), wrapper_p, task.log_path)
                 
-                # 4. SGE 제출
-                threads = task.spec.get('Threads', 1)
-                jid = self.executor.qsub(
+                global_last_jid = self.executor.qsub(
                     job_id=job_id,
                     script_path=wrapper_p,
                     log_path=task.log_path,
-                    threads=threads,
-                    hold_jid=last_jid
+                    threads=task.spec.get('Threads') or task.spec.get('threads') or 1,
+                    hold_jid=global_last_jid
                 )
                 
-                # 5. 마스터 로그에 qsub 명령어 기록 (재현용)
-                hold_opt = f"-hold_jid {last_jid}" if last_jid else ""
-                master_script_lines.append(f"# Task: {task.name} (JID: {jid})")
-                master_script_lines.append(
-                    f"qsub -N {job_id} -q {self.executor.node} {hold_opt} "
-                    f"-pe smp {threads} -V -cwd {wrapper_p}\n"
-                )
-                
-                last_jid = jid
+                hold_opt = f"-hold_jid {global_last_jid}" if global_last_jid else ""
+                master_global_lines.append(f"qsub -N {job_id} {hold_opt} {wrapper_p}")
+            
+            global_master_path = self.executor.session_dir / "run_00_GLOBAL_TASKS.sh"
+            global_master_path.write_text("\n".join(master_global_lines))
+            global_master_path.chmod(0o755)
+            print(f"[*] Global tasks submitted. (Last JID: {global_last_jid})")
 
-            # 6. 중앙 세션 디렉토리에 샘플 통합 실행 스크립트 저장
+        # =========================================================
+        # 2. Sample Tasks 제출 (Executor의 자원 대기 로직 적용)
+        # =========================================================
+        for sid, tasks in self.sample_tasks.items():
+            
+            # [핵심 로직] 샘플의 전체 Task가 스킵 대상이 아닐 경우에만 자원 체크 진행
+            will_run = any(not (task.log_path / ".done").exists() for task in tasks)
+            
+            if will_run:
+                # 샘플 내에서 가장 많이 요구하는 스레드 수 계산
+                sample_peak_threads = max((task.spec.get('Threads') or task.spec.get('threads') or 1) for task in tasks)
+                
+                # [MODIFIED] SGE 자원이 확보될 때까지 Python 스크립트가 대기 (Polling)
+                self.executor.wait_for_resources(required_threads=sample_peak_threads)
+            
+            print(f"[*] Processing Sample: {sid}")
+            last_jid = global_last_jid  # 첫 작업은 Global 작업 끝날 때까지 대기
+            all_sample_files = [] 
+            master_script_lines = [f"#!/bin/bash", f"# Master Script for {sid}", ""]
+            
+            for i, task in enumerate(tasks, start=1):
+                all_sample_files.extend(task.outputs)
+                job_id = f"{sid}_{i:02d}_{task.name}"
+                
+                if (task.log_path / ".done").exists():
+                    master_script_lines.append(f"# Task: {task.name} - SKIPPED")
+                    continue
+                
+                wrapper_p = task.log_path / f"{i:02d}_{task.name}_{sid}.sh"
+                self.executor.make_wrapper(task.get_cmd(), wrapper_p, task.log_path)
+                
+                last_jid = self.executor.qsub(
+                    job_id=job_id,
+                    script_path=wrapper_p,
+                    log_path=task.log_path,
+                    threads=task.spec.get('Threads') or task.spec.get('threads') or 1,
+                    hold_jid=last_jid 
+                )
+                
+                hold_opt = f"-hold_jid {last_jid}" if last_jid else ""
+                master_script_lines.append(f"qsub -N {job_id} {hold_opt} {wrapper_p}")
+
+            # 무결성 검사(MD5) 제출
+            if run_integrity and all_sample_files and last_jid:
+                self._submit_integrity_task(sid, all_sample_files, last_jid, master_script_lines)
+
+            # 마스터 스크립트 저장
             master_path = self.executor.session_dir / f"run_{sid}.sh"
             master_path.write_text("\n".join(master_script_lines))
             master_path.chmod(0o755)
             
-            print(f"[*] {sid}: Submitted {len(tasks)} tasks. Master: {master_path}")
+            if will_run:
+                print(f"[*] {sid}: Pipeline submitted to SGE. (Last JID: {last_jid})\n")
+
+
+    def _submit_integrity_task(self, sid, files, hold_jid, master_lines):
+        """MD5 체크섬 전용 쉘 스크립트를 생성하고 SGE에 마지막 작업으로 등록"""
+        integrity_dir = self.work_dir / sid / "logs" / "99_integrity"
+        integrity_dir.mkdir(parents=True, exist_ok=True)
+        
+        manifest_file = self.work_dir / sid / f"{sid}_final_manifest.md5"
+        script_path = integrity_dir / f"run_md5check_{sid}.sh"
+        
+        # SGE가 실행할 쉘 스크립트 내용 작성
+        unique_files = sorted(list(set(files)))
+        content = [
+            "#!/bin/bash",
+            f"# SGE Job for Integrity Check of {sid}",
+            f"echo '[$(date)] Starting MD5 check for {sid}' > {integrity_dir}/integrity.log",
+            f"rm -f {manifest_file}", # 기존 파일 삭제
+            ""
+        ]
+        
+        for f in unique_files:
+            # SGE 서버가 실행 시점에 파일이 있는지 체크하고 MD5를 찍음
+            content.append(f"if [ -f '{f}' ]; then")
+            content.append(f"  md5sum '{f}' >> {manifest_file}")
+            content.append(f"else")
+            content.append(f"  echo '[MISSING] {f}' >> {integrity_dir}/integrity.log")
+            content.append(f"fi")
+        
+        content.append(f"\necho '[$(date)] All checks finished.' >> {integrity_dir}/integrity.log")
+        # 모든 체크가 무사히 끝나면 전체 샘플 완료 표시로 .done 파일 생성 (옵션)
+        content.append(f"touch {self.work_dir / sid}/.all_steps_done")
+
+        script_path.write_text("\n".join(content))
+        script_path.chmod(0o755)
+        
+        # SGE에 마지막 작업으로 제출
+        final_jid = self.executor.qsub(
+            job_id=f"{sid}_integrity",
+            script_path=script_path,
+            log_path=integrity_dir,
+            threads=1,
+            hold_jid=hold_jid # 앞선 모든 분석 조브가 끝나야 실행됨
+        )
+        
+        master_lines.append(f"# Final Integrity Task (JID: {final_jid})")
+        master_lines.append(f"qsub -N {sid}_integrity -hold_jid {hold_jid} {script_path}\n")

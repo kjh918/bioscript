@@ -16,7 +16,7 @@ sys.path.append(str(Path(__file__).parent.parent))  # 프로젝트 루트 디렉
 from src.cbnipt_cnv_caller.visualization import plot_chromosome_overview, plot_bin_distribution, plot_score_heatmap, plot_final_call
 from src.cbnipt_cnv_caller.utils import sort_chroms
 from src.cbnipt_cnv_caller.normalization import normalize_and_estimate_sex
-from src.cbnipt_cnv_caller.classification import apply_qc_filter, compute_chrom_summary, analyze_all_chromosomes
+from src.cbnipt_cnv_caller.classification import compute_chrom_summary, analyze_all_chromosomes
 
 
 
@@ -45,7 +45,12 @@ def process_and_run(raw_tsv_path: str):
     # 3. 진단 스코어링
     print(" [STEP 3] Running Anomaly Detection Pipeline...")
     #df_f = apply_qc_filter(norm_df)
-    df_f = norm_df
+    #df_f = norm_df.columns
+    df_f = norm_df[
+        (norm_df['is_filtered'] == False) & 
+        (norm_df['breadth_ratio'] > 0.5)]
+    #print(df_f)
+    #exit()
 
     summary = compute_chrom_summary(df_f)
     call_df = analyze_all_chromosomes(summary, sex_tag, x_ratio, y_ratio)
@@ -70,9 +75,9 @@ def process_and_run(raw_tsv_path: str):
     print(f"\n[Done] All process successfully completed. Output: {out_dir}")
 
 if __name__ == "__main__":
-    file_list = glob("/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/cbNIPT_24_04_02_DS_Ratio_1-1-Insilico_cbNIPT_24_04_04/data/cbNIPT_24_04_02_DS_Ratio_1-1-Insilico_cbNIPT_24_04_04.normalized.tsv")
+    file_list = glob("/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/temp/*/data/*.normalized.tsv")
     if not file_list: print("No files found to process.")
     else:
-        for TSV_PATH in file_list[:1]: 
+        for TSV_PATH in file_list: 
             print(TSV_PATH)
             process_and_run(TSV_PATH)

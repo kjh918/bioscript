@@ -5,6 +5,7 @@ import os
 from utils import log
 from statsmodels.nonparametric.smoothers_lowess import lowess
 
+from utils import chrom_key
 # -------------------------------------------------------------------------
 # [데이터 스키마 정의] Breadth와 Midpoint Read Count 추가
 # -------------------------------------------------------------------------
@@ -351,3 +352,34 @@ def gc_correct_lowess(df, frac=0.2):
     df["log2_corrected"] = np.nan
     df.loc[valid, "log2_corrected"] = y[valid] - fit + np.nanmedian(fit)
     return df, (x[valid], y[valid], fit)
+
+def apply_qc_and_impute(df, min_depth=5, min_coverage=0.1):
+    """
+    [MODIFIED] Deletion 탐지를 위해 Low Quality Bin을 삭제하지 않고,
+    극단적인 Deletion 시그널(Zero-Imputation)로 변환하여 유지합니다.
+    """
+    if df is None or df.empty: return pd.DataFrame()
+    
+    df_imputed = df.copy()
+    
+    # 1. 퀄리티 미달 Bin 찾기 (Coverage가 거의 없는 구간 = Deletion 후보)
+    # 단, 센트로미어(Centromere) 등 원래 매핑이 안 되는 블랙리스트 구간은 사전에 제외되었다고 가정합니다.
+    bad_mask = (df_imputed["raw_count"] < min_depth) | (df_imputed["breadth_ratio"] < min_coverage)
+    
+    # 성염색체 보호 (여성 chrY 등은 정상적으로 비어있을 수 있으므로 Imputation 제외)
+    sex_chrom_mask = df_imputed["chrom"].isin(["chrX", "chrY"])
+    target_mask = bad_mask & (~sex_chrom_mask)
+    
+    # 2. 강제 Imputation (범죄 현장 보존)
+    # DNA가 아예 없다는 것은 완벽한 결실(Log2FC 최하점)이며, 대립유전자는 100% 한쪽으로 쏠린(Homo) 상태로 간주
+    df_imputed.loc[target_mask, "log2_chrom_norm"] = -3.0  # 극단적 결실 시그널
+    df_imputed.loc[target_mask, "hetero_like_rate"] = 0.0  # Hetero 불가능
+    df_imputed.loc[target_mask, "homo_like_rate"] = 1.0    # 극단적 LOH 상태
+    
+    # [Tip] 추가로 'is_imputed' 플래그를 달아두면 나중에 해석하기 편합니다.
+    df_imputed["is_imputed"] = False
+    df_imputed.loc[target_mask, "is_imputed"] = True
+    
+    # 정렬 후 반환
+    df_imputed["_k"] = df_imputed["chrom"].apply(chrom_key)
+    return df_imputed.sort_values(["_k", "start"]).drop(columns=["_k"]).reset_index(drop=True)

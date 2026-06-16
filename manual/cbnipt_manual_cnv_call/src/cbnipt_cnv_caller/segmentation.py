@@ -1,115 +1,109 @@
 import numpy as np
 import pandas as pd
 import ruptures as rpt
-from utils import log
-#from scipy.signal import find_peaks, gaussian_filter1d
+import os, sys
+ 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.insert(0, current_dir)
 
-def segment_one_cell(meta, signal, penalty):
+from utils import log
+def segment_one_cell(meta, df_signals, signal_col="log2_chrom_norm", penalty=10.0):
     """
-    [MODIFIED] 단일 세포 WGA 샘플의 Log2 신호를 기반으로 Change-point detection을 수행합니다.
-    Reference: Killick, R. et al. (2012) Optimal Detection of Changepoints. JASA. 
-    (https://doi.org/10.1080/01621459.2012.737745)
+    [SIMPLIFIED & MEDIAN FIXED] 순수 Copy Number (Log2FC) 신호 기반 Change-point 탐지.
+    단일 세포 WGA의 극단적 노이즈를 방어하기 위해 평균(Mean) 대신 중앙값(Median)을 사용합니다.
     """
-    # [MODIFIED] Default 값 제거 및 필수 인자 검증
     if penalty is None:
         raise ValueError("Penalty value must be provided for PELT algorithm.")
-    if meta is None or signal is None:
-        raise ValueError("Input meta and signal dataframes cannot be None.")
-    if len(meta) != len(signal):
-        raise ValueError("Metadata and Signal length mismatch.")
 
     segments = []
-    # [MODIFIED] 데이터 일관성을 위해 index 정렬 보장
     chrom_list = meta["chrom"].unique()
     
     for chrom in chrom_list:
         idx = meta.index[meta["chrom"] == chrom]
-        # [MODIFIED] signal이 Series인 경우와 DataFrame인 경우 모두 대응
-        y = signal.loc[idx].values.astype(float).flatten()
+        y = df_signals.loc[idx, signal_col].values.astype(float).flatten()
         
         valid = np.isfinite(y)
         if valid.sum() < 10: 
-            log(f"Skipping {chrom}: insufficient valid bins ({valid.sum()})")
             continue
             
         y_v = y[valid].reshape(-1, 1)
         v_idx = np.where(valid)[0]
         
-        # PELT 알고리즘: L2(Gaussian) 모델 사용
+        # PELT 알고리즘 실행
         algo = rpt.Pelt(model="l2").fit(y_v)
         bkps = algo.predict(pen=penalty)
         
-        start = 0
+        start_idx = 0
         for bp in bkps:
-            seg_v = v_idx[start:bp]
-            if len(seg_v) == 0: continue
+            # 다음 세그먼트와 겹치거나 빈틈이 없도록 타일링
+            if bp < len(v_idx):
+                end_idx = v_idx[bp - 1]
+            else:
+                end_idx = len(idx) - 1
+                
+            full_seg_idx = idx[start_idx : end_idx + 1]
             
-            g_idx = idx[seg_v]
+            if len(full_seg_idx) > 0:
+                seg_vals = y[start_idx : end_idx + 1]
+                
+                # [CRITICAL FIX] np.nanmean -> np.nanmedian 으로 변경!
+                # 노이즈 구덩이(-3, -4)에 휘둘리지 않고 진짜 베이스라인을 찾습니다.
+                seg_median = 0.0 if np.isnan(seg_vals).all() else float(np.nanmedian(seg_vals))
+                    
+                segments.append({
+                    "chrom": chrom,
+                    "start": int(meta.loc[full_seg_idx[0], "start"]),
+                    "end": int(meta.loc[full_seg_idx[-1], "end"]),
+                    "n_bins": len(full_seg_idx),
+                    "seg_median": seg_median  # 이름도 median으로 변경
+                })
             
-            # [MODIFIED] 정수형 좌표 및 통계치 계산 최적화
-            segments.append({
-                "chrom": chrom,
-                "start": int(meta.loc[g_idx[0], "start"]),
-                "end": int(meta.loc[g_idx[-1], "end"]),
-                "n_bins": len(g_idx),
-                # [MODIFIED] 기존 signal.loc[g_idx]의 평균을 직접 계산
-                "seg_mean": float(np.nanmean(y[seg_v]))
-            })
-            start = bp
+            start_idx = end_idx + 1
             
     if not segments:
-        raise RuntimeError("No segments were generated. Check input signal or penalty.")
+        log("Warning: No segments were generated. Check input signal or penalty.")
+        return pd.DataFrame()
         
     return pd.DataFrame(segments)
 
-def estimate_ploidy(seg_df, max_ploidy=4):
-    """
-    Segmentation 결과의 seg_mean 분포를 기반으로 
-    가장 가능성 높은 Ploidy(보통 2 또는 3)를 추정합니다.
-    """
-    # 1. seg_mean 분포 추출 (가중치: 각 세그먼트의 bin 개수)
-    values = seg_df["seg_mean"].values
-    weights = seg_df["n_bins"].values
-    
-    # 2. 히스토그램 생성 (Log2 Space에서 2n은 0.0 부근에 피크)
-    hist, bin_edges = np.histogram(values, bins=50, weights=weights, density=True)
-    bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
-    
-    # 3. 노이즈 완화를 위한 가우시안 평탄화
-    smoothed = gaussian_filter1d(hist, sigma=1)
-    peaks, _ = find_peaks(smoothed, height=np.max(smoothed)*0.1)
-    
-    if len(peaks) == 0:
-        return 2 # 기본값
-    
-    # 4. 가장 높은 피크의 위치가 0(Ratio 1.0)에 가장 가까운 Ploidy를 찾음
-    best_peak_val = bin_centers[peaks[np.argmax(smoothed[peaks])]]
-    
-    # 2^best_peak_val 이 Ratio인데, 2n이 1.0(Log2 0)이라고 가정할 때
-    # Ploidy = 2 * 2^(best_peak_val) 에 가장 가까운 정수를 찾음
-    estimated = np.round(2 * (2 ** best_peak_val))
-    return int(np.clip(estimated, 1, max_ploidy))
 
-def assign_cn_state(seg_df, baseline_ploidy):
+def assign_cn_state(seg_df, baseline_ploidy=2, sex_tag="UNKNOWN"):
     """
-    [MODIFIED] Log2 Space 기준을 반영하여 정수형 Copy Number를 할당합니다.
-    Target: 2n = 0 (Log2 ratio 1.0)
-    Formula: CN = baseline_ploidy * 2^(seg_mean)
+    [SIMPLIFIED & FIXED] 1D seg_mean 기반 상태 할당.
+    성별(Sex)에 따라 성염색체(chrX, chrY)의 기본 Ploidy를 동적으로 조절합니다.
     """
-    # [MODIFIED] Default 값 제거
-    if baseline_ploidy is None:
-        raise ValueError("baseline_ploidy must be explicitly defined (e.g., 2).")
-        
-    if seg_df.empty:
+    if seg_df is None or seg_df.empty:
         return seg_df
-
-    # [MODIFIED] 사용자 요청 Log2 Space 반영: 2n=0 -> ratio=1
-    # 2n * 2^(0) = 2, 2n * 2^(-1) = 1, 2n * 2^(0.58) = 3
-    ratios = 2 ** seg_df["seg_mean"]
-    seg_df["copy_number"] = np.clip(
-        np.round(baseline_ploidy * ratios).astype(int), 
-        0, 
-        None
-    )
+        
+    df = seg_df.copy()
     
-    return seg_df
+    if "seg_mean" not in df.columns:
+        raise KeyError("Cannot find 'seg_mean' column in segments dataframe.")
+
+    # 1. Log2FC -> 실제 비율 변환
+    ratios = np.exp2(df["seg_mean"].fillna(0.0))
+    
+    # 2. 성별에 따른 염색체별 예상 Copy Number (Ploidy) 설정
+    expected_ploidy = np.full(len(df), baseline_ploidy, dtype=int)
+    chrom_array = df["chrom"].values
+    
+    if sex_tag == "XY":
+        expected_ploidy[chrom_array == "chrX"] = 1
+        expected_ploidy[chrom_array == "chrY"] = 1
+    elif sex_tag == "XX":
+        expected_ploidy[chrom_array == "chrY"] = 0
+        
+    # 3. 정수형 Copy Number 추정
+    df["copy_number"] = np.round(ratios * expected_ploidy).astype(int)
+    df["copy_number"] = df["copy_number"].clip(lower=0) # 음수 방지
+    
+    # 4. 직관적인 CNV Call
+    conditions = [
+        df["copy_number"] > expected_ploidy,
+        df["copy_number"] < expected_ploidy
+    ]
+    choices = ["AMP", "DEL"]
+    df["cnv_call"] = np.select(conditions, choices, default="NEUT")
+    
+    return df

@@ -139,6 +139,7 @@ def preprocess_metadata(recept_df, batch_id, raw_data_path):
         analysis_df_dict['sample_origin'].append(sample_origin)
         analysis_df_dict['sample_tissue'].append(sample_tissue)
         analysis_df_dict['sample_info'].append(sample_info)
+        # 3=Normal TS ; 2=Normal ORG ; 1=Tumor TS ; 0=Tumor ORG
         analysis_df_dict['matched_normal'].append('0')
         
         analysis_df_dict['date_sample_in'].append(date_sample_in)

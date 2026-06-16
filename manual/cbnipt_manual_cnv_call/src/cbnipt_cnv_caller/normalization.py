@@ -1,8 +1,36 @@
 import numpy as np
 import pandas as pd
-from .utils import log
-from .rules import CFG
 
+from utils import log
+from rules import CFG
+
+def apply_qc_bin(df, min_depth=1, min_coverage=0.5):
+    """
+    [NEW] GC/Mappability 필터(is_filtered)를 통과하고,
+    Coverage 조건(Depth, Breadth)을 만족하는 정상 Bin만 추출합니다.
+    단, 성염색체(chrX, chrY)는 Coverage 필터에서 예외로 두어 삭제되지 않도록 보호합니다.
+    """
+    if df is None or df.empty: return pd.DataFrame()
+    
+    # 1. 뼈대 품질 조건 (GC 및 Mappability 정상)
+    valid_quality = (df["is_filtered"] == False)
+    
+    # 2. 커버리지 조건 (최소 리드 뎁스 및 넓이 충족)
+    valid_coverage = (df["raw_count"] >= min_depth) & (df["breadth_ratio"] >= min_coverage)
+    
+    # 3. 성염색체 보호 마스크
+    is_sex_chrom = df["chrom"].isin(["chrX", "chrY"])
+    
+    # 4. 최종 마스크 결합
+    # 해석: 퀄리티가 좋은 Bin 중에서, (커버리지가 충분하거나 OR 성염색체인 경우)만 통과
+    final_mask = valid_quality & (valid_coverage | is_sex_chrom)
+    
+    df_filtered = df[final_mask].copy().reset_index(drop=True)
+    
+    dropped_count = len(df) - len(df_filtered)
+    log(f"QC Bin Filter: Removed {dropped_count} low-quality bins. {len(df_filtered)} bins remain.")
+    
+    return df_filtered
 
 def normalize_and_estimate_sex(df, value_col="raw_count"):
     """상염색체 기준 LOO 정규화 및 생물학적 성별 비율 계산"""

@@ -19,9 +19,9 @@ def get_parser():
     
     # 클러스터(SGE) 설정 옵션
     parser.add_argument("--sge-user", default="jhkim", help="SGE 실행 유저 이름 (기본값: jhkim)")
-    parser.add_argument("--sge-node", default="all.q@ngsmaster", help="SGE 큐/노드 이름 (기본값: all.q@ngsmaster)")
-    parser.add_argument("--max-samples", type=int, default=3, help="동시 실행할 최대 샘플 수 (기본값: 3)")
-    parser.add_argument("--max-threads", type=int, default=24, help="최대 사용 스레드 수 (기본값: 24)")
+    parser.add_argument("--sge-node", default="all.q@ngsnode1", help="SGE 큐/노드 이름 (기본값: all.q@ngsmaster)")
+    parser.add_argument("--max-samples", type=int, default=10, help="동시 실행할 최대 샘플 수 (기본값: 3)")
+    parser.add_argument("--max-threads", type=int, default=150, help="최대 사용 스레드 수 (기본값: 24)")
     
     # 레퍼런스 설정 옵션 (기본값 세팅)
     parser.add_argument("--ref-fasta", default="/storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa", help="Reference FASTA 경로")
@@ -71,13 +71,13 @@ if __name__ == "__main__":
                 spec = {
                     'SeqID': sid,
                     'RawFastqDir': RawFastqDir,
-                    'qcResDir': work_dir / sid / "fastq_raw",
+                    'qcResDir': work_dir / sid / "qc",
                     "Threads": 4,
                 }
             ),
             Task(
                 name="fastp",
-                runner_path= scripts / "run_fastp_picoplexgold_pe_trim_using_singularity.py",
+                runner_path= scripts / "run_fastp_pe_trim_using_singularity.py",
                 log_path = work_dir / sid / "logs" / "01_fastp", 
                 spec = {
                     'SeqID': sid,

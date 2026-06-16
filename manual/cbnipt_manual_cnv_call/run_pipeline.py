@@ -60,7 +60,6 @@ if __name__ == "__main__":
             'MinMappability': 0.9,
             'MinGC': 0.3,
             'MaxGC': 0.7,
-            'MaxGC': work_dir,
             "Threads": 1
         }
     )

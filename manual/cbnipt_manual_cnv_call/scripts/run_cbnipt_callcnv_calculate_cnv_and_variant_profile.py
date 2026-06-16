@@ -27,6 +27,8 @@ def main():
     parser.add_argument('--BaselinePloidy', required=False, default='2', help='기준 Ploidy (Default: 2)')
     parser.add_argument('--SmoothWindow', required=False, default='5', help='Rolling median window size (Default: 5)')
     parser.add_argument('--MinDepth', required=False, default='2.0', help='최소 Depth (Default: 2.0)')
+    parser.add_argument('--MinGC', required=False, default='0.3', help='최소 Depth (Default: 2.0)')
+    parser.add_argument('--MaxGC', required=False, default='0.7', help='최소 Depth (Default: 2.0)')
     parser.add_argument('--MinCoverage', required=False, default='0.5', help='최소 Coverage 비율 (Default: 0.5)')
     parser.add_argument('--MaskLowerQ', required=False, default='0.01', help='하위 Coverage 필터 (Default: 0.01)')
     parser.add_argument('--MaskUpperQ', required=False, default='0.99', help='상위 Coverage 필터 (Default: 0.99)')
@@ -55,6 +57,7 @@ def main():
     Threads = args.Threads
     python_bin = args.python_bin
     script_path = args.script_path
+    
 
     # --- [Output Paths] ---
 
