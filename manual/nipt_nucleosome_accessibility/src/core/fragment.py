@@ -20,6 +20,15 @@ class Fragment:
             self.read1, self.read2 = read_a, read_b
         else:
             self.read1, self.read2 = read_b, read_a
+        self.start = min(
+                    self.read1.reference_start,
+                    self.read2.reference_start
+                )
+
+        self.end = max(
+            self.read1.reference_end,
+            self.read2.reference_end
+        )
 
     @property
     def length(self) -> int:
@@ -29,7 +38,16 @@ class Fragment:
     def midpoint(self) -> int:
         # [MODIFIED] Fragment의 중심점을 반환 (Coverage 기준점을 Read start가 아닌 Midpoint로 전환하기 위함)
         return (self.start + self.end) // 2
+    
+    def overlaps(self, start: int, end: int) -> bool:
+        return max(self.start, start) < min(self.end, end)
+    
+    def is_short_fragment(self, max_length: int) -> bool:
+        return self.length <= max_length
 
+    def is_mono_nucleosome(self, min_length: int, max_length: int) -> bool:
+        return min_length <= self.length <= max_length
+    
     def get_gc_content(self) -> float:
         """Fragment 전체 구간의 GC 비율 계산"""
         seq = self.fasta.fetch(self.chrom, self.start, self.end).upper()

@@ -1,0 +1,10 @@
+pyproject.toml
+src/bio_script.egg-info/PKG-INFO
+src/bio_script.egg-info/SOURCES.txt
+src/bio_script.egg-info/dependency_links.txt
+src/bio_script.egg-info/entry_points.txt
+src/bio_script.egg-info/requires.txt
+src/bio_script.egg-info/top_level.txt
+src/bioscript/__init__.py
+src/bioscript/cli.py
+src/bioscript/generator.py

@@ -17,36 +17,41 @@ tool:
 
 io:
   inputs:
-    SeqID:       { required: true, type: str, help: "분석 고유 ID (Sample ID)" }
-    RawFastqDir: { required: true, type: str, help: "원본 FASTQ 파일이 위치한 디렉토리 경로" }
-    KrakenDB:    { required: true, type: str, help: "Kraken2 데이터베이스 디렉토리 경로" }
-    OutDir:      { required: true, type: str, help: "Kraken2 결과가 저장될 디렉토리 경로" }
+    SeqID:        { required: true, type: str, help: "분석 고유 ID (Sample ID)" }
+    TrimFastqDir: { required: true, type: str, help: "Trimmed FASTQ 파일이 위치한 디렉토리 경로" }
+    KrakenDB:     { required: true, type: str, help: "Kraken2 데이터베이스 디렉토리 경로" }
+    OutDir:       { required: true, type: str, help: "결과물이 저장될 디렉토리 경로" }
 
   outputs:
-    # 파이프라인 무결성 검사를 위해 핵심 출력 파일 명시
-    report_out: { required: false, type: str, default: "[OutDir]/[SeqID].kreport", help: "Krona 등에서 사용할 Kraken2 계층적 리포트 파일" }
-    kraken_out: { required: false, type: str, default: "[OutDir]/[SeqID].kraken", help: "리드별 분류 결과 파일 (용량이 크면 '-'로 생략 가능)" }
+    sub_r1:     { required: false, type: str, default: "[OutDir]/[SeqID].trimmed_sub_R1.fastq.gz", help: "Subsampled Read 1" }
+    sub_r2:     { required: false, type: str, default: "[OutDir]/[SeqID].trimmed_sub_R2.fastq.gz", help: "Subsampled Read 2" }
+    kraken_out: { required: false, type: str, default: "[OutDir]/[SeqID].kraken", help: "Kraken2 분류 결과 파일" }
+    report_out: { required: false, type: str, default: "[OutDir]/[SeqID].kreport", help: "Kraken2 계층적 요약 리포트" }
+    plot_out:   { required: false, type: str, default: "[OutDir]/[SeqID]_krona.html", help: "생성된 Krona 대화형 HTML 플롯" }
 
 params:
-  # --- [Subsampling Options] ---
-  InputSuffix:    { required: false, type: str, default: ".fastq.gz", help: "입력 FASTQ 파일 확장자" }
-  SubsampleLines: { required: false, type: int, default: 4000000, help: "추출할 라인 수 (FASTQ는 4줄이 1개의 Read이므로, 4000000 = 100만 Reads 추출)" }
+  # --- [Seqkit Subsampling Options] ---
+  seqkit_bin: { required: false, type: str, default: "/storage/apps/seqkit-2.8.2/seqkit", help: "Seqkit 실행 절대 경로" }
+  SampleSeed: { required: false, type: int, default: 100, help: "난수 시드 (PE 동기화를 위해 R1/R2 동일 적용)" }
+  SampleNum:  { required: false, type: int, default: 100000, help: "추출할 Read 개수 (-n)" }
+  
+  # --- [File Extensions] ---
+  R1_suffix: { required: false, type: str, default: ".trimmed_R1.fastq.gz", help: "Read 1 입력 파일의 Suffix" }
+  R2_suffix: { required: false, type: str, default: ".trimmed_R2.fastq.gz", help: "Read 2 입력 파일의 Suffix" }
 
-  # --- [Kraken2 Execution Options] ---
-  kraken2_bin: { required: false, type: str, default: "/storage/home/jhkim/Apps/kraken2/kraken2", help: "Kraken2 실행 명령어 또는 절대 경로" }
-  Threads:     { required: false, type: int, default: 8, help: "병렬 처리에 사용할 스레드 수 (--threads)" }
-  Confidence:  { required: false, type: float, default: 0.05, help: "분류 신뢰도 임계값 [0, 1] (--confidence)" }
-  ExtraArgs:   { required: false, type: str, default: "--use-names", help: "추가 옵션 (예: --quick, --memory-mapping 등)" }
+  # --- [Kraken & Krona Options] ---
+  kraken2_bin: { required: false, type: str, default: "/storage/home/jhkim/Apps/kraken2/bin/kraken2", help: "Kraken2 명령어" }
+  
+  KrakenDB:    { required: false, type: str, default: "/storage/home/jhkim/Apps/kraken2/bin/kraken2_db", help: "Kraken2-db 명령어" }
+  krona_bin:   { required: false, type: str, default: "/storage/home/jhkim/Apps/Krona/KronaTools/bin/ktImportTaxonomy", help: "Krona 명령어" }
+  Threads:     { required: false, type: int, default: 8, help: "병렬 처리에 사용할 스레드 수" }
 
-# [중요] <(zcat ...) 을 통해 압축이 풀린 텍스트 스트림으로 전달되므로 --gzip-compressed 옵션은 제외해야 합니다.
+# && 연산자를 통해 4개의 명령어를 하나의 파이프라인 체인으로 묶습니다.
 cmd_line: >
-  [kraken2_bin]
-  --db [KrakenDB]
-  --threads [Threads]
-  --confidence [Confidence]
-  --report [report_out]
-  --output [kraken_out]
-  --paired
-  [ExtraArgs]
-  <(zcat [RawFastqDir]/[SeqID]_R1[InputSuffix] | head -n [SubsampleLines])
-  <(zcat [RawFastqDir]/[SeqID]_R2[InputSuffix] | head -n [SubsampleLines])
+  [seqkit_bin] sample -s [SampleSeed] -n [SampleNum] [TrimFastqDir]/[SeqID][R1_suffix] | gzip > [sub_r1]
+  &&
+  [seqkit_bin] sample -s [SampleSeed] -n [SampleNum] [TrimFastqDir]/[SeqID][R2_suffix] | gzip > [sub_r2]
+  &&
+  [kraken2_bin] --db [KrakenDB] --threads [Threads] --report [report_out] --paired [sub_r1] [sub_r2] > [kraken_out]
+  &&
+  [krona_bin] -m 4 -t 3 [kraken_out] -o [plot_out]
