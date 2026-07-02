@@ -211,7 +211,9 @@ def summarize_and_classify_bin(fragment_df, site_df, bin_id, raw_count, breadth_
         res["imbalance_rate"] = float(res["imbalance_count"] / total_sites)
         res["homo_like_rate"] = float(res["homo_like_count"] / total_sites)
         res["MAD_BAF"] = float(np.median(np.abs(target_df['BAF'] - 0.5)))
-        
+    
+    ##############################################
+    
     qc_mask = report_df['total_fragments'] >= 2
     qc_pass_fragments = int(report_df[qc_mask]["total_fragments"].sum()) if not report_df[qc_mask].empty else 0
     
@@ -345,41 +347,110 @@ def _parallel_chrom_worker(chrom_df, bam_path, vcf_file, min_mapq, thresholds, t
     )
 
 
-def gc_correct_lowess(df, frac=0.2):
-    x, y = df["gc"].values, np.log2(df["raw_count"].values + 1)
-    valid = np.isfinite(x) & (y > 0)
-    fit = lowess(y[valid], x[valid], frac=frac, return_sorted=False)
-    df["log2_corrected"] = np.nan
-    df.loc[valid, "log2_corrected"] = y[valid] - fit + np.nanmedian(fit)
-    return df, (x[valid], y[valid], fit)
+def gc_correct_lowess_robust(
+    df,
+    count_col="raw_count",
+    gc_col="gc",
+    frac=0.35,
+    pseudocount=0.25,
+    min_count_for_fit=1,
+    gc_range=(0.25, 0.75),
+    mappability_col=None,
+    blacklist_col=None,
+):
+    """
+    Low-pass/WGA용 robust GC correction.
 
-def apply_qc_and_impute(df, min_depth=5, min_coverage=0.1):
+    output:
+      log2_corrected_count : GC 보정된 log2 normalized count
+      gc_fit               : GC별 fitted value
+      gc_valid_for_fit     : LOWESS fit에 사용된 bin 여부
     """
-    [MODIFIED] Deletion 탐지를 위해 Low Quality Bin을 삭제하지 않고,
-    극단적인 Deletion 시그널(Zero-Imputation)로 변환하여 유지합니다.
-    """
-    if df is None or df.empty: return pd.DataFrame()
-    
-    df_imputed = df.copy()
-    
-    # 1. 퀄리티 미달 Bin 찾기 (Coverage가 거의 없는 구간 = Deletion 후보)
-    # 단, 센트로미어(Centromere) 등 원래 매핑이 안 되는 블랙리스트 구간은 사전에 제외되었다고 가정합니다.
-    bad_mask = (df_imputed["raw_count"] < min_depth) | (df_imputed["breadth_ratio"] < min_coverage)
-    
-    # 성염색체 보호 (여성 chrY 등은 정상적으로 비어있을 수 있으므로 Imputation 제외)
-    sex_chrom_mask = df_imputed["chrom"].isin(["chrX", "chrY"])
-    target_mask = bad_mask & (~sex_chrom_mask)
-    
-    # 2. 강제 Imputation (범죄 현장 보존)
-    # DNA가 아예 없다는 것은 완벽한 결실(Log2FC 최하점)이며, 대립유전자는 100% 한쪽으로 쏠린(Homo) 상태로 간주
-    df_imputed.loc[target_mask, "log2_chrom_norm"] = -3.0  # 극단적 결실 시그널
-    df_imputed.loc[target_mask, "hetero_like_rate"] = 0.0  # Hetero 불가능
-    df_imputed.loc[target_mask, "homo_like_rate"] = 1.0    # 극단적 LOH 상태
-    
-    # [Tip] 추가로 'is_imputed' 플래그를 달아두면 나중에 해석하기 편합니다.
-    df_imputed["is_imputed"] = False
-    df_imputed.loc[target_mask, "is_imputed"] = True
-    
-    # 정렬 후 반환
-    df_imputed["_k"] = df_imputed["chrom"].apply(chrom_key)
-    return df_imputed.sort_values(["_k", "start"]).drop(columns=["_k"]).reset_index(drop=True)
+
+    import numpy as np
+    from statsmodels.nonparametric.smoothers_lowess import lowess
+
+    df = df.copy()
+
+    counts = df[count_col].astype(float).values
+    gc = df[gc_col].astype(float).values
+
+    # ----------------------------------
+    # 1. library size normalization
+    # ----------------------------------
+    total = np.nansum(counts)
+
+    if total <= 0:
+        df["log2_corrected"] = np.nan
+        df["gc_fit"] = np.nan
+        df["gc_valid_for_fit"] = False
+        return df, None
+
+    # CPM scale
+    norm_count = counts / total * 1_000_000
+
+    # 또는 median depth scale로 써도 됨
+    # norm_count = counts / np.nanmedian(counts[counts > 0])
+
+    y = np.log2(norm_count + pseudocount)
+
+    # ----------------------------------
+    # 2. valid bin for GC fit
+    # ----------------------------------
+    valid = (
+        np.isfinite(gc) &
+        np.isfinite(y) &
+        (gc >= gc_range[0]) &
+        (gc <= gc_range[1]) &
+        (counts >= min_count_for_fit)
+    )
+
+    if mappability_col is not None and mappability_col in df.columns:
+        valid &= df[mappability_col].fillna(0).values >= 0.75
+
+    if blacklist_col is not None and blacklist_col in df.columns:
+        valid &= ~df[blacklist_col].fillna(False).values
+
+    # fit할 bin이 너무 적으면 correction 생략
+    if valid.sum() < 100:
+        df["log2_corrected"] = y
+        df["gc_fit"] = np.nan
+        df["gc_valid_for_fit"] = valid
+        return df, (gc[valid], y[valid], None)
+
+    # ----------------------------------
+    # 3. LOWESS fit
+    # ----------------------------------
+    fit_valid = lowess(
+        y[valid],
+        gc[valid],
+        frac=frac,
+        return_sorted=False
+    )
+
+    # ----------------------------------
+    # 4. 모든 bin에 대해 GC fit 예측
+    #    LOWESS는 valid 위치만 반환하므로 interpolation
+    # ----------------------------------
+    order = np.argsort(gc[valid])
+    gc_sorted = gc[valid][order]
+    fit_sorted = fit_valid[order]
+
+    fit_all = np.interp(
+        gc,
+        gc_sorted,
+        fit_sorted,
+        left=fit_sorted[0],
+        right=fit_sorted[-1]
+    )
+
+    # ----------------------------------
+    # 5. GC corrected log2 normalized count
+    # ----------------------------------
+    baseline = np.nanmedian(fit_valid)
+
+    df["log2_corrected"] = y - fit_all + baseline
+    df["gc_fit"] = fit_all
+    df["gc_valid_for_fit"] = valid
+
+    return df, (gc[valid], y[valid], fit_valid)

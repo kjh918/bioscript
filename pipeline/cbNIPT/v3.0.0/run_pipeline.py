@@ -21,7 +21,7 @@ def get_parser():
     parser.add_argument("--sge-user", default="jhkim", help="SGE 실행 유저 이름 (기본값: jhkim)")
     parser.add_argument("--sge-node", default="all.q@ngsmaster", help="SGE 큐/노드 이름 (기본값: all.q@ngsmaster)")
     parser.add_argument("--max-samples", type=int, default=6, help="동시 실행할 최대 샘플 수 (기본값: 3)")
-    parser.add_argument("--max-threads", type=int, default=200, help="최대 사용 스레드 수 (기본값: 24)")
+    parser.add_argument("--max-threads", type=int, default=300, help="최대 사용 스레드 수 (기본값: 24)")
     
     # 레퍼런스 설정 옵션 (기본값 세팅)
     parser.add_argument("--library", default="PicoPLEXGold", help="Library info. Default: PicoPLEXGold")

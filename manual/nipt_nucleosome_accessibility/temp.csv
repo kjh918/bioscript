@@ -1,0 +1,2 @@
+,chrom,start,end,short_fragments,mono_fragments,region_total_fragments,total_pass_fragments,cpm_short,cpm_mono,cpm_total,accessibility_score
+SRR38036024,chr2,106830066,106830143,0,2,3,39096018,0.0,0.051156,0.076734,0.0
