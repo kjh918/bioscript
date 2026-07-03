@@ -56,6 +56,11 @@ def plot_gc_correction(gc_stats, out_path):
     plt.close()
 
 
+# ─────────────────────────────────────────────────────────────
+# Bin-level violin zoom (원래 plot_bin_distribution 로직).
+# 이제 독립 함수가 아니라 plot_chromosome_overview 내부에서
+# GridSpec의 마지막 row로 그려지는 헬퍼로 통합되었다.
+# ─────────────────────────────────────────────────────────────
 def _draw_bin_distribution_zoom(fig, gs, row_idx, df_f, call_df, abn_chroms, cn_col, use_cn_scale):
     auto_vals = df_f[~df_f["chrom"].isin(["chrX", "chrY"])][cn_col].dropna().values
 
@@ -191,12 +196,12 @@ def plot_chromosome_overview(df_f, summary, call_df, sex, sample_id, out_dir):
             ax.scatter(xi + np.random.uniform(-0.3, 0.3, len(grp)), grp[col], alpha=0.3, s=10,
                        color=STYLE["sex_scatter"] if _is_sex_chrom(chrom) else color)
 
-        # 3. 중앙값 라인 및 포인트는 루프 외부에서 계산된 리스트로 단 한 번만 그리기
+        # 3. [수정됨] 중앙값 라인 및 포인트는 루프 외부에서 계산된 리스트로 단 한 번만 그리기
         xs = range(len(all_chroms))
         ys = chrom_medians[col]
         ax.plot(xs, ys, color="black", linewidth=2.0, alpha=0.7, zorder=5)
         ax.scatter(xs, ys, color="black", s=40, zorder=6)
-
+        
         ax.axhline(b_val, color="gray", linewidth=1.0, linestyle="--", alpha=0.6)
 
         # 4. Call 결과 Shade
@@ -217,7 +222,7 @@ def plot_chromosome_overview(df_f, summary, call_df, sex, sample_id, out_dir):
     top_axes[-1].set_xticklabels(all_chroms, rotation=45, ha="right", fontsize=13, fontweight="bold")
     for ax in top_axes[:-1]:
         plt.setp(ax.get_xticklabels(), visible=False)
-
+        
     fig.subplots_adjust(top=0.93)
     fig.savefig(os.path.join(out_dir, "01_chromosome_overview.png"), dpi=200, bbox_inches="tight")
     plt.close(fig)
@@ -369,7 +374,7 @@ def plot_comprehensive_baf_logr_qc(bins_df, segments_df, output_path, run_id):
 
 
 # ═════════════════════════════════════════════════════════════
-# 다중 샘플 코호트 종합 뷰
+# [NEW] 다중 샘플 코호트 종합 뷰
 # ═════════════════════════════════════════════════════════════
 def load_cohort_call_dfs(run_dirs):
     """

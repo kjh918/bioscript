@@ -2,17 +2,12 @@ import numpy as np
 import pandas as pd
 import ruptures as rpt
 import os, sys
-
+ 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 if current_dir not in sys.path:
     sys.path.insert(0, current_dir)
 
 from utils import log
-from rules import CFG
-
-_MACRO_CFG = CFG["SEGMENTATION"]["macro"]
-_MICRO_CFG = CFG["SEGMENTATION"]["micro"]
-
 
 def rolling_micro_cnv_segmentation(
     df,
@@ -20,27 +15,15 @@ def rolling_micro_cnv_segmentation(
     chrom_col="chrom",
     start_col="start",
     end_col="end",
-    window=None,
-    gain_threshold=None,
-    loss_threshold=None,
-    min_bins=None,
-    min_segment_bp=None,
-    max_seg_mad=None,
+    window=3,
+    gain_threshold=1.25,
+    loss_threshold=0.75,
+    min_bins=5,
+    min_segment_bp=500_000,
+    max_seg_mad=0.20,
 ):
-    """
-    Rolling-median 기반 micro CNV(미세결실/증폭) 탐지.
-    파라미터를 명시하지 않으면 config.yaml CFG["SEGMENTATION"]["micro"] 값을 사용합니다.
-
-    [주의] loss_threshold 는 normalized_count(=copy_number_signal/2.0, 항상 0 이상) 와
-    직접 비교되므로 양수여야 합니다. (과거 pipeline.py 에서 -0.7 로 호출되어
-    DEL 조건이 항상 거짓이 되던 버그를 config 기본값 0.7 로 수정했습니다.)
-    """
-    window         = _MICRO_CFG["window"] if window is None else window
-    gain_threshold = _MICRO_CFG["gain_threshold"] if gain_threshold is None else gain_threshold
-    loss_threshold = _MICRO_CFG["loss_threshold"] if loss_threshold is None else loss_threshold
-    min_bins       = _MICRO_CFG["min_bins"] if min_bins is None else min_bins
-    min_segment_bp = _MICRO_CFG["min_segment_bp"] if min_segment_bp is None else min_segment_bp
-    max_seg_mad    = _MICRO_CFG["max_seg_mad"] if max_seg_mad is None else max_seg_mad
+    import numpy as np
+    import pandas as pd
 
     segments = []
 
@@ -61,12 +44,14 @@ def rolling_micro_cnv_segmentation(
 
         g["smooth_signal"] = smooth
         g["bin_state"] = "NEUT"
+        print(g)
         g.loc[g["smooth_signal"] >= gain_threshold, "bin_state"] = "AMP"
         g.loc[g["smooth_signal"] <= loss_threshold, "bin_state"] = "DEL"
         g.loc[g["smooth_signal"].isna(), "bin_state"] = "INVALID"
 
         states = g["bin_state"].values
         start_i = 0
+        print(g["bin_state"].value_counts().to_dict())
 
         for i in range(1, len(g) + 1):
             if i == len(g) or states[i] != states[start_i]:
@@ -117,51 +102,60 @@ def rolling_micro_cnv_segmentation(
 
     return pd.DataFrame(segments)
 
-
 def segment_one_cell(
     meta,
     df_signals,
     signal_col="log2_chrom_norm",
     method="pelt",
-    model=None,
-    penalty=None,
+    model="l1",
+    penalty=8.0,
     n_bkps=None,
-    min_size=None,
-    jump=None,
-    min_bins=None,
-    min_segment_bp=None,
-    gain_log2=None,
-    loss_log2=None,
+    min_size=4,
+    jump=1,
+    min_bins=4,
+    min_segment_bp=400_000,
+    gain_log2=0.35,
+    loss_log2=-0.45,
 ):
     """
-    Chromosome별 change-point segmentation (macro CNV, PELT/Dynp 기반).
-    파라미터를 명시하지 않으면 config.yaml CFG["SEGMENTATION"]["macro"] 값을 사용합니다.
+    Chromosome별 change-point segmentation.
+
+    핵심 수정:
+      1. valid index 기준으로 segmentation 수행
+      2. breakpoint를 다시 원래 chromosome-local index로 변환
+      3. 변화 포인트마다 segment median 값을 따로 계산
+      4. segment별 copy_number_signal / cnv_call까지 같이 생성
 
     Parameters
     ----------
     signal_col:
-        기본값 "log2_chrom_norm". 정상 diploid 기준 0.0이어야 함.
+        기본값 "log2_chrom_norm"
+        정상 diploid 기준 0.0이어야 함.
+
     method:
         "pelt" 또는 "dynp"
+
     model:
-        ruptures model. 추천: "l1"(WGA noise에 robust), "l2"(평균 변화 탐지),
-        "rbf"(분포 변화 탐지, 더 민감함)
+        ruptures model.
+        추천:
+          - "l1": WGA noise에 상대적으로 robust
+          - "l2": 평균 변화 탐지
+          - "rbf": 분포 변화 탐지, 조금 더 민감함
+
     penalty:
         PELT 사용 시 penalty.
+
     n_bkps:
         Dynp 사용 시 chromosome당 breakpoint 개수.
-    gain_log2 / loss_log2:
-        AMP / DEL 판정 threshold. (log2(1.30)≈0.38, log2(0.70)≈-0.51)
+
+    gain_log2:
+        AMP threshold.
+        log2(1.30) ≈ 0.38
+
+    loss_log2:
+        DEL threshold.
+        log2(0.70) ≈ -0.51
     """
-    model          = _MACRO_CFG["model"] if model is None else model
-    min_size       = _MACRO_CFG["min_size"] if min_size is None else min_size
-    jump           = _MACRO_CFG["jump"] if jump is None else jump
-    min_bins       = _MACRO_CFG["min_bins"] if min_bins is None else min_bins
-    min_segment_bp = _MACRO_CFG["min_segment_bp"] if min_segment_bp is None else min_segment_bp
-    gain_log2      = _MACRO_CFG["gain_log2"] if gain_log2 is None else gain_log2
-    loss_log2      = _MACRO_CFG["loss_log2"] if loss_log2 is None else loss_log2
-    if method == "pelt" and penalty is None:
-        penalty = _MACRO_CFG["penalty"]
 
     if method == "pelt" and penalty is None:
         raise ValueError("Penalty value must be provided for PELT algorithm.")
@@ -283,7 +277,24 @@ def segment_one_cell(
                 cnv_call = "DEL"
             else:
                 cnv_call = "NEUT"
-
+            print({
+                "chrom": chrom,
+                "start": seg_start,
+                "end": seg_end,
+                "n_bins": int(len(full_seg_idx)),
+                "n_valid_bins": int(len(seg_valid_vals)),
+                "seg_mean": seg_mean,
+                "seg_std": seg_std,
+                "seg_mad": seg_mad,
+                "median_norm": median_norm,
+                "copy_number_signal": copy_number_signal,
+                "copy_number": copy_number,
+                "cnv_call": cnv_call,
+                "method": method,
+                "model": model,
+                "penalty": penalty if method == "pelt" else np.nan,
+                "n_bkps": n_bkps if method == "dynp" else np.nan,
+            })
             segments.append({
                 "chrom": chrom,
                 "start": seg_start,
@@ -323,38 +334,39 @@ def segment_one_cell(
 
 def assign_cn_state(seg_df, baseline_ploidy=2, sex_tag="UNKNOWN"):
     """
-    1D seg_mean 기반 상태 할당.
+    [SIMPLIFIED & FIXED] 1D seg_mean 기반 상태 할당.
     성별(Sex)에 따라 성염색체(chrX, chrY)의 기본 Ploidy를 동적으로 조절합니다.
     """
     if seg_df is None or seg_df.empty:
         return seg_df
-
+        
     df = seg_df.copy()
-
+    
+    # [FIX] seg_median -> seg_mean 컬럼명 통일 확인
     if "seg_mean" not in df.columns:
         raise KeyError("Cannot find 'seg_mean' column in segments dataframe. "
                        "segment_one_cell() output must contain 'seg_mean'.")
 
     ratios = np.exp2(df["seg_mean"].fillna(0.0))
-
+    
     expected_ploidy = np.full(len(df), baseline_ploidy, dtype=int)
     chrom_array = df["chrom"].values
-
+    
     if sex_tag in ("XY", "Male (XY)", "Male"):
         expected_ploidy[chrom_array == "chrX"] = 1
         expected_ploidy[chrom_array == "chrY"] = 1
     elif sex_tag in ("XX", "Female (XX)", "Female"):
         expected_ploidy[chrom_array == "chrY"] = 0
-
+        
     df["expected_ploidy"] = expected_ploidy
     df["copy_number"] = np.round(ratios * expected_ploidy).astype(int)
     df["copy_number"] = df["copy_number"].clip(lower=0)
-
+    
     conditions = [
         df["copy_number"] > df["expected_ploidy"],
         df["copy_number"] < df["expected_ploidy"]
     ]
     choices = ["AMP", "DEL"]
     df["cnv_call"] = np.select(conditions, choices, default="NEUT")
-
+    
     return df

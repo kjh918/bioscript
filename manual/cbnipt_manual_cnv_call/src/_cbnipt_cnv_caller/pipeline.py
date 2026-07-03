@@ -3,6 +3,10 @@ import sys
 import pysam
 import numpy as np
 import pandas as pd
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
 
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
@@ -11,10 +15,8 @@ if current_dir not in sys.path:
     sys.path.insert(0, current_dir)
 
 from utils import log, ensure_dir, chrom_key, sort_chroms
-from rules import CFG
 from processing import gc_correct_lowess_robust, _parallel_chrom_worker
 from normalization import normalize_by_chrom_with_sex, apply_qc_bin
-from calling_sex import determine_fetal_sex
 from visualization import (
     plot_comprehensive_baf_logr_qc,
     plot_chromosome_overview,
@@ -25,10 +27,7 @@ from visualization import (
     load_cohort_call_dfs,
 )
 from segmentation import assign_cn_state, segment_one_cell, rolling_micro_cnv_segmentation
-from calling_chromosome import compute_chrom_summary, analyze_all_chromosomes
-from diagnosis_nipt_syndrome import diagnose_clinical_markers
-
-_BIN_EXTRACTION_CFG = CFG["BIN_EXTRACTION"]
+from classification import compute_chrom_summary, analyze_all_chromosomes, diagnose_clinical_markers
 
 # ═════════════════════════════════════════════════════════════
 # CNV Pipeline
@@ -46,8 +45,8 @@ class CnvPipeline:
             ensure_dir(d)
 
         self._gender_tag = "Unknown"
-        self._x_cn = 0.0
-        self._y_cn = 0.0
+        self._x_ratio = 0.0
+        self._y_ratio = 0.0
         self._norm_qc = {}
 
     # ─────────────────────────────────────────────────────────────
@@ -65,18 +64,17 @@ class CnvPipeline:
         df_merged_evidence = self.extract_genetic_evidence(df_bins)
 
         # 3. 불량 Bin QC 필터링 (GC 보정 전에 수행하는 것이 정석)
-        #    (min_depth/min_coverage 미지정 시 config.yaml CFG 값 사용)
-        df_filtered = apply_qc_bin(df_merged_evidence)
+        df_filtered = apply_qc_bin(df_merged_evidence, min_depth=1, min_coverage=0.3)
 
         # 4. GC 보정(LOWESS) 및 LOO 정규화 (기준점: 2.0)
         df_global = self.correct_gc_and_normalize(df_filtered)
 
-        # 5. 성별 판별 및 X/Y CN 계산 (sex_calling 단일 로직)
+        # 5. 성별 판별 및 X/Y Ratio 계산
         self._determine_fetal_sex(df_global)
 
         # 6. 염색체 수준 분류 (Classification)
         summary = self.classify_chromosomes(df_global)
-        call_df = analyze_all_chromosomes(summary, self._gender_tag, self._x_cn, self._y_cn)
+        call_df = analyze_all_chromosomes(summary, self._gender_tag, self._x_ratio, self._y_ratio)
 
         # call_df 저장: 코호트(다중 샘플) 시각화가 나중에 이 파일을 읽어서 종합 뷰를 만든다.
         call_df_path = os.path.join(self.dirs["data"], f"{self.args.SeqID}.chrom_calls.tsv")
@@ -172,14 +170,11 @@ class CnvPipeline:
             valid_sum_files = []
             valid_mut_files = []
 
-            # bin-level BAF 분류 threshold: CLI(args)로 명시하지 않으면 config.yaml
-            # CFG["BIN_EXTRACTION"] 값을 사용한다.
             thresholds = {
-                "homo_max": getattr(self.args, "HomoMax", _BIN_EXTRACTION_CFG["homo_max"]),
-                "hetero_min": getattr(self.args, "HeteroMin", _BIN_EXTRACTION_CFG["hetero_min"]),
-                "hetero_max": getattr(self.args, "HeteroMax", _BIN_EXTRACTION_CFG["hetero_max"]),
-                "homo_min": getattr(self.args, "HomoMin", _BIN_EXTRACTION_CFG["homo_min"]),
-                "min_baseq": getattr(self.args, "MinBaseQ", _BIN_EXTRACTION_CFG["min_baseq"]),
+                "homo_max": getattr(self.args, "HomoMax", 0.1),
+                "hetero_min": getattr(self.args, "HeteroMin", 0.4),
+                "hetero_max": getattr(self.args, "HeteroMax", 0.6),
+                "homo_min": getattr(self.args, "HomoMin", 0.9),
             }
 
             with ProcessPoolExecutor(max_workers=max_workers) as executor:
@@ -304,15 +299,16 @@ class CnvPipeline:
         return self._load_or_run(target_file, _run)
 
     # ─────────────────────────────────────────────────────────────
-    # [모듈 4] 성별 판별 로직 및 CN 갱신
+    # [모듈 4] 성별 판별 로직 및 Ratio 갱신
     # ─────────────────────────────────────────────────────────────
     def _determine_fetal_sex(self, df_global):
-        """
-        sex_calling.determine_fetal_sex() 단일 로직 사용.
-        (과거 이 메서드와 normalize_by_chrom_with_sex 양쪽에 각각 하드코딩된
-        1.5 / 0.2 판별식이 중복돼 있던 것을 통합)
-        """
         log("Determining Sex based on normalized copy number signals...")
+
+        auto = df_global[~df_global["chrom"].isin(["chrX", "chrY"])]["copy_number_signal"]
+        auto_med = auto.median()
+
+        if auto_med == 0 or np.isnan(auto_med):
+            auto_med = 2.0
 
         x_mask = df_global["chrom"] == "chrX"
         y_mask = df_global["chrom"] == "chrY"
@@ -320,11 +316,18 @@ class CnvPipeline:
         x_median = df_global.loc[x_mask, "copy_number_signal"].median() if x_mask.sum() > 0 else 0.0
         y_median = df_global.loc[y_mask, "copy_number_signal"].median() if y_mask.sum() > 0 else 0.0
 
-        self._x_cn = float(x_median)
-        self._y_cn = float(y_median)
-        self._gender_tag = determine_fetal_sex(self._x_cn, self._y_cn)
+        self._x_ratio = float(x_median / auto_med)
+        self._y_ratio = float(y_median / auto_med)
 
-        log(f"Determined Sex: {self._gender_tag} (X Copy: {x_median:.2f}, Y Copy: {y_median:.2f})")
+        if x_median > 1.5 and y_median < 0.2:
+            self._gender_tag = 'XX'
+        elif x_median < 1.5 and y_median > 0.2:
+            self._gender_tag = "XY"
+        else:
+            self._gender_tag = "Unknown"
+
+        log(f"Determined Sex: {self._gender_tag} (X Copy: {x_median:.2f}, Y Copy: {y_median:.2f}, "
+            f"X Ratio: {self._x_ratio:.2f}, Y Ratio: {self._y_ratio:.2f})")
 
     # ─────────────────────────────────────────────────────────────
     # [모듈 5] Classification
@@ -346,8 +349,6 @@ class CnvPipeline:
         def _run():
             log("Running 1D PELT Segmentation on log2_chrom_norm...")
 
-            # penalty 는 CLI(args.SegPenalty)로 override 가능, 그 외 파라미터는
-            # config.yaml CFG["SEGMENTATION"]["macro"] 기본값을 사용한다.
             segments = segment_one_cell(
                 meta=df_global,
                 df_signals=df_global,
@@ -377,12 +378,15 @@ class CnvPipeline:
         def _run():
             log("Running rolling_micro_cnv_segmentation on normalized_count...")
             df_global["normalized_count"] = df_global["copy_number_signal"] / 2.0
-            # 파라미터 전부 config.yaml CFG["SEGMENTATION"]["micro"] 기본값 사용
-            # (과거 여기서 loss_threshold=-0.7 로 하드코딩되어 micro DEL이 사실상
-            #  탐지되지 않던 버그를 config 기본값 0.7 로 수정함)
             segments = rolling_micro_cnv_segmentation(
                 df_global,
                 signal_col="normalized_count",
+                window=3,
+                gain_threshold=1.3,
+                loss_threshold=-0.7,
+                min_bins=4,
+                min_segment_bp=400_000,
+                max_seg_mad=0.20,
             )
             if segments is None or segments.empty:
                 return pd.DataFrame()
@@ -443,6 +447,8 @@ class CnvPipeline:
         plots_dir = self.dirs["plots"]
 
         log("Generating plots...")
+        # [변경] plot_chromosome_overview 가 이제 bin distribution zoom까지 포함해서
+        # 하나의 01_chromosome_overview.png 로 저장한다. (구 plot_bin_distribution 제거)
         plot_chromosome_overview(df_global, summary, call_df, gender_tag, sample_id, plots_dir)
         plot_score_heatmap(call_df, sample_id, gender_tag, plots_dir)
         plot_final_call(call_df, gender_tag, sample_id, plots_dir)
@@ -457,7 +463,7 @@ class CnvPipeline:
 
 
 # ═════════════════════════════════════════════════════════════
-# 여러 샘플을 돌린 뒤 종합 코호트 뷰를 뽑아내는 엔트리 함수
+# [NEW] 여러 샘플을 돌린 뒤 종합 코호트 뷰를 뽑아내는 엔트리 함수
 # ═════════════════════════════════════════════════════════════
 def run_cohort_plot(run_dirs, out_path, sex_dict=None, score_col="final_score"):
     """
