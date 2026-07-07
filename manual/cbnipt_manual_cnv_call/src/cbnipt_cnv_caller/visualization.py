@@ -1,4 +1,7 @@
+from operator import sub
+
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 import seaborn as sns
 import numpy as np
 import pandas as pd
@@ -11,6 +14,7 @@ if current_dir not in sys.path:
 
 from utils import log, sort_chroms
 from rules import CALL_COLORS, CFG
+from clinical_diagnosis import _resolve_clinical_rule
 
 
 # ═════════════════════════════════════════════════════════════
@@ -40,6 +44,202 @@ STYLE = {
 
 def _is_sex_chrom(chrom):
     return chrom in ("chrX", "chrY")
+
+
+# ═════════════════════════════════════════════════════════════
+# 임상 진단(Marker DB) threshold 검증용 plot
+# ═════════════════════════════════════════════════════════════
+def plot_clinical_diagnosis_report(report_df, out_path, sample_id="Sample", cfg=CFG):
+    """
+    diagnose_clinical_markers() 의 결과(report_df)를 syndrome 단위로 시각화.
+
+    - AMP/DEL 타입 syndrome: syndrome별 서브플롯에서 각 feature(TargetChromosome
+      ~ CoreGene)의 OBSERVED_CN 을 점으로 찍고, 그 syndrome에 적용된
+      pos/sus threshold(config.yaml CFG["CLINICAL_DIAGNOSIS_RULES"])를
+      배경 음영 + 점선으로 표시. 점 색은 DIAGNOSIS(POSITIVE/SUSPICIOUS/NEGATIVE),
+      LOW_RESOLUTION_WARNING(겹치는 bin이 너무 적은 경우)이 True 이면 'x' 마커로 표시.
+    - SEX_ANEUPLOIDY 타입 syndrome(Turner/Klinefelter/Jacob/TripleX 등): 하나의
+      chrX-CN vs chrY-CN 평면에 config.yaml CFG["SEX_ANEUPLOIDY"] 각 규칙의
+      판정 영역을 박스로 그리고, 샘플의 실측 (X, Y) 위치를 별표로 표시.
+    """
+    diag_colors = {"POSITIVE": "#F44336", "SUSPICIOUS": "#FF9800", "NEGATIVE": "#4CAF50"}
+
+    df = report_df[report_df["SYNDROME"].astype(str).str.upper() != "NIPT_SEX"].copy()
+
+    amp_del_groups = []   # (syndrome, rule, sub_df)
+    sex_x_cn, sex_y_cn = None, None
+
+    for syn, grp in df.groupby("SYNDROME", sort=False):
+        syn_key = str(syn).lower()
+        grp_key = str(grp["NIPT_GROUP"].iloc[0]).lower()
+        rule = _resolve_clinical_rule(syn_key, grp_key)
+        rtype = rule.get("rule_type", "UNKNOWN")
+
+        if rtype in ("AMP", "DEL"):
+            amp_del_groups.append((syn, rule, grp.sort_values("FEAT_RANK")))
+        elif rtype == "SEX_ANEUPLOIDY":
+            xrow = grp[grp["CHROMOSOME"] == "chrX"]
+            yrow = grp[grp["CHROMOSOME"] == "chrY"]
+            if sex_x_cn is None and not xrow.empty and pd.notna(xrow["OBSERVED_CN"].iloc[0]):
+                sex_x_cn = float(xrow["OBSERVED_CN"].iloc[0])
+            if sex_y_cn is None and not yrow.empty and pd.notna(yrow["OBSERVED_CN"].iloc[0]):
+                sex_y_cn = float(yrow["OBSERVED_CN"].iloc[0])
+
+    n_amp_del = len(amp_del_groups)
+    n_cols = 3 if n_amp_del > 1 else 1
+    n_rows_amp = int(np.ceil(n_amp_del / n_cols)) if n_amp_del else 0
+    has_sex_panel = (sex_x_cn is not None) or (sex_y_cn is not None)
+    total_rows = n_rows_amp + (2 if has_sex_panel else 0)   # sex panel은 2 row 높이 사용
+
+    if total_rows == 0:
+        log("[plot_clinical_diagnosis_report] No AMP/DEL/SEX_ANEUPLOIDY syndromes to plot.")
+        return
+
+    fig = plt.figure(figsize=(6.2 * n_cols, 3.0 * n_rows_amp + (6.0 if has_sex_panel else 0)))
+    fig.suptitle(f"Clinical Diagnosis Thresholds — {sample_id}", fontsize=14, fontweight="bold")
+    gs = fig.add_gridspec(total_rows, n_cols, hspace=0.7, wspace=0.35)
+    fig.subplots_adjust(
+        top=0.95,      # 그래프 시작 위치. 0.90~0.95 사이 조절
+        bottom=0.06,
+        left=0.08,
+        right=0.98
+    )
+
+    # ── AMP/DEL 서브플롯 ─────────────────────────────────────────
+    for idx, (syn, rule, sub) in enumerate(amp_del_groups):
+        r, c = divmod(idx, n_cols)
+        ax = fig.add_subplot(gs[r, c])
+        rtype = rule["rule_type"]
+
+        obs_vals = sub["OBSERVED_CN"].dropna()
+        x_lo = min(0.0, obs_vals.min() - 0.3) if not obs_vals.empty else 0.0
+        x_hi = max(4.0, obs_vals.max() + 0.3) if not obs_vals.empty else 4.0
+
+        if rtype == "AMP":
+            pos_th, sus_th = rule["pos_min"], rule["sus_min"]
+            ax.axvspan(pos_th, x_hi, color="#F44336", alpha=0.10, label="POSITIVE zone")
+            ax.axvspan(sus_th, pos_th, color="#FF9800", alpha=0.10, label="SUSPICIOUS zone")
+        else:
+            pos_th, sus_th = rule["pos_max"], rule["sus_max"]
+            ax.axvspan(x_lo, pos_th, color="#F44336", alpha=0.10, label="POSITIVE zone")
+            ax.axvspan(pos_th, sus_th, color="#FF9800", alpha=0.10, label="SUSPICIOUS zone")
+
+        ax.axvline(pos_th, color="#F44336", linestyle="--", linewidth=1.2)
+        ax.axvline(sus_th, color="#FF9800", linestyle="--", linewidth=1.2)
+        ax.axvline(2.0, color="gray", linestyle=":", linewidth=1.0, label="Diploid (2.0)")
+
+        y_labels, y_pos = [], []
+        
+        n_rows = len(sub)
+
+        for i, (_, row) in enumerate(sub.iterrows()):
+            label = row["FEATURE_NAME"]
+            y_labels.append(f"{label}\n({row['FEATURE_TYPE']})")
+            y_pos.append(i)
+
+            cn = row["OBSERVED_CN"]
+            color = diag_colors.get(row["DIAGNOSIS"], "gray")
+            low_res = bool(row.get("LOW_RESOLUTION_WARNING", False))
+
+            # NA인 경우: x=2 위치에 네모로 표시
+            if pd.isna(cn):
+                na_x = 2
+                ax.text(
+                    na_x, i, "NA",           # x=2 기준 가운데
+                    fontsize=6.5,
+                    ha="center",
+                    va="center",
+                    color="dimgray",
+                    zorder=10
+                )
+                continue
+
+            # low_res면 세모, 아니면 원
+            marker = "^" if low_res else "o"
+
+            ax.scatter(
+                [cn], [i],
+                color=color,
+                s=90,
+                marker=marker,
+                edgecolor="black",
+                linewidth=1,
+                zorder=5
+            )
+
+            ax.text(
+                cn, i + 0.22,
+                f"n={int(row['OVERLAP_BINS'])}",
+                fontsize=6.5,
+                ha="center",
+                color="dimgray",
+                zorder=10
+            )
+
+        ax.set_yticks(y_pos)
+        ax.set_yticklabels(y_labels, fontsize=7)
+        ax.invert_yaxis()
+
+        if n_rows == 1:
+            ax.set_ylim(0.8, -0.8)
+        elif n_rows == 2:
+            ax.set_ylim(1.4, -0.4)
+        else:
+            ax.set_ylim(n_rows - 0.4, -0.6)
+
+        ax.set_xlim(x_lo, x_hi)
+        ax.set_xlabel("Observed CN", fontsize=8, fontweight="bold")
+        ax.set_title(f"{syn}  [{rtype}]", fontsize=9, fontweight="bold")
+        ax.grid(axis="x", linestyle="--", alpha=0.3)
+
+        # legend 직접 생성
+        legend_handles = [
+            Line2D([0], [0], marker='o', color='w', label='Pass',
+                markerfacecolor='gray', markeredgecolor='black', markersize=8),
+            Line2D([0], [0], marker='^', color='w', label='Low resolution',
+                markerfacecolor='gray', markeredgecolor='black', markersize=8),
+            Line2D([0], [0], marker='s', color='w', label='NA',
+                markerfacecolor='white', markeredgecolor='white', markersize=8),
+        ]
+
+        ax.legend(handles=legend_handles, fontsize=5, loc="upper right")
+
+    # ── 성염색체 이수성 서브플롯 (chrX CN vs chrY CN 평면) ──────────
+    if has_sex_panel:
+        ax = fig.add_subplot(gs[n_rows_amp:n_rows_amp + 2, :])
+
+        call_color_map = {"ABNORMAL": "#F44336", "SUSPICIOUS": "#FF9800"}
+        for key, rule in cfg["SEX_ANEUPLOIDY"].items():
+            x_min = rule.get("x_min", -0.3)
+            x_max = rule.get("x_max", 4.0)
+            y_min = rule.get("y_min", -0.3)
+            y_max = rule.get("y_max", 3.0)
+            face = call_color_map.get(rule["call"], "gray")
+            rect = plt.Rectangle((x_min, y_min), x_max - x_min, y_max - y_min,
+                                  facecolor=face, alpha=0.15, edgecolor=face, linewidth=1.3)
+            ax.add_patch(rect)
+            ax.text((x_min + x_max) / 2, (y_min + y_max) / 2, rule["pattern_name"],
+                    ha="center", va="center", fontsize=8, fontweight="bold", color=face)
+
+        if sex_x_cn is not None and sex_y_cn is not None:
+            ax.scatter([sex_x_cn], [sex_y_cn], color="royalblue", s=220, marker="*",
+                       edgecolor="black", linewidth=1.2, zorder=10,
+                       label=f"Sample (X={sex_x_cn:.2f}, Y={sex_y_cn:.2f})")
+            ax.legend(fontsize=8, loc="upper right")
+
+        ax.axvline(2.0, color="gray", linestyle=":", linewidth=0.8)
+        ax.axhline(1.0, color="gray", linestyle=":", linewidth=0.8)
+        ax.set_xlim(-0.3, 4.0)
+        ax.set_ylim(-0.3, 3.0)
+        ax.set_xlabel("chrX Copy Number", fontsize=9, fontweight="bold")
+        ax.set_ylabel("chrY Copy Number", fontsize=9, fontweight="bold")
+        ax.set_title("Sex Chromosome Aneuploidy Thresholds",
+                     fontsize=10, fontweight="bold")
+        ax.grid(linestyle="--", alpha=0.3)
+
+    fig.savefig(out_path, dpi=180, bbox_inches="tight")
+    plt.close(fig)
+    log(f"Clinical diagnosis threshold plot saved to: {out_path}")
 
 
 def plot_gc_correction(gc_stats, out_path):

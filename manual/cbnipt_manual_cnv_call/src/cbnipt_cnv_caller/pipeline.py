@@ -14,7 +14,7 @@ from utils import log, ensure_dir, chrom_key, sort_chroms
 from rules import CFG
 from processing import gc_correct_lowess_robust, _parallel_chrom_worker
 from normalization import normalize_by_chrom_with_sex, apply_qc_bin
-from calling_sex import determine_fetal_sex
+from sex_calling import determine_fetal_sex
 from visualization import (
     plot_comprehensive_baf_logr_qc,
     plot_chromosome_overview,
@@ -23,10 +23,11 @@ from visualization import (
     plot_gc_correction,
     plot_cohort_overview,
     load_cohort_call_dfs,
+    plot_clinical_diagnosis_report,
 )
 from segmentation import assign_cn_state, segment_one_cell, rolling_micro_cnv_segmentation
-from calling_chromosome import compute_chrom_summary, analyze_all_chromosomes
-from diagnosis_nipt_syndrome import diagnose_clinical_markers
+from chrom_calling import compute_chrom_summary, analyze_all_chromosomes
+from clinical_diagnosis import diagnose_clinical_markers
 
 _BIN_EXTRACTION_CFG = CFG["BIN_EXTRACTION"]
 
@@ -46,6 +47,9 @@ class CnvPipeline:
             ensure_dir(d)
 
         self._gender_tag = "Unknown"
+        # copy_number_signal 스케일 (상염색체 baseline=2.0) chrX/chrY 중앙값.
+        # chrom_calling.analyze_all_chromosomes / clinical_diagnosis.diagnose_clinical_markers
+        # 양쪽 모두 이 스케일을 기준으로 성염색체 이수성을 판정한다 (sex_calling.py 참조).
         self._x_cn = 0.0
         self._y_cn = 0.0
         self._norm_qc = {}
@@ -90,10 +94,10 @@ class CnvPipeline:
 
         # 9. 탐지된 결과와 Bin 데이터를 모아서 최종 임상 진단 리포트 생성
         clinical_report = self.generate_clinical_report(df_global, segment_df, microdeletion_df)
-        print(clinical_report)
+        print(clinical_report['FEATURE_NAME'].unique())
 
         # 10. 시각화 (Plots)
-        self.generate_plots(df_global, summary, call_df, segment_df)
+        self.generate_plots(df_global, summary, call_df, segment_df, clinical_report)
 
         log("=" * 60)
         log(f"  Pipeline Complete: {self.args.SeqID}")
@@ -346,8 +350,6 @@ class CnvPipeline:
         def _run():
             log("Running 1D PELT Segmentation on log2_chrom_norm...")
 
-            # penalty 는 CLI(args.SegPenalty)로 override 가능, 그 외 파라미터는
-            # config.yaml CFG["SEGMENTATION"]["macro"] 기본값을 사용한다.
             segments = segment_one_cell(
                 meta=df_global,
                 df_signals=df_global,
@@ -437,7 +439,7 @@ class CnvPipeline:
     # ─────────────────────────────────────────────────────────────
     # [모듈 9] 시각화 (Plots)
     # ─────────────────────────────────────────────────────────────
-    def generate_plots(self, df_global, summary, call_df, segment_df):
+    def generate_plots(self, df_global, summary, call_df, segment_df, clinical_report=None):
         gender_tag = self._gender_tag
         sample_id = self.args.SeqID
         plots_dir = self.dirs["plots"]
@@ -453,6 +455,13 @@ class CnvPipeline:
                 segment_df,
                 os.path.join(plots_dir, f"{sample_id}.comprehensive_view.png"),
                 sample_id,
+            )
+
+        if clinical_report is not None and not clinical_report.empty:
+            plot_clinical_diagnosis_report(
+                clinical_report,
+                os.path.join(plots_dir, "05_clinical_diagnosis_thresholds.png"),
+                sample_id=sample_id,
             )
 
 

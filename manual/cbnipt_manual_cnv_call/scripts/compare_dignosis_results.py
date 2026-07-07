@@ -6,70 +6,96 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as mcolors
 
 
-def aggregate_diagnosis(diagnoses):
+def map_diagnosis(val):
     """
-    Aggregates the diagnosis for a single syndrome based on its features.
-    - POSITIVE (2): If ALL features are POSITIVE.
-    - SUSPICIOUS (1): If not all are POSITIVE, but at least one is POSITIVE or SUSPICIOUS.
-    - NEGATIVE (0): If ALL features are NEGATIVE.
+    텍스트 기반 진단 결과를 Heatmap 컬러 매핑을 위한 숫자 스코어로 변환합니다.
     """
-    unique_vals = set(diagnoses.dropna().str.upper())
+    val = str(val).upper()
+    if "POSITIVE" in val: return 2
+    if "SUSPICIOUS" in val: return 1
+    if "NEGATIVE" in val: return 0
+    return 0  # Default fallback
+
+
+def load_detailed_samples(data_dir):
+    """
+    모든 샘플의 clinical_report.tsv를 읽어, 증후군의 '세부 마커(Feature)' 단위까지
+    펼쳐진 매트릭스(Sample x Feature)를 생성합니다.
+    """
+    search_pattern = os.path.join(data_dir, "*24_04*/data/*.clinical_report.tsv")
+    print(f"Searching for files: {search_pattern}")
     
-    if len(unique_vals) == 1 and "POSITIVE" in unique_vals:
-        return 2  # All POSITIVE
-    elif "POSITIVE" in unique_vals or "SUSPICIOUS" in unique_vals:
-        return 1  # Next level down (Mixed / Suspicious)
-    else:
-        return 0  # NEGATIVE
-
-
-def load_and_summarize_samples(data_dir):
-    """
-    Loads all TSV files in the directory and summarizes the syndrome status per sample.
-    """
-    print(os.path.join(data_dir, "*24_04*/data/*.clinical_report.tsv"))
-    tsv_files = glob.glob(os.path.join(data_dir, "*24_04*/data/*.clinical_report.tsv"), recursive=True)
+    tsv_files = glob.glob(search_pattern, recursive=True)
     if not tsv_files:
-        raise FileNotFoundError(f"No TSV files found in {data_dir}")
+        raise FileNotFoundError(f"No TSV files found using pattern: {search_pattern}")
 
-    all_summaries = []
+    all_data = []
 
     for file_path in tsv_files:
-        # Extract sample ID from the filename (e.g., sample_A.tsv -> sample_A)
         sample_id = os.path.basename(file_path).replace(".clinical_report.tsv", "")
         
         df = pd.read_csv(file_path, sep="\t")
         
-        # Ensure required columns exist
-        if not all(col in df.columns for col in ["SYNDROME", "DIAGNOSIS"]):
+        # 필수 컬럼 존재 확인
+        req_cols = ["SYNDROME", "FEATURE_NAME", "FEATURE_TYPE", "FEAT_RANK", "DIAGNOSIS"]
+        if not all(col in df.columns for col in req_cols):
             print(f"Skipping {file_path}: Missing required columns.")
             continue
             
-        # Group by syndrome and apply the aggregation logic
-        summary = df.groupby("SYNDROME")["DIAGNOSIS"].apply(aggregate_diagnosis).reset_index()
-        summary["SAMPLE_ID"] = sample_id
+        # 성별 판독 행은 질환(Positive/Negative)이 아니므로 Heatmap에서 제외
+        df = df[df["SYNDROME"] != "NIPT_SEX"].copy()
         
-        all_summaries.append(summary)
+        df["SAMPLE_ID"] = sample_id
+        df["SCORE"] = df["DIAGNOSIS"].apply(map_diagnosis)
         
-    # Combine all sample summaries into a single DataFrame
-    combined_df = pd.concat(all_summaries, ignore_index=True)
+        # X축에 표시될 이름 포맷팅: [증후군] 피처명 (피처타입)
+        # 예: [DiGeorgy syndrome] TBX1 (CoreGene)
+        df["DISPLAY_NAME"] = df.apply(
+            lambda r: f"[{r['SYNDROME']}]\n{r['FEATURE_NAME']} ({r['FEATURE_TYPE']})", axis=1
+        )
+        
+        all_data.append(df)
+        
+    if not all_data:
+        raise ValueError("No valid data parsed from TSV files.")
+
+    combined_df = pd.concat(all_data, ignore_index=True)
     
-    # Pivot to create a matrix: Rows = Samples, Columns = Syndromes
-    heatmap_data = combined_df.pivot(index="SAMPLE_ID", columns="SYNDROME", values="DIAGNOSIS")
+    # [핵심] 컬럼(X축)의 논리적 정렬 순서 보장
+    # 1순위: 증후군명, 2순위: 피처의 계층적 랭크(염색체->영역->유전자)
+    col_order_df = combined_df[["DISPLAY_NAME", "SYNDROME", "FEAT_RANK"]].drop_duplicates()
+    col_order_df = col_order_df.sort_values(["SYNDROME", "FEAT_RANK"])
+    ordered_cols = col_order_df["DISPLAY_NAME"].tolist()
     
-    # Fill any missing syndromes for specific samples with NEGATIVE (0)
-    heatmap_data = heatmap_data.fillna(0)
+    # [MODIFIED] 변경 이유: 중복된 마커 이름이 들어올 경우 발생하는 Index Error 방지.
+    # pivot 대신 pivot_table을 사용하고, 중복 시 가장 심각한 상태(max)를 반영 (2: POS > 1: SUS > 0: NEG)
+    heatmap_data = combined_df.pivot_table(
+        index="SAMPLE_ID", 
+        columns="DISPLAY_NAME", 
+        values="SCORE", 
+        aggfunc="max"
+    )
+    
+    # 데이터가 없는 셀은 0(Negative)으로 채우고, 미리 정해둔 순서대로 컬럼 재배치
+    heatmap_data = heatmap_data.fillna(0)[ordered_cols]
     
     return heatmap_data
 
 
 def plot_syndrome_heatmap(heatmap_data, output_path):
     """
-    Generates and saves a heatmap from the sample-syndrome matrix.
+    세분화된 Sample-Feature 매트릭스로부터 고해상도 Heatmap을 생성합니다.
     """
-    plt.figure(figsize=(14, 8))
+    # 컬럼(세부 마커)의 개수가 많으므로 동적으로 가로 길이를 늘림
+    num_features = heatmap_data.shape[1]
+    num_samples = heatmap_data.shape[0]
     
-    # Define custom colormap: 0=Blue (Negative), 1=Yellow (Suspicious), 2=Red (Positive)
+    fig_width = max(16, num_features * 0.4)
+    fig_height = max(8, num_samples * 0.5 + 4)
+    
+    plt.figure(figsize=(fig_width, fig_height))
+    
+    # 커스텀 컬러맵: 0=Blue(Negative), 1=Yellow(Suspicious), 2=Red(Positive)
     cmap = mcolors.ListedColormap(["#f7fbff", "#ffeda0", "#f03b20"])
     bounds = [-0.5, 0.5, 1.5, 2.5]
     norm = mcolors.BoundaryNorm(bounds, cmap.N)
@@ -79,47 +105,56 @@ def plot_syndrome_heatmap(heatmap_data, output_path):
         cmap=cmap, 
         norm=norm,
         linewidths=0.5, 
-        linecolor="gray",
-        cbar_kws={"ticks": [0, 1, 2]}
+        linecolor="lightgray",
+        cbar_kws={"ticks": [0, 1, 2], "shrink": 0.5}
     )
     
-    # Configure colorbar labels
+    # 컬러바 설정
     cbar = ax.collections[0].colorbar
     cbar.set_ticklabels(["Negative", "Suspicious", "Positive"])
     
-    plt.title("NIPT Syndrome Detection Summary Across Samples", fontsize=16, pad=20)
-    plt.xlabel("Syndrome", fontsize=12)
-    plt.ylabel("Sample ID", fontsize=12)
+    plt.title("NIPT Detailed Marker Detection Summary Across Samples", fontsize=18, pad=20, fontweight="bold")
+    plt.xlabel("Target Disease Features (Chromosome → Region → Gene)", fontsize=14, fontweight="bold")
+    plt.ylabel("Sample ID", fontsize=14, fontweight="bold")
     
-    # Rotate x-axis labels for readability
-    plt.xticks(rotation=45, ha="right", fontsize=10)
-    plt.yticks(rotation=0, fontsize=10)
+    # X축 라벨이 길고 많으므로 90도 회전
+    plt.xticks(rotation=90, ha="center", fontsize=9)
+    plt.yticks(rotation=0, fontsize=11)
     
+    # 증후군(Syndrome)이 바뀌는 지점에 세로선을 그어 시각적 분리감 부여
+    current_syndrome = ""
+    for i, col_name in enumerate(heatmap_data.columns):
+        syn = col_name.split("]")[0].strip("[")
+        if syn != current_syndrome:
+            if i != 0:
+                ax.axvline(i, color="black", linewidth=1.5, linestyle="-", zorder=3)
+            current_syndrome = syn
+
     plt.tight_layout()
-    plt.savefig(output_path, dpi=300)
+    plt.savefig(output_path, dpi=300, bbox_inches="tight")
     plt.close()
     
     print(f"Heatmap successfully saved to {output_path}")
 
 
 def main():
-    # Define paths based on the setup script structure
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # 작업 경로 설정
     base_dir = '/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/temp'
     
-    output_heatmap = os.path.join(base_dir, "results", "syndrome_heatmap.png")
-    output_matrix = os.path.join(base_dir, "results", "syndrome_matrix.tsv")
+    output_heatmap = os.path.join(base_dir, "results", "syndrome_detailed_heatmap.png")
+    output_matrix = os.path.join(base_dir, "results", "syndrome_detailed_matrix.tsv")
     
     os.makedirs(os.path.dirname(output_heatmap), exist_ok=True)
-    os.makedirs(os.path.dirname(output_matrix), exist_ok=True   )
-    # Process data and generate matrix
-    print("Aggregating sample data...")
-    heatmap_data = load_and_summarize_samples(base_dir)
+    os.makedirs(os.path.dirname(output_matrix), exist_ok=True)
+    
+    # 데이터 처리 및 매트릭스 생성
+    print("Aggregating detailed sample data...")
+    heatmap_data = load_detailed_samples(base_dir)
     
     heatmap_data.to_csv(output_matrix, sep="\t")
     print(f"Matrix data saved to {output_matrix}")
     
-    # Plot and save the heatmap
+    # Heatmap 플로팅
     print("Generating heatmap...")
     plot_syndrome_heatmap(heatmap_data, output_heatmap)
 

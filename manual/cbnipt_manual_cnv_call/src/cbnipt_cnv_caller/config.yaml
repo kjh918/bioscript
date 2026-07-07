@@ -1,7 +1,7 @@
 CFG:
   # ── QC (bin-level) ──────────────────────────────────────────
   min_depth: 2
-  min_coverage: 0.5
+  min_coverage: 0.2
 
   # ── 태아 성별 판별 (CN scale, autosome baseline = 2.0) ───────
   # copy_number_signal 기준. x_female_min_cn 초과 & y_male_min_cn 미만 -> XX
@@ -62,6 +62,7 @@ CFG:
       applies_to: XX
       row_chrom: chrY
       y_min: 0.20
+      y_max: 0.40   # [추가] trace 수준으로 상한을 둬서 klinefelter/jacob의 실제 Y 존재 구간(y_min>=0.4)과 겹치지 않게 함
       pattern_name: "SRY Contamination"
       call: SUSPICIOUS
       score: 0.4
@@ -85,20 +86,13 @@ CFG:
       pattern_name: "Jacob(XYY)"
       call: ABNORMAL
       score: 0.7
-    x_loss_male:
-      applies_to: XY
-      row_chrom: chrX
-      x_max: 0.5
-      pattern_name: "chrX Loss"
-      call: ABNORMAL
-      score: -0.7
-    y_loss_male:
-      applies_to: XY
-      row_chrom: chrY
-      y_max: 0.5
-      pattern_name: "chrY Loss"
-      call: ABNORMAL
-      score: -0.7
+    # [제거됨] x_loss_male / y_loss_male
+    # 이 둘은 "XY인데 X 또는 Y를 잃음" 이라는 의미였지만, 실제 카리오타입 관점에서는
+    # X 단일(X0), Y 없음 이라는 점에서 turner 와 완전히 동일합니다. 성별 태그로
+    # 게이팅하지 않게 되면서(위 classify_sex_chromosome 참고) X/Y 값만으로는
+    # turner 와 절대 구분할 수 없고, 특히 y_loss_male(y_max=0.4, x 조건 없음)은
+    # 정상 여성(X=2.0, Y=0.0)까지 "chrY Loss"로 오탐하는 문제가 있어 제거했습니다.
+    # X0 카리오타입은 turner 규칙(chrX 행)이 담당합니다.
 
   # ── Segmentation ───────────────────────────────────────────
   SEGMENTATION:
@@ -114,12 +108,14 @@ CFG:
     micro:                       # rolling_micro_cnv_segmentation
       window: 3
       gain_threshold: 1.3
-      # [버그 수정] 기존 pipeline.py 에서 -0.7 로 전달되어 조건이 항상 거짓이었음.
-      # normalized_count(=copy_number_signal/2.0)는 항상 0 이상이므로 양수여야 함.
       loss_threshold: 0.7
       min_bins: 4
       min_segment_bp: 400000
-      max_seg_mad: 0.20
+      max_seg_mad: 0.0
+
+  CHROM_BIAS_CORRECTION:
+    chr19: 0.2
+  min_reliable_overlap_bins: 3
 
   # ── Bin-level evidence extraction (BAM/VCF) ───────────────────
   BIN_EXTRACTION:
@@ -128,6 +124,40 @@ CFG:
     hetero_max: 0.6
     homo_min: 0.9
     homo_max: 0.1
+
+  # ── 임상 진단(Marker DB) Rule Dictionary ────────────────────────
+  # [통합/분리됨] 과거 classification.py 의 NIPT_DIAGNOSIS_RULES 는
+  # "autosome abnormality" / "micro deletion" 딱 2개의 NIPT_GROUP 공통 threshold를
+  # 모든 syndrome이 함께 썼습니다 (예: Down/Edwards/Patau/Trisomy9/Trisomy22 이
+  # 전부 pos_min=2.5 하나를 공유). 이 때문에 mosaicism 계열처럼 실제 CN이
+  # 2.5에 한참 못 미치는 syndrome도 특정 조건에서 잘못 POSITIVE 처리될 수 있었습니다.
+  # 여기서는 syndrome 이름(marker_df의 SYNDROME 컬럼, 소문자) 단위로 threshold를
+  # 분리해서 개별 튜닝이 가능하도록 했습니다.
+  # [주의] 아래 수치는 전부 기존 공통값(AMP: pos_min=2.5/sus_min=2.3,
+  # DEL: pos_max=1.5/sus_max=1.65)을 그대로 복사만 한 상태입니다.
+  # syndrome별 실제 임상 근거에 맞게 개별적으로 다시 튜닝이 필요합니다.
+  CLINICAL_DIAGNOSIS_RULES:
+    # --- AMP-type (Autosome Abnormality) ---
+    "down syndrome":                        {rule_type: AMP, pos_min: 2.5, sus_min: 2.3}
+    "edwards syndrome":                     {rule_type: AMP, pos_min: 2.5, sus_min: 2.3}
+    "patau syndrome":                       {rule_type: AMP, pos_min: 2.5, sus_min: 2.3}
+    "trisomy 22 mosaicism syndrome":        {rule_type: AMP, pos_min: 2.5, sus_min: 2.3}
+    "trisomy 9 mosaicism syndrome":         {rule_type: AMP, pos_min: 2.5, sus_min: 2.3}
+
+    # --- DEL-type (Micro Deletion) ---
+    "1p36 deletion syndrome":               {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+    "angelman syndrome":                    {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+    "cri-du-chat syndrome":                 {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+    "digeorgy syndrome":                    {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+    "jacobsen syndrome":                    {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+    "miller-dieker lissencephaly syndorome": {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+    "prader-willi syndrome":                {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+    "smith-magenis syndrome":               {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+    "wolf-hirschhorn syndrome":             {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
+
+    # --- Fallback (위에 명시되지 않은 새로운 syndrome이 marker DB에 추가될 경우) ---
+    "_default_amp": {rule_type: AMP, pos_min: 2.5, sus_min: 2.3}
+    "_default_del": {rule_type: DEL, pos_max: 1.5, sus_max: 1.65,} # loh_homo_min: 0.85, loh_hetero_max: 0.1}
 
 CALL_COLORS:
   "NORMAL": "#4CAF50"

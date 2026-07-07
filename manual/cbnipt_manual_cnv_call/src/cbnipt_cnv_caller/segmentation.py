@@ -264,15 +264,13 @@ def segment_one_cell(
                 continue
 
             # segment 값은 valid bin 기준 median 사용
-            seg_mean = float(np.nanmedian(seg_valid_vals))
+            #seg_mean = float(np.nanmedian(seg_valid_vals))
+            seg_mean = float(np.nanmean(seg_valid_vals))
             seg_std = float(np.nanstd(seg_valid_vals))
             seg_mad = float(
                 np.nanmedian(np.abs(seg_valid_vals - np.nanmedian(seg_valid_vals)))
             )
 
-            # log2_chrom_norm 기준이면:
-            # normalized_count = 2^seg_mean
-            # copy_number_signal = 2 * normalized_count
             median_norm = float(np.exp2(seg_mean))
             copy_number_signal = float(2.0 * median_norm)
             copy_number = int(round(copy_number_signal))
@@ -283,7 +281,7 @@ def segment_one_cell(
                 cnv_call = "DEL"
             else:
                 cnv_call = "NEUT"
-
+            
             segments.append({
                 "chrom": chrom,
                 "start": seg_start,

@@ -2,7 +2,7 @@
 chrom_calling.py
 ─────────────────
 Bin 단위 데이터를 염색체 단위로 요약하고, 이상/의심/정상(ABNORMAL/SUSPICIOUS/NORMAL)을
-판정합니다.
+판정합니다. (기존 classification.py 의 1~3번 섹션을 그대로 옮기되, 다음을 정리)
 
   - final_score 가중치를 하드코딩(0.65/0.15/0.10/0.10) 대신 config.yaml 의
     w_copy/w_baf/w_ter/w_cer 를 사용하도록 수정.
@@ -15,19 +15,21 @@ import pandas as pd
 
 from utils import log, safe_log2fc, chrom_key
 from rules import CFG
-from calling_sex import classify_sex_chromosome
+from sex_calling import classify_sex_chromosome
 
 
 # ═══════════════════════════════════════════════════════════════
-# 1. 염색체별 요약 통계 생성 (Robust 버전)
+# 1. 염색체별 요약 통계 생성
 # ═══════════════════════════════════════════════════════════════
 def compute_chrom_summary(df):
     """
     bin 단위 DataFrame → 염색체별 중앙값/평균 요약.
-    
-    [CRITICAL FIX]
-    단순 중앙값을 구하면 노이즈(특히 0 수렴 Bin) 때문에 대푯값이 왜곡됩니다.
-    MAD 기반으로 ±3 MAD 범위를 벗어나는 극단적 Bin을 제외하고 요약 통계를 산출합니다.
+    존재하는 컬럼만 동적으로 집계합니다.
+
+    [전제] df의 log2_chrom_norm 은 normalize_by_chrom_with_sex() 에서
+           observed_log2 - expected_log2 로 이미 보정되어 있습니다.
+           즉 정상 염색체는 0.0 근방, 이상 염색체만 이탈하므로
+           robust-Z 기준이 명확합니다.
     """
     candidate_cols = [
         "log2_chrom_norm",
@@ -40,38 +42,12 @@ def compute_chrom_summary(df):
     ]
     base_cols = [c for c in candidate_cols if c in df.columns]
 
-    def _robust_median(series):
-        vals = series.dropna().values
-        if len(vals) < 3:
-            return np.nanmedian(vals) if len(vals) > 0 else np.nan
-        med = np.nanmedian(vals)
-        mad = np.nanmedian(np.abs(vals - med))
-        if mad == 0: return med
-        # ±3 MAD 필터 적용
-        valid_vals = vals[(vals >= med - 3 * mad) & (vals <= med + 3 * mad)]
-        return np.nanmedian(valid_vals) if len(valid_vals) > 0 else med
-        
-    def _robust_mean(series):
-        vals = series.dropna().values
-        if len(vals) < 3:
-            return np.nanmean(vals) if len(vals) > 0 else np.nan
-        med = np.nanmedian(vals)
-        mad = np.nanmedian(np.abs(vals - med))
-        if mad == 0: return np.nanmean(vals)
-        valid_vals = vals[(vals >= med - 3 * mad) & (vals <= med + 3 * mad)]
-        return np.nanmean(valid_vals) if len(valid_vals) > 0 else np.nanmean(vals)
-
     rows = []
     for chrom, grp in df.groupby("chrom"):
         row = {"chrom": chrom, "n_bins": len(grp)}
         for c in base_cols:
-            # log2_chrom_norm 등 중요 지표는 필터링된 대푯값 사용
-            if c == "log2_chrom_norm":
-                row[f"{c}_median"] = _robust_median(grp[c])
-                row[f"{c}_mean"]   = _robust_mean(grp[c])
-            else:
-                row[f"{c}_median"] = grp[c].median()
-                row[f"{c}_mean"]   = grp[c].mean()
+            row[f"{c}_median"] = grp[c].median()
+            row[f"{c}_mean"]   = grp[c].mean()
         rows.append(row)
 
     summary = pd.DataFrame(rows)
@@ -127,12 +103,30 @@ def compute_mosaic_score(baf_median, hetero_mean, homo_mean, ter_rz, cer_rz):
 # ═══════════════════════════════════════════════════════════════
 def analyze_all_chromosomes(summary, sex, x_cn, y_cn):
     """
+    Parameters
+    ----------
+    summary  : compute_chrom_summary() 결과 DataFrame
+    sex      : 태아 성별 태그 ("Male (XY)" / "Female (XX)" / "XY" / "XX" / "Unknown")
+    x_cn     : copy_number_signal 기준 chrX 중앙값 (상염색체 baseline=2.0 스케일)
+    y_cn     : copy_number_signal 기준 chrY 중앙값 (상염색체 baseline=2.0 스케일)
+               [주의] 과거의 raw_count 비율(x_ratio/y_ratio)이 아니라 CN 스케일입니다.
+               호출부(pipeline.py)에서 copy_number_signal 중앙값을 그대로 넘겨야 합니다.
+
     [핵심 설계]
     normalize_by_chrom_with_sex() 에서 이미
         log2_chrom_norm = log2(obs / ref_median) - expected_log2
     를 수행했으므로 정상 염색체는 0.0 근방에 분포합니다.
     따라서 여기서는 expected_log2를 **다시 빼지 않고**,
     상염색체 분포를 기준으로 순수 robust-Z만 계산합니다.
+    → robust-Z ≈ 0 : 정상,  |rz| > threshold : 이상
+
+    성염색체(chrX/chrY) 이수성 하드콜은 sex_calling.classify_sex_chromosome() 이
+    담당하며, clinical_diagnosis.diagnose_clinical_markers() 와 동일한 규칙
+    (config.yaml CFG["SEX_ANEUPLOIDY"])을 공유합니다.
+    [주의] sex 파라미터는 더 이상 이수성 판정 게이팅에 쓰이지 않습니다 (Klinefelter처럼
+    X/Y 값이 정상 남녀 이분법에 들어맞지 않는 케이스가 성별 태그 때문에 누락되는 것을
+    막기 위함). x_cn/y_cn 범위 조건만으로 직접 판정하며, sex 는 호출부 호환성을 위해
+    시그니처에만 남아있습니다.
     """
     results     = []
     auto_mask   = ~summary["chrom"].isin(["chrX", "chrY"])
@@ -170,12 +164,8 @@ def analyze_all_chromosomes(summary, sex, x_cn, y_cn):
         log2_val = row.get("log2_chrom_norm_median", np.nan)
 
         # ── Robust-Z (상염색체 0.0 기준) ─────────────────────────
-        # [CRITICAL FIX] 정상 데이터가 모여있는 상염색체 그룹의 분산(MAD)을 기준으로 평가
         if not np.isnan(log2_val):
-            base_mad = auto_mad("log2_chrom_norm_median")
-            # 만약 MAD가 너무 작아서 RZ가 폭발하는 것을 막기 위해 최소 분산 방어 추가
-            base_mad = max(base_mad, 0.05) 
-            rz = (log2_val - 0.0) / (1.4826 * base_mad)
+            rz = (log2_val - 0.0) / (1.4826 * auto_mad("log2_chrom_norm_median"))
         else:
             rz = np.nan
 
@@ -225,7 +215,7 @@ def analyze_all_chromosomes(summary, sex, x_cn, y_cn):
             homo_str = f"{homo_mean:.2f}"   if not np.isnan(homo_mean)   else "N/A"
             detail   = f"Log2={log2_val:+.2f} | RZ={rz:+.2f} | BAF={baf_str} | Hm={homo_str}"
 
-        # ── 성염색체 하드 컷오프 (sex_calling 단일 규칙 사용) ────────
+        # ── 성염색체 하드 컷오프 (sex_calling 단일 규칙 사용, 성별 태그로 게이팅하지 않음) ──
         sex_hard_call = classify_sex_chromosome(chrom, x_cn, y_cn)
         if sex_hard_call is not None:
             call        = sex_hard_call["call"]
@@ -236,7 +226,7 @@ def analyze_all_chromosomes(summary, sex, x_cn, y_cn):
             chrom         = chrom,
             log2fc        = log2_val,
             robust_z      = rz,
-            expected_copy = "Exp(0.0)",
+            expected_copy = "Exp(0.0)",   # normalize 단계에서 이미 보정됨
             copy_score    = copy_s,
             baf_score     = baf_s,
             ter_score     = ter_rz,
