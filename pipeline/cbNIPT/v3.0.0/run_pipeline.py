@@ -31,6 +31,11 @@ def get_parser():
     parser.add_argument("--known-indel2", default="/storage/references_and_index/hg38/vcf/Mills_and_1000G_gold_standard.indels.hg38.vcf.gz", help="Known Indel 2 VCF 경로")
 
 
+    parser.add_argument("--mappability_bw", default="/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Resources/reference/hg38.100mer.bw", help="Mappability Bwig file 경로")
+    parser.add_argument("--kvaf_vcf", default="/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Resources/reference/KOVA_v7/kova_sites_vcf/KOVA_v7_merged.vcf.gz", help="Mappability Bwig file 경로")
+    
+
+
     return parser
 
 if __name__ == "__main__":
@@ -49,6 +54,9 @@ if __name__ == "__main__":
     KnownIndel1 = args.known_indel1
     KnownIndel2 = args.known_indel2
 
+    MappabilityBW = args.mappability_bw
+    KvafVcf = args.kvaf_vcf
+
     # --- [3] Pipeline Setting ---
     pipe = Pipeline(
         raw_dir = RawFastqDir,
@@ -62,7 +70,25 @@ if __name__ == "__main__":
             max_threads=args.max_threads  
         )
     )
-        
+
+    global_task = Task(
+        name="Global_Reference_Binning",
+        runner_path = scripts / "run_cbNIPT_makebins_generate_reference_genome_bins.py",
+        log_path = work_dir / "logs" / "00.global_binning", 
+        spec = {
+            'script_path': scripts / "cli.py",
+            'ReferenceFasta': ReferenceFasta,
+            'MappabilityBW': MappabilityBW,
+            'OutBinFile': work_dir / "Binning",
+            'BinSize': 100000,
+            'MinMappability': 0.9,
+            'MinGC': 0.3,
+            'MaxGC': 0.7,
+            "Threads": 1
+        }
+    )
+    pipe.add_tasks([global_task])
+
     # --- [4] Tasks Setting ---
     for sid in pipe.samples:
         tasks = [] # 1. 빈 리스트 생성
@@ -284,8 +310,24 @@ if __name__ == "__main__":
                     'SeqID': sid,
                     'NGS_DataBaseDir': work_dir / sid / "bam",
                     'ResultBaseDir': work_dir / sid / "copykit",
-                    'ReferenceFasta': ReferenceFasta,
                     "Threads": 8,
+                }
+            ),
+            
+            Task(
+                name="cbNIPT_CNVCall",
+                runner_path = scripts / "run_cbNIPT_callcnv_calculate_cnv_and_variant_profile.py", # 적절한 스크립트로 변경 필요
+                log_path = work_dir / sid / "logs" / "02.cnv_call", 
+                spec = {
+                    "script_path":scripts / "cli.py",
+                    'SeqID': sid,
+                    'MinCoverage':0.2,
+                    'BamPath': work_dir / sid / 'bam' / f"{sid}.analysisReady.bam",
+                    'VcfFile': KvafVcf,
+                    'AnnotatedBins': work_dir / "Binning" / "hg38.fa.bin_100.0K.bed.gz",
+                    'OutDir': work_dir / sid,
+                    
+                    "Threads": 4
                 }
             )
         ])

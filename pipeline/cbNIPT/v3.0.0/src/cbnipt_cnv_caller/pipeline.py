@@ -47,9 +47,6 @@ class CnvPipeline:
             ensure_dir(d)
 
         self._gender_tag = "Unknown"
-        # copy_number_signal 스케일 (상염색체 baseline=2.0) chrX/chrY 중앙값.
-        # chrom_calling.analyze_all_chromosomes / clinical_diagnosis.diagnose_clinical_markers
-        # 양쪽 모두 이 스케일을 기준으로 성염색체 이수성을 판정한다 (sex_calling.py 참조).
         self._x_cn = 0.0
         self._y_cn = 0.0
         self._norm_qc = {}
@@ -70,7 +67,7 @@ class CnvPipeline:
 
         # 3. 불량 Bin QC 필터링 (GC 보정 전에 수행하는 것이 정석)
         #    (min_depth/min_coverage 미지정 시 config.yaml CFG 값 사용)
-        df_filtered = apply_qc_bin(df_merged_evidence, min_depth=self.args.MinDepth, min_coverage=self.args.MinCoverage)
+        df_filtered = apply_qc_bin(df_merged_evidence)
 
         # 4. GC 보정(LOWESS) 및 LOO 정규화 (기준점: 2.0)
         df_global = self.correct_gc_and_normalize(df_filtered)
@@ -264,7 +261,7 @@ class CnvPipeline:
                 how="left",
             )
 
-            df_merged["qc_pass_fragments"] = df_merged["qc_pass_fragments"].fillna(0)
+            df_merged["raw_count"] = df_merged["raw_count"].fillna(0)
             df_merged["breadth_ratio"] = df_merged["breadth_ratio"].fillna(0.0)
 
             return df_merged
@@ -379,9 +376,6 @@ class CnvPipeline:
         def _run():
             log("Running rolling_micro_cnv_segmentation on normalized_count...")
             df_global["normalized_count"] = df_global["copy_number_signal"] / 2.0
-            # 파라미터 전부 config.yaml CFG["SEGMENTATION"]["micro"] 기본값 사용
-            # (과거 여기서 loss_threshold=-0.7 로 하드코딩되어 micro DEL이 사실상
-            #  탐지되지 않던 버그를 config 기본값 0.7 로 수정함)
             segments = rolling_micro_cnv_segmentation(
                 df_global,
                 signal_col="normalized_count",

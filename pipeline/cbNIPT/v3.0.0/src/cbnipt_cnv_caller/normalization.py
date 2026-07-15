@@ -27,7 +27,7 @@ def apply_qc_bin(df, min_depth=None, min_coverage=None):
     valid_quality = (df["is_filtered"] == False)
 
     # 2. 커버리지 조건 (최소 리드 뎁스 및 넓이 충족)
-    valid_coverage = (df["qc_pass_fragments"] >= min_depth) & (df["breadth_ratio"] >= min_coverage)
+    valid_coverage = (df["raw_count"] >= min_depth) & (df["breadth_ratio"] >= min_coverage)
 
     # 3. 성염색체 보호 마스크
     is_sex_chrom = df["chrom"].isin(["chrX", "chrY"])

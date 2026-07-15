@@ -48,8 +48,12 @@ def main():
     AnalysisRunDir = f"{ResultBaseDir}/{SeqID}"
 
     # --- [Command Execution] ---
-    cmd = f"{mkdir_bin} -p {AnalysisRunDir} && ln -Tsf {NGS_DataBaseDir}/{SeqID}.{InputSuffix}.bam {AnalysisRunDir}/{SeqID}.bam && ln -Tsf {NGS_DataBaseDir}/{SeqID}.{InputSuffix}.bam.bai {AnalysisRunDir}/{SeqID}.bam.bai && {rscript_bin} {Rscript_path}  --SeqID {SeqID}  --AnalysisRunDir {AnalysisRunDir}  --BinSize {BinSize}  --Ploidy {SamplePloidy}  --GenomeVersion {GenomeVersion}"
+    if InputSuffix in ['', None]:
+        cmd = f"{mkdir_bin} -p {AnalysisRunDir} && ln -Tsf {NGS_DataBaseDir}/{SeqID}.bam {AnalysisRunDir}/{SeqID}.bam && ln -Tsf {NGS_DataBaseDir}/{SeqID}.bam.bai {AnalysisRunDir}/{SeqID}.bam.bai && {rscript_bin} {Rscript_path}  --SeqID {SeqID}  --AnalysisRunDir {AnalysisRunDir}  --BinSize {BinSize}  --Ploidy {SamplePloidy}  --GenomeVersion {GenomeVersion}"
+    else:
+        cmd = f"{mkdir_bin} -p {AnalysisRunDir} && ln -Tsf {NGS_DataBaseDir}/{SeqID}.{InputSuffix}.bam {AnalysisRunDir}/{SeqID}.bam && ln -Tsf {NGS_DataBaseDir}/{SeqID}.{InputSuffix}.bam.bai {AnalysisRunDir}/{SeqID}.bam.bai && {rscript_bin} {Rscript_path}  --SeqID {SeqID}  --AnalysisRunDir {AnalysisRunDir}  --BinSize {BinSize}  --Ploidy {SamplePloidy}  --GenomeVersion {GenomeVersion}"
     
+
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
     os.makedirs(os.path.dirname(NGS_DataBaseDir) if '.' in os.path.basename(NGS_DataBaseDir) else NGS_DataBaseDir, exist_ok=True)

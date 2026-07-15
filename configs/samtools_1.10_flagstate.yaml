@@ -1,0 +1,32 @@
+# =========================================================
+# samtools BAM filtering + index (Modular Version)
+#  - Input/Output Suffix를 파라미터로 조절하여 재사용 가능
+# =========================================================
+tool:
+  name: samtools_flagstats
+  version: "1.10"
+  profile: "summary_flagstats"
+
+io:
+  inputs:
+    SeqID:   { required: true, help: "Sequence identifier" }
+    BamDir:  { required: true, help: "Directory containing BAM files" }
+
+  outputs:
+    # Suffix 변수를 사용하여 출력 경로를 동적으로 구성
+    flag_stats_txt:
+      default: "[QcDir]/[SeqID][InputSuffix].[OutputSuffix].txt"
+      help: "Flag Stats from BAM file"
+
+params:
+  # --- [Suffix 제어] ---
+  # 기본값을 recal로 두되, 상황에 따라 primary, sorted 등으로 변경 가능
+  InputSuffix:  { type: str, default: ".sorted", help: "Suffix of the input BAM (e.g., primary, sorted, recal)" }
+  OutputSuffix: { type: str, default: "filtered", help: "Suffix for the filtered output" }
+
+  # --- [Binaries & Resources] ---
+  samtools_bin: { type: str, default: "samtools" }
+  # --- [Filtering Parameters] ---
+
+cmd_line: >
+  [samtools_bin] flagstats [BamDir]/[SeqId][InputSuffix].bam > [flag_stats_txt] 

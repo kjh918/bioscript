@@ -79,7 +79,7 @@ if __name__ == "__main__":
                     ##  check options
                     'MinCoverage':0,
 
-                    'BamPath': f"{RawBamDir}/{sid}.analysisReady.bam",
+                    'BamPath': f"{RawBamDir}/{sid}.bam",
                     'VcfFile':'/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Resources/reference/KOVA_v7/kova_sites_vcf/KOVA_v7_merged.vcf.gz',
                     'AnnotatedBins': work_dir / "Binning" / "hg38.fa.bin_100.0K.bed.gz",
                     'OutDir': work_dir / sid,

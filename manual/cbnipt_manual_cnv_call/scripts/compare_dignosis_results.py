@@ -17,14 +17,11 @@ def map_diagnosis(val):
     return 0  # Default fallback
 
 
-def load_detailed_samples(data_dir):
+def load_detailed_samples(data_dir, search_pattern):
     """
     모든 샘플의 clinical_report.tsv를 읽어, 증후군의 '세부 마커(Feature)' 단위까지
     펼쳐진 매트릭스(Sample x Feature)를 생성합니다.
     """
-    search_pattern = os.path.join(data_dir, "*24_04*/data/*.clinical_report.tsv")
-    print(f"Searching for files: {search_pattern}")
-    
     tsv_files = glob.glob(search_pattern, recursive=True)
     if not tsv_files:
         raise FileNotFoundError(f"No TSV files found using pattern: {search_pattern}")
@@ -139,24 +136,40 @@ def plot_syndrome_heatmap(heatmap_data, output_path):
 
 def main():
     # 작업 경로 설정
-    base_dir = '/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/temp'
+    base_dir = '/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Results/downsampling/manaual_analysis'
     
-    output_heatmap = os.path.join(base_dir, "results", "syndrome_detailed_heatmap.png")
-    output_matrix = os.path.join(base_dir, "results", "syndrome_detailed_matrix.tsv")
-    
-    os.makedirs(os.path.dirname(output_heatmap), exist_ok=True)
-    os.makedirs(os.path.dirname(output_matrix), exist_ok=True)
     
     # 데이터 처리 및 매트릭스 생성
     print("Aggregating detailed sample data...")
-    heatmap_data = load_detailed_samples(base_dir)
     
-    heatmap_data.to_csv(output_matrix, sep="\t")
-    print(f"Matrix data saved to {output_matrix}")
-    
-    # Heatmap 플로팅
-    print("Generating heatmap...")
-    plot_syndrome_heatmap(heatmap_data, output_heatmap)
+
+    pattern_list = []
+
+    for path in glob.glob(f'{base_dir}/*'):
+        name = path.split('/')[-1].split('_s')[0][:15]
+        if name.startswith('cb'):
+            pattern_list.append(name)
+
+    pattern_list = list(set(pattern_list))
+
+    for pattern in pattern_list:
+        search_pattern = os.path.join(base_dir, f"{pattern}*/data/*.clinical_report.tsv")
+        print(f"Searching for files: {search_pattern}")
+        
+        heatmap_data = load_detailed_samples(base_dir, search_pattern)
+            
+        output_heatmap = os.path.join(base_dir, "results", f"{pattern}.syndrome_detailed_heatmap.png")
+        output_matrix = os.path.join(base_dir, "results", f"{pattern}.syndrome_detailed_matrix.tsv")
+            
+        os.makedirs(os.path.dirname(output_heatmap), exist_ok=True)
+        os.makedirs(os.path.dirname(output_matrix), exist_ok=True)
+        
+        heatmap_data.to_csv(output_matrix, sep="\t")
+        print(f"Matrix data saved to {output_matrix}")
+        
+        # Heatmap 플로팅
+        print("Generating heatmap...")
+        plot_syndrome_heatmap(heatmap_data, output_heatmap)
 
 
 if __name__ == "__main__":
