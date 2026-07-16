@@ -77,7 +77,8 @@ if __name__ == "__main__":
                     'SeqID': sid,
                     
                     ##  check options
-                    'MinCoverage':0,
+                    'MinDepth':1,
+                    'MinCoverage':0.1,
 
                     'BamPath': f"{RawBamDir}/{sid}.bam",
                     'VcfFile':'/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Resources/reference/KOVA_v7/kova_sites_vcf/KOVA_v7_merged.vcf.gz',

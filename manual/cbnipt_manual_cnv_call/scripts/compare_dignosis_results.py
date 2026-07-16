@@ -23,6 +23,8 @@ def load_detailed_samples(data_dir, search_pattern):
     펼쳐진 매트릭스(Sample x Feature)를 생성합니다.
     """
     tsv_files = glob.glob(search_pattern, recursive=True)
+    tsv_files.sort()
+    
     if not tsv_files:
         raise FileNotFoundError(f"No TSV files found using pattern: {search_pattern}")
 

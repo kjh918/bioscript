@@ -1,0 +1,31 @@
+info:
+  user: WRITER_NAME
+  date: DATE
+  logs: |
+    - Initial creation for TASK_NAME
+
+tool:
+  name: TOOL_NAME
+  version: "VERSION"
+  profile: TASK_PROFILE
+  description: |
+    TASK_DESCRIPTION
+  setup: |
+    # No specific setup required
+    # or installation / database / index preparation commands
+
+io:
+  inputs:
+    SeqID: { required: true, type: str, help: "분석 고유 ID" }
+    InDir: { required: true, type: str, help: "입력 파일 디렉토리" }
+    OutDir: { required: true, type: str, help: "결과 저장 디렉토리" }
+
+  outputs:
+    output_file: { required: false, type: str, default: "[OutDir]/[SeqID].out", help: "주요 결과 파일" }
+
+params:
+  tool_bin: { required: false, type: str, default: "TOOL_COMMAND", help: "Tool 실행 명령어 또는 절대 경로" }
+  Threads: { required: false, type: int, default: 8, help: "사용할 스레드 수" }
+
+cmd_line: >
+  [tool_bin] INPUT_OPTIONS OUTPUT_OPTIONS

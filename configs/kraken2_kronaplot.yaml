@@ -7,7 +7,7 @@ info:
 
 tool:
   name: Kraken2
-  version: "2.x"
+  version: "2.17.1"
   profile: Taxonomic Classification with Subsampling
   description: |
     Kraken2를 이용하여 샘플 내 미생물/오염원 분류를 수행합니다.

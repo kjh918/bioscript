@@ -1,14 +1,14 @@
 CFG:
   # ── QC (bin-level) ──────────────────────────────────────────
   min_depth: 2
-  min_coverage: 0.2
+  min_coverage: 0.3
 
   # ── 태아 성별 판별 (CN scale, autosome baseline = 2.0) ───────
   # copy_number_signal 기준. x_female_min_cn 초과 & y_male_min_cn 미만 -> XX
   # y_male_min_cn 초과 & x_female_min_cn 미만 -> XY
   # (normalization.py / pipeline.py 의 하드코딩된 1.5 / 0.2 를 대체)
   x_female_min_cn: 1.5
-  y_male_min_cn: 0.2
+  y_male_min_cn: 0.2 ## NIPT : 2% ~ 4% 
 
   # ── Chromosome-level scoring / calling (classification) ──────
   robust_z_threshold: 2.5
