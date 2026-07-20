@@ -1,0 +1,672 @@
+[
+  {
+    "medgen_uid": "4297",
+    "disease_name": "DiGeorge syndrome (DGS)",
+    "concept_id": "C0012236",
+    "disease_type": "Disease or Syndrome",
+    "definition": "Individuals with 22q11.2 deletion syndrome (22q11.2DS) can present with a wide range of features that are highly variable, even within families. The major clinical manifestations of 22q11.2DS include congenital heart disease, particularly conotruncal malformations (ventricular septal defect, tetralogy of Fallot, interrupted aortic arch, and truncus arteriosus), palatal abnormalities (velopharyngeal incompetence, submucosal cleft palate, bifid uvula, and cleft palate), immune deficiency, characteristic facial features, and learning difficulties. Hearing loss can be sensorineural and/or conductive. Laryngotracheoesophageal, gastrointestinal, ophthalmologic, central nervous system, skeletal, and genitourinary anomalies also occur. Psychiatric illness and autoimmune disorders are more common in individuals with 22q11.2DS.",
+    "synonyms": [
+      "Catch22",
+      "THIRD AND FOURTH PHARYNGEAL POUCH SYNDROME"
+    ],
+    "cross_references": {
+      "SNOMED-CT": "767263007",
+      "MONDO": "MONDO:0008564",
+      "OMIM": "188400"
+    },
+    "literature": {
+      "professional_guidelines": {
+        "papers": [
+          {
+            "pmid": "38228406",
+            "title": "Primary and secondary defects of the thymus.",
+            "authors": [
+              "Dinges SS",
+              "Amini K",
+              "Notarangelo LD",
+              "Delmonte OM"
+            ],
+            "journal": "Immunol Rev",
+            "citation": "2024 Mar;322(1):178-211. Epub 2024 Jan 16 doi: 10.1111/imr.13306. 38228406 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38228406/"
+          },
+          {
+            "pmid": "36897497",
+            "title": "Chromosome 22q11.2 Deletion (DiGeorge Syndrome): Immunologic Features, Diagnosis, and Management.",
+            "authors": [
+              "Biggs SE",
+              "Gilchrist B",
+              "May KR"
+            ],
+            "journal": "Curr Allergy Asthma Rep",
+            "citation": "2023 Apr;23(4):213-222. Epub 2023 Mar 10 doi: 10.1007/s11882-023-01071-4. 36897497 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36897497/"
+          },
+          {
+            "pmid": "36648576",
+            "title": "Clinical Practice Guidelines for the Immunological Management of Chromosome 22q11.2 Deletion Syndrome and Other Defects in Thymic Development.",
+            "authors": [
+              "Mustillo PJ",
+              "Sullivan KE",
+              "Chinn IK",
+              "Notarangelo LD",
+              "Haddad E",
+              "Davies EG",
+              "de la Morena MT",
+              "Hartog N",
+              "Yu JE",
+              "Hernandez-Trujillo VP",
+              "Ip W",
+              "Franco J",
+              "Gambineri E",
+              "Hickey SE",
+              "Varga E",
+              "Markert ML"
+            ],
+            "journal": "J Clin Immunol",
+            "citation": "2023 Feb;43(2):247-270. Epub 2023 Jan 17 doi: 10.1007/s10875-022-01418-y. 36648576 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36648576/"
+          }
+        ],
+        "curated": [],
+        "see_all": {
+          "count": 58,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22digeorge%20syndrome%22%5Btiab%3A~0%5D)%20AND%20(%22english%20and%20humans%22%5BFilter%5D)%20AND%20(%20(%22practice%20guideline%22%5BFilter%5D)%20OR%20(practice*%5Btitl%5D%20AND%20(guideline%5Btitl%5D%20OR%20parameter%5Btitl%5D%20OR%20resource%5Btitl%5D%20OR%20bulletin%5Btitl%5D%20OR%20best%5Btitl%5D))%20OR%20(genetic*%5Btitl%5D%20AND%20(evaluation%5Btitl%5D%20OR%20counseling%5Btitl%5D%20OR%20screening%5Btitl%5D%20OR%20test*%5Btitl%5D))%20OR%20(clinical%5Btitl%5D%20AND%20((expert%5Btitl%5D%20AND%20consensus%5Btitl%5D)%20OR%20utility%5Btitl%5D%20OR%20guideline*%5Btitl%5D))%20OR%20(management%5Btitl%5D%20AND%20(clinical%5Btitl%5D%20OR%20diagnos*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20pain%5Btitl%5D%20OR%20surveillance%5Btitl%5D%20OR%20emergency%5Btitl%5D%20OR%20guideline*%5Btitl%5D%20OR%20therap*))%20OR%20(treatment%5Btitl%5D%20AND%20((evaluation%5Btitl%5D%20AND%20diagnosis%5Btitl%5D)%20OR%20(assessment%5Btitl%5D%20AND%20prevention%5Btitl%5D)%20OR%20therap*))%20OR%20(Diagnos*%5Btitl%5D%20AND%20(prenatal%5Btitl%5D%20OR%20treatment%5Btitl%5D%20OR%20follow-up%5Btitl%5D%20OR%20statement%5Btitl%5D%20OR%20criteria%5Btitl%5D%20OR%20newborn%5Btitl%5D%20OR%20differential%5Btitl%5D%20OR%20neonatal%5Btitl%5D%20OR%20neonate%5Btitl%5D))%20OR%20(guideline*%5Btitl%5D%20AND%20(pharmacogenetic*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20evidence-based%5Btitl%5D%20OR%20consensus%5Btitl%5D%20OR%20(technical%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20(molecular%5Btitl%5D%20AND%20testing%5Btitl%5D)))%20OR%20(risk%5Btitl%5D%20AND%20assessment%5Btitl%5D)%20OR%20(recommendation*%5Btitl%5D%20AND%20(statement%5Btitl%5D%20OR%20Evidence-based%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(care%20AND%20((Patient%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20primary%5Btitl%5D%20OR%20psychosocial%5Btitl%5D))%20OR%20(Health%5Btitl%5D%20AND%20supervision%5Btitl%5D)%20OR%20(statement%5Btitl%5D%20AND%20(policy%5Btitl%5D%20OR%20position%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(pharmacogenetics%5Btitl%5D%20AND%20(Dosing%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20genotype*%5Btitl%5D%20OR%20drug*%5Btitl%5D))%20OR%20(Chemotherapy%5Btitl%5D%20AND%20decision*%5Btitl%5D)%20OR%20(screening%5Btitl%5D%20AND%20(newborn%5Btitl%5D%20OR%20neonat*%5Btitl%5D%20OR%20detection%5Btitl%5D%20OR%20diagnos*%5Btitl%5D))%20OR%20(criteria%5Btitl%5D%20OR%20genotype*%5Btitl%5D)%20)%20NOT%20(%22Case%20reports%22%5BPublication%20type%5D%20OR%20%22clinical%20study%22%5BPublication%20Type%5D%20OR%20%22randomized%20controlled%20trial%22%5BPublication%20Type%5D)"
+        }
+      },
+      "recent_clinical_studies": {
+        "etiology": {
+          "papers": [
+            {
+              "pmid": "38382530",
+              "title": "Thalamocortical organoids enable in vitro modeling of 22q11.2 microdeletion associated with neuropsychiatric disorders.",
+              "authors": [
+                "Shin D",
+                "Kim CN",
+                "Ross J",
+                "Hennick KM",
+                "Wu SR",
+                "Paranjape N",
+                "Leonard R",
+                "Wang JC",
+                "Keefe MG",
+                "Pavlovic BJ",
+                "Donohue KC",
+                "Moreau C",
+                "Wigdor EM",
+                "Larson HH",
+                "Allen DE",
+                "Cadwell CR",
+                "Bhaduri A",
+                "Popova G",
+                "Bearden CE",
+                "Pollen AA",
+                "Jacquemont S",
+                "Sanders SJ",
+                "Haussler D",
+                "Wiita AP",
+                "Frost NA",
+                "Sohal VS",
+                "Nowakowski TJ"
+              ],
+              "journal": "Cell Stem Cell",
+              "citation": "2024 Mar 7;31(3):421-432.e8. Epub 2024 Feb 20 doi: 10.1016/j.stem.2024.01.010. 38382530 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38382530/"
+            },
+            {
+              "pmid": "36648576",
+              "title": "Clinical Practice Guidelines for the Immunological Management of Chromosome 22q11.2 Deletion Syndrome and Other Defects in Thymic Development.",
+              "authors": [
+                "Mustillo PJ",
+                "Sullivan KE",
+                "Chinn IK",
+                "Notarangelo LD",
+                "Haddad E",
+                "Davies EG",
+                "de la Morena MT",
+                "Hartog N",
+                "Yu JE",
+                "Hernandez-Trujillo VP",
+                "Ip W",
+                "Franco J",
+                "Gambineri E",
+                "Hickey SE",
+                "Varga E",
+                "Markert ML"
+              ],
+              "journal": "J Clin Immunol",
+              "citation": "2023 Feb;43(2):247-270. Epub 2023 Jan 17 doi: 10.1007/s10875-022-01418-y. 36648576 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36648576/"
+            },
+            {
+              "pmid": "34845825",
+              "title": "22q11.2 duplications: Expanding the clinical presentation.",
+              "authors": [
+                "Bartik LE",
+                "Hughes SS",
+                "Tracy M",
+                "Feldt MM",
+                "Zhang L",
+                "Arganbright J",
+                "Kaye A"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2022 Mar;188(3):779-787. Epub 2021 Nov 29 doi: 10.1002/ajmg.a.62577. 34845825",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/34845825/"
+            },
+            {
+              "pmid": "30565249",
+              "title": "Chromosome 22q11.2 deletion syndrome and DiGeorge syndrome.",
+              "authors": [
+                "Sullivan KE"
+              ],
+              "journal": "Immunol Rev",
+              "citation": "2019 Jan;287(1):186-201. doi: 10.1111/imr.12701. 30565249",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/30565249/"
+            },
+            {
+              "pmid": "17562586",
+              "title": "Velocardiofacial syndrome.",
+              "authors": [
+                "Gothelf D"
+              ],
+              "journal": "Child Adolesc Psychiatr Clin N Am",
+              "citation": "2007 Jul;16(3):677-93. doi: 10.1016/j.chc.2007.03.005. 17562586",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17562586/"
+            }
+          ],
+          "see_all": {
+            "count": 1168,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22DiGeorge%20syndrome%22%20AND%20Etiology%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "diagnosis": {
+          "papers": [
+            {
+              "pmid": "40038168",
+              "title": "Review of the Pathophysiology and Clinical Manifestations of 22q11.2 Deletion and Duplication Syndromes.",
+              "authors": [
+                "Purow J",
+                "Waidner L",
+                "Ale H"
+              ],
+              "journal": "Clin Rev Allergy Immunol",
+              "citation": "2025 Mar 4;68(1):23. doi: 10.1007/s12016-025-09035-4. 40038168",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40038168/"
+            },
+            {
+              "pmid": "36897497",
+              "title": "Chromosome 22q11.2 Deletion (DiGeorge Syndrome): Immunologic Features, Diagnosis, and Management.",
+              "authors": [
+                "Biggs SE",
+                "Gilchrist B",
+                "May KR"
+              ],
+              "journal": "Curr Allergy Asthma Rep",
+              "citation": "2023 Apr;23(4):213-222. Epub 2023 Mar 10 doi: 10.1007/s11882-023-01071-4. 36897497 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36897497/"
+            },
+            {
+              "pmid": "36648576",
+              "title": "Clinical Practice Guidelines for the Immunological Management of Chromosome 22q11.2 Deletion Syndrome and Other Defects in Thymic Development.",
+              "authors": [
+                "Mustillo PJ",
+                "Sullivan KE",
+                "Chinn IK",
+                "Notarangelo LD",
+                "Haddad E",
+                "Davies EG",
+                "de la Morena MT",
+                "Hartog N",
+                "Yu JE",
+                "Hernandez-Trujillo VP",
+                "Ip W",
+                "Franco J",
+                "Gambineri E",
+                "Hickey SE",
+                "Varga E",
+                "Markert ML"
+              ],
+              "journal": "J Clin Immunol",
+              "citation": "2023 Feb;43(2):247-270. Epub 2023 Jan 17 doi: 10.1007/s10875-022-01418-y. 36648576 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36648576/"
+            },
+            {
+              "pmid": "34776076",
+              "title": "Clinical Manifestations of 22q11.2 Deletion Syndrome.",
+              "authors": [
+                "Cirillo A",
+                "Lioncino M",
+                "Maratea A",
+                "Passariello A",
+                "Fusco A",
+                "Fratta F",
+                "Monda E",
+                "Caiazza M",
+                "Signore G",
+                "Esposito A",
+                "Baban A",
+                "Versacci P",
+                "Putotto C",
+                "Marino B",
+                "Pignata C",
+                "Cirillo E",
+                "Giardino G",
+                "Sarubbi B",
+                "Limongelli G",
+                "Russo MG"
+              ],
+              "journal": "Heart Fail Clin",
+              "citation": "2022 Jan;18(1):155-164. Epub 2021 Oct 25 doi: 10.1016/j.hfc.2021.07.009. 34776076",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/34776076/"
+            },
+            {
+              "pmid": "21200182",
+              "title": "Chromosome 22q11.2 deletion syndrome (DiGeorge syndrome/velocardiofacial syndrome).",
+              "authors": [
+                "McDonald-McGinn DM",
+                "Sullivan KE"
+              ],
+              "journal": "Medicine (Baltimore)",
+              "citation": "2011 Jan;90(1):1-18. doi: 10.1097/MD.0b013e3182060469. 21200182",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/21200182/"
+            }
+          ],
+          "see_all": {
+            "count": 1198,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22DiGeorge%20syndrome%22%20AND%20Diagnosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "therapy": {
+          "papers": [
+            {
+              "pmid": "24075926",
+              "title": "Progress in microRNA delivery.",
+              "authors": [
+                "Zhang Y",
+                "Wang Z",
+                "Gemeinhart RA"
+              ],
+              "journal": "J Control Release",
+              "citation": "2013 Dec 28;172(3):962-74. Epub 2013 Sep 25 doi: 10.1016/j.jconrel.2013.09.015. 24075926 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/24075926/"
+            },
+            {
+              "pmid": "20236866",
+              "title": "Thymus transplantation.",
+              "authors": [
+                "Markert ML",
+                "Devlin BH",
+                "McCarthy EA"
+              ],
+              "journal": "Clin Immunol",
+              "citation": "2010 May;135(2):236-46. Epub 2010 Mar 16 doi: 10.1016/j.clim.2010.02.007. 20236866 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20236866/"
+            },
+            {
+              "pmid": "18755723",
+              "title": "T cell immunodeficiency.",
+              "authors": [
+                "Edgar JD"
+              ],
+              "journal": "J Clin Pathol",
+              "citation": "2008 Sep;61(9):988-93. doi: 10.1136/jcp.2007.051144. 18755723",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/18755723/"
+            },
+            {
+              "pmid": "16083798",
+              "title": "Basic and clinical immunology.",
+              "authors": [
+                "Chinen J",
+                "Shearer WT"
+              ],
+              "journal": "J Allergy Clin Immunol",
+              "citation": "2005 Aug;116(2):411-8. doi: 10.1016/j.jaci.2005.05.010. 16083798",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/16083798/"
+            },
+            {
+              "pmid": "323803",
+              "title": "Immunoreconstitution.",
+              "authors": [
+                "Buckley RH"
+              ],
+              "journal": "Pediatr Clin North Am",
+              "citation": "1977 May;24(2):313-28. doi: 10.1016/s0031-3955(16)33421-6. 323803",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/323803/"
+            }
+          ],
+          "see_all": {
+            "count": 238,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22DiGeorge%20syndrome%22%20AND%20Therapy%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "prognosis": {
+          "papers": [
+            {
+              "pmid": "40073125",
+              "title": "Synaptic-dependent developmental dysconnectivity in 22q11.2 deletion syndrome.",
+              "authors": [
+                "Alvino FG",
+                "Gini S",
+                "Minetti A",
+                "Pagani M",
+                "Sastre-Yagüe D",
+                "Barsotti N",
+                "De Guzman E",
+                "Schleifer C",
+                "Stuefer A",
+                "Kushan L",
+                "Montani C",
+                "Galbusera A",
+                "Papaleo F",
+                "Kates WR",
+                "Murphy D",
+                "Lombardo MV",
+                "Pasqualetti M",
+                "Bearden CE",
+                "Gozzi A"
+              ],
+              "journal": "Sci Adv",
+              "citation": "2025 Mar 14;11(11):eadq2807. Epub 2025 Mar 12 doi: 10.1126/sciadv.adq2807. 40073125 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40073125/"
+            },
+            {
+              "pmid": "29696780",
+              "title": "Neurodevelopmental outcome in 22q11.2 deletion syndrome and management.",
+              "authors": [
+                "Swillen A",
+                "Moss E",
+                "Duijff S"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2018 Oct;176(10):2160-2166. Epub 2018 Apr 25 doi: 10.1002/ajmg.a.38709. 29696780 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/29696780/"
+            },
+            {
+              "pmid": "25989227",
+              "title": "Developmental trajectories in 22q11.2 deletion.",
+              "authors": [
+                "Swillen A",
+                "McDonald-McGinn D"
+              ],
+              "journal": "Am J Med Genet C Semin Med Genet",
+              "citation": "2015 Jun;169(2):172-81. Epub 2015 May 18 doi: 10.1002/ajmg.c.31435. 25989227 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25989227/"
+            },
+            {
+              "pmid": "16083798",
+              "title": "Basic and clinical immunology.",
+              "authors": [
+                "Chinen J",
+                "Shearer WT"
+              ],
+              "journal": "J Allergy Clin Immunol",
+              "citation": "2005 Aug;116(2):411-8. doi: 10.1016/j.jaci.2005.05.010. 16083798",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/16083798/"
+            },
+            {
+              "pmid": "7911041",
+              "title": "Cardiovascular molecular genetics.",
+              "authors": [
+                "Anderson PA"
+              ],
+              "journal": "Curr Opin Cardiol",
+              "citation": "1994 Jan;9(1):78-90. doi: 10.1097/00001573-199401000-00010. 7911041",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/7911041/"
+            }
+          ],
+          "see_all": {
+            "count": 443,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22DiGeorge%20syndrome%22%20AND%20Prognosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "clinical_prediction_guides": {
+          "papers": [
+            {
+              "pmid": "40750773",
+              "title": "Aberrant pace of cortical neuron development in brain organoids from patients with 22q11.2 deletion syndrome-associated schizophrenia.",
+              "authors": [
+                "Rao SB",
+                "Sun Z",
+                "Brundu F",
+                "Chen Y",
+                "Sun Y",
+                "Zhu H",
+                "Shprintzen RJ",
+                "Tomer R",
+                "Rabadan R",
+                "Leong KW",
+                "Markx S",
+                "Kushner SA",
+                "Xu B",
+                "Gogos JA"
+              ],
+              "journal": "Nat Commun",
+              "citation": "2025 Aug 1;16(1):6986. doi: 10.1038/s41467-025-62187-x. 40750773 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40750773/"
+            },
+            {
+              "pmid": "40073125",
+              "title": "Synaptic-dependent developmental dysconnectivity in 22q11.2 deletion syndrome.",
+              "authors": [
+                "Alvino FG",
+                "Gini S",
+                "Minetti A",
+                "Pagani M",
+                "Sastre-Yagüe D",
+                "Barsotti N",
+                "De Guzman E",
+                "Schleifer C",
+                "Stuefer A",
+                "Kushan L",
+                "Montani C",
+                "Galbusera A",
+                "Papaleo F",
+                "Kates WR",
+                "Murphy D",
+                "Lombardo MV",
+                "Pasqualetti M",
+                "Bearden CE",
+                "Gozzi A"
+              ],
+              "journal": "Sci Adv",
+              "citation": "2025 Mar 14;11(11):eadq2807. Epub 2025 Mar 12 doi: 10.1126/sciadv.adq2807. 40073125 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40073125/"
+            },
+            {
+              "pmid": "37730998",
+              "title": "Transcriptional linkage analysis with in vivo AAV-Perturb-seq.",
+              "authors": [
+                "Santinha AJ",
+                "Klingler E",
+                "Kuhn M",
+                "Farouni R",
+                "Lagler S",
+                "Kalamakis G",
+                "Lischetti U",
+                "Jabaudon D",
+                "Platt RJ"
+              ],
+              "journal": "Nature",
+              "citation": "2023 Oct;622(7982):367-375. Epub 2023 Sep 20 doi: 10.1038/s41586-023-06570-y. 37730998 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/37730998/"
+            },
+            {
+              "pmid": "29696780",
+              "title": "Neurodevelopmental outcome in 22q11.2 deletion syndrome and management.",
+              "authors": [
+                "Swillen A",
+                "Moss E",
+                "Duijff S"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2018 Oct;176(10):2160-2166. Epub 2018 Apr 25 doi: 10.1002/ajmg.a.38709. 29696780 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/29696780/"
+            },
+            {
+              "pmid": "25989227",
+              "title": "Developmental trajectories in 22q11.2 deletion.",
+              "authors": [
+                "Swillen A",
+                "McDonald-McGinn D"
+              ],
+              "journal": "Am J Med Genet C Semin Med Genet",
+              "citation": "2015 Jun;169(2):172-81. Epub 2015 May 18 doi: 10.1002/ajmg.c.31435. 25989227 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25989227/"
+            }
+          ],
+          "see_all": {
+            "count": 689,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22DiGeorge%20syndrome%22%20AND%20Clinical%20prediction%20guides%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        }
+      },
+      "recent_systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "40744517",
+            "title": "Congenital heart disease in 22q11.2 deletion syndrome: a meta-analysis and systematic review of the literature.",
+            "authors": [
+              "Sauter C",
+              "Hofbeck M",
+              "Franz P",
+              "Kettenstock L",
+              "Steger K",
+              "Linhardt M",
+              "Reiter A",
+              "Störk S",
+              "Romanos M",
+              "Radtke F"
+            ],
+            "journal": "J Med Genet",
+            "citation": "2025 Oct 20;62(11):700-708. doi: 10.1136/jmg-2025-110624. 40744517 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40744517/"
+          },
+          {
+            "pmid": "40509778",
+            "title": "Genetic abnormalities in catatonia: a systematic review.",
+            "authors": [
+              "Conti I",
+              "Ramachandran K",
+              "Badenoch JB",
+              "Fanshawe JB",
+              "Rengasamy E",
+              "Cross B",
+              "Rogdaki M",
+              "David AS",
+              "Santosh P",
+              "Rogers JP",
+              "Watson C"
+            ],
+            "journal": "Psychol Med",
+            "citation": "2025 Jun 13;55:e164. doi: 10.1017/S0033291725100536. 40509778 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40509778/"
+          },
+          {
+            "pmid": "39960552",
+            "title": "Thymus transplantation for DiGeorge Syndrome: a systematic review.",
+            "authors": [
+              "Ahmed HS",
+              "Dias AF",
+              "Pulkurthi SR"
+            ],
+            "journal": "Pediatr Surg Int",
+            "citation": "2025 Feb 17;41(1):82. doi: 10.1007/s00383-025-05976-1. 39960552",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39960552/"
+          },
+          {
+            "pmid": "36729052",
+            "title": "Updated clinical practice recommendations for managing adults with 22q11.2 deletion syndrome.",
+            "authors": [
+              "Boot E",
+              "Óskarsdóttir S",
+              "Loo JCY",
+              "Crowley TB",
+              "Orchanian-Cheff A",
+              "Andrade DM",
+              "Arganbright JM",
+              "Castelein RM",
+              "Cserti-Gazdewich C",
+              "de Reuver S",
+              "Fiksinski AM",
+              "Klingberg G",
+              "Lang AE",
+              "Mascarenhas MR",
+              "Moss EM",
+              "Nowakowska BA",
+              "Oechslin E",
+              "Palmer L",
+              "Repetto GM",
+              "Reyes NGD",
+              "Schneider M",
+              "Silversides C",
+              "Sullivan KE",
+              "Swillen A",
+              "van Amelsvoort TAMJ",
+              "Van Batavia JP",
+              "Vingerhoets C",
+              "McDonald-McGinn DM",
+              "Bassett AS"
+            ],
+            "journal": "Genet Med",
+            "citation": "2023 Mar;25(3):100344. Epub 2023 Feb 2 doi: 10.1016/j.gim.2022.11.012. 36729052",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36729052/"
+          },
+          {
+            "pmid": "34110308",
+            "title": "Longitudinal Psychiatric and Developmental Outcomes in 22q11.2 Deletion Syndrome: A Systematic Review.",
+            "authors": [
+              "Jhawar N",
+              "Brown MJ",
+              "Cutler-Landsman D",
+              "Kates WR",
+              "Angkustsiri K",
+              "Antshel KM"
+            ],
+            "journal": "J Dev Behav Pediatr",
+            "citation": "2021 Jun-Jul 01;42(5):415-427. doi: 10.1097/DBP.0000000000000927. 34110308",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34110308/"
+          }
+        ],
+        "see_all": {
+          "count": 35,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22DiGeorge%20syndrome%22%20AND%20systematic%5Bsb%5D%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+        }
+      }
+    },
+    "url": "https://www.ncbi.nlm.nih.gov/medgen/4297"
+  }
+]

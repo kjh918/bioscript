@@ -1,0 +1,656 @@
+[
+  {
+    "medgen_uid": "4385",
+    "disease_name": "Down syndrome (DS)",
+    "concept_id": "C0013080",
+    "disease_type": "Disease or Syndrome",
+    "definition": "Down syndrome is a chromosomal condition that is associated with intellectual disability, a characteristic facial appearance, and weak muscle tone (hypotonia) in infancy. All affected individuals experience cognitive delays, but the intellectual disability is usually mild to moderate. People with Down syndrome often have a characteristic facial appearance that includes a flattened appearance to the face, outside corners of the eyes that point upward (upslanting palpebral fissures), small ears, a short neck, and a tongue that tends to stick out of the mouth. Affected individuals may have a variety of birth defects. Many people with Down syndrome have small hands and feet and a single crease across the palms of the hands. About half of all affected children are born with a heart defect. Digestive abnormalities, such as a blockage of the intestine, are less common. Individuals with Down syndrome have an increased risk of developing several medical conditions. These include gastroesophageal reflux, which is a backflow of acidic stomach contents into the esophagus, and celiac disease, which is an intolerance of a wheat protein called gluten. About 15 percent of people with Down syndrome have an underactive thyroid gland (hypothyroidism). The thyroid gland is a butterfly-shaped organ in the lower neck that produces hormones. Individuals with Down syndrome also have an increased risk of hearing and vision problems. Additionally, a small percentage of children with Down syndrome develop cancer of blood-forming cells (leukemia). Delayed development and behavioral problems are often reported in children with Down syndrome. Affected individuals can have growth problems and their speech and language develop later and more slowly than in children without Down syndrome. Additionally, speech may be difficult to understand in individuals with Down syndrome. Behavioral issues can include attention problems, obsessive/compulsive behavior, and stubbornness or tantrums. A small percentage of people with Down syndrome are also diagnosed with developmental conditions called autism spectrum disorders, which affect communication and social interaction. People with Down syndrome often experience a gradual decline in thinking ability (cognition) as they age, usually starting around age 50. Down syndrome is also associated with an increased risk of developing Alzheimer's disease, a brain disorder that results in a gradual loss of memory, judgment, and ability to function. Approximately half of adults with Down syndrome develop Alzheimer's disease. Although Alzheimer's disease is usually a disorder that occurs in older adults, people with Down syndrome commonly develop this condition earlier, in their fifties or sixties. [from MedlinePlus Genetics]",
+    "synonyms": [
+      "DS",
+      "T21"
+    ],
+    "cross_references": {
+      "SNOMED-CT": "737542000",
+      "MONDO": "MONDO:0008608",
+      "OMIM": "190685",
+      "Orphanet": "870"
+    },
+    "literature": {
+      "professional_guidelines": {
+        "papers": [
+          {
+            "pmid": "30921525",
+            "title": "Clinical Practice Guideline: Tonsillectomy in Children (Update)-Executive Summary.",
+            "authors": [
+              "Mitchell RB",
+              "Archer SM",
+              "Ishman SL",
+              "Rosenfeld RM",
+              "Coles S",
+              "Finestone SA",
+              "Friedman NR",
+              "Giordano T",
+              "Hildrew DM",
+              "Kim TW",
+              "Lloyd RM",
+              "Parikh SR",
+              "Shulman ST",
+              "Walner DL",
+              "Walsh SA",
+              "Nnacheta LC"
+            ],
+            "journal": "Otolaryngol Head Neck Surg",
+            "citation": "2019 Feb;160(2):187-205. doi: 10.1177/0194599818807917. 30921525",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30921525/"
+          },
+          {
+            "pmid": "30798778",
+            "title": "Clinical Practice Guideline: Tonsillectomy in Children (Update).",
+            "authors": [
+              "Mitchell RB",
+              "Archer SM",
+              "Ishman SL",
+              "Rosenfeld RM",
+              "Coles S",
+              "Finestone SA",
+              "Friedman NR",
+              "Giordano T",
+              "Hildrew DM",
+              "Kim TW",
+              "Lloyd RM",
+              "Parikh SR",
+              "Shulman ST",
+              "Walner DL",
+              "Walsh SA",
+              "Nnacheta LC"
+            ],
+            "journal": "Otolaryngol Head Neck Surg",
+            "citation": "2019 Feb;160(1_suppl):S1-S42. doi: 10.1177/0194599818801757. 30798778",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30798778/"
+          },
+          {
+            "pmid": "20466091",
+            "title": "Consensus statement: chromosomal microarray is a first-tier clinical diagnostic test for individuals with developmental disabilities or congenital anomalies.",
+            "authors": [
+              "Miller DT",
+              "Adam MP",
+              "Aradhya S",
+              "Biesecker LG",
+              "Brothman AR",
+              "Carter NP",
+              "Church DM",
+              "Crolla JA",
+              "Eichler EE",
+              "Epstein CJ",
+              "Faucett WA",
+              "Feuk L",
+              "Friedman JM",
+              "Hamosh A",
+              "Jackson L",
+              "Kaminsky EB",
+              "Kok K",
+              "Krantz ID",
+              "Kuhn RM",
+              "Lee C",
+              "Ostell JM",
+              "Rosenberg C",
+              "Scherer SW",
+              "Spinner NB",
+              "Stavropoulos DJ",
+              "Tepperberg JH",
+              "Thorland EC",
+              "Vermeesch JR",
+              "Waggoner DJ",
+              "Watson MS",
+              "Martin CL",
+              "Ledbetter DH"
+            ],
+            "journal": "Am J Hum Genet",
+            "citation": "2010 May 14;86(5):749-64. doi: 10.1016/j.ajhg.2010.04.006. 20466091 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20466091/"
+          }
+        ],
+        "curated": [
+          {
+            "title": "National Society of Genetic Counselors Position Statement: Prenatal Cell-Free DNA Screening",
+            "url": "https://www.nsgc.org/Policy-Research-and-Publications/Position-Statements/Position-Statements/Post/prenatal-cell-free-dna-screening-1"
+          },
+          {
+            "title": "American College of Medical Genetics and Genomics Noninvasive Prenatal Screening via Cell-Free DNA ACT Sheet, Trisomy 21/Down syndrome: Positive Cell Free DNA Screen, 2021",
+            "url": "https://www.acmg.net/PDFLibrary/Trisomy-21.pdf"
+          }
+        ],
+        "see_all": {
+          "count": 731,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22down%20syndrome%22%5Btiab%3A~0%5D)%20AND%20(%22english%20and%20humans%22%5BFilter%5D)%20AND%20(%20(%22practice%20guideline%22%5BFilter%5D)%20OR%20(practice*%5Btitl%5D%20AND%20(guideline%5Btitl%5D%20OR%20parameter%5Btitl%5D%20OR%20resource%5Btitl%5D%20OR%20bulletin%5Btitl%5D%20OR%20best%5Btitl%5D))%20OR%20(genetic*%5Btitl%5D%20AND%20(evaluation%5Btitl%5D%20OR%20counseling%5Btitl%5D%20OR%20screening%5Btitl%5D%20OR%20test*%5Btitl%5D))%20OR%20(clinical%5Btitl%5D%20AND%20((expert%5Btitl%5D%20AND%20consensus%5Btitl%5D)%20OR%20utility%5Btitl%5D%20OR%20guideline*%5Btitl%5D))%20OR%20(management%5Btitl%5D%20AND%20(clinical%5Btitl%5D%20OR%20diagnos*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20pain%5Btitl%5D%20OR%20surveillance%5Btitl%5D%20OR%20emergency%5Btitl%5D%20OR%20guideline*%5Btitl%5D%20OR%20therap*))%20OR%20(treatment%5Btitl%5D%20AND%20((evaluation%5Btitl%5D%20AND%20diagnosis%5Btitl%5D)%20OR%20(assessment%5Btitl%5D%20AND%20prevention%5Btitl%5D)%20OR%20therap*))%20OR%20(Diagnos*%5Btitl%5D%20AND%20(prenatal%5Btitl%5D%20OR%20treatment%5Btitl%5D%20OR%20follow-up%5Btitl%5D%20OR%20statement%5Btitl%5D%20OR%20criteria%5Btitl%5D%20OR%20newborn%5Btitl%5D%20OR%20differential%5Btitl%5D%20OR%20neonatal%5Btitl%5D%20OR%20neonate%5Btitl%5D))%20OR%20(guideline*%5Btitl%5D%20AND%20(pharmacogenetic*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20evidence-based%5Btitl%5D%20OR%20consensus%5Btitl%5D%20OR%20(technical%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20(molecular%5Btitl%5D%20AND%20testing%5Btitl%5D)))%20OR%20(risk%5Btitl%5D%20AND%20assessment%5Btitl%5D)%20OR%20(recommendation*%5Btitl%5D%20AND%20(statement%5Btitl%5D%20OR%20Evidence-based%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(care%20AND%20((Patient%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20primary%5Btitl%5D%20OR%20psychosocial%5Btitl%5D))%20OR%20(Health%5Btitl%5D%20AND%20supervision%5Btitl%5D)%20OR%20(statement%5Btitl%5D%20AND%20(policy%5Btitl%5D%20OR%20position%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(pharmacogenetics%5Btitl%5D%20AND%20(Dosing%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20genotype*%5Btitl%5D%20OR%20drug*%5Btitl%5D))%20OR%20(Chemotherapy%5Btitl%5D%20AND%20decision*%5Btitl%5D)%20OR%20(screening%5Btitl%5D%20AND%20(newborn%5Btitl%5D%20OR%20neonat*%5Btitl%5D%20OR%20detection%5Btitl%5D%20OR%20diagnos*%5Btitl%5D))%20OR%20(criteria%5Btitl%5D%20OR%20genotype*%5Btitl%5D)%20)%20NOT%20(%22Case%20reports%22%5BPublication%20type%5D%20OR%20%22clinical%20study%22%5BPublication%20Type%5D%20OR%20%22randomized%20controlled%20trial%22%5BPublication%20Type%5D)"
+        }
+      },
+      "recent_clinical_studies": {
+        "etiology": {
+          "papers": [
+            {
+              "pmid": "33583502",
+              "title": "Neonatal Leukemia.",
+              "authors": [
+                "Brown PA"
+              ],
+              "journal": "Clin Perinatol",
+              "citation": "2021 Mar;48(1):15-33. doi: 10.1016/j.clp.2020.11.002. 33583502",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/33583502/"
+            },
+            {
+              "pmid": "29135488",
+              "title": "Endocrine manifestations of Down syndrome.",
+              "authors": [
+                "Whooten R",
+                "Schmitt J",
+                "Schwartz A"
+              ],
+              "journal": "Curr Opin Endocrinol Diabetes Obes",
+              "citation": "2018 Feb;25(1):61-66. doi: 10.1097/MED.0000000000000382. 29135488 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/29135488/"
+            },
+            {
+              "pmid": "27600794",
+              "title": "Risk factors for Down syndrome.",
+              "authors": [
+                "Coppedè F"
+              ],
+              "journal": "Arch Toxicol",
+              "citation": "2016 Dec;90(12):2917-2929. Epub 2016 Sep 7 doi: 10.1007/s00204-016-1843-3. 27600794",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/27600794/"
+            },
+            {
+              "pmid": "26400113",
+              "title": "Down syndrome--genetic and nutritional aspects of accompanying disorders.",
+              "authors": [
+                "Mazurek D",
+                "Wyka J"
+              ],
+              "journal": "Rocz Panstw Zakl Hig",
+              "citation": "2015;66(3):189-94. 26400113",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/26400113/"
+            },
+            {
+              "pmid": "25989505",
+              "title": "Down syndrome: Cognitive and behavioral functioning across the lifespan.",
+              "authors": [
+                "Grieco J",
+                "Pulsifer M",
+                "Seligsohn K",
+                "Skotko B",
+                "Schwartz A"
+              ],
+              "journal": "Am J Med Genet C Semin Med Genet",
+              "citation": "2015 Jun;169(2):135-49. Epub 2015 May 18 doi: 10.1002/ajmg.c.31439. 25989505",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25989505/"
+            }
+          ],
+          "see_all": {
+            "count": 11137,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Etiology%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "diagnosis": {
+          "papers": [
+            {
+              "pmid": "32521135",
+              "title": "Down Syndrome.",
+              "authors": [
+                "Bull MJ"
+              ],
+              "journal": "N Engl J Med",
+              "citation": "2020 Jun 11;382(24):2344-2352. doi: 10.1056/NEJMra1706537. 32521135",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32521135/"
+            },
+            {
+              "pmid": "29135488",
+              "title": "Endocrine manifestations of Down syndrome.",
+              "authors": [
+                "Whooten R",
+                "Schmitt J",
+                "Schwartz A"
+              ],
+              "journal": "Curr Opin Endocrinol Diabetes Obes",
+              "citation": "2018 Feb;25(1):61-66. doi: 10.1097/MED.0000000000000382. 29135488 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/29135488/"
+            },
+            {
+              "pmid": "26062604",
+              "title": "\"Down syndrome: an insight of the disease\".",
+              "authors": [
+                "Asim A",
+                "Kumar A",
+                "Muthuswamy S",
+                "Jain S",
+                "Agarwal S"
+              ],
+              "journal": "J Biomed Sci",
+              "citation": "2015 Jun 11;22(1):41. doi: 10.1186/s12929-015-0138-y. 26062604 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/26062604/"
+            },
+            {
+              "pmid": "25412855",
+              "title": "Mosaicism for trisomy 21: a review.",
+              "authors": [
+                "Papavassiliou P",
+                "Charalsawadi C",
+                "Rafferty K",
+                "Jackson-Cook C"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2015 Jan;167A(1):26-39. Epub 2014 Nov 20 doi: 10.1002/ajmg.a.36861. 25412855",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25412855/"
+            },
+            {
+              "pmid": "9377191",
+              "title": "Down syndrome: a review of the literature.",
+              "authors": [
+                "Desai SS"
+              ],
+              "journal": "Oral Surg Oral Med Oral Pathol Oral Radiol Endod",
+              "citation": "1997 Sep;84(3):279-85. doi: 10.1016/s1079-2104(97)90343-7. 9377191",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/9377191/"
+            }
+          ],
+          "see_all": {
+            "count": 9801,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Diagnosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "therapy": {
+          "papers": [
+            {
+              "pmid": "38558387",
+              "title": "Effect of Pilates exercises on balance and gross motor coordination in children with Down syndrome.",
+              "authors": [
+                "Al-Nemr A",
+                "Reffat S"
+              ],
+              "journal": "Acta Neurol Belg",
+              "citation": "2024 Oct;124(5):1499-1505. Epub 2024 Apr 1 doi: 10.1007/s13760-024-02517-w. 38558387 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38558387/"
+            },
+            {
+              "pmid": "37440251",
+              "title": "Management of Down Syndrome-Associated Leukemias: A Review.",
+              "authors": [
+                "Verma A",
+                "Lupo PJ",
+                "Shah NN",
+                "Hitzler J",
+                "Rabin KR"
+              ],
+              "journal": "JAMA Oncol",
+              "citation": "2023 Sep 1;9(9):1283-1290. doi: 10.1001/jamaoncol.2023.2163. 37440251",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/37440251/"
+            },
+            {
+              "pmid": "37186034",
+              "title": "Effect of hippotherapy on balance, functional mobility, and functional independence in children with Down syndrome: randomized controlled trial.",
+              "authors": [
+                "Kaya Y",
+                "Saka S",
+                "Tuncer D"
+              ],
+              "journal": "Eur J Pediatr",
+              "citation": "2023 Jul;182(7):3147-3155. Epub 2023 Apr 26 doi: 10.1007/s00431-023-04959-5. 37186034",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/37186034/"
+            },
+            {
+              "pmid": "35906275",
+              "title": "Therapeutic exercise to improve motor function among children with Down Syndrome aged 0 to 3 years: a systematic literature review and meta‑analysis.",
+              "authors": [
+                "Rodríguez-Grande EI",
+                "Buitrago-López A",
+                "Torres-Narváez MR",
+                "Serrano-Villar Y",
+                "Verdugo-Paiva F",
+                "Ávila C"
+              ],
+              "journal": "Sci Rep",
+              "citation": "2022 Jul 29;12(1):13051. doi: 10.1038/s41598-022-16332-x. 35906275 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/35906275/"
+            },
+            {
+              "pmid": "33651090",
+              "title": "Effect of Postreinduction Therapy Consolidation With Blinatumomab vs Chemotherapy on Disease-Free Survival in Children, Adolescents, and Young Adults With First Relapse of B-Cell Acute Lymphoblastic Leukemia: A Randomized Clinical Trial.",
+              "authors": [
+                "Brown PA",
+                "Ji L",
+                "Xu X",
+                "Devidas M",
+                "Hogan LE",
+                "Borowitz MJ",
+                "Raetz EA",
+                "Zugmaier G",
+                "Sharon E",
+                "Bernhardt MB",
+                "Terezakis SA",
+                "Gore L",
+                "Whitlock JA",
+                "Pulsipher MA",
+                "Hunger SP",
+                "Loh ML"
+              ],
+              "journal": "JAMA",
+              "citation": "2021 Mar 2;325(9):833-842. doi: 10.1001/jama.2021.0669. 33651090 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/33651090/"
+            }
+          ],
+          "see_all": {
+            "count": 2613,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Therapy%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "prognosis": {
+          "papers": [
+            {
+              "pmid": "38367641",
+              "title": "Global disease burden of and risk factors for acute lower respiratory infections caused by respiratory syncytial virus in preterm infants and young children in 2019: a systematic review and meta-analysis of aggregated and individual participant data.",
+              "authors": [
+                "Wang X",
+                "Li Y",
+                "Shi T",
+                "Bont LJ",
+                "Chu HY",
+                "Zar HJ",
+                "Wahi-Singh B",
+                "Ma Y",
+                "Cong B",
+                "Sharland E",
+                "Riley RD",
+                "Deng J",
+                "Figueras-Aloy J",
+                "Heikkinen T",
+                "Jones MH",
+                "Liese JG",
+                "Markić J",
+                "Mejias A",
+                "Nunes MC",
+                "Resch B",
+                "Satav A",
+                "Yeo KT",
+                "Simões EAF",
+                "Nair H; Respiratory Virus Global Epidemiology Network; RESCEU investigators"
+              ],
+              "journal": "Lancet",
+              "citation": "2024 Mar 30;403(10433):1241-1253. Epub 2024 Feb 14 doi: 10.1016/S0140-6736(24)00138-7. 38367641",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38367641/"
+            },
+            {
+              "pmid": "32450124",
+              "title": "Nutritional challenges in children and adolescents with Down syndrome.",
+              "authors": [
+                "Nordstrøm M",
+                "Retterstøl K",
+                "Hope S",
+                "Kolset SO"
+              ],
+              "journal": "Lancet Child Adolesc Health",
+              "citation": "2020 Jun;4(6):455-464. doi: 10.1016/S2352-4642(19)30400-6. 32450124",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32450124/"
+            },
+            {
+              "pmid": "24690318",
+              "title": "The electrocardiogram in Down syndrome.",
+              "authors": [
+                "Caro M",
+                "Conde D",
+                "Pérez-Riera AR",
+                "de Almeida AP",
+                "Baranchuk A"
+              ],
+              "journal": "Cardiol Young",
+              "citation": "2015 Jan;25(1):8-14. Epub 2014 Apr 2 doi: 10.1017/S1047951114000420. 24690318",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/24690318/"
+            },
+            {
+              "pmid": "24295820",
+              "title": "Down syndrome.",
+              "authors": [
+                "Hobson-Rohrer WL",
+                "Samson-Fang L"
+              ],
+              "journal": "Pediatr Rev",
+              "citation": "2013 Dec;34(12):573-4; discussion 574. doi: 10.1542/pir.34-12-573. 24295820",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/24295820/"
+            },
+            {
+              "pmid": "23949829",
+              "title": "Atypical aging in Down syndrome.",
+              "authors": [
+                "Zigman WB"
+              ],
+              "journal": "Dev Disabil Res Rev",
+              "citation": "2013;18(1):51-67. doi: 10.1002/ddrr.1128. 23949829",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/23949829/"
+            }
+          ],
+          "see_all": {
+            "count": 4024,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Prognosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "clinical_prediction_guides": {
+          "papers": [
+            {
+              "pmid": "40774665",
+              "title": "Positive Predictive Value of Tissue Transglutaminase IgA for Celiac Disease.",
+              "authors": [
+                "Chang D",
+                "Wong M",
+                "Camila Cardenas M",
+                "Stahl MG",
+                "Liu E",
+                "Caplan M",
+                "Gidrewicz D",
+                "King JA",
+                "Turner JM",
+                "Leonard MM",
+                "Lee D",
+                "Cristina Pacheco M",
+                "Dickerson J",
+                "Raber C",
+                "Badalyan V",
+                "Chugh A",
+                "Setty M",
+                "Baek C",
+                "Singh A",
+                "Fahey L",
+                "Walsh CM",
+                "Silvester JA",
+                "Absah I"
+              ],
+              "journal": "Pediatrics",
+              "citation": "2025 Sep 1;156(3) doi: 10.1542/peds.2025-070897. 40774665 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40774665/"
+            },
+            {
+              "pmid": "16104673",
+              "title": "SURUSS in perspective.",
+              "authors": [
+                "Wald NJ",
+                "Rodeck C",
+                "Hackshaw AK",
+                "Rudnicka A"
+              ],
+              "journal": "Semin Perinatol",
+              "citation": "2005 Aug;29(4):225-35. doi: 10.1053/j.semperi.2005.05.006. 16104673",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/16104673/"
+            },
+            {
+              "pmid": "10986441",
+              "title": "Biochemical screening for Down syndrome.",
+              "authors": [
+                "Cuckle H"
+              ],
+              "journal": "Eur J Obstet Gynecol Reprod Biol",
+              "citation": "2000 Sep;92(1):97-101. doi: 10.1016/s0301-2115(00)00431-0. 10986441",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/10986441/"
+            },
+            {
+              "pmid": "9463853",
+              "title": "Sample size and optimal designs for reliability studies.",
+              "authors": [
+                "Walter SD",
+                "Eliasziw M",
+                "Donner A"
+              ],
+              "journal": "Stat Med",
+              "citation": "1998 Jan 15;17(1):101-10. doi: 10.1002/(sici)1097-0258(19980115)17:1<101::aid-sim727>3.0.co;2-e. 9463853",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/9463853/"
+            },
+            {
+              "pmid": "8904471",
+              "title": "Screening for Down's syndrome.",
+              "authors": [
+                "Chard T",
+                "Macintosh MC"
+              ],
+              "journal": "J Perinat Med",
+              "citation": "1995;23(6):421-36. doi: 10.1515/jpme.1995.23.6.421. 8904471",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/8904471/"
+            }
+          ],
+          "see_all": {
+            "count": 5991,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20Clinical%20prediction%20guides%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        }
+      },
+      "recent_systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "38367641",
+            "title": "Global disease burden of and risk factors for acute lower respiratory infections caused by respiratory syncytial virus in preterm infants and young children in 2019: a systematic review and meta-analysis of aggregated and individual participant data.",
+            "authors": [
+              "Wang X",
+              "Li Y",
+              "Shi T",
+              "Bont LJ",
+              "Chu HY",
+              "Zar HJ",
+              "Wahi-Singh B",
+              "Ma Y",
+              "Cong B",
+              "Sharland E",
+              "Riley RD",
+              "Deng J",
+              "Figueras-Aloy J",
+              "Heikkinen T",
+              "Jones MH",
+              "Liese JG",
+              "Markić J",
+              "Mejias A",
+              "Nunes MC",
+              "Resch B",
+              "Satav A",
+              "Yeo KT",
+              "Simões EAF",
+              "Nair H; Respiratory Virus Global Epidemiology Network; RESCEU investigators"
+            ],
+            "journal": "Lancet",
+            "citation": "2024 Mar 30;403(10433):1241-1253. Epub 2024 Feb 14 doi: 10.1016/S0140-6736(24)00138-7. 38367641",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38367641/"
+          },
+          {
+            "pmid": "36056081",
+            "title": "Neuromuscular exercise in children with Down Syndrome: a systematic review.",
+            "authors": [
+              "Rodríguez-Grande EI",
+              "Vargas-Pinilla OC",
+              "Torres-Narvaez MR",
+              "Rodríguez-Malagón N"
+            ],
+            "journal": "Sci Rep",
+            "citation": "2022 Sep 2;12(1):14988. doi: 10.1038/s41598-022-19086-8. 36056081 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36056081/"
+          },
+          {
+            "pmid": "35946706",
+            "title": "Autism and Down syndrome: early identification and diagnosis.",
+            "authors": [
+              "Diniz NLF",
+              "Parlato-Oliveira E",
+              "Pimenta PGA",
+              "Araújo LA",
+              "Valadares ER"
+            ],
+            "journal": "Arq Neuropsiquiatr",
+            "citation": "2022 Jun;80(6):620-630. doi: 10.1590/0004-282X-ANP-2021-0156. 35946706 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35946706/"
+          },
+          {
+            "pmid": "32920658",
+            "title": "Neurologic complications of Down syndrome: a systematic review.",
+            "authors": [
+              "Santoro JD",
+              "Pagarkar D",
+              "Chu DT",
+              "Rosso M",
+              "Paulsen KC",
+              "Levitt P",
+              "Rafii MS"
+            ],
+            "journal": "J Neurol",
+            "citation": "2021 Dec;268(12):4495-4509. Epub 2020 Sep 12 doi: 10.1007/s00415-020-10179-w. 32920658",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32920658/"
+          },
+          {
+            "pmid": "30788876",
+            "title": "Physical therapy in Down syndrome: systematic review and meta-analysis.",
+            "authors": [
+              "Ruiz-González L",
+              "Lucena-Antón D",
+              "Salazar A",
+              "Martín-Valero R",
+              "Moral-Munoz JA"
+            ],
+            "journal": "J Intellect Disabil Res",
+            "citation": "2019 Aug;63(8):1041-1067. Epub 2019 Feb 20 doi: 10.1111/jir.12606. 30788876",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30788876/"
+          }
+        ],
+        "see_all": {
+          "count": 340,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Down%20syndrome%22%20AND%20systematic%5Bsb%5D%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+        }
+      }
+    },
+    "url": "https://www.ncbi.nlm.nih.gov/medgen/4385"
+  }
+]

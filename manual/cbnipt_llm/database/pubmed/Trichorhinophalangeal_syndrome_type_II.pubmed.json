@@ -1,0 +1,1593 @@
+[
+  {
+    "pmid": "33826125",
+    "doi": "10.1007/s40291-021-00522-w",
+    "pmc_id": "PMC7448974",
+    "title": "BACs-on-Beads Assay for the Prenatal Diagnosis of Microdeletion and Microduplication Syndromes.",
+    "authors": [
+      "Li Chunyan",
+      "Zhang Jianfang",
+      "Li Jia",
+      "Qiao Guyuan",
+      "Zhan Ying",
+      "Xu Ying",
+      "Yang Hong"
+    ],
+    "journal": "Molecular diagnosis & therapy",
+    "year": "2021",
+    "pub_date": "2021 May",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't"
+    ],
+    "abstract": "OBJECTIVE: To evaluate the clinical value of BACs-on-Beads (BoBs) assay in detection of microdeletion and microduplication syndromes. METHODS: A total of 6,814 cases of amniotic fluid cells collected from January 2015 to July 2020 in our hospital were analyzed by chromosomal karyotyping and BoBs assay. Fluorescence in situ hybridization (FISH) or chromosomal microarray analysis (CMA) provided further validation for the cases of microdeletion and microduplication. RESULTS: Thirty microdeletion and microduplication syndromes were identified by BoBs with an incidence of ~1/227, including 22q11.2 microduplication (0.044%, 3/6814), DiGeorge I syndrome (0.044%, 3/6814), 17p11.2 microduplication (0.015%, 1/6814), Smith-Magenis syndrome (0.015%, 1/6814), 17p11.2p11.3 microduplication (0.015%, 1/6814), Williams-Beuren syndrome (0.088%, 6/6814), 7q11.2 microduplication (0.029%, 2/6814), DiGeorge II syndrome (0.015%, 1/6814), 18p11.32p11.21 microduplication (0.015%, 1/6814), Wolf-Hirschhorn syndrome (0.029%, 2/6814), 4p16.3 microduplication (0.015%, 1/6814), Langer-Giedion syndrome (0.015%, 1/6814), Miller-Dieker syndrome (0.015%, 1/6814), Cri du Chat syndrome (0.015%, 1/6814), Xp22.31 microdeletion (0.059%, 4/6814), Prader-Willi syndrome (0.015%, 1/6814). High concordance was obtained between BoBs and FISH or CMA. However, only four cases were detected by chromosomal karyotyping. CONCLUSION: BoBs assay can rapidly detect microdeletion and microduplication syndromes, which compensates the shortcomings of conventional chromosomal karyotyping and greatly improves the efficiency and accuracy of prenatal diagnosis.",
+    "abstract_sections": {
+      "OBJECTIVE": "To evaluate the clinical value of BACs-on-Beads (BoBs) assay in detection of microdeletion and microduplication syndromes.",
+      "METHODS": "A total of 6,814 cases of amniotic fluid cells collected from January 2015 to July 2020 in our hospital were analyzed by chromosomal karyotyping and BoBs assay. Fluorescence in situ hybridization (FISH) or chromosomal microarray analysis (CMA) provided further validation for the cases of microdeletion and microduplication.",
+      "RESULTS": "Thirty microdeletion and microduplication syndromes were identified by BoBs with an incidence of ~1/227, including 22q11.2 microduplication (0.044%, 3/6814), DiGeorge I syndrome (0.044%, 3/6814), 17p11.2 microduplication (0.015%, 1/6814), Smith-Magenis syndrome (0.015%, 1/6814), 17p11.2p11.3 microduplication (0.015%, 1/6814), Williams-Beuren syndrome (0.088%, 6/6814), 7q11.2 microduplication (0.029%, 2/6814), DiGeorge II syndrome (0.015%, 1/6814), 18p11.32p11.21 microduplication (0.015%, 1/6814), Wolf-Hirschhorn syndrome (0.029%, 2/6814), 4p16.3 microduplication (0.015%, 1/6814), Langer-Giedion syndrome (0.015%, 1/6814), Miller-Dieker syndrome (0.015%, 1/6814), Cri du Chat syndrome (0.015%, 1/6814), Xp22.31 microdeletion (0.059%, 4/6814), Prader-Willi syndrome (0.015%, 1/6814). High concordance was obtained between BoBs and FISH or CMA. However, only four cases were detected by chromosomal karyotyping.",
+      "CONCLUSION": "BoBs assay can rapidly detect microdeletion and microduplication syndromes, which compensates the shortcomings of conventional chromosomal karyotyping and greatly improves the efficiency and accuracy of prenatal diagnosis."
+    },
+    "mesh_terms": [
+      "Adult",
+      "Amniotic Fluid",
+      "Chromosome Deletion",
+      "Chromosome Duplication",
+      "Chromosomes, Artificial, Bacterial",
+      "Female",
+      "Gestational Age",
+      "Humans",
+      "Male",
+      "Maternal Age",
+      "Microarray Analysis",
+      "Pregnancy",
+      "Prenatal Diagnosis",
+      "Spectral Karyotyping"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7448974/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7448974/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1007/s40291-021-00522-w",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1007/s40291-021-00522-w?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23168997/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33826125/",
+    "rag_text": "Title: BACs-on-Beads Assay for the Prenatal Diagnosis of Microdeletion and Microduplication Syndromes.\nAuthors: Li Chunyan, Zhang Jianfang, Li Jia, Qiao Guyuan, Zhan Ying, Xu Ying et al. (7 authors)\nJournal: Molecular diagnosis & therapy (2021)\nPMID: 33826125\nAbstract: OBJECTIVE: To evaluate the clinical value of BACs-on-Beads (BoBs) assay in detection of microdeletion and microduplication syndromes. METHODS: A total of 6,814 cases of amniotic fluid cells collected from January 2015 to July 2020 in our hospital were analyzed by chromosomal karyotyping and BoBs assay. Fluorescence in situ hybridization (FISH) or chromosomal microarray analysis (CMA) provided further validation for the cases of microdeletion and microduplication. RESULTS: Thirty microdeletion and microduplication syndromes were identified by BoBs with an incidence of ~1/227, including 22q11.2 microduplication (0.044%, 3/6814), DiGeorge I syndrome (0.044%, 3/6814), 17p11.2 microduplication (0.015%, 1/6814), Smith-Magenis syndrome (0.015%, 1/6814), 17p11.2p11.3 microduplication (0.015%, 1/6814), Williams-Beuren syndrome (0.088%, 6/6814), 7q11.2 microduplication (0.029%, 2/6814), DiGeorge II syndrome (0.015%, 1/6814), 18p11.32p11.21 microduplication (0.015%, 1/6814), Wolf-Hirschhorn syndrome (0.029%, 2/6814), 4p16.3 microduplication (0.015%, 1/6814), Langer-Giedion syndrome (0.015%, 1/6814), Miller-Dieker syndrome (0.015%, 1/6814), Cri du Chat syndrome (0.015%, 1/6814), Xp22.31 microdeletion (0.059%, 4/6814), Prader-Willi syndrome (0.015%, 1/6814). High concordance was obtained between BoBs and FISH or CMA. However, only four cases were detected by chromosomal karyotyping. CONCLUSION: BoBs assay can rapidly detect microdeletion and microduplication syndromes, which compensates the shortcomings of conventional chromosomal karyotyping and greatly improves the efficiency and accuracy of prenatal diagnosis.\nMeSH Terms: Adult; Amniotic Fluid; Chromosome Deletion; Chromosome Duplication; Chromosomes, Artificial, Bacterial; Female; Gestational Age; Humans; Male; Maternal Age; Microarray Analysis; Pregnancy; Prenatal Diagnosis; Spectral Karyotyping"
+  },
+  {
+    "pmid": "25792522",
+    "doi": "10.1016/j.ejmg.2015.03.002",
+    "pmc_id": "",
+    "title": "Phenotype and genotype in 103 patients with tricho-rhino-phalangeal syndrome.",
+    "authors": [
+      "Maas Saskia M",
+      "Shaw Adam C",
+      "Bikker Hennie",
+      "Lüdecke Hermann-Josef",
+      "van der Tuin Karin",
+      "Badura-Stronka Magdalena",
+      "Belligni Elga",
+      "Biamino Elisa",
+      "Bonati Maria Teresa",
+      "Carvalho Daniel R",
+      "Cobben JanMaarten",
+      "de Man Stella A",
+      "Den Hollander Nicolette S",
+      "Di Donato Nataliya",
+      "Garavelli Livia",
+      "Grønborg Sabine",
+      "Herkert Johanna C",
+      "Hoogeboom A Jeannette M",
+      "Jamsheer Aleksander",
+      "Latos-Bielenska Anna",
+      "Maat-Kievit Anneke",
+      "Magnani Cinzia",
+      "Marcelis Carlo",
+      "Mathijssen Inge B",
+      "Nielsen Maartje",
+      "Otten Ellen",
+      "Ousager Lilian B",
+      "Pilch Jacek",
+      "Plomp Astrid",
+      "Poke Gemma",
+      "Poluha Anna",
+      "Posmyk Renata",
+      "Rieubland Claudine",
+      "Silengo Margharita",
+      "Simon Marleen",
+      "Steichen Elisabeth",
+      "Stumpel Connie",
+      "Szakszon Katalin",
+      "Polonkai Edit",
+      "van den Ende Jenneke",
+      "van der Steen Antony",
+      "van Essen Ton",
+      "van Haeringen Arie",
+      "van Hagen Johanna M",
+      "Verheij Joke B G M",
+      "Mannens Marcel M",
+      "Hennekam Raoul C"
+    ],
+    "journal": "European journal of medical genetics",
+    "year": "2015",
+    "pub_date": "2015 May",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "Tricho-rhino-phalangeal syndrome (TRPS) is characterized by craniofacial and skeletal abnormalities, and subdivided in TRPS I, caused by mutations in TRPS1, and TRPS II, caused by a contiguous gene deletion affecting (amongst others) TRPS1 and EXT1. We performed a collaborative international study to delineate phenotype, natural history, variability, and genotype-phenotype correlations in more detail. We gathered information on 103 cytogenetically or molecularly confirmed affected individuals. TRPS I was present in 85 individuals (22 missense mutations, 62 other mutations), TRPS II in 14, and in 5 it remained uncertain whether TRPS1 was partially or completely deleted. Main features defining the facial phenotype include fine and sparse hair, thick and broad eyebrows, especially the medial portion, a broad nasal ridge and tip, underdeveloped nasal alae, and a broad columella. The facial manifestations in patients with TRPS I and TRPS II do not show a significant difference. In the limbs the main findings are short hands and feet, hypermobility, and a tendency for isolated metacarpals and metatarsals to be shortened. Nails of fingers and toes are typically thin and dystrophic. The radiological hallmark are the cone-shaped epiphyses and in TRPS II multiple exostoses. Osteopenia is common in both, as is reduced linear growth, both prenatally and postnatally. Variability for all findings, also within a single family, can be marked. Morbidity mostly concerns joint problems, manifesting in increased or decreased mobility, pain and in a minority an increased fracture rate. The hips can be markedly affected at a (very) young age. Intellectual disability is uncommon in TRPS I and, if present, usually mild. In TRPS II intellectual disability is present in most but not all, and again typically mild to moderate in severity. Missense mutations are located exclusively in exon 6 and 7 of TRPS1. Other mutations are located anywhere in exons 4-7. Whole gene deletions are common but have variable breakpoints. Most of the phenotype in patients with TRPS II is explained by the deletion of TRPS1 and EXT1, but haploinsufficiency of RAD21 is also likely to contribute. Genotype-phenotype studies showed that mutations located in exon 6 may have somewhat more pronounced facial characteristics and more marked shortening of hands and feet compared to mutations located elsewhere in TRPS1, but numbers are too small to allow firm conclusions.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Abnormalities, Multiple",
+      "Adolescent",
+      "Adult",
+      "Aged",
+      "Child",
+      "Child, Preschool",
+      "DNA-Binding Proteins",
+      "Female",
+      "Genetic Association Studies",
+      "Humans",
+      "Infant",
+      "Langer-Giedion Syndrome",
+      "Male",
+      "Middle Aged",
+      "Mutation, Missense",
+      "Repressor Proteins",
+      "Transcription Factors",
+      "Young Adult"
+    ],
+    "keywords": [
+      "EXT1",
+      "Genotype",
+      "Langer-Giedion syndrome",
+      "Multiple exostoses",
+      "Natural history",
+      "Phenotype",
+      "RAD21",
+      "Review",
+      "TRPS",
+      "TRPS1",
+      "Tricho-rhino-phalangeal syndrome"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.ejmg.2015.03.002",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.ejmg.2015.03.002?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25792522/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25792522/",
+    "rag_text": "Title: Phenotype and genotype in 103 patients with tricho-rhino-phalangeal syndrome.\nAuthors: Maas Saskia M, Shaw Adam C, Bikker Hennie, Lüdecke Hermann-Josef, van der Tuin Karin, Badura-Stronka Magdalena et al. (47 authors)\nJournal: European journal of medical genetics (2015)\nPMID: 25792522\nAbstract: Tricho-rhino-phalangeal syndrome (TRPS) is characterized by craniofacial and skeletal abnormalities, and subdivided in TRPS I, caused by mutations in TRPS1, and TRPS II, caused by a contiguous gene deletion affecting (amongst others) TRPS1 and EXT1. We performed a collaborative international study to delineate phenotype, natural history, variability, and genotype-phenotype correlations in more detail. We gathered information on 103 cytogenetically or molecularly confirmed affected individuals. TRPS I was present in 85 individuals (22 missense mutations, 62 other mutations), TRPS II in 14, and in 5 it remained uncertain whether TRPS1 was partially or completely deleted. Main features defining the facial phenotype include fine and sparse hair, thick and broad eyebrows, especially the medial portion, a broad nasal ridge and tip, underdeveloped nasal alae, and a broad columella. The facial manifestations in patients with TRPS I and TRPS II do not show a significant difference. In the limbs the main findings are short hands and feet, hypermobility, and a tendency for isolated metacarpals and metatarsals to be shortened. Nails of fingers and toes are typically thin and dystrophic. The radiological hallmark are the cone-shaped epiphyses and in TRPS II multiple exostoses. Osteopenia is common in both, as is reduced linear growth, both prenatally and postnatally. Variability for all findings, also within a single family, can be marked. Morbidity mostly concerns joint problems, manifesting in increased or decreased mobility, pain and in a minority an increased fracture rate. The hips can be markedly affected at a (very) young age. Intellectual disability is uncommon in TRPS I and, if present, usually mild. In TRPS II intellectual disability is present in most but not all, and again typically mild to moderate in severity. Missense mutations are located exclusively in exon 6 and 7 of TRPS1. Other mutations are located anywhere in exons 4-7. Whole gene deletions are common but have variable breakpoints. Most of the phenotype in patients with TRPS II is explained by the deletion of TRPS1 and EXT1, but haploinsufficiency of RAD21 is also likely to contribute. Genotype-phenotype studies showed that mutations located in exon 6 may have somewhat more pronounced facial characteristics and more marked shortening of hands and feet compared to mutations located elsewhere in TRPS1, but numbers are too small to allow firm conclusions.\nMeSH Terms: Abnormalities, Multiple; Adolescent; Adult; Aged; Child; Child, Preschool; DNA-Binding Proteins; Female; Genetic Association Studies; Humans; Infant; Langer-Giedion Syndrome; Male; Middle Aged; Mutation, Missense\nKeywords: EXT1; Genotype; Langer-Giedion syndrome; Multiple exostoses; Natural history; Phenotype; RAD21; Review; TRPS; TRPS1"
+  },
+  {
+    "pmid": "40025593",
+    "doi": "10.1186/s13000-025-01623-4",
+    "pmc_id": "PMC9598034",
+    "title": "Trichorhinophalangeal syndrome type 1 (TRPS1) in breast pathology: diagnostic utility and pitfalls.",
+    "authors": [
+      "Hashmi Atif Ali",
+      "Brogi Edi",
+      "Wen Hannah Y"
+    ],
+    "journal": "Diagnostic pathology",
+    "year": "2025",
+    "pub_date": "2025 Mar 01",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "INTRODUCTION: Breast cancer, especially triple-negative breast cancer (TNBC), lacks sensitive and specific diagnostic markers that can reliably differentiate it from carcinomas of other origins. TRPS1 is a relatively new immunohistochemical (IHC) marker that has demonstrated higher sensitivity in breast cancer, including TNBC. However, with the increasing use of this marker, broader immunoreactivity has been observed. This study aims to evaluate the utility of TRPS1 for establishing carcinoma of mammary origin. We compared the diagnostic sensitivity and specificity of TRPS1 with that of other IHC markers (GATA3 and SOX10). METHODS: In this retrospective study, we reviewed TRPS1 IHC performed at our center between 07/2022 and 06/2024, to evaluate the expression of TRPS1 in breast carcinoma (primary and distant metastasis) and in other malignancies. The sensitivity and specificity of TRPS1 in determining carcinoma of breast origin were compared with those of GATA3 and SOX10. RESULTS: The study cohort comprised 106 cases, including 17 cases at the primary site, and 89 samples of distant metastasis. After correlation with morphology, immunophenotype and molecular studies, 94 cases (88.7%) were characterized as breast primary (37.9% ER+/HER2neu-, 4.6% ER-/HER2neu+, 1.1% ER+/HER2neu+, 56.3% TNBC), whereas 12 (11.3%) were non-breast primary. The non-breast primary sites included lung, bladder, Mullerian, and gastrointestinal. The sensitivity and specificity of TRPS1 were 93.6% and 58.3%, respectively. Conversely, GATA3 demonstrated a sensitivity and specificity of 76.9% and 66.7%, respectively. SOX10 exhibited the lowest sensitivity at 47.9%, but with the highest specificity at 100%. There were three cases of metastatic breast carcinoma (sites: bladder, lung, and bone), where TRPS1 was the only positive marker, whereas GATA3 and SOX10 were negative. TRPS1 showed a higher positivity rate (92.0%) in TNBC compared to GATA3 (63.4%) and SOX10 (56.7%). TRPS1 expression was also observed in other tumor types, including carcinoma of Mullerian origin, bladder, and lung, limiting its utility in the differential diagnosis. CONCLUSION: Our study demonstrated a higher sensitivity of TRPS1 expression in establishing carcinoma of breast origin compared with GATA3 and SOX10, consistent with previous reported studies. However, the specificity of TRPS1 was lower than that of GATA3 and SOX10. These findings suggest that while TRPS1 can be used as a reliable marker for breast cancer, its expression in other tumor types should be carefully interpreted to avoid diagnostic pitfalls.",
+    "abstract_sections": {
+      "INTRODUCTION": "Breast cancer, especially triple-negative breast cancer (TNBC), lacks sensitive and specific diagnostic markers that can reliably differentiate it from carcinomas of other origins. TRPS1 is a relatively new immunohistochemical (IHC) marker that has demonstrated higher sensitivity in breast cancer, including TNBC. However, with the increasing use of this marker, broader immunoreactivity has been observed. This study aims to evaluate the utility of TRPS1 for establishing carcinoma of mammary origin. We compared the diagnostic sensitivity and specificity of TRPS1 with that of other IHC markers (GATA3 and SOX10).",
+      "METHODS": "In this retrospective study, we reviewed TRPS1 IHC performed at our center between 07/2022 and 06/2024, to evaluate the expression of TRPS1 in breast carcinoma (primary and distant metastasis) and in other malignancies. The sensitivity and specificity of TRPS1 in determining carcinoma of breast origin were compared with those of GATA3 and SOX10.",
+      "RESULTS": "The study cohort comprised 106 cases, including 17 cases at the primary site, and 89 samples of distant metastasis. After correlation with morphology, immunophenotype and molecular studies, 94 cases (88.7%) were characterized as breast primary (37.9% ER+/HER2neu-, 4.6% ER-/HER2neu+, 1.1% ER+/HER2neu+, 56.3% TNBC), whereas 12 (11.3%) were non-breast primary. The non-breast primary sites included lung, bladder, Mullerian, and gastrointestinal. The sensitivity and specificity of TRPS1 were 93.6% and 58.3%, respectively. Conversely, GATA3 demonstrated a sensitivity and specificity of 76.9% and 66.7%, respectively. SOX10 exhibited the lowest sensitivity at 47.9%, but with the highest specificity at 100%. There were three cases of metastatic breast carcinoma (sites: bladder, lung, and bone), where TRPS1 was the only positive marker, whereas GATA3 and SOX10 were negative. TRPS1 showed a higher positivity rate (92.0%) in TNBC compared to GATA3 (63.4%) and SOX10 (56.7%). TRPS1 expression was also observed in other tumor types, including carcinoma of Mullerian origin, bladder, and lung, limiting its utility in the differential diagnosis.",
+      "CONCLUSION": "Our study demonstrated a higher sensitivity of TRPS1 expression in establishing carcinoma of breast origin compared with GATA3 and SOX10, consistent with previous reported studies. However, the specificity of TRPS1 was lower than that of GATA3 and SOX10. These findings suggest that while TRPS1 can be used as a reliable marker for breast cancer, its expression in other tumor types should be carefully interpreted to avoid diagnostic pitfalls."
+    },
+    "mesh_terms": [
+      "Humans",
+      "Female",
+      "Biomarkers, Tumor",
+      "Middle Aged",
+      "Retrospective Studies",
+      "Adult",
+      "Immunohistochemistry",
+      "Breast Neoplasms",
+      "Repressor Proteins",
+      "GATA3 Transcription Factor",
+      "Aged",
+      "Langer-Giedion Syndrome",
+      "Hair Diseases",
+      "SOXE Transcription Factors",
+      "Triple Negative Breast Neoplasms",
+      "Sensitivity and Specificity",
+      "DNA-Binding Proteins",
+      "Diagnosis, Differential",
+      "Fingers",
+      "Nose"
+    ],
+    "keywords": [
+      "Breast markers",
+      "GATA3",
+      "Metastatic breast carcinoma",
+      "SOX10",
+      "TRPS1",
+      "Triple negative breast cancer"
+    ],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9598034/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9598034/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1186/s13000-025-01623-4",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1186/s13000-025-01623-4?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36284362/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40025593/",
+    "rag_text": "Title: Trichorhinophalangeal syndrome type 1 (TRPS1) in breast pathology: diagnostic utility and pitfalls.\nAuthors: Hashmi Atif Ali, Brogi Edi, Wen Hannah Y\nJournal: Diagnostic pathology (2025)\nPMID: 40025593\nAbstract: INTRODUCTION: Breast cancer, especially triple-negative breast cancer (TNBC), lacks sensitive and specific diagnostic markers that can reliably differentiate it from carcinomas of other origins. TRPS1 is a relatively new immunohistochemical (IHC) marker that has demonstrated higher sensitivity in breast cancer, including TNBC. However, with the increasing use of this marker, broader immunoreactivity has been observed. This study aims to evaluate the utility of TRPS1 for establishing carcinoma of mammary origin. We compared the diagnostic sensitivity and specificity of TRPS1 with that of other IHC markers (GATA3 and SOX10). METHODS: In this retrospective study, we reviewed TRPS1 IHC performed at our center between 07/2022 and 06/2024, to evaluate the expression of TRPS1 in breast carcinoma (primary and distant metastasis) and in other malignancies. The sensitivity and specificity of TRPS1 in determining carcinoma of breast origin were compared with those of GATA3 and SOX10. RESULTS: The study cohort comprised 106 cases, including 17 cases at the primary site, and 89 samples of distant metastasis. After correlation with morphology, immunophenotype and molecular studies, 94 cases (88.7%) were characterized as breast primary (37.9% ER+/HER2neu-, 4.6% ER-/HER2neu+, 1.1% ER+/HER2neu+, 56.3% TNBC), whereas 12 (11.3%) were non-breast primary. The non-breast primary sites included lung, bladder, Mullerian, and gastrointestinal. The sensitivity and specificity of TRPS1 were 93.6% and 58.3%, respectively. Conversely, GATA3 demonstrated a sensitivity and specificity of 76.9% and 66.7%, respectively. SOX10 exhibited the lowest sensitivity at 47.9%, but with the highest specificity at 100%. There were three cases of metastatic breast carcinoma (sites: bladder, lung, and bone), where TRPS1 was the only positive marker, whereas GATA3 and SOX10 were negative. TRPS1 showed a higher positivity rate (92.0%) in TNBC compared to GATA3 (63.4%) and SOX10 (56.7%). TRPS1 expression was also observed in other tumor types, including carcinoma of Mullerian origin, bladder, and lung, limiting its utility in the differential diagnosis. CONCLUSION: Our study demonstrated a higher sensitivity of TRPS1 expression in establishing carcinoma of breast origin compared with GATA3 and SOX10, consistent with previous reported studies. However, the specificity of TRPS1 was lower than that of GATA3 and SOX10. These findings suggest that while TRPS1 can be used as a reliable marker for breast cancer, its expression in other tumor types should be carefully interpreted to avoid diagnostic pitfalls.\nMeSH Terms: Humans; Female; Biomarkers, Tumor; Middle Aged; Retrospective Studies; Adult; Immunohistochemistry; Breast Neoplasms; Repressor Proteins; GATA3 Transcription Factor; Aged; Langer-Giedion Syndrome; Hair Diseases; SOXE Transcription Factors; Triple Negative Breast Neoplasms\nKeywords: Breast markers; GATA3; Metastatic breast carcinoma; SOX10; TRPS1; Triple negative breast cancer"
+  },
+  {
+    "pmid": "24072254",
+    "doi": "10.1007/s00256-013-1726-0",
+    "pmc_id": "",
+    "title": "Langer-Giedion syndrome: the evolving imaging features in hands and beyond.",
+    "authors": [
+      "Tsang Wai Kan",
+      "Yang Kwok Wai Michael",
+      "Fong Chi Ming"
+    ],
+    "journal": "Skeletal radiology",
+    "year": "2014",
+    "pub_date": "2014 Feb",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article"
+    ],
+    "abstract": "Trichorhinophalangeal syndrome (TRP) is a group of rare genetic disorders with characteristic clinical and radiological features. In this case report we discuss the evolution of imaging features in hands in a Chinese boy diagnosed with TRP II (Langer-Giedion syndrome, LGS). This article ramifies the diagnostic value of serial hand radiograph in clinically suspected cases of TRP.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Child, Preschool",
+      "Hand Deformities, Congenital",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Male",
+      "Radiography",
+      "Thumb",
+      "Treatment Outcome"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1007/s00256-013-1726-0",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1007/s00256-013-1726-0?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/409236/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24072254/",
+    "rag_text": "Title: Langer-Giedion syndrome: the evolving imaging features in hands and beyond.\nAuthors: Tsang Wai Kan, Yang Kwok Wai Michael, Fong Chi Ming\nJournal: Skeletal radiology (2014)\nPMID: 24072254\nAbstract: Trichorhinophalangeal syndrome (TRP) is a group of rare genetic disorders with characteristic clinical and radiological features. In this case report we discuss the evolution of imaging features in hands in a Chinese boy diagnosed with TRP II (Langer-Giedion syndrome, LGS). This article ramifies the diagnostic value of serial hand radiograph in clinically suspected cases of TRP.\nMeSH Terms: Child, Preschool; Hand Deformities, Congenital; Humans; Langer-Giedion Syndrome; Male; Radiography; Thumb; Treatment Outcome"
+  },
+  {
+    "pmid": "23913778",
+    "doi": "10.1002/ajmg.a.36062",
+    "pmc_id": "",
+    "title": "Long-term follow-up of four patients with Langer-Giedion syndrome: clinical course and complications.",
+    "authors": [
+      "Schinzel Albert",
+      "Riegel Mariluce",
+      "Baumer Alessandra",
+      "Superti-Furga Andrea",
+      "Moreira Lilia M A",
+      "Santo Layla D E",
+      "Schiper Patricia P",
+      "Carvalho José Henrique Dantas",
+      "Giedion Andres"
+    ],
+    "journal": "American journal of medical genetics. Part A",
+    "year": "2013",
+    "pub_date": "2013 Sep",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't"
+    ],
+    "abstract": "Long-term observations of individuals with the so-called Langer-Giedion (LGS) or tricho-rhino-phalangeal type II (TRPS2) are scarce. We report here a on follow-up of four LGS individuals, including one first described by Andres Giedion in 1969, and review the sparse publications on adults with this syndrome which comprises ectodermal dysplasia, multiple cone-shaped epiphyses prior to puberty, multiple cartilaginous exostoses, and mostly mild intellectual impairment. LGS is caused by deletion of the chromosomal segment 8q24.11-q24.13 containing among others the genes EXT1 and TRPS1. Most patients with TRPS2 are only borderline or mildly cognitively delayed, and few are of normal intelligence. Their practical skills are better than their intellectual capability, and, for this reason and because of their low self-esteem, they are often underestimated. Some patients develop seizures at variable age. Osteomas on processes of cervical vertebrae may cause pressure on cervical nerves or dissection of cerebral arteries. Joint stiffness is observed during childhood and changes later to joint laxity causing instability and proneness to trauma. Perthes disease is not rare. Almost all males become bald at or soon after puberty, and some develop (pseudo) gynecomastia. Growth hormone deficiency was found in a few patients, TSH deficiency so far only in one. Puberty and fertility are diminished, and no instance of transmission of the deletion from a non-mosaic parent to a child has been observed so far. Several affected females had vaginal atresia with consequent hydrometrocolpos.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Adolescent",
+      "Adult",
+      "Aged",
+      "Child",
+      "Child, Preschool",
+      "Chromosome Banding",
+      "Chromosome Mapping",
+      "Comparative Genomic Hybridization",
+      "Facies",
+      "Follow-Up Studies",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Male",
+      "Middle Aged",
+      "Phenotype",
+      "Young Adult"
+    ],
+    "keywords": [
+      "FISH",
+      "Langer-Giedion syndrome",
+      "aCGH",
+      "contiguous gene syndrome",
+      "follow-up study",
+      "microdeletion 8q24",
+      "microdeletion syndrome"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1002/ajmg.a.36062",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1002/ajmg.a.36062?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23913778/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23913778/",
+    "rag_text": "Title: Long-term follow-up of four patients with Langer-Giedion syndrome: clinical course and complications.\nAuthors: Schinzel Albert, Riegel Mariluce, Baumer Alessandra, Superti-Furga Andrea, Moreira Lilia M A, Santo Layla D E et al. (9 authors)\nJournal: American journal of medical genetics. Part A (2013)\nPMID: 23913778\nAbstract: Long-term observations of individuals with the so-called Langer-Giedion (LGS) or tricho-rhino-phalangeal type II (TRPS2) are scarce. We report here a on follow-up of four LGS individuals, including one first described by Andres Giedion in 1969, and review the sparse publications on adults with this syndrome which comprises ectodermal dysplasia, multiple cone-shaped epiphyses prior to puberty, multiple cartilaginous exostoses, and mostly mild intellectual impairment. LGS is caused by deletion of the chromosomal segment 8q24.11-q24.13 containing among others the genes EXT1 and TRPS1. Most patients with TRPS2 are only borderline or mildly cognitively delayed, and few are of normal intelligence. Their practical skills are better than their intellectual capability, and, for this reason and because of their low self-esteem, they are often underestimated. Some patients develop seizures at variable age. Osteomas on processes of cervical vertebrae may cause pressure on cervical nerves or dissection of cerebral arteries. Joint stiffness is observed during childhood and changes later to joint laxity causing instability and proneness to trauma. Perthes disease is not rare. Almost all males become bald at or soon after puberty, and some develop (pseudo) gynecomastia. Growth hormone deficiency was found in a few patients, TSH deficiency so far only in one. Puberty and fertility are diminished, and no instance of transmission of the deletion from a non-mosaic parent to a child has been observed so far. Several affected females had vaginal atresia with consequent hydrometrocolpos.\nMeSH Terms: Adolescent; Adult; Aged; Child; Child, Preschool; Chromosome Banding; Chromosome Mapping; Comparative Genomic Hybridization; Facies; Follow-Up Studies; Humans; Langer-Giedion Syndrome; Male; Middle Aged; Phenotype\nKeywords: FISH; Langer-Giedion syndrome; aCGH; contiguous gene syndrome; follow-up study; microdeletion 8q24; microdeletion syndrome"
+  },
+  {
+    "pmid": "16418671",
+    "doi": "10.1097/01.iop.0000194987.39325.49",
+    "pmc_id": "",
+    "title": "Lower eyelid entropion in Langer-Giedion syndrome.",
+    "authors": [
+      "Chan-Kai Brian T",
+      "Yen Michael T"
+    ],
+    "journal": "Ophthalmic plastic and reconstructive surgery",
+    "year": "2006",
+    "pub_date": "2006",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article"
+    ],
+    "abstract": "Langer-Giedion syndrome results from a genetic deletion on chromosome 8. Although redundant skin is part of Langer-Giedion syndrome, lower eyelid entropion and eyelid laxity have not been previously reported in the medical literature. We report a case of bilateral lower eyelid entropion in a patient with Langer-Giedion syndrome who successfully underwent entropion repair with anterior lamellar resection, lower eyelid retractor advancement, and lateral canthopexy. Although she has done well 6 months after surgery, we anticipate that laxity and eyelid instability will continue to develop with age, and additional reconstructive surgery may be required.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Adolescent",
+      "Blepharoplasty",
+      "Entropion",
+      "Female",
+      "Follow-Up Studies",
+      "Humans",
+      "Langer-Giedion Syndrome"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1097/01.iop.0000194987.39325.49",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1097/01.iop.0000194987.39325.49?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16418671/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16418671/",
+    "rag_text": "Title: Lower eyelid entropion in Langer-Giedion syndrome.\nAuthors: Chan-Kai Brian T, Yen Michael T\nJournal: Ophthalmic plastic and reconstructive surgery (2006)\nPMID: 16418671\nAbstract: Langer-Giedion syndrome results from a genetic deletion on chromosome 8. Although redundant skin is part of Langer-Giedion syndrome, lower eyelid entropion and eyelid laxity have not been previously reported in the medical literature. We report a case of bilateral lower eyelid entropion in a patient with Langer-Giedion syndrome who successfully underwent entropion repair with anterior lamellar resection, lower eyelid retractor advancement, and lateral canthopexy. Although she has done well 6 months after surgery, we anticipate that laxity and eyelid instability will continue to develop with age, and additional reconstructive surgery may be required.\nMeSH Terms: Adolescent; Blepharoplasty; Entropion; Female; Follow-Up Studies; Humans; Langer-Giedion Syndrome"
+  },
+  {
+    "pmid": "10201043",
+    "doi": "10.1007/s002470050575",
+    "pmc_id": "",
+    "title": "Langer-Giedion syndrome associated with scimitar syndrome.",
+    "authors": [
+      "Sinzig M",
+      "Scheer J",
+      "Willi U V"
+    ],
+    "journal": "Pediatric radiology",
+    "year": "1999",
+    "pub_date": "1999 Mar",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "We describe an infant with Langer-Giedion syndrome combined with scimitar syndrome.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Abnormalities, Multiple",
+      "Cardiac Catheterization",
+      "Diagnosis, Differential",
+      "Follow-Up Studies",
+      "Humans",
+      "Infant",
+      "Langer-Giedion Syndrome",
+      "Male",
+      "Scimitar Syndrome",
+      "Tomography, X-Ray Computed"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1007/s002470050575",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1007/s002470050575?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10201043/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10201043/",
+    "rag_text": "Title: Langer-Giedion syndrome associated with scimitar syndrome.\nAuthors: Sinzig M, Scheer J, Willi U V\nJournal: Pediatric radiology (1999)\nPMID: 10201043\nAbstract: We describe an infant with Langer-Giedion syndrome combined with scimitar syndrome.\nMeSH Terms: Abnormalities, Multiple; Cardiac Catheterization; Diagnosis, Differential; Follow-Up Studies; Humans; Infant; Langer-Giedion Syndrome; Male; Scimitar Syndrome; Tomography, X-Ray Computed"
+  },
+  {
+    "pmid": "30522940",
+    "doi": "10.1016/j.reuma.2018.08.015",
+    "pmc_id": "",
+    "title": "Trichorhinophalangeal syndrome.",
+    "authors": [
+      "Vargas Lebrón Carmen",
+      "Ruiz Montesino Maria Dolores",
+      "Moreira Navarrete Virginia",
+      "Aróstegui Gorospe Juan Ignacio"
+    ],
+    "journal": "Reumatologia clinica",
+    "year": "2020",
+    "pub_date": "2020",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "Trichorhinophalangeal syndrome I (TPRSI) has an autosomal dominant inheritance; the proportion of «de novo» cases is unknown1. It is characterized by unique facial features, bulbous nose, flat and elongated nasolabial furrow, thin hair and slow growth. Skeletal abnormalities that include short phalanges and metacarpals -brachydactyly-, cone-shaped epiphyses, hip dysplasia and short stature1-3.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Female",
+      "Fingers",
+      "Hair Diseases",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Male",
+      "Nose",
+      "Pedigree"
+    ],
+    "keywords": [
+      "Anomalías esqueléticas",
+      "Imágenes radiológicas",
+      "Radiological images",
+      "Skeletal abnormalities",
+      "Síndrome tricorinofalángico",
+      "Tipos",
+      "Trichorhinophalangeal syndrome",
+      "Types"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.reuma.2018.08.015",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.reuma.2018.08.015?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/30522940/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30522940/",
+    "rag_text": "Title: Trichorhinophalangeal syndrome.\nAuthors: Vargas Lebrón Carmen, Ruiz Montesino Maria Dolores, Moreira Navarrete Virginia, Aróstegui Gorospe Juan Ignacio\nJournal: Reumatologia clinica (2020)\nPMID: 30522940\nAbstract: Trichorhinophalangeal syndrome I (TPRSI) has an autosomal dominant inheritance; the proportion of «de novo» cases is unknown1. It is characterized by unique facial features, bulbous nose, flat and elongated nasolabial furrow, thin hair and slow growth. Skeletal abnormalities that include short phalanges and metacarpals -brachydactyly-, cone-shaped epiphyses, hip dysplasia and short stature1-3.\nMeSH Terms: Female; Fingers; Hair Diseases; Humans; Langer-Giedion Syndrome; Male; Nose; Pedigree\nKeywords: Anomalías esqueléticas; Imágenes radiológicas; Radiological images; Skeletal abnormalities; Síndrome tricorinofalángico; Tipos; Trichorhinophalangeal syndrome; Types"
+  },
+  {
+    "pmid": "21574026",
+    "doi": "10.1007/s12519-011-0262-z",
+    "pmc_id": "",
+    "title": "Congenital atrichia and hypotrichosis.",
+    "authors": [
+      "Bennàssar Antoni",
+      "Ferrando Juan",
+      "Grimalt Ramon"
+    ],
+    "journal": "World journal of pediatrics : WJP",
+    "year": "2011",
+    "pub_date": "2011 May",
+    "publication_types": [
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "BACKGROUND: Alopecia present from birth includes a broad differential diagnosis and often represents a diagnostic and therapeutic challenge for the involved physician. DATA SOURCES: An initial correct diagnosis and classification is essential because structural hair defects may be the expression of a genetic disorder affecting hair growth, part of a congenital syndrome with accompanying hair malformations, or a marker for an underlying metabolic disorder and may impact the mental and physical development of a child. Pathological hair loss rarely occurs in the first year of life; however, it may be a leading symptom of many congenital diseases. RESULTS: In recent years, the clinical and microscopic features of hereditary hair shaft disorders have been characterized and classified. Furthermore, significant progress has been made in our knowledge of genes that control the normal development and differentiation of hair follicles, and thus the research is to define and classify the hair disorders within a genetic basis. CONCLUSIONS: In this article we discuss several types of genotrichosis and provide a practical classification based on their clinical features.",
+    "abstract_sections": {
+      "BACKGROUND": "Alopecia present from birth includes a broad differential diagnosis and often represents a diagnostic and therapeutic challenge for the involved physician.",
+      "DATA SOURCES": "An initial correct diagnosis and classification is essential because structural hair defects may be the expression of a genetic disorder affecting hair growth, part of a congenital syndrome with accompanying hair malformations, or a marker for an underlying metabolic disorder and may impact the mental and physical development of a child. Pathological hair loss rarely occurs in the first year of life; however, it may be a leading symptom of many congenital diseases.",
+      "RESULTS": "In recent years, the clinical and microscopic features of hereditary hair shaft disorders have been characterized and classified. Furthermore, significant progress has been made in our knowledge of genes that control the normal development and differentiation of hair follicles, and thus the research is to define and classify the hair disorders within a genetic basis.",
+      "CONCLUSIONS": "In this article we discuss several types of genotrichosis and provide a practical classification based on their clinical features."
+    },
+    "mesh_terms": [
+      "Alopecia",
+      "Aneurysm",
+      "Basal Cell Carcinoma",
+      "Child",
+      "Cleft Lip",
+      "Cleft Palate",
+      "Deafness",
+      "Ectodermal Dysplasia",
+      "Eczema",
+      "Facies",
+      "Fingers",
+      "Growth Disorders",
+      "Hair Diseases",
+      "Hallermann's Syndrome",
+      "Histiocytoma, Benign Fibrous",
+      "Humans",
+      "Hypotrichosis",
+      "Ichthyosis",
+      "Intellectual Disability",
+      "Keratitis",
+      "Langer-Giedion Syndrome",
+      "Microcephaly",
+      "Nose",
+      "Skin Diseases, Genetic",
+      "Skin Neoplasms"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1007/s12519-011-0262-z",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1007/s12519-011-0262-z?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8634201/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21574026/",
+    "rag_text": "Title: Congenital atrichia and hypotrichosis.\nAuthors: Bennàssar Antoni, Ferrando Juan, Grimalt Ramon\nJournal: World journal of pediatrics : WJP (2011)\nPMID: 21574026\nAbstract: BACKGROUND: Alopecia present from birth includes a broad differential diagnosis and often represents a diagnostic and therapeutic challenge for the involved physician. DATA SOURCES: An initial correct diagnosis and classification is essential because structural hair defects may be the expression of a genetic disorder affecting hair growth, part of a congenital syndrome with accompanying hair malformations, or a marker for an underlying metabolic disorder and may impact the mental and physical development of a child. Pathological hair loss rarely occurs in the first year of life; however, it may be a leading symptom of many congenital diseases. RESULTS: In recent years, the clinical and microscopic features of hereditary hair shaft disorders have been characterized and classified. Furthermore, significant progress has been made in our knowledge of genes that control the normal development and differentiation of hair follicles, and thus the research is to define and classify the hair disorders within a genetic basis. CONCLUSIONS: In this article we discuss several types of genotrichosis and provide a practical classification based on their clinical features.\nMeSH Terms: Alopecia; Aneurysm; Basal Cell Carcinoma; Child; Cleft Lip; Cleft Palate; Deafness; Ectodermal Dysplasia; Eczema; Facies; Fingers; Growth Disorders; Hair Diseases; Hallermann's Syndrome; Histiocytoma, Benign Fibrous"
+  },
+  {
+    "pmid": "16243138",
+    "doi": "10.1016/j.jaad.2005.06.003",
+    "pmc_id": "",
+    "title": "Trichorhinophalangeal syndrome.",
+    "authors": [
+      "Vaccaro Mario",
+      "Guarneri Claudio",
+      "Blandino Alfredo"
+    ],
+    "journal": "Journal of the American Academy of Dermatology",
+    "year": "2005",
+    "pub_date": "2005 Nov",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Radiography"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.jaad.2005.06.003",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.jaad.2005.06.003?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16243138/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16243138/",
+    "rag_text": "Title: Trichorhinophalangeal syndrome.\nAuthors: Vaccaro Mario, Guarneri Claudio, Blandino Alfredo\nJournal: Journal of the American Academy of Dermatology (2005)\nPMID: 16243138\nMeSH Terms: Humans; Langer-Giedion Syndrome; Radiography"
+  },
+  {
+    "pmid": "1565510",
+    "doi": "",
+    "pmc_id": "",
+    "title": "The orthopaedic manifestations of the Langer-Giedion syndrome.",
+    "authors": [
+      "Bauermeister S",
+      "Letts M"
+    ],
+    "journal": "Orthopaedic review",
+    "year": "1992",
+    "pub_date": "1992 Jan",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "Less than 50 cases of Langer-Giedion syndrome (also known as trichorhinophalangeal syndrome with exostoses) have been reported in the English literature since its first description in 1974. Affected individuals have been described as having a bulbous nose, micrognathia, short stature, multiple cartilaginous exostoses, and large, protruding ears. We recently treated a 5-year-old, mentally retarded boy with Langer-Giedion syndrome for symptomatic multiple exostoses involving his proximal tibia and distal femur. This paper will highlight the musculoskeletal abnormalities found in this child and compare them to those of 43 patients reported in the world literature. The comparison reveals a very distinctive pattern of exostosis, demonstrating a primary altered growth pattern in the lower extremities and deformity secondary to marked ligamentous laxity. Orthopaedic surgeons are frequently the first consultants to see these children for their obvious osteochondromata. They must consider the diagnosis of Langer-Giedion syndrome to facilitate the treatment of its other manifestations.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Child",
+      "Diagnosis, Differential",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Male"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/1565510/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1565510/",
+    "rag_text": "Title: The orthopaedic manifestations of the Langer-Giedion syndrome.\nAuthors: Bauermeister S, Letts M\nJournal: Orthopaedic review (1992)\nPMID: 1565510\nAbstract: Less than 50 cases of Langer-Giedion syndrome (also known as trichorhinophalangeal syndrome with exostoses) have been reported in the English literature since its first description in 1974. Affected individuals have been described as having a bulbous nose, micrognathia, short stature, multiple cartilaginous exostoses, and large, protruding ears. We recently treated a 5-year-old, mentally retarded boy with Langer-Giedion syndrome for symptomatic multiple exostoses involving his proximal tibia and distal femur. This paper will highlight the musculoskeletal abnormalities found in this child and compare them to those of 43 patients reported in the world literature. The comparison reveals a very distinctive pattern of exostosis, demonstrating a primary altered growth pattern in the lower extremities and deformity secondary to marked ligamentous laxity. Orthopaedic surgeons are frequently the first consultants to see these children for their obvious osteochondromata. They must consider the diagnosis of Langer-Giedion syndrome to facilitate the treatment of its other manifestations.\nMeSH Terms: Child; Diagnosis, Differential; Humans; Langer-Giedion Syndrome; Male"
+  },
+  {
+    "pmid": "4549298",
+    "doi": "",
+    "pmc_id": "",
+    "title": "Langer-Giedion syndrome.",
+    "authors": [
+      "Hall B D",
+      "Langer L O",
+      "Giedion A",
+      "Smith D W",
+      "Cohen M M",
+      "Beals R K",
+      "Brandner M"
+    ],
+    "journal": "Birth defects original article series",
+    "year": "1974",
+    "pub_date": "1974",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Abnormalities, Multiple",
+      "Adolescent",
+      "Bone Diseases, Developmental",
+      "Bone and Bones",
+      "Child",
+      "Exostoses, Multiple Hereditary",
+      "Face",
+      "Female",
+      "Hair",
+      "Hearing Disorders",
+      "Humans",
+      "Intellectual Disability",
+      "Male",
+      "Microcephaly",
+      "Radiography",
+      "Respiratory Tract Infections",
+      "Skin Abnormalities",
+      "Speech Disorders",
+      "Syndrome"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/4549298/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/4549298/",
+    "rag_text": "Title: Langer-Giedion syndrome.\nAuthors: Hall B D, Langer L O, Giedion A, Smith D W, Cohen M M, Beals R K et al. (7 authors)\nJournal: Birth defects original article series (1974)\nPMID: 4549298\nMeSH Terms: Abnormalities, Multiple; Adolescent; Bone Diseases, Developmental; Bone and Bones; Child; Exostoses, Multiple Hereditary; Face; Female; Hair; Hearing Disorders; Humans; Intellectual Disability; Male; Microcephaly; Radiography"
+  },
+  {
+    "pmid": "38255812",
+    "doi": "10.3390/ijms25020738",
+    "pmc_id": "PMC6875901",
+    "title": "Use of Multiple Machine Learning Approaches for Selecting Urothelial Cancer-Specific DNA Methylation Biomarkers in Urine.",
+    "authors": [
+      "Köhler Christina U",
+      "Schork Karin",
+      "Turewicz Michael",
+      "Eisenacher Martin",
+      "Roghmann Florian",
+      "Noldus Joachim",
+      "Marcus Katrin",
+      "Brüning Thomas",
+      "Käfferlein Heiko U"
+    ],
+    "journal": "International journal of molecular sciences",
+    "year": "2024",
+    "pub_date": "2024 Jan 06",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "Diagnosing urothelial cancer (UCa) via invasive cystoscopy is painful, specifically in men, and can cause infection and bleeding. Because the UCa risk is higher for male patients, urinary non-invasive UCa biomarkers are highly desired to stratify men for invasive cystoscopy. We previously identified multiple DNA methylation sites in urine samples that detect UCa with a high sensitivity and specificity in men. Here, we identified the most relevant markers by employing multiple statistical approaches and machine learning (random forest, boosted trees, LASSO) using a dataset of 251 male UCa patients and 111 controls. Three CpG sites located in ALOX5, TRPS1 and an intergenic region on chromosome 16 have been concordantly selected by all approaches, and their combination in a single decision matrix for clinical use was tested based on their respective thresholds of the individual CpGs. The combination of ALOX5 and TRPS1 yielded the best overall sensitivity (61%) at a pre-set specificity of 95%. This combination exceeded both the diagnostic performance of the most sensitive bioinformatic approach and that of the best single CpG. In summary, we showed that overlap analysis of multiple statistical approaches identifies the most reliable biomarkers for UCa in a male collective. The results may assist in stratifying men for cystoscopy.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Male",
+      "Humans",
+      "Biomarkers, Tumor",
+      "DNA Methylation",
+      "Body Fluids",
+      "Machine Learning",
+      "DNA, Neoplasm",
+      "Neoplasms",
+      "Repressor Proteins",
+      "Fingers",
+      "Hair Diseases",
+      "Nose",
+      "Langer-Giedion Syndrome"
+    ],
+    "keywords": [
+      "DNA methylation biomarker",
+      "LASSO",
+      "boosted trees",
+      "random forest",
+      "urothelial cancer"
+    ],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6875901/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6875901/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.3390/ijms25020738",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.3390/ijms25020738?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24404589/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38255812/",
+    "rag_text": "Title: Use of Multiple Machine Learning Approaches for Selecting Urothelial Cancer-Specific DNA Methylation Biomarkers in Urine.\nAuthors: Köhler Christina U, Schork Karin, Turewicz Michael, Eisenacher Martin, Roghmann Florian, Noldus Joachim et al. (9 authors)\nJournal: International journal of molecular sciences (2024)\nPMID: 38255812\nAbstract: Diagnosing urothelial cancer (UCa) via invasive cystoscopy is painful, specifically in men, and can cause infection and bleeding. Because the UCa risk is higher for male patients, urinary non-invasive UCa biomarkers are highly desired to stratify men for invasive cystoscopy. We previously identified multiple DNA methylation sites in urine samples that detect UCa with a high sensitivity and specificity in men. Here, we identified the most relevant markers by employing multiple statistical approaches and machine learning (random forest, boosted trees, LASSO) using a dataset of 251 male UCa patients and 111 controls. Three CpG sites located in ALOX5, TRPS1 and an intergenic region on chromosome 16 have been concordantly selected by all approaches, and their combination in a single decision matrix for clinical use was tested based on their respective thresholds of the individual CpGs. The combination of ALOX5 and TRPS1 yielded the best overall sensitivity (61%) at a pre-set specificity of 95%. This combination exceeded both the diagnostic performance of the most sensitive bioinformatic approach and that of the best single CpG. In summary, we showed that overlap analysis of multiple statistical approaches identifies the most reliable biomarkers for UCa in a male collective. The results may assist in stratifying men for cystoscopy.\nMeSH Terms: Male; Humans; Biomarkers, Tumor; DNA Methylation; Body Fluids; Machine Learning; DNA, Neoplasm; Neoplasms; Repressor Proteins; Fingers; Hair Diseases; Nose; Langer-Giedion Syndrome\nKeywords: DNA methylation biomarker; LASSO; boosted trees; random forest; urothelial cancer"
+  },
+  {
+    "pmid": "32296131",
+    "doi": "10.1038/s10038-020-0754-6",
+    "pmc_id": "PMC7136165",
+    "title": "Long-read DNA sequencing fully characterized chromothripsis in a patient with Langer-Giedion syndrome and Cornelia de Lange syndrome-4.",
+    "authors": [
+      "Lei Ming",
+      "Liang Desheng",
+      "Yang Yifeng",
+      "Mitsuhashi Satomi",
+      "Katoh Kazutaka",
+      "Miyake Noriko",
+      "Frith Martin C",
+      "Wu Lingqian",
+      "Matsumoto Naomichi"
+    ],
+    "journal": "Journal of human genetics",
+    "year": "2020",
+    "pub_date": "2020 Aug",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article"
+    ],
+    "abstract": "Chromothripsis is a type of chaotic complex genomic rearrangement caused by a single event of chromosomal shattering and repair processes. Chromothripsis is known to cause rare congenital diseases when it occurs in germline cells, however, current genome analysis technologies have difficulty in detecting and deciphering chromothripsis. It is possible that this type of complex rearrangement may be overlooked in rare-disease patients whose genetic diagnosis is unsolved. We applied long read nanopore sequencing and our recently developed analysis pipeline dnarrange to a patient who has a reciprocal chromosomal translocation t(8;18)(q22;q21) as a result of chromothripsis between the two chromosomes, and fully characterize the complex rearrangements at the translocation site. The patient genome was evidently shattered into 19 fragments, and rejoined into derivative chromosomes in a random order and orientation. The reconstructed patient genome indicates loss of five genomic regions, which all overlap with microarray-detected copy number losses. We found that two disease-related genes RAD21 and EXT1 were lost by chromothripsis. These two genes could fully explain the disease phenotype with facial dysmorphisms and bone abnormality, which is likely a contiguous gene syndrome, Cornelia de Lange syndrome type IV (CdLs-4) and atypical Langer-Giedion syndrome (LGS), also known as trichorhinophalangeal syndrome type II (TRPSII). This provides evidence that our approach based on long read sequencing can fully characterize chromothripsis in a patient's genome, which is important for understanding the phenotype of disease caused by complex genomic rearrangement.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Cell Cycle Proteins",
+      "Child",
+      "Chromosome Deletion",
+      "Chromothripsis",
+      "DNA-Binding Proteins",
+      "De Lange Syndrome",
+      "Genome",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Male",
+      "N-Acetylglucosaminyltransferases",
+      "Nanopore Sequencing",
+      "Phenotype",
+      "Sequence Analysis, DNA",
+      "Translocation, Genetic",
+      "Exostosin 1"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7136165/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7136165/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1038/s10038-020-0754-6",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1038/s10038-020-0754-6?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27882533/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32296131/",
+    "rag_text": "Title: Long-read DNA sequencing fully characterized chromothripsis in a patient with Langer-Giedion syndrome and Cornelia de Lange syndrome-4.\nAuthors: Lei Ming, Liang Desheng, Yang Yifeng, Mitsuhashi Satomi, Katoh Kazutaka, Miyake Noriko et al. (9 authors)\nJournal: Journal of human genetics (2020)\nPMID: 32296131\nAbstract: Chromothripsis is a type of chaotic complex genomic rearrangement caused by a single event of chromosomal shattering and repair processes. Chromothripsis is known to cause rare congenital diseases when it occurs in germline cells, however, current genome analysis technologies have difficulty in detecting and deciphering chromothripsis. It is possible that this type of complex rearrangement may be overlooked in rare-disease patients whose genetic diagnosis is unsolved. We applied long read nanopore sequencing and our recently developed analysis pipeline dnarrange to a patient who has a reciprocal chromosomal translocation t(8;18)(q22;q21) as a result of chromothripsis between the two chromosomes, and fully characterize the complex rearrangements at the translocation site. The patient genome was evidently shattered into 19 fragments, and rejoined into derivative chromosomes in a random order and orientation. The reconstructed patient genome indicates loss of five genomic regions, which all overlap with microarray-detected copy number losses. We found that two disease-related genes RAD21 and EXT1 were lost by chromothripsis. These two genes could fully explain the disease phenotype with facial dysmorphisms and bone abnormality, which is likely a contiguous gene syndrome, Cornelia de Lange syndrome type IV (CdLs-4) and atypical Langer-Giedion syndrome (LGS), also known as trichorhinophalangeal syndrome type II (TRPSII). This provides evidence that our approach based on long read sequencing can fully characterize chromothripsis in a patient's genome, which is important for understanding the phenotype of disease caused by complex genomic rearrangement.\nMeSH Terms: Cell Cycle Proteins; Child; Chromosome Deletion; Chromothripsis; DNA-Binding Proteins; De Lange Syndrome; Genome; Humans; Langer-Giedion Syndrome; Male; N-Acetylglucosaminyltransferases; Nanopore Sequencing; Phenotype; Sequence Analysis, DNA; Translocation, Genetic"
+  },
+  {
+    "pmid": "31884116",
+    "doi": "10.1016/j.ejmg.2019.103830",
+    "pmc_id": "",
+    "title": "The effect of growth hormone treatment in a child with tricho-rhino-phalangeal syndrome: A case report and review of the literature.",
+    "authors": [
+      "Levy-Shraga Yael",
+      "Modan-Moses Dalit",
+      "Wientroub Shlomo",
+      "Ovadia Dror",
+      "Zeitlin Leonid"
+    ],
+    "journal": "European journal of medical genetics",
+    "year": "2020",
+    "pub_date": "2020 Apr",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "Tricho-rhino-phalangeal syndrome (TRPS) is characterized by craniofacial and skeletal malformations including short stature, cone-shaped phalangeal epiphyses and Perthes-like changes of the hip. We describe the response to growth hormone (GH) treatment in a boy with TRPS. The patient presented at age 3.5 years for evaluation of short stature (-3.2SD). On physical examination, the characteristic facial phenotype of TRPS was noted. Radiographs showed cone-shaped phalangeal epiphyses and bilateral small and fragmented femoral heads. The diagnosis was confirmed by Sanger sequencing of the TRPS1 gene. Two GH stimulation tests revealed GH deficiency, and GH treatment was initiated. Subsequently, growth velocity improved, as did the radiographic appearance of the femoral epiphyses, as seen on sequential pelvis radiographs. This observation suggests the possibility of a beneficial effect of GH treatment on both height and epiphyses status in TRPS patient with GH deficiency. Further studies are needed to support the observation.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Body Height",
+      "Child, Preschool",
+      "Growth Hormone",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Male"
+    ],
+    "keywords": [
+      "Growth hormone",
+      "Hip dysplasia",
+      "TRPS"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.ejmg.2019.103830",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.ejmg.2019.103830?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31884116/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31884116/",
+    "rag_text": "Title: The effect of growth hormone treatment in a child with tricho-rhino-phalangeal syndrome: A case report and review of the literature.\nAuthors: Levy-Shraga Yael, Modan-Moses Dalit, Wientroub Shlomo, Ovadia Dror, Zeitlin Leonid\nJournal: European journal of medical genetics (2020)\nPMID: 31884116\nAbstract: Tricho-rhino-phalangeal syndrome (TRPS) is characterized by craniofacial and skeletal malformations including short stature, cone-shaped phalangeal epiphyses and Perthes-like changes of the hip. We describe the response to growth hormone (GH) treatment in a boy with TRPS. The patient presented at age 3.5 years for evaluation of short stature (-3.2SD). On physical examination, the characteristic facial phenotype of TRPS was noted. Radiographs showed cone-shaped phalangeal epiphyses and bilateral small and fragmented femoral heads. The diagnosis was confirmed by Sanger sequencing of the TRPS1 gene. Two GH stimulation tests revealed GH deficiency, and GH treatment was initiated. Subsequently, growth velocity improved, as did the radiographic appearance of the femoral epiphyses, as seen on sequential pelvis radiographs. This observation suggests the possibility of a beneficial effect of GH treatment on both height and epiphyses status in TRPS patient with GH deficiency. Further studies are needed to support the observation.\nMeSH Terms: Body Height; Child, Preschool; Growth Hormone; Humans; Langer-Giedion Syndrome; Male\nKeywords: Growth hormone; Hip dysplasia; TRPS"
+  },
+  {
+    "pmid": "22854906",
+    "doi": "10.1097/PHM.0b013e3182644034",
+    "pmc_id": "",
+    "title": "Cone-shaped epiphysis.",
+    "authors": [
+      "Durmus Oguz",
+      "Cakar Engin",
+      "Ata Emre",
+      "Dincer Umit",
+      "Kiralp Mehmet Zeki"
+    ],
+    "journal": "American journal of physical medicine & rehabilitation",
+    "year": "2014",
+    "pub_date": "2014 Jan",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article"
+    ],
+    "abstract": "",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Abnormalities, Multiple",
+      "Analgesics",
+      "Arthralgia",
+      "Epiphyses",
+      "Fingers",
+      "Hair Diseases",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Male",
+      "Nose",
+      "Physical Therapy Modalities",
+      "Radiography",
+      "Rare Diseases",
+      "Young Adult"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1097/PHM.0b013e3182644034",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1097/PHM.0b013e3182644034?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22854906/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22854906/",
+    "rag_text": "Title: Cone-shaped epiphysis.\nAuthors: Durmus Oguz, Cakar Engin, Ata Emre, Dincer Umit, Kiralp Mehmet Zeki\nJournal: American journal of physical medicine & rehabilitation (2014)\nPMID: 22854906\nMeSH Terms: Abnormalities, Multiple; Analgesics; Arthralgia; Epiphyses; Fingers; Hair Diseases; Humans; Langer-Giedion Syndrome; Male; Nose; Physical Therapy Modalities; Radiography; Rare Diseases; Young Adult"
+  },
+  {
+    "pmid": "19850687",
+    "doi": "10.1210/jc.2009-0679",
+    "pmc_id": "",
+    "title": "Effect of growth hormone therapy on severe short stature and skeletal deformities in a patient with combined Turner syndrome and Langer mesomelic dysplasia.",
+    "authors": [
+      "Shah Bina C",
+      "Moran Ellen S",
+      "Zinn Andrew R",
+      "Pappas John G"
+    ],
+    "journal": "The Journal of clinical endocrinology and metabolism",
+    "year": "2009",
+    "pub_date": "2009 Dec",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article"
+    ],
+    "abstract": "BACKGROUND: Homozygous mutation of the short stature homeobox-containing gene, SHOX, results in Langer mesomelic dysplasia (LMD). Our case presented with severe short stature and skeletal deformities with Turner syndrome (TS) and a SHOX gene abnormality due to a downstream allele deletion in her normal X chromosome. Medical literature review did not reveal similar cases that were treated with GH therapy. METHOD: We present an 11-yr-old with combined TS and LMD with severe short stature and skeletal deformities. She was studied for the effect of GH therapy on stature and skeletal deformities. Karyotype testing showed 45,X/46,X,idic(X). Genetic analysis of SHOX gene testing did not detect any exonic mutations. Interestingly, both alleles of the flanking marker DXYS233, a marker downstream of the 3' end of SHOX coding sequence, were absent with resultant LMD. GH therapy in the mean dose of 0.321 mg/kg/wk was administered for 4 yr (0.287, 0.355, 0.317, and 0.327 mg/kg/week in the first, second, third, and fourth years, respectively). Clinical data were reviewed. RESULT: The growth rates of 3.46, 3.87, 2.3, and 0.7 cm/yr were observed in the first, second, third, and fourth years of the GH therapy, respectively. There was no clinical deterioration of the skeletal deformities. CONCLUSION: There was a failure to achieve growth improvements with GH therapy for 4 years, but there was no worsening of the skeletal deformities. We conclude that GH therapy may not be beneficial in severe short stature due to combined TS and LMD resulting from homozygous SHOX deficiency.",
+    "abstract_sections": {
+      "BACKGROUND": "Homozygous mutation of the short stature homeobox-containing gene, SHOX, results in Langer mesomelic dysplasia (LMD). Our case presented with severe short stature and skeletal deformities with Turner syndrome (TS) and a SHOX gene abnormality due to a downstream allele deletion in her normal X chromosome. Medical literature review did not reveal similar cases that were treated with GH therapy.",
+      "METHOD": "We present an 11-yr-old with combined TS and LMD with severe short stature and skeletal deformities. She was studied for the effect of GH therapy on stature and skeletal deformities. Karyotype testing showed 45,X/46,X,idic(X). Genetic analysis of SHOX gene testing did not detect any exonic mutations. Interestingly, both alleles of the flanking marker DXYS233, a marker downstream of the 3' end of SHOX coding sequence, were absent with resultant LMD. GH therapy in the mean dose of 0.321 mg/kg/wk was administered for 4 yr (0.287, 0.355, 0.317, and 0.327 mg/kg/week in the first, second, third, and fourth years, respectively). Clinical data were reviewed.",
+      "RESULT": "The growth rates of 3.46, 3.87, 2.3, and 0.7 cm/yr were observed in the first, second, third, and fourth years of the GH therapy, respectively. There was no clinical deterioration of the skeletal deformities.",
+      "CONCLUSION": "There was a failure to achieve growth improvements with GH therapy for 4 years, but there was no worsening of the skeletal deformities. We conclude that GH therapy may not be beneficial in severe short stature due to combined TS and LMD resulting from homozygous SHOX deficiency."
+    },
+    "mesh_terms": [
+      "Body Height",
+      "Bone and Bones",
+      "Child",
+      "Cytogenetic Analysis",
+      "Female",
+      "Genetic Markers",
+      "Growth",
+      "Homeodomain Proteins",
+      "Human Growth Hormone",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Recombinant Proteins",
+      "Short Stature Homeobox Protein",
+      "Turner Syndrome"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1210/jc.2009-0679",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1210/jc.2009-0679?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/19850687/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19850687/",
+    "rag_text": "Title: Effect of growth hormone therapy on severe short stature and skeletal deformities in a patient with combined Turner syndrome and Langer mesomelic dysplasia.\nAuthors: Shah Bina C, Moran Ellen S, Zinn Andrew R, Pappas John G\nJournal: The Journal of clinical endocrinology and metabolism (2009)\nPMID: 19850687\nAbstract: BACKGROUND: Homozygous mutation of the short stature homeobox-containing gene, SHOX, results in Langer mesomelic dysplasia (LMD). Our case presented with severe short stature and skeletal deformities with Turner syndrome (TS) and a SHOX gene abnormality due to a downstream allele deletion in her normal X chromosome. Medical literature review did not reveal similar cases that were treated with GH therapy. METHOD: We present an 11-yr-old with combined TS and LMD with severe short stature and skeletal deformities. She was studied for the effect of GH therapy on stature and skeletal deformities. Karyotype testing showed 45,X/46,X,idic(X). Genetic analysis of SHOX gene testing did not detect any exonic mutations. Interestingly, both alleles of the flanking marker DXYS233, a marker downstream of the 3' end of SHOX coding sequence, were absent with resultant LMD. GH therapy in the mean dose of 0.321 mg/kg/wk was administered for 4 yr (0.287, 0.355, 0.317, and 0.327 mg/kg/week in the first, second, third, and fourth years, respectively). Clinical data were reviewed. RESULT: The growth rates of 3.46, 3.87, 2.3, and 0.7 cm/yr were observed in the first, second, third, and fourth years of the GH therapy, respectively. There was no clinical deterioration of the skeletal deformities. CONCLUSION: There was a failure to achieve growth improvements with GH therapy for 4 years, but there was no worsening of the skeletal deformities. We conclude that GH therapy may not be beneficial in severe short stature due to combined TS and LMD resulting from homozygous SHOX deficiency.\nMeSH Terms: Body Height; Bone and Bones; Child; Cytogenetic Analysis; Female; Genetic Markers; Growth; Homeodomain Proteins; Human Growth Hormone; Humans; Langer-Giedion Syndrome; Recombinant Proteins; Short Stature Homeobox Protein; Turner Syndrome"
+  },
+  {
+    "pmid": "38574886",
+    "doi": "10.1016/j.ejmg.2024.104937",
+    "pmc_id": "",
+    "title": "Clinical presentation and genetics of tricho-rhino-phalangeal syndrome (TRPS) type 1: A single-center case series of 15 patients and seven novel TRPS1 variants.",
+    "authors": [
+      "Herlin Laura Krogh",
+      "Herlin Morten Krogh",
+      "Blechingberg Jenny",
+      "Rønholt Kirsten",
+      "Graversen Lise",
+      "Schmidt Sigrun A J",
+      "Jørgensen Mette Warming",
+      "Hellfritzsch Michel Bach",
+      "Hald Jannie Dahl",
+      "Beck-Nielsen Signe Sparre",
+      "Gjørup Hans",
+      "Andersen Brian Nauheimer",
+      "Gregersen Pernille Axél",
+      "Sommerlund Mette"
+    ],
+    "journal": "European journal of medical genetics",
+    "year": "2024",
+    "pub_date": "2024 Jun",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "Tricho-rhino-phalangeal syndrome (TRPS) is a rare malformation syndrome characterized by distinctive facial, ectodermal, and skeletal features. TRPS is divided into TRPS type I/III caused by pathogenic variants in TRPS1 and TRPS type II caused by contiguous gene deletions also spanning EXT1 and RAD21. Due to its rarity, knowledge of the clinical course of TRPS remains limited. Therefore, we collected and characterized a case series of 15 TRPS type I patients (median age at diagnosis 15 [interquartile range: 10-18] years, 11 females [73%]) seen at Aarhus University Hospital, Denmark, with a median follow-up period of 10 years. We estimated a minimum point prevalence of 0.5 in 100,000 (95% CI: 0.3-0.8 per 100,000) persons. Common craniofacial features included fine and sparse hair with a high anterior hairline, eyebrows with lateral thinning and a thicker medial part, prominent ears, a bulbous nose tip with small nasal alae, a low-hanging, and often wide columella, and a long philtrum with a thin upper vermillion. Specific skeletal features included short stature and deviating and short fingers with cone-shaped epiphyses and shortened metacarpals on radiographs. The most significant morbidity of the cohort was joint complaints, which were reported by all patients, often already before the TRPS diagnosis was established. We identified ten different TRPS1 variants including both frameshift/nonsense, missense, and splice-site variants, including seven variants not previously reported in the literature. In accordance with previous literature, no genotype-phenotype correlation was identified. The clinical trajectories were heterogeneous involving pediatrics, dermatology, orthopedic surgery, clinical genetics, and/or odontology, emphasizing that close multidisciplinary collaboration is essential for early diagnosis of TRPS and to ensure proper and timely patient care and counseling.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Adolescent",
+      "Child",
+      "Female",
+      "Humans",
+      "Male",
+      "DNA-Binding Proteins",
+      "Fingers",
+      "Hair Diseases",
+      "Langer-Giedion Syndrome",
+      "Nose",
+      "Phenotype",
+      "Repressor Proteins",
+      "Transcription Factors"
+    ],
+    "keywords": [
+      "Ectodermal dysplasia",
+      "Genotype",
+      "Phenotype",
+      "Prognosis",
+      "TRPS1",
+      "Tricho-rhino-phalangeal syndrome"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.ejmg.2024.104937",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.ejmg.2024.104937?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/38574886/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38574886/",
+    "rag_text": "Title: Clinical presentation and genetics of tricho-rhino-phalangeal syndrome (TRPS) type 1: A single-center case series of 15 patients and seven novel TRPS1 variants.\nAuthors: Herlin Laura Krogh, Herlin Morten Krogh, Blechingberg Jenny, Rønholt Kirsten, Graversen Lise, Schmidt Sigrun A J et al. (14 authors)\nJournal: European journal of medical genetics (2024)\nPMID: 38574886\nAbstract: Tricho-rhino-phalangeal syndrome (TRPS) is a rare malformation syndrome characterized by distinctive facial, ectodermal, and skeletal features. TRPS is divided into TRPS type I/III caused by pathogenic variants in TRPS1 and TRPS type II caused by contiguous gene deletions also spanning EXT1 and RAD21. Due to its rarity, knowledge of the clinical course of TRPS remains limited. Therefore, we collected and characterized a case series of 15 TRPS type I patients (median age at diagnosis 15 [interquartile range: 10-18] years, 11 females [73%]) seen at Aarhus University Hospital, Denmark, with a median follow-up period of 10 years. We estimated a minimum point prevalence of 0.5 in 100,000 (95% CI: 0.3-0.8 per 100,000) persons. Common craniofacial features included fine and sparse hair with a high anterior hairline, eyebrows with lateral thinning and a thicker medial part, prominent ears, a bulbous nose tip with small nasal alae, a low-hanging, and often wide columella, and a long philtrum with a thin upper vermillion. Specific skeletal features included short stature and deviating and short fingers with cone-shaped epiphyses and shortened metacarpals on radiographs. The most significant morbidity of the cohort was joint complaints, which were reported by all patients, often already before the TRPS diagnosis was established. We identified ten different TRPS1 variants including both frameshift/nonsense, missense, and splice-site variants, including seven variants not previously reported in the literature. In accordance with previous literature, no genotype-phenotype correlation was identified. The clinical trajectories were heterogeneous involving pediatrics, dermatology, orthopedic surgery, clinical genetics, and/or odontology, emphasizing that close multidisciplinary collaboration is essential for early diagnosis of TRPS and to ensure proper and timely patient care and counseling.\nMeSH Terms: Adolescent; Child; Female; Humans; Male; DNA-Binding Proteins; Fingers; Hair Diseases; Langer-Giedion Syndrome; Nose; Phenotype; Repressor Proteins; Transcription Factors\nKeywords: Ectodermal dysplasia; Genotype; Phenotype; Prognosis; TRPS1; Tricho-rhino-phalangeal syndrome"
+  },
+  {
+    "pmid": "27706911",
+    "doi": "10.1002/ajmg.a.37967",
+    "pmc_id": "",
+    "title": "Making extra teeth: Lessons from a TRPS1 mutation.",
+    "authors": [
+      "Kunotai Worawan",
+      "Ananpornruedee Panjit",
+      "Lubinsky Mark",
+      "Pruksametanan Apitchaya",
+      "Kantaputra Piranit Nik"
+    ],
+    "journal": "American journal of medical genetics. Part A",
+    "year": "2017",
+    "pub_date": "2017 Jan",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "A Thai mother and her two daughters were affected with tricho-rhino-phalangeal syndrome type I. The daughters had 15 and 18 supernumerary teeth, respectively. The mother had normal dentition. Mutation analysis of TRPS1 showed a novel heterozygous c.3809_3811delACTinsCATGTTGTG mutation in all. This mutation is predicted to cause amino acid changes in the Ikaros-like zinc finger domain near the C-terminal end of TRPS1, which is important for repressive protein function. The results of our study and the comprehensive review of the literature show that pathways of forming supernumerary teeth appear to involve APC and RUNX2, the genes responsible for familial adenomatous polyposis syndrome and cleidocranial dysplasia, respectively. The final pathway resulting in supernumerary teeth seems to involve Wnt, a morphogen active during many stages of development. © 2016 Wiley Periodicals, Inc.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Adult",
+      "DNA Mutational Analysis",
+      "DNA-Binding Proteins",
+      "Facies",
+      "Female",
+      "Fingers",
+      "Genetic Association Studies",
+      "Hair Diseases",
+      "Heterozygote",
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Middle Aged",
+      "Models, Biological",
+      "Mutation",
+      "Nose",
+      "Phenotype",
+      "Radiography",
+      "Repressor Proteins",
+      "Tooth, Supernumerary",
+      "Transcription Factors"
+    ],
+    "keywords": [
+      "Langer-Giedion syndrome",
+      "Wnt signaling",
+      "exostosis",
+      "extra teeth",
+      "supernumerary teeth",
+      "tricho-rhino-phalangeal syndrome"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1002/ajmg.a.37967",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1002/ajmg.a.37967?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27706911/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27706911/",
+    "rag_text": "Title: Making extra teeth: Lessons from a TRPS1 mutation.\nAuthors: Kunotai Worawan, Ananpornruedee Panjit, Lubinsky Mark, Pruksametanan Apitchaya, Kantaputra Piranit Nik\nJournal: American journal of medical genetics. Part A (2017)\nPMID: 27706911\nAbstract: A Thai mother and her two daughters were affected with tricho-rhino-phalangeal syndrome type I. The daughters had 15 and 18 supernumerary teeth, respectively. The mother had normal dentition. Mutation analysis of TRPS1 showed a novel heterozygous c.3809_3811delACTinsCATGTTGTG mutation in all. This mutation is predicted to cause amino acid changes in the Ikaros-like zinc finger domain near the C-terminal end of TRPS1, which is important for repressive protein function. The results of our study and the comprehensive review of the literature show that pathways of forming supernumerary teeth appear to involve APC and RUNX2, the genes responsible for familial adenomatous polyposis syndrome and cleidocranial dysplasia, respectively. The final pathway resulting in supernumerary teeth seems to involve Wnt, a morphogen active during many stages of development. © 2016 Wiley Periodicals, Inc.\nMeSH Terms: Adult; DNA Mutational Analysis; DNA-Binding Proteins; Facies; Female; Fingers; Genetic Association Studies; Hair Diseases; Heterozygote; Humans; Langer-Giedion Syndrome; Middle Aged; Models, Biological; Mutation; Nose\nKeywords: Langer-Giedion syndrome; Wnt signaling; exostosis; extra teeth; supernumerary teeth; tricho-rhino-phalangeal syndrome"
+  },
+  {
+    "pmid": "1856833",
+    "doi": "10.1136/jmg.28.4.262",
+    "pmc_id": "PMC1016830",
+    "title": "Hereditary multiple exostoses.",
+    "authors": [
+      "Hennekam R C"
+    ],
+    "journal": "Journal of medical genetics",
+    "year": "1991",
+    "pub_date": "1991 Apr",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Adult",
+      "Diagnosis, Differential",
+      "Exostoses, Multiple Hereditary",
+      "Humans",
+      "Incidence",
+      "Langer-Giedion Syndrome",
+      "Male",
+      "Radiography",
+      "United Kingdom"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1016830/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1016830/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1136/jmg.28.4.262",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1136/jmg.28.4.262?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15580741/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1856833/",
+    "rag_text": "Title: Hereditary multiple exostoses.\nAuthors: Hennekam R C\nJournal: Journal of medical genetics (1991)\nPMID: 1856833\nMeSH Terms: Adult; Diagnosis, Differential; Exostoses, Multiple Hereditary; Humans; Incidence; Langer-Giedion Syndrome; Male; Radiography; United Kingdom"
+  },
+  {
+    "pmid": "42361898",
+    "doi": "10.1016/j.ejmg.2026.105091",
+    "pmc_id": "",
+    "title": "Clinical and genetic spectrum of trichorhinophalangeal syndrome type I/III in 20 children of Korean origin.",
+    "authors": [
+      "Park Ayoung",
+      "Choi Naye",
+      "Cho Tae-Joon",
+      "Ko Jung Min"
+    ],
+    "journal": "European journal of medical genetics",
+    "year": "2026",
+    "pub_date": "2026 Jul",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "BACKGROUND: Trichorhinophalangeal syndrome type I/III (TRPS I/III) is a rare autosomal dominant skeletal dysplasia caused by pathogenic variants of TRPS1. Although several European cohorts have been reported, data from East Asian populations remain limited and longitudinal growth patterns and treatment responses have not been systematically evaluated. METHODS: We conducted a retrospective single-center study of 20 unrelated children of Korean origin with molecularly confirmed TRPS I/III, between 2012 and 2024. The clinical, radiological, and genetic data were reviewed. Growth parameters were analyzed using Korean reference standards and genotype-phenotype correlations were explored. Treatment responses to recombinant human growth hormone (rhGH) and minoxidil were assessed descriptively. RESULTS: All the patients exhibited characteristic craniofacial features and cone-shaped epiphyses with variable skeletal involvement. Short stature (standard deviation score [SDS] of height < -2) was observed in 21% of patients. Bone age was delayed before 12 years of age but showed rapid advancement thereafter, accompanied by a decline in height SDS during adolescence (p = 0.017). Truncating variants were identified in 65% of patients, missense variants in exon 6 in 15%, and exonic deletions in 20%. Missense variants in exon 6 were consistently associated with severe brachydactyly, whereas the overall stature showed no clear correlation with genotype. Responses to rhGH and minoxidil treatments were variable. CONCLUSIONS: TRPS I/III demonstrated substantial phenotypic heterogeneity and age-dependent growth dynamics in this Korean cohort. Severe distal limb involvement was associated with exon 6 missense variants, whereas growth impairment remained variable. Long-term follow-up and multidisciplinary management are essential to optimize clinical outcomes.",
+    "abstract_sections": {
+      "BACKGROUND": "Trichorhinophalangeal syndrome type I/III (TRPS I/III) is a rare autosomal dominant skeletal dysplasia caused by pathogenic variants of TRPS1. Although several European cohorts have been reported, data from East Asian populations remain limited and longitudinal growth patterns and treatment responses have not been systematically evaluated.",
+      "METHODS": "We conducted a retrospective single-center study of 20 unrelated children of Korean origin with molecularly confirmed TRPS I/III, between 2012 and 2024. The clinical, radiological, and genetic data were reviewed. Growth parameters were analyzed using Korean reference standards and genotype-phenotype correlations were explored. Treatment responses to recombinant human growth hormone (rhGH) and minoxidil were assessed descriptively.",
+      "RESULTS": "All the patients exhibited characteristic craniofacial features and cone-shaped epiphyses with variable skeletal involvement. Short stature (standard deviation score [SDS] of height < -2) was observed in 21% of patients. Bone age was delayed before 12 years of age but showed rapid advancement thereafter, accompanied by a decline in height SDS during adolescence (p = 0.017). Truncating variants were identified in 65% of patients, missense variants in exon 6 in 15%, and exonic deletions in 20%. Missense variants in exon 6 were consistently associated with severe brachydactyly, whereas the overall stature showed no clear correlation with genotype. Responses to rhGH and minoxidil treatments were variable.",
+      "CONCLUSIONS": "TRPS I/III demonstrated substantial phenotypic heterogeneity and age-dependent growth dynamics in this Korean cohort. Severe distal limb involvement was associated with exon 6 missense variants, whereas growth impairment remained variable. Long-term follow-up and multidisciplinary management are essential to optimize clinical outcomes."
+    },
+    "mesh_terms": [
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Child",
+      "Female",
+      "Child, Preschool",
+      "Repressor Proteins",
+      "Male",
+      "Republic of Korea",
+      "Hair Diseases",
+      "Nose",
+      "DNA-Binding Proteins",
+      "Transcription Factors",
+      "Adolescent",
+      "Phenotype",
+      "Infant",
+      "Fingers",
+      "Genetic Association Studies",
+      "Retrospective Studies",
+      "Mutation"
+    ],
+    "keywords": [
+      "Genotype-phenotype correlation",
+      "Growth disorders",
+      "Skeletal dysplasia",
+      "TRPS1 protein",
+      "Trichorhinophalangeal syndrome"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.ejmg.2026.105091",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.ejmg.2026.105091?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42361898/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42361898/",
+    "rag_text": "Title: Clinical and genetic spectrum of trichorhinophalangeal syndrome type I/III in 20 children of Korean origin.\nAuthors: Park Ayoung, Choi Naye, Cho Tae-Joon, Ko Jung Min\nJournal: European journal of medical genetics (2026)\nPMID: 42361898\nAbstract: BACKGROUND: Trichorhinophalangeal syndrome type I/III (TRPS I/III) is a rare autosomal dominant skeletal dysplasia caused by pathogenic variants of TRPS1. Although several European cohorts have been reported, data from East Asian populations remain limited and longitudinal growth patterns and treatment responses have not been systematically evaluated. METHODS: We conducted a retrospective single-center study of 20 unrelated children of Korean origin with molecularly confirmed TRPS I/III, between 2012 and 2024. The clinical, radiological, and genetic data were reviewed. Growth parameters were analyzed using Korean reference standards and genotype-phenotype correlations were explored. Treatment responses to recombinant human growth hormone (rhGH) and minoxidil were assessed descriptively. RESULTS: All the patients exhibited characteristic craniofacial features and cone-shaped epiphyses with variable skeletal involvement. Short stature (standard deviation score [SDS] of height < -2) was observed in 21% of patients. Bone age was delayed before 12 years of age but showed rapid advancement thereafter, accompanied by a decline in height SDS during adolescence (p = 0.017). Truncating variants were identified in 65% of patients, missense variants in exon 6 in 15%, and exonic deletions in 20%. Missense variants in exon 6 were consistently associated with severe brachydactyly, whereas the overall stature showed no clear correlation with genotype. Responses to rhGH and minoxidil treatments were variable. CONCLUSIONS: TRPS I/III demonstrated substantial phenotypic heterogeneity and age-dependent growth dynamics in this Korean cohort. Severe distal limb involvement was associated with exon 6 missense variants, whereas growth impairment remained variable. Long-term follow-up and multidisciplinary management are essential to optimize clinical outcomes.\nMeSH Terms: Humans; Langer-Giedion Syndrome; Child; Female; Child, Preschool; Repressor Proteins; Male; Republic of Korea; Hair Diseases; Nose; DNA-Binding Proteins; Transcription Factors; Adolescent; Phenotype; Infant\nKeywords: Genotype-phenotype correlation; Growth disorders; Skeletal dysplasia; TRPS1 protein; Trichorhinophalangeal syndrome"
+  },
+  {
+    "pmid": "2651669",
+    "doi": "10.1136/jmg.26.3.167",
+    "pmc_id": "PMC1015577",
+    "title": "Partial deletion 8q without Langer-Giedion syndrome: a recognisable syndrome.",
+    "authors": [
+      "Fennell S J",
+      "Benson J W",
+      "Kindley A D",
+      "Schwarz M J",
+      "Czepulkowski B"
+    ],
+    "journal": "Journal of medical genetics",
+    "year": "1989",
+    "pub_date": "1989 Mar",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "We report two de novo cases of del(8)(pter----q24.1:) with breakpoints involving the distal part of band 8q24.1. The clinical features were similar and there were no obvious stigmata of Langer-Giedion syndrome (LGS). There are three other cases reported with a deletion of chromosome 8 at approximately the same breakpoint, one without LGS and some similarities to our cases, the other two with LGS. Our findings would support the observation that the critical segment for the assignment of LGS is proximal to or involves the proximal part of 8q24.1, but a review of published reports suggests that the aetiology of LGS may be a more complex issue.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 8",
+      "Face",
+      "Facial Bones",
+      "Female",
+      "Growth Disorders",
+      "Humans",
+      "Infant",
+      "Infant, Newborn",
+      "Karyotyping",
+      "Male",
+      "Seizures",
+      "Syndrome"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1015577/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1015577/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1136/jmg.26.3.167",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1136/jmg.26.3.167?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/6885060/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/2651669/",
+    "rag_text": "Title: Partial deletion 8q without Langer-Giedion syndrome: a recognisable syndrome.\nAuthors: Fennell S J, Benson J W, Kindley A D, Schwarz M J, Czepulkowski B\nJournal: Journal of medical genetics (1989)\nPMID: 2651669\nAbstract: We report two de novo cases of del(8)(pter----q24.1:) with breakpoints involving the distal part of band 8q24.1. The clinical features were similar and there were no obvious stigmata of Langer-Giedion syndrome (LGS). There are three other cases reported with a deletion of chromosome 8 at approximately the same breakpoint, one without LGS and some similarities to our cases, the other two with LGS. Our findings would support the observation that the critical segment for the assignment of LGS is proximal to or involves the proximal part of 8q24.1, but a review of published reports suggests that the aetiology of LGS may be a more complex issue.\nMeSH Terms: Chromosome Deletion; Chromosomes, Human, Pair 8; Face; Facial Bones; Female; Growth Disorders; Humans; Infant; Infant, Newborn; Karyotyping; Male; Seizures; Syndrome"
+  },
+  {
+    "pmid": "39162698",
+    "doi": "10.5435/JAAOSGlobal-D-24-00010",
+    "pmc_id": "PMC4148676",
+    "title": "Trichorhinophalangeal Syndrome Orthopaedic Manifestations and Management: A Systematic Review.",
+    "authors": [
+      "Ellison Emily",
+      "Grampp Steven J",
+      "Ellison Seth",
+      "Seeley Andrea",
+      "Seeley Mark"
+    ],
+    "journal": "Journal of the American Academy of Orthopaedic Surgeons. Global research & reviews",
+    "year": "2024",
+    "pub_date": "2024 Aug 01",
+    "publication_types": [
+      "Systematic Review",
+      "Journal Article"
+    ],
+    "abstract": "Trichorhinophalangeal syndrome (TRPS) is an autosomal dominant genetic malformation disorder which is best characterized by both its craniofacial and skeletal abnormalities. The purpose of this paper is to identify the various orthopedic manifestations and management in patients with TRPS. A systematic search of PubMed, Ovid MEDLINE, and Cochrane Library was conducted. They were each individually searched for primary articles yielding information on the orthopedic manifestations and management of patients with TRPS. The goals and results of each of the included studies were described. Data regarding the demographics, orthopedic condition, treatment strategy, and outcomes were extracted and analyzed. 221 unique articles were retrieved, with 13 articles being included in the study. 26 patients with TRPS were identified. Trials of conservative management were reported for 14 patients, and surgical intervention was pursued for 8 patients. The mean age for surgery was 14.1 years. The most common orthopedic manifestations of TRPS are clinodactyly, Perthes-like changes, and coxa magna. Early identification and maintenance of TRPS is important for being able to monitor musculoskeletal health of the patients in order to prevent detrimental outcomes. Additional high-quality research is required regarding the orthopedic manifestations and treatment of this patient population.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Humans",
+      "Langer-Giedion Syndrome",
+      "Hair Diseases",
+      "Nose",
+      "Fingers",
+      "Child",
+      "Adolescent"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4148676/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4148676/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.5435/JAAOSGlobal-D-24-00010",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.5435/JAAOSGlobal-D-24-00010?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28426188/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39162698/",
+    "rag_text": "Title: Trichorhinophalangeal Syndrome Orthopaedic Manifestations and Management: A Systematic Review.\nAuthors: Ellison Emily, Grampp Steven J, Ellison Seth, Seeley Andrea, Seeley Mark\nJournal: Journal of the American Academy of Orthopaedic Surgeons. Global research & reviews (2024)\nPMID: 39162698\nAbstract: Trichorhinophalangeal syndrome (TRPS) is an autosomal dominant genetic malformation disorder which is best characterized by both its craniofacial and skeletal abnormalities. The purpose of this paper is to identify the various orthopedic manifestations and management in patients with TRPS. A systematic search of PubMed, Ovid MEDLINE, and Cochrane Library was conducted. They were each individually searched for primary articles yielding information on the orthopedic manifestations and management of patients with TRPS. The goals and results of each of the included studies were described. Data regarding the demographics, orthopedic condition, treatment strategy, and outcomes were extracted and analyzed. 221 unique articles were retrieved, with 13 articles being included in the study. 26 patients with TRPS were identified. Trials of conservative management were reported for 14 patients, and surgical intervention was pursued for 8 patients. The mean age for surgery was 14.1 years. The most common orthopedic manifestations of TRPS are clinodactyly, Perthes-like changes, and coxa magna. Early identification and maintenance of TRPS is important for being able to monitor musculoskeletal health of the patients in order to prevent detrimental outcomes. Additional high-quality research is required regarding the orthopedic manifestations and treatment of this patient population.\nMeSH Terms: Humans; Langer-Giedion Syndrome; Hair Diseases; Nose; Fingers; Child; Adolescent"
+  }
+]

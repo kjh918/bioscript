@@ -1,0 +1,1478 @@
+[
+  {
+    "pmid": "32404571",
+    "doi": "10.3960/jslrt.20002",
+    "pmc_id": "PMC6027999",
+    "title": "Treatment algorithm for Japanese patients with chronic lymphocytic leukemia in the era of novel targeted therapies.",
+    "authors": [
+      "Kojima Kensuke",
+      "Burger Jan A"
+    ],
+    "journal": "Journal of clinical and experimental hematopathology : JCEH",
+    "year": "2020",
+    "pub_date": "2020 Dec 15",
+    "publication_types": [
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "Treatment for patients with chronic lymphocytic leukemia (CLL) is becoming more individualized due to the recent introduction of novel molecularly targeted therapies into the therapeutic armamentarium. Genomic and molecular risk factors in CLL patients determine the individual risk for disease progression and response to therapy, and can impact survival. In this review article, we discuss current treatment strategies for CLL patients in Japan, where the novel targeted agents, the BTK inhibitor ibrutinib and BCL2 antagonist venetoclax, now are available and increasingly used in clinical practice. We also discuss the importance of CLL risk factors for making therapy decisions, focusing on immunoglobulin variable region heavy chain (IGHV) mutation status, 11q deletion, and 17p deletion. Treatment approaches for CLL have rapidly changed in the past few years because of these new targeted agents. They are highly effective, well tolerated, and have been demonstrated in a series of large randomized clinical trials to improve survival when compared with conventional chemotherapy-based treatment. Therefore, for most patients, especially high-risk CLL patients, BTK inhibitor and BCL2 antagonist therapies are preferred over chemo-immunotherapy. Currently ongoing studies seek to determine the best sequence for these new agents and whether a combination therapy approach is beneficial. With these developments, a new era of chemotherapy-free treatment for CLL patients is expected.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Algorithms",
+      "Antineoplastic Combined Chemotherapy Protocols",
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 11",
+      "Chromosomes, Human, Pair 17",
+      "Disease-Free Survival",
+      "Humans",
+      "Immunoglobulin Heavy Chains",
+      "Immunoglobulin Variable Region",
+      "Leukemia, Lymphocytic, Chronic, B-Cell",
+      "Molecular Targeted Therapy",
+      "Neoplasm Proteins",
+      "Smith-Magenis Syndrome",
+      "Survival Rate"
+    ],
+    "keywords": [
+      "17p deletion",
+      "Chronic lymphocytic leukemia (CLL)",
+      "TP53 mutation",
+      "ibrutinib",
+      "venetoclax"
+    ],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6027999/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6027999/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.3960/jslrt.20002",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.3960/jslrt.20002?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10504519/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32404571/",
+    "rag_text": "Title: Treatment algorithm for Japanese patients with chronic lymphocytic leukemia in the era of novel targeted therapies.\nAuthors: Kojima Kensuke, Burger Jan A\nJournal: Journal of clinical and experimental hematopathology : JCEH (2020)\nPMID: 32404571\nAbstract: Treatment for patients with chronic lymphocytic leukemia (CLL) is becoming more individualized due to the recent introduction of novel molecularly targeted therapies into the therapeutic armamentarium. Genomic and molecular risk factors in CLL patients determine the individual risk for disease progression and response to therapy, and can impact survival. In this review article, we discuss current treatment strategies for CLL patients in Japan, where the novel targeted agents, the BTK inhibitor ibrutinib and BCL2 antagonist venetoclax, now are available and increasingly used in clinical practice. We also discuss the importance of CLL risk factors for making therapy decisions, focusing on immunoglobulin variable region heavy chain (IGHV) mutation status, 11q deletion, and 17p deletion. Treatment approaches for CLL have rapidly changed in the past few years because of these new targeted agents. They are highly effective, well tolerated, and have been demonstrated in a series of large randomized clinical trials to improve survival when compared with conventional chemotherapy-based treatment. Therefore, for most patients, especially high-risk CLL patients, BTK inhibitor and BCL2 antagonist therapies are preferred over chemo-immunotherapy. Currently ongoing studies seek to determine the best sequence for these new agents and whether a combination therapy approach is beneficial. With these developments, a new era of chemotherapy-free treatment for CLL patients is expected.\nMeSH Terms: Algorithms; Antineoplastic Combined Chemotherapy Protocols; Chromosome Deletion; Chromosomes, Human, Pair 11; Chromosomes, Human, Pair 17; Disease-Free Survival; Humans; Immunoglobulin Heavy Chains; Immunoglobulin Variable Region; Leukemia, Lymphocytic, Chronic, B-Cell; Molecular Targeted Therapy; Neoplasm Proteins; Smith-Magenis Syndrome; Survival Rate\nKeywords: 17p deletion; Chronic lymphocytic leukemia (CLL); TP53 mutation; ibrutinib; venetoclax"
+  },
+  {
+    "pmid": "26285164",
+    "doi": "10.1002/ajmg.c.31448",
+    "pmc_id": "",
+    "title": "Jacobsen syndrome: Advances in our knowledge of phenotype and genotype.",
+    "authors": [
+      "Favier Remi",
+      "Akshoomoff Natacha",
+      "Mattson Sarah",
+      "Grossfeld Paul"
+    ],
+    "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+    "year": "2015",
+    "pub_date": "2015 Sep",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Review"
+    ],
+    "abstract": "In 1973, the Danish geneticist Petrea Jacobsen described a three-generation family in which the proband carried a presumed terminal deletion at the end of the long arm of chromosome 11 (11q). This patient had dysmorphic features, congenital heart disease, and intellectual disability. Since Dr. Jacobsen's initial report, over 200 patients with Jacobsen syndrome have been reported, suggesting that Jacobsen syndrome is a contiguous gene disorder. With the advent of high resolution deletion mapping and the completion of the human genome sequencing project, a comprehensive genotype/phenotype analysis for Jacobsen syndrome became possible. In this article, we review research describing individual causal genes in distal 11q that contribute to the overall Jacobsen syndrome clinical phenotype. Through a combination of human genetics and the use of genetically engineered animal models, causal genes have been identified for the clinical problems in JS that historically have caused the greatest morbidity and mortality: congenital heart disease, the Paris-Trousseau bleeding disorder, intellectual disability, autism, and immunodeficiency. Insights gained from these studies are being applied for future drug development and clinical trials, as well as for a potential strategy for the prevention of certain forms of congenital heart disease. The results of these studies will likely not only improve the prognostic and therapeutic approaches for patients with Jacobsen syndrome, but also for the general population afflicted with these problems.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 11",
+      "Genotype",
+      "Humans",
+      "Jacobsen Distal 11q Deletion Syndrome",
+      "Phenotype"
+    ],
+    "keywords": [
+      "Jacobsen syndrome",
+      "Paris-Trousseau syndrome",
+      "autism",
+      "congenital heart disease",
+      "gene",
+      "intellectual disability"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1002/ajmg.c.31448",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1002/ajmg.c.31448?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26285164/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26285164/",
+    "rag_text": "Title: Jacobsen syndrome: Advances in our knowledge of phenotype and genotype.\nAuthors: Favier Remi, Akshoomoff Natacha, Mattson Sarah, Grossfeld Paul\nJournal: American journal of medical genetics. Part C, Seminars in medical genetics (2015)\nPMID: 26285164\nAbstract: In 1973, the Danish geneticist Petrea Jacobsen described a three-generation family in which the proband carried a presumed terminal deletion at the end of the long arm of chromosome 11 (11q). This patient had dysmorphic features, congenital heart disease, and intellectual disability. Since Dr. Jacobsen's initial report, over 200 patients with Jacobsen syndrome have been reported, suggesting that Jacobsen syndrome is a contiguous gene disorder. With the advent of high resolution deletion mapping and the completion of the human genome sequencing project, a comprehensive genotype/phenotype analysis for Jacobsen syndrome became possible. In this article, we review research describing individual causal genes in distal 11q that contribute to the overall Jacobsen syndrome clinical phenotype. Through a combination of human genetics and the use of genetically engineered animal models, causal genes have been identified for the clinical problems in JS that historically have caused the greatest morbidity and mortality: congenital heart disease, the Paris-Trousseau bleeding disorder, intellectual disability, autism, and immunodeficiency. Insights gained from these studies are being applied for future drug development and clinical trials, as well as for a potential strategy for the prevention of certain forms of congenital heart disease. The results of these studies will likely not only improve the prognostic and therapeutic approaches for patients with Jacobsen syndrome, but also for the general population afflicted with these problems.\nMeSH Terms: Chromosome Deletion; Chromosomes, Human, Pair 11; Genotype; Humans; Jacobsen Distal 11q Deletion Syndrome; Phenotype\nKeywords: Jacobsen syndrome; Paris-Trousseau syndrome; autism; congenital heart disease; gene; intellectual disability"
+  },
+  {
+    "pmid": "16106622",
+    "doi": "10.1016/s1567-424x(09)70360-5",
+    "pmc_id": "",
+    "title": "Genetic evaluation of inherited motor/sensory neuropathy.",
+    "authors": [
+      "Chance Phillip F"
+    ],
+    "journal": "Supplements to Clinical neurophysiology",
+    "year": "2004",
+    "pub_date": "2004",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, U.S. Gov't, P.H.S.",
+      "Review"
+    ],
+    "abstract": "Inherited disorders of peripheral nerves represent a common group of neurologic diseases. Charcot-Marie-Tooth neuropathy type 1 (CMT1) is a genetically heterogeneous group of chronic demyelinating polyneuropathies with loci mapping to chromosome 17 (CMT1A), chromosome 1 (CMT1B), chromosome 16 (CMT1C) and chromosome 10 (CMT1D). CMT1A is most often associated with a tandem 1.5-megabase (Mb) duplication in chromosome 17p11.2-p12. In rare patients it may result from a point mutation in the peripheral myelin protein-22 (PMP22) gene. CMT1B is associated with point mutations in the myelin protein zero (Po or MPZ) gene. Mutations in the SIMPLE gene cause CMT1C, and CMT1D is the result of mutations in the early response 2 (ERG2 or Krox-20) gene. An X-linked form of CMT1 (CMT1X) maps to Xq13 and is associated with mutations in the connexin32 (Cx32) gene. Charcot-Marie-Tooth neuropathy type 2 (CMT2) is an axonal neuropathy that maps to chromosome 1p35-p36 (CMT2A), chromosome 3q13-q22 (CMT2B), chromosome 7p14 (CMT2D), chromosome 8p21 (CMT2E), chromosome 1q22-q23 (CMT2F) or chromosome 3q13 (CMT2G). Two X-linked forms of CMT2 have been reported (CMT2XA and CMT2XB), but the genes remain unidentified. An area that has recently expanded is the identification of autosomal recessive forms of CMT type 1 and 2. Of the eight recessive forms of CMT1 that have been identified to date, only two have been fully characterized at the molecular level (CMT1 AR B 1 and CMT1 AR D). Point mutations were found in the myotubularin-related protein-2 (MTM2) gene for CMT1 AR B1. CMT1 AR D is the result of point mutations in the N-myc downstream-regulated gene 1 (NDRG1). Dejerine-Sottas disease (DSD), also called hereditary motor and sensory neuropathy type III (HMSNIII), is a severe, infantile-onset demyelinating polyneuropathy syndrome that may be associated with point mutations in either the PMP22 gene, PO gene, EGR2 gene or the PRX gene (for the recessive form). It shares considerable clinical and pathological features with CMT1. Hereditary neuropathy with liability to pressure palsies (HNPP) is an autosomal dominant disorder that results in a recurrent, episodic demyelinating neuropathy. HNPP is associated with a 1.5-Mb deletion in chromosome 17p11.2-p12 that results in reduced expression of the PMP22 gene. CMT1A and HNPP are reciprocal duplication/deletion syndromes that originate from unequal crossover during germ cell meiosis. Other rare forms of demyelinating peripheral neuropathies map to chromosome 8q, 10q and 11q.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Animals",
+      "Charcot-Marie-Tooth Disease",
+      "Chromosome Mapping",
+      "Chromosomes, Human, Pair 17",
+      "Hereditary Sensory and Autonomic Neuropathies",
+      "Hereditary Sensory and Motor Neuropathy",
+      "Humans"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/s1567-424x(09)70360-5",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/s1567-424x(09)70360-5?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16106622/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16106622/",
+    "rag_text": "Title: Genetic evaluation of inherited motor/sensory neuropathy.\nAuthors: Chance Phillip F\nJournal: Supplements to Clinical neurophysiology (2004)\nPMID: 16106622\nAbstract: Inherited disorders of peripheral nerves represent a common group of neurologic diseases. Charcot-Marie-Tooth neuropathy type 1 (CMT1) is a genetically heterogeneous group of chronic demyelinating polyneuropathies with loci mapping to chromosome 17 (CMT1A), chromosome 1 (CMT1B), chromosome 16 (CMT1C) and chromosome 10 (CMT1D). CMT1A is most often associated with a tandem 1.5-megabase (Mb) duplication in chromosome 17p11.2-p12. In rare patients it may result from a point mutation in the peripheral myelin protein-22 (PMP22) gene. CMT1B is associated with point mutations in the myelin protein zero (Po or MPZ) gene. Mutations in the SIMPLE gene cause CMT1C, and CMT1D is the result of mutations in the early response 2 (ERG2 or Krox-20) gene. An X-linked form of CMT1 (CMT1X) maps to Xq13 and is associated with mutations in the connexin32 (Cx32) gene. Charcot-Marie-Tooth neuropathy type 2 (CMT2) is an axonal neuropathy that maps to chromosome 1p35-p36 (CMT2A), chromosome 3q13-q22 (CMT2B), chromosome 7p14 (CMT2D), chromosome 8p21 (CMT2E), chromosome 1q22-q23 (CMT2F) or chromosome 3q13 (CMT2G). Two X-linked forms of CMT2 have been reported (CMT2XA and CMT2XB), but the genes remain unidentified. An area that has recently expanded is the identification of autosomal recessive forms of CMT type 1 and 2. Of the eight recessive forms of CMT1 that have been identified to date, only two have been fully characterized at the molecular level (CMT1 AR B 1 and CMT1 AR D). Point mutations were found in the myotubularin-related protein-2 (MTM2) gene for CMT1 AR B1. CMT1 AR D is the result of point mutations in the N-myc downstream-regulated gene 1 (NDRG1). Dejerine-Sottas disease (DSD), also called hereditary motor and sensory neuropathy type III (HMSNIII), is a severe, infantile-onset demyelinating polyneuropathy syndrome that may be associated with point mutations in either the PMP22 gene, PO gene, EGR2 gene or the PRX gene (for the recessive form). It shares considerable clinical and pathological features with CMT1. Hereditary neuropathy with liability to pressure palsies (HNPP) is an autosomal dominant disorder that results in a recurrent, episodic demyelinating neuropathy. HNPP is associated with a 1.5-Mb deletion in chromosome 17p11.2-p12 that results in reduced expression of the PMP22 gene. CMT1A and HNPP are reciprocal duplication/deletion syndromes that originate from unequal crossover during germ cell meiosis. Other rare forms of demyelinating peripheral neuropathies map to chromosome 8q, 10q and 11q.\nMeSH Terms: Animals; Charcot-Marie-Tooth Disease; Chromosome Mapping; Chromosomes, Human, Pair 17; Hereditary Sensory and Autonomic Neuropathies; Hereditary Sensory and Motor Neuropathy; Humans"
+  },
+  {
+    "pmid": "39938357",
+    "doi": "10.1016/j.leukres.2025.107661",
+    "pmc_id": "",
+    "title": "Characteristics and survival outcomes of patients with myelodysplastic syndromes with isolated 11q deletion.",
+    "authors": [
+      "Takaoka Kensuke",
+      "Komrokji Rami",
+      "Chien Kelly",
+      "Montalban-Bravo Guillermo",
+      "Salman Julie Braish",
+      "Urrutia Samuel",
+      "Bataller Alex",
+      "Bazinet Alexandre",
+      "Kekedjian Jeannot",
+      "Al Ali Najla H",
+      "Sallman David",
+      "Padron Eric",
+      "Xie Zhuoer",
+      "Kanagal-Shamanna Rashmi",
+      "Tang Guilin",
+      "Yang Hui",
+      "Rodriguez-Sevilla Juan Jose",
+      "Garcia-Manero Guillermo",
+      "Sasaki Koji"
+    ],
+    "journal": "Leukemia research",
+    "year": "2025",
+    "pub_date": "2025 Mar",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "Myelodysplastic syndrome (MDS) with isolated deletion 11q is a rare favorable cytogenetic abnormality with a low risk of progression to acute myeloid leukemia (AML). The aim of this study is to describe the clinical characteristics and long-term outcomes of patients with isolated del(11q) MDS. Between August 1997 and January 2024, 52 patients with MDS and isolated del(11q) were diagnosed, representing 0.4 % of the cohort. The median age was 69 years, with a mild male predominance (62 %). By the World Health Organization (WHO) 2022, 42 % of patients had MDS with low blasts. With a median follow-up of 96 months, the median survival was 71 months with a 5-year survival rate of 53 %. The 5-year survival rates were 45 % and 68 % in the hypomethylating agents and best supportive care group, respectively (P = 0.63). Multivariate Cox regression analyses identified age, absolute neutrophil count, hemoglobin, and blast percentages as significant prognostic factors. Despite isolated del(11q) MDS being classified as a very-good-risk cytogenetic abnormality, long-term survival is poor with the risk of progression to AML and complications from cytopenias. The poor long-term survival indicates the need for the investigation of effective supportive care and early intervention to benefit patients with lower-risk MDS and high-risk features.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Humans",
+      "Myelodysplastic Syndromes",
+      "Male",
+      "Aged",
+      "Female",
+      "Chromosome Deletion",
+      "Middle Aged",
+      "Aged, 80 and over",
+      "Prognosis",
+      "Chromosomes, Human, Pair 11",
+      "Adult",
+      "Survival Rate",
+      "Leukemia, Myeloid, Acute",
+      "Follow-Up Studies"
+    ],
+    "keywords": [
+      "Del(11q)",
+      "HMA",
+      "MDS",
+      "Overall survival",
+      "Progression-free survival"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.leukres.2025.107661",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.leukres.2025.107661?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39938357/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39938357/",
+    "rag_text": "Title: Characteristics and survival outcomes of patients with myelodysplastic syndromes with isolated 11q deletion.\nAuthors: Takaoka Kensuke, Komrokji Rami, Chien Kelly, Montalban-Bravo Guillermo, Salman Julie Braish, Urrutia Samuel et al. (19 authors)\nJournal: Leukemia research (2025)\nPMID: 39938357\nAbstract: Myelodysplastic syndrome (MDS) with isolated deletion 11q is a rare favorable cytogenetic abnormality with a low risk of progression to acute myeloid leukemia (AML). The aim of this study is to describe the clinical characteristics and long-term outcomes of patients with isolated del(11q) MDS. Between August 1997 and January 2024, 52 patients with MDS and isolated del(11q) were diagnosed, representing 0.4 % of the cohort. The median age was 69 years, with a mild male predominance (62 %). By the World Health Organization (WHO) 2022, 42 % of patients had MDS with low blasts. With a median follow-up of 96 months, the median survival was 71 months with a 5-year survival rate of 53 %. The 5-year survival rates were 45 % and 68 % in the hypomethylating agents and best supportive care group, respectively (P = 0.63). Multivariate Cox regression analyses identified age, absolute neutrophil count, hemoglobin, and blast percentages as significant prognostic factors. Despite isolated del(11q) MDS being classified as a very-good-risk cytogenetic abnormality, long-term survival is poor with the risk of progression to AML and complications from cytopenias. The poor long-term survival indicates the need for the investigation of effective supportive care and early intervention to benefit patients with lower-risk MDS and high-risk features.\nMeSH Terms: Humans; Myelodysplastic Syndromes; Male; Aged; Female; Chromosome Deletion; Middle Aged; Aged, 80 and over; Prognosis; Chromosomes, Human, Pair 11; Adult; Survival Rate; Leukemia, Myeloid, Acute; Follow-Up Studies\nKeywords: Del(11q); HMA; MDS; Overall survival; Progression-free survival"
+  },
+  {
+    "pmid": "11345007",
+    "doi": "",
+    "pmc_id": "",
+    "title": "Molecular basis of hereditary neuropathies.",
+    "authors": [
+      "Chance P F"
+    ],
+    "journal": "Physical medicine and rehabilitation clinics of North America",
+    "year": "2001",
+    "pub_date": "2001 May",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Research Support, U.S. Gov't, P.H.S.",
+      "Review"
+    ],
+    "abstract": "Inherited disorders of peripheral nerves represent a common group of neurologic diseases. Charcot-Marie-Tooth neuropathy type 1 (CMT1) is a genetically heterogeneous group of chronic demyelinating polyneuropathies with loci mapping to chromosome 17 (CMT1A), chromosome 1 (CMT1B) and to another unknown autosome (CMT1C). CMT1A is most often associated with a tandem 1.5-megabase (Mb) duplication in chromosome 17p11.2-12, or in rare patients may result from a point mutation in the peripheral myelin protein-22 (PMP22) gene. CMT1B is associated with point mutations in the myelin protein zero (P0 or MPZ) gene. The molecular defect in CMT1C is unknown. X-linked Charcot-Marie-Tooth neuropathy (CMTX), which has clinical features similar to CMT1, is associated with mutations in the connexin32 gene. Charcot-Marie-Tooth neuropathy type 2 (CMT2) is an axonal neuropathy, also of undetermined cause. Forms of CMT2 map to chromosome 1p36 (CMT2A), chromosome 3p (CMT2B), chromosome 7p (CMT2D), and to chromosome 8p21 (CMT2E). Dejerine-Sottas disease (DSD), also called hereditary motor and sensory neuropathy type III (HMSNIII), is a severe, infantile-onset, demyelinating polyneuropathy syndrome that may be associated with point mutations in either the PMP22 gene or the P0 gene and shares considerable clinical and pathologic features with CMT1. Hereditary neuropathy with liability to pressure palsies (HNPP) is an autosomal dominant disorder that results in a recurrent, episodic demyelinating neuropathy. HNPP is associated with a 1.5-Mb deletion in chromosome 17p11.2-12 and results from reduced expression of the PMP22 gene. CMT1A and HNPP are reciprocal duplication/deletion syndromes originating from unequal crossover during germ cell meiosis. Other rare forms of demyelinating peripheral neuropathies map to chromosomes 8q, 10q, and 11q. Hereditary neuralgic amyotrophy (familial brachial plexus neuropathy) is an autosomal dominant disorder causing painful, recurrent brachial plexopathies and maps to chromosome 17q25.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Brachial Plexus Neuritis",
+      "Charcot-Marie-Tooth Disease",
+      "Electrodiagnosis",
+      "Electrophysiology",
+      "Hereditary Sensory and Motor Neuropathy",
+      "Humans"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/11345007/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11345007/",
+    "rag_text": "Title: Molecular basis of hereditary neuropathies.\nAuthors: Chance P F\nJournal: Physical medicine and rehabilitation clinics of North America (2001)\nPMID: 11345007\nAbstract: Inherited disorders of peripheral nerves represent a common group of neurologic diseases. Charcot-Marie-Tooth neuropathy type 1 (CMT1) is a genetically heterogeneous group of chronic demyelinating polyneuropathies with loci mapping to chromosome 17 (CMT1A), chromosome 1 (CMT1B) and to another unknown autosome (CMT1C). CMT1A is most often associated with a tandem 1.5-megabase (Mb) duplication in chromosome 17p11.2-12, or in rare patients may result from a point mutation in the peripheral myelin protein-22 (PMP22) gene. CMT1B is associated with point mutations in the myelin protein zero (P0 or MPZ) gene. The molecular defect in CMT1C is unknown. X-linked Charcot-Marie-Tooth neuropathy (CMTX), which has clinical features similar to CMT1, is associated with mutations in the connexin32 gene. Charcot-Marie-Tooth neuropathy type 2 (CMT2) is an axonal neuropathy, also of undetermined cause. Forms of CMT2 map to chromosome 1p36 (CMT2A), chromosome 3p (CMT2B), chromosome 7p (CMT2D), and to chromosome 8p21 (CMT2E). Dejerine-Sottas disease (DSD), also called hereditary motor and sensory neuropathy type III (HMSNIII), is a severe, infantile-onset, demyelinating polyneuropathy syndrome that may be associated with point mutations in either the PMP22 gene or the P0 gene and shares considerable clinical and pathologic features with CMT1. Hereditary neuropathy with liability to pressure palsies (HNPP) is an autosomal dominant disorder that results in a recurrent, episodic demyelinating neuropathy. HNPP is associated with a 1.5-Mb deletion in chromosome 17p11.2-12 and results from reduced expression of the PMP22 gene. CMT1A and HNPP are reciprocal duplication/deletion syndromes originating from unequal crossover during germ cell meiosis. Other rare forms of demyelinating peripheral neuropathies map to chromosomes 8q, 10q, and 11q. Hereditary neuralgic amyotrophy (familial brachial plexus neuropathy) is an autosomal dominant disorder causing painful, recurrent brachial plexopathies and maps to chromosome 17q25.\nMeSH Terms: Brachial Plexus Neuritis; Charcot-Marie-Tooth Disease; Electrodiagnosis; Electrophysiology; Hereditary Sensory and Motor Neuropathy; Humans"
+  },
+  {
+    "pmid": "10716658",
+    "doi": "10.1055/s-2008-1040850",
+    "pmc_id": "",
+    "title": "Inherited peripheral neuropathy.",
+    "authors": [
+      "Keller M P",
+      "Chance P F"
+    ],
+    "journal": "Seminars in neurology",
+    "year": "1999",
+    "pub_date": "1999",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Research Support, U.S. Gov't, P.H.S.",
+      "Review"
+    ],
+    "abstract": "Hereditary disorders of the peripheral nerves constitute a group of frequently encountered neurological diseases. Charcot-Marie-Tooth neuropathy type 1 (CMT1) is genetically heterogeneous and characterized by demyelination with moderately to severely reduced nerve conduction velocities, absent muscle stretch reflexes and onion bulb formation. Genetic loci for CMT1 map to chromosome 17 (CMT1A), chromosome 1 (CMT1B), and another unknown autosome (CMT1C). CMT1A is most often associated with a tandem 1.5-megabase (Mb) duplication in chromosome 17p11.2-12, or in rare patients may result from a point mutation in the peripheral myelin protein-22 (PMP22) gene. CMT1 B result from point mutations in the myelin protein zero (Po or MPZ) gene. The molecular defect in CMT1 C is unknown. Mutations in the early growth response 2 gene (EGR2) are also associated with demyelinating neuropathy. Other rare forms of demyelinating peripheral neuropathies map to chromosome 8q, 10q, and 11q. X-linked Charcot-Marie-Tooth neuropathy (CMTX), which has clinical features similar to CMT1, is associated with mutations in the connexin32 gene. Charcot-Marie-Tooth neuropathy type 2 (CMT2) is characterized by normal or mildly reduced nerve conduction velocity with decreased amplitude and axonal loss without hypertrophic features. One form of CMT2 maps to chromosome 1 p36 (CMT2A), another to chromosome 3p (CMT2B) and another to 7p (CMT2D). Dejerine-Sottas disease (DSD), also called hereditary motor and sensory neuropathy type III (HMSNIII), is a severe, infantile-onset demyelinating polyneuropathy that may be associated with point mutations in either the PMP22 gene or the Po gene and shares considerable clinical and pathological features with CMT1. Hereditary neuropathy with liability to pressure palsies (HNPP) is an autosomal dominant disorder that results in a recurrent, episodic demyelinating neuropathy. HNPP is associated with a 1.5-Mb deletion in chromosome 17p11.2-12 and results from reduced expression of the PMP22 gene. CMT1A and HNPP are reciprocal duplication/deletion syndromes originating from unequal crossover during germ cell meiosis.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Charcot-Marie-Tooth Disease",
+      "Demyelinating Diseases",
+      "Genetic Linkage",
+      "Hereditary Sensory and Autonomic Neuropathies",
+      "Humans",
+      "Peripheral Nervous System Diseases",
+      "X Chromosome"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1055/s-2008-1040850",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1055/s-2008-1040850?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10716658/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10716658/",
+    "rag_text": "Title: Inherited peripheral neuropathy.\nAuthors: Keller M P, Chance P F\nJournal: Seminars in neurology (1999)\nPMID: 10716658\nAbstract: Hereditary disorders of the peripheral nerves constitute a group of frequently encountered neurological diseases. Charcot-Marie-Tooth neuropathy type 1 (CMT1) is genetically heterogeneous and characterized by demyelination with moderately to severely reduced nerve conduction velocities, absent muscle stretch reflexes and onion bulb formation. Genetic loci for CMT1 map to chromosome 17 (CMT1A), chromosome 1 (CMT1B), and another unknown autosome (CMT1C). CMT1A is most often associated with a tandem 1.5-megabase (Mb) duplication in chromosome 17p11.2-12, or in rare patients may result from a point mutation in the peripheral myelin protein-22 (PMP22) gene. CMT1 B result from point mutations in the myelin protein zero (Po or MPZ) gene. The molecular defect in CMT1 C is unknown. Mutations in the early growth response 2 gene (EGR2) are also associated with demyelinating neuropathy. Other rare forms of demyelinating peripheral neuropathies map to chromosome 8q, 10q, and 11q. X-linked Charcot-Marie-Tooth neuropathy (CMTX), which has clinical features similar to CMT1, is associated with mutations in the connexin32 gene. Charcot-Marie-Tooth neuropathy type 2 (CMT2) is characterized by normal or mildly reduced nerve conduction velocity with decreased amplitude and axonal loss without hypertrophic features. One form of CMT2 maps to chromosome 1 p36 (CMT2A), another to chromosome 3p (CMT2B) and another to 7p (CMT2D). Dejerine-Sottas disease (DSD), also called hereditary motor and sensory neuropathy type III (HMSNIII), is a severe, infantile-onset demyelinating polyneuropathy that may be associated with point mutations in either the PMP22 gene or the Po gene and shares considerable clinical and pathological features with CMT1. Hereditary neuropathy with liability to pressure palsies (HNPP) is an autosomal dominant disorder that results in a recurrent, episodic demyelinating neuropathy. HNPP is associated with a 1.5-Mb deletion in chromosome 17p11.2-12 and results from reduced expression of the PMP22 gene. CMT1A and HNPP are reciprocal duplication/deletion syndromes originating from unequal crossover during germ cell meiosis.\nMeSH Terms: Charcot-Marie-Tooth Disease; Demyelinating Diseases; Genetic Linkage; Hereditary Sensory and Autonomic Neuropathies; Humans; Peripheral Nervous System Diseases; X Chromosome"
+  },
+  {
+    "pmid": "10219749",
+    "doi": "10.1111/j.1750-3639.1999.tb00230.x",
+    "pmc_id": "PMC398189",
+    "title": "Inherited neuropathies: from gene to disease.",
+    "authors": [
+      "Keller M P",
+      "Chance P F"
+    ],
+    "journal": "Brain pathology (Zurich, Switzerland)",
+    "year": "1999",
+    "pub_date": "1999 Apr",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Research Support, U.S. Gov't, P.H.S.",
+      "Review"
+    ],
+    "abstract": "Inherited disorders of peripheral nerves represent a common group of neurologic diseases. Charcot-Marie-Tooth neuropathy type 1 (CMT1) is a genetically heterogeneous group of chronic demyelinating polyneuropathies with loci mapping to chromosome 17 (CMT1A), chromosome 1 (CMT1B) and to another unknown autosome (CMT1C). CMT1A is most often associated with a tandem 1.5-megabase (Mb) duplication in chromosome 17p11.2-12, or in rare patients may result from a point mutation in the peripheral myelin protein-22 (PMP22) gene. CMT1B is associated with point mutations in the myelin protein zero (P0 or MPZ) gene. The molecular defect in CMT1C is unknown. X-linked Charcot-Marie-Tooth neuropathy (CMTX), which has clinical features similar to CMT1, is associated with mutations in the connexin32 gene. Charcot-Marie-Tooth neuropathy type 2 (CMT2) is an axonal neuropathy, also of undetermined cause. One form of CMT2 maps to chromosome 1p36 (CMT2A), another to chromosome 3p (CMT2B) and another to 7p (CMT2D). Dejerine-Sottas disease (DSD), also called hereditary motor and sensory neuropathy type III (HMSNIII), is a severe, infantile-onset demyelinating polyneuropathy syndrome that may be associated with point mutations in either the PMP22 gene or the P0 gene and shares considerable clinical and pathological features with CMT1. Hereditary neuropathy with liability to pressure palsies (HNPP) is an autosomal dominant disorder that results in a recurrent, episodic demyelinating neuropathy. HNPP is associated with a 1.5-Mb deletion in chromosome 17p11.2-12 and results from reduced expression of the PMP22 gene. CMT1A and HNPP are reciprocal duplication/deletion syndromes originating from unequal crossover during germ cell meiosis. Other rare forms of demyelinating peripheral neuropathies map to chromosome 8q, 10q and 11q. Hereditary neuralgic amyotrophy (familial brachial plexus neuropathy) is an autosomal dominant disorder causing painful, recurrent brachial plexopathies and maps to chromosome 17q25.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Animals",
+      "Charcot-Marie-Tooth Disease",
+      "Chromosome Mapping",
+      "Chromosomes, Human, Pair 1",
+      "Chromosomes, Human, Pair 17",
+      "Connexins",
+      "Hereditary Sensory and Motor Neuropathy",
+      "Humans",
+      "Myelin Proteins",
+      "Point Mutation",
+      "Gap Junction beta-1 Protein"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC398189/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC398189/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1111/j.1750-3639.1999.tb00230.x",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1111/j.1750-3639.1999.tb00230.x?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8954628/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10219749/",
+    "rag_text": "Title: Inherited neuropathies: from gene to disease.\nAuthors: Keller M P, Chance P F\nJournal: Brain pathology (Zurich, Switzerland) (1999)\nPMID: 10219749\nAbstract: Inherited disorders of peripheral nerves represent a common group of neurologic diseases. Charcot-Marie-Tooth neuropathy type 1 (CMT1) is a genetically heterogeneous group of chronic demyelinating polyneuropathies with loci mapping to chromosome 17 (CMT1A), chromosome 1 (CMT1B) and to another unknown autosome (CMT1C). CMT1A is most often associated with a tandem 1.5-megabase (Mb) duplication in chromosome 17p11.2-12, or in rare patients may result from a point mutation in the peripheral myelin protein-22 (PMP22) gene. CMT1B is associated with point mutations in the myelin protein zero (P0 or MPZ) gene. The molecular defect in CMT1C is unknown. X-linked Charcot-Marie-Tooth neuropathy (CMTX), which has clinical features similar to CMT1, is associated with mutations in the connexin32 gene. Charcot-Marie-Tooth neuropathy type 2 (CMT2) is an axonal neuropathy, also of undetermined cause. One form of CMT2 maps to chromosome 1p36 (CMT2A), another to chromosome 3p (CMT2B) and another to 7p (CMT2D). Dejerine-Sottas disease (DSD), also called hereditary motor and sensory neuropathy type III (HMSNIII), is a severe, infantile-onset demyelinating polyneuropathy syndrome that may be associated with point mutations in either the PMP22 gene or the P0 gene and shares considerable clinical and pathological features with CMT1. Hereditary neuropathy with liability to pressure palsies (HNPP) is an autosomal dominant disorder that results in a recurrent, episodic demyelinating neuropathy. HNPP is associated with a 1.5-Mb deletion in chromosome 17p11.2-12 and results from reduced expression of the PMP22 gene. CMT1A and HNPP are reciprocal duplication/deletion syndromes originating from unequal crossover during germ cell meiosis. Other rare forms of demyelinating peripheral neuropathies map to chromosome 8q, 10q and 11q. Hereditary neuralgic amyotrophy (familial brachial plexus neuropathy) is an autosomal dominant disorder causing painful, recurrent brachial plexopathies and maps to chromosome 17q25.\nMeSH Terms: Animals; Charcot-Marie-Tooth Disease; Chromosome Mapping; Chromosomes, Human, Pair 1; Chromosomes, Human, Pair 17; Connexins; Hereditary Sensory and Motor Neuropathy; Humans; Myelin Proteins; Point Mutation; Gap Junction beta-1 Protein"
+  },
+  {
+    "pmid": "22886561",
+    "doi": "10.1007/s00439-012-1215-x",
+    "pmc_id": "",
+    "title": "Genetics of familial forms of thrombocytopenia.",
+    "authors": [
+      "Balduini Carlo L",
+      "Savoia Anna"
+    ],
+    "journal": "Human genetics",
+    "year": "2012",
+    "pub_date": "2012 Dec",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Review"
+    ],
+    "abstract": "The joint application of clinical and genetic investigation to patients with inherited thrombocytopenias, as well as the availability of new methods for studying megakaryopoiesis, has greatly expanded the knowledge of these disorders in the last few years with regard to their etiology, pathogenesis and clinical aspects. In particular, new diseases have been described, as deriving from mutations in the genes FLNA, TUBB1, ITGA2/ITGB3, ANKRD26, CYCS, and ABCG5 or ABCG8. Moreover, forms previously considered separate entities were found to be different clinical aspects of a single disease. For instance, identification of MYH9 as the gene whose mutations cause the May-Hegglin anomaly led to the recognition that Sebastian platelet syndrome, Epstein syndrome, and Fechtner syndrome derive from mutations of the same gene and describe overlapping disorders. Despite these advances, knowledge of hereditary thrombocytopenias is still far from satisfactory because for approximately half of the patients it is not possible to formulate a definite diagnosis in that their illnesses has not yet been described. In this review, we provide a systematic description of hereditary thrombocytopenias as we know them today, giving special attention to genetic aspects.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "ATP-Binding Cassette Transporters",
+      "Ankyrin Repeat",
+      "Bernard-Soulier Syndrome",
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 11",
+      "Congenital Bone Marrow Failure Syndromes",
+      "Contractile Proteins",
+      "Filamins",
+      "GATA1 Transcription Factor",
+      "Genetic Diseases, X-Linked",
+      "Gray Platelet Syndrome",
+      "Humans",
+      "Integrins",
+      "Jacobsen Distal 11q Deletion Syndrome",
+      "Microfilament Proteins",
+      "Molecular Motor Proteins",
+      "Mutation",
+      "Myosin Heavy Chains",
+      "Platelet Membrane Glycoproteins",
+      "Thrombocytopenia",
+      "Wiskott-Aldrich Syndrome",
+      "von Willebrand Diseases"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1007/s00439-012-1215-x",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1007/s00439-012-1215-x?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/5129551/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22886561/",
+    "rag_text": "Title: Genetics of familial forms of thrombocytopenia.\nAuthors: Balduini Carlo L, Savoia Anna\nJournal: Human genetics (2012)\nPMID: 22886561\nAbstract: The joint application of clinical and genetic investigation to patients with inherited thrombocytopenias, as well as the availability of new methods for studying megakaryopoiesis, has greatly expanded the knowledge of these disorders in the last few years with regard to their etiology, pathogenesis and clinical aspects. In particular, new diseases have been described, as deriving from mutations in the genes FLNA, TUBB1, ITGA2/ITGB3, ANKRD26, CYCS, and ABCG5 or ABCG8. Moreover, forms previously considered separate entities were found to be different clinical aspects of a single disease. For instance, identification of MYH9 as the gene whose mutations cause the May-Hegglin anomaly led to the recognition that Sebastian platelet syndrome, Epstein syndrome, and Fechtner syndrome derive from mutations of the same gene and describe overlapping disorders. Despite these advances, knowledge of hereditary thrombocytopenias is still far from satisfactory because for approximately half of the patients it is not possible to formulate a definite diagnosis in that their illnesses has not yet been described. In this review, we provide a systematic description of hereditary thrombocytopenias as we know them today, giving special attention to genetic aspects.\nMeSH Terms: ATP-Binding Cassette Transporters; Ankyrin Repeat; Bernard-Soulier Syndrome; Chromosome Deletion; Chromosomes, Human, Pair 11; Congenital Bone Marrow Failure Syndromes; Contractile Proteins; Filamins; GATA1 Transcription Factor; Genetic Diseases, X-Linked; Gray Platelet Syndrome; Humans; Integrins; Jacobsen Distal 11q Deletion Syndrome; Microfilament Proteins"
+  },
+  {
+    "pmid": "19267933",
+    "doi": "10.1186/1750-1172-4-9",
+    "pmc_id": "PMC1275641",
+    "title": "Jacobsen syndrome.",
+    "authors": [
+      "Mattina Teresa",
+      "Perrotta Concetta Simona",
+      "Grossfeld Paul"
+    ],
+    "journal": "Orphanet journal of rare diseases",
+    "year": "2009",
+    "pub_date": "2009 Mar 07",
+    "publication_types": [
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "Jacobsen syndrome is a MCA/MR contiguous gene syndrome caused by partial deletion of the long arm of chromosome 11. To date, over 200 cases have been reported. The prevalence has been estimated at 1/100,000 births, with a female/male ratio 2:1. The most common clinical features include pre- and postnatal physical growth retardation, psychomotor retardation, and characteristic facial dysmorphism (skull deformities, hypertelorism, ptosis, coloboma, downslanting palpebral fissures, epicanthal folds, broad nasal bridge, short nose, v-shaped mouth, small ears, low set posteriorly rotated ears). Abnormal platelet function, thrombocytopenia or pancytopenia are usually present at birth. Patients commonly have malformations of the heart, kidney, gastrointestinal tract, genitalia, central nervous system and skeleton. Ocular, hearing, immunological and hormonal problems may be also present. The deletion size ranges from approximately 7 to 20 Mb, with the proximal breakpoint within or telomeric to subband 11q23.3 and the deletion extending usually to the telomere. The deletion is de novo in 85% of reported cases, and in 15% of cases it results from an unbalanced segregation of a familial balanced translocation or from other chromosome rearrangements. In a minority of cases the breakpoint is at the FRA11B fragile site. Diagnosis is based on clinical findings (intellectual deficit, facial dysmorphic features and thrombocytopenia) and confirmed by cytogenetics analysis. Differential diagnoses include Turner and Noonan syndromes, and acquired thrombocytopenia due to sepsis. Prenatal diagnosis of 11q deletion is possible by amniocentesis or chorionic villus sampling and cytogenetic analysis. Management is multi-disciplinary and requires evaluation by general pediatrician, pediatric cardiologist, neurologist, ophthalmologist. Auditory tests, blood tests, endocrine and immunological assessment and follow-up should be offered to all patients. Cardiac malformations can be very severe and require heart surgery in the neonatal period. Newborns with Jacobsen syndrome may have difficulties in feeding and tube feeding may be necessary. Special attention should be devoted due to hematological problems. About 20% of children die during the first two years of life, most commonly related to complications from congenital heart disease, and less commonly from bleeding. For patients who survive the neonatal period and infancy, the life expectancy remains unknown.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Chromosomes, Human, Pair 11",
+      "Female",
+      "Humans",
+      "Infant, Newborn",
+      "Jacobsen Distal 11q Deletion Syndrome",
+      "Male"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1275641/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1275641/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1186/1750-1172-4-9",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1186/1750-1172-4-9?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16409533/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19267933/",
+    "rag_text": "Title: Jacobsen syndrome.\nAuthors: Mattina Teresa, Perrotta Concetta Simona, Grossfeld Paul\nJournal: Orphanet journal of rare diseases (2009)\nPMID: 19267933\nAbstract: Jacobsen syndrome is a MCA/MR contiguous gene syndrome caused by partial deletion of the long arm of chromosome 11. To date, over 200 cases have been reported. The prevalence has been estimated at 1/100,000 births, with a female/male ratio 2:1. The most common clinical features include pre- and postnatal physical growth retardation, psychomotor retardation, and characteristic facial dysmorphism (skull deformities, hypertelorism, ptosis, coloboma, downslanting palpebral fissures, epicanthal folds, broad nasal bridge, short nose, v-shaped mouth, small ears, low set posteriorly rotated ears). Abnormal platelet function, thrombocytopenia or pancytopenia are usually present at birth. Patients commonly have malformations of the heart, kidney, gastrointestinal tract, genitalia, central nervous system and skeleton. Ocular, hearing, immunological and hormonal problems may be also present. The deletion size ranges from approximately 7 to 20 Mb, with the proximal breakpoint within or telomeric to subband 11q23.3 and the deletion extending usually to the telomere. The deletion is de novo in 85% of reported cases, and in 15% of cases it results from an unbalanced segregation of a familial balanced translocation or from other chromosome rearrangements. In a minority of cases the breakpoint is at the FRA11B fragile site. Diagnosis is based on clinical findings (intellectual deficit, facial dysmorphic features and thrombocytopenia) and confirmed by cytogenetics analysis. Differential diagnoses include Turner and Noonan syndromes, and acquired thrombocytopenia due to sepsis. Prenatal diagnosis of 11q deletion is possible by amniocentesis or chorionic villus sampling and cytogenetic analysis. Management is multi-disciplinary and requires evaluation by general pediatrician, pediatric cardiologist, neurologist, ophthalmologist. Auditory tests, blood tests, endocrine and immunological assessment and follow-up should be offered to all patients. Cardiac malformations can be very severe and require heart surgery in the neonatal period. Newborns with Jacobsen syndrome may have difficulties in feeding and tube feeding may be necessary. Special attention should be devoted due to hematological problems. About 20% of children die during the first two years of life, most commonly related to complications from congenital heart disease, and less commonly from bleeding. For patients who survive the neonatal period and infancy, the life expectancy remains unknown.\nMeSH Terms: Chromosomes, Human, Pair 11; Female; Humans; Infant, Newborn; Jacobsen Distal 11q Deletion Syndrome; Male"
+  },
+  {
+    "pmid": "18636632",
+    "doi": "10.1002/ddrr.3",
+    "pmc_id": "PMC1199375",
+    "title": "Molecular mechanisms and diagnosis of chromosome 22q11.2 rearrangements.",
+    "authors": [
+      "Emanuel Beverly S"
+    ],
+    "journal": "Developmental disabilities research reviews",
+    "year": "2008",
+    "pub_date": "2008",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, N.I.H., Extramural",
+      "Research Support, Non-U.S. Gov't",
+      "Review"
+    ],
+    "abstract": "Several recurrent, constitutional genomic disorders are present on chromosome 22q. These include the translocations and deletions associated with DiGeorge and velocardiofacial syndrome and the translocations that give rise to the recurrent t(11;22) supernumerary der(22) syndrome (Emanuel syndrome). The rearrangement breakpoints on 22q cluster around the chromosome-specific segmental duplications of proximal 22q11, which are involved in the etiology of these disorders. While the deletions are the result of nonallelic homologous recombination (NAHR) between low copy repeats or segmental duplications within 22q11, the t(11;22) is the result of rearrangement between palindromic AT-rich repeats on 11q and 22q. Here we describe the mechanisms responsible for these recurrent rearrangements, discuss the recurrent deletion endpoints that are the result of NAHR between chromosome 22q specific low copy repeats as well as present current diagnostic approaches to deletion detection.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Child",
+      "Chromosome Breakage",
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 22",
+      "DiGeorge Syndrome",
+      "Gene Duplication",
+      "Gene Rearrangement",
+      "Genotype",
+      "Humans",
+      "Oligonucleotide Array Sequence Analysis",
+      "Phenotype",
+      "Repetitive Sequences, Nucleic Acid",
+      "Translocation, Genetic"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1199375/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1199375/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1002/ddrr.3",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1002/ddrr.3?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/7211960/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18636632/",
+    "rag_text": "Title: Molecular mechanisms and diagnosis of chromosome 22q11.2 rearrangements.\nAuthors: Emanuel Beverly S\nJournal: Developmental disabilities research reviews (2008)\nPMID: 18636632\nAbstract: Several recurrent, constitutional genomic disorders are present on chromosome 22q. These include the translocations and deletions associated with DiGeorge and velocardiofacial syndrome and the translocations that give rise to the recurrent t(11;22) supernumerary der(22) syndrome (Emanuel syndrome). The rearrangement breakpoints on 22q cluster around the chromosome-specific segmental duplications of proximal 22q11, which are involved in the etiology of these disorders. While the deletions are the result of nonallelic homologous recombination (NAHR) between low copy repeats or segmental duplications within 22q11, the t(11;22) is the result of rearrangement between palindromic AT-rich repeats on 11q and 22q. Here we describe the mechanisms responsible for these recurrent rearrangements, discuss the recurrent deletion endpoints that are the result of NAHR between chromosome 22q specific low copy repeats as well as present current diagnostic approaches to deletion detection.\nMeSH Terms: Child; Chromosome Breakage; Chromosome Deletion; Chromosomes, Human, Pair 22; DiGeorge Syndrome; Gene Duplication; Gene Rearrangement; Genotype; Humans; Oligonucleotide Array Sequence Analysis; Phenotype; Repetitive Sequences, Nucleic Acid; Translocation, Genetic"
+  },
+  {
+    "pmid": "31141631",
+    "doi": "10.1056/NEJMoa1900574",
+    "pmc_id": "PMC11812922",
+    "title": "Ibrutinib and Venetoclax for First-Line Treatment of CLL.",
+    "authors": [
+      "Jain Nitin",
+      "Keating Michael",
+      "Thompson Philip",
+      "Ferrajoli Alessandra",
+      "Burger Jan",
+      "Borthakur Gautam",
+      "Takahashi Koichi",
+      "Estrov Zeev",
+      "Fowler Nathan",
+      "Kadia Tapan",
+      "Konopleva Marina",
+      "Alvarado Yesid",
+      "Yilmaz Musa",
+      "DiNardo Courtney",
+      "Bose Prithviraj",
+      "Ohanian Maro",
+      "Pemmaraju Naveen",
+      "Jabbour Elias",
+      "Sasaki Koji",
+      "Kanagal-Shamanna Rashmi",
+      "Patel Keyur",
+      "Jorgensen Jeffrey",
+      "Garg Naveen",
+      "Wang Xuemei",
+      "Sondermann Katrina",
+      "Cruz Nichole",
+      "Wei Chongjuan",
+      "Ayala Ana",
+      "Plunkett William",
+      "Kantarjian Hagop",
+      "Gandhi Varsha",
+      "Wierda William"
+    ],
+    "journal": "The New England journal of medicine",
+    "year": "2019",
+    "pub_date": "2019 May 30",
+    "publication_types": [
+      "Clinical Trial, Phase II",
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't"
+    ],
+    "abstract": "BACKGROUND: Ibrutinib, an inhibitor of Bruton's tyrosine kinase, and venetoclax, an inhibitor of B-cell lymphoma 2 protein, have been approved for patients with chronic lymphocytic leukemia (CLL). Preclinical investigations have indicated potential synergistic interaction of their combination. METHODS: We conducted an investigator-initiated phase 2 study of combined ibrutinib and venetoclax involving previously untreated high-risk and older patients with CLL. All patients had at least one of the following features: chromosome 17p deletion, mutated TP53, chromosome 11q deletion, unmutated IGHV, or an age of 65 years or older. Patients received ibrutinib monotherapy (420 mg once daily) for 3 cycles, followed by the addition of venetoclax (weekly dose escalation to 400 mg once daily). Combined therapy was administered for 24 cycles. Response assessments were performed according to International Workshop on Chronic Lymphocytic Leukemia 2008 criteria. Minimal residual disease was assessed by means of multicolor flow cytometry in bone marrow (sensitivity, 10-4). RESULTS: A total of 80 patients were treated. The median age was 65 years (range, 26 to 83). A total of 30% of the patients were 70 years of age or older. Overall, 92% of the patients had unmutated IGHV, TP53 aberration, or chromosome 11q deletion. With combined treatment, the proportions of patients who had complete remission (with or without normal blood count recovery) and remission with undetectable minimal residual disease increased over time. After 12 cycles of combined treatment, 88% of the patients had complete remission or complete remission with incomplete count recovery, and 61% had remission with undetectable minimal residual disease. Responses were noted in older adults and across all high-risk subgroups. Three patients had laboratory evidence of tumor lysis syndrome. The adverse-event profile was similar to what has been reported with ibrutinib and venetoclax. CONCLUSIONS: In this study, combined venetoclax and ibrutinib was an effective oral regimen for high-risk and older patients with CLL. (Funded by AbbVie and others; ClinicalTrials.gov number, NCT02756897.).",
+    "abstract_sections": {
+      "BACKGROUND": "Ibrutinib, an inhibitor of Bruton's tyrosine kinase, and venetoclax, an inhibitor of B-cell lymphoma 2 protein, have been approved for patients with chronic lymphocytic leukemia (CLL). Preclinical investigations have indicated potential synergistic interaction of their combination.",
+      "METHODS": "We conducted an investigator-initiated phase 2 study of combined ibrutinib and venetoclax involving previously untreated high-risk and older patients with CLL. All patients had at least one of the following features: chromosome 17p deletion, mutated TP53, chromosome 11q deletion, unmutated IGHV, or an age of 65 years or older. Patients received ibrutinib monotherapy (420 mg once daily) for 3 cycles, followed by the addition of venetoclax (weekly dose escalation to 400 mg once daily). Combined therapy was administered for 24 cycles. Response assessments were performed according to International Workshop on Chronic Lymphocytic Leukemia 2008 criteria. Minimal residual disease was assessed by means of multicolor flow cytometry in bone marrow (sensitivity, 10-4).",
+      "RESULTS": "A total of 80 patients were treated. The median age was 65 years (range, 26 to 83). A total of 30% of the patients were 70 years of age or older. Overall, 92% of the patients had unmutated IGHV, TP53 aberration, or chromosome 11q deletion. With combined treatment, the proportions of patients who had complete remission (with or without normal blood count recovery) and remission with undetectable minimal residual disease increased over time. After 12 cycles of combined treatment, 88% of the patients had complete remission or complete remission with incomplete count recovery, and 61% had remission with undetectable minimal residual disease. Responses were noted in older adults and across all high-risk subgroups. Three patients had laboratory evidence of tumor lysis syndrome. The adverse-event profile was similar to what has been reported with ibrutinib and venetoclax.",
+      "CONCLUSIONS": "In this study, combined venetoclax and ibrutinib was an effective oral regimen for high-risk and older patients with CLL. (Funded by AbbVie and others; ClinicalTrials.gov number, NCT02756897.)."
+    },
+    "mesh_terms": [
+      "Adenine",
+      "Administration, Oral",
+      "Adult",
+      "Aged",
+      "Aged, 80 and over",
+      "Antineoplastic Combined Chemotherapy Protocols",
+      "Atrial Fibrillation",
+      "Bridged Bicyclo Compounds, Heterocyclic",
+      "Female",
+      "Humans",
+      "Induction Chemotherapy",
+      "Leukemia, Lymphocytic, Chronic, B-Cell",
+      "Lymphocyte Count",
+      "Male",
+      "Middle Aged",
+      "Mutation",
+      "Neoplasm, Residual",
+      "Neutropenia",
+      "Piperidines",
+      "Pyrazoles",
+      "Pyrimidines",
+      "Remission Induction",
+      "Sulfonamides"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11812922/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11812922/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1056/NEJMoa1900574",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1056/NEJMoa1900574?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34007049/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31141631/",
+    "rag_text": "Title: Ibrutinib and Venetoclax for First-Line Treatment of CLL.\nAuthors: Jain Nitin, Keating Michael, Thompson Philip, Ferrajoli Alessandra, Burger Jan, Borthakur Gautam et al. (32 authors)\nJournal: The New England journal of medicine (2019)\nPMID: 31141631\nAbstract: BACKGROUND: Ibrutinib, an inhibitor of Bruton's tyrosine kinase, and venetoclax, an inhibitor of B-cell lymphoma 2 protein, have been approved for patients with chronic lymphocytic leukemia (CLL). Preclinical investigations have indicated potential synergistic interaction of their combination. METHODS: We conducted an investigator-initiated phase 2 study of combined ibrutinib and venetoclax involving previously untreated high-risk and older patients with CLL. All patients had at least one of the following features: chromosome 17p deletion, mutated TP53, chromosome 11q deletion, unmutated IGHV, or an age of 65 years or older. Patients received ibrutinib monotherapy (420 mg once daily) for 3 cycles, followed by the addition of venetoclax (weekly dose escalation to 400 mg once daily). Combined therapy was administered for 24 cycles. Response assessments were performed according to International Workshop on Chronic Lymphocytic Leukemia 2008 criteria. Minimal residual disease was assessed by means of multicolor flow cytometry in bone marrow (sensitivity, 10-4). RESULTS: A total of 80 patients were treated. The median age was 65 years (range, 26 to 83). A total of 30% of the patients were 70 years of age or older. Overall, 92% of the patients had unmutated IGHV, TP53 aberration, or chromosome 11q deletion. With combined treatment, the proportions of patients who had complete remission (with or without normal blood count recovery) and remission with undetectable minimal residual disease increased over time. After 12 cycles of combined treatment, 88% of the patients had complete remission or complete remission with incomplete count recovery, and 61% had remission with undetectable minimal residual disease. Responses were noted in older adults and across all high-risk subgroups. Three patients had laboratory evidence of tumor lysis syndrome. The adverse-event profile was similar to what has been reported with ibrutinib and venetoclax. CONCLUSIONS: In this study, combined venetoclax and ibrutinib was an effective oral regimen for high-risk and older patients with CLL. (Funded by AbbVie and others; ClinicalTrials.gov number, NCT02756897.).\nMeSH Terms: Adenine; Administration, Oral; Adult; Aged; Aged, 80 and over; Antineoplastic Combined Chemotherapy Protocols; Atrial Fibrillation; Bridged Bicyclo Compounds, Heterocyclic; Female; Humans; Induction Chemotherapy; Leukemia, Lymphocytic, Chronic, B-Cell; Lymphocyte Count; Male; Middle Aged"
+  },
+  {
+    "pmid": "29873072",
+    "doi": "10.1111/bjh.15421",
+    "pmc_id": "PMC4968336",
+    "title": "Evaluation of 230 patients with relapsed/refractory deletion 17p chronic lymphocytic leukaemia treated with ibrutinib from 3 clinical trials.",
+    "authors": [
+      "Jones Jeffrey",
+      "Mato Anthony",
+      "Coutre Steven",
+      "Byrd John C",
+      "Furman Richard R",
+      "Hillmen Peter",
+      "Osterborg Anders",
+      "Tam Constantine",
+      "Stilgenbauer Stephan",
+      "Wierda William G",
+      "Heerema Nyla A",
+      "Eckert Karl",
+      "Clow Fong",
+      "Zhou Cathy",
+      "Chu Alvina D",
+      "James Danelle F",
+      "O'Brien Susan M"
+    ],
+    "journal": "British journal of haematology",
+    "year": "2018",
+    "pub_date": "2018 Aug",
+    "publication_types": [
+      "Clinical Trial, Phase I",
+      "Clinical Trial, Phase II",
+      "Clinical Trial, Phase III",
+      "Journal Article",
+      "Multicenter Study"
+    ],
+    "abstract": "Patients with chronic lymphocytic leukaemia/small lymphocytic lymphoma (CLL/SLL) with deletion 17p [del(17p)] have poor outcomes with chemoimmunotherapy. Ibrutinib is indicated for the treatment of CLL/SLL, including del(17p) CLL/SLL, and allows for treatment without chemotherapy. This integrated analysis was performed to evaluate outcomes in 230 patients with relapsed/refractory del(17p) CLL/SLL from three ibrutinib studies. With a median of 2 prior therapies (range, 1-12), 18% and 79% of evaluable patients had del(11q) or unmutated IGHV, respectively. With a median follow-up of 28 months, overall response rate was 85% and estimated 30-month progression-free and overall survival rates were 57% [95% confidence interval (CI) 50-64] and 69% (95% CI 61-75), respectively. Patients with normal lactate dehydrogenase or no bulky disease had the most favourable survival outcomes. Sustained haematological improvements in haemoglobin, platelet count and absolute neutrophil count occurred in 61%, 67% and 70% of patients with baseline cytopenias, respectively. New onset severe cytopenias and infections decreased in frequency over time. Progression-free and overall survival with ibrutinib surpass those of other therapies for patients with del(17p) CLL/SLL. These results provide further evidence of the robust clinical activity of ibrutinib in difficult-to-treat CLL/SLL populations.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Adenine",
+      "Adult",
+      "Aftercare",
+      "Aged",
+      "Aged, 80 and over",
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 17",
+      "Disease-Free Survival",
+      "Female",
+      "Humans",
+      "Leukemia, Lymphocytic, Chronic, B-Cell",
+      "Male",
+      "Middle Aged",
+      "Piperidines",
+      "Pyrazoles",
+      "Pyrimidines",
+      "Recurrence",
+      "Smith-Magenis Syndrome",
+      "Survival Rate"
+    ],
+    "keywords": [
+      "17p deletion",
+      "BTK inhibitor",
+      "chronic lymphocytic leukaemia",
+      "ibrutinib"
+    ],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4968336/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4968336/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1111/bjh.15421",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1111/bjh.15421?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22394601/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29873072/",
+    "rag_text": "Title: Evaluation of 230 patients with relapsed/refractory deletion 17p chronic lymphocytic leukaemia treated with ibrutinib from 3 clinical trials.\nAuthors: Jones Jeffrey, Mato Anthony, Coutre Steven, Byrd John C, Furman Richard R, Hillmen Peter et al. (17 authors)\nJournal: British journal of haematology (2018)\nPMID: 29873072\nAbstract: Patients with chronic lymphocytic leukaemia/small lymphocytic lymphoma (CLL/SLL) with deletion 17p [del(17p)] have poor outcomes with chemoimmunotherapy. Ibrutinib is indicated for the treatment of CLL/SLL, including del(17p) CLL/SLL, and allows for treatment without chemotherapy. This integrated analysis was performed to evaluate outcomes in 230 patients with relapsed/refractory del(17p) CLL/SLL from three ibrutinib studies. With a median of 2 prior therapies (range, 1-12), 18% and 79% of evaluable patients had del(11q) or unmutated IGHV, respectively. With a median follow-up of 28 months, overall response rate was 85% and estimated 30-month progression-free and overall survival rates were 57% [95% confidence interval (CI) 50-64] and 69% (95% CI 61-75), respectively. Patients with normal lactate dehydrogenase or no bulky disease had the most favourable survival outcomes. Sustained haematological improvements in haemoglobin, platelet count and absolute neutrophil count occurred in 61%, 67% and 70% of patients with baseline cytopenias, respectively. New onset severe cytopenias and infections decreased in frequency over time. Progression-free and overall survival with ibrutinib surpass those of other therapies for patients with del(17p) CLL/SLL. These results provide further evidence of the robust clinical activity of ibrutinib in difficult-to-treat CLL/SLL populations.\nMeSH Terms: Adenine; Adult; Aftercare; Aged; Aged, 80 and over; Chromosome Deletion; Chromosomes, Human, Pair 17; Disease-Free Survival; Female; Humans; Leukemia, Lymphocytic, Chronic, B-Cell; Male; Middle Aged; Piperidines; Pyrazoles\nKeywords: 17p deletion; BTK inhibitor; chronic lymphocytic leukaemia; ibrutinib"
+  },
+  {
+    "pmid": "26276669",
+    "doi": "10.1182/blood-2015-05-647925",
+    "pmc_id": "PMC4260976",
+    "title": "Molecular prediction of durable remission after first-line fludarabine-cyclophosphamide-rituximab in chronic lymphocytic leukemia.",
+    "authors": [
+      "Rossi Davide",
+      "Terzi-di-Bergamo Lodovico",
+      "De Paoli Lorenzo",
+      "Cerri Michaela",
+      "Ghilardi Guido",
+      "Chiarenza Annalisa",
+      "Bulian Pietro",
+      "Visco Carlo",
+      "Mauro Francesca R",
+      "Morabito Fortunato",
+      "Cortelezzi Agostino",
+      "Zaja Francesco",
+      "Forconi Francesco",
+      "Laurenti Luca",
+      "Del Giudice Ilaria",
+      "Gentile Massimo",
+      "Vincelli Iolanda",
+      "Motta Marina",
+      "Coscia Marta",
+      "Rigolin Gian Matteo",
+      "Tedeschi Alessandra",
+      "Neri Antonino",
+      "Marasca Roberto",
+      "Perbellini Omar",
+      "Moreno Carol",
+      "Del Poeta Giovanni",
+      "Massaia Massimo",
+      "Zinzani Pier Luigi",
+      "Montillo Marco",
+      "Cuneo Antonio",
+      "Gattei Valter",
+      "Foà Robin",
+      "Gaidano Gianluca"
+    ],
+    "journal": "Blood",
+    "year": "2015",
+    "pub_date": "2015 Oct 15",
+    "publication_types": [
+      "Clinical Trial",
+      "Journal Article",
+      "Multicenter Study",
+      "Research Support, Non-U.S. Gov't"
+    ],
+    "abstract": "Fludarabine, cyclophosphamide, and rituximab (FCR) has represented a significant treatment advancement in chronic lymphocytic leukemia (CLL). In the new scenario of targeted agents, there is an increasing interest in identifying patients who gain the maximum benefit from FCR. In this observational multicenter retrospective analysis of 404 CLL patients receiving frontline FCR, the combination of three biomarkers that are widely tested before treatment (IGHV mutation status, 11q deletion and 17p deletion; available in 80% of the study cohort) allowed to identify a very low-risk category of patients carrying mutated IGHV genes but neither 11q or 17p deletion that accounted for 28% of all cases. The majority of very low-risk patients (71%) remained free of progression after treatment and their hazard of relapse decreased after 4 years from FCR. The life expectancy of very low-risk patients (91% at 5 years) was superimposable to that observed in the matched normal general population, indicating that neither the disease nor complications of its treatment affected survival in this favorable CLL group. These findings need a prospective validation and may be helpful for the design of clinical trials aimed at comparing FCR to new targeted treatments of CLL, and, possibly, for optimized disease management.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Aged",
+      "Antineoplastic Combined Chemotherapy Protocols",
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 11",
+      "Chromosomes, Human, Pair 17",
+      "Cyclophosphamide",
+      "Disease-Free Survival",
+      "Female",
+      "Follow-Up Studies",
+      "Humans",
+      "Leukemia, Lymphocytic, Chronic, B-Cell",
+      "Male",
+      "Middle Aged",
+      "Rituximab",
+      "Smith-Magenis Syndrome",
+      "Survival Rate",
+      "Vidarabine"
+    ],
+    "keywords": [],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4260976/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4260976/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1182/blood-2015-05-647925",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1182/blood-2015-05-647925?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24797299/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26276669/",
+    "rag_text": "Title: Molecular prediction of durable remission after first-line fludarabine-cyclophosphamide-rituximab in chronic lymphocytic leukemia.\nAuthors: Rossi Davide, Terzi-di-Bergamo Lodovico, De Paoli Lorenzo, Cerri Michaela, Ghilardi Guido, Chiarenza Annalisa et al. (33 authors)\nJournal: Blood (2015)\nPMID: 26276669\nAbstract: Fludarabine, cyclophosphamide, and rituximab (FCR) has represented a significant treatment advancement in chronic lymphocytic leukemia (CLL). In the new scenario of targeted agents, there is an increasing interest in identifying patients who gain the maximum benefit from FCR. In this observational multicenter retrospective analysis of 404 CLL patients receiving frontline FCR, the combination of three biomarkers that are widely tested before treatment (IGHV mutation status, 11q deletion and 17p deletion; available in 80% of the study cohort) allowed to identify a very low-risk category of patients carrying mutated IGHV genes but neither 11q or 17p deletion that accounted for 28% of all cases. The majority of very low-risk patients (71%) remained free of progression after treatment and their hazard of relapse decreased after 4 years from FCR. The life expectancy of very low-risk patients (91% at 5 years) was superimposable to that observed in the matched normal general population, indicating that neither the disease nor complications of its treatment affected survival in this favorable CLL group. These findings need a prospective validation and may be helpful for the design of clinical trials aimed at comparing FCR to new targeted treatments of CLL, and, possibly, for optimized disease management.\nMeSH Terms: Aged; Antineoplastic Combined Chemotherapy Protocols; Chromosome Deletion; Chromosomes, Human, Pair 11; Chromosomes, Human, Pair 17; Cyclophosphamide; Disease-Free Survival; Female; Follow-Up Studies; Humans; Leukemia, Lymphocytic, Chronic, B-Cell; Male; Middle Aged; Rituximab; Smith-Magenis Syndrome"
+  },
+  {
+    "pmid": "25040077",
+    "doi": "10.1111/bjh.13042",
+    "pmc_id": "",
+    "title": "A new hope: novel therapeutic approaches to treatment of chronic lymphocytic leukaemia with defects in TP53.",
+    "authors": [
+      "Shindiapina Polina",
+      "Brown Jennifer R",
+      "Danilov Alexey V"
+    ],
+    "journal": "British journal of haematology",
+    "year": "2014",
+    "pub_date": "2014 Oct",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Review"
+    ],
+    "abstract": "Chronic lymphocytic leukaemia (CLL) is an indolent B-cell malignancy with heterogeneous outcomes. Chromosomal abnormalities in CLL are predictive of the natural disease course; del(11q) and del(17p) are recognized as high risk genetic lesions. Del(17p) is associated with an impaired function of TP53, a key tumour suppressor, and is particularly problematic. Such patients respond poorly to chemo-immunotherapy and have significantly shorter survival compared to patients with standard and low-risk cytogenetics. While TP53 pathway defects are rare at initial diagnosis, their frequency increases in relapsed CLL. Until very recently, this group of patients represented an unmet clinical need with few therapeutic options. However, the advent of targeted therapies has expanded the drug armamentarium and introduced new hope for these highly refractory patients. Agents that target B-cell receptor signalling, BH3-mimetics and others induce apoptosis of the neoplastic B-cells in a TP53-independent manner. Their use in the clinic is associated with remarkable activity in patients with del(17p). In this review we discuss the frequency and clinical significance of del(17p) and genetic mutations leading to disrupted TP53, the putative role of other TP53 homologues, and the results of key clinical trials involving both conventional chemotherapy and novel agents.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Antineoplastic Agents",
+      "Apoptosis",
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 17",
+      "Genes, p53",
+      "Humans",
+      "Leukemia, Lymphocytic, Chronic, B-Cell",
+      "Molecular Targeted Therapy",
+      "Smith-Magenis Syndrome",
+      "Tumor Suppressor Protein p53"
+    ],
+    "keywords": [
+      "B-cell receptor",
+      "TP53",
+      "chronic lymphocytic leukaemia"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1111/bjh.13042",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1111/bjh.13042?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/25040077/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25040077/",
+    "rag_text": "Title: A new hope: novel therapeutic approaches to treatment of chronic lymphocytic leukaemia with defects in TP53.\nAuthors: Shindiapina Polina, Brown Jennifer R, Danilov Alexey V\nJournal: British journal of haematology (2014)\nPMID: 25040077\nAbstract: Chronic lymphocytic leukaemia (CLL) is an indolent B-cell malignancy with heterogeneous outcomes. Chromosomal abnormalities in CLL are predictive of the natural disease course; del(11q) and del(17p) are recognized as high risk genetic lesions. Del(17p) is associated with an impaired function of TP53, a key tumour suppressor, and is particularly problematic. Such patients respond poorly to chemo-immunotherapy and have significantly shorter survival compared to patients with standard and low-risk cytogenetics. While TP53 pathway defects are rare at initial diagnosis, their frequency increases in relapsed CLL. Until very recently, this group of patients represented an unmet clinical need with few therapeutic options. However, the advent of targeted therapies has expanded the drug armamentarium and introduced new hope for these highly refractory patients. Agents that target B-cell receptor signalling, BH3-mimetics and others induce apoptosis of the neoplastic B-cells in a TP53-independent manner. Their use in the clinic is associated with remarkable activity in patients with del(17p). In this review we discuss the frequency and clinical significance of del(17p) and genetic mutations leading to disrupted TP53, the putative role of other TP53 homologues, and the results of key clinical trials involving both conventional chemotherapy and novel agents.\nMeSH Terms: Antineoplastic Agents; Apoptosis; Chromosome Deletion; Chromosomes, Human, Pair 17; Genes, p53; Humans; Leukemia, Lymphocytic, Chronic, B-Cell; Molecular Targeted Therapy; Smith-Magenis Syndrome; Tumor Suppressor Protein p53\nKeywords: B-cell receptor; TP53; chronic lymphocytic leukaemia"
+  },
+  {
+    "pmid": "36433773",
+    "doi": "10.1002/hon.3106",
+    "pmc_id": "",
+    "title": "Richter transformation in Chronic Lymphocytic Leukemia.",
+    "authors": [
+      "Innocenti Idanna",
+      "Benintende Giulia",
+      "Tomasso Annamaria",
+      "Fresa Alberto",
+      "Autore Francesco",
+      "Larocca Luigi Maria",
+      "Laurenti Luca"
+    ],
+    "journal": "Hematological oncology",
+    "year": "2023",
+    "pub_date": "2023 Aug",
+    "publication_types": [
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "Chronic lymphocytic leukemia can evolve to an aggressive lymphoma-in most of the cases diffuse large B cells lymphoma, rarely Hodgkin lymphoma-and this complication is defined Richter syndrome (RS). Immunogenotypic features that characterize RS include unmutated IgHV status with high prevalence of IgHV4-39/D6-13/J5 sequence; deletion of chromosome 17p or 11q; activation of oncogenes as NOTCH1 and c-MYC; inactivation of onco-suppressors as TP53 and CDKN2A; high expression of CD38 in lymph-nodes. The prognosis of this condition is very poor: patients experience a rapid clinical deterioration with frequent therapeutic failure since the current options include suboptimal strategies as standard chemo-immunotherapy followed by hematopoietic stem cells transplantation or enrollment in clinical trials which investigate the efficacy of target drugs. Understanding the biology of such a heterogeneous condition is crucial to personalize the treatment and improve patient's survival.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Humans",
+      "Leukemia, Lymphocytic, Chronic, B-Cell",
+      "Prognosis",
+      "Lymphoma, Large B-Cell, Diffuse",
+      "Hodgkin Disease",
+      "Cell Transformation, Neoplastic"
+    ],
+    "keywords": [
+      "IgHV mutational status",
+      "Richter syndrome",
+      "chromosomal aberrations",
+      "chronic lymphocytic leukemia",
+      "onco-suppressors",
+      "oncogenes"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1002/hon.3106",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1002/hon.3106?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/36433773/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36433773/",
+    "rag_text": "Title: Richter transformation in Chronic Lymphocytic Leukemia.\nAuthors: Innocenti Idanna, Benintende Giulia, Tomasso Annamaria, Fresa Alberto, Autore Francesco, Larocca Luigi Maria et al. (7 authors)\nJournal: Hematological oncology (2023)\nPMID: 36433773\nAbstract: Chronic lymphocytic leukemia can evolve to an aggressive lymphoma-in most of the cases diffuse large B cells lymphoma, rarely Hodgkin lymphoma-and this complication is defined Richter syndrome (RS). Immunogenotypic features that characterize RS include unmutated IgHV status with high prevalence of IgHV4-39/D6-13/J5 sequence; deletion of chromosome 17p or 11q; activation of oncogenes as NOTCH1 and c-MYC; inactivation of onco-suppressors as TP53 and CDKN2A; high expression of CD38 in lymph-nodes. The prognosis of this condition is very poor: patients experience a rapid clinical deterioration with frequent therapeutic failure since the current options include suboptimal strategies as standard chemo-immunotherapy followed by hematopoietic stem cells transplantation or enrollment in clinical trials which investigate the efficacy of target drugs. Understanding the biology of such a heterogeneous condition is crucial to personalize the treatment and improve patient's survival.\nMeSH Terms: Humans; Leukemia, Lymphocytic, Chronic, B-Cell; Prognosis; Lymphoma, Large B-Cell, Diffuse; Hodgkin Disease; Cell Transformation, Neoplastic\nKeywords: IgHV mutational status; Richter syndrome; chromosomal aberrations; chronic lymphocytic leukemia; onco-suppressors; oncogenes"
+  },
+  {
+    "pmid": "23906020",
+    "doi": "10.3109/10428194.2013.829919",
+    "pmc_id": "",
+    "title": "The role of ATM mutations and 11q deletions in disease progression in chronic lymphocytic leukemia.",
+    "authors": [
+      "Stankovic Tatjana",
+      "Skowronska Anna"
+    ],
+    "journal": "Leukemia & lymphoma",
+    "year": "2014",
+    "pub_date": "2014 Jun",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Review"
+    ],
+    "abstract": "Abstract ATM gene alteration is a frequent event in pathogenesis of chronic lymphocytic leukemia (CLL) and occurs as monoallelic loss in the form of 11q23 deletion, with and without mutation in the remaining ATM allele. ATM is a principal DNA damage response gene and biallelic ATM alterations lead to ATM functional loss and chemoresistance. The introduction of new therapies, such as intensive chemoimmunotherapy and inhibition of B-cell receptor (BCR) signaling, has changed clinical responses for the majority of CLL tumors including those with 11q deletion, but it remains to be determined whether these strategies can prevent clonal evolution of tumors with biallelic ATM alterations. In this review we discuss ATM function and the consequences of its loss during CLL pathogenesis, differences in clinical behavior of tumors with monoallelic and biallelic ATM alterations, and we outline possible approaches for targeting the ATM null CLL phenotype.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Ataxia Telangiectasia Mutated Proteins",
+      "Biomarkers, Tumor",
+      "Chromosome Deletion",
+      "Chromosomes, Human, Pair 11",
+      "Clonal Evolution",
+      "Disease Progression",
+      "Humans",
+      "Jacobsen Distal 11q Deletion Syndrome",
+      "Leukemia, Lymphocytic, Chronic, B-Cell",
+      "Molecular Targeted Therapy",
+      "Mutation",
+      "Phenotype",
+      "Prognosis"
+    ],
+    "keywords": [
+      "11q deletion",
+      "ATM mutations",
+      "CLL",
+      "prognosis"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.3109/10428194.2013.829919",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.3109/10428194.2013.829919?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/23906020/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23906020/",
+    "rag_text": "Title: The role of ATM mutations and 11q deletions in disease progression in chronic lymphocytic leukemia.\nAuthors: Stankovic Tatjana, Skowronska Anna\nJournal: Leukemia & lymphoma (2014)\nPMID: 23906020\nAbstract: Abstract ATM gene alteration is a frequent event in pathogenesis of chronic lymphocytic leukemia (CLL) and occurs as monoallelic loss in the form of 11q23 deletion, with and without mutation in the remaining ATM allele. ATM is a principal DNA damage response gene and biallelic ATM alterations lead to ATM functional loss and chemoresistance. The introduction of new therapies, such as intensive chemoimmunotherapy and inhibition of B-cell receptor (BCR) signaling, has changed clinical responses for the majority of CLL tumors including those with 11q deletion, but it remains to be determined whether these strategies can prevent clonal evolution of tumors with biallelic ATM alterations. In this review we discuss ATM function and the consequences of its loss during CLL pathogenesis, differences in clinical behavior of tumors with monoallelic and biallelic ATM alterations, and we outline possible approaches for targeting the ATM null CLL phenotype.\nMeSH Terms: Ataxia Telangiectasia Mutated Proteins; Biomarkers, Tumor; Chromosome Deletion; Chromosomes, Human, Pair 11; Clonal Evolution; Disease Progression; Humans; Jacobsen Distal 11q Deletion Syndrome; Leukemia, Lymphocytic, Chronic, B-Cell; Molecular Targeted Therapy; Mutation; Phenotype; Prognosis\nKeywords: 11q deletion; ATM mutations; CLL; prognosis"
+  },
+  {
+    "pmid": "16304374",
+    "doi": "10.1182/asheducation-2005.1.156",
+    "pmc_id": "",
+    "title": "Molecular Pathogenesis of MDS.",
+    "authors": [
+      "Look A Thomas"
+    ],
+    "journal": "Hematology. American Society of Hematology. Education Program",
+    "year": "2005",
+    "pub_date": "2005",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "Clonal disorders of hematopoiesis, such as myelodysplastic syndromes (MDS) and myeloproliferative diseases (MPD), affect both hematopoietic stem cells and progenitor cells within the erythroid, platelet and granulocytic lineages and can have devastating consequences in children and adults. The genetic features of these diseases often include clonal, nonrandom chromosomal deletions (e.g., 7q-, 5q-, 20q-, 6q-, 11q- and 13q-) that appear to inactivate tumor suppressor genes required for the normal development of myeloid cells (reviewed in Bench and Fenaux). These putative tumor suppressors have proved to be much more difficult to identify than oncogenes activated by chromosomal translocations, the other major class of chromosomal lesions in MDS and MPD. Although MDS and MPD are almost certainly caused by mutations in stem/progenitor cells, the role of inactivated tumor suppressor genes in this process remains poorly understood. In a small portion of myeloid diseases, mutations have been identified in genes encoding factors known to be required for normal hematopoiesis, such as PU.1, RUNX1, CTNNA1 (alpha-catenin) and c/EBPalpha, and implicating these genes as tumor suppressors. Nonetheless, the identities of most deletion-associated tumor suppressors in these diseases remains elusive, despite complete sequencing of the human genome. The deleted regions detected by cytogenetic methods are generally very large, containing many hundreds of genes, thus making it hard to locate the critical affected gene or genes. It is also unclear whether dysfunctional myelopoiesis results from haploinsufficiency, associated with the deletion of one allele, or from homozygous inactivation due to additional point mutations or microdeletions of the retained wild-type allele. In general MDS have proved surprisingly resistant to conventional treatments. Targeted therapeutic advances in MDS will likely depend on a full comprehension of underlying molecular mechanisms, in particular the tumor suppressor genes lost through clonal, nonrandom chromosomal deletions, such as the 7q- and (del)5q.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Adult",
+      "Chromosome Aberrations",
+      "Chromosome Deletion",
+      "Gene Amplification",
+      "Gene Expression Regulation, Neoplastic",
+      "Genes, Tumor Suppressor",
+      "Hematopoiesis",
+      "Humans",
+      "Karyotyping",
+      "Myelodysplastic Syndromes",
+      "Myeloproliferative Disorders",
+      "Prognosis",
+      "Transcription Factors"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1182/asheducation-2005.1.156",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1182/asheducation-2005.1.156?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/16304374/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16304374/",
+    "rag_text": "Title: Molecular Pathogenesis of MDS.\nAuthors: Look A Thomas\nJournal: Hematology. American Society of Hematology. Education Program (2005)\nPMID: 16304374\nAbstract: Clonal disorders of hematopoiesis, such as myelodysplastic syndromes (MDS) and myeloproliferative diseases (MPD), affect both hematopoietic stem cells and progenitor cells within the erythroid, platelet and granulocytic lineages and can have devastating consequences in children and adults. The genetic features of these diseases often include clonal, nonrandom chromosomal deletions (e.g., 7q-, 5q-, 20q-, 6q-, 11q- and 13q-) that appear to inactivate tumor suppressor genes required for the normal development of myeloid cells (reviewed in Bench and Fenaux). These putative tumor suppressors have proved to be much more difficult to identify than oncogenes activated by chromosomal translocations, the other major class of chromosomal lesions in MDS and MPD. Although MDS and MPD are almost certainly caused by mutations in stem/progenitor cells, the role of inactivated tumor suppressor genes in this process remains poorly understood. In a small portion of myeloid diseases, mutations have been identified in genes encoding factors known to be required for normal hematopoiesis, such as PU.1, RUNX1, CTNNA1 (alpha-catenin) and c/EBPalpha, and implicating these genes as tumor suppressors. Nonetheless, the identities of most deletion-associated tumor suppressors in these diseases remains elusive, despite complete sequencing of the human genome. The deleted regions detected by cytogenetic methods are generally very large, containing many hundreds of genes, thus making it hard to locate the critical affected gene or genes. It is also unclear whether dysfunctional myelopoiesis results from haploinsufficiency, associated with the deletion of one allele, or from homozygous inactivation due to additional point mutations or microdeletions of the retained wild-type allele. In general MDS have proved surprisingly resistant to conventional treatments. Targeted therapeutic advances in MDS will likely depend on a full comprehension of underlying molecular mechanisms, in particular the tumor suppressor genes lost through clonal, nonrandom chromosomal deletions, such as the 7q- and (del)5q.\nMeSH Terms: Adult; Chromosome Aberrations; Chromosome Deletion; Gene Amplification; Gene Expression Regulation, Neoplastic; Genes, Tumor Suppressor; Hematopoiesis; Humans; Karyotyping; Myelodysplastic Syndromes; Myeloproliferative Disorders; Prognosis; Transcription Factors"
+  },
+  {
+    "pmid": "41419787",
+    "doi": "10.1186/s11689-025-09659-9",
+    "pmc_id": "PMC4419691",
+    "title": "Clinical and neuropsychological characterization of Jacobsen syndrome (del11q).",
+    "authors": [
+      "Garriz-Luis Alexandra",
+      "Rodríguez-Toscano Elisa",
+      "Burdeus-Olavarrieta Mónica",
+      "Arango Celso",
+      "Parellada Mara",
+      "Díaz-Caneja Covadonga M"
+    ],
+    "journal": "Journal of neurodevelopmental disorders",
+    "year": "2025",
+    "pub_date": "2025 Dec 19",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "BACKGROUND: Jacobsen Syndrome (JS), also known as 11q Deletion Syndrome (del11q), is a rare genetic disorder affecting approximately 1 in 100,000 births that presents with varied clinical manifestations and severities including intellectual disability, psychomotor delays, and distinctive physical traits. This study offers a detailed analysis of the clinical and cognitive profiles of individuals with JS and examines how these characteristics are related to each other and to genetic variables. METHODS: Twenty-nine participants with JS (20 female, mean age 12.48 years, SD = 9.13) underwent standardized assessments assessing cognitive functioning, adaptive behavior, autistic traits, and general psychopathology. A CGH array was used to assess genetic deletions. We employed descriptive and inferential statistical analyses to explore the association between clinical and cognitive characteristics and deletion size. RESULTS: Sixty percent of participants had verbal language. Mean intelligence quotient was 50.18, the range of adaptive functioning was very broad, and 43% showed behaviors exceeding the ADOS-2 cutoff for autism spectrum classification. A higher cognitive performance was associated with better adaptive skills, including more advanced language skills and with more depressive symptoms or a diagnosis of depression. Larger deletions were associated with more delays in developmental milestones and poorer cognitive functioning. No significant association was found between haploinsufficiency of the KIRREL3 and ARHGAP32 genes and cognitive functioning or autistic characteristics. CONCLUSIONS: Our findings provide deeper insights into the complex relationship between genetic factors and clinical attributes in individuals with JS, revealing notable clinical variability within the JS population. This information may help predict developmental difficulties as genetic findings emerge.",
+    "abstract_sections": {
+      "BACKGROUND": "Jacobsen Syndrome (JS), also known as 11q Deletion Syndrome (del11q), is a rare genetic disorder affecting approximately 1 in 100,000 births that presents with varied clinical manifestations and severities including intellectual disability, psychomotor delays, and distinctive physical traits. This study offers a detailed analysis of the clinical and cognitive profiles of individuals with JS and examines how these characteristics are related to each other and to genetic variables.",
+      "METHODS": "Twenty-nine participants with JS (20 female, mean age 12.48 years, SD = 9.13) underwent standardized assessments assessing cognitive functioning, adaptive behavior, autistic traits, and general psychopathology. A CGH array was used to assess genetic deletions. We employed descriptive and inferential statistical analyses to explore the association between clinical and cognitive characteristics and deletion size.",
+      "RESULTS": "Sixty percent of participants had verbal language. Mean intelligence quotient was 50.18, the range of adaptive functioning was very broad, and 43% showed behaviors exceeding the ADOS-2 cutoff for autism spectrum classification. A higher cognitive performance was associated with better adaptive skills, including more advanced language skills and with more depressive symptoms or a diagnosis of depression. Larger deletions were associated with more delays in developmental milestones and poorer cognitive functioning. No significant association was found between haploinsufficiency of the KIRREL3 and ARHGAP32 genes and cognitive functioning or autistic characteristics.",
+      "CONCLUSIONS": "Our findings provide deeper insights into the complex relationship between genetic factors and clinical attributes in individuals with JS, revealing notable clinical variability within the JS population. This information may help predict developmental difficulties as genetic findings emerge."
+    },
+    "mesh_terms": [
+      "Humans",
+      "Female",
+      "Male",
+      "Child",
+      "Adolescent",
+      "Jacobsen Distal 11q Deletion Syndrome",
+      "Neuropsychological Tests",
+      "Child, Preschool",
+      "Adaptation, Psychological",
+      "Young Adult",
+      "Cognition",
+      "Chromosome Deletion"
+    ],
+    "keywords": [
+      "11q deletion",
+      "Adaptive behavior",
+      "Autism",
+      "Clinical characterization",
+      "Cognition",
+      "Depression",
+      "Intellectual disability",
+      "Jacobsen syndrome"
+    ],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4419691/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4419691/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1186/s11689-025-09659-9",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1186/s11689-025-09659-9?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/27503703/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41419787/",
+    "rag_text": "Title: Clinical and neuropsychological characterization of Jacobsen syndrome (del11q).\nAuthors: Garriz-Luis Alexandra, Rodríguez-Toscano Elisa, Burdeus-Olavarrieta Mónica, Arango Celso, Parellada Mara, Díaz-Caneja Covadonga M\nJournal: Journal of neurodevelopmental disorders (2025)\nPMID: 41419787\nAbstract: BACKGROUND: Jacobsen Syndrome (JS), also known as 11q Deletion Syndrome (del11q), is a rare genetic disorder affecting approximately 1 in 100,000 births that presents with varied clinical manifestations and severities including intellectual disability, psychomotor delays, and distinctive physical traits. This study offers a detailed analysis of the clinical and cognitive profiles of individuals with JS and examines how these characteristics are related to each other and to genetic variables. METHODS: Twenty-nine participants with JS (20 female, mean age 12.48 years, SD = 9.13) underwent standardized assessments assessing cognitive functioning, adaptive behavior, autistic traits, and general psychopathology. A CGH array was used to assess genetic deletions. We employed descriptive and inferential statistical analyses to explore the association between clinical and cognitive characteristics and deletion size. RESULTS: Sixty percent of participants had verbal language. Mean intelligence quotient was 50.18, the range of adaptive functioning was very broad, and 43% showed behaviors exceeding the ADOS-2 cutoff for autism spectrum classification. A higher cognitive performance was associated with better adaptive skills, including more advanced language skills and with more depressive symptoms or a diagnosis of depression. Larger deletions were associated with more delays in developmental milestones and poorer cognitive functioning. No significant association was found between haploinsufficiency of the KIRREL3 and ARHGAP32 genes and cognitive functioning or autistic characteristics. CONCLUSIONS: Our findings provide deeper insights into the complex relationship between genetic factors and clinical attributes in individuals with JS, revealing notable clinical variability within the JS population. This information may help predict developmental difficulties as genetic findings emerge.\nMeSH Terms: Humans; Female; Male; Child; Adolescent; Jacobsen Distal 11q Deletion Syndrome; Neuropsychological Tests; Child, Preschool; Adaptation, Psychological; Young Adult; Cognition; Chromosome Deletion\nKeywords: 11q deletion; Adaptive behavior; Autism; Clinical characterization; Cognition; Depression; Intellectual disability; Jacobsen syndrome"
+  },
+  {
+    "pmid": "24677787",
+    "doi": "10.1002/ajmg.a.36495",
+    "pmc_id": "",
+    "title": "Chromosomal-array analysis reveals partial 11q duplication and partial 12p deletion in a mildly affected case.",
+    "authors": [
+      "Tuğ Esra",
+      "Yirmibeş Karaoğuz Meral",
+      "Kayhan Gülsüm",
+      "Ergün Mehmet Ali",
+      "Perçin Ferda E"
+    ],
+    "journal": "American journal of medical genetics. Part A",
+    "year": "2014",
+    "pub_date": "2014 Jul",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "Partial trisomy 11q is a rare syndrome and may be observed due to an intra-chromosomal duplication or an inter-chromosomal insertion. The deletions of the short arm of chromosome 12 are also uncommon structural aberrations. Only a small fraction of structural chromosome anomalies are related to the unbalanced progeny of balanced translocation carrier parents. We here report on a 10-month-old baby boy who shows a very mild phenotype related to unique chromosomal abnormality, partial trisomy of 11q, and partial monosomy of 12p, due to the maternal balanced reciprocal translocation (11;12). The proband showed a 49.64 Mb duplication of 11q14.1-q25 and 0.44 Mb deletion of 12p13.33 in chromosomal array analysis. Since it is known that the duplications may cause a milder phenotype than deletions. Dysmorphic facial features, minor cardiac anomalies, respiratory distress, central nervous system anomalies, and psychomotor delay observed in the patient was similar to the reported pure 11q duplication cases, while behavioral problems observed in pure monosomy 12p cases could not be evaluated due to the young age of the patient. Phenotype-genotype correlation will be discussed in view of all the reported pure partial 11q trisomies and pure partial 12p deletion cases.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Abnormalities, Multiple",
+      "Chromosome Banding",
+      "Chromosome Deletion",
+      "Chromosome Disorders",
+      "Chromosomes, Human, Pair 11",
+      "Chromosomes, Human, Pair 12",
+      "Comparative Genomic Hybridization",
+      "Facies",
+      "Genetic Association Studies",
+      "Humans",
+      "Infant",
+      "Male",
+      "Phenotype",
+      "Trisomy"
+    ],
+    "keywords": [
+      "developmental delay",
+      "dysmorphism",
+      "molecular karyotyping",
+      "partial monosomy 12p",
+      "partial trisomy 11q"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1002/ajmg.a.36495",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1002/ajmg.a.36495?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24677787/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24677787/",
+    "rag_text": "Title: Chromosomal-array analysis reveals partial 11q duplication and partial 12p deletion in a mildly affected case.\nAuthors: Tuğ Esra, Yirmibeş Karaoğuz Meral, Kayhan Gülsüm, Ergün Mehmet Ali, Perçin Ferda E\nJournal: American journal of medical genetics. Part A (2014)\nPMID: 24677787\nAbstract: Partial trisomy 11q is a rare syndrome and may be observed due to an intra-chromosomal duplication or an inter-chromosomal insertion. The deletions of the short arm of chromosome 12 are also uncommon structural aberrations. Only a small fraction of structural chromosome anomalies are related to the unbalanced progeny of balanced translocation carrier parents. We here report on a 10-month-old baby boy who shows a very mild phenotype related to unique chromosomal abnormality, partial trisomy of 11q, and partial monosomy of 12p, due to the maternal balanced reciprocal translocation (11;12). The proband showed a 49.64 Mb duplication of 11q14.1-q25 and 0.44 Mb deletion of 12p13.33 in chromosomal array analysis. Since it is known that the duplications may cause a milder phenotype than deletions. Dysmorphic facial features, minor cardiac anomalies, respiratory distress, central nervous system anomalies, and psychomotor delay observed in the patient was similar to the reported pure 11q duplication cases, while behavioral problems observed in pure monosomy 12p cases could not be evaluated due to the young age of the patient. Phenotype-genotype correlation will be discussed in view of all the reported pure partial 11q trisomies and pure partial 12p deletion cases.\nMeSH Terms: Abnormalities, Multiple; Chromosome Banding; Chromosome Deletion; Chromosome Disorders; Chromosomes, Human, Pair 11; Chromosomes, Human, Pair 12; Comparative Genomic Hybridization; Facies; Genetic Association Studies; Humans; Infant; Male; Phenotype; Trisomy\nKeywords: developmental delay; dysmorphism; molecular karyotyping; partial monosomy 12p; partial trisomy 11q"
+  },
+  {
+    "pmid": "14623457",
+    "doi": "10.1016/s0165-4608(03)00203-6",
+    "pmc_id": "",
+    "title": "Abnormal constitutional karyotypes in patients with neuroblastoma: a report of four new cases and review of 47 others in the literature.",
+    "authors": [
+      "Satgé Daniel",
+      "Moore Sam W",
+      "Stiller Charles A",
+      "Niggli Félix K",
+      "Pritchard-Jones Kathy",
+      "Bown Nick",
+      "Bénard Jean",
+      "Plantaz Dominique"
+    ],
+    "journal": "Cancer genetics and cytogenetics",
+    "year": "2003",
+    "pub_date": "2003 Dec",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Review"
+    ],
+    "abstract": "Anomalies of constitutional karyotype, which have led to the discovery of oncogenes and tumor-suppressor genes in embryonal tumors such as retinoblastoma and Wilms tumor, have, until recently, rarely been reported until recently in neuroblastoma. We present four new cases of neuroblastoma associated with (a) a mosaicism for monosomy 22; (b) an 11q interstitial deletion; (c) a pericentric inversion of chromosome 9 at band 9p21; and (d) a Robertsonian translocation t(13;14). These anomalies and 47 others in the literature are worthy of interest, because some are recurrent, involving the same chromosome regions (1p36, 2p23, 3q, 11q23, and 15q), and some anomalies are situated on chromosome regions known to contain genes involved in neuroblastoma development (1p, 2p, 9p, 11q, 16q, and 17q). Chromosome regions 3q and 15q, observed several times, may also contain genes significant for neuroblastoma onset or development. Furthermore, the lack of neuroblastoma in patients with Down syndrome and Klinefelter or triple-X syndromes, together with a probable excess of neuroblastoma in patients with Turner syndrome, suggests that genes of importance for neuroblastoma may map to chromosomes X and 21. A search for genes implicated in neuroblastoma biology should use these data.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Child",
+      "Child, Preschool",
+      "Chromosome Aberrations",
+      "Cytogenetic Analysis",
+      "Female",
+      "Humans",
+      "Infant",
+      "Infant, Newborn",
+      "Karyotyping",
+      "Male",
+      "Neuroblastoma"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/s0165-4608(03)00203-6",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/s0165-4608(03)00203-6?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/14623457/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/14623457/",
+    "rag_text": "Title: Abnormal constitutional karyotypes in patients with neuroblastoma: a report of four new cases and review of 47 others in the literature.\nAuthors: Satgé Daniel, Moore Sam W, Stiller Charles A, Niggli Félix K, Pritchard-Jones Kathy, Bown Nick et al. (8 authors)\nJournal: Cancer genetics and cytogenetics (2003)\nPMID: 14623457\nAbstract: Anomalies of constitutional karyotype, which have led to the discovery of oncogenes and tumor-suppressor genes in embryonal tumors such as retinoblastoma and Wilms tumor, have, until recently, rarely been reported until recently in neuroblastoma. We present four new cases of neuroblastoma associated with (a) a mosaicism for monosomy 22; (b) an 11q interstitial deletion; (c) a pericentric inversion of chromosome 9 at band 9p21; and (d) a Robertsonian translocation t(13;14). These anomalies and 47 others in the literature are worthy of interest, because some are recurrent, involving the same chromosome regions (1p36, 2p23, 3q, 11q23, and 15q), and some anomalies are situated on chromosome regions known to contain genes involved in neuroblastoma development (1p, 2p, 9p, 11q, 16q, and 17q). Chromosome regions 3q and 15q, observed several times, may also contain genes significant for neuroblastoma onset or development. Furthermore, the lack of neuroblastoma in patients with Down syndrome and Klinefelter or triple-X syndromes, together with a probable excess of neuroblastoma in patients with Turner syndrome, suggests that genes of importance for neuroblastoma may map to chromosomes X and 21. A search for genes implicated in neuroblastoma biology should use these data.\nMeSH Terms: Child; Child, Preschool; Chromosome Aberrations; Cytogenetic Analysis; Female; Humans; Infant; Infant, Newborn; Karyotyping; Male; Neuroblastoma"
+  },
+  {
+    "pmid": "1673858",
+    "doi": "10.1007/978-1-4615-3938-4_1",
+    "pmc_id": "",
+    "title": "Cytogenetic analysis in melanoma and nevi.",
+    "authors": [
+      "Cowan J M",
+      "Francke U"
+    ],
+    "journal": "Cancer treatment and research",
+    "year": "1991",
+    "pub_date": "1991",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Research Support, U.S. Gov't, P.H.S.",
+      "Review"
+    ],
+    "abstract": "We have presented data from the cytogenetic analysis of melanocytes derived from four dysplastic nevi and 14 melanomas. We have confirmed previous results from melanomas, including the loss of chromosome 6q and duplication of 1q and 7p. We did not observe an excess of rearrangements involving chromosomes 2 and 3, but we found frequent deletion of chromosomes 9p, 10p, 10q, and 11q. We observed the loss of chromosome 9 in 2 of 4 dysplastic nevi, and combining this observation with that from the melanomas suggests that deletion or inactivation of a gene on 9p may be a primary event in melanocyte transformation. Other tumor suppressor genes are likely to be involved in the transformation process, and these are most likely located on 10p, 10q, 11q, and 6q. We observed many rearrangement involving chromosome band 1p13 and suggest that activation of a gene in that band may also contribute to the transformation process.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Chromosome Aberrations",
+      "Dysplastic Nevus Syndrome",
+      "Gene Expression Regulation, Neoplastic",
+      "Humans",
+      "Karyotyping",
+      "Melanoma",
+      "Tumor Cells, Cultured"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1007/978-1-4615-3938-4_1",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1007/978-1-4615-3938-4_1?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/1673858/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1673858/",
+    "rag_text": "Title: Cytogenetic analysis in melanoma and nevi.\nAuthors: Cowan J M, Francke U\nJournal: Cancer treatment and research (1991)\nPMID: 1673858\nAbstract: We have presented data from the cytogenetic analysis of melanocytes derived from four dysplastic nevi and 14 melanomas. We have confirmed previous results from melanomas, including the loss of chromosome 6q and duplication of 1q and 7p. We did not observe an excess of rearrangements involving chromosomes 2 and 3, but we found frequent deletion of chromosomes 9p, 10p, 10q, and 11q. We observed the loss of chromosome 9 in 2 of 4 dysplastic nevi, and combining this observation with that from the melanomas suggests that deletion or inactivation of a gene on 9p may be a primary event in melanocyte transformation. Other tumor suppressor genes are likely to be involved in the transformation process, and these are most likely located on 10p, 10q, 11q, and 6q. We observed many rearrangement involving chromosome band 1p13 and suggest that activation of a gene in that band may also contribute to the transformation process.\nMeSH Terms: Chromosome Aberrations; Dysplastic Nevus Syndrome; Gene Expression Regulation, Neoplastic; Humans; Karyotyping; Melanoma; Tumor Cells, Cultured"
+  }
+]

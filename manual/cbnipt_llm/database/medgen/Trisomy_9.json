@@ -1,0 +1,526 @@
+[
+  {
+    "medgen_uid": "140938",
+    "disease_name": "Trisomy 9",
+    "concept_id": "C0432411",
+    "disease_type": "Disease or Syndrome",
+    "definition": "A chromosomal abnormality consisting of the presence of a third copy of chromosome 9 in somatic cells. [from NCI]",
+    "synonyms": [
+      "Chromosome 9, trisomy",
+      "Duplication 9"
+    ],
+    "cross_references": {
+      "SNOMED-CT": "205650008"
+    },
+    "literature": {
+      "professional_guidelines": {
+        "papers": [
+          {
+            "pmid": "40683916",
+            "title": "Evaluation of the prenatal diagnostic value of non-invasive prenatal testing for the detection of rare fetal autosomal trisomies: a single center study of 83,842 cases.",
+            "authors": [
+              "Chen Y",
+              "Wu X",
+              "Li H",
+              "Yin Y",
+              "Zhang Y"
+            ],
+            "journal": "Sci Rep",
+            "citation": "2025 Jul 19;15(1):26254. doi: 10.1038/s41598-025-09757-7. 40683916 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40683916/"
+          },
+          {
+            "pmid": "39978942",
+            "title": "Prenatal diagnosis and pregnancy outcomes in fetuses with vertebral abnormalities.",
+            "authors": [
+              "Hu J",
+              "Zeng L",
+              "Wang T",
+              "Yi M",
+              "Song J"
+            ],
+            "journal": "J Matern Fetal Neonatal Med",
+            "citation": "2025 Dec;38(1):2468000. Epub 2025 Feb 20 doi: 10.1080/14767058.2025.2468000. 39978942",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39978942/"
+          },
+          {
+            "pmid": "34981204",
+            "title": "Prenatal diagnosis and postnatal outcomes of right aortic arch anomalies.",
+            "authors": [
+              "Topbas Selcuki NF",
+              "Senol G",
+              "Esin D",
+              "Ozkose ZG",
+              "Caypinar SS",
+              "Bornaun H",
+              "Cetin BA",
+              "Yuksel MA"
+            ],
+            "journal": "Arch Gynecol Obstet",
+            "citation": "2022 Sep;306(3):745-752. Epub 2022 Jan 4 doi: 10.1007/s00404-021-06346-7. 34981204",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34981204/"
+          }
+        ],
+        "curated": [],
+        "see_all": {
+          "count": 9,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22trisomy%209%22%5Btiab%3A~0%5D)%20AND%20(%22english%20and%20humans%22%5BFilter%5D)%20AND%20(%20(%22practice%20guideline%22%5BFilter%5D)%20OR%20(practice*%5Btitl%5D%20AND%20(guideline%5Btitl%5D%20OR%20parameter%5Btitl%5D%20OR%20resource%5Btitl%5D%20OR%20bulletin%5Btitl%5D%20OR%20best%5Btitl%5D))%20OR%20(genetic*%5Btitl%5D%20AND%20(evaluation%5Btitl%5D%20OR%20counseling%5Btitl%5D%20OR%20screening%5Btitl%5D%20OR%20test*%5Btitl%5D))%20OR%20(clinical%5Btitl%5D%20AND%20((expert%5Btitl%5D%20AND%20consensus%5Btitl%5D)%20OR%20utility%5Btitl%5D%20OR%20guideline*%5Btitl%5D))%20OR%20(management%5Btitl%5D%20AND%20(clinical%5Btitl%5D%20OR%20diagnos*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20pain%5Btitl%5D%20OR%20surveillance%5Btitl%5D%20OR%20emergency%5Btitl%5D%20OR%20guideline*%5Btitl%5D%20OR%20therap*))%20OR%20(treatment%5Btitl%5D%20AND%20((evaluation%5Btitl%5D%20AND%20diagnosis%5Btitl%5D)%20OR%20(assessment%5Btitl%5D%20AND%20prevention%5Btitl%5D)%20OR%20therap*))%20OR%20(Diagnos*%5Btitl%5D%20AND%20(prenatal%5Btitl%5D%20OR%20treatment%5Btitl%5D%20OR%20follow-up%5Btitl%5D%20OR%20statement%5Btitl%5D%20OR%20criteria%5Btitl%5D%20OR%20newborn%5Btitl%5D%20OR%20differential%5Btitl%5D%20OR%20neonatal%5Btitl%5D%20OR%20neonate%5Btitl%5D))%20OR%20(guideline*%5Btitl%5D%20AND%20(pharmacogenetic*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20evidence-based%5Btitl%5D%20OR%20consensus%5Btitl%5D%20OR%20(technical%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20(molecular%5Btitl%5D%20AND%20testing%5Btitl%5D)))%20OR%20(risk%5Btitl%5D%20AND%20assessment%5Btitl%5D)%20OR%20(recommendation*%5Btitl%5D%20AND%20(statement%5Btitl%5D%20OR%20Evidence-based%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(care%20AND%20((Patient%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20primary%5Btitl%5D%20OR%20psychosocial%5Btitl%5D))%20OR%20(Health%5Btitl%5D%20AND%20supervision%5Btitl%5D)%20OR%20(statement%5Btitl%5D%20AND%20(policy%5Btitl%5D%20OR%20position%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(pharmacogenetics%5Btitl%5D%20AND%20(Dosing%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20genotype*%5Btitl%5D%20OR%20drug*%5Btitl%5D))%20OR%20(Chemotherapy%5Btitl%5D%20AND%20decision*%5Btitl%5D)%20OR%20(screening%5Btitl%5D%20AND%20(newborn%5Btitl%5D%20OR%20neonat*%5Btitl%5D%20OR%20detection%5Btitl%5D%20OR%20diagnos*%5Btitl%5D))%20OR%20(criteria%5Btitl%5D%20OR%20genotype*%5Btitl%5D)%20)%20NOT%20(%22Case%20reports%22%5BPublication%20type%5D%20OR%20%22clinical%20study%22%5BPublication%20Type%5D%20OR%20%22randomized%20controlled%20trial%22%5BPublication%20Type%5D)"
+        }
+      },
+      "recent_clinical_studies": {
+        "etiology": {
+          "papers": [
+            {
+              "pmid": "40683916",
+              "title": "Evaluation of the prenatal diagnostic value of non-invasive prenatal testing for the detection of rare fetal autosomal trisomies: a single center study of 83,842 cases.",
+              "authors": [
+                "Chen Y",
+                "Wu X",
+                "Li H",
+                "Yin Y",
+                "Zhang Y"
+              ],
+              "journal": "Sci Rep",
+              "citation": "2025 Jul 19;15(1):26254. doi: 10.1038/s41598-025-09757-7. 40683916 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40683916/"
+            },
+            {
+              "pmid": "39978942",
+              "title": "Prenatal diagnosis and pregnancy outcomes in fetuses with vertebral abnormalities.",
+              "authors": [
+                "Hu J",
+                "Zeng L",
+                "Wang T",
+                "Yi M",
+                "Song J"
+              ],
+              "journal": "J Matern Fetal Neonatal Med",
+              "citation": "2025 Dec;38(1):2468000. Epub 2025 Feb 20 doi: 10.1080/14767058.2025.2468000. 39978942",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39978942/"
+            },
+            {
+              "pmid": "37821384",
+              "title": "Complete trisomy 9 detected by noninvasive prenatal testing and confirmed by amniocentesis.",
+              "authors": [
+                "Huang F",
+                "Zhou J",
+                "Xu Z",
+                "Qi Q",
+                "Sun H",
+                "Chen L",
+                "Wang L"
+              ],
+              "journal": "Drug Discov Ther",
+              "citation": "2023 Nov 18;17(5):365-367. Epub 2023 Oct 11 doi: 10.5582/ddt.2023.01051. 37821384",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/37821384/"
+            },
+            {
+              "pmid": "35907265",
+              "title": "Chromosomal Numerical Aberrations and Rare Copy Number Variation in Patients with Inflammatory Bowel Disease.",
+              "authors": [
+                "Dirvanskyte P",
+                "Gurram B",
+                "Bolton C",
+                "Warner N",
+                "Jones KDJ",
+                "Griffin HR; Genomics England Research Consortium",
+                "Park JY",
+                "Keller KM",
+                "Gilmour KC",
+                "Hambleton S",
+                "Muise AM",
+                "Wysocki C",
+                "Uhlig HH"
+              ],
+              "journal": "J Crohns Colitis",
+              "citation": "2023 Jan 27;17(1):49-60. doi: 10.1093/ecco-jcc/jjac103. 35907265 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/35907265/"
+            },
+            {
+              "pmid": "21808948",
+              "title": "Prenatal diagnosis of trisomy 9.",
+              "authors": [
+                "Zuzarte R",
+                "Tan JV",
+                "Wee HY",
+                "Yeo GS"
+              ],
+              "journal": "Singapore Med J",
+              "citation": "2011 Jul;52(7):e150-2. 21808948",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/21808948/"
+            }
+          ],
+          "see_all": {
+            "count": 50,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%209%22%20AND%20Etiology%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "diagnosis": {
+          "papers": [
+            {
+              "pmid": "40130691",
+              "title": "Presenting Characteristics and Medical Conditions in 67 Cases With Trisomy 9 Mosaicism.",
+              "authors": [
+                "Bruns DA"
+              ],
+              "journal": "Clin Genet",
+              "citation": "2025 Sep;108(3):259-265. Epub 2025 Mar 25 doi: 10.1111/cge.14742. 40130691",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40130691/"
+            },
+            {
+              "pmid": "33969943",
+              "title": "Trisomy 9 mosaic syndrome: Sixteen additional patients with new and/or less commonly reported features, literature review, and suggested clinical guidelines.",
+              "authors": [
+                "Li M",
+                "Glass J",
+                "Du X",
+                "Dubbs H",
+                "Harr MH",
+                "Falk M",
+                "Smolarek T",
+                "Hopkin RJ",
+                "Zackai E",
+                "Sheppard SE"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2021 Aug;185(8):2374-2383. Epub 2021 May 10 doi: 10.1002/ajmg.a.62251. 33969943 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/33969943/"
+            },
+            {
+              "pmid": "24858667",
+              "title": "Mosaic trisomy 9 hematopoietic chimera.",
+              "authors": [
+                "DeLoache KB",
+                "Bradshaw WT"
+              ],
+              "journal": "Adv Neonatal Care",
+              "citation": "2014 Jun;14(3):165-71. doi: 10.1097/ANC.0000000000000082. 24858667",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/24858667/"
+            },
+            {
+              "pmid": "19106354",
+              "title": "Sonographic findings in trisomy 9.",
+              "authors": [
+                "Schwendemann WD",
+                "Contag SA",
+                "Wax JR",
+                "Miller RC",
+                "Polzin WJ",
+                "Koty PP",
+                "Watson WJ"
+              ],
+              "journal": "J Ultrasound Med",
+              "citation": "2009 Jan;28(1):39-42. doi: 10.7863/jum.2009.28.1.39. 19106354",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19106354/"
+            },
+            {
+              "pmid": "4124576",
+              "title": "Acquired trisomy 9.",
+              "authors": [
+                "Rowley JD"
+              ],
+              "journal": "Lancet",
+              "citation": "1973 Aug 18;2(7825):390. doi: 10.1016/s0140-6736(73)93247-9. 4124576",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/4124576/"
+            }
+          ],
+          "see_all": {
+            "count": 135,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%209%22%20AND%20Diagnosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "therapy": {
+          "papers": [
+            {
+              "pmid": "38519798",
+              "title": "The Eμ-Ret mouse is a novel model of hyperdiploid B-cell acute lymphoblastic leukemia.",
+              "authors": [
+                "Farrokhi A",
+                "Atre T",
+                "Rever J",
+                "Fidanza M",
+                "Duey W",
+                "Salitra S",
+                "Myung J",
+                "Guo M",
+                "Jo S",
+                "Uzozie A",
+                "Baharvand F",
+                "Rolf N",
+                "Auer F",
+                "Hauer J",
+                "Grupp SA",
+                "Eydoux P",
+                "Lange PF",
+                "Seif AE",
+                "Maxwell CA",
+                "Reid GSD"
+              ],
+              "journal": "Leukemia",
+              "citation": "2024 May;38(5):969-980. Epub 2024 Mar 22 doi: 10.1038/s41375-024-02221-x. 38519798 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38519798/"
+            },
+            {
+              "pmid": "36547810",
+              "title": "Pitfalls and management of corrective spinal surgery in trisomy 9 mosaicism: a report of three cases.",
+              "authors": [
+                "Legister CS",
+                "Harding DC",
+                "Morgan SJ",
+                "Guillaume TJ"
+              ],
+              "journal": "Spine Deform",
+              "citation": "2023 May;11(3):759-764. Epub 2022 Dec 22 doi: 10.1007/s43390-022-00624-3. 36547810",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36547810/"
+            },
+            {
+              "pmid": "35619116",
+              "title": "Congenital hydrocephalus in a trisomy 9p gained child: a case report.",
+              "authors": [
+                "Henningsen MB",
+                "Gulisano HA",
+                "Bjarkam CR"
+              ],
+              "journal": "J Med Case Rep",
+              "citation": "2022 May 27;16(1):206. doi: 10.1186/s13256-022-03424-5. 35619116 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/35619116/"
+            },
+            {
+              "pmid": "20158889",
+              "title": "Adult case of partial trisomy 9q.",
+              "authors": [
+                "Tiong K",
+                "Cotterill A",
+                "Falhammar H"
+              ],
+              "journal": "BMC Med Genet",
+              "citation": "2010 Feb 16;11:26. doi: 10.1186/1471-2350-11-26. 20158889 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20158889/"
+            },
+            {
+              "pmid": "3976721",
+              "title": "The phenotypic and cytogenetic spectrum of partial trisomy 9.",
+              "authors": [
+                "Wilson GN",
+                "Raj A",
+                "Baker D"
+              ],
+              "journal": "Am J Med Genet",
+              "citation": "1985 Feb;20(2):277-82. doi: 10.1002/ajmg.1320200211. 3976721",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/3976721/"
+            }
+          ],
+          "see_all": {
+            "count": 14,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%209%22%20AND%20Therapy%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "prognosis": {
+          "papers": [
+            {
+              "pmid": "40683916",
+              "title": "Evaluation of the prenatal diagnostic value of non-invasive prenatal testing for the detection of rare fetal autosomal trisomies: a single center study of 83,842 cases.",
+              "authors": [
+                "Chen Y",
+                "Wu X",
+                "Li H",
+                "Yin Y",
+                "Zhang Y"
+              ],
+              "journal": "Sci Rep",
+              "citation": "2025 Jul 19;15(1):26254. doi: 10.1038/s41598-025-09757-7. 40683916 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40683916/"
+            },
+            {
+              "pmid": "39978942",
+              "title": "Prenatal diagnosis and pregnancy outcomes in fetuses with vertebral abnormalities.",
+              "authors": [
+                "Hu J",
+                "Zeng L",
+                "Wang T",
+                "Yi M",
+                "Song J"
+              ],
+              "journal": "J Matern Fetal Neonatal Med",
+              "citation": "2025 Dec;38(1):2468000. Epub 2025 Feb 20 doi: 10.1080/14767058.2025.2468000. 39978942",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39978942/"
+            },
+            {
+              "pmid": "7778584",
+              "title": "Trisomy 9: review and report of two new cases.",
+              "authors": [
+                "Arnold GL",
+                "Kirby RS",
+                "Stern TP",
+                "Sawyer JR"
+              ],
+              "journal": "Am J Med Genet",
+              "citation": "1995 Apr 10;56(3):252-7. doi: 10.1002/ajmg.1320560303. 7778584",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/7778584/"
+            },
+            {
+              "pmid": "1589419",
+              "title": "Prenatal sonography in trisomy 9.",
+              "authors": [
+                "Benacerraf BR",
+                "Pauker S",
+                "Quade BJ",
+                "Bieber FR"
+              ],
+              "journal": "Prenat Diagn",
+              "citation": "1992 Mar;12(3):175-81. doi: 10.1002/pd.1970120306. 1589419",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/1589419/"
+            },
+            {
+              "pmid": "4124576",
+              "title": "Acquired trisomy 9.",
+              "authors": [
+                "Rowley JD"
+              ],
+              "journal": "Lancet",
+              "citation": "1973 Aug 18;2(7825):390. doi: 10.1016/s0140-6736(73)93247-9. 4124576",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/4124576/"
+            }
+          ],
+          "see_all": {
+            "count": 43,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%209%22%20AND%20Prognosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "clinical_prediction_guides": {
+          "papers": [
+            {
+              "pmid": "40683916",
+              "title": "Evaluation of the prenatal diagnostic value of non-invasive prenatal testing for the detection of rare fetal autosomal trisomies: a single center study of 83,842 cases.",
+              "authors": [
+                "Chen Y",
+                "Wu X",
+                "Li H",
+                "Yin Y",
+                "Zhang Y"
+              ],
+              "journal": "Sci Rep",
+              "citation": "2025 Jul 19;15(1):26254. doi: 10.1038/s41598-025-09757-7. 40683916 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40683916/"
+            },
+            {
+              "pmid": "39978942",
+              "title": "Prenatal diagnosis and pregnancy outcomes in fetuses with vertebral abnormalities.",
+              "authors": [
+                "Hu J",
+                "Zeng L",
+                "Wang T",
+                "Yi M",
+                "Song J"
+              ],
+              "journal": "J Matern Fetal Neonatal Med",
+              "citation": "2025 Dec;38(1):2468000. Epub 2025 Feb 20 doi: 10.1080/14767058.2025.2468000. 39978942",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39978942/"
+            },
+            {
+              "pmid": "19475342",
+              "title": "Clinical manifestations in trisomy 9.",
+              "authors": [
+                "Kannan TP",
+                "Hemlatha S",
+                "Ankathil R",
+                "Zilfalil BA"
+              ],
+              "journal": "Indian J Pediatr",
+              "citation": "2009 Jul;76(7):745-6. Epub 2009 May 27 doi: 10.1007/s12098-009-0158-2. 19475342",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19475342/"
+            },
+            {
+              "pmid": "7778585",
+              "title": "Trisomy 9 syndrome: report of a case with Crohn disease and review of the literature.",
+              "authors": [
+                "Wooldridge J",
+                "Zunich J"
+              ],
+              "journal": "Am J Med Genet",
+              "citation": "1995 Apr 10;56(3):258-64. doi: 10.1002/ajmg.1320560304. 7778585",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/7778585/"
+            },
+            {
+              "pmid": "7778584",
+              "title": "Trisomy 9: review and report of two new cases.",
+              "authors": [
+                "Arnold GL",
+                "Kirby RS",
+                "Stern TP",
+                "Sawyer JR"
+              ],
+              "journal": "Am J Med Genet",
+              "citation": "1995 Apr 10;56(3):252-7. doi: 10.1002/ajmg.1320560303. 7778584",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/7778584/"
+            }
+          ],
+          "see_all": {
+            "count": 40,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%209%22%20AND%20Clinical%20prediction%20guides%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        }
+      },
+      "recent_systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "35907265",
+            "title": "Chromosomal Numerical Aberrations and Rare Copy Number Variation in Patients with Inflammatory Bowel Disease.",
+            "authors": [
+              "Dirvanskyte P",
+              "Gurram B",
+              "Bolton C",
+              "Warner N",
+              "Jones KDJ",
+              "Griffin HR; Genomics England Research Consortium",
+              "Park JY",
+              "Keller KM",
+              "Gilmour KC",
+              "Hambleton S",
+              "Muise AM",
+              "Wysocki C",
+              "Uhlig HH"
+            ],
+            "journal": "J Crohns Colitis",
+            "citation": "2023 Jan 27;17(1):49-60. doi: 10.1093/ecco-jcc/jjac103. 35907265 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35907265/"
+          }
+        ],
+        "see_all": {
+          "count": 1,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%209%22%20AND%20systematic%5Bsb%5D%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+        }
+      }
+    },
+    "url": "https://www.ncbi.nlm.nih.gov/medgen/140938"
+  }
+]

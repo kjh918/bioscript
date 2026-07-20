@@ -1,0 +1,819 @@
+[
+  {
+    "pmid": "15921231",
+    "doi": "10.1177/08830738050200040701",
+    "pmc_id": "",
+    "title": "Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.",
+    "authors": [
+      "Leventer Richard Jacob"
+    ],
+    "journal": "Journal of child neurology",
+    "year": "2005",
+    "pub_date": "2005 Apr",
+    "publication_types": [
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "Lissencephaly and subcortical band heterotopia are closely related cortical malformations and are true disorders of neuronal migration. The genetic basis of approximately 70% of classic lissencephaly and 80% of typical subcortical band heterotopia is known. Most are due to abnormalities within the LIS1 or DCX genes, with abnormalities ranging from single basepair substitutions to contiguous gene deletions. Understanding the genetic basis of these disorders has led to the elucidation of the molecular and developmental mechanisms that are adversely affected. There is a robust correlation between many of the clinical aspects of lissencephaly or subcortical band heterotopia and the type and location of mutations in the affected gene. Using this knowledge, the clinician can predict with some accuracy which gene is likely to be affected based on the clinical and imaging features. This review answers some of the key questions regarding the genotype-phenotype correlation for lissencephaly and subcortical band heterotopia.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+      "Cerebral Cortex",
+      "Doublecortin Domain Proteins",
+      "Doublecortin Protein",
+      "Female",
+      "Genotype",
+      "Humans",
+      "Male",
+      "Microtubule-Associated Proteins",
+      "Mutation",
+      "Nervous System Malformations",
+      "Neuropeptides",
+      "Phenotype",
+      "Severity of Illness Index"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1177/08830738050200040701",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1177/08830738050200040701?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15921231/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15921231/",
+    "rag_text": "Title: Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.\nAuthors: Leventer Richard Jacob\nJournal: Journal of child neurology (2005)\nPMID: 15921231\nAbstract: Lissencephaly and subcortical band heterotopia are closely related cortical malformations and are true disorders of neuronal migration. The genetic basis of approximately 70% of classic lissencephaly and 80% of typical subcortical band heterotopia is known. Most are due to abnormalities within the LIS1 or DCX genes, with abnormalities ranging from single basepair substitutions to contiguous gene deletions. Understanding the genetic basis of these disorders has led to the elucidation of the molecular and developmental mechanisms that are adversely affected. There is a robust correlation between many of the clinical aspects of lissencephaly or subcortical band heterotopia and the type and location of mutations in the affected gene. Using this knowledge, the clinician can predict with some accuracy which gene is likely to be affected based on the clinical and imaging features. This review answers some of the key questions regarding the genotype-phenotype correlation for lissencephaly and subcortical band heterotopia.\nMeSH Terms: 1-Alkyl-2-acetylglycerophosphocholine Esterase; Cerebral Cortex; Doublecortin Domain Proteins; Doublecortin Protein; Female; Genotype; Humans; Male; Microtubule-Associated Proteins; Mutation; Nervous System Malformations; Neuropeptides; Phenotype; Severity of Illness Index"
+  },
+  {
+    "pmid": "39214127",
+    "doi": "10.1055/s-0044-1789014",
+    "pmc_id": "",
+    "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+    "authors": [
+      "Proepper Christiane R",
+      "Schuetz Sofia M",
+      "Schwarz Lisa-Maria",
+      "Au Katja von",
+      "Bast Thomas",
+      "Beaud Nathalie",
+      "Borggraefe Ingo",
+      "Bosch Friedrich",
+      "Budde Joerg",
+      "Busse Melanie",
+      "Chung Jena",
+      "Debus Otfried",
+      "Diepold Katharina",
+      "Fries Thomas",
+      "Gersdorff Gero von",
+      "Haeussler Martin",
+      "Hahn Andreas",
+      "Hartlieb Till",
+      "Heiming Ralf",
+      "Herkenrath Peter",
+      "Kluger Gerhard",
+      "Kreth Jonas H",
+      "Kurlemann Gerhard",
+      "Moeller Peter",
+      "Morris-Rosendahl Deborah J",
+      "Panzer Axel",
+      "Philippi Heike",
+      "Ruegner Sophia",
+      "Toepfer Carolina",
+      "Vieker Silvia",
+      "Wiemer-Kruel Adelheid",
+      "Winter Anika",
+      "Schuierer Gerhard",
+      "Hehr Ute",
+      "Geis Tobias"
+    ],
+    "journal": "Neuropediatrics",
+    "year": "2024",
+    "pub_date": "2024 Dec",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "BACKGROUND: Patients with lissencephaly typically present with severe psychomotor retardation and drug-resistant seizures. The aim of this study was to characterize the epileptic phenotype in a genotypically and radiologically well-defined patient cohort and to evaluate the response to antiseizure medication (ASM). Therefore, we retrospectively evaluated 47 patients of five genetic forms (LIS1/PAFAH1B1, DCX, DYNC1H1, TUBA1A, TUBG1) using family questionnaires, standardized neuropediatric assessments, and patients' medical reports. RESULTS: All but two patients were diagnosed with epilepsy. Median age at seizure onset was 6 months (range: 2.1-42.0), starting with epileptic spasms in 70%. Standard treatment protocols with hormonal therapy (ACTH or corticosteroids) and/or vigabatrin were the most effective approach for epileptic spasms, leading to seizure control in 47%. Seizures later in the disease course were most effectively treated with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, resulting in seizure freedom in 20%. Regarding psychomotor development, lissencephaly patients presenting without epileptic spasms were significantly more likely to reach various developmental milestones compared to patients with spasms. CONCLUSION: Classic lissencephaly is highly associated with drug-resistant epilepsy starting with epileptic spasms in most patients. The standard treatment protocols for infantile epileptic spasms syndrome lead to freedom from seizures in around half of the patients. Due to the association of epileptic spasms with an unfavorable course of psychomotor development, early and reliable diagnosis and treatment of spasms should be pursued. For epilepsies occurring later in childhood, ASM with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, appears to be most effective.",
+    "abstract_sections": {
+      "BACKGROUND": "Patients with lissencephaly typically present with severe psychomotor retardation and drug-resistant seizures. The aim of this study was to characterize the epileptic phenotype in a genotypically and radiologically well-defined patient cohort and to evaluate the response to antiseizure medication (ASM). Therefore, we retrospectively evaluated 47 patients of five genetic forms (LIS1/PAFAH1B1, DCX, DYNC1H1, TUBA1A, TUBG1) using family questionnaires, standardized neuropediatric assessments, and patients' medical reports.",
+      "RESULTS": "All but two patients were diagnosed with epilepsy. Median age at seizure onset was 6 months (range: 2.1-42.0), starting with epileptic spasms in 70%. Standard treatment protocols with hormonal therapy (ACTH or corticosteroids) and/or vigabatrin were the most effective approach for epileptic spasms, leading to seizure control in 47%. Seizures later in the disease course were most effectively treated with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, resulting in seizure freedom in 20%. Regarding psychomotor development, lissencephaly patients presenting without epileptic spasms were significantly more likely to reach various developmental milestones compared to patients with spasms.",
+      "CONCLUSION": "Classic lissencephaly is highly associated with drug-resistant epilepsy starting with epileptic spasms in most patients. The standard treatment protocols for infantile epileptic spasms syndrome lead to freedom from seizures in around half of the patients. Due to the association of epileptic spasms with an unfavorable course of psychomotor development, early and reliable diagnosis and treatment of spasms should be pursued. For epilepsies occurring later in childhood, ASM with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, appears to be most effective."
+    },
+    "mesh_terms": [
+      "Humans",
+      "Anticonvulsants",
+      "Female",
+      "Male",
+      "Infant",
+      "Phenotype",
+      "Child, Preschool",
+      "Retrospective Studies",
+      "Lissencephaly",
+      "Child",
+      "Doublecortin Protein",
+      "Epilepsy",
+      "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+      "Adolescent",
+      "Adult",
+      "Vigabatrin",
+      "Microtubule-Associated Proteins",
+      "Young Adult"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1055/s-0044-1789014",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1055/s-0044-1789014?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39214127/",
+    "rag_text": "Title: Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.\nAuthors: Proepper Christiane R, Schuetz Sofia M, Schwarz Lisa-Maria, Au Katja von, Bast Thomas, Beaud Nathalie et al. (35 authors)\nJournal: Neuropediatrics (2024)\nPMID: 39214127\nAbstract: BACKGROUND: Patients with lissencephaly typically present with severe psychomotor retardation and drug-resistant seizures. The aim of this study was to characterize the epileptic phenotype in a genotypically and radiologically well-defined patient cohort and to evaluate the response to antiseizure medication (ASM). Therefore, we retrospectively evaluated 47 patients of five genetic forms (LIS1/PAFAH1B1, DCX, DYNC1H1, TUBA1A, TUBG1) using family questionnaires, standardized neuropediatric assessments, and patients' medical reports. RESULTS: All but two patients were diagnosed with epilepsy. Median age at seizure onset was 6 months (range: 2.1-42.0), starting with epileptic spasms in 70%. Standard treatment protocols with hormonal therapy (ACTH or corticosteroids) and/or vigabatrin were the most effective approach for epileptic spasms, leading to seizure control in 47%. Seizures later in the disease course were most effectively treated with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, resulting in seizure freedom in 20%. Regarding psychomotor development, lissencephaly patients presenting without epileptic spasms were significantly more likely to reach various developmental milestones compared to patients with spasms. CONCLUSION: Classic lissencephaly is highly associated with drug-resistant epilepsy starting with epileptic spasms in most patients. The standard treatment protocols for infantile epileptic spasms syndrome lead to freedom from seizures in around half of the patients. Due to the association of epileptic spasms with an unfavorable course of psychomotor development, early and reliable diagnosis and treatment of spasms should be pursued. For epilepsies occurring later in childhood, ASM with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, appears to be most effective.\nMeSH Terms: Humans; Anticonvulsants; Female; Male; Infant; Phenotype; Child, Preschool; Retrospective Studies; Lissencephaly; Child; Doublecortin Protein; Epilepsy; 1-Alkyl-2-acetylglycerophosphocholine Esterase; Adolescent; Adult"
+  },
+  {
+    "pmid": "36283405",
+    "doi": "10.1016/j.ajhg.2022.09.012",
+    "pmc_id": "PMC4720291",
+    "title": "Bi-allelic CAMSAP1 variants cause a clinically recognizable neuronal migration disorder.",
+    "authors": [
+      "Khalaf-Nazzal Reham",
+      "Fasham James",
+      "Inskeep Katherine A",
+      "Blizzard Lauren E",
+      "Leslie Joseph S",
+      "Wakeling Matthew N",
+      "Ubeyratna Nishanka",
+      "Mitani Tadahiro",
+      "Griffith Jennifer L",
+      "Baker Wisam",
+      "Al-Hijawi Fida'",
+      "Keough Karen C",
+      "Gezdirici Alper",
+      "Pena Loren",
+      "Spaeth Christine G",
+      "Turnpenny Peter D",
+      "Walsh Joseph R",
+      "Ray Randall",
+      "Neilson Amber",
+      "Kouranova Evguenia",
+      "Cui Xiaoxia",
+      "Curiel David T",
+      "Pehlivan Davut",
+      "Akdemir Zeynep Coban",
+      "Posey Jennifer E",
+      "Lupski James R",
+      "Dobyns William B",
+      "Stottmann Rolf W",
+      "Crosby Andrew H",
+      "Baple Emma L"
+    ],
+    "journal": "American journal of human genetics",
+    "year": "2022",
+    "pub_date": "2022 Nov 03",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't",
+      "Research Support, N.I.H., Extramural"
+    ],
+    "abstract": "Non-centrosomal microtubules are essential cytoskeletal filaments that are important for neurite formation, axonal transport, and neuronal migration. They require stabilization by microtubule minus-end-targeting proteins including the CAMSAP family of molecules. Using exome sequencing on samples from five unrelated families, we show that bi-allelic CAMSAP1 loss-of-function variants cause a clinically recognizable, syndromic neuronal migration disorder. The cardinal clinical features of the syndrome include a characteristic craniofacial appearance, primary microcephaly, severe neurodevelopmental delay, cortical visual impairment, and seizures. The neuroradiological phenotype comprises a highly recognizable combination of classic lissencephaly with a posterior more severe than anterior gradient similar to PAFAH1B1(LIS1)-related lissencephaly and severe hypoplasia or absence of the corpus callosum; dysplasia of the basal ganglia, hippocampus, and midbrain; and cerebellar hypodysplasia, similar to the tubulinopathies, a group of monogenic tubulin-associated disorders of cortical dysgenesis. Neural cell rosette lineages derived from affected individuals displayed findings consistent with these phenotypes, including abnormal morphology, decreased cell proliferation, and neuronal differentiation. Camsap1-null mice displayed increased perinatal mortality, and RNAScope studies identified high expression levels in the brain throughout neurogenesis and in facial structures, consistent with the mouse and human neurodevelopmental and craniofacial phenotypes. Together our findings confirm a fundamental role of CAMSAP1 in neuronal migration and brain development and define bi-allelic variants as a cause of a clinically distinct neurodevelopmental disorder in humans and mice.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Humans",
+      "Animals",
+      "Mice",
+      "Lissencephaly",
+      "Alleles",
+      "Tubulin",
+      "Phenotype",
+      "Nervous System Malformations",
+      "Classical Lissencephalies and Subcortical Band Heterotopias",
+      "Mice, Knockout",
+      "Microtubule-Associated Proteins"
+    ],
+    "keywords": [
+      "MARK2",
+      "agyria",
+      "autosomal recessive",
+      "lissencephaly",
+      "neurodevelopmental disorder",
+      "pachygyria",
+      "patronin",
+      "tubulinopathy"
+    ],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4720291/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4720291/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.ajhg.2022.09.012",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.ajhg.2022.09.012?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26715742/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36283405/",
+    "rag_text": "Title: Bi-allelic CAMSAP1 variants cause a clinically recognizable neuronal migration disorder.\nAuthors: Khalaf-Nazzal Reham, Fasham James, Inskeep Katherine A, Blizzard Lauren E, Leslie Joseph S, Wakeling Matthew N et al. (30 authors)\nJournal: American journal of human genetics (2022)\nPMID: 36283405\nAbstract: Non-centrosomal microtubules are essential cytoskeletal filaments that are important for neurite formation, axonal transport, and neuronal migration. They require stabilization by microtubule minus-end-targeting proteins including the CAMSAP family of molecules. Using exome sequencing on samples from five unrelated families, we show that bi-allelic CAMSAP1 loss-of-function variants cause a clinically recognizable, syndromic neuronal migration disorder. The cardinal clinical features of the syndrome include a characteristic craniofacial appearance, primary microcephaly, severe neurodevelopmental delay, cortical visual impairment, and seizures. The neuroradiological phenotype comprises a highly recognizable combination of classic lissencephaly with a posterior more severe than anterior gradient similar to PAFAH1B1(LIS1)-related lissencephaly and severe hypoplasia or absence of the corpus callosum; dysplasia of the basal ganglia, hippocampus, and midbrain; and cerebellar hypodysplasia, similar to the tubulinopathies, a group of monogenic tubulin-associated disorders of cortical dysgenesis. Neural cell rosette lineages derived from affected individuals displayed findings consistent with these phenotypes, including abnormal morphology, decreased cell proliferation, and neuronal differentiation. Camsap1-null mice displayed increased perinatal mortality, and RNAScope studies identified high expression levels in the brain throughout neurogenesis and in facial structures, consistent with the mouse and human neurodevelopmental and craniofacial phenotypes. Together our findings confirm a fundamental role of CAMSAP1 in neuronal migration and brain development and define bi-allelic variants as a cause of a clinically distinct neurodevelopmental disorder in humans and mice.\nMeSH Terms: Humans; Animals; Mice; Lissencephaly; Alleles; Tubulin; Phenotype; Nervous System Malformations; Classical Lissencephalies and Subcortical Band Heterotopias; Mice, Knockout; Microtubule-Associated Proteins\nKeywords: MARK2; agyria; autosomal recessive; lissencephaly; neurodevelopmental disorder; pachygyria; patronin; tubulinopathy"
+  },
+  {
+    "pmid": "26494205",
+    "doi": "10.1016/j.braindev.2015.10.001",
+    "pmc_id": "",
+    "title": "LIS1-associated classic lissencephaly: A retrospective, multicenter survey of the epileptogenic phenotype and response to antiepileptic drugs.",
+    "authors": [
+      "Herbst Saskia M",
+      "Proepper Christiane R",
+      "Geis Tobias",
+      "Borggraefe Ingo",
+      "Hahn Andreas",
+      "Debus Otfried",
+      "Haeussler Martin",
+      "von Gersdorff Gero",
+      "Kurlemann Gerhard",
+      "Ensslen Matthias",
+      "Beaud Nathalie",
+      "Budde Joerg",
+      "Gilbert Michael",
+      "Heiming Ralf",
+      "Morgner Rita",
+      "Philippi Heike",
+      "Ross Sophia",
+      "Strobl-Wildemann Gertrud",
+      "Muelleder Kerstin",
+      "Vosschulte Paul",
+      "Morris-Rosendahl Deborah J",
+      "Schuierer Gerhard",
+      "Hehr Ute"
+    ],
+    "journal": "Brain & development",
+    "year": "2016",
+    "pub_date": "2016 Apr",
+    "publication_types": [
+      "Journal Article",
+      "Multicenter Study"
+    ],
+    "abstract": "BACKGROUND: Patients with LIS1-associated classic lissencephaly typically present with severe psychomotor retardation and drug-resistant epilepsy within the first year. AIM: To analyze the epileptogenic phenotype and response to antiepileptic therapy in LIS1-associated classic lissencephaly. METHOD: Retrospective evaluation of 22 patients (8 months-24 years) with genetically and radiologically confirmed LIS1-associated classic lissencephaly in 16 study centers. RESULTS: All patients in our cohort developed drug-resistant epilepsy. In 82% onset of seizures was noted within the first six months of life, most frequently with infantile spasms. Later in infancy the epileptogentic phenotype became more variable and included different forms of focal seizures as well generalized as tonic-clonic seizures, with generalized tonic-clonic seizures being the predominant type. Lamotrigine and valproate were rated most successful with good or partial response rates in 88-100% of the patients. Both were evaluated significantly better than levetiracetam (p<0.05) and sulthiame (p<0.01) in the neuropediatric assessment and better than levetiracetam, sulthiame (p<0.05) and topiramate (p<0.01) in the family survey. Phenobarbital and vigabatrin achieved good or partial response in 62-83% of the patients. CONCLUSION: Our findings suggest that patients with LIS1-associated lissencephaly might benefit most from lamotrigine, valproate, vigabatrin or phenobarbital.",
+    "abstract_sections": {
+      "BACKGROUND": "Patients with LIS1-associated classic lissencephaly typically present with severe psychomotor retardation and drug-resistant epilepsy within the first year.",
+      "AIM": "To analyze the epileptogenic phenotype and response to antiepileptic therapy in LIS1-associated classic lissencephaly.",
+      "METHOD": "Retrospective evaluation of 22 patients (8 months-24 years) with genetically and radiologically confirmed LIS1-associated classic lissencephaly in 16 study centers.",
+      "RESULTS": "All patients in our cohort developed drug-resistant epilepsy. In 82% onset of seizures was noted within the first six months of life, most frequently with infantile spasms. Later in infancy the epileptogentic phenotype became more variable and included different forms of focal seizures as well generalized as tonic-clonic seizures, with generalized tonic-clonic seizures being the predominant type. Lamotrigine and valproate were rated most successful with good or partial response rates in 88-100% of the patients. Both were evaluated significantly better than levetiracetam (p<0.05) and sulthiame (p<0.01) in the neuropediatric assessment and better than levetiracetam, sulthiame (p<0.05) and topiramate (p<0.01) in the family survey. Phenobarbital and vigabatrin achieved good or partial response in 62-83% of the patients.",
+      "CONCLUSION": "Our findings suggest that patients with LIS1-associated lissencephaly might benefit most from lamotrigine, valproate, vigabatrin or phenobarbital."
+    },
+    "mesh_terms": [
+      "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+      "Adolescent",
+      "Adult",
+      "Anticonvulsants",
+      "Brain",
+      "Child",
+      "Child, Preschool",
+      "Classical Lissencephalies and Subcortical Band Heterotopias",
+      "Drug Resistant Epilepsy",
+      "Electroencephalography",
+      "Female",
+      "Humans",
+      "Infant",
+      "Lamotrigine",
+      "Male",
+      "Microtubule-Associated Proteins",
+      "Phenobarbital",
+      "Phenotype",
+      "Retrospective Studies",
+      "Treatment Outcome",
+      "Triazines",
+      "Valproic Acid",
+      "Vigabatrin",
+      "Young Adult"
+    ],
+    "keywords": [
+      "Brain malformation",
+      "Epilepsy",
+      "Genotype-phenotype relationship",
+      "LIS1",
+      "Lissencephaly",
+      "Treatment"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/j.braindev.2015.10.001",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/j.braindev.2015.10.001?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/26494205/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26494205/",
+    "rag_text": "Title: LIS1-associated classic lissencephaly: A retrospective, multicenter survey of the epileptogenic phenotype and response to antiepileptic drugs.\nAuthors: Herbst Saskia M, Proepper Christiane R, Geis Tobias, Borggraefe Ingo, Hahn Andreas, Debus Otfried et al. (23 authors)\nJournal: Brain & development (2016)\nPMID: 26494205\nAbstract: BACKGROUND: Patients with LIS1-associated classic lissencephaly typically present with severe psychomotor retardation and drug-resistant epilepsy within the first year. AIM: To analyze the epileptogenic phenotype and response to antiepileptic therapy in LIS1-associated classic lissencephaly. METHOD: Retrospective evaluation of 22 patients (8 months-24 years) with genetically and radiologically confirmed LIS1-associated classic lissencephaly in 16 study centers. RESULTS: All patients in our cohort developed drug-resistant epilepsy. In 82% onset of seizures was noted within the first six months of life, most frequently with infantile spasms. Later in infancy the epileptogentic phenotype became more variable and included different forms of focal seizures as well generalized as tonic-clonic seizures, with generalized tonic-clonic seizures being the predominant type. Lamotrigine and valproate were rated most successful with good or partial response rates in 88-100% of the patients. Both were evaluated significantly better than levetiracetam (p<0.05) and sulthiame (p<0.01) in the neuropediatric assessment and better than levetiracetam, sulthiame (p<0.05) and topiramate (p<0.01) in the family survey. Phenobarbital and vigabatrin achieved good or partial response in 62-83% of the patients. CONCLUSION: Our findings suggest that patients with LIS1-associated lissencephaly might benefit most from lamotrigine, valproate, vigabatrin or phenobarbital.\nMeSH Terms: 1-Alkyl-2-acetylglycerophosphocholine Esterase; Adolescent; Adult; Anticonvulsants; Brain; Child; Child, Preschool; Classical Lissencephalies and Subcortical Band Heterotopias; Drug Resistant Epilepsy; Electroencephalography; Female; Humans; Infant; Lamotrigine; Male\nKeywords: Brain malformation; Epilepsy; Genotype-phenotype relationship; LIS1; Lissencephaly; Treatment"
+  },
+  {
+    "pmid": "20036930",
+    "doi": "10.2741/s47",
+    "pmc_id": "",
+    "title": "Lissencephalic syndromes: brain and beyond.",
+    "authors": [
+      "Pavone Lorenzo",
+      "Corsello Giovanni",
+      "Pavone Piero",
+      "Iannetti Paola"
+    ],
+    "journal": "Frontiers in bioscience (Scholar edition)",
+    "year": "2010",
+    "pub_date": "2010 Jan 01",
+    "publication_types": [
+      "Journal Article",
+      "Review"
+    ],
+    "abstract": "Lissencephaly has been long maintained a malformation involving only the brain. Classic lissencephaly includes agyria and pachygyria and it is the most severe form of malformations derived from abnormal neuronal migration. It is defined as a smooth or nearly smooth cerebral surface with absence of normal sulci and gyria. It encompasses a group of syndromes which show many different clinical conditions. Four groups are actually distinguished: classic lissencephaly variants, other lissencephalies including forms with unknown pathogenesis, microlissencephaly spectrum and Cobblestone cortical malformations. Several genes and proteins are involved in this syndromic spectrum and each year new molecular data are reported in the literature: classifications in this sense are always in progress. Lissencephaly now is recognised to involve not only the brain but also several other organs and districts including eyes, face, muscles, genital organs, heart and bones. Mental retardation and different form of epilepsies usually drug-resistant are the main clinical signs. The Authors in this topic discuss on this subject, underlying the different forms of lissencephaly their wide heterogeneity and the complex involvement of several organs.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Brain",
+      "Cell Movement",
+      "Cerebral Cortex",
+      "Humans",
+      "Lissencephaly",
+      "Neurons",
+      "Syndrome"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.2741/s47",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.2741/s47?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/20036930/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20036930/",
+    "rag_text": "Title: Lissencephalic syndromes: brain and beyond.\nAuthors: Pavone Lorenzo, Corsello Giovanni, Pavone Piero, Iannetti Paola\nJournal: Frontiers in bioscience (Scholar edition) (2010)\nPMID: 20036930\nAbstract: Lissencephaly has been long maintained a malformation involving only the brain. Classic lissencephaly includes agyria and pachygyria and it is the most severe form of malformations derived from abnormal neuronal migration. It is defined as a smooth or nearly smooth cerebral surface with absence of normal sulci and gyria. It encompasses a group of syndromes which show many different clinical conditions. Four groups are actually distinguished: classic lissencephaly variants, other lissencephalies including forms with unknown pathogenesis, microlissencephaly spectrum and Cobblestone cortical malformations. Several genes and proteins are involved in this syndromic spectrum and each year new molecular data are reported in the literature: classifications in this sense are always in progress. Lissencephaly now is recognised to involve not only the brain but also several other organs and districts including eyes, face, muscles, genital organs, heart and bones. Mental retardation and different form of epilepsies usually drug-resistant are the main clinical signs. The Authors in this topic discuss on this subject, underlying the different forms of lissencephaly their wide heterogeneity and the complex involvement of several organs.\nMeSH Terms: Brain; Cell Movement; Cerebral Cortex; Humans; Lissencephaly; Neurons; Syndrome"
+  },
+  {
+    "pmid": "15007136",
+    "doi": "10.1212/01.wnl.0000113725.46254.fd",
+    "pmc_id": "",
+    "title": "Mutation screening in a cohort of patients with lissencephaly and subcortical band heterotopia.",
+    "authors": [
+      "Torres F R",
+      "Montenegro M A",
+      "Marques-De-Faria A P",
+      "Guerreiro M M",
+      "Cendes F",
+      "Lopes-Cendes I"
+    ],
+    "journal": "Neurology",
+    "year": "2004",
+    "pub_date": "2004 Mar 09",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't"
+    ],
+    "abstract": "The authors describe clinical, neuroimaging and molecular findings in a group of 15 patients with classic lissencephaly (LIS) and subcortical band heterotopia (SBH). A 1385A-->C mutation was found in the LIS1 gene in one patient with LIS more severe than expected for individuals with missense mutations in LIS1. The authors believe that the site of the mutation, present in a functionally critical region of the protein, could explain the unusual severe phenotype found in this patient.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+      "Adolescent",
+      "Adult",
+      "Cerebral Cortex",
+      "Child",
+      "Child, Preschool",
+      "Cohort Studies",
+      "DNA Mutational Analysis",
+      "Female",
+      "Humans",
+      "Infant",
+      "Male",
+      "Microtubule-Associated Proteins",
+      "Mutation, Missense",
+      "Nervous System Malformations",
+      "Phenotype"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1212/01.wnl.0000113725.46254.fd",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1212/01.wnl.0000113725.46254.fd?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/15007136/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15007136/",
+    "rag_text": "Title: Mutation screening in a cohort of patients with lissencephaly and subcortical band heterotopia.\nAuthors: Torres F R, Montenegro M A, Marques-De-Faria A P, Guerreiro M M, Cendes F, Lopes-Cendes I\nJournal: Neurology (2004)\nPMID: 15007136\nAbstract: The authors describe clinical, neuroimaging and molecular findings in a group of 15 patients with classic lissencephaly (LIS) and subcortical band heterotopia (SBH). A 1385A-->C mutation was found in the LIS1 gene in one patient with LIS more severe than expected for individuals with missense mutations in LIS1. The authors believe that the site of the mutation, present in a functionally critical region of the protein, could explain the unusual severe phenotype found in this patient.\nMeSH Terms: 1-Alkyl-2-acetylglycerophosphocholine Esterase; Adolescent; Adult; Cerebral Cortex; Child; Child, Preschool; Cohort Studies; DNA Mutational Analysis; Female; Humans; Infant; Male; Microtubule-Associated Proteins; Mutation, Missense; Nervous System Malformations"
+  },
+  {
+    "pmid": "42177523",
+    "doi": "10.1186/s13023-026-04398-z",
+    "pmc_id": "PMC8871959",
+    "title": "Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.",
+    "authors": [
+      "Proepper Christiane R",
+      "Schwarz Lisa-Maria",
+      "Schuetz Sofia M",
+      "von Au Katja",
+      "Bast Thomas",
+      "Beaud Nathalie",
+      "Borggraefe Ingo",
+      "Bosch Friedrich",
+      "Busse Melanie",
+      "Chung Jena",
+      "Debus Otfried",
+      "Diepold Katharina",
+      "Fries Thomas",
+      "von Gersdorff Gero",
+      "Haeussler Martin",
+      "Hahn Andreas",
+      "Hartlieb Till",
+      "Heiming Ralf",
+      "Herkenrath Peter",
+      "Kluger Gerhard",
+      "Kreth Jonas H",
+      "Kurlemann Gerhard",
+      "Moeller Peter",
+      "Morris-Rosendahl Deborah J",
+      "Panzer Axel",
+      "Philippi Heike",
+      "Ruegner Sophia",
+      "Toepfer Carolina",
+      "Vieker Silvia",
+      "Wiemer-Kruel Adelheid",
+      "Winter Anika",
+      "Schuierer Gerhard",
+      "Hehr Ute",
+      "Geis Tobias"
+    ],
+    "journal": "Orphanet journal of rare diseases",
+    "year": "2026",
+    "pub_date": "2026 May 23",
+    "publication_types": [
+      "Journal Article"
+    ],
+    "abstract": "BACKGROUND: Classic lissencephaly is a malformation of cortical development that includes agyria and pachygyria. The major clinical symptoms are developmental impairment, muscular hypotonia, and drug-resistant epilepsy. The severity of the clinical phenotype depends on the associated gene and mutation. This study aimed to systematically investigate the genotype-specific course of the disease including neurodevelopmental outcome, medical complications, use of non-pharmacological supportive therapies, and its impact on the quality of life of the affected families. METHODS: 47 patients with genetically and radiologically confirmed lissencephaly were included with mutation in LIS1/PAFAH1B1 (n = 38), DCX (n = 5 males), DYNC1H1 (n = 2), TUBA1A (n = 1) and TUBG1 (n = 1) genes. Standardized questionnaires were completed by families and treating pediatricians. Quality of life was assessed with the PedsQL™ Family Impact Module. RESULTS: Prenatal abnormalities, most commonly microcephaly, were observed in 14/37 (38%) of LIS1/PAFAH1B1 patients and 2/5 (40%) of DCX patients. Early symptoms included microcephaly, developmental delay, muscular hypotonia, and epileptic seizures. The median age at suspected diagnosis was 5 months for LIS1/PAFAH1B1 patients and 9 months for DCX patients. Compared to LIS1/PAFAH1B1, DCX-related lissencephaly patients showed significantly better neurodevelopmental outcome in reaching more advanced milestones such as walking unassisted (z=-2.23, p = 0.026) and speaking sentences (z=-2.53, p = 0.011). Frequent medical complications included recurrent respiratory infections (14/38 (37%) of LIS1/PAFAH1B1 patients; 1/4 (25%) of DCX patients) and dysphagia/ vomiting (23/37 (62%); 2/4 (50%)), which may require tube feeding (15/38 (40%); 1/5 (20%)). A median of eight different supportive therapies was used per patient (range 1-17), with physiotherapy and respiratory therapy considered the most effective. The scores obtained for health-related quality of life (HRQL) were low (parental HRQL mean 61.23; SD 16.79). CONCLUSIONS: Our study confirms the severely impaired developmental potential and frequent neurological and medical complications in lissencephaly patients from an early age. The psychomotor prognosis in LIS1/PAFAH1B1-related lissencephaly is significantly worse compared to DCX-related lissencephaly. Supportive therapies are used intensively and are considered to be very effective. The disease puts a high burden on caregivers and the entire family. This emphasizes the need for appropriate epilepsy treatment, personalized care for patients and professional support for their families.",
+    "abstract_sections": {
+      "BACKGROUND": "Classic lissencephaly is a malformation of cortical development that includes agyria and pachygyria. The major clinical symptoms are developmental impairment, muscular hypotonia, and drug-resistant epilepsy. The severity of the clinical phenotype depends on the associated gene and mutation. This study aimed to systematically investigate the genotype-specific course of the disease including neurodevelopmental outcome, medical complications, use of non-pharmacological supportive therapies, and its impact on the quality of life of the affected families.",
+      "METHODS": "47 patients with genetically and radiologically confirmed lissencephaly were included with mutation in LIS1/PAFAH1B1 (n = 38), DCX (n = 5 males), DYNC1H1 (n = 2), TUBA1A (n = 1) and TUBG1 (n = 1) genes. Standardized questionnaires were completed by families and treating pediatricians. Quality of life was assessed with the PedsQL™ Family Impact Module.",
+      "RESULTS": "Prenatal abnormalities, most commonly microcephaly, were observed in 14/37 (38%) of LIS1/PAFAH1B1 patients and 2/5 (40%) of DCX patients. Early symptoms included microcephaly, developmental delay, muscular hypotonia, and epileptic seizures. The median age at suspected diagnosis was 5 months for LIS1/PAFAH1B1 patients and 9 months for DCX patients. Compared to LIS1/PAFAH1B1, DCX-related lissencephaly patients showed significantly better neurodevelopmental outcome in reaching more advanced milestones such as walking unassisted (z=-2.23, p = 0.026) and speaking sentences (z=-2.53, p = 0.011). Frequent medical complications included recurrent respiratory infections (14/38 (37%) of LIS1/PAFAH1B1 patients; 1/4 (25%) of DCX patients) and dysphagia/ vomiting (23/37 (62%); 2/4 (50%)), which may require tube feeding (15/38 (40%); 1/5 (20%)). A median of eight different supportive therapies was used per patient (range 1-17), with physiotherapy and respiratory therapy considered the most effective. The scores obtained for health-related quality of life (HRQL) were low (parental HRQL mean 61.23; SD 16.79).",
+      "CONCLUSIONS": "Our study confirms the severely impaired developmental potential and frequent neurological and medical complications in lissencephaly patients from an early age. The psychomotor prognosis in LIS1/PAFAH1B1-related lissencephaly is significantly worse compared to DCX-related lissencephaly. Supportive therapies are used intensively and are considered to be very effective. The disease puts a high burden on caregivers and the entire family. This emphasizes the need for appropriate epilepsy treatment, personalized care for patients and professional support for their families."
+    },
+    "mesh_terms": [
+      "Humans",
+      "Female",
+      "Male",
+      "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+      "Microtubule-Associated Proteins",
+      "Quality of Life",
+      "Lissencephaly",
+      "Child",
+      "Child, Preschool",
+      "Doublecortin Protein",
+      "Infant",
+      "Tubulin",
+      "Doublecortin Domain Proteins",
+      "Cytoplasmic Dyneins",
+      "Adolescent",
+      "Neuropeptides",
+      "Dyneins",
+      "Mutation",
+      "Adult"
+    ],
+    "keywords": [
+      "DCX",
+      "DYNC1H1",
+      "LIS1/PAFAH1B1",
+      "TUBA1A",
+      "TUBG1",
+      "Epidemiology",
+      "Lissencephaly",
+      "Neurodevelopmental outcome",
+      "Quality of Life",
+      "Supportive therapies"
+    ],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8871959/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8871959/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1186/s13023-026-04398-z",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1186/s13023-026-04398-z?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/41289804/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42177523/",
+    "rag_text": "Title: Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.\nAuthors: Proepper Christiane R, Schwarz Lisa-Maria, Schuetz Sofia M, von Au Katja, Bast Thomas, Beaud Nathalie et al. (34 authors)\nJournal: Orphanet journal of rare diseases (2026)\nPMID: 42177523\nAbstract: BACKGROUND: Classic lissencephaly is a malformation of cortical development that includes agyria and pachygyria. The major clinical symptoms are developmental impairment, muscular hypotonia, and drug-resistant epilepsy. The severity of the clinical phenotype depends on the associated gene and mutation. This study aimed to systematically investigate the genotype-specific course of the disease including neurodevelopmental outcome, medical complications, use of non-pharmacological supportive therapies, and its impact on the quality of life of the affected families. METHODS: 47 patients with genetically and radiologically confirmed lissencephaly were included with mutation in LIS1/PAFAH1B1 (n = 38), DCX (n = 5 males), DYNC1H1 (n = 2), TUBA1A (n = 1) and TUBG1 (n = 1) genes. Standardized questionnaires were completed by families and treating pediatricians. Quality of life was assessed with the PedsQL™ Family Impact Module. RESULTS: Prenatal abnormalities, most commonly microcephaly, were observed in 14/37 (38%) of LIS1/PAFAH1B1 patients and 2/5 (40%) of DCX patients. Early symptoms included microcephaly, developmental delay, muscular hypotonia, and epileptic seizures. The median age at suspected diagnosis was 5 months for LIS1/PAFAH1B1 patients and 9 months for DCX patients. Compared to LIS1/PAFAH1B1, DCX-related lissencephaly patients showed significantly better neurodevelopmental outcome in reaching more advanced milestones such as walking unassisted (z=-2.23, p = 0.026) and speaking sentences (z=-2.53, p = 0.011). Frequent medical complications included recurrent respiratory infections (14/38 (37%) of LIS1/PAFAH1B1 patients; 1/4 (25%) of DCX patients) and dysphagia/ vomiting (23/37 (62%); 2/4 (50%)), which may require tube feeding (15/38 (40%); 1/5 (20%)). A median of eight different supportive therapies was used per patient (range 1-17), with physiotherapy and respiratory therapy considered the most effective. The scores obtained for health-related quality of life (HRQL) were low (parental HRQL mean 61.23; SD 16.79). CONCLUSIONS: Our study confirms the severely impaired developmental potential and frequent neurological and medical complications in lissencephaly patients from an early age. The psychomotor prognosis in LIS1/PAFAH1B1-related lissencephaly is significantly worse compared to DCX-related lissencephaly. Supportive therapies are used intensively and are considered to be very effective. The disease puts a high burden on caregivers and the entire family. This emphasizes the need for appropriate epilepsy treatment, personalized care for patients and professional support for their families.\nMeSH Terms: Humans; Female; Male; 1-Alkyl-2-acetylglycerophosphocholine Esterase; Microtubule-Associated Proteins; Quality of Life; Lissencephaly; Child; Child, Preschool; Doublecortin Protein; Infant; Tubulin; Doublecortin Domain Proteins; Cytoplasmic Dyneins; Adolescent\nKeywords: DCX; DYNC1H1; LIS1/PAFAH1B1; TUBA1A; TUBG1; Epidemiology; Lissencephaly; Neurodevelopmental outcome; Quality of Life; Supportive therapies"
+  },
+  {
+    "pmid": "29048727",
+    "doi": "10.1002/ajmg.a.38496",
+    "pmc_id": "PMC3826256",
+    "title": "Mutations of KIF5C cause a neurodevelopmental disorder of infantile-onset epilepsy, absent language, and distinctive malformations of cortical development.",
+    "authors": [
+      "Michels Savannah",
+      "Foss Kimberly",
+      "Park Kaylee",
+      "Golden-Grant Katie",
+      "Saneto Russell",
+      "Lopez Jonathan",
+      "Mirzaa Ghayda M"
+    ],
+    "journal": "American journal of medical genetics. Part A",
+    "year": "2017",
+    "pub_date": "2017 Dec",
+    "publication_types": [
+      "Case Reports",
+      "Journal Article"
+    ],
+    "abstract": "The clinical diagnosis of malformations of cortical development (MCDs) is often challenging due to the complexity of the brain malformation by neuroimaging, the rarity of individual malformation syndromes, and the rapidly evolving genetic landscape of these disorders facilitated with the use of Next Generation Sequencing (NGS) methods. While the clinical and molecular diagnosis of severe cortical malformations, such as classic lissencephaly, is often straightforward, the diagnosis of more subtle and complex types of cortical malformations, such as pachygyria and polymicrogyria (PMG), can be more challenging due to limited knowledge regarding their genetic etiologies. Here, we report two individuals with the same de novo KIF5C mutation who present with subtle MCDs, early onset epilepsy and significant neurodevelopmental and behavioral issues including absent language. Our data, combined with the limited literature on KIF5C mutations, to date, support that KIF5C mutations are associated with a neurodevelopmental disorder characterized by infantile onset epilepsy, and subtle but recognizable types of brain malformations. We also show that the spectrum of KIF5C mutations is narrow, as five out of the six identified individuals have mutations affecting amino acid Glu237. Therefore, the identification of the clinical and neuroimaging features of this disorder may strongly facilitate rapid and efficient molecular diagnosis.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Cerebral Cortex",
+      "Epilepsy",
+      "Female",
+      "High-Throughput Nucleotide Sequencing",
+      "Humans",
+      "Infant",
+      "Intellectual Disability",
+      "Kinesins",
+      "Language",
+      "Lissencephaly",
+      "Male",
+      "Malformations of Cortical Development",
+      "Mutation",
+      "Neurodevelopmental Disorders",
+      "Polymicrogyria"
+    ],
+    "keywords": [
+      "KIF5C",
+      "cortical dysplasia",
+      "epilepsy",
+      "intellectual disability"
+    ],
+    "full_text_available": true,
+    "pdf_links": [
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3826256/pdf/",
+        "type": "pdf",
+        "note": "PMC free full text PDF"
+      },
+      {
+        "source": "PMC",
+        "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3826256/",
+        "type": "html",
+        "note": "PMC full text HTML"
+      },
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1002/ajmg.a.38496",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1002/ajmg.a.38496?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24812067/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29048727/",
+    "rag_text": "Title: Mutations of KIF5C cause a neurodevelopmental disorder of infantile-onset epilepsy, absent language, and distinctive malformations of cortical development.\nAuthors: Michels Savannah, Foss Kimberly, Park Kaylee, Golden-Grant Katie, Saneto Russell, Lopez Jonathan et al. (7 authors)\nJournal: American journal of medical genetics. Part A (2017)\nPMID: 29048727\nAbstract: The clinical diagnosis of malformations of cortical development (MCDs) is often challenging due to the complexity of the brain malformation by neuroimaging, the rarity of individual malformation syndromes, and the rapidly evolving genetic landscape of these disorders facilitated with the use of Next Generation Sequencing (NGS) methods. While the clinical and molecular diagnosis of severe cortical malformations, such as classic lissencephaly, is often straightforward, the diagnosis of more subtle and complex types of cortical malformations, such as pachygyria and polymicrogyria (PMG), can be more challenging due to limited knowledge regarding their genetic etiologies. Here, we report two individuals with the same de novo KIF5C mutation who present with subtle MCDs, early onset epilepsy and significant neurodevelopmental and behavioral issues including absent language. Our data, combined with the limited literature on KIF5C mutations, to date, support that KIF5C mutations are associated with a neurodevelopmental disorder characterized by infantile onset epilepsy, and subtle but recognizable types of brain malformations. We also show that the spectrum of KIF5C mutations is narrow, as five out of the six identified individuals have mutations affecting amino acid Glu237. Therefore, the identification of the clinical and neuroimaging features of this disorder may strongly facilitate rapid and efficient molecular diagnosis.\nMeSH Terms: Cerebral Cortex; Epilepsy; Female; High-Throughput Nucleotide Sequencing; Humans; Infant; Intellectual Disability; Kinesins; Language; Lissencephaly; Male; Malformations of Cortical Development; Mutation; Neurodevelopmental Disorders; Polymicrogyria\nKeywords: KIF5C; cortical dysplasia; epilepsy; intellectual disability"
+  },
+  {
+    "pmid": "10788746",
+    "doi": "10.1016/s0887-8994(00)00121-1",
+    "pmc_id": "",
+    "title": "99Tc-HmPAO SPECT in 13 patients with classic lissencephaly.",
+    "authors": [
+      "Yilmaz Y",
+      "Ozmen M",
+      "Adalet I",
+      "Calişkan M",
+      "Unal S",
+      "Aydinli N",
+      "Minareci O"
+    ],
+    "journal": "Pediatric neurology",
+    "year": "2000",
+    "pub_date": "2000 Apr",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't"
+    ],
+    "abstract": "In this study, technetium-99 ((99)Tc)-hexamethylpropyleneamine-oxine single-photon emission computed tomography (SPECT) was performed on 13 children with classic lissencephaly (nine with epileptic seizures, four without seizures). Focal or multifocal hypoperfusions were observed in 12 patients. The hypoperfused areas observed on SPECT scanning did not correlate with the localization of agyric-pachygyric regions in all patients. The distribution of perfusion abnormalities by SPECT and the localization of agyria-pachygyria as detected by magnetic resonance imaging did not correlate strongly. All nine patients with seizures and three of the four patients without seizures had focal or multifocal cerebral blood flow abnormalities on the SPECT scans. The presence of brain perfusion abnormalities detected by SPECT and the occurrence of epileptic seizures did not have a significant relationship. These results suggest that the role of SPECT studies in classic lissencephaly is not clearly defined. More sophisticated methods are needed to clarify the correlation between structural and functional abnormalities of patients diagnosed with lissencephaly.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "Brain",
+      "Brain Diseases",
+      "Child, Preschool",
+      "Electroencephalography",
+      "Female",
+      "Humans",
+      "Infant",
+      "Magnetic Resonance Imaging",
+      "Male",
+      "Technetium Tc 99m Exametazime",
+      "Tomography, Emission-Computed, Single-Photon"
+    ],
+    "keywords": [],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1016/s0887-8994(00)00121-1",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1016/s0887-8994(00)00121-1?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/10788746/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10788746/",
+    "rag_text": "Title: 99Tc-HmPAO SPECT in 13 patients with classic lissencephaly.\nAuthors: Yilmaz Y, Ozmen M, Adalet I, Calişkan M, Unal S, Aydinli N et al. (7 authors)\nJournal: Pediatric neurology (2000)\nPMID: 10788746\nAbstract: In this study, technetium-99 ((99)Tc)-hexamethylpropyleneamine-oxine single-photon emission computed tomography (SPECT) was performed on 13 children with classic lissencephaly (nine with epileptic seizures, four without seizures). Focal or multifocal hypoperfusions were observed in 12 patients. The hypoperfused areas observed on SPECT scanning did not correlate with the localization of agyric-pachygyric regions in all patients. The distribution of perfusion abnormalities by SPECT and the localization of agyria-pachygyria as detected by magnetic resonance imaging did not correlate strongly. All nine patients with seizures and three of the four patients without seizures had focal or multifocal cerebral blood flow abnormalities on the SPECT scans. The presence of brain perfusion abnormalities detected by SPECT and the occurrence of epileptic seizures did not have a significant relationship. These results suggest that the role of SPECT studies in classic lissencephaly is not clearly defined. More sophisticated methods are needed to clarify the correlation between structural and functional abnormalities of patients diagnosed with lissencephaly.\nMeSH Terms: Brain; Brain Diseases; Child, Preschool; Electroencephalography; Female; Humans; Infant; Magnetic Resonance Imaging; Male; Technetium Tc 99m Exametazime; Tomography, Emission-Computed, Single-Photon"
+  },
+  {
+    "pmid": "33565082",
+    "doi": "10.1002/path.5640",
+    "pmc_id": "",
+    "title": "Human cytomegalovirus infection is associated with increased expression of the lissencephaly gene PAFAH1B1 encoding LIS1 in neural stem cells and congenitally infected brains.",
+    "authors": [
+      "Rolland Maude",
+      "Martin Hélène",
+      "Bergamelli Mathilde",
+      "Sellier Yann",
+      "Bessières Bettina",
+      "Aziza Jacqueline",
+      "Benchoua Alexandra",
+      "Leruez-Ville Marianne",
+      "Gonzalez-Dunia Daniel",
+      "Chavanas Stéphane"
+    ],
+    "journal": "The Journal of pathology",
+    "year": "2021",
+    "pub_date": "2021 May",
+    "publication_types": [
+      "Journal Article",
+      "Research Support, Non-U.S. Gov't"
+    ],
+    "abstract": "Congenital infection of the central nervous system by human cytomegalovirus (HCMV) is a leading cause of permanent sequelae, including mental retardation or neurodevelopmental abnormalities. The most severe complications include smooth brain or polymicrogyria, which are both indicative of abnormal migration of neural cells, although the underlying mechanisms remain to be determined. To gain better insight on the pathogenesis of such sequelae, we assessed the expression levels of a set of neurogenesis-related genes, using HCMV-infected human neural stem cells derived from embryonic stem cells (NSCs). Among the 84 genes tested, we found dramatically increased expression of the gene PAFAH1B1, encoding LIS1 (lissencephaly-1), in HCMV-infected versus uninfected NSCs. Consistent with these findings, western blotting and immunofluorescence analyses confirmed the increased levels of LIS1 in HCMV-infected NSCs at the protein level. We next assessed the migratory abilities of HCMV-infected NSCs and observed that infection strongly impaired the migration of NSCs, without detectable effect on their proliferation. Moreover, we observed increased immunostaining for LIS1 in brains of congenitally infected fetuses, but not in control samples, highlighting the clinical relevance of our findings. Of note, PAFAH1B1 mutations (resulting in either haploinsufficiency or gain of function) are primary causes of hereditary neurodevelopmental diseases. Notably, mutations resulting in PAFAH1B1 haploinsufficiency cause classic lissencephaly. Taken together, our findings suggest that PAFAH1B1 is a critical target of HCMV infection. They also shine a new light on the pathophysiological basis of the neurological outcomes of congenital HCMV infection, by suggesting that defective neural cell migration might contribute to the pathogenesis of the neurodevelopmental sequelae of infection. © 2021 The Pathological Society of Great Britain and Ireland. Published by John Wiley & Sons, Ltd.",
+    "abstract_sections": {},
+    "mesh_terms": [
+      "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+      "Brain",
+      "Cytomegalovirus Infections",
+      "Humans",
+      "Microtubule-Associated Proteins",
+      "Neural Stem Cells"
+    ],
+    "keywords": [
+      "DCX",
+      "LIS1",
+      "PAFAH1B1",
+      "congenital infection",
+      "cytomegalovirus",
+      "neuronal migration"
+    ],
+    "full_text_available": false,
+    "pdf_links": [
+      {
+        "source": "DOI",
+        "url": "https://doi.org/10.1002/path.5640",
+        "type": "publisher",
+        "note": "Publisher page (may require subscription)"
+      },
+      {
+        "source": "Unpaywall",
+        "url": "https://api.unpaywall.org/v2/10.1002/path.5640?email=user@example.com",
+        "type": "oa_check",
+        "note": "Check Unpaywall for open access PDF"
+      },
+      {
+        "source": "PubMed",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33565082/",
+        "type": "abstract",
+        "note": "PubMed abstract page"
+      }
+    ],
+    "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33565082/",
+    "rag_text": "Title: Human cytomegalovirus infection is associated with increased expression of the lissencephaly gene PAFAH1B1 encoding LIS1 in neural stem cells and congenitally infected brains.\nAuthors: Rolland Maude, Martin Hélène, Bergamelli Mathilde, Sellier Yann, Bessières Bettina, Aziza Jacqueline et al. (10 authors)\nJournal: The Journal of pathology (2021)\nPMID: 33565082\nAbstract: Congenital infection of the central nervous system by human cytomegalovirus (HCMV) is a leading cause of permanent sequelae, including mental retardation or neurodevelopmental abnormalities. The most severe complications include smooth brain or polymicrogyria, which are both indicative of abnormal migration of neural cells, although the underlying mechanisms remain to be determined. To gain better insight on the pathogenesis of such sequelae, we assessed the expression levels of a set of neurogenesis-related genes, using HCMV-infected human neural stem cells derived from embryonic stem cells (NSCs). Among the 84 genes tested, we found dramatically increased expression of the gene PAFAH1B1, encoding LIS1 (lissencephaly-1), in HCMV-infected versus uninfected NSCs. Consistent with these findings, western blotting and immunofluorescence analyses confirmed the increased levels of LIS1 in HCMV-infected NSCs at the protein level. We next assessed the migratory abilities of HCMV-infected NSCs and observed that infection strongly impaired the migration of NSCs, without detectable effect on their proliferation. Moreover, we observed increased immunostaining for LIS1 in brains of congenitally infected fetuses, but not in control samples, highlighting the clinical relevance of our findings. Of note, PAFAH1B1 mutations (resulting in either haploinsufficiency or gain of function) are primary causes of hereditary neurodevelopmental diseases. Notably, mutations resulting in PAFAH1B1 haploinsufficiency cause classic lissencephaly. Taken together, our findings suggest that PAFAH1B1 is a critical target of HCMV infection. They also shine a new light on the pathophysiological basis of the neurological outcomes of congenital HCMV infection, by suggesting that defective neural cell migration might contribute to the pathogenesis of the neurodevelopmental sequelae of infection. © 2021 The Pathological Society of Great Britain and Ireland. Published by John Wiley & Sons, Ltd.\nMeSH Terms: 1-Alkyl-2-acetylglycerophosphocholine Esterase; Brain; Cytomegalovirus Infections; Humans; Microtubule-Associated Proteins; Neural Stem Cells\nKeywords: DCX; LIS1; PAFAH1B1; congenital infection; cytomegalovirus; neuronal migration"
+  }
+]

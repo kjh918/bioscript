@@ -1,0 +1,690 @@
+[
+  {
+    "medgen_uid": "1384417",
+    "disease_name": "Trisomy 18",
+    "concept_id": "C4317091",
+    "disease_type": "Disease or Syndrome",
+    "definition": "Trisomy 18 is a chromosomal abnormality associated with the presence of an extra chromosome 18 and characterized by growth delay, dolichocephaly, a characteristic facies, limb anomalies and visceral malformations. [from ORDO]",
+    "synonyms": [
+      "Edwards syndrome"
+    ],
+    "cross_references": {
+      "MONDO": "MONDO:0018071",
+      "Orphanet": "3380"
+    },
+    "literature": {
+      "professional_guidelines": {
+        "papers": [
+          {
+            "pmid": "40685149",
+            "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+            "authors": [
+              "Pyle AK",
+              "George TN",
+              "Cummings JJ",
+              "Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn"
+            ],
+            "journal": "Pediatrics",
+            "citation": "2025 Aug 1;156(2) doi: 10.1542/peds.2025-072719. 40685149",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+          },
+          {
+            "pmid": "36524989",
+            "title": "Noninvasive prenatal screening (NIPS) for fetal chromosome abnormalities in a general-risk population: An evidence-based clinical guideline of the American College of Medical Genetics and Genomics (ACMG).",
+            "authors": [
+              "Dungan JS",
+              "Klugman S",
+              "Darilek S",
+              "Malinowski J",
+              "Akkari YMN",
+              "Monaghan KG",
+              "Erwin A",
+              "Best RG; ACMG Board of Directors. Electronic address: documents@acmg.net"
+            ],
+            "journal": "Genet Med",
+            "citation": "2023 Feb;25(2):100336. Epub 2022 Dec 16 doi: 10.1016/j.gim.2022.11.004. 36524989",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36524989/"
+          },
+          {
+            "pmid": "34171388",
+            "title": "Society for Maternal-Fetal Medicine Consult Series #57: Evaluation and management of isolated soft ultrasound markers for aneuploidy in the second trimester: (Replaces Consults #10, Single umbilical artery, October 2010; #16, Isolated echogenic bowel diagnosed on second-trimester ultrasound, August 2011; #17, Evaluation and management of isolated renal pelviectasis on second-trimester ultrasound, December 2011; #25, Isolated fetal choroid plexus cysts, April 2013; #27, Isolated echogenic intracardiac focus, August 2013).",
+            "authors": [
+              "Society for Maternal-Fetal Medicine (SMFM). Electronic address: pubs@smfm.org",
+              "Prabhu M",
+              "Kuller JA",
+              "Biggio JR"
+            ],
+            "journal": "Am J Obstet Gynecol",
+            "citation": "2021 Oct;225(4):B2-B15. Epub 2021 Jun 23 doi: 10.1016/j.ajog.2021.06.079. 34171388",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34171388/"
+          }
+        ],
+        "curated": [
+          {
+            "title": "American College of Medical Genetics and Genomics Noninvasive Prenatal Screening via Cell-Free DNA ACT Sheet, Trisomy 18: Positive Cell Free DNA Screen, 2021",
+            "url": "https://www.acmg.net/PDFLibrary/Trisomy-18.pdf"
+          }
+        ],
+        "see_all": {
+          "count": 222,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=(%22trisomy%2018%22%5Btiab%3A~0%5D)%20AND%20(%22english%20and%20humans%22%5BFilter%5D)%20AND%20(%20(%22practice%20guideline%22%5BFilter%5D)%20OR%20(practice*%5Btitl%5D%20AND%20(guideline%5Btitl%5D%20OR%20parameter%5Btitl%5D%20OR%20resource%5Btitl%5D%20OR%20bulletin%5Btitl%5D%20OR%20best%5Btitl%5D))%20OR%20(genetic*%5Btitl%5D%20AND%20(evaluation%5Btitl%5D%20OR%20counseling%5Btitl%5D%20OR%20screening%5Btitl%5D%20OR%20test*%5Btitl%5D))%20OR%20(clinical%5Btitl%5D%20AND%20((expert%5Btitl%5D%20AND%20consensus%5Btitl%5D)%20OR%20utility%5Btitl%5D%20OR%20guideline*%5Btitl%5D))%20OR%20(management%5Btitl%5D%20AND%20(clinical%5Btitl%5D%20OR%20diagnos*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20pain%5Btitl%5D%20OR%20surveillance%5Btitl%5D%20OR%20emergency%5Btitl%5D%20OR%20guideline*%5Btitl%5D%20OR%20therap*))%20OR%20(treatment%5Btitl%5D%20AND%20((evaluation%5Btitl%5D%20AND%20diagnosis%5Btitl%5D)%20OR%20(assessment%5Btitl%5D%20AND%20prevention%5Btitl%5D)%20OR%20therap*))%20OR%20(Diagnos*%5Btitl%5D%20AND%20(prenatal%5Btitl%5D%20OR%20treatment%5Btitl%5D%20OR%20follow-up%5Btitl%5D%20OR%20statement%5Btitl%5D%20OR%20criteria%5Btitl%5D%20OR%20newborn%5Btitl%5D%20OR%20differential%5Btitl%5D%20OR%20neonatal%5Btitl%5D%20OR%20neonate%5Btitl%5D))%20OR%20(guideline*%5Btitl%5D%20AND%20(pharmacogenetic*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20evidence-based%5Btitl%5D%20OR%20consensus%5Btitl%5D%20OR%20(technical%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20(molecular%5Btitl%5D%20AND%20testing%5Btitl%5D)))%20OR%20(risk%5Btitl%5D%20AND%20assessment%5Btitl%5D)%20OR%20(recommendation*%5Btitl%5D%20AND%20(statement%5Btitl%5D%20OR%20Evidence-based%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(care%20AND%20((Patient%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20primary%5Btitl%5D%20OR%20psychosocial%5Btitl%5D))%20OR%20(Health%5Btitl%5D%20AND%20supervision%5Btitl%5D)%20OR%20(statement%5Btitl%5D%20AND%20(policy%5Btitl%5D%20OR%20position%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(pharmacogenetics%5Btitl%5D%20AND%20(Dosing%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20genotype*%5Btitl%5D%20OR%20drug*%5Btitl%5D))%20OR%20(Chemotherapy%5Btitl%5D%20AND%20decision*%5Btitl%5D)%20OR%20(screening%5Btitl%5D%20AND%20(newborn%5Btitl%5D%20OR%20neonat*%5Btitl%5D%20OR%20detection%5Btitl%5D%20OR%20diagnos*%5Btitl%5D))%20OR%20(criteria%5Btitl%5D%20OR%20genotype*%5Btitl%5D)%20)%20NOT%20(%22Case%20reports%22%5BPublication%20type%5D%20OR%20%22clinical%20study%22%5BPublication%20Type%5D%20OR%20%22randomized%20controlled%20trial%22%5BPublication%20Type%5D)"
+        }
+      },
+      "recent_clinical_studies": {
+        "etiology": {
+          "papers": [
+            {
+              "pmid": "40685149",
+              "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+              "authors": [
+                "Pyle AK",
+                "George TN",
+                "Cummings JJ",
+                "Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn"
+              ],
+              "journal": "Pediatrics",
+              "citation": "2025 Aug 1;156(2) doi: 10.1542/peds.2025-072719. 40685149",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+            },
+            {
+              "pmid": "35608568",
+              "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+              "authors": [
+                "Rose NC",
+                "Barrie ES",
+                "Malinowski J",
+                "Jenkins GP",
+                "McClain MR",
+                "LaGrave D",
+                "Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net"
+              ],
+              "journal": "Genet Med",
+              "citation": "2022 Jul;24(7):1379-1391. Epub 2022 May 24 doi: 10.1016/j.gim.2022.03.019. 35608568",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+            },
+            {
+              "pmid": "34171388",
+              "title": "Society for Maternal-Fetal Medicine Consult Series #57: Evaluation and management of isolated soft ultrasound markers for aneuploidy in the second trimester: (Replaces Consults #10, Single umbilical artery, October 2010; #16, Isolated echogenic bowel diagnosed on second-trimester ultrasound, August 2011; #17, Evaluation and management of isolated renal pelviectasis on second-trimester ultrasound, December 2011; #25, Isolated fetal choroid plexus cysts, April 2013; #27, Isolated echogenic intracardiac focus, August 2013).",
+              "authors": [
+                "Society for Maternal-Fetal Medicine (SMFM). Electronic address: pubs@smfm.org",
+                "Prabhu M",
+                "Kuller JA",
+                "Biggio JR"
+              ],
+              "journal": "Am J Obstet Gynecol",
+              "citation": "2021 Oct;225(4):B2-B15. Epub 2021 Jun 23 doi: 10.1016/j.ajog.2021.06.079. 34171388",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/34171388/"
+            },
+            {
+              "pmid": "31708118",
+              "title": "TRIDENT-2: National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.",
+              "authors": [
+                "van der Meij KRM",
+                "Sistermans EA",
+                "Macville MVE",
+                "Stevens SJC",
+                "Bax CJ",
+                "Bekker MN",
+                "Bilardo CM",
+                "Boon EMJ",
+                "Boter M",
+                "Diderich KEM",
+                "de Die-Smulders CEM",
+                "Duin LK",
+                "Faas BHW",
+                "Feenstra I",
+                "Haak MC",
+                "Hoffer MJV",
+                "den Hollander NS",
+                "Hollink IHIM",
+                "Jehee FS",
+                "Knapen MFCM",
+                "Kooper AJA",
+                "van Langen IM",
+                "Lichtenbelt KD",
+                "Linskens IH",
+                "van Maarle MC",
+                "Oepkes D",
+                "Pieters MJ",
+                "Schuring-Blom GH",
+                "Sikkel E",
+                "Sikkema-Raddatz B",
+                "Smeets DFCM",
+                "Srebniak MI",
+                "Suijkerbuijk RF",
+                "Tan-Sindhunata GM",
+                "van der Ven AJEM",
+                "van Zelderen-Bhola SL",
+                "Henneman L",
+                "Galjaard RH",
+                "Van Opstal D",
+                "Weiss MM; Dutch NIPT Consortium"
+              ],
+              "journal": "Am J Hum Genet",
+              "citation": "2019 Dec 5;105(6):1091-1101. Epub 2019 Nov 7 doi: 10.1016/j.ajhg.2019.10.005. 31708118 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+            },
+            {
+              "pmid": "23088440",
+              "title": "The trisomy 18 syndrome.",
+              "authors": [
+                "Cereda A",
+                "Carey JC"
+              ],
+              "journal": "Orphanet J Rare Dis",
+              "citation": "2012 Oct 23;7:81. doi: 10.1186/1750-1172-7-81. 23088440 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/23088440/"
+            }
+          ],
+          "see_all": {
+            "count": 1237,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%2018%22%20AND%20Etiology%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "diagnosis": {
+          "papers": [
+            {
+              "pmid": "40685149",
+              "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+              "authors": [
+                "Pyle AK",
+                "George TN",
+                "Cummings JJ",
+                "Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn"
+              ],
+              "journal": "Pediatrics",
+              "citation": "2025 Aug 1;156(2) doi: 10.1542/peds.2025-072719. 40685149",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+            },
+            {
+              "pmid": "35608568",
+              "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+              "authors": [
+                "Rose NC",
+                "Barrie ES",
+                "Malinowski J",
+                "Jenkins GP",
+                "McClain MR",
+                "LaGrave D",
+                "Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net"
+              ],
+              "journal": "Genet Med",
+              "citation": "2022 Jul;24(7):1379-1391. Epub 2022 May 24 doi: 10.1016/j.gim.2022.03.019. 35608568",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+            },
+            {
+              "pmid": "33527722",
+              "title": "Surveillance guidelines for children with trisomy 18.",
+              "authors": [
+                "Kepple JW",
+                "Fishler KP",
+                "Peeples ES"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2021 Apr;185(4):1294-1303. Epub 2021 Feb 2 doi: 10.1002/ajmg.a.62097. 33527722",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/33527722/"
+            },
+            {
+              "pmid": "31566869",
+              "title": "Trisomy 13 and 18-Prevalence and mortality-A multi-registry population based analysis.",
+              "authors": [
+                "Goel N",
+                "Morris JK",
+                "Tucker D",
+                "de Walle HEK",
+                "Bakker MK",
+                "Kancherla V",
+                "Marengo L",
+                "Canfield MA",
+                "Kallen K",
+                "Lelong N",
+                "Camelo JL",
+                "Stallings EB",
+                "Jones AM",
+                "Nance A",
+                "Huynh MP",
+                "Martínez-Fernández ML",
+                "Sipek A",
+                "Pierini A",
+                "Nembhard WN",
+                "Goetz D",
+                "Rissmann A",
+                "Groisman B",
+                "Luna-Muñoz L",
+                "Szabova E",
+                "Lapchenko S",
+                "Zarante I",
+                "Hurtado-Villa P",
+                "Martinez LE",
+                "Tagliabue G",
+                "Landau D",
+                "Gatt M",
+                "Dastgiri S",
+                "Morgan M"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2019 Dec;179(12):2382-2392. Epub 2019 Sep 30 doi: 10.1002/ajmg.a.61365. 31566869 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31566869/"
+            },
+            {
+              "pmid": "29437136",
+              "title": "Trisomies.",
+              "authors": [
+                "Levy PA",
+                "Marion R"
+              ],
+              "journal": "Pediatr Rev",
+              "citation": "2018 Feb;39(2):104-106. doi: 10.1542/pir.2016-0198. 29437136",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/29437136/"
+            }
+          ],
+          "see_all": {
+            "count": 1549,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%2018%22%20AND%20Diagnosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "therapy": {
+          "papers": [
+            {
+              "pmid": "36601988",
+              "title": "Seizures in trisomy 18: Prevalence, description, and treatment.",
+              "authors": [
+                "Jaspersen SL",
+                "Bruns DA",
+                "Candee MS",
+                "Battaglia A",
+                "Carey JC",
+                "Fishler KP"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2023 Apr;191(4):1026-1037. Epub 2023 Jan 5 doi: 10.1002/ajmg.a.63113. 36601988",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36601988/"
+            },
+            {
+              "pmid": "35608568",
+              "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+              "authors": [
+                "Rose NC",
+                "Barrie ES",
+                "Malinowski J",
+                "Jenkins GP",
+                "McClain MR",
+                "LaGrave D",
+                "Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net"
+              ],
+              "journal": "Genet Med",
+              "citation": "2022 Jul;24(7):1379-1391. Epub 2022 May 24 doi: 10.1016/j.gim.2022.03.019. 35608568",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+            },
+            {
+              "pmid": "34719838",
+              "title": "Direct hyperbilirubinemia and cholestasis in trisomy 13 and 18.",
+              "authors": [
+                "Kepple JW",
+                "Peeples ES"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2022 Feb;188(2):548-555. Epub 2021 Nov 1 doi: 10.1002/ajmg.a.62552. 34719838",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/34719838/"
+            },
+            {
+              "pmid": "31787159",
+              "title": "Radial Ray Malformation.",
+              "authors": [
+                "Society for Maternal-Fetal Medicine (SMFM)",
+                "Gandhi M",
+                "Rac MWF",
+                "McKinney J"
+              ],
+              "journal": "Am J Obstet Gynecol",
+              "citation": "2019 Dec;221(6):B16-B18. doi: 10.1016/j.ajog.2019.09.024. 31787159",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31787159/"
+            },
+            {
+              "pmid": "28397325",
+              "title": "Analysis of cell-free DNA in maternal blood in screening for aneuploidies: updated meta-analysis.",
+              "authors": [
+                "Gil MM",
+                "Accurti V",
+                "Santacruz B",
+                "Plana MN",
+                "Nicolaides KH"
+              ],
+              "journal": "Ultrasound Obstet Gynecol",
+              "citation": "2017 Sep;50(3):302-314. Epub 2017 Jul 27 doi: 10.1002/uog.17484. 28397325",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/28397325/"
+            }
+          ],
+          "see_all": {
+            "count": 151,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%2018%22%20AND%20Therapy%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "prognosis": {
+          "papers": [
+            {
+              "pmid": "40685149",
+              "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+              "authors": [
+                "Pyle AK",
+                "George TN",
+                "Cummings JJ",
+                "Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn"
+              ],
+              "journal": "Pediatrics",
+              "citation": "2025 Aug 1;156(2) doi: 10.1542/peds.2025-072719. 40685149",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+            },
+            {
+              "pmid": "33168220",
+              "title": "Dandy-Walker Malformation.",
+              "authors": [
+                "Society for Maternal-Fetal Medicine (SMFM)",
+                "Monteagudo A"
+              ],
+              "journal": "Am J Obstet Gynecol",
+              "citation": "2020 Dec;223(6):B38-B41. Epub 2020 Nov 7 doi: 10.1016/j.ajog.2020.08.184. 33168220",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/33168220/"
+            },
+            {
+              "pmid": "33168217",
+              "title": "Holoprosencephaly.",
+              "authors": [
+                "Society for Maternal-Fetal Medicine (SMFM)",
+                "Monteagudo A"
+              ],
+              "journal": "Am J Obstet Gynecol",
+              "citation": "2020 Dec;223(6):B13-B16. Epub 2020 Nov 7 doi: 10.1016/j.ajog.2020.08.178. 33168217",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/33168217/"
+            },
+            {
+              "pmid": "31566869",
+              "title": "Trisomy 13 and 18-Prevalence and mortality-A multi-registry population based analysis.",
+              "authors": [
+                "Goel N",
+                "Morris JK",
+                "Tucker D",
+                "de Walle HEK",
+                "Bakker MK",
+                "Kancherla V",
+                "Marengo L",
+                "Canfield MA",
+                "Kallen K",
+                "Lelong N",
+                "Camelo JL",
+                "Stallings EB",
+                "Jones AM",
+                "Nance A",
+                "Huynh MP",
+                "Martínez-Fernández ML",
+                "Sipek A",
+                "Pierini A",
+                "Nembhard WN",
+                "Goetz D",
+                "Rissmann A",
+                "Groisman B",
+                "Luna-Muñoz L",
+                "Szabova E",
+                "Lapchenko S",
+                "Zarante I",
+                "Hurtado-Villa P",
+                "Martinez LE",
+                "Tagliabue G",
+                "Landau D",
+                "Gatt M",
+                "Dastgiri S",
+                "Morgan M"
+              ],
+              "journal": "Am J Med Genet A",
+              "citation": "2019 Dec;179(12):2382-2392. Epub 2019 Sep 30 doi: 10.1002/ajmg.a.61365. 31566869 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31566869/"
+            },
+            {
+              "pmid": "23088440",
+              "title": "The trisomy 18 syndrome.",
+              "authors": [
+                "Cereda A",
+                "Carey JC"
+              ],
+              "journal": "Orphanet J Rare Dis",
+              "citation": "2012 Oct 23;7:81. doi: 10.1186/1750-1172-7-81. 23088440 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/23088440/"
+            }
+          ],
+          "see_all": {
+            "count": 668,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%2018%22%20AND%20Prognosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "clinical_prediction_guides": {
+          "papers": [
+            {
+              "pmid": "38884729",
+              "title": "Human Genetics of Ventricular Septal Defect.",
+              "authors": [
+                "Perrot A",
+                "Rickert-Sperling S"
+              ],
+              "journal": "Adv Exp Med Biol",
+              "citation": "2024;1441:505-534. doi: 10.1007/978-3-031-44087-8_27. 38884729",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+            },
+            {
+              "pmid": "37620607",
+              "title": "Consequences of gaining an extra chromosome.",
+              "authors": [
+                "Torres EM"
+              ],
+              "journal": "Chromosome Res",
+              "citation": "2023 Aug 25;31(3):24. doi: 10.1007/s10577-023-09732-w. 37620607 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/37620607/"
+            },
+            {
+              "pmid": "31708118",
+              "title": "TRIDENT-2: National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.",
+              "authors": [
+                "van der Meij KRM",
+                "Sistermans EA",
+                "Macville MVE",
+                "Stevens SJC",
+                "Bax CJ",
+                "Bekker MN",
+                "Bilardo CM",
+                "Boon EMJ",
+                "Boter M",
+                "Diderich KEM",
+                "de Die-Smulders CEM",
+                "Duin LK",
+                "Faas BHW",
+                "Feenstra I",
+                "Haak MC",
+                "Hoffer MJV",
+                "den Hollander NS",
+                "Hollink IHIM",
+                "Jehee FS",
+                "Knapen MFCM",
+                "Kooper AJA",
+                "van Langen IM",
+                "Lichtenbelt KD",
+                "Linskens IH",
+                "van Maarle MC",
+                "Oepkes D",
+                "Pieters MJ",
+                "Schuring-Blom GH",
+                "Sikkel E",
+                "Sikkema-Raddatz B",
+                "Smeets DFCM",
+                "Srebniak MI",
+                "Suijkerbuijk RF",
+                "Tan-Sindhunata GM",
+                "van der Ven AJEM",
+                "van Zelderen-Bhola SL",
+                "Henneman L",
+                "Galjaard RH",
+                "Van Opstal D",
+                "Weiss MM; Dutch NIPT Consortium"
+              ],
+              "journal": "Am J Hum Genet",
+              "citation": "2019 Dec 5;105(6):1091-1101. Epub 2019 Nov 7 doi: 10.1016/j.ajhg.2019.10.005. 31708118 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+            },
+            {
+              "pmid": "25963912",
+              "title": "Effects of Maternal and Fetal Characteristics on Cell-Free Fetal DNA Fraction in Maternal Plasma.",
+              "authors": [
+                "Zhou Y",
+                "Zhu Z",
+                "Gao Y",
+                "Yuan Y",
+                "Guo Y",
+                "Zhou L",
+                "Liao K",
+                "Wang J",
+                "Du B",
+                "Hou Y",
+                "Chen Z",
+                "Chen F",
+                "Zhang H",
+                "Yu C",
+                "Zhao L",
+                "Lau TK",
+                "Jiang F",
+                "Wang W"
+              ],
+              "journal": "Reprod Sci",
+              "citation": "2015 Nov;22(11):1429-35. Epub 2015 May 11 doi: 10.1177/1933719115584445. 25963912",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25963912/"
+            },
+            {
+              "pmid": "9803202",
+              "title": "Intrauterine growth retardation.",
+              "authors": [
+                "Vandenbosche RC",
+                "Kirchner JT"
+              ],
+              "journal": "Am Fam Physician",
+              "citation": "1998 Oct 15;58(6):1384-90, 1393-4. 9803202",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/9803202/"
+            }
+          ],
+          "see_all": {
+            "count": 683,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%2018%22%20AND%20Clinical%20prediction%20guides%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        }
+      },
+      "recent_systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "40537699",
+            "title": "Outcomes of heart surgery in neonates with trisomy 13 and 18: a systematic review with metanalysis.",
+            "authors": [
+              "de Sá Bittencourt Câmara Bastos C",
+              "Vale da Cruz L",
+              "Hirano Arruda Moraes L",
+              "Jornada Krebs VL",
+              "de Carvalho WB"
+            ],
+            "journal": "Eur J Pediatr",
+            "citation": "2025 Jun 20;184(7):430. doi: 10.1007/s00431-025-06274-7. 40537699",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40537699/"
+          },
+          {
+            "pmid": "40389136",
+            "title": "Perinatal outcomes of cystic hygroma: a systematic review and meta-analysis.",
+            "authors": [
+              "Wang MJ",
+              "Bazan M",
+              "Hsieh T",
+              "Mita C",
+              "Ferrés MA",
+              "Oyelese Y"
+            ],
+            "journal": "Am J Obstet Gynecol MFM",
+            "citation": "2025 Jul;7(7):101704. Epub 2025 May 17 doi: 10.1016/j.ajogmf.2025.101704. 40389136",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40389136/"
+          },
+          {
+            "pmid": "35608568",
+            "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+            "authors": [
+              "Rose NC",
+              "Barrie ES",
+              "Malinowski J",
+              "Jenkins GP",
+              "McClain MR",
+              "LaGrave D",
+              "Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net"
+            ],
+            "journal": "Genet Med",
+            "citation": "2022 Jul;24(7):1379-1391. Epub 2022 May 24 doi: 10.1016/j.gim.2022.03.019. 35608568",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+          },
+          {
+            "pmid": "27889224",
+            "title": "Fetal megacystis: A systematic review.",
+            "authors": [
+              "Taghavi K",
+              "Sharpe C",
+              "Stringer MD"
+            ],
+            "journal": "J Pediatr Urol",
+            "citation": "2017 Feb;13(1):7-15. Epub 2016 Oct 8 doi: 10.1016/j.jpurol.2016.09.003. 27889224",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27889224/"
+          },
+          {
+            "pmid": "27474103",
+            "title": "A tumor profile in Edwards syndrome (trisomy 18).",
+            "authors": [
+              "Satgé D",
+              "Nishi M",
+              "Sirvent N",
+              "Vekemans M"
+            ],
+            "journal": "Am J Med Genet C Semin Med Genet",
+            "citation": "2016 Sep;172(3):296-306. Epub 2016 Jul 30 doi: 10.1002/ajmg.c.31511. 27474103",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27474103/"
+          }
+        ],
+        "see_all": {
+          "count": 29,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Trisomy%2018%22%20AND%20systematic%5Bsb%5D%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+        }
+      }
+    },
+    "url": "https://www.ncbi.nlm.nih.gov/medgen/1384417"
+  }
+]

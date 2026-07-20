@@ -1,0 +1,561 @@
+[
+  {
+    "medgen_uid": "408255",
+    "disease_name": "4p partial monosomy syndrome (WHS)",
+    "concept_id": "C1956097",
+    "disease_type": "Disease or Syndrome",
+    "definition": "Wolf-Hirschhorn syndrome is a congenital malformation syndrome characterized by pre- and postnatal growth deficiency, developmental disability of variable degree, characteristic craniofacial features ('Greek warrior helmet' appearance of the nose, high forehead, prominent glabella, hypertelorism, high-arched eyebrows, protruding eyes, epicanthal folds, short philtrum, distinct mouth with downturned corners, and micrognathia), and a seizure disorder (Battaglia et al., 2008). [from OMIM ]",
+    "synonyms": [
+      "CHROMOSOME 4p16.3 DELETION SYNDROME",
+      "PITT SYNDROME",
+      "WHS",
+      "WITTWER SYNDROME",
+      "Wolf-Hirschhorn syndrome"
+    ],
+    "cross_references": {
+      "SNOMED-CT": "17122004",
+      "MONDO": "MONDO:0008684",
+      "OMIM": "194190",
+      "Orphanet": "280"
+    },
+    "literature": {
+      "professional_guidelines": {
+        "papers": [
+          {
+            "pmid": "40684108",
+            "title": "Prenatal diagnosis and genetic assessment of fetuses with single umbilical artery using chromosomal microarray analysis: a seven-year single-center retrospective study.",
+            "authors": [
+              "Zhuang J",
+              "Huang N",
+              "Chen Y",
+              "Wu J",
+              "Ye X",
+              "Chen C"
+            ],
+            "journal": "BMC Pregnancy Childbirth",
+            "citation": "2025 Jul 19;25(1):776. doi: 10.1186/s12884-025-07886-5. 40684108 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684108/"
+          },
+          {
+            "pmid": "40129048",
+            "title": "Effectiveness and Safety of High-Dose Oral Phenobarbital in Children With Recurrent and Treatment-Refractory Seizures.",
+            "authors": [
+              "Bodur M",
+              "Tutuncu Toker R"
+            ],
+            "journal": "Clin Pediatr (Phila)",
+            "citation": "2025 Oct;64(9):1259-1263. Epub 2025 Mar 24 doi: 10.1177/00099228251328136. 40129048 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40129048/"
+          },
+          {
+            "pmid": "10559766",
+            "title": "Health supervision and anticipatory guidance of individuals with Wolf-Hirschhorn syndrome.",
+            "authors": [
+              "Battaglia A",
+              "Carey JC"
+            ],
+            "journal": "Am J Med Genet",
+            "citation": "1999 Jun 25;89(2):111-5. doi: 10.1002/(sici)1096-8628(19990625)89:2<111::aid-ajmg9>3.0.co;2-g. 10559766",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10559766/"
+          }
+        ],
+        "curated": [],
+        "see_all": {
+          "count": 26,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=(4p%20partial%20monosomy%20syndrome)%20AND%20(%22english%20and%20humans%22%5BFilter%5D)%20AND%20(%20(%22practice%20guideline%22%5BFilter%5D)%20OR%20(practice*%5Btitl%5D%20AND%20(guideline%5Btitl%5D%20OR%20parameter%5Btitl%5D%20OR%20resource%5Btitl%5D%20OR%20bulletin%5Btitl%5D%20OR%20best%5Btitl%5D))%20OR%20(genetic*%5Btitl%5D%20AND%20(evaluation%5Btitl%5D%20OR%20counseling%5Btitl%5D%20OR%20screening%5Btitl%5D%20OR%20test*%5Btitl%5D))%20OR%20(clinical%5Btitl%5D%20AND%20((expert%5Btitl%5D%20AND%20consensus%5Btitl%5D)%20OR%20utility%5Btitl%5D%20OR%20guideline*%5Btitl%5D))%20OR%20(management%5Btitl%5D%20AND%20(clinical%5Btitl%5D%20OR%20diagnos*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20pain%5Btitl%5D%20OR%20surveillance%5Btitl%5D%20OR%20emergency%5Btitl%5D%20OR%20guideline*%5Btitl%5D%20OR%20therap*))%20OR%20(treatment%5Btitl%5D%20AND%20((evaluation%5Btitl%5D%20AND%20diagnosis%5Btitl%5D)%20OR%20(assessment%5Btitl%5D%20AND%20prevention%5Btitl%5D)%20OR%20therap*))%20OR%20(Diagnos*%5Btitl%5D%20AND%20(prenatal%5Btitl%5D%20OR%20treatment%5Btitl%5D%20OR%20follow-up%5Btitl%5D%20OR%20statement%5Btitl%5D%20OR%20criteria%5Btitl%5D%20OR%20newborn%5Btitl%5D%20OR%20differential%5Btitl%5D%20OR%20neonatal%5Btitl%5D%20OR%20neonate%5Btitl%5D))%20OR%20(guideline*%5Btitl%5D%20AND%20(pharmacogenetic*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20evidence-based%5Btitl%5D%20OR%20consensus%5Btitl%5D%20OR%20(technical%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20(molecular%5Btitl%5D%20AND%20testing%5Btitl%5D)))%20OR%20(risk%5Btitl%5D%20AND%20assessment%5Btitl%5D)%20OR%20(recommendation*%5Btitl%5D%20AND%20(statement%5Btitl%5D%20OR%20Evidence-based%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(care%20AND%20((Patient%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20primary%5Btitl%5D%20OR%20psychosocial%5Btitl%5D))%20OR%20(Health%5Btitl%5D%20AND%20supervision%5Btitl%5D)%20OR%20(statement%5Btitl%5D%20AND%20(policy%5Btitl%5D%20OR%20position%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(pharmacogenetics%5Btitl%5D%20AND%20(Dosing%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20genotype*%5Btitl%5D%20OR%20drug*%5Btitl%5D))%20OR%20(Chemotherapy%5Btitl%5D%20AND%20decision*%5Btitl%5D)%20OR%20(screening%5Btitl%5D%20AND%20(newborn%5Btitl%5D%20OR%20neonat*%5Btitl%5D%20OR%20detection%5Btitl%5D%20OR%20diagnos*%5Btitl%5D))%20OR%20(criteria%5Btitl%5D%20OR%20genotype*%5Btitl%5D)%20)%20NOT%20(%22Case%20reports%22%5BPublication%20type%5D%20OR%20%22clinical%20study%22%5BPublication%20Type%5D%20OR%20%22randomized%20controlled%20trial%22%5BPublication%20Type%5D)"
+        }
+      },
+      "recent_clinical_studies": {
+        "etiology": {
+          "papers": [
+            {
+              "pmid": "36849216",
+              "title": "Prenatal phenotype of Wolf-Hirschhorn syndrome: A case series and literature review.",
+              "authors": [
+                "Tang F",
+                "Zeng Y",
+                "Wang L",
+                "Yin D",
+                "Chen L",
+                "Xie D",
+                "Wang J"
+              ],
+              "journal": "Mol Genet Genomic Med",
+              "citation": "2023 Jun;11(6):e2155. Epub 2023 Feb 27 doi: 10.1002/mgg3.2155. 36849216 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36849216/"
+            },
+            {
+              "pmid": "36053618",
+              "title": "Gastrostomy and congenital anomalies: a European population-based study.",
+              "authors": [
+                "Garne E",
+                "Tan J",
+                "Loane M",
+                "Baldacci S",
+                "Ballardini E",
+                "Brigden J",
+                "Cavero-Carbonell C",
+                "García-Villodre L",
+                "Gissler M",
+                "Given J",
+                "Heino A",
+                "Jordan S",
+                "Limb E",
+                "Neville AJ",
+                "Rissmann A",
+                "Santoro M",
+                "Scanlon L",
+                "Urhoj SK",
+                "Wellesley DG",
+                "Morris J"
+              ],
+              "journal": "BMJ Paediatr Open",
+              "citation": "2022 Jun;6(1) doi: 10.1136/bmjpo-2022-001526. 36053618 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36053618/"
+            },
+            {
+              "pmid": "26451378",
+              "title": "Rare Diseases Leading to Childhood Glaucoma: Epidemiology, Pathophysiogenesis, and Management.",
+              "authors": [
+                "Abdolrahimzadeh S",
+                "Fameli V",
+                "Mollo R",
+                "Contestabile MT",
+                "Perdicchi A",
+                "Recupero SM"
+              ],
+              "journal": "Biomed Res Int",
+              "citation": "2015;2015:781294. Epub 2015 Sep 16 doi: 10.1155/2015/781294. 26451378 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/26451378/"
+            },
+            {
+              "pmid": "15734578",
+              "title": "The etiology of Wolf-Hirschhorn syndrome.",
+              "authors": [
+                "Bergemann AD",
+                "Cole F",
+                "Hirschhorn K"
+              ],
+              "journal": "Trends Genet",
+              "citation": "2005 Mar;21(3):188-95. doi: 10.1016/j.tig.2005.01.008. 15734578",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15734578/"
+            },
+            {
+              "pmid": "11480768",
+              "title": "Wolf-Hirschhorn (4p-) syndrome.",
+              "authors": [
+                "Battaglia A",
+                "Carey JC",
+                "Wright TJ"
+              ],
+              "journal": "Adv Pediatr",
+              "citation": "2001;48:75-113. 11480768",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/11480768/"
+            }
+          ],
+          "see_all": {
+            "count": 80,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%224p%20partial%20monosomy%20syndrome%22%20AND%20Etiology%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "diagnosis": {
+          "papers": [
+            {
+              "pmid": "38353053",
+              "title": "Clinical details of individuals with Rauch-Steindl syndrome due to NSD2 truncating variants.",
+              "authors": [
+                "Nishi E",
+                "Yanagi K",
+                "Kaname T",
+                "Okamoto N"
+              ],
+              "journal": "Mol Genet Genomic Med",
+              "citation": "2024 Feb;12(2):e2396. doi: 10.1002/mgg3.2396. 38353053 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38353053/"
+            },
+            {
+              "pmid": "36526544",
+              "title": "Clinical and epilepsy characteristics in Wolf-Hirschhorn syndrome (4p-): A review.",
+              "authors": [
+                "Paprocka J",
+                "Kaminiów K",
+                "Yetkin O",
+                "Tekturk P",
+                "Baykan B",
+                "Leiz S",
+                "Kluger G",
+                "Striano P"
+              ],
+              "journal": "Seizure",
+              "citation": "2024 Mar;116:14-23. Epub 2022 Dec 8 doi: 10.1016/j.seizure.2022.12.001. 36526544",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36526544/"
+            },
+            {
+              "pmid": "26239400",
+              "title": "Wolf-Hirschhorn syndrome: A review and update.",
+              "authors": [
+                "Battaglia A",
+                "Carey JC",
+                "South ST"
+              ],
+              "journal": "Am J Med Genet C Semin Med Genet",
+              "citation": "2015 Sep;169(3):216-23. Epub 2015 Aug 4 doi: 10.1002/ajmg.c.31449. 26239400",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/26239400/"
+            },
+            {
+              "pmid": "16023553",
+              "title": "Seizure and EEG patterns in Wolf-Hirschhorn (4p-) syndrome.",
+              "authors": [
+                "Battaglia A",
+                "Carey JC"
+              ],
+              "journal": "Brain Dev",
+              "citation": "2005 Aug;27(5):362-4. Epub 2005 Apr 22 doi: 10.1016/j.braindev.2004.02.017. 16023553",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/16023553/"
+            },
+            {
+              "pmid": "6773328",
+              "title": "4p- (Wolf-Hirschhorn) syndrome.",
+              "authors": [
+                "Magill HL",
+                "Shackelford GD",
+                "McAlister WH",
+                "Graviss ER"
+              ],
+              "journal": "AJR Am J Roentgenol",
+              "citation": "1980 Aug;135(2):283-8. doi: 10.2214/ajr.135.2.283. 6773328",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/6773328/"
+            }
+          ],
+          "see_all": {
+            "count": 187,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%224p%20partial%20monosomy%20syndrome%22%20AND%20Diagnosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "therapy": {
+          "papers": [
+            {
+              "pmid": "40129048",
+              "title": "Effectiveness and Safety of High-Dose Oral Phenobarbital in Children With Recurrent and Treatment-Refractory Seizures.",
+              "authors": [
+                "Bodur M",
+                "Tutuncu Toker R"
+              ],
+              "journal": "Clin Pediatr (Phila)",
+              "citation": "2025 Oct;64(9):1259-1263. Epub 2025 Mar 24 doi: 10.1177/00099228251328136. 40129048 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40129048/"
+            },
+            {
+              "pmid": "37075791",
+              "title": "Efficacy of Antiseizure Medications in Wolf-Hirschhorn Syndrome.",
+              "authors": [
+                "Horiguchi A",
+                "Koichihara R",
+                "Kikuchi K",
+                "Nonoyama H",
+                "Daida A",
+                "Oba D",
+                "Hirata Y",
+                "Matsuura R",
+                "Ohashi H",
+                "Hamano SI"
+              ],
+              "journal": "Neuropediatrics",
+              "citation": "2023 Oct;54(5):339-343. Epub 2023 Apr 19 doi: 10.1055/a-2077-1988. 37075791",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/37075791/"
+            },
+            {
+              "pmid": "25942451",
+              "title": "The NSD family of protein methyltransferases in human cancer.",
+              "authors": [
+                "Vougiouklakis T",
+                "Hamamoto R",
+                "Nakamura Y",
+                "Saloura V"
+              ],
+              "journal": "Epigenomics",
+              "citation": "2015 Aug;7(5):863-74. Epub 2015 May 5 doi: 10.2217/epi.15.32. 25942451",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25942451/"
+            },
+            {
+              "pmid": "15660782",
+              "title": "Epilepsy in Wolf-Hirschhorn syndrome (4p-).",
+              "authors": [
+                "Kagitani-Shimono K",
+                "Imai K",
+                "Otani K",
+                "Kamio N",
+                "Okinaga T",
+                "Toribe Y",
+                "Suzuki Y",
+                "Ozono K"
+              ],
+              "journal": "Epilepsia",
+              "citation": "2005 Jan;46(1):150-5. doi: 10.1111/j.0013-9580.2005.02804.x. 15660782",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15660782/"
+            },
+            {
+              "pmid": "12767462",
+              "title": "A study of EEG and epilepsy profile in Wolf-Hirschhorn syndrome and considerations regarding its correlation with other chromosomal disorders.",
+              "authors": [
+                "Valente KD",
+                "Freitas A",
+                "Fiore LA",
+                "Kim CA"
+              ],
+              "journal": "Brain Dev",
+              "citation": "2003 Jun;25(4):283-7. doi: 10.1016/s0387-7604(02)00223-1. 12767462",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12767462/"
+            }
+          ],
+          "see_all": {
+            "count": 24,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%224p%20partial%20monosomy%20syndrome%22%20AND%20Therapy%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "prognosis": {
+          "papers": [
+            {
+              "pmid": "40725476",
+              "title": "Clinician-Based Functional Scoring and Genomic Insights for Prognostic Stratification in Wolf-Hirschhorn Syndrome.",
+              "authors": [
+                "Nevado J",
+                "Blanco-Lago R",
+                "Bel-Fenellós C",
+                "Hernández A",
+                "Mori-Álvarez MA",
+                "Biencinto-López C",
+                "Málaga I",
+                "Pachajoa H",
+                "Mansilla E",
+                "García-Santiago FA",
+                "Barrúz P",
+                "Tenorio-Castaño JA",
+                "Muñoz-GªPorrero Y",
+                "Vallcorba I",
+                "Lapunzina P"
+              ],
+              "journal": "Genes (Basel)",
+              "citation": "2025 Jul 12;16(7) doi: 10.3390/genes16070820. 40725476 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40725476/"
+            },
+            {
+              "pmid": "36849216",
+              "title": "Prenatal phenotype of Wolf-Hirschhorn syndrome: A case series and literature review.",
+              "authors": [
+                "Tang F",
+                "Zeng Y",
+                "Wang L",
+                "Yin D",
+                "Chen L",
+                "Xie D",
+                "Wang J"
+              ],
+              "journal": "Mol Genet Genomic Med",
+              "citation": "2023 Jun;11(6):e2155. Epub 2023 Feb 27 doi: 10.1002/mgg3.2155. 36849216 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/36849216/"
+            },
+            {
+              "pmid": "26451378",
+              "title": "Rare Diseases Leading to Childhood Glaucoma: Epidemiology, Pathophysiogenesis, and Management.",
+              "authors": [
+                "Abdolrahimzadeh S",
+                "Fameli V",
+                "Mollo R",
+                "Contestabile MT",
+                "Perdicchi A",
+                "Recupero SM"
+              ],
+              "journal": "Biomed Res Int",
+              "citation": "2015;2015:781294. Epub 2015 Sep 16 doi: 10.1155/2015/781294. 26451378 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/26451378/"
+            },
+            {
+              "pmid": "11480768",
+              "title": "Wolf-Hirschhorn (4p-) syndrome.",
+              "authors": [
+                "Battaglia A",
+                "Carey JC",
+                "Wright TJ"
+              ],
+              "journal": "Adv Pediatr",
+              "citation": "2001;48:75-113. 11480768",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/11480768/"
+            },
+            {
+              "pmid": "954225",
+              "title": "The Wolf-Hirschhorn (4p-) syndrome.",
+              "authors": [
+                "Johnson VP",
+                "Mulder RD",
+                "Hosen R"
+              ],
+              "journal": "Clin Genet",
+              "citation": "1976 Aug;10(2NA-NA-760903-760909):104-12. doi: 10.1111/j.1399-0004.1976.tb00021.x. 954225",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/954225/"
+            }
+          ],
+          "see_all": {
+            "count": 77,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%224p%20partial%20monosomy%20syndrome%22%20AND%20Prognosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "clinical_prediction_guides": {
+          "papers": [
+            {
+              "pmid": "40849623",
+              "title": "Elevated levels of Letm1 drives mitochondrial dysfunction and cardiomyocyte stress-mediated apoptosis in cultured cardiomyocytes.",
+              "authors": [
+                "Deshpande A",
+                "Weirauch L",
+                "Baral TK",
+                "Steier M",
+                "Borlepawar A",
+                "Kumari M",
+                "Kilian LS",
+                "Richter K",
+                "Hammer E",
+                "Frank D",
+                "Schmidt C",
+                "Frey N",
+                "Rangrez AY"
+              ],
+              "journal": "Cell Commun Signal",
+              "citation": "2025 Aug 23;23(1):378. doi: 10.1186/s12964-025-02378-7. 40849623 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40849623/"
+            },
+            {
+              "pmid": "40725476",
+              "title": "Clinician-Based Functional Scoring and Genomic Insights for Prognostic Stratification in Wolf-Hirschhorn Syndrome.",
+              "authors": [
+                "Nevado J",
+                "Blanco-Lago R",
+                "Bel-Fenellós C",
+                "Hernández A",
+                "Mori-Álvarez MA",
+                "Biencinto-López C",
+                "Málaga I",
+                "Pachajoa H",
+                "Mansilla E",
+                "García-Santiago FA",
+                "Barrúz P",
+                "Tenorio-Castaño JA",
+                "Muñoz-GªPorrero Y",
+                "Vallcorba I",
+                "Lapunzina P"
+              ],
+              "journal": "Genes (Basel)",
+              "citation": "2025 Jul 12;16(7) doi: 10.3390/genes16070820. 40725476 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/40725476/"
+            },
+            {
+              "pmid": "38884729",
+              "title": "Human Genetics of Ventricular Septal Defect.",
+              "authors": [
+                "Perrot A",
+                "Rickert-Sperling S"
+              ],
+              "journal": "Adv Exp Med Biol",
+              "citation": "2024;1441:505-534. doi: 10.1007/978-3-031-44087-8_27. 38884729",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+            },
+            {
+              "pmid": "11579431",
+              "title": "Chromosome imbalances associated with epilepsy.",
+              "authors": [
+                "Schinzel A",
+                "Niedrist D"
+              ],
+              "journal": "Am J Med Genet",
+              "citation": "2001 Summer;106(2):119-24. doi: 10.1002/ajmg.1576. 11579431",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/11579431/"
+            },
+            {
+              "pmid": "11480768",
+              "title": "Wolf-Hirschhorn (4p-) syndrome.",
+              "authors": [
+                "Battaglia A",
+                "Carey JC",
+                "Wright TJ"
+              ],
+              "journal": "Adv Pediatr",
+              "citation": "2001;48:75-113. 11480768",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/11480768/"
+            }
+          ],
+          "see_all": {
+            "count": 109,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%224p%20partial%20monosomy%20syndrome%22%20AND%20Clinical%20prediction%20guides%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        }
+      },
+      "recent_systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "36526544",
+            "title": "Clinical and epilepsy characteristics in Wolf-Hirschhorn syndrome (4p-): A review.",
+            "authors": [
+              "Paprocka J",
+              "Kaminiów K",
+              "Yetkin O",
+              "Tekturk P",
+              "Baykan B",
+              "Leiz S",
+              "Kluger G",
+              "Striano P"
+            ],
+            "journal": "Seizure",
+            "citation": "2024 Mar;116:14-23. Epub 2022 Dec 8 doi: 10.1016/j.seizure.2022.12.001. 36526544",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36526544/"
+          },
+          {
+            "pmid": "29239919",
+            "title": "Accessory Auricles: Systematic Review of Definition, Associated Conditions, and Recommendations for Clinical Practice.",
+            "authors": [
+              "Amirhassankhani S",
+              "Lloyd MS"
+            ],
+            "journal": "J Craniofac Surg",
+            "citation": "2018 Mar;29(2):372-375. doi: 10.1097/SCS.0000000000004201. 29239919",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29239919/"
+          }
+        ],
+        "see_all": {
+          "count": 2,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%224p%20partial%20monosomy%20syndrome%22%20AND%20systematic%5Bsb%5D%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+        }
+      }
+    },
+    "url": "https://www.ncbi.nlm.nih.gov/medgen/408255"
+  }
+]

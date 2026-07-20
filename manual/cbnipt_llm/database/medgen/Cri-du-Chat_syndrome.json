@@ -1,0 +1,542 @@
+[
+  {
+    "medgen_uid": "41345",
+    "disease_name": "5p partial monosomy syndrome",
+    "concept_id": "C0010314",
+    "disease_type": "Disease or Syndrome",
+    "definition": "Cri-du-chat syndrome was first described by Lejeune et al. (1963) as a hereditary congenital syndrome associated with deletion of part of the short arm of chromosome 5. The deletions can vary in size from extremely small and involving only band 5p15.2 to the entire short arm. Although the majority of deletions arise as new mutations, approximately 12% result from unbalanced segregation of translocations or recombination involving a pericentric inversion in one of the parents. [from OMIM ]",
+    "synonyms": [
+      "5p deletion syndrome",
+      "5p- syndrome",
+      "CAT CRY SYNDROME",
+      "CHROMOSOME 5p DELETION SYNDROME",
+      "Cri du Chat Syndrome"
+    ],
+    "cross_references": {
+      "SNOMED-CT": "70173007",
+      "MONDO": "MONDO:0007404",
+      "OMIM": "123450",
+      "Orphanet": "281"
+    },
+    "literature": {
+      "professional_guidelines": {
+        "papers": [
+          {
+            "pmid": "37628679",
+            "title": "Cognitive-Behavioral Profile in Pediatric Patients with Syndrome 5p-; Genotype-Phenotype Correlationships.",
+            "authors": [
+              "Bel-Fenellós C",
+              "Biencinto-López C",
+              "Sáenz-Rico B",
+              "Hernández A",
+              "Sandoval-Talamantes AK",
+              "Tenorio-Castaño J",
+              "Lapunzina P",
+              "Nevado J"
+            ],
+            "journal": "Genes (Basel)",
+            "citation": "2023 Aug 15;14(8) doi: 10.3390/genes14081628. 37628679 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37628679/"
+          },
+          {
+            "pmid": "30828085",
+            "title": "Clinical utility of noninvasive prenatal screening for expanded chromosome disease syndromes.",
+            "authors": [
+              "Liang D",
+              "Cram DS",
+              "Tan H",
+              "Linpeng S",
+              "Liu Y",
+              "Sun H",
+              "Zhang Y",
+              "Tian F",
+              "Zhu H",
+              "Xu M",
+              "Wang H",
+              "Yu F",
+              "Wu L"
+            ],
+            "journal": "Genet Med",
+            "citation": "2019 Sep;21(9):1998-2006. Epub 2019 Mar 4 doi: 10.1038/s41436-019-0467-4. 30828085",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30828085/"
+          },
+          {
+            "pmid": "627112",
+            "title": "Prenatal diagnosis of 5p-.",
+            "authors": [
+              "David K",
+              "Kaffe S",
+              "Strauss L",
+              "Hsu LY",
+              "Serotkin A",
+              "Hirschhorn K"
+            ],
+            "journal": "Clin Genet",
+            "citation": "1978 Feb;13(2):224-8. doi: 10.1111/j.1399-0004.1978.tb04253.x. 627112",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/627112/"
+          }
+        ],
+        "curated": [],
+        "see_all": {
+          "count": 17,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=(5p%20partial%20monosomy%20syndrome)%20AND%20(%22english%20and%20humans%22%5BFilter%5D)%20AND%20(%20(%22practice%20guideline%22%5BFilter%5D)%20OR%20(practice*%5Btitl%5D%20AND%20(guideline%5Btitl%5D%20OR%20parameter%5Btitl%5D%20OR%20resource%5Btitl%5D%20OR%20bulletin%5Btitl%5D%20OR%20best%5Btitl%5D))%20OR%20(genetic*%5Btitl%5D%20AND%20(evaluation%5Btitl%5D%20OR%20counseling%5Btitl%5D%20OR%20screening%5Btitl%5D%20OR%20test*%5Btitl%5D))%20OR%20(clinical%5Btitl%5D%20AND%20((expert%5Btitl%5D%20AND%20consensus%5Btitl%5D)%20OR%20utility%5Btitl%5D%20OR%20guideline*%5Btitl%5D))%20OR%20(management%5Btitl%5D%20AND%20(clinical%5Btitl%5D%20OR%20diagnos*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20pain%5Btitl%5D%20OR%20surveillance%5Btitl%5D%20OR%20emergency%5Btitl%5D%20OR%20guideline*%5Btitl%5D%20OR%20therap*))%20OR%20(treatment%5Btitl%5D%20AND%20((evaluation%5Btitl%5D%20AND%20diagnosis%5Btitl%5D)%20OR%20(assessment%5Btitl%5D%20AND%20prevention%5Btitl%5D)%20OR%20therap*))%20OR%20(Diagnos*%5Btitl%5D%20AND%20(prenatal%5Btitl%5D%20OR%20treatment%5Btitl%5D%20OR%20follow-up%5Btitl%5D%20OR%20statement%5Btitl%5D%20OR%20criteria%5Btitl%5D%20OR%20newborn%5Btitl%5D%20OR%20differential%5Btitl%5D%20OR%20neonatal%5Btitl%5D%20OR%20neonate%5Btitl%5D))%20OR%20(guideline*%5Btitl%5D%20AND%20(pharmacogenetic*%5Btitl%5D%20OR%20recommendation%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20evidence-based%5Btitl%5D%20OR%20consensus%5Btitl%5D%20OR%20(technical%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20(molecular%5Btitl%5D%20AND%20testing%5Btitl%5D)))%20OR%20(risk%5Btitl%5D%20AND%20assessment%5Btitl%5D)%20OR%20(recommendation*%5Btitl%5D%20AND%20(statement%5Btitl%5D%20OR%20Evidence-based%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(care%20AND%20((Patient%5Btitl%5D%20AND%20standard*%5Btitl%5D)%20OR%20primary%5Btitl%5D%20OR%20psychosocial%5Btitl%5D))%20OR%20(Health%5Btitl%5D%20AND%20supervision%5Btitl%5D)%20OR%20(statement%5Btitl%5D%20AND%20(policy%5Btitl%5D%20OR%20position%5Btitl%5D%20OR%20Consensus%5Btitl%5D))%20OR%20(pharmacogenetics%5Btitl%5D%20AND%20(Dosing%5Btitl%5D%20OR%20therap*%5Btitl%5D%20OR%20genotype*%5Btitl%5D%20OR%20drug*%5Btitl%5D))%20OR%20(Chemotherapy%5Btitl%5D%20AND%20decision*%5Btitl%5D)%20OR%20(screening%5Btitl%5D%20AND%20(newborn%5Btitl%5D%20OR%20neonat*%5Btitl%5D%20OR%20detection%5Btitl%5D%20OR%20diagnos*%5Btitl%5D))%20OR%20(criteria%5Btitl%5D%20OR%20genotype*%5Btitl%5D)%20)%20NOT%20(%22Case%20reports%22%5BPublication%20type%5D%20OR%20%22clinical%20study%22%5BPublication%20Type%5D%20OR%20%22randomized%20controlled%20trial%22%5BPublication%20Type%5D)"
+        }
+      },
+      "recent_clinical_studies": {
+        "etiology": {
+          "papers": [
+            {
+              "pmid": "38884738",
+              "title": "Human Genetics of Tetralogy of Fallot and Double-Outlet Right Ventricle.",
+              "authors": [
+                "Dorn C",
+                "Perrot A",
+                "Grunert M",
+                "Rickert-Sperling S"
+              ],
+              "journal": "Adv Exp Med Biol",
+              "citation": "2024;1441:629-644. doi: 10.1007/978-3-031-44087-8_36. 38884738",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38884738/"
+            },
+            {
+              "pmid": "32078008",
+              "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+              "authors": [
+                "Bewersdorf JP",
+                "Zeidan AM"
+              ],
+              "journal": "Ann Hematol",
+              "citation": "2020 Apr;99(4):677-692. Epub 2020 Feb 20 doi: 10.1007/s00277-020-03963-1. 32078008",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+            },
+            {
+              "pmid": "30793794",
+              "title": "Management of Self-injurious Behaviors in Children with Neurodevelopmental Disorders: A Pharmacotherapy Overview.",
+              "authors": [
+                "Sabus A",
+                "Feinstein J",
+                "Romani P",
+                "Goldson E",
+                "Blackmer A"
+              ],
+              "journal": "Pharmacotherapy",
+              "citation": "2019 Jun;39(6):645-664. Epub 2019 Mar 27 doi: 10.1002/phar.2238. 30793794 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/30793794/"
+            },
+            {
+              "pmid": "27475682",
+              "title": "Impact of rare diseases in oral health.",
+              "authors": [
+                "Molina-García A",
+                "Castellanos-Cosano L",
+                "Machuca-Portillo G",
+                "Posada-de la Paz M"
+              ],
+              "journal": "Med Oral Patol Oral Cir Bucal",
+              "citation": "2016 Sep 1;21(5):e587-94. doi: 10.4317/medoral.20972. 27475682 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/27475682/"
+            },
+            {
+              "pmid": "18437967",
+              "title": "Cri-du-chat syndrome.",
+              "authors": [
+                "Chang CY",
+                "Lin SP",
+                "Lin HY",
+                "Chen YJ",
+                "Kao HA",
+                "Yeung CY",
+                "Hsu CH",
+                "Chi H"
+              ],
+              "journal": "Acta Paediatr Taiwan",
+              "citation": "2007 Nov-Dec;48(6):328-31. 18437967",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/18437967/"
+            }
+          ],
+          "see_all": {
+            "count": 100,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%225p%20partial%20monosomy%20syndrome%22%20AND%20Etiology%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "diagnosis": {
+          "papers": [
+            {
+              "pmid": "25488457",
+              "title": "Cri-du-chat syndrome.",
+              "authors": [
+                "Nandhagopal R",
+                "Udayakumar AM"
+              ],
+              "journal": "Indian J Med Res",
+              "citation": "2014 Oct;140(4):570-1. 25488457 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25488457/"
+            },
+            {
+              "pmid": "20038906",
+              "title": "Cri du chat syndrome: a critical review.",
+              "authors": [
+                "Rodríguez-Caballero A",
+                "Torres-Lagares D",
+                "Rodríguez-Pérez A",
+                "Serrera-Figallo MA",
+                "Hernández-Guisado JM",
+                "Machuca-Portillo G"
+              ],
+              "journal": "Med Oral Patol Oral Cir Bucal",
+              "citation": "2010 May 1;15(3):e473-8. doi: 10.4317/medoral.15.e473. 20038906",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20038906/"
+            },
+            {
+              "pmid": "19466618",
+              "title": "Cri-du-chat.",
+              "authors": [
+                "Sigafoos J",
+                "O'Reilly MF",
+                "Lancioni GE"
+              ],
+              "journal": "Dev Neurorehabil",
+              "citation": "2009 Jun;12(3):119-21. doi: 10.1080/17518420902975720. 19466618",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19466618/"
+            },
+            {
+              "pmid": "18437967",
+              "title": "Cri-du-chat syndrome.",
+              "authors": [
+                "Chang CY",
+                "Lin SP",
+                "Lin HY",
+                "Chen YJ",
+                "Kao HA",
+                "Yeung CY",
+                "Hsu CH",
+                "Chi H"
+              ],
+              "journal": "Acta Paediatr Taiwan",
+              "citation": "2007 Nov-Dec;48(6):328-31. 18437967",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/18437967/"
+            },
+            {
+              "pmid": "16953888",
+              "title": "Cri du Chat syndrome.",
+              "authors": [
+                "Cerruti Mainardi P"
+              ],
+              "journal": "Orphanet J Rare Dis",
+              "citation": "2006 Sep 5;1:33. doi: 10.1186/1750-1172-1-33. 16953888 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/16953888/"
+            }
+          ],
+          "see_all": {
+            "count": 234,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%225p%20partial%20monosomy%20syndrome%22%20AND%20Diagnosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "therapy": {
+          "papers": [
+            {
+              "pmid": "32487530",
+              "title": "Ebstein anomaly associated with cri du chat (cat's cry) syndrome and 20q duplication.",
+              "authors": [
+                "Olivella A",
+                "Manotas H",
+                "Payán-Gómez C",
+                "Piñeros JG"
+              ],
+              "journal": "BMJ Case Rep",
+              "citation": "2020 Jun 1;13(6) doi: 10.1136/bcr-2019-233766. 32487530 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32487530/"
+            },
+            {
+              "pmid": "32078008",
+              "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+              "authors": [
+                "Bewersdorf JP",
+                "Zeidan AM"
+              ],
+              "journal": "Ann Hematol",
+              "citation": "2020 Apr;99(4):677-692. Epub 2020 Feb 20 doi: 10.1007/s00277-020-03963-1. 32078008",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+            },
+            {
+              "pmid": "31836684",
+              "title": "(18)F-FDG PET Identifies Altered Brain Metabolism in Patients with Cri du Chat Syndrome.",
+              "authors": [
+                "Cistaro A",
+                "Quartuccio N",
+                "Piccardo A",
+                "Fania P",
+                "Spunton M",
+                "Liava A",
+                "Danesino C",
+                "Albani G",
+                "Guala A"
+              ],
+              "journal": "J Nucl Med",
+              "citation": "2020 Aug;61(8):1195-1199. Epub 2019 Dec 13 doi: 10.2967/jnumed.119.236893. 31836684",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/31836684/"
+            },
+            {
+              "pmid": "30793794",
+              "title": "Management of Self-injurious Behaviors in Children with Neurodevelopmental Disorders: A Pharmacotherapy Overview.",
+              "authors": [
+                "Sabus A",
+                "Feinstein J",
+                "Romani P",
+                "Goldson E",
+                "Blackmer A"
+              ],
+              "journal": "Pharmacotherapy",
+              "citation": "2019 Jun;39(6):645-664. Epub 2019 Mar 27 doi: 10.1002/phar.2238. 30793794 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/30793794/"
+            },
+            {
+              "pmid": "6236421",
+              "title": "Infants' vocalizations as a diagnostic tool.",
+              "authors": [
+                "Weston AJ",
+                "Mader NT"
+              ],
+              "journal": "Percept Mot Skills",
+              "citation": "1984 Jun;58(3):787-96. doi: 10.2466/pms.1984.58.3.787. 6236421",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/6236421/"
+            }
+          ],
+          "see_all": {
+            "count": 12,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%225p%20partial%20monosomy%20syndrome%22%20AND%20Therapy%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "prognosis": {
+          "papers": [
+            {
+              "pmid": "32078008",
+              "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+              "authors": [
+                "Bewersdorf JP",
+                "Zeidan AM"
+              ],
+              "journal": "Ann Hematol",
+              "citation": "2020 Apr;99(4):677-692. Epub 2020 Feb 20 doi: 10.1007/s00277-020-03963-1. 32078008",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+            },
+            {
+              "pmid": "25645650",
+              "title": "The molecular pathogenesis of the myelodysplastic syndromes.",
+              "authors": [
+                "Pellagatti A",
+                "Boultwood J"
+              ],
+              "journal": "Eur J Haematol",
+              "citation": "2015 Jul;95(1):3-15. Epub 2015 Feb 20 doi: 10.1111/ejh.12515. 25645650",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/25645650/"
+            },
+            {
+              "pmid": "20038906",
+              "title": "Cri du chat syndrome: a critical review.",
+              "authors": [
+                "Rodríguez-Caballero A",
+                "Torres-Lagares D",
+                "Rodríguez-Pérez A",
+                "Serrera-Figallo MA",
+                "Hernández-Guisado JM",
+                "Machuca-Portillo G"
+              ],
+              "journal": "Med Oral Patol Oral Cir Bucal",
+              "citation": "2010 May 1;15(3):e473-8. doi: 10.4317/medoral.15.e473. 20038906",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20038906/"
+            },
+            {
+              "pmid": "16953888",
+              "title": "Cri du Chat syndrome.",
+              "authors": [
+                "Cerruti Mainardi P"
+              ],
+              "journal": "Orphanet J Rare Dis",
+              "citation": "2006 Sep 5;1:33. doi: 10.1186/1750-1172-1-33. 16953888 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/16953888/"
+            },
+            {
+              "pmid": "8260723",
+              "title": "Partial monosomy 5p and partial trisomy 5q due to paternal pericentric inversion of chromosome 5.",
+              "authors": [
+                "Ono K",
+                "Ohashi Y",
+                "Nakano H",
+                "Togashi H",
+                "Kannari Y",
+                "Isono S"
+              ],
+              "journal": "Jpn J Hum Genet",
+              "citation": "1993 Sep;38(3):319-28. doi: 10.1007/BF01874142. 8260723",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/8260723/"
+            }
+          ],
+          "see_all": {
+            "count": 60,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%225p%20partial%20monosomy%20syndrome%22%20AND%20Prognosis%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        },
+        "clinical_prediction_guides": {
+          "papers": [
+            {
+              "pmid": "38884729",
+              "title": "Human Genetics of Ventricular Septal Defect.",
+              "authors": [
+                "Perrot A",
+                "Rickert-Sperling S"
+              ],
+              "journal": "Adv Exp Med Biol",
+              "citation": "2024;1441:505-534. doi: 10.1007/978-3-031-44087-8_27. 38884729",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+            },
+            {
+              "pmid": "32078008",
+              "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+              "authors": [
+                "Bewersdorf JP",
+                "Zeidan AM"
+              ],
+              "journal": "Ann Hematol",
+              "citation": "2020 Apr;99(4):677-692. Epub 2020 Feb 20 doi: 10.1007/s00277-020-03963-1. 32078008",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+            },
+            {
+              "pmid": "27475682",
+              "title": "Impact of rare diseases in oral health.",
+              "authors": [
+                "Molina-García A",
+                "Castellanos-Cosano L",
+                "Machuca-Portillo G",
+                "Posada-de la Paz M"
+              ],
+              "journal": "Med Oral Patol Oral Cir Bucal",
+              "citation": "2016 Sep 1;21(5):e587-94. doi: 10.4317/medoral.20972. 27475682 Free PMC Article",
+              "pmc_free": true,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/27475682/"
+            },
+            {
+              "pmid": "20733155",
+              "title": "Advances in the 5q- syndrome.",
+              "authors": [
+                "Boultwood J",
+                "Pellagatti A",
+                "McKenzie AN",
+                "Wainscoat JS"
+              ],
+              "journal": "Blood",
+              "citation": "2010 Dec 23;116(26):5803-11. Epub 2010 Aug 23 doi: 10.1182/blood-2010-04-273771. 20733155",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20733155/"
+            },
+            {
+              "pmid": "10066110",
+              "title": "Prenatal traces of aberrant neurofacial growth.",
+              "authors": [
+                "Kjaer I"
+              ],
+              "journal": "Acta Odontol Scand",
+              "citation": "1998 Dec;56(6):326-30. doi: 10.1080/000163598428257. 10066110",
+              "pmc_free": false,
+              "url": "https://pubmed.ncbi.nlm.nih.gov/10066110/"
+            }
+          ],
+          "see_all": {
+            "count": 94,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%225p%20partial%20monosomy%20syndrome%22%20AND%20Clinical%20prediction%20guides%2Fbroad%5Bfilter%5D%20%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+          }
+        }
+      },
+      "recent_systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "40274277",
+            "title": "Shorter Telomeres and Faster Telomere Attrition in Individuals With Five Syndromic Forms of Intellectual Disability: A Systematic Review and Meta-Analysis.",
+            "authors": [
+              "Hanley SM",
+              "Schutte NS",
+              "Bellamy J",
+              "Denham J"
+            ],
+            "journal": "J Intellect Disabil Res",
+            "citation": "2025 Aug;69(8):641-654. Epub 2025 Apr 24 doi: 10.1111/jir.13244. 40274277 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40274277/"
+          },
+          {
+            "pmid": "32920986",
+            "title": "Sella turcica morphology in patients with genetic syndromes: A systematic review.",
+            "authors": [
+              "Roomaney IA",
+              "Chetty M"
+            ],
+            "journal": "Orthod Craniofac Res",
+            "citation": "2021 May;24(2):194-205. Epub 2020 Sep 28 doi: 10.1111/ocr.12426. 32920986",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32920986/"
+          },
+          {
+            "pmid": "27475682",
+            "title": "Impact of rare diseases in oral health.",
+            "authors": [
+              "Molina-García A",
+              "Castellanos-Cosano L",
+              "Machuca-Portillo G",
+              "Posada-de la Paz M"
+            ],
+            "journal": "Med Oral Patol Oral Cir Bucal",
+            "citation": "2016 Sep 1;21(5):e587-94. doi: 10.4317/medoral.20972. 27475682 Free PMC Article",
+            "pmc_free": true,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27475682/"
+          },
+          {
+            "pmid": "26457586",
+            "title": "A systematic review of the oral and craniofacial manifestations of cri du chat syndrome.",
+            "authors": [
+              "Corcuera-Flores JR",
+              "Casttellanos-Cosano L",
+              "Torres-Lagares D",
+              "Serrera-Figallo MÁ",
+              "Rodríguez-Caballero Á",
+              "Machuca-Portillo G"
+            ],
+            "journal": "Clin Anat",
+            "citation": "2016 Jul;29(5):555-60. Epub 2015 Dec 21 doi: 10.1002/ca.22654. 26457586",
+            "pmc_free": false,
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26457586/"
+          }
+        ],
+        "see_all": {
+          "count": 4,
+          "url": "https://pubmed.ncbi.nlm.nih.gov/?term=%225p%20partial%20monosomy%20syndrome%22%20AND%20systematic%5Bsb%5D%20AND%20%22english%20and%20humans%22%5Bfilter%5D%20NOT%20comment%5BPTYP%5D%20NOT%20letter%5BPTYP%5D"
+        }
+      }
+    },
+    "url": "https://www.ncbi.nlm.nih.gov/medgen/41345"
+  }
+]

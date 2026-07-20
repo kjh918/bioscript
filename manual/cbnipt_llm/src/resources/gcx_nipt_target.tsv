@@ -1,0 +1,68 @@
+GCX_NIPT_NO	NIPT_ID	SYNDROME	NIPT_GROUP	CHROMOSOME	FEATURE_NAME	FEATURE_TYPE	GENOMIC_POS_START	GENOMIC_POS_END	SIZE_Mb
+1	NIPT_TRISOMY9	Trisomy 9	Autosome Abnormality	chr9	chr9	TargetChromosome	1	138394717	138.39
+2	NIPT_TRISOMY13	Patau syndrome	Autosome Abnormality	chr13	chr13	TargetChromosome	1	114364328	114.36
+3	NIPT_TRISOMY18	Edwards syndrome	Autosome Abnormality	chr18	chr18	TargetChromosome	1	80373285	80.37
+3	NIPT_TRISOMY18	Edwards syndrome	Autosome Abnormality	chr18	18p	PartialChromosome	1	15460900	15.46
+3	NIPT_TRISOMY18	Edwards syndrome	Autosome Abnormality	chr18	18q	PartialChromosome	20861206	80373285	59.51
+3	NIPT_TRISOMY18	Edwards syndrome	Autosome Abnormality	chr18	18q12-q21	PartialChromosome	27500000	63900000	36.4
+3	NIPT_TRISOMY18	Edwards syndrome	Autosome Abnormality	chr18	18q22-ter	PartialChromosome	63900000	80373285	16.47
+4	NIPT_TRISOMY21	Down syndrome	Autosome Abnormality	chr21	chr21	TargetChromosome	1	46709983	46.71
+4	NIPT_TRISOMY21	Down syndrome	Autosome Abnormality	chr21	21q21.1-q22.11	PartialChromosome	15000000	34400000	19.4
+4	NIPT_TRISOMY21	Down syndrome	Autosome Abnormality	chr21	21q22.2-ter	PartialChromosome	38300000	46709983	8.41
+4	NIPT_TRISOMY21	Down syndrome	Autosome Abnormality	chr21	21q22.3-ter	PartialChromosome	41200000	46709983	5.51
+4	NIPT_TRISOMY21	Down syndrome	Autosome Abnormality	chr21	HR-DSCR	CoreRegion	36400000	41200000	4.8
+5	NIPT_TRISOMY22	Trisomy 22 Mosaicism Syndrome	Autosome Abnormality	chr22	chr22	TargetChromosome	1	50818468	50.82
+6	NIPT_45X	Turner syndrome	Sex Chromosome Abnormality	chrX	chrX	TargetChromosome	2800000	155600000	152.8
+6	NIPT_45X	Turner syndrome	Sex Chromosome Abnormality	chrY	chrY	TargetChromosome	2800000	57227415	54.43
+7	NIPT_47XXY	Klinefelter syndrome	Sex Chromosome Abnormality	chrX	chrX	TargetChromosome	2800000	155600000	152.8
+7	NIPT_47XXY	Klinefelter syndrome	Sex Chromosome Abnormality	chrY	chrY	TargetChromosome	2800000	57227415	54.43
+8	NIPT_47XYY	Double Y syndrome	Sex Chromosome Abnormality	chrX	chrX	TargetChromosome	2800000	155600000	152.8
+8	NIPT_47XYY	Double Y syndrome	Sex Chromosome Abnormality	chrY	chrY	TargetChromosome	2800000	57227415	54.43
+9	NIPT_PWS	Prader-Willi syndrome	Micro Deletion	chr15	15q11.2-q13	PrimaryTargetRegion	20500000	33400000	12.9
+9	NIPT_PWS	Prader-Willi syndrome	Micro Deletion	chr15	MAGEL2	CoreGene	23643549	23647867	0
+9	NIPT_PWS	Prader-Willi syndrome	Micro Deletion	chr15	NDN	CoreGene	23685400	23687305	0
+9	NIPT_PWS	Prader-Willi syndrome	Micro Deletion	chr15	SNRPN	CoreGene	24823637	24978723	0.16
+9	NIPT_PWS	Prader-Willi syndrome	Micro Deletion	chr15	SNURF	CoreGene	24954986	24977850	0.02
+10	NIPT_AS	Angelman syndrome	Micro Deletion	chr15	15q11.2-q13	PrimaryTargetRegion	20500000	33400000	12.9
+10	NIPT_AS	Angelman syndrome	Micro Deletion	chr15	UBE3A	CoreGene	25333728	25439051	0.11
+11	NIPT_DGS	DiGeorge syndrome	Micro Deletion	chr22	22q11.2	PrimaryTargetRegion	17400000	25500000	8.1
+11	NIPT_DGS	DiGeorge syndrome	Micro Deletion	chr22	22q11.21	CoreRegion	17400000	21700000	4.3
+11	NIPT_DGS	DiGeorge syndrome	Micro Deletion	chr22	TBX1	CoreGene	19756703	19783593	0.03
+12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	5p15	PrimaryTargetRegion	1	18400000	18.4
+12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	5p15.2	CoreRegion	9900000	15000000	5.1
+12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	5p15.3	CoreRegion	1	9900000	9.9
+12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	TERT	CoreGene	1253147	1295068	0.04
+12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	SEMA5A	CoreGene	9035033	9546075	0.51
+12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	CTNND2	CoreGene	10971836	11904446	0.93
+13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	FEZ1	CoreGene	125442881	125592568	0.15
+13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	JAM3	CoreGene	134069071	134152001	0.08
+13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	11q23.3-q25	PrimaryTargetRegion	114600000	135086622	20.49
+13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	BSX	CoreGene	122977570	122981834	0
+13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	NRGN	CoreGene	124739942	124747210	0.01
+13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	ETS1	CoreGene	128458761	128587558	0.13
+13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	FLI1	CoreGene	128686535	128813267	0.13
+13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	ARHGAP32	CoreGene	128965060	129279324	0.31
+14	NIPT_WHS	Wolf-Hirschhorn syndrome	Micro Deletion	chr4	4p16.3-p15.2	PrimaryTargetRegion	1	27700000	27.7
+14	NIPT_WHS	Wolf-Hirschhorn syndrome	Micro Deletion	chr4	LETM1	CoreGene	1811479	1856156	0.04
+14	NIPT_WHS	Wolf-Hirschhorn syndrome	Micro Deletion	chr4	NSD2	CoreGene	1871393	1982207	0.11
+14	NIPT_WHS	Wolf-Hirschhorn syndrome	Micro Deletion	chr4	NELFA	CoreGene	1982717	2041903	0.06
+15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	1p36	PrimaryTargetRegion	1	27600000	27.6
+15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	1p36.33-p36.32	CoreRegion	1	5300000	5.3
+15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	1p36.32-p36.22	CoreRegion	2300000	12500000	10.2
+15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	1p36.33-p36.13	CoreRegion	1	20100000	20.1
+15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	KCNAB2	CoreGene	5990927	6101193	0.11
+15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	CASZ1	CoreGene	10636604	10796650	0.16
+16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	17p13.3	PrimaryTargetRegion	1	3400000	3.4
+16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	DPH1	CoreGene	2030137	2043898	0.01
+16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	HIC1	CoreGene	2054154	2063241	0.01
+16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	MNT	CoreGene	2384073	2401104	0.02
+16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	PAFAH1B1	CoreGene	2593210	2685615	0.09
+16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	YWHAE	CoreGene	1344275	1400222	0.06
+17	NIPT_SMS	Smith-Magenis syndrome	Micro Deletion	chr17	17p11.2	PrimaryTargetRegion	16100000	22700000	6.6
+17	NIPT_SMS	Smith-Magenis syndrome	Micro Deletion	chr17	RAI1	CoreGene	17681458	17811453	0.13
+18	NIPT_TRPS2	Trichorhinophalangeal syndrome type II	Micro Deletion	chr8	8q23.3-q24.11	PrimaryTargetRegion	115408496	118111826	2.70
+18	NIPT_TRPS2	Trichorhinophalangeal syndrome type II	Micro Deletion	chr8	TRPS1	CoreGene	115408496	115668975	0.26
+18	NIPT_TRPS2	Trichorhinophalangeal syndrome type II	Micro Deletion	chr8	RAD21	CoreGene	116845934	116874776	0.03
+18	NIPT_TRPS2	Trichorhinophalangeal syndrome type II	Micro Deletion	chr8	EXT1	CoreGene	117794490	118111826	0.32
+19	NIPT_WBS	Williams-Beuren syndrome	Micro Deletion	chr7	7q11.23	PrimaryTargetRegion	73330452	74728173	1.40
+19	NIPT_WBS	Williams-Beuren syndrome	Micro Deletion	chr7	ELN	CoreGene	74027772	74069907	0.04
