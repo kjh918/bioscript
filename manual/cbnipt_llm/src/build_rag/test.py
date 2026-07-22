@@ -20,8 +20,15 @@ for disease in target_disease:
     cmd = f"python3.11 pubmed_parser.py --input /storage/home/jhkim/scripts/bioscript/manual/cbnipt_llm/database/medgen/{disease.replace(' ','_')}.json --output /storage/home/jhkim/scripts/bioscript/manual/cbnipt_llm/database/pubmed/{disease.replace(' ','_')}.pubmed.json"
     #print(cmd)
 #
-    os.system(cmd)
+    
+    #cmd = f"python3.11 build_rag.py /storage/home/jhkim/scripts/bioscript/manual/cbnipt_llm/database/medgen/{disease.replace(' ','_')}.json "
+    #cmd += f" /storage/home/jhkim/scripts/bioscript/manual/cbnipt_llm/database/pubmed/{disease.replace(' ','_')}.pubmed.json --output {disease.replace(' ','_')}.jsonl"
+    #os.system(cmd)
 
+    cmd = f"python3.11 chunk_builder.py --medgen /storage/home/jhkim/scripts/bioscript/manual/cbnipt_llm/database/medgen/{disease.replace(' ','_')}.json "
+    cmd += f" --pubmed /storage/home/jhkim/scripts/bioscript/manual/cbnipt_llm/database/pubmed/{disease.replace(' ','_')}.pubmed.json --output {disease.replace(' ','_')}.json"
+    os.system(cmd)
+    exit()
 
 
 

@@ -1,0 +1,481 @@
+{
+  "syndrome": "DiGeorge syndrome",
+  "disease_ids": {
+    "medgen_uid": "4297",
+    "gene_locations": [
+      {
+        "gene_symbol": "TBX1",
+        "ncbi_gene_id": "6899",
+        "cytoband": "22q11.21",
+        "source": "MedGen"
+      }
+    ],
+    "SNOMED-CT": "767263007",
+    "MONDO": "MONDO:0008564",
+    "OMIM": "188400"
+  },
+  "clingen_regions": [
+    {
+      "isca_id": "ISCA-37446",
+      "region_name": "22q11.2 recurrent (DGS) region (proximal, A-B, A-C, or A-D) (includes TBX1)",
+      "cytoband": "22q11.21",
+      "chrom": "chr22",
+      "start": 18924718,
+      "end": 21111383,
+      "hi_score": "3",
+      "hi_score_label": "Sufficient evidence for dosage pathogenicity",
+      "hi_disease_id": "MONDO:0008564",
+      "hi_disease_name": "",
+      "hi_description": "Sufficient evidence for dosage pathogenicity",
+      "hi_pmids": [
+        "20301696",
+        "27189754",
+        "26278718"
+      ],
+      "hi_notes": "",
+      "ts_score": "3",
+      "ts_score_label": "Sufficient evidence for dosage pathogenicity",
+      "ts_disease_id": "MONDO:0012020",
+      "ts_disease_name": "",
+      "ts_description": "Sufficient evidence for dosage pathogenicity",
+      "ts_pmids": [
+        "20301749",
+        "36735193",
+        "34491614",
+        "34845825"
+      ],
+      "ts_notes": "",
+      "date_evaluated": "2025-07-19"
+    }
+  ],
+  "genes": [
+    {
+      "gene_symbol": "TBX1",
+      "evidence_tier": "Tier1_High",
+      "evidence_score": 25,
+      "source_count": 2,
+      "sources_confirmed": [
+        "GenCC",
+        "MedGen"
+      ],
+      "medgen_gene_loc": "22q11.21",
+      "medgen_ncbi_gene_id": "6899",
+      "orphanet_role": "",
+      "orphanet_status": "",
+      "gencc_classification": "Definitive",
+      "gencc_moi": "Autosomal dominant",
+      "gencc_submitters": "PanelApp Australia; G2P",
+      "gencc_pmids": "14585638",
+      "hi_score": "",
+      "hi_score_label": "",
+      "hi_disease": "",
+      "ts_score": "",
+      "ts_score_label": "",
+      "cytoband": "22q11.21",
+      "hgnc_id": "",
+      "hpo_terms": [],
+      "ncbi_gene": {
+        "ncbi_gene_id": "6899",
+        "gene_full_name": "T-box transcription factor 1",
+        "gene_summary": "This gene is a member of a phylogenetically conserved family of genes that share a common DNA-binding domain, the T-box. T-box genes encode transcription factors involved in the regulation of developmental processes. This gene product shares 98% amino acid sequence identity with the mouse ortholog. DiGeorge syndrome (DGS)/velocardiofacial syndrome (VCFS), a common congenital disorder characterized by neural-crest-related developmental defects, has been associated with deletions of chromosome 22q11.2, where this gene has been mapped. Studies using mouse models of DiGeorge syndrome suggest a major role for this gene in the molecular etiology of DGS/VCFS. Several alternatively spliced transcript variants encoding different isoforms have been described for this gene. [provided by RefSeq, Jul 2008]",
+        "hgnc_id": "",
+        "map_location": "22q11.21",
+        "chromosome": "22",
+        "chr_start": 19756702,
+        "chr_stop": 19783592,
+        "chr_accver": "NC_000022.11"
+      },
+      "uniprot": {},
+      "literature": {
+        "gene_disease": [
+          {
+            "pmid": "34845825",
+            "title": "22q11.2 duplications: Expanding the clinical presentation.",
+            "abstract": "22q11.2 duplication syndrome has a frequency of ~1/700 in the intellectual disability population. Despite this frequency, there is limited information on the variable clinical presentation. Although the phenotype and incidence of congenital anomalies are well described for 22q11.2 deletion syndrome, they are not as well understood for individuals with 22q11.2 duplication syndrome. This study is a single-center, retrospective review of patients diagnosed with 22q11.2 duplication syndrome designed to categorize the variable phenotype seen in these individuals. The data suggest that the incidence of congenital anomalies may be higher than previously reported for this syndrome. Affected individuals are at increased risk for a variety of problems including gastrointestinal complications, endocrine dysfunction, ophthalmologic abnormalities, palatal anomalies, congenital heart disease, musculoskeletal differences, and neurologic abnormalities. Individuals with 22q11.2 duplication syndrome would benefit from care coordinated by a multidisciplinary team and managed according to the 22q11.2 deletion syndrome guidelines.",
+            "abstract_sections": {},
+            "full_text_available": false,
+            "pmc_id": "",
+            "pdf_links": [
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/34845825/"
+              }
+            ]
+          },
+          {
+            "pmid": "38884729",
+            "title": "Human Genetics of Ventricular Septal Defect.",
+            "abstract": "Ventricular septal defects (VSDs) are recognized as one of the commonest congenital heart diseases (CHD), accounting for up to 40% of all cardiac malformations, and occur as isolated CHDs as well as together with other cardiac and extracardiac congenital malformations in individual patients and families. The genetic etiology of VSD is complex and extraordinarily heterogeneous. Chromosomal abnormalities such as aneuploidy and structural variations as well as rare point mutations in various genes have been reported to be associated with this cardiac defect. This includes both well-defined syndromes with known genetic cause (e.g., DiGeorge syndrome and Holt-Oram syndrome) and so far undefined syndromic forms characterized by unspecific symptoms. Mutations in genes encoding cardiac transcription factors (e.g., NKX2-5 and GATA4) and signaling molecules (e.g., CFC1) have been most frequently found in VSD cases. Moreover, new high-resolution methods such as comparative genomic hybridization enabled the discovery of a high number of different copy number variations, leading to gain or loss of chromosomal regions often containing multiple genes, in patients with VSD. In this chapter, we will describe the broad genetic heterogeneity observed in VSD patients considering recent advances in this field.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "7810487",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7810487/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+              }
+            ]
+          },
+          {
+            "pmid": "40038168",
+            "title": "Review of the Pathophysiology and Clinical Manifestations of 22q11.2 Deletion and Duplication Syndromes.",
+            "abstract": "22q11.2 deletion and duplication syndromes are complex genetic syndromes composed of a wide spectrum of clinical manifestations, mostly affecting cardiovascular, endocrine, neurodevelopmental, and immune functioning. 22q11.2 deletion syndrome (22q11.2 DS) is more common and widely recognized compared to the duplication counterpart. Most of the literature focuses on delineating the genetic, molecular, and clinical impact of 22q11.2 DS, and less information focuses on the 22q11.2 duplication syndrome (22q11.2 DupS). We will cover both variants in this review and shed light on the less reported atypical 22q11.2 deletions and duplications. Variants in multiple genes in the 22q11.2 region, especially the TBX1 and DGCR8 genes, have been linked to the clinical phenotypes of 22q11.2 DS and 22q11.2 DupS. Variations in genes on the non-deleted homologous chromosome in the critical 22q11.2 region can further influence phenotypes by revealing recessive diseases. This effect has been documented for several genes in this area, such as SNAP29 and GP1BB. Neural crest development is usually impacted leading to various cardiovascular defects including Tetralogy of Fallot and truncus arteriosus. It can also cause palatal defects, especially velopharyngeal deficiency, considered another hallmark of 22q11DS. Individuals may also present with hypocalcemia and thyroid dysfunction due to impaired parathyroid gland formation and thyroid dysgenesis, respectively. Immunodeficiencies result from impaired T-cell development due to thymic hypoplasia, also a consequence of abnormal neural crest development. Humoral defects are also now increasingly recognized in these individuals. Psychiatric, neurocognitive, and developmental features are common, but severity varies across affected individuals. Other systems like the genitourinary, gastrointestinal, skeletal, and hematological are also involved. Monitoring and treating all the possible clinical manifestations require a multi-disciplinary approach to effectively address the plethora of clinical findings. The complex nature of the treatment guidelines reflects the clinical heterogeneity of these genetic variations. Further research is required to continue exploring the mechanisms relating to the impact of genetic aberrations in the 22q11.2 region on various clinical parameters. This will hopefully guide future updates to the current clinical practice guidelines to continue tailoring them to the individual needs of each affected person.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "5378830",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5378830/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/40038168/"
+              }
+            ]
+          },
+          {
+            "pmid": "25123976",
+            "title": "Central 22q11.2 deletions.",
+            "abstract": "22q11.2 deletion syndrome is one of the most common microdeletion syndromes. Most patients have a deletion resulting from a recombination of low copy repeat blocks LCR22-A and LCR22-D. Loss of the TBX1 gene is considered the most important cause of the phenotype. A limited number of patients with smaller, overlapping deletions distal to the TBX1 locus have been described in the literature. In these patients, the CRKL gene is deleted. Haploinsufficiency of this gene has also been implicated in the pathogenesis of 22q11.2 deletion syndrome. To distinguish these deletions (comprising the LCR22-B to LCR22-D region) from the more distal 22q11.2 deletions (located beyond LCR22-D), we propose the term \"central 22q11.2 deletions\". In the present study we report on 27 new patients with such a deletion. Together with information on previously published cases, we review the clinical findings of 52 patients. The prevalence of congenital heart anomalies and the frequency of de novo deletions in patients with a central deletion are substantially lower than in patients with a common or distal 22q11.2 deletion. Renal and urinary tract malformations, developmental delays, cognitive impairments and behavioral problems seem to be equally frequent as in patients with a common deletion. None of the patients had a cleft palate. Patients with a deletion that also encompassed the MAPK1 gene, located just distal to LCR22-D, have a different and more severe phenotype, characterized by a higher prevalence of congenital heart anomalies, growth restriction and microcephaly. Our results further elucidate genotype-phenotype correlations in 22q11.2 deletion syndrome spectrum.",
+            "abstract_sections": {},
+            "full_text_available": false,
+            "pmc_id": "",
+            "pdf_links": [
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/25123976/"
+              }
+            ]
+          },
+          {
+            "pmid": "38884753",
+            "title": "Human Genetics of Truncus Arteriosus.",
+            "abstract": "Integrated human genetics and molecular/developmental biology studies have revealed that truncus arteriosus is highly associated with 22q11.2 deletion syndrome. Other congenital malformation syndromes and variants in genes encoding TBX, GATA, and NKX transcription factors and some signaling proteins have also been reported as its etiology.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "5675000",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5675000/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/38884753/"
+              }
+            ]
+          },
+          {
+            "pmid": "35645294",
+            "title": "Craniofacial Phenotypes and Genetics of DiGeorge Syndrome.",
+            "abstract": "The 22q11.2 deletion is one of the most common genetic microdeletions, affecting approximately 1 in 4000 live births in humans. A 1.5 to 2.5 Mb hemizygous deletion of chromosome 22q11.2 causes DiGeorge syndrome (DGS) and velocardiofacial syndrome (VCFS). DGS/VCFS are associated with prevalent cardiac malformations, thymic and parathyroid hypoplasia, and craniofacial defects. Patients with DGS/VCFS manifest craniofacial anomalies involving the cranium, cranial base, jaws, pharyngeal muscles, ear-nose-throat, palate, teeth, and cervical spine. Most craniofacial phenotypes of DGS/VCFS are caused by proximal 1.5 Mb microdeletions, resulting in a hemizygosity of coding genes, microRNAs, and long noncoding RNAs. TBX1, located on chromosome 22q11.21, encodes a T-box transcription factor and is a candidate gene for DGS/VCFS. TBX1 regulates the fate of progenitor cells in the cranial and pharyngeal apparatus during embryogenesis. Tbx1-null mice exhibit the most clinical features of DGS/VCFS, including craniofacial phenotypes. Despite the frequency of DGS/VCFS, there has been a limited review of the craniofacial phenotypes of DGC/VCFS. This review focuses on these phenotypes and summarizes the current understanding of the genetic factors that impact DGS/VCFS-related phenotypes. We also review DGS/VCFS mouse models that have been designed to better understand the pathogenic processes of DGS/VCFS.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "PMC3334818",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3334818/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/35645294/"
+              }
+            ]
+          },
+          {
+            "pmid": "26056486",
+            "title": "22q11 deletion syndrome: current perspective.",
+            "abstract": "Chromosome 22q11 is characterized by the presence of chromosome-specific low-copy repeats or segmental duplications. This region of the chromosome is very unstable and susceptible to mutations. The misalignment of low-copy repeats during nonallelic homologous recombination leads to the deletion of the 22q11.2 region, which results in 22q11 deletion syndrome (22q11DS). The 22q11.2 deletion is associated with a wide variety of phenotypes. The term 22q11DS is an umbrella term that is used to encompass all 22q11.2 deletion-associated phenotypes. The haploinsufficiency of genes located at 22q11.2 affects the early morphogenesis of the pharyngeal arches, heart, skeleton, and brain. TBX1 is the most important gene for 22q11DS. This syndrome can ultimately affect many organs or systems; therefore, it has a very wide phenotypic spectrum. An increasing amount of information is available related to the pathogenesis, clinical phenotypes, and management of this syndrome in recent years. This review summarizes the current clinical and genetic status related to 22q11DS.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "PMC4526275",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4526275/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/26056486/"
+              }
+            ]
+          },
+          {
+            "pmid": "15917203",
+            "title": "Dissecting contiguous gene defects: TBX1.",
+            "abstract": "DiGeorge syndrome is mainly caused by a multigene, heterozygous, interstitial chromosomal deletion. Of the approximately 30 deleted genes, Tbx1 is the only gene that, after an extensive functional analysis in the mouse, has been found to be haploinsufficient. The mutant phenotype is convincingly similar to the human syndrome, and its human homolog, TBX1, is the only gene for which mutations have been found in some patients without the chromosomal deletion. The research interest in this syndrome is driven not only by the obvious clinical significance of the disease but also by a broader biological importance. In particular, this syndrome is the most typical developmental defect of the embryonic pharyngeal system: a transient, vertebrate-specific structure that contributes to diverse tissues of the head, neck and thorax. Many birth defects, including a large fraction of congenital heart disease cases, derive from developmental problems of the pharyngeal system. Tbx1 is an excellent tool to probe the genetic network governing embryonic pharyngeal development.",
+            "abstract_sections": {},
+            "full_text_available": false,
+            "pmc_id": "",
+            "pdf_links": [
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/15917203/"
+              }
+            ]
+          },
+          {
+            "pmid": "32117416",
+            "title": "The Genetics and Epigenetics of 22q11.2 Deletion Syndrome.",
+            "abstract": "Chromosome 22q11.2 deletion syndrome (22q11.2del) is a complex, multi-organ disorder noted for its varying severity and penetrance among those affected. The clinical problems comprise congenital malformations; cardiac problems including outflow tract defects, hypoplasia of the thymus, hypoparathyroidism, and/or dysmorphic facial features. Additional clinical issues that can appear over time are autoimmunity, renal insufficiency, developmental delay, malignancy and neurological manifestations such as schizophrenia. The majority of individuals with 22q11.2del have a 3 Mb deletion of DNA on chromosome 22, leading to a haploinsufficiency of ~106 genes, which comprise coding RNAs, noncoding RNAs, and pseudogenes. The consequent haploinsufficiency of many of the coding genes are well described, including the key roles of T-box Transcription Factor 1 (TBX1) and DiGeorge Critical Region 8 (DGCR8) in the clinical phenotypes. However, the haploinsufficiency of these genes alone cannot account for the tremendous variation in the severity and penetrance of the clinical complications among those affected. Recent RNA and DNA sequencing approaches are uncovering novel genetic and epigenetic differences among 22q11.2del patients that can influence disease severity. In this review, the role of coding and non-coding genes, including microRNAs (miRNA) and long noncoding RNAs (lncRNAs), will be discussed in relation to their bearing on 22q11.2del with an emphasis on TBX1.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "PMC1821102",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1821102/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/32117416/"
+              }
+            ]
+          }
+        ],
+        "gene_function": []
+      }
+    }
+  ],
+  "genes_all_tiers": [
+    {
+      "gene_symbol": "TBX1",
+      "evidence_tier": "Tier1_High",
+      "evidence_score": 25,
+      "source_count": 2,
+      "sources_confirmed": [
+        "GenCC",
+        "MedGen"
+      ],
+      "medgen_gene_loc": "22q11.21",
+      "medgen_ncbi_gene_id": "6899",
+      "orphanet_role": "",
+      "orphanet_status": "",
+      "gencc_classification": "Definitive",
+      "gencc_moi": "Autosomal dominant",
+      "gencc_submitters": "PanelApp Australia; G2P",
+      "gencc_pmids": "14585638",
+      "hi_score": "",
+      "hi_score_label": "",
+      "hi_disease": "",
+      "ts_score": "",
+      "ts_score_label": "",
+      "cytoband": "22q11.21",
+      "hgnc_id": "",
+      "hpo_terms": [],
+      "ncbi_gene": {
+        "ncbi_gene_id": "6899",
+        "gene_full_name": "T-box transcription factor 1",
+        "gene_summary": "This gene is a member of a phylogenetically conserved family of genes that share a common DNA-binding domain, the T-box. T-box genes encode transcription factors involved in the regulation of developmental processes. This gene product shares 98% amino acid sequence identity with the mouse ortholog. DiGeorge syndrome (DGS)/velocardiofacial syndrome (VCFS), a common congenital disorder characterized by neural-crest-related developmental defects, has been associated with deletions of chromosome 22q11.2, where this gene has been mapped. Studies using mouse models of DiGeorge syndrome suggest a major role for this gene in the molecular etiology of DGS/VCFS. Several alternatively spliced transcript variants encoding different isoforms have been described for this gene. [provided by RefSeq, Jul 2008]",
+        "hgnc_id": "",
+        "map_location": "22q11.21",
+        "chromosome": "22",
+        "chr_start": 19756702,
+        "chr_stop": 19783592,
+        "chr_accver": "NC_000022.11"
+      },
+      "uniprot": {},
+      "literature": {
+        "gene_disease": [
+          {
+            "pmid": "34845825",
+            "title": "22q11.2 duplications: Expanding the clinical presentation.",
+            "abstract": "22q11.2 duplication syndrome has a frequency of ~1/700 in the intellectual disability population. Despite this frequency, there is limited information on the variable clinical presentation. Although the phenotype and incidence of congenital anomalies are well described for 22q11.2 deletion syndrome, they are not as well understood for individuals with 22q11.2 duplication syndrome. This study is a single-center, retrospective review of patients diagnosed with 22q11.2 duplication syndrome designed to categorize the variable phenotype seen in these individuals. The data suggest that the incidence of congenital anomalies may be higher than previously reported for this syndrome. Affected individuals are at increased risk for a variety of problems including gastrointestinal complications, endocrine dysfunction, ophthalmologic abnormalities, palatal anomalies, congenital heart disease, musculoskeletal differences, and neurologic abnormalities. Individuals with 22q11.2 duplication syndrome would benefit from care coordinated by a multidisciplinary team and managed according to the 22q11.2 deletion syndrome guidelines.",
+            "abstract_sections": {},
+            "full_text_available": false,
+            "pmc_id": "",
+            "pdf_links": [
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/34845825/"
+              }
+            ]
+          },
+          {
+            "pmid": "38884729",
+            "title": "Human Genetics of Ventricular Septal Defect.",
+            "abstract": "Ventricular septal defects (VSDs) are recognized as one of the commonest congenital heart diseases (CHD), accounting for up to 40% of all cardiac malformations, and occur as isolated CHDs as well as together with other cardiac and extracardiac congenital malformations in individual patients and families. The genetic etiology of VSD is complex and extraordinarily heterogeneous. Chromosomal abnormalities such as aneuploidy and structural variations as well as rare point mutations in various genes have been reported to be associated with this cardiac defect. This includes both well-defined syndromes with known genetic cause (e.g., DiGeorge syndrome and Holt-Oram syndrome) and so far undefined syndromic forms characterized by unspecific symptoms. Mutations in genes encoding cardiac transcription factors (e.g., NKX2-5 and GATA4) and signaling molecules (e.g., CFC1) have been most frequently found in VSD cases. Moreover, new high-resolution methods such as comparative genomic hybridization enabled the discovery of a high number of different copy number variations, leading to gain or loss of chromosomal regions often containing multiple genes, in patients with VSD. In this chapter, we will describe the broad genetic heterogeneity observed in VSD patients considering recent advances in this field.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "7810487",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7810487/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+              }
+            ]
+          },
+          {
+            "pmid": "40038168",
+            "title": "Review of the Pathophysiology and Clinical Manifestations of 22q11.2 Deletion and Duplication Syndromes.",
+            "abstract": "22q11.2 deletion and duplication syndromes are complex genetic syndromes composed of a wide spectrum of clinical manifestations, mostly affecting cardiovascular, endocrine, neurodevelopmental, and immune functioning. 22q11.2 deletion syndrome (22q11.2 DS) is more common and widely recognized compared to the duplication counterpart. Most of the literature focuses on delineating the genetic, molecular, and clinical impact of 22q11.2 DS, and less information focuses on the 22q11.2 duplication syndrome (22q11.2 DupS). We will cover both variants in this review and shed light on the less reported atypical 22q11.2 deletions and duplications. Variants in multiple genes in the 22q11.2 region, especially the TBX1 and DGCR8 genes, have been linked to the clinical phenotypes of 22q11.2 DS and 22q11.2 DupS. Variations in genes on the non-deleted homologous chromosome in the critical 22q11.2 region can further influence phenotypes by revealing recessive diseases. This effect has been documented for several genes in this area, such as SNAP29 and GP1BB. Neural crest development is usually impacted leading to various cardiovascular defects including Tetralogy of Fallot and truncus arteriosus. It can also cause palatal defects, especially velopharyngeal deficiency, considered another hallmark of 22q11DS. Individuals may also present with hypocalcemia and thyroid dysfunction due to impaired parathyroid gland formation and thyroid dysgenesis, respectively. Immunodeficiencies result from impaired T-cell development due to thymic hypoplasia, also a consequence of abnormal neural crest development. Humoral defects are also now increasingly recognized in these individuals. Psychiatric, neurocognitive, and developmental features are common, but severity varies across affected individuals. Other systems like the genitourinary, gastrointestinal, skeletal, and hematological are also involved. Monitoring and treating all the possible clinical manifestations require a multi-disciplinary approach to effectively address the plethora of clinical findings. The complex nature of the treatment guidelines reflects the clinical heterogeneity of these genetic variations. Further research is required to continue exploring the mechanisms relating to the impact of genetic aberrations in the 22q11.2 region on various clinical parameters. This will hopefully guide future updates to the current clinical practice guidelines to continue tailoring them to the individual needs of each affected person.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "5378830",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5378830/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/40038168/"
+              }
+            ]
+          },
+          {
+            "pmid": "25123976",
+            "title": "Central 22q11.2 deletions.",
+            "abstract": "22q11.2 deletion syndrome is one of the most common microdeletion syndromes. Most patients have a deletion resulting from a recombination of low copy repeat blocks LCR22-A and LCR22-D. Loss of the TBX1 gene is considered the most important cause of the phenotype. A limited number of patients with smaller, overlapping deletions distal to the TBX1 locus have been described in the literature. In these patients, the CRKL gene is deleted. Haploinsufficiency of this gene has also been implicated in the pathogenesis of 22q11.2 deletion syndrome. To distinguish these deletions (comprising the LCR22-B to LCR22-D region) from the more distal 22q11.2 deletions (located beyond LCR22-D), we propose the term \"central 22q11.2 deletions\". In the present study we report on 27 new patients with such a deletion. Together with information on previously published cases, we review the clinical findings of 52 patients. The prevalence of congenital heart anomalies and the frequency of de novo deletions in patients with a central deletion are substantially lower than in patients with a common or distal 22q11.2 deletion. Renal and urinary tract malformations, developmental delays, cognitive impairments and behavioral problems seem to be equally frequent as in patients with a common deletion. None of the patients had a cleft palate. Patients with a deletion that also encompassed the MAPK1 gene, located just distal to LCR22-D, have a different and more severe phenotype, characterized by a higher prevalence of congenital heart anomalies, growth restriction and microcephaly. Our results further elucidate genotype-phenotype correlations in 22q11.2 deletion syndrome spectrum.",
+            "abstract_sections": {},
+            "full_text_available": false,
+            "pmc_id": "",
+            "pdf_links": [
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/25123976/"
+              }
+            ]
+          },
+          {
+            "pmid": "38884753",
+            "title": "Human Genetics of Truncus Arteriosus.",
+            "abstract": "Integrated human genetics and molecular/developmental biology studies have revealed that truncus arteriosus is highly associated with 22q11.2 deletion syndrome. Other congenital malformation syndromes and variants in genes encoding TBX, GATA, and NKX transcription factors and some signaling proteins have also been reported as its etiology.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "5675000",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5675000/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/38884753/"
+              }
+            ]
+          },
+          {
+            "pmid": "35645294",
+            "title": "Craniofacial Phenotypes and Genetics of DiGeorge Syndrome.",
+            "abstract": "The 22q11.2 deletion is one of the most common genetic microdeletions, affecting approximately 1 in 4000 live births in humans. A 1.5 to 2.5 Mb hemizygous deletion of chromosome 22q11.2 causes DiGeorge syndrome (DGS) and velocardiofacial syndrome (VCFS). DGS/VCFS are associated with prevalent cardiac malformations, thymic and parathyroid hypoplasia, and craniofacial defects. Patients with DGS/VCFS manifest craniofacial anomalies involving the cranium, cranial base, jaws, pharyngeal muscles, ear-nose-throat, palate, teeth, and cervical spine. Most craniofacial phenotypes of DGS/VCFS are caused by proximal 1.5 Mb microdeletions, resulting in a hemizygosity of coding genes, microRNAs, and long noncoding RNAs. TBX1, located on chromosome 22q11.21, encodes a T-box transcription factor and is a candidate gene for DGS/VCFS. TBX1 regulates the fate of progenitor cells in the cranial and pharyngeal apparatus during embryogenesis. Tbx1-null mice exhibit the most clinical features of DGS/VCFS, including craniofacial phenotypes. Despite the frequency of DGS/VCFS, there has been a limited review of the craniofacial phenotypes of DGC/VCFS. This review focuses on these phenotypes and summarizes the current understanding of the genetic factors that impact DGS/VCFS-related phenotypes. We also review DGS/VCFS mouse models that have been designed to better understand the pathogenic processes of DGS/VCFS.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "PMC3334818",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3334818/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/35645294/"
+              }
+            ]
+          },
+          {
+            "pmid": "26056486",
+            "title": "22q11 deletion syndrome: current perspective.",
+            "abstract": "Chromosome 22q11 is characterized by the presence of chromosome-specific low-copy repeats or segmental duplications. This region of the chromosome is very unstable and susceptible to mutations. The misalignment of low-copy repeats during nonallelic homologous recombination leads to the deletion of the 22q11.2 region, which results in 22q11 deletion syndrome (22q11DS). The 22q11.2 deletion is associated with a wide variety of phenotypes. The term 22q11DS is an umbrella term that is used to encompass all 22q11.2 deletion-associated phenotypes. The haploinsufficiency of genes located at 22q11.2 affects the early morphogenesis of the pharyngeal arches, heart, skeleton, and brain. TBX1 is the most important gene for 22q11DS. This syndrome can ultimately affect many organs or systems; therefore, it has a very wide phenotypic spectrum. An increasing amount of information is available related to the pathogenesis, clinical phenotypes, and management of this syndrome in recent years. This review summarizes the current clinical and genetic status related to 22q11DS.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "PMC4526275",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4526275/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/26056486/"
+              }
+            ]
+          },
+          {
+            "pmid": "15917203",
+            "title": "Dissecting contiguous gene defects: TBX1.",
+            "abstract": "DiGeorge syndrome is mainly caused by a multigene, heterozygous, interstitial chromosomal deletion. Of the approximately 30 deleted genes, Tbx1 is the only gene that, after an extensive functional analysis in the mouse, has been found to be haploinsufficient. The mutant phenotype is convincingly similar to the human syndrome, and its human homolog, TBX1, is the only gene for which mutations have been found in some patients without the chromosomal deletion. The research interest in this syndrome is driven not only by the obvious clinical significance of the disease but also by a broader biological importance. In particular, this syndrome is the most typical developmental defect of the embryonic pharyngeal system: a transient, vertebrate-specific structure that contributes to diverse tissues of the head, neck and thorax. Many birth defects, including a large fraction of congenital heart disease cases, derive from developmental problems of the pharyngeal system. Tbx1 is an excellent tool to probe the genetic network governing embryonic pharyngeal development.",
+            "abstract_sections": {},
+            "full_text_available": false,
+            "pmc_id": "",
+            "pdf_links": [
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/15917203/"
+              }
+            ]
+          },
+          {
+            "pmid": "32117416",
+            "title": "The Genetics and Epigenetics of 22q11.2 Deletion Syndrome.",
+            "abstract": "Chromosome 22q11.2 deletion syndrome (22q11.2del) is a complex, multi-organ disorder noted for its varying severity and penetrance among those affected. The clinical problems comprise congenital malformations; cardiac problems including outflow tract defects, hypoplasia of the thymus, hypoparathyroidism, and/or dysmorphic facial features. Additional clinical issues that can appear over time are autoimmunity, renal insufficiency, developmental delay, malignancy and neurological manifestations such as schizophrenia. The majority of individuals with 22q11.2del have a 3 Mb deletion of DNA on chromosome 22, leading to a haploinsufficiency of ~106 genes, which comprise coding RNAs, noncoding RNAs, and pseudogenes. The consequent haploinsufficiency of many of the coding genes are well described, including the key roles of T-box Transcription Factor 1 (TBX1) and DiGeorge Critical Region 8 (DGCR8) in the clinical phenotypes. However, the haploinsufficiency of these genes alone cannot account for the tremendous variation in the severity and penetrance of the clinical complications among those affected. Recent RNA and DNA sequencing approaches are uncovering novel genetic and epigenetic differences among 22q11.2del patients that can influence disease severity. In this review, the role of coding and non-coding genes, including microRNAs (miRNA) and long noncoding RNAs (lncRNAs), will be discussed in relation to their bearing on 22q11.2del with an emphasis on TBX1.",
+            "abstract_sections": {},
+            "full_text_available": true,
+            "pmc_id": "PMC1821102",
+            "pdf_links": [
+              {
+                "source": "PMC",
+                "type": "pdf",
+                "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1821102/pdf/"
+              },
+              {
+                "source": "PubMed",
+                "type": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/32117416/"
+              }
+            ]
+          }
+        ],
+        "gene_function": []
+      }
+    }
+  ],
+  "annotation_sources": {
+    "orphanet": "en_product6.xml (en_product6.xml)",
+    "gencc": "GenCC TSV (gencc_submissions.tsv) (CC0)",
+    "clingen_dosage": "ClinGen FTP (ClinGen_gene_curation_list_GRCh38.tsv)",
+    "hpo": "HPO phenotype_to_genes (phenotype_to_genes.txt)",
+    "ncbi_gene": "NCBI Gene ESearch+ESummary (공개)",
+    "uniprot": "UniProt REST reviewed (CC BY 4.0)",
+    "pubmed": "PubMed EFetch (공개)"
+  },
+  "collected_at": "2026-07-22T05:49:55.841724Z"
+}

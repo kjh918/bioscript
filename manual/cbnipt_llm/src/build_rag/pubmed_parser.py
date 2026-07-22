@@ -39,6 +39,10 @@ from typing import Any
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
+import traceback
+from datetime import datetime
+
+from utils import get_default_log_path, setup_tee_logging
 
 # ── 상수 ──────────────────────────────────────────────────────
 EUTILS_BASE   = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
@@ -542,6 +546,12 @@ def main() -> None:
     parser.add_argument("--no-unpaywall", action="store_true",
                         help="Unpaywall open access PDF 조회 비활성화")
     parser.add_argument("--batch-size",  type=int, default=EFETCH_BATCH)
+    parser.add_argument(
+        "--log",
+        type=str,
+        default="",
+        help="로그 파일 경로. 미지정 시 output 파일명을 기준으로 생성",
+    )
     args = parser.parse_args()
 
     # PMID 수집
@@ -564,31 +574,42 @@ def main() -> None:
     global SESSION
     SESSION = _make_session(args.email)
 
-    print(f"\n▶ PubMed 수집 시작: {len(pmids)}개 PMID")
-    articles = fetch_articles(
-        pmids=pmids,
-        email=args.email,
-        use_unpaywall=not args.no_unpaywall,
-        batch_size=args.batch_size,
-    )
+    log_path = args.log or get_default_log_path(args.output)
+    tee_logger = setup_tee_logging(log_path)
+    
+    try:
+        print(f"\n▶ PubMed 수집 시작: {len(pmids)}개 PMID")
+        articles = fetch_articles(
+            pmids=pmids,
+            email=args.email,
+            use_unpaywall=not args.no_unpaywall,
+            batch_size=args.batch_size,
+        )
 
-    print_summary(articles)
+        print_summary(articles)
 
-    with open(args.output, "w", encoding="utf-8") as f:
-        json.dump(articles, f, ensure_ascii=False, indent=2)
-    print(f"\n▶ 저장 완료: {args.output}")
+        with open(args.output, "w", encoding="utf-8") as f:
+            json.dump(articles, f, ensure_ascii=False, indent=2)
+        print(f"\n▶ 저장 완료: {args.output}")
 
-    # 샘플 미리보기
-    for a in articles[:2]:
-        if a.get("error"):
-            print(f"\n  [오류] PMID={a['pmid']}: {a['error']}")
-            continue
-        print(f"\n  PMID={a['pmid']} | {a['title'][:60]}")
-        print(f"  Abstract: {a['abstract'][:100]}...")
-        print(f"  PDF links ({len(a['pdf_links'])}개):")
-        for l in a['pdf_links'][:3]:
-            print(f"    [{l['source']}][{l['type']}] {l['url'][:80]}")
+        # 샘플 미리보기
+        for a in articles[:2]:
+            if a.get("error"):
+                print(f"\n  [오류] PMID={a['pmid']}: {a['error']}")
+                continue
+            print(f"\n  PMID={a['pmid']} | {a['title'][:60]}")
+            print(f"  Abstract: {a['abstract'][:100]}...")
+            print(f"  PDF links ({len(a['pdf_links'])}개):")
+            for l in a['pdf_links'][:3]:
+                print(f"    [{l['source']}][{l['type']}] {l['url'][:80]}")
 
+    except Exception:
+        print("\n[ERROR] 실행 중 오류가 발생했습니다.")
+        traceback.print_exc()
+        raise
+
+    finally:
+        tee_logger.close()
 
 if __name__ == "__main__":
     main()

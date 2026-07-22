@@ -1,5 +1,5 @@
 """
-ncbi_medgen_parser.py
+medgen_parser.py
 ─────────────────────
 NCBI MedGen 질병 페이지 파서 (실제 HTML DOM 구조 기반)
 
@@ -16,8 +16,8 @@ NCBI MedGen 질병 페이지 파서 (실제 HTML DOM 구조 기반)
       see_all: {count, url}    ← "See all (N)" 링크 처리
 
 Usage:
-    python ncbi_medgen_parser.py --disease "Down syndrome" --max-results 3 --output out.json
-    python ncbi_medgen_parser.py --uids 4385 --output out.json
+    python medgen_parser.py --disease "Down syndrome" --max-results 3 --output out.json
+    python medgen_parser.py --uids 4385 --output out.json
 """
 
 import re
@@ -31,6 +31,10 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup, Tag
+import traceback
+from datetime import datetime
+
+from utils import get_default_log_path, setup_tee_logging
 
 # ── 상수 ──────────────────────────────────────────────────────
 EUTILS_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
@@ -604,49 +608,97 @@ def main() -> None:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 예시:
-  python ncbi_medgen_parser.py --disease "Down syndrome" --max-results 3 --output out.json
-  python ncbi_medgen_parser.py --uids 4385 --output out.json
-  python ncbi_medgen_parser.py --uids 4385 836 --output multi.json
+  python medgen_parser.py --disease "Down syndrome" --max-results 3 --output out.json
+  python medgen_parser.py --uids 4385 --output out.json
+  python medgen_parser.py --uids 4385 836 --output multi.json
         """,
     )
     parser.add_argument("--disease",     type=str, default="")
     parser.add_argument("--uids",        type=str, nargs="+")
-    parser.add_argument("--max-results", type=int, default=5)
+    parser.add_argument("--max-results", type=int, default=1)
     parser.add_argument("--output",      type=str, default="medgen_results.json")
     parser.add_argument("--email",       type=str, default="your.email@example.com")
+    parser.add_argument(
+        "--log",
+        type=str,
+        default="",
+        help="로그 파일 경로. 미지정 시 output 파일명을 기준으로 생성",
+    )
     args = parser.parse_args()
 
     if not args.disease and not args.uids:
         parser.error("--disease 또는 --uids 중 하나는 필수입니다.")
+    
+    log_path = args.log or get_default_log_path(args.output)
+    tee_logger = setup_tee_logging(log_path)
 
-    print(f"▶ MedGen 수집 시작 | disease='{args.disease}' uids={args.uids}")
-    results = fetch_medgen_details(
-        disease_name=args.disease,
-        max_results=args.max_results,
-        email=args.email,
-        explicit_uids=args.uids,
-    )
-    print(f"\n▶ 수집 완료: {len(results)}건")
+    try:
+        print("=" * 80)
+        print(f"실행 시작: {datetime.now():%Y-%m-%d %H:%M:%S}")
+        print(f"결과 파일: {args.output}")
+        print(f"로그 파일: {log_path}")
+        print("=" * 80)
 
-    with open(args.output, "w", encoding="utf-8") as f:
-        json.dump(results, f, ensure_ascii=False, indent=2)
-    print(f"▶ 저장: {args.output}")
-
-    for rec in results:
-        lit = rec.get("literature", {})
-        gl  = lit.get("professional_guidelines", {})
-        cs  = lit.get("recent_clinical_studies", {})
-        sr  = lit.get("recent_systematic_reviews", {})
-        n_gl = len(gl.get("papers", []))
-        n_cs = sum(len(v.get("papers", [])) for v in cs.values())
-        n_sr = len(sr.get("papers", []))
-        cats = list(cs.keys())
         print(
-            f"  UID={rec.get('medgen_uid')} | {rec.get('disease_name')} "
-            f"| def={'O' if rec.get('definition') else 'X'} "
-            f"| xrefs={list(rec.get('cross_references', {}).keys())} "
-            f"| guidelines={n_gl} | clinical_cats={cats}({n_cs}편) | sysrev={n_sr}"
+            f"▶ MedGen 수집 시작 "
+            f"| disease='{args.disease}' "
+            f"uids={args.uids}"
         )
+
+        results = fetch_medgen_details(
+            disease_name=args.disease,
+            max_results=args.max_results,
+            email=args.email,
+            explicit_uids=args.uids,
+        )
+
+        print(f"\n▶ 수집 완료: {len(results)}건")
+
+        with open(args.output, "w", encoding="utf-8") as f:
+            json.dump(
+                results,
+                f,
+                ensure_ascii=False,
+                indent=2,
+            )
+
+        print(f"▶ 저장: {args.output}")
+
+        for rec in results:
+            lit = rec.get("literature", {})
+            gl = lit.get("professional_guidelines", {})
+            cs = lit.get("recent_clinical_studies", {})
+            sr = lit.get("recent_systematic_reviews", {})
+
+            n_gl = len(gl.get("papers", []))
+            n_cs = sum(
+                len(category.get("papers", []))
+                for category in cs.values()
+            )
+            n_sr = len(sr.get("papers", []))
+            cats = list(cs.keys())
+
+            print(
+                f"  UID={rec.get('medgen_uid')} "
+                f"| {rec.get('disease_name')} "
+                f"| def={'O' if rec.get('definition') else 'X'} "
+                f"| xrefs={list(rec.get('cross_references', {}).keys())} "
+                f"| guidelines={n_gl} "
+                f"| clinical_cats={cats}({n_cs}편) "
+                f"| sysrev={n_sr}"
+            )
+
+        print("=" * 80)
+        print(f"실행 완료: {datetime.now():%Y-%m-%d %H:%M:%S}")
+        print("=" * 80)
+
+    except Exception:
+        print("\n[ERROR] 실행 중 오류가 발생했습니다.")
+        traceback.print_exc()
+        raise
+
+    finally:
+        tee_logger.close()
 
 if __name__ == "__main__":
     main()
