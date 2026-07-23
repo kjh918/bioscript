@@ -28,12 +28,12 @@ GCX_NIPT_NO	NIPT_ID	SYNDROME	NIPT_GROUP	CHROMOSOME	FEATURE_NAME	FEATURE_TYPE	GEN
 11	NIPT_DGS	DiGeorge syndrome	Micro Deletion	chr22	22q11.2	PrimaryTargetRegion	17400000	25500000	8.1
 11	NIPT_DGS	DiGeorge syndrome	Micro Deletion	chr22	22q11.21	CoreRegion	17400000	21700000	4.3
 11	NIPT_DGS	DiGeorge syndrome	Micro Deletion	chr22	TBX1	CoreGene	19756703	19783593	0.03
-12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	5p15	PrimaryTargetRegion	1	18400000	18.4
-12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	5p15.2	CoreRegion	9900000	15000000	5.1
-12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	5p15.3	CoreRegion	1	9900000	9.9
-12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	TERT	CoreGene	1253147	1295068	0.04
-12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	SEMA5A	CoreGene	9035033	9546075	0.51
-12	NIPT_CRIDUCHAT	Cri-du-Chat syndrome	Micro Deletion	chr5	CTNND2	CoreGene	10971836	11904446	0.93
+12	NIPT_CRIDUCHAT	5p partial monosomy syndrome	Micro Deletion	chr5	5p15	PrimaryTargetRegion	1	18400000	18.4
+12	NIPT_CRIDUCHAT	5p partial monosomy syndrome	Micro Deletion	chr5	5p15.2	CoreRegion	9900000	15000000	5.1
+12	NIPT_CRIDUCHAT	5p partial monosomy syndrome	Micro Deletion	chr5	5p15.3	CoreRegion	1	9900000	9.9
+12	NIPT_CRIDUCHAT	5p partial monosomy syndrome	Micro Deletion	chr5	TERT	CoreGene	1253147	1295068	0.04
+12	NIPT_CRIDUCHAT	5p partial monosomy syndrome	Micro Deletion	chr5	SEMA5A	CoreGene	9035033	9546075	0.51
+12	NIPT_CRIDUCHAT	5p partial monosomy syndrome	Micro Deletion	chr5	CTNND2	CoreGene	10971836	11904446	0.93
 13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	FEZ1	CoreGene	125442881	125592568	0.15
 13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	JAM3	CoreGene	134069071	134152001	0.08
 13	NIPT_JBS	Jacobsen syndrome	Micro Deletion	chr11	11q23.3-q25	PrimaryTargetRegion	114600000	135086622	20.49
@@ -46,12 +46,12 @@ GCX_NIPT_NO	NIPT_ID	SYNDROME	NIPT_GROUP	CHROMOSOME	FEATURE_NAME	FEATURE_TYPE	GEN
 14	NIPT_WHS	Wolf-Hirschhorn syndrome	Micro Deletion	chr4	LETM1	CoreGene	1811479	1856156	0.04
 14	NIPT_WHS	Wolf-Hirschhorn syndrome	Micro Deletion	chr4	NSD2	CoreGene	1871393	1982207	0.11
 14	NIPT_WHS	Wolf-Hirschhorn syndrome	Micro Deletion	chr4	NELFA	CoreGene	1982717	2041903	0.06
-15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	1p36	PrimaryTargetRegion	1	27600000	27.6
-15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	1p36.33-p36.32	CoreRegion	1	5300000	5.3
-15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	1p36.32-p36.22	CoreRegion	2300000	12500000	10.2
-15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	1p36.33-p36.13	CoreRegion	1	20100000	20.1
-15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	KCNAB2	CoreGene	5990927	6101193	0.11
-15	NIPT_MONOSOMY_1p36	1p36 Deletion syndrome	Micro Deletion	chr1	CASZ1	CoreGene	10636604	10796650	0.16
+15	NIPT_MONOSOMY_1p36	Chromosome 1p36 Deletion syndrome	Micro Deletion	chr1	1p36	PrimaryTargetRegion	1	27600000	27.6
+15	NIPT_MONOSOMY_1p36	Chromosome 1p36 Deletion syndrome	Micro Deletion	chr1	1p36.33-p36.32	CoreRegion	1	5300000	5.3
+15	NIPT_MONOSOMY_1p36	Chromosome 1p36 Deletion syndrome	Micro Deletion	chr1	1p36.32-p36.22	CoreRegion	2300000	12500000	10.2
+15	NIPT_MONOSOMY_1p36	Chromosome 1p36 Deletion syndrome	Micro Deletion	chr1	1p36.33-p36.13	CoreRegion	1	20100000	20.1
+15	NIPT_MONOSOMY_1p36	Chromosome 1p36 Deletion syndrome	Micro Deletion	chr1	KCNAB2	CoreGene	5990927	6101193	0.11
+15	NIPT_MONOSOMY_1p36	Chromosome 1p36 Deletion syndrome	Micro Deletion	chr1	CASZ1	CoreGene	10636604	10796650	0.16
 16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	17p13.3	PrimaryTargetRegion	1	3400000	3.4
 16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	DPH1	CoreGene	2030137	2043898	0.01
 16	NIPT_MDLS	Miller-Dieker lissencephaly syndrome	Micro Deletion	chr17	HIC1	CoreGene	2054154	2063241	0.01
@@ -64,5 +64,5 @@ GCX_NIPT_NO	NIPT_ID	SYNDROME	NIPT_GROUP	CHROMOSOME	FEATURE_NAME	FEATURE_TYPE	GEN
 18	NIPT_TRPS2	Trichorhinophalangeal syndrome type II	Micro Deletion	chr8	TRPS1	CoreGene	115408496	115668975	0.26
 18	NIPT_TRPS2	Trichorhinophalangeal syndrome type II	Micro Deletion	chr8	RAD21	CoreGene	116845934	116874776	0.03
 18	NIPT_TRPS2	Trichorhinophalangeal syndrome type II	Micro Deletion	chr8	EXT1	CoreGene	117794490	118111826	0.32
-19	NIPT_WBS	Williams-Beuren syndrome	Micro Deletion	chr7	7q11.23	PrimaryTargetRegion	73330452	74728173	1.40
-19	NIPT_WBS	Williams-Beuren syndrome	Micro Deletion	chr7	ELN	CoreGene	74027772	74069907	0.04
+19	NIPT_WBS	Williams syndrome	Micro Deletion	chr7	7q11.23	PrimaryTargetRegion	73330452	74728173	1.40
+19	NIPT_WBS	Williams syndrome	Micro Deletion	chr7	ELN	CoreGene	74027772	74069907	0.04
