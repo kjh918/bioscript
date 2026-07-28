@@ -47,10 +47,10 @@ def parse_args():
     parser.add_argument("-b", "--bam", required=True, help="정렬된 BAM/CRAM 파일 (index 필수)")
     parser.add_argument("-r", "--bed", required=True, help="입력 BED 파일 (0-based half-open)")
     parser.add_argument("-o", "--out", required=True, help="출력 TSV 경로")
-    parser.add_argument("--short-max", type=int, required=True, help="NFR 최대 길이")
-    parser.add_argument("--mono-min", type=int, required=True, help="Mono-nucleosome 최소 길이")
-    parser.add_argument("--mono-max", type=int, required=True, help="Mono-nucleosome 최대 길이")
-    parser.add_argument("--min-mapq", type=int, required=True, help="최소 MAPQ")
+    parser.add_argument("--short-max", type=int, default=150, help="NFR 최대 길이")
+    parser.add_argument("--mono-min", type=int, default=151, help="Mono-nucleosome 최소 길이")
+    parser.add_argument("--mono-max", type=int, default=220, help="Mono-nucleosome 최대 길이")
+    parser.add_argument("--min-mapq", type=int, default=20, help="최소 MAPQ")
     
     args = parser.parse_args()
 
