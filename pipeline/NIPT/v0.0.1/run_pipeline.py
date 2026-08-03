@@ -85,72 +85,39 @@ if __name__ == "__main__":
         # ==========================================
         # [분기] 2. Library-specific Trimming & Alignment
         # ==========================================
-        if library == 'PicoPLEXGold':
-            # PicoPLEXGold 전용 Fastp 및 BWA
-            tasks.extend([
-                Task(
-                    name="fastp_picoplex",
-                    runner_path= scripts / "run_fastp_picoplexgold_pe_trim_using_singularity.py", # PicoPLEX용 스크립트로 변경 필요 시 수정
-                    log_path = work_dir / sid / "logs" / "01_fastp", 
-                    spec = {
-                        'SeqID': sid,
-                        'RawFastqDir': RawFastqDir,
-                        'TrimFastqDir': work_dir / sid / "fastq_trimmed",
-                        'qcResDir': work_dir / sid / "qc",
-                        "Threads": 4,
-                    }
-                ),
-                Task(
-                    name="bwa_picard_align_merge_picoplex",
-                    runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
-                    log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
-                    spec = {
-                        'SeqID': sid,
-                        'TrimFastqDir': work_dir / sid / "fastq_trimmed",
-                        'BamDir': work_dir / sid / "bam",
-                        'TmpDir': work_dir / sid / "tmp",
-                        'ReferenceFasta': ReferenceFasta,
-                        'ReadGroupID': sid,
-                        'ReadGroupPlatform': 'ILLUMINA',
-                        'ReadGroupLibrary': 'PicoPLEXGold',
-                        'ReadGroupCenter': 'GCX',
-                        "Threads": 8,
-                    }
-                )
-            ])
-        else:
+        
             # 기타 라이브러리용 Fastp 및 BWA
-            tasks.extend([
-                Task(
-                    name="fastp_standard",
-                    runner_path= scripts / "run_fastp_pe_trim_using_singularity.py", # Standard 스크립트로 변경 필요 시 수정
-                    log_path = work_dir / sid / "logs" / "01_fastp", 
-                    spec = {
-                        'SeqID': sid,
-                        'RawFastqDir': RawFastqDir,
-                        'TrimFastqDir': work_dir / sid / "fastq_trimmed",
-                        'qcResDir': work_dir / sid / "qc",
-                        "Threads": 4,
-                    }
-                ),
-                Task(
-                    name="bwa_picard_align_merge_standard",
-                    runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
-                    log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
-                    spec = {
-                        'SeqID': sid,
-                        'TrimFastqDir': work_dir / sid / "fastq_trimmed",
-                        'BamDir': work_dir / sid / "bam",
-                        'TmpDir': work_dir / sid / "tmp",
-                        'ReferenceFasta': ReferenceFasta,
-                        'ReadGroupID': sid,
-                        'ReadGroupPlatform': 'ILLUMINA',
-                        'ReadGroupLibrary': library, # 입력받은 library 변수로 할당
-                        'ReadGroupCenter': 'GCX',
-                        "Threads": 8,
-                    }
-                )
-            ])
+        tasks.extend([
+            Task(
+                name="fastp_standard",
+                runner_path= scripts / "run_fastp_pe_trim_using_singularity.py", # Standard 스크립트로 변경 필요 시 수정
+                log_path = work_dir / sid / "logs" / "01_fastp", 
+                spec = {
+                    'SeqID': sid,
+                    'RawFastqDir': RawFastqDir,
+                    'TrimFastqDir': work_dir / sid / "fastq_trimmed",
+                    'qcResDir': work_dir / sid / "qc",
+                    "Threads": 4,
+                }
+            ),
+            Task(
+                name="bwa_picard_align_merge_standard",
+                runner_path= scripts / "run_bwa_picard_pe_align_merge.py",
+                log_path = work_dir / sid / "logs" / "02_bwa_picard_align_merge", 
+                spec = {
+                    'SeqID': sid,
+                    'TrimFastqDir': work_dir / sid / "fastq_trimmed",
+                    'BamDir': work_dir / sid / "bam",
+                    'TmpDir': work_dir / sid / "tmp",
+                    'ReferenceFasta': ReferenceFasta,
+                    'ReadGroupID': sid,
+                    'ReadGroupPlatform': 'ILLUMINA',
+                    'ReadGroupLibrary': library, # 입력받은 library 변수로 할당
+                    'ReadGroupCenter': 'GCX',
+                    "Threads": 8,
+                }
+            )
+        ])
 
         # ==========================================
         # [공통] 3. Downstream BAM Processing & QC

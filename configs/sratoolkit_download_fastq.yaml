@@ -1,0 +1,51 @@
+info:
+  user: jhkim
+  date: 2026-07-29
+  logs: |
+    - Initial creation for SRA download using prefetch and FASTQ conversion using fasterq-dump
+    - Added renaming from fasterq-dump paired-end suffixes (_1.fastq/_2.fastq) to pipeline-friendly suffixes (_R1.fastq/_R2.fastq)
+    - Added gzip compression for final FASTQ deliverables
+
+tool:
+  name: SRAToolkit
+  version: "3.0.10"
+  profile: SRA Download, FASTQ Conversion, Rename, and Gzip Compression
+  setup: |
+    mkdir -p [OutDir] [TmpDir]
+    test -x [prefetch_bin]
+    test -x [fasterq_dump_bin]
+
+io:
+  inputs:
+    SraAccession: { required: true, type: str, help: "다운로드할 SRA Run accession" }
+    OutDir: { required: true, type: str, help: "최종 FASTQ.GZ 저장 디렉토리" }
+    TmpDir: { required: false, type: str, default: "[OutDir]/tmp", help: "임시 작업 디렉토리" }
+
+  outputs:
+    sra_dir: { required: false, type: str, default: "[TmpDir]/sra/[SraAccession]", help: "prefetch 다운로드 디렉토리" }
+    r1_fastq: { required: false, type: str, default: "[OutDir]/[SraAccession]_R1.fastq", help: "Read 1 FASTQ" }
+    r2_fastq: { required: false, type: str, default: "[OutDir]/[SraAccession]_R2.fastq", help: "Read 2 FASTQ" }
+    r1_fastq_gz: { required: false, type: str, default: "[OutDir]/[SraAccession]_R1.fastq.gz", help: "압축된 Read 1 FASTQ" }
+    r2_fastq_gz: { required: false, type: str, default: "[OutDir]/[SraAccession]_R2.fastq.gz", help: "압축된 Read 2 FASTQ" }
+
+params:
+  prefetch_bin: { required: false, type: str, default: "/storage/apps/sratoolkit.3.0.10/bin/prefetch", help: "prefetch 실행 파일" }
+  fasterq_dump_bin: { required: false, type: str, default: "/storage/apps/sratoolkit.3.0.10/bin/fasterq-dump", help: "fasterq-dump 실행 파일" }
+  Threads: { required: false, type: int, default: 8, help: "사용할 스레드 수" }
+  MaxSize: { required: false, type: str, default: "100G", help: "prefetch 최대 다운로드 크기" }
+  SplitMode: { required: false, type: str, default: "--split-files", help: "paired-end FASTQ 분리 옵션" }
+
+cmd_line: >
+  mkdir -p [OutDir] [TmpDir]/sra [TmpDir]/fasterq
+  &&
+  [prefetch_bin] --max-size [MaxSize] --output-directory [TmpDir]/sra [SraAccession]
+  &&
+  [fasterq_dump_bin] [SplitMode] --threads [Threads] --temp [TmpDir]/fasterq --outdir [OutDir] [sra_dir]
+  &&
+  mv [OutDir]/[SraAccession]_1.fastq [r1_fastq]
+  &&
+  mv [OutDir]/[SraAccession]_2.fastq [r2_fastq]
+  &&
+  gzip -f [r1_fastq]
+  &&
+  gzip -f [r2_fastq]

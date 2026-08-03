@@ -7,4 +7,9 @@ src/bio_script.egg-info/requires.txt
 src/bio_script.egg-info/top_level.txt
 src/bioscript/__init__.py
 src/bioscript/cli.py
-src/bioscript/generator.py
+src/bioscript/core/executor.py
+src/bioscript/core/flags.py
+src/bioscript/core/pipeline.py
+src/bioscript/generator/factory.py
+src/bioscript/generator/writers.py
+src/bioscript/generator/templates/python.template.py

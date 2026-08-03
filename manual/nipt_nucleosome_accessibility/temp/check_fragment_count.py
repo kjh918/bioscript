@@ -67,33 +67,6 @@ def parse_args():
 
     return args
 
-
-def open_alignment(path: str) -> pysam.AlignmentFile:
-    lower = path.lower()
-    if lower.endswith(".bam"):
-        return pysam.AlignmentFile(path, "rb")
-    elif lower.endswith(".cram"):
-        return pysam.AlignmentFile(path, "rc")
-    else:
-        raise ValueError("지원하지 않는 확장자입니다. (.bam / .cram)")
-
-
-def read_bed_regions(bed_path: str):
-    regions = []
-    with open(bed_path, "r") as bed:
-        for line in bed:
-            if not line.strip() or line.startswith("#"):
-                continue
-            parts = line.strip().split('\t')
-            if len(parts) < 3:
-                continue
-            chrom, start, end = parts[0], int(parts[1]), int(parts[2])
-            if start >= end:
-                raise ValueError(f"잘못된 구간(start >= end): {chrom}:{start}-{end}")
-            regions.append((chrom, start, end))
-    return regions
-
-
 # ==========================================
 # [Tasks / Pipeline]
 # ==========================================

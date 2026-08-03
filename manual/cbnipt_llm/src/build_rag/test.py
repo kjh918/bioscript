@@ -11,7 +11,6 @@ target_disease = list(set(gcx_cbnipt_target_disease['SYNDROME']))
 #    'Double Y syndrome',
 #    'Trisomy 9'
 #]
-target_disease = ['Williams syndrome']
 for disease in target_disease:
     
     output = disease.replace(' ','_') + '.json'
@@ -39,7 +38,7 @@ for disease in target_disease:
       --clingen-region {resources_path}/ClinGen_region_curation_list_GRCh38.tsv \
       --hpo {resources_path}/phenotype_to_genes.txt \
       --tier Tier1_High,Tier2_Medium \
-      --output-dir /storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/output
+      --output-dir /storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/output/json
       '''
     print(cmd)
     os.system(cmd)
