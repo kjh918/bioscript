@@ -11,7 +11,7 @@ sys.path.append(str(Path(__file__).resolve().parent))
 from src.core.utils import open_alignment, read_bed_regions, count_total_pass_fragments
 from src.accessibility.calculator import extract_fragments_in_region, calculate_accessibility
 # [MODIFIED] Imported the new CNV calculator module
-from src.cnv.calculator import calculate_cnv_metrics
+#from src.cnv.calculator import calculate_cnv_metrics 
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Multi-feature NIPT Pipeline: Accessibility & CNV")
