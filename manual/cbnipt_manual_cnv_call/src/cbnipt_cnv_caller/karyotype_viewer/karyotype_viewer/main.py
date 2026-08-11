@@ -30,6 +30,10 @@ def main(argv=None):
                    help="NIPT marker DB TSV (nipt_markers.tsv).")
     p.add_argument("--chrom",   default="21",
                    help="초기 표시 염색체 (default: 21).")
+    p.add_argument("--report",  metavar="HTML", default=None,
+                   help="지정 시 HTML report만 생성 후 종료.")
+    p.add_argument("--report-id", metavar="ID", default="GCX-REPORT",
+                   dest="report_id")
     p.add_argument("--host",    default="0.0.0.0")
     p.add_argument("--port",    default=8050, type=int)
     p.add_argument("--reload",  action="store_true")
@@ -76,6 +80,18 @@ def main(argv=None):
     chrom = args.chrom.replace("chr", "").upper()
     if chrom not in sample.display_chroms:
         chrom = sample.display_chroms[0]
+
+    # ── Report mode ──────────────────────────────────────────────────────
+    if args.report:
+        from .reporter import save_report_dir
+        out = save_report_dir(
+            args.report, sample,
+            syndromes=syndromes, cnv_data=cnv_data,
+            report_id=args.report_id,
+        )
+        print(f"[kv] Report → {out}")
+        print(f"[kv] 서버 없이 열기: python -m http.server 8080 --directory {out.parent}")
+        return
 
     # ── Launch ────────────────────────────────────────────────────────────
     from .server import create_app
@@ -129,22 +145,22 @@ def _assign_calls(syndromes, cnv_data):
         rule = RULES.get(syn.group, {})
         if syn.group == "Micro Deletion":
             if cn_med <= rule.get("pos_max", 1.5):
-                syn.call = "ABNORMAL"
+                syn.call = "HIGH_RISK"
             elif cn_med <= rule.get("sus_max", 1.65):
-                syn.call = "SUSPICIOUS"
+                syn.call = "SUSPECTED"
             else:
-                syn.call = "NORMAL"
+                syn.call = "LOW_RISK"
         elif syn.group in ("Autosome Abnormality", "Sex Chromosome Abnormality"):
             if cn_med >= rule.get("pos_min", 2.5):
-                syn.call = "ABNORMAL"
+                syn.call = "HIGH_RISK"
             elif cn_med >= rule.get("sus_min", 2.3):
-                syn.call = "SUSPICIOUS"
+                syn.call = "SUSPECTED"
             elif "pos_max" in rule and cn_med <= rule["pos_max"]:
-                syn.call = "ABNORMAL"
+                syn.call = "HIGH_RISK"
             elif "sus_max" in rule and cn_med <= rule["sus_max"]:
-                syn.call = "SUSPICIOUS"
+                syn.call = "SUSPECTED"
             else:
-                syn.call = "NORMAL"
+                syn.call = "LOW_RISK"
 
 
 if __name__ == "__main__":

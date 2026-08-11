@@ -1,0 +1,671 @@
+var MANIFEST = {
+  "report_id": "GCX-REPORT",
+  "report_date": "2026-08-11",
+  "test_date": "2026-08-11",
+  "sample": {
+    "id": "DEMO_NIPT",
+    "sex": "female",
+    "iscn": "46,XX,+21,-X,del(5p),del(22q11),del(15q11)",
+    "display_chroms": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "X"
+    ],
+    "pipeline": "cbNIPT v2"
+  },
+  "maternal": {},
+  "qc": {},
+  "institution": {},
+  "signatures": {},
+  "overall_call": "NORMAL",
+  "affected_chroms": [
+    "1",
+    "4",
+    "5",
+    "7",
+    "8",
+    "9",
+    "11",
+    "13",
+    "15",
+    "17",
+    "18",
+    "21",
+    "22",
+    "X"
+  ],
+  "syndromes": [
+    {
+      "nipt_id": "NIPT_TRISOMY21",
+      "syndrome": "Down syndrome",
+      "group": "Autosome Abnormality",
+      "call": "HIGH_RISK",
+      "cn_value": 3.0029,
+      "primary_chrom": "21",
+      "cnv_file": "data/cnv/chr21.tsv",
+      "features": [
+        {
+          "name": "chr21",
+          "type": "TargetChromosome",
+          "chrom": "21",
+          "start": 1,
+          "end": 46709983
+        },
+        {
+          "name": "21q22.2-ter",
+          "type": "PartialChromosome",
+          "chrom": "21",
+          "start": 38300000,
+          "end": 46709983
+        },
+        {
+          "name": "HR-DSCR",
+          "type": "CoreRegion",
+          "chrom": "21",
+          "start": 36400000,
+          "end": 41200000
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_TRISOMY18",
+      "syndrome": "Edwards syndrome",
+      "group": "Autosome Abnormality",
+      "call": "LOW_RISK",
+      "cn_value": 1.9984,
+      "primary_chrom": "18",
+      "cnv_file": "data/cnv/chr18.tsv",
+      "features": [
+        {
+          "name": "chr18",
+          "type": "TargetChromosome",
+          "chrom": "18",
+          "start": 1,
+          "end": 80373285
+        },
+        {
+          "name": "18p",
+          "type": "PartialChromosome",
+          "chrom": "18",
+          "start": 1,
+          "end": 15460900
+        },
+        {
+          "name": "18q",
+          "type": "PartialChromosome",
+          "chrom": "18",
+          "start": 20861206,
+          "end": 80373285
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_TRISOMY13",
+      "syndrome": "Patau syndrome",
+      "group": "Autosome Abnormality",
+      "call": "LOW_RISK",
+      "cn_value": 1.9958,
+      "primary_chrom": "13",
+      "cnv_file": "data/cnv/chr13.tsv",
+      "features": [
+        {
+          "name": "chr13",
+          "type": "TargetChromosome",
+          "chrom": "13",
+          "start": 1,
+          "end": 114364328
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_TRISOMY22",
+      "syndrome": "Trisomy 22 Mosaicism Syndrome",
+      "group": "Autosome Abnormality",
+      "call": "LOW_RISK",
+      "cn_value": 1.9639,
+      "primary_chrom": "22",
+      "cnv_file": "data/cnv/chr22.tsv",
+      "features": [
+        {
+          "name": "chr22",
+          "type": "TargetChromosome",
+          "chrom": "22",
+          "start": 1,
+          "end": 50818468
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_TRISOMY9",
+      "syndrome": "Trisomy 9 Mosaicism Syndrome",
+      "group": "Autosome Abnormality",
+      "call": "LOW_RISK",
+      "cn_value": 2.0021,
+      "primary_chrom": "9",
+      "cnv_file": "data/cnv/chr9.tsv",
+      "features": [
+        {
+          "name": "chr9",
+          "type": "TargetChromosome",
+          "chrom": "9",
+          "start": 1,
+          "end": 138394717
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_47XYY",
+      "syndrome": "Jacob syndrome",
+      "group": "Sex Chromosome Abnormality",
+      "call": "HIGH_RISK",
+      "cn_value": 1.006,
+      "primary_chrom": "X",
+      "cnv_file": "data/cnv/chrX.tsv",
+      "features": [
+        {
+          "name": "chrX",
+          "type": "TargetChromosome",
+          "chrom": "X",
+          "start": 2800000,
+          "end": 155600000
+        },
+        {
+          "name": "chrY",
+          "type": "TargetChromosome",
+          "chrom": "Y",
+          "start": 2800000,
+          "end": 57227415
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_47XXY",
+      "syndrome": "Klinefelter syndrome",
+      "group": "Sex Chromosome Abnormality",
+      "call": "HIGH_RISK",
+      "cn_value": 1.006,
+      "primary_chrom": "X",
+      "cnv_file": "data/cnv/chrX.tsv",
+      "features": [
+        {
+          "name": "chrX",
+          "type": "TargetChromosome",
+          "chrom": "X",
+          "start": 2800000,
+          "end": 155600000
+        },
+        {
+          "name": "chrY",
+          "type": "TargetChromosome",
+          "chrom": "Y",
+          "start": 2800000,
+          "end": 57227415
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_45X",
+      "syndrome": "Turner syndrome",
+      "group": "Sex Chromosome Abnormality",
+      "call": "HIGH_RISK",
+      "cn_value": 1.006,
+      "primary_chrom": "X",
+      "cnv_file": "data/cnv/chrX.tsv",
+      "features": [
+        {
+          "name": "chrX",
+          "type": "TargetChromosome",
+          "chrom": "X",
+          "start": 2800000,
+          "end": 155600000
+        },
+        {
+          "name": "chrY",
+          "type": "TargetChromosome",
+          "chrom": "Y",
+          "start": 2800000,
+          "end": 57227415
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_MONOSOMY_1p36",
+      "syndrome": "1p36 Deletion syndrome",
+      "group": "Micro Deletion",
+      "call": "LOW_RISK",
+      "cn_value": 1.9871,
+      "primary_chrom": "1",
+      "cnv_file": "data/cnv/chr1.tsv",
+      "features": [
+        {
+          "name": "1p36",
+          "type": "PrimaryTargetRegion",
+          "chrom": "1",
+          "start": 1,
+          "end": 27600000
+        },
+        {
+          "name": "KCNAB2",
+          "type": "CoreGene",
+          "chrom": "1",
+          "start": 5990927,
+          "end": 6101193
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_AS",
+      "syndrome": "Angelman syndrome",
+      "group": "Micro Deletion",
+      "call": "SUSPECTED",
+      "cn_value": 1.6405,
+      "primary_chrom": "15",
+      "cnv_file": "data/cnv/chr15.tsv",
+      "features": [
+        {
+          "name": "15q11.2-q13",
+          "type": "PrimaryTargetRegion",
+          "chrom": "15",
+          "start": 20500000,
+          "end": 33400000
+        },
+        {
+          "name": "UBE3A",
+          "type": "CoreGene",
+          "chrom": "15",
+          "start": 25333728,
+          "end": 25439051
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_CRIDUCHAT",
+      "syndrome": "Cri-du-Chat syndrome",
+      "group": "Micro Deletion",
+      "call": "HIGH_RISK",
+      "cn_value": 0.9938,
+      "primary_chrom": "5",
+      "cnv_file": "data/cnv/chr5.tsv",
+      "features": [
+        {
+          "name": "5p15",
+          "type": "PrimaryTargetRegion",
+          "chrom": "5",
+          "start": 1,
+          "end": 18400000
+        },
+        {
+          "name": "CTNND2",
+          "type": "CoreGene",
+          "chrom": "5",
+          "start": 10971836,
+          "end": 11904446
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_DGS",
+      "syndrome": "DiGeorge syndrome",
+      "group": "Micro Deletion",
+      "call": "HIGH_RISK",
+      "cn_value": 1.1937,
+      "primary_chrom": "22",
+      "cnv_file": "data/cnv/chr22.tsv",
+      "features": [
+        {
+          "name": "22q11.2",
+          "type": "PrimaryTargetRegion",
+          "chrom": "22",
+          "start": 17400000,
+          "end": 25500000
+        },
+        {
+          "name": "TBX1",
+          "type": "CoreGene",
+          "chrom": "22",
+          "start": 19756703,
+          "end": 19783593
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_JBS",
+      "syndrome": "Jacobsen syndrome",
+      "group": "Micro Deletion",
+      "call": "LOW_RISK",
+      "cn_value": 1.992,
+      "primary_chrom": "11",
+      "cnv_file": "data/cnv/chr11.tsv",
+      "features": [
+        {
+          "name": "11q23.3-q25",
+          "type": "PrimaryTargetRegion",
+          "chrom": "11",
+          "start": 114600000,
+          "end": 135086622
+        },
+        {
+          "name": "ETS1",
+          "type": "CoreGene",
+          "chrom": "11",
+          "start": 128458761,
+          "end": 128587558
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_MDLS",
+      "syndrome": "Miller-Dieker lissencephaly syndrome",
+      "group": "Micro Deletion",
+      "call": "LOW_RISK",
+      "cn_value": 1.9841,
+      "primary_chrom": "17",
+      "cnv_file": "data/cnv/chr17.tsv",
+      "features": [
+        {
+          "name": "17p13.3",
+          "type": "PrimaryTargetRegion",
+          "chrom": "17",
+          "start": 1,
+          "end": 3400000
+        },
+        {
+          "name": "PAFAH1B1",
+          "type": "CoreGene",
+          "chrom": "17",
+          "start": 2593210,
+          "end": 2685615
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_PWS",
+      "syndrome": "Prader-Willi syndrome",
+      "group": "Micro Deletion",
+      "call": "SUSPECTED",
+      "cn_value": 1.6405,
+      "primary_chrom": "15",
+      "cnv_file": "data/cnv/chr15.tsv",
+      "features": [
+        {
+          "name": "15q11.2-q13",
+          "type": "PrimaryTargetRegion",
+          "chrom": "15",
+          "start": 20500000,
+          "end": 33400000
+        },
+        {
+          "name": "SNRPN",
+          "type": "CoreGene",
+          "chrom": "15",
+          "start": 24823637,
+          "end": 24978723
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_SMS",
+      "syndrome": "Smith-Magenis syndrome",
+      "group": "Micro Deletion",
+      "call": "LOW_RISK",
+      "cn_value": 1.9854,
+      "primary_chrom": "17",
+      "cnv_file": "data/cnv/chr17.tsv",
+      "features": [
+        {
+          "name": "17p11.2",
+          "type": "PrimaryTargetRegion",
+          "chrom": "17",
+          "start": 16100000,
+          "end": 22700000
+        },
+        {
+          "name": "RAI1",
+          "type": "CoreGene",
+          "chrom": "17",
+          "start": 17681458,
+          "end": 17811453
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_TRPS2",
+      "syndrome": "Trichorhinophalangeal syndrome type II",
+      "group": "Micro Deletion",
+      "call": "LOW_RISK",
+      "cn_value": 1.9927,
+      "primary_chrom": "8",
+      "cnv_file": "data/cnv/chr8.tsv",
+      "features": [
+        {
+          "name": "8q23.3-q24.11",
+          "type": "PrimaryTargetRegion",
+          "chrom": "8",
+          "start": 115408496,
+          "end": 118111826
+        },
+        {
+          "name": "EXT1",
+          "type": "CoreGene",
+          "chrom": "8",
+          "start": 117794490,
+          "end": 118111826
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_WBS",
+      "syndrome": "Williams-Beuren syndrome",
+      "group": "Micro Deletion",
+      "call": "LOW_RISK",
+      "cn_value": 1.9567,
+      "primary_chrom": "7",
+      "cnv_file": "data/cnv/chr7.tsv",
+      "features": [
+        {
+          "name": "7q11.23",
+          "type": "PrimaryTargetRegion",
+          "chrom": "7",
+          "start": 73330452,
+          "end": 74728173
+        },
+        {
+          "name": "ELN",
+          "type": "CoreGene",
+          "chrom": "7",
+          "start": 74027772,
+          "end": 74069907
+        }
+      ]
+    },
+    {
+      "nipt_id": "NIPT_WHS",
+      "syndrome": "Wolf-Hirschhorn syndrome",
+      "group": "Micro Deletion",
+      "call": "LOW_RISK",
+      "cn_value": 1.9993,
+      "primary_chrom": "4",
+      "cnv_file": "data/cnv/chr4.tsv",
+      "features": [
+        {
+          "name": "4p16.3-p15.2",
+          "type": "PrimaryTargetRegion",
+          "chrom": "4",
+          "start": 1,
+          "end": 27700000
+        },
+        {
+          "name": "NSD2",
+          "type": "CoreGene",
+          "chrom": "4",
+          "start": 1871393,
+          "end": 1982207
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "chr": "21",
+      "type": "trisomy",
+      "cn": 3,
+      "iscn": "+21",
+      "start": 1,
+      "stop": 46709983,
+      "color": "#FC8181"
+    },
+    {
+      "chr": "X",
+      "type": "monosomy",
+      "cn": 1,
+      "iscn": "-X",
+      "start": 1,
+      "stop": 156040895,
+      "color": "#90CDF4"
+    },
+    {
+      "chr": "5",
+      "type": "partial_loss",
+      "cn": 1,
+      "iscn": "del(5p)",
+      "start": 1,
+      "stop": 18400000,
+      "color": "#90CDF4"
+    },
+    {
+      "chr": "22",
+      "type": "partial_loss",
+      "cn": 1,
+      "iscn": "del(22q11)",
+      "start": 17400000,
+      "stop": 25500000,
+      "color": "#F6AD55"
+    },
+    {
+      "chr": "15",
+      "type": "partial_loss",
+      "cn": 1,
+      "iscn": "del(15q11)",
+      "start": 20500000,
+      "stop": 33400000,
+      "color": "#FBD38D"
+    }
+  ],
+  "raw_annots": {
+    "keys": [
+      "name",
+      "start",
+      "length",
+      "trackIndex",
+      "color"
+    ],
+    "annots": [
+      {
+        "chr": "5",
+        "annots": [
+          [
+            "del(5p)",
+            1,
+            18399999,
+            0,
+            "#90CDF4"
+          ]
+        ]
+      },
+      {
+        "chr": "15",
+        "annots": [
+          [
+            "del(15q11)",
+            20500000,
+            12900000,
+            0,
+            "#FBD38D"
+          ]
+        ]
+      },
+      {
+        "chr": "21",
+        "annots": [
+          [
+            "+21",
+            1,
+            46709982,
+            0,
+            "#FC8181"
+          ]
+        ]
+      },
+      {
+        "chr": "22",
+        "annots": [
+          [
+            "del(22q11)",
+            17400000,
+            8100000,
+            0,
+            "#F6AD55"
+          ]
+        ]
+      },
+      {
+        "chr": "X",
+        "annots": [
+          [
+            "-X",
+            1,
+            156040894,
+            0,
+            "#90CDF4"
+          ]
+        ]
+      }
+    ]
+  },
+  "chrom_sizes": {
+    "1": 248956422,
+    "2": 242193529,
+    "3": 198295559,
+    "4": 190214555,
+    "5": 181538259,
+    "6": 170805979,
+    "7": 159345973,
+    "8": 145138636,
+    "9": 138394717,
+    "10": 133797422,
+    "11": 135086622,
+    "12": 133275309,
+    "13": 114364328,
+    "14": 107043718,
+    "15": 101991189,
+    "16": 90338345,
+    "17": 83257441,
+    "18": 80373285,
+    "19": 58617616,
+    "20": 64444167,
+    "21": 46709983,
+    "22": 50818468,
+    "X": 156040895,
+    "Y": 57227415
+  }
+};

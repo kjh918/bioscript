@@ -13,9 +13,9 @@ import pandas as pd
 
 
 CALL_COLORS = {
-    "NORMAL":     "#38A169",
-    "SUSPICIOUS": "#DD6B20",
-    "ABNORMAL":   "#E53E3E",
+    "LOW_RISK":     "#38A169",
+    "SUSPECTED": "#DD6B20",
+    "HIGH_RISK":   "#E53E3E",
     "UNKNOWN":    "#718096",
 }
 
@@ -45,7 +45,7 @@ class NiptSyndrome:
     syndrome:  str
     group:     str          # Autosome Abnormality / Sex Chromosome Abnormality / Micro Deletion
     features:  list[MarkerFeature] = field(default_factory=list)
-    call:      str = "UNKNOWN"   # NORMAL / SUSPICIOUS / ABNORMAL / UNKNOWN
+    call:      str = "UNKNOWN"   # LOW_RISK / SUSPECTED / HIGH_RISK / UNKNOWN
     cn_value:  Optional[float] = None
 
     @property

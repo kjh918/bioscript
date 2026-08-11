@@ -38,7 +38,8 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from resource_parse_pipeline import utils
 from resource_parse_pipeline.parsers.medgen_parser   import fetch_medgen
 from resource_parse_pipeline.parsers.pubmed_parser   import (fetch_pubmed_abstracts,
-                                                    collect_pmids_from_literature)
+                                                    collect_pmids_from_literature,
+                                                    discover_and_fetch_disease_literature)
 from resource_parse_pipeline.parsers.clingen_parser import (
     parse_clingen_gene,
     parse_clingen_region,
@@ -423,13 +424,37 @@ def annotate_syndrome(
           f"CoreRegion={len(features['core_regions'])} "
           f"TargetChromosome={len(features['target_chromosomes'])}")
 
-    # ── [3] PubMed abstracts ─────────────────────────────────
-    print(f"\n[3] PubMed abstracts")
-    all_pmids = collect_pmids_from_literature(medgen.get("literature", {}))
-    pubmed_lookup = fetch_pubmed_abstracts(
-        all_pmids, email, verify_pmc=verify_pmc)
+    # ── [3] PubMed disease discovery + abstracts ─────────────
+    print(f"\n[3] PubMed disease discovery + abstracts")
 
-    # literature에 abstract 병합
+    # MedGen 화면에 노출된 PMID만 사용하지 않고, MedGen에서 얻은
+    # canonical disease/synonym을 seed로 PubMed를 독립 검색한다.
+    # discovery 단계에서는 PMC 역검증을 끄고 API 호출량을 줄인다.
+    pubmed_discovery = discover_and_fetch_disease_literature(
+        disease_name=actual_syndrome,
+        synonyms=medgen.get("synonyms", []) or [],
+        email=email,
+        medgen_literature=medgen.get("literature", {}),
+        bucket_limits={
+            "review": min(max_lit, 5),
+            "genotype_phenotype": max_lit,
+            "genetics": max_lit,
+            "cohort": min(max_lit, 5),
+            "general": max_lit,
+        },
+        verify_pmc=False,
+    )
+
+    all_pmids = pubmed_discovery.get("pmids", [])
+    pubmed_lookup = pubmed_discovery.get("articles", {})
+
+    print(
+        f"  [PubMed] merged PMID={len(all_pmids)} "
+        f"articles={len(pubmed_lookup)}"
+    )
+
+    # MedGen literature에 포함된 paper에는 기존처럼 abstract를 병합한다.
+    # 독립 discovery paper 전체는 result["pubmed_discovery"]에 별도 보존한다.
     for cat_data in medgen.get("literature", {}).values():
         if isinstance(cat_data, dict):
             for paper in cat_data.get("papers", []):
@@ -556,13 +581,14 @@ def annotate_syndrome(
         "markerset":  features,
         "chromosomal_annotation": chromosomal_annotation,
         "medgen":     medgen,
+        "pubmed_discovery": pubmed_discovery,
         "clingen_discovery": {
             "matched_genes": clingen_matched_genes,
             "matched_regions": clingen_matched_regions,
         },
         "annotation_sources": {
             "medgen":          "NCBI MedGen HTML (공개)",
-            "pubmed":          "NCBI PubMed EFetch (공개)",
+            "pubmed":          "NCBI PubMed ESearch+EFetch disease discovery (공개)",
             "ncbi_gene":       "NCBI Gene ESearch+ESummary (공개)",
             "uniprot":         f"UniProt {'로컬파일' if uniprot_dat else 'ExPASy/REST'}",
             "clingen_dosage":  clingen_gene_path or "N/A",

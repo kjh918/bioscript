@@ -26,13 +26,6 @@ _FONT       = "Inter, Arial, sans-serif"
 # CN reference lines
 _CN_LINES = {1: "#FC8181", 2: "#68D391", 3: "#F6AD55", 4: "#FC8181"}
 
-FEAT_ALPHA = {
-    "TargetChromosome":      0.05,
-    "PartialChromosome":     0.07,
-    "PrimaryTargetRegion":   0.12,
-    "CoreRegion":            0.20,
-    "CoreGene":              0.32,
-}
 
 def _marker_overlays(
     fig: go.Figure,
@@ -63,7 +56,7 @@ def _marker_overlays(
                 continue
 
             color      = syn.call_color
-            fill_alpha = FEAT_ALPHA.get(feat.feature_type, 0.12)
+            fill_alpha = 0.08 if feat.feature_type == "CoreGene" else 0.12
             label_key  = f"{syn.nipt_id}:{feat.feature_name}"
 
             for row in (cn_row, baf_row):
@@ -71,11 +64,8 @@ def _marker_overlays(
                     x0=s / 1e6, x1=e / 1e6,
                     fillcolor=_hex_to_rgba(color, fill_alpha),
                     line_color=_hex_to_rgba(color, 0.7),
-                    line_width = 0 if feat.feature_type == "TargetChromosome" else (
-                                0.6 if feat.feature_type == "PartialChromosome" else
-                                1.0 if feat.feature_type == "PrimaryTargetRegion" else
-                                1.2),
-                    line_dash = "dot" if feat.feature_type in ("CoreGene",) else "solid",
+                    line_width=0.8 if feat.feature_type == "CoreGene" else 1.2,
+                    line_dash="dot" if feat.feature_type == "CoreGene" else "solid",
                     opacity=1,
                     row=row, col=1,
                 )
@@ -287,7 +277,7 @@ def syndrome_summary_fig(
 
     # call 텍스트 표시
     call_labels = [
-        f"<b>{c}</b>" if c != "NORMAL" else c
+        f"<b>{c}</b>" if c != "LOW_RISK" else c
         for c in calls
     ]
 

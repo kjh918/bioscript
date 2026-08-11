@@ -1,115 +1,86 @@
 """
-FastAPI host server factory.
+FastAPI 단일 페이지 서버.
+plotly + manifest + CNV → inline embed
+ideogram → /assets/ideogram.min.js 엔드포인트 (패키지 내부 파일)
 """
 
 from __future__ import annotations
 from typing import Optional
+import json
+from pathlib import Path
 
 import pandas as pd
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse, PlainTextResponse
 
-from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
-from starlette.middleware.wsgi import WSGIMiddleware
-
-from .core.models import SampleData
+from .core.models       import SampleData
 from .core.nipt_markers import NiptSyndrome
-from .apps.overview import create_overview_app
-from .apps.detail import create_detail_app
+from .core.reference    import CHROM_SIZES
+from .reporter          import build_html, _build_manifest
 
-
-_HOST_HTML_TEMPLATE = r"""<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title}</title>
-<style>
-  * {{ box-sizing: border-box; }}
-  html, body {{ margin: 0; padding: 0; background: #edf2f7; font-family: Arial, sans-serif; }}
-  iframe {{ display: block; width: 100%; border: 0; margin: 0; padding: 0; background: #edf2f7; }}
-  #detail-frame {{ height: 1100px; }}
-</style>
-</head>
-<body>
-<div>
-  <iframe id="overview-frame" src="/overview/" title="Karyotype overview" scrolling="no"></iframe>
-  <iframe id="detail-frame"   src="/detail/"   title="Chromosome detail"  scrolling="no"></iframe>
-</div>
-<script>
-(function () {{
-  const detailFrame   = document.getElementById('detail-frame');
-  const overviewFrame = document.getElementById('overview-frame');
-  let lastChrom = '{initial_chrom}';
-
-  function resizeOverview() {{
-    try {{
-      const h = overviewFrame.contentDocument.body.scrollHeight;
-      if (h > 100) overviewFrame.style.height = h + 'px';
-    }} catch(e) {{}}
-  }}
-  overviewFrame.addEventListener('load', function () {{
-    resizeOverview();
-    setInterval(resizeOverview, 800);
-  }});
-
-  function forward(chrom) {{
-    lastChrom = String(chrom || lastChrom);
-    if (detailFrame && detailFrame.contentWindow) {{
-      detailFrame.contentWindow.postMessage(
-        {{type: 'karyotype-chromosome-selected', chrom: lastChrom}},
-        window.location.origin
-      );
-    }}
-  }}
-
-  window.addEventListener('message', function (event) {{
-    if (event.origin !== window.location.origin) return;
-    const data = event.data || {{}};
-    if (data.type !== 'karyotype-chromosome-selected') return;
-    forward(data.chrom);
-  }});
-
-  detailFrame.addEventListener('load', function () {{
-    setTimeout(function () {{ forward(lastChrom); }}, 150);
-  }});
-}})();
-</script>
-</body>
-</html>
-"""
+_ASSETS_DIR = Path(__file__).parent / "assets"
 
 
 def create_app(
-    sample: SampleData,
+    sample:        SampleData,
     initial_chrom: str = "21",
-    title: str = "Karyotype Viewer",
-    cnv_data: Optional[dict[str, pd.DataFrame]] = None,
-    syndromes: Optional[dict[str, NiptSyndrome]] = None,
+    title:         str = "Karyotype Viewer",
+    cnv_data:      Optional[dict[str, pd.DataFrame]] = None,
+    syndromes:     Optional[dict[str, NiptSyndrome]]  = None,
 ) -> FastAPI:
+    import datetime
+    from .core.data import demo_dataframe
+
+    cnv_data  = cnv_data  or {}
+    syndromes = syndromes or {}
+
     if initial_chrom not in sample.display_chroms:
         initial_chrom = sample.display_chroms[0]
 
-    overview_dash = create_overview_app(
-        sample, initial_chrom=initial_chrom, requests_prefix="/overview/"
-    )
-    detail_dash = create_detail_app(
-        sample,
-        initial_chrom=initial_chrom,
-        requests_prefix="/detail/",
-        cnv_data=cnv_data,
-        syndromes=syndromes,
+    report_date = datetime.date.today().isoformat()
+    affected = sorted(
+        {s.primary_chrom for s in syndromes.values() if s.primary_chrom in CHROM_SIZES},
+        key=lambda c: (int(c) if c.isdigit() else 100 + ord(c[0])),
     )
 
-    host_html = _HOST_HTML_TEMPLATE.format(
-        title=title, initial_chrom=initial_chrom,
+    manifest = _build_manifest(sample, syndromes, affected, title, report_date,
+                                mode="inline")
+
+    # CNV → var 전역변수 (window에 바인딩)
+    cnv_vars = "\n".join(
+        f"var CNV_CHR{chrom.upper()} = "
+        f"{json.dumps((cnv_data[chrom] if chrom in cnv_data else demo_dataframe(sample, chrom)).to_dict(orient='records'), ensure_ascii=False)};"
+        for chrom in affected
+    )
+
+    # plotly inline
+    import plotly as _plotly
+    plotly_js = (
+        Path(_plotly.__file__).parent / "package_data" / "plotly.min.js"
+    ).read_text(encoding="utf-8", errors="replace")
+
+    html = build_html(
+        mode            = "inline",
+        inline_manifest = manifest,
+        extra_inline_js = cnv_vars,
+        inline_assets   = {"plotly": plotly_js},
+        asset_base      = "/assets",
     )
 
     fastapi_app = FastAPI(title=title)
 
     @fastapi_app.get("/", response_class=HTMLResponse)
     async def _root():
-        return HTMLResponse(host_html)
+        return HTMLResponse(html)
 
-    fastapi_app.mount("/overview", WSGIMiddleware(overview_dash.server))
-    fastapi_app.mount("/detail",   WSGIMiddleware(detail_dash.server))
+    @fastapi_app.get("/assets/{filename}")
+    async def _assets(filename: str):
+        p = _ASSETS_DIR / filename
+        if not p.exists():
+            raise HTTPException(404, f"{filename} not found")
+        return PlainTextResponse(
+            p.read_text(encoding="utf-8", errors="replace"),
+            media_type="application/javascript",
+        )
+
     return fastapi_app

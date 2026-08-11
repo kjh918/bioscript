@@ -8,14 +8,8 @@ gcx_cbnipt_target_disease = pd.read_csv(gcx_cbnipt_target_disease_path, sep='\t'
 target_disease = list(set(gcx_cbnipt_target_disease['SYNDROME']))
 
 #target_disease = [
-#    'Double Y syndrome',
-#    'Trisomy 9'
+#    '1p36_deletion_syndrome',
 #]
-print(len(target_disease))
-target_disease = [
-    'miller_dieker_lissencephaly_syndrome'
-]
-
 for disease in target_disease:
     
     output = disease.replace(' ','_') + '.json'
@@ -42,10 +36,11 @@ for disease in target_disease:
       --clingen-region {resources_path}/ClinGen_region_curation_list_GRCh38.tsv \
       --hpo {resources_path}/phenotype_to_genes.txt \
       --uniprot-dat {resources_path}/uniprot_sprot.dat.gz \
-      --output-dir /storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/output/new.json
+      --output-dir /storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/output/final.json
     '''
     
     os.system(cmd)
+    exit()
 
 
 
