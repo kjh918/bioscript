@@ -1,0 +1,39 @@
+{
+  "ncbi": {
+    "eutils":   "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+    "pubmed":   "https://pubmed.ncbi.nlm.nih.gov",
+    "pmc_base": "https://www.ncbi.nlm.nih.gov/pmc/articles",
+    "medgen":   "https://www.ncbi.nlm.nih.gov/medgen",
+    "gene":     "https://www.ncbi.nlm.nih.gov/gene"
+  },
+  "uniprot": {
+    "rest":   "https://rest.uniprot.org/uniprotkb",
+    "expasy": "https://www.expasy.org"
+  },
+  "http": {
+    "timeout":       20,
+    "retry_total":   5,
+    "retry_backoff": 1.5,
+    "retry_status":  [429, 500, 502, 503, 504],
+    "delay_default": 0.35,
+    "delay_medgen":  1.2
+  },
+
+  "local_files": {
+    "clingen_gene":         "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/clingen_gene_curation_list_GRCh38.tsv",
+    "clingen_region":       "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/clingen_region_curation_list_GRCh38.tsv",
+    "gencc":                "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+    "hpo":                  "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt",
+    "uniprot_dat":          "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/uniprot_sprot_human.dat.gz",
+    "orphanet_xml":         "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/orphanet_genes.xml"
+  },
+
+  "remote_urls": {
+    "clingen_gene":   "https://ftp.clinicalgenome.org/ClinGen_gene_curation_list_GRCh38.tsv",
+    "clingen_region": "https://ftp.clinicalgenome.org/ClinGen_region_curation_list_GRCh38.tsv",
+    "gencc":          "https://search.thegencc.org/download/action/submissions-export-tsv",
+    "hpo":            "https://purl.obolibrary.org/obo/hp/hpoa/phenotype_to_genes.txt",
+    "uniprot_dat":    "https://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/taxonomic_divisions/uniprot_sprot_human.dat.gz",
+    "orphanet_xml":   "https://sciences.orphadata.com/genes/"
+  }
+}

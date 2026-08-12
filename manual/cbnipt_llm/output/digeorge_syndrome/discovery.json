@@ -1,0 +1,3376 @@
+{
+  "disease_info": {
+    "syndrome": "DiGeorge syndrome",
+    "definition": "Individuals with 22q11.2 deletion syndrome (22q11.2DS) can present with a wide range of features that are highly variable, even within families. The major clinical manifestations of 22q11.2DS include congenital heart disease, particularly conotruncal malformations (ventricular septal defect, tetralogy of Fallot, interrupted aortic arch, and truncus arteriosus), palatal abnormalities (velopharyngeal incompetence, submucosal cleft palate, bifid uvula, and cleft palate), immune deficiency, characteristic facial features, and learning difficulties. Hearing loss can be sensorineural and/or conductive. Laryngotracheoesophageal, gastrointestinal, ophthalmologic, central nervous system, skeletal, and genitourinary anomalies also occur. Psychiatric illness and autoimmune disorders are more common in individuals with 22q11.2DS.",
+    "synonyms": [
+      "Catch22",
+      "THIRD AND FOURTH PHARYNGEAL POUCH SYNDROME"
+    ],
+    "db_ids": {
+      "SNOMED-CT": "767263007",
+      "MONDO": "MONDO:0008564",
+      "OMIM": "188400"
+    },
+    "gene_locations": [
+      {
+        "gene_symbol": "TBX1",
+        "ncbi_gene_id": "6899",
+        "cytoband": "22q11.21",
+        "source": "medgen_direct"
+      }
+    ],
+    "genomic_targets": [
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr22",
+        "cytoband": "22q11.2",
+        "event": "loss",
+        "mechanism": "deletion",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr22",
+        "cytoband": "22q11",
+        "event": "loss",
+        "mechanism": "deletion",
+        "source": "name_synonym_or_definition"
+      }
+    ],
+    "genereview_url": "/pubmed?LinkName=medgen_pubmed_genereviews&from_uid=4297",
+    "literature": {
+      "pubmed": {
+        "papers": [
+          {
+            "pmid": "38228406",
+            "title": "Primary and secondary defects of the thymus.",
+            "authors": "Dinges SS, Amini K, Notarangelo LD, Delmonte OM",
+            "journal": "Immunol Rev",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38228406/"
+          },
+          {
+            "pmid": "36897497",
+            "title": "Chromosome 22q11.2 Deletion (DiGeorge Syndrome): Immunologic Features, Diagnosis, and Management.",
+            "authors": "Biggs SE, Gilchrist B, May KR",
+            "journal": "Curr Allergy Asthma Rep",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36897497/"
+          },
+          {
+            "pmid": "36648576",
+            "title": "Clinical Practice Guidelines for the Immunological Management of Chromosome 22q11.2 Deletion Syndrome and Other Defects in Thymic Development.",
+            "authors": "Mustillo PJ, Sullivan KE, Chinn IK, Notarangelo LD, Haddad E, Davies EG, de la Morena MT, Hartog N, Yu JE, Hernandez-Trujillo VP, Ip W, Franco J, Gambineri E, Hickey SE, Varga E, Markert ML",
+            "journal": "J Clin Immunol",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36648576/"
+          }
+        ],
+        "see_all": {}
+      },
+      "curated": {
+        "papers": [
+          {
+            "pmid": "20125192",
+            "title": "Clinical utility gene card for: DiGeorge syndrome, velocardiofacial syndrome, Shprintzen syndrome, chromosome 22q11.2 deletion syndrome (22q11.2, TBX1).",
+            "authors": "Schwinger E, Devriendt K, Rauch A, Philip N",
+            "journal": "Eur J Hum Genet",
+            "year": "2010",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20125192/"
+          }
+        ],
+        "see_all": {}
+      },
+      "etiology": {
+        "papers": [
+          {
+            "pmid": "38382530",
+            "title": "Thalamocortical organoids enable in vitro modeling of 22q11.2 microdeletion associated with neuropsychiatric disorders.",
+            "authors": "Shin D, Kim CN, Ross J, Hennick KM, Wu SR, Paranjape N, Leonard R, Wang JC, Keefe MG, Pavlovic BJ, Donohue KC, Moreau C, Wigdor EM, Larson HH, Allen DE, Cadwell CR, Bhaduri A, Popova G, Bearden CE, Pollen AA, Jacquemont S, Sanders SJ, Haussler D, Wiita AP, Frost NA, Sohal VS, Nowakowski TJ",
+            "journal": "Cell Stem Cell",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38382530/"
+          },
+          {
+            "pmid": "36648576",
+            "title": "Clinical Practice Guidelines for the Immunological Management of Chromosome 22q11.2 Deletion Syndrome and Other Defects in Thymic Development.",
+            "authors": "Mustillo PJ, Sullivan KE, Chinn IK, Notarangelo LD, Haddad E, Davies EG, de la Morena MT, Hartog N, Yu JE, Hernandez-Trujillo VP, Ip W, Franco J, Gambineri E, Hickey SE, Varga E, Markert ML",
+            "journal": "J Clin Immunol",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36648576/"
+          },
+          {
+            "pmid": "34845825",
+            "title": "22q11.2 duplications: Expanding the clinical presentation.",
+            "authors": "Bartik LE, Hughes SS, Tracy M, Feldt MM, Zhang L, Arganbright J, Kaye A",
+            "journal": "Am J Med Genet A",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34845825/"
+          },
+          {
+            "pmid": "30565249",
+            "title": "Chromosome 22q11.2 deletion syndrome and DiGeorge syndrome.",
+            "authors": "Sullivan KE",
+            "journal": "Immunol Rev",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30565249/"
+          },
+          {
+            "pmid": "17562586",
+            "title": "Velocardiofacial syndrome.",
+            "authors": "Gothelf D",
+            "journal": "Child Adolesc Psychiatr Clin N Am",
+            "year": "2007",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17562586/"
+          }
+        ],
+        "see_all": {}
+      },
+      "diagnosis": {
+        "papers": [
+          {
+            "pmid": "40038168",
+            "title": "Review of the Pathophysiology and Clinical Manifestations of 22q11.2 Deletion and Duplication Syndromes.",
+            "authors": "Purow J, Waidner L, Ale H",
+            "journal": "Clin Rev Allergy Immunol",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40038168/"
+          },
+          {
+            "pmid": "36897497",
+            "title": "Chromosome 22q11.2 Deletion (DiGeorge Syndrome): Immunologic Features, Diagnosis, and Management.",
+            "authors": "Biggs SE, Gilchrist B, May KR",
+            "journal": "Curr Allergy Asthma Rep",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36897497/"
+          },
+          {
+            "pmid": "36648576",
+            "title": "Clinical Practice Guidelines for the Immunological Management of Chromosome 22q11.2 Deletion Syndrome and Other Defects in Thymic Development.",
+            "authors": "Mustillo PJ, Sullivan KE, Chinn IK, Notarangelo LD, Haddad E, Davies EG, de la Morena MT, Hartog N, Yu JE, Hernandez-Trujillo VP, Ip W, Franco J, Gambineri E, Hickey SE, Varga E, Markert ML",
+            "journal": "J Clin Immunol",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36648576/"
+          },
+          {
+            "pmid": "34776076",
+            "title": "Clinical Manifestations of 22q11.2 Deletion Syndrome.",
+            "authors": "Cirillo A, Lioncino M, Maratea A, Passariello A, Fusco A, Fratta F, Monda E, Caiazza M, Signore G, Esposito A, Baban A, Versacci P, Putotto C, Marino B, Pignata C, Cirillo E, Giardino G, Sarubbi B, Limongelli G, Russo MG",
+            "journal": "Heart Fail Clin",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34776076/"
+          },
+          {
+            "pmid": "21200182",
+            "title": "Chromosome 22q11.2 deletion syndrome (DiGeorge syndrome/velocardiofacial syndrome).",
+            "authors": "McDonald-McGinn DM, Sullivan KE",
+            "journal": "Medicine (Baltimore)",
+            "year": "2011",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21200182/"
+          }
+        ],
+        "see_all": {}
+      },
+      "therapy": {
+        "papers": [
+          {
+            "pmid": "24075926",
+            "title": "Progress in microRNA delivery.",
+            "authors": "Zhang Y, Wang Z, Gemeinhart RA",
+            "journal": "J Control Release",
+            "year": "2013",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24075926/"
+          },
+          {
+            "pmid": "20236866",
+            "title": "Thymus transplantation.",
+            "authors": "Markert ML, Devlin BH, McCarthy EA",
+            "journal": "Clin Immunol",
+            "year": "2010",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20236866/"
+          },
+          {
+            "pmid": "18755723",
+            "title": "T cell immunodeficiency.",
+            "authors": "Edgar JD",
+            "journal": "J Clin Pathol",
+            "year": "2008",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18755723/"
+          },
+          {
+            "pmid": "16083798",
+            "title": "Basic and clinical immunology.",
+            "authors": "Chinen J, Shearer WT",
+            "journal": "J Allergy Clin Immunol",
+            "year": "2005",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16083798/"
+          },
+          {
+            "pmid": "323803",
+            "title": "Immunoreconstitution.",
+            "authors": "Buckley RH",
+            "journal": "Pediatr Clin North Am",
+            "year": "1977",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/323803/"
+          }
+        ],
+        "see_all": {}
+      },
+      "prognosis": {
+        "papers": [
+          {
+            "pmid": "40073125",
+            "title": "Synaptic-dependent developmental dysconnectivity in 22q11.2 deletion syndrome.",
+            "authors": "Alvino FG, Gini S, Minetti A, Pagani M, Sastre-Yagüe D, Barsotti N, De Guzman E, Schleifer C, Stuefer A, Kushan L, Montani C, Galbusera A, Papaleo F, Kates WR, Murphy D, Lombardo MV, Pasqualetti M, Bearden CE, Gozzi A",
+            "journal": "Sci Adv",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40073125/"
+          },
+          {
+            "pmid": "29696780",
+            "title": "Neurodevelopmental outcome in 22q11.2 deletion syndrome and management.",
+            "authors": "Swillen A, Moss E, Duijff S",
+            "journal": "Am J Med Genet A",
+            "year": "2018",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29696780/"
+          },
+          {
+            "pmid": "25989227",
+            "title": "Developmental trajectories in 22q11.2 deletion.",
+            "authors": "Swillen A, McDonald-McGinn D",
+            "journal": "Am J Med Genet C Semin Med Genet",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25989227/"
+          },
+          {
+            "pmid": "16083798",
+            "title": "Basic and clinical immunology.",
+            "authors": "Chinen J, Shearer WT",
+            "journal": "J Allergy Clin Immunol",
+            "year": "2005",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16083798/"
+          },
+          {
+            "pmid": "7911041",
+            "title": "Cardiovascular molecular genetics.",
+            "authors": "Anderson PA",
+            "journal": "Curr Opin Cardiol",
+            "year": "1994",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7911041/"
+          }
+        ],
+        "see_all": {}
+      },
+      "clinical_prediction": {
+        "papers": [
+          {
+            "pmid": "40750773",
+            "title": "Aberrant pace of cortical neuron development in brain organoids from patients with 22q11.2 deletion syndrome-associated schizophrenia.",
+            "authors": "Rao SB, Sun Z, Brundu F, Chen Y, Sun Y, Zhu H, Shprintzen RJ, Tomer R, Rabadan R, Leong KW, Markx S, Kushner SA, Xu B, Gogos JA",
+            "journal": "Nat Commun",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40750773/"
+          },
+          {
+            "pmid": "40073125",
+            "title": "Synaptic-dependent developmental dysconnectivity in 22q11.2 deletion syndrome.",
+            "authors": "Alvino FG, Gini S, Minetti A, Pagani M, Sastre-Yagüe D, Barsotti N, De Guzman E, Schleifer C, Stuefer A, Kushan L, Montani C, Galbusera A, Papaleo F, Kates WR, Murphy D, Lombardo MV, Pasqualetti M, Bearden CE, Gozzi A",
+            "journal": "Sci Adv",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40073125/"
+          },
+          {
+            "pmid": "37730998",
+            "title": "Transcriptional linkage analysis with in vivo AAV-Perturb-seq.",
+            "authors": "Santinha AJ, Klingler E, Kuhn M, Farouni R, Lagler S, Kalamakis G, Lischetti U, Jabaudon D, Platt RJ",
+            "journal": "Nature",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37730998/"
+          },
+          {
+            "pmid": "29696780",
+            "title": "Neurodevelopmental outcome in 22q11.2 deletion syndrome and management.",
+            "authors": "Swillen A, Moss E, Duijff S",
+            "journal": "Am J Med Genet A",
+            "year": "2018",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29696780/"
+          },
+          {
+            "pmid": "25989227",
+            "title": "Developmental trajectories in 22q11.2 deletion.",
+            "authors": "Swillen A, McDonald-McGinn D",
+            "journal": "Am J Med Genet C Semin Med Genet",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25989227/"
+          }
+        ],
+        "see_all": {}
+      },
+      "systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "40744517",
+            "title": "Congenital heart disease in 22q11.2 deletion syndrome: a meta-analysis and systematic review of the literature.",
+            "authors": "Sauter C, Hofbeck M, Franz P, Kettenstock L, Steger K, Linhardt M, Reiter A, Störk S, Romanos M, Radtke F",
+            "journal": "J Med Genet",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40744517/"
+          },
+          {
+            "pmid": "40509778",
+            "title": "Genetic abnormalities in catatonia: a systematic review.",
+            "authors": "Conti I, Ramachandran K, Badenoch JB, Fanshawe JB, Rengasamy E, Cross B, Rogdaki M, David AS, Santosh P, Rogers JP, Watson C",
+            "journal": "Psychol Med",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40509778/"
+          },
+          {
+            "pmid": "39960552",
+            "title": "Thymus transplantation for DiGeorge Syndrome: a systematic review.",
+            "authors": "Ahmed HS, Dias AF, Pulkurthi SR",
+            "journal": "Pediatr Surg Int",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39960552/"
+          },
+          {
+            "pmid": "36729052",
+            "title": "Updated clinical practice recommendations for managing adults with 22q11.2 deletion syndrome.",
+            "authors": "Boot E, Óskarsdóttir S, Loo JCY, Crowley TB, Orchanian-Cheff A, Andrade DM, Arganbright JM, Castelein RM, Cserti-Gazdewich C, de Reuver S, Fiksinski AM, Klingberg G, Lang AE, Mascarenhas MR, Moss EM, Nowakowska BA, Oechslin E, Palmer L, Repetto GM, Reyes NGD, Schneider M, Silversides C, Sullivan KE, Swillen A, van Amelsvoort TAMJ, Van Batavia JP, Vingerhoets C, McDonald-McGinn DM, Bassett AS",
+            "journal": "Genet Med",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36729052/"
+          },
+          {
+            "pmid": "34110308",
+            "title": "Longitudinal Psychiatric and Developmental Outcomes in 22q11.2 Deletion Syndrome: A Systematic Review.",
+            "authors": "Jhawar N, Brown MJ, Cutler-Landsman D, Kates WR, Angkustsiri K, Antshel KM",
+            "journal": "J Dev Behav Pediatr",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34110308/"
+          }
+        ],
+        "see_all": {}
+      }
+    },
+    "medgen_uid": "4297",
+    "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/4297"
+  },
+  "db_ids": {
+    "SNOMED-CT": "767263007",
+    "MONDO": "MONDO:0008564",
+    "OMIM": "188400"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "TBX1",
+      "chromosome": "chr22",
+      "cytoband": "22q11.21",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "gencc_classification": "Definitive",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "Ambry Genetics",
+          "Labcorp Genetics (formerly Invitae)",
+          "PanelApp Australia",
+          "G2P",
+          "Orphanet"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000581",
+            "hpo_name": "Blepharophimosis"
+          },
+          {
+            "hpo_id": "HP:0000581",
+            "hpo_name": "Blepharophimosis"
+          },
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0000587",
+            "hpo_name": "Abnormal optic nerve morphology"
+          },
+          {
+            "hpo_id": "HP:0033151",
+            "hpo_name": "Abnormal pharynx morphology"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0007957",
+            "hpo_name": "Corneal opacity"
+          },
+          {
+            "hpo_id": "HP:0000238",
+            "hpo_name": "Hydrocephalus"
+          },
+          {
+            "hpo_id": "HP:0000389",
+            "hpo_name": "Chronic otitis media"
+          },
+          {
+            "hpo_id": "HP:3000036",
+            "hpo_name": "Abnormal head blood vessel morphology"
+          },
+          {
+            "hpo_id": "HP:3000050",
+            "hpo_name": "Abnormal odontoid tissue morphology"
+          },
+          {
+            "hpo_id": "HP:0008544",
+            "hpo_name": "Abnormally folded helix"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0004467",
+            "hpo_name": "Preauricular pit"
+          }
+        ],
+        "ncbi_gene_id": "6899"
+      }
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "22q11.2",
+      "chromosome": "chr22",
+      "cytoband": "22q11.2",
+      "genomic_pos": null,
+      "event": "loss",
+      "mechanism": "deletion",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "22q11",
+      "chromosome": "chr22",
+      "cytoband": "22q11",
+      "genomic_pos": null,
+      "event": "loss",
+      "mechanism": "deletion",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    }
+  ],
+  "evidence_literature": [
+    {
+      "pmid": "38228406",
+      "doi": "10.1111/imr.13306",
+      "pmc_id": "PMC10950553",
+      "pmc_verify": null,
+      "title": "Primary and secondary defects of the thymus.",
+      "authors": [
+        "Dinges Sarah S",
+        "Amini Kayla",
+        "Notarangelo Luigi D",
+        "Delmonte Ottavia M"
+      ],
+      "journal": "Immunological reviews",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, N.I.H., Intramural"
+      ],
+      "abstract": "The thymus is the primary site of T-cell development, enabling generation, and selection of a diverse repertoire of T cells that recognize non-self, whilst remaining tolerant to self- antigens. Severe congenital disorders of thymic development (athymia) can be fatal if left untreated due to infections, and thymic tissue implantation is the only cure. While newborn screening for severe combined immune deficiency has allowed improved detection at birth of congenital athymia, thymic disorders acquired later in life are still underrecognized and assessing the quality of thymic function in such conditions remains a challenge. The thymus is sensitive to injury elicited from a variety of endogenous and exogenous factors, and its self-renewal capacity decreases with age. Secondary and age-related forms of thymic dysfunction may lead to an increased risk of infections, malignancy, and autoimmunity. Promising results have been obtained in preclinical models and clinical trials upon administration of soluble factors promoting thymic regeneration, but to date no therapy is approved for clinical use. In this review we provide a background on thymus development, function, and age-related involution. We discuss disease mechanisms, diagnostic, and therapeutic approaches for primary and secondary thymic defects.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Infant, Newborn",
+        "Humans",
+        "Thymus Gland",
+        "T-Lymphocytes",
+        "Cell Differentiation",
+        "Immunologic Deficiency Syndromes"
+      ],
+      "keywords": [
+        "AIRE",
+        "DiGeorge syndrome",
+        "FOXN1",
+        "T-cell reconstitution",
+        "athymia",
+        "immune restoration",
+        "immunodeficiency",
+        "immunosenescence",
+        "thymic atrophy",
+        "thymic epithelial cells",
+        "thymic involution",
+        "thymic regeneration",
+        "thymopoiesis",
+        "thymus",
+        "thymus transplantation"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10950553/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10950553/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/imr.13306"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38228406/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38228406/"
+    },
+    {
+      "pmid": "36897497",
+      "doi": "10.1007/s11882-023-01071-4",
+      "pmc_id": "PMC9999075",
+      "pmc_verify": null,
+      "title": "Chromosome 22q11.2 Deletion (DiGeorge Syndrome): Immunologic Features, Diagnosis, and Management.",
+      "authors": [
+        "Biggs Sarah E",
+        "Gilchrist Bailee",
+        "May Kathleen R"
+      ],
+      "journal": "Current allergy and asthma reports",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: This review focuses on immunologic findings, relationships among immunologic findings and associated conditions of autoimmunity and atopy, and management of immunologic disease in chromosome 22q11.2 deletion syndrome (22q11.2DS, historically known as DiGeorge syndrome). RECENT FINDINGS: The implementation of assessment of T cell receptor excision circles (TRECs) in newborn screening has led to increased detection of 22q11.2 deletion syndrome. While not yet applied in clinical practice, cell-free DNA screening for 22q11.2DS also has the potential to improve early detection, which may benefit prompt evaluation and management. Multiple studies have further elucidated phenotypic features and potential biomarkers associated with immunologic outcomes, including the development of autoimmune disease and atopy. The clinical presentation of 22q11.2DS is highly variable particularly with respect to immunologic manifestations. Time to recovery of immune system abnormalities is not well-defined in current literature. An understanding of the underlying causes of immunologic changes found in 22q11.2DS, and the progression and evolution of immunologic changes over the lifespan have expanded over time and with improved survival. An included case highlights the variability of presentation and potential severity of T cell lymphopenia in partial DiGeorge syndrome and demonstrates successful spontaneous immune reconstitution in partial DiGeorge syndrome despite initial severe T cell lymphopenia.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "This review focuses on immunologic findings, relationships among immunologic findings and associated conditions of autoimmunity and atopy, and management of immunologic disease in chromosome 22q11.2 deletion syndrome (22q11.2DS, historically known as DiGeorge syndrome).",
+        "RECENT FINDINGS": "The implementation of assessment of T cell receptor excision circles (TRECs) in newborn screening has led to increased detection of 22q11.2 deletion syndrome. While not yet applied in clinical practice, cell-free DNA screening for 22q11.2DS also has the potential to improve early detection, which may benefit prompt evaluation and management. Multiple studies have further elucidated phenotypic features and potential biomarkers associated with immunologic outcomes, including the development of autoimmune disease and atopy. The clinical presentation of 22q11.2DS is highly variable particularly with respect to immunologic manifestations. Time to recovery of immune system abnormalities is not well-defined in current literature. An understanding of the underlying causes of immunologic changes found in 22q11.2DS, and the progression and evolution of immunologic changes over the lifespan have expanded over time and with improved survival. An included case highlights the variability of presentation and potential severity of T cell lymphopenia in partial DiGeorge syndrome and demonstrates successful spontaneous immune reconstitution in partial DiGeorge syndrome despite initial severe T cell lymphopenia."
+      },
+      "mesh_terms": [
+        "Infant, Newborn",
+        "Humans",
+        "DiGeorge Syndrome",
+        "Chromosome Deletion",
+        "Neonatal Screening",
+        "Lymphopenia",
+        "Chromosomes"
+      ],
+      "keywords": [
+        "Chromosome 22q11.2 deletion syndrome",
+        "DiGeorge syndrome",
+        "Inborn error of immunity",
+        "Primary immune deficiency"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9999075/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9999075/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s11882-023-01071-4"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36897497/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36897497/"
+    },
+    {
+      "pmid": "36648576",
+      "doi": "10.1007/s10875-022-01418-y",
+      "pmc_id": "PMC9892161",
+      "pmc_verify": null,
+      "title": "Clinical Practice Guidelines for the Immunological Management of Chromosome 22q11.2 Deletion Syndrome and Other Defects in Thymic Development.",
+      "authors": [
+        "Mustillo Peter J",
+        "Sullivan Kathleen E",
+        "Chinn Ivan K",
+        "Notarangelo Luigi D",
+        "Haddad Elie",
+        "Davies E Graham",
+        "de la Morena Maria Teresa",
+        "Hartog Nicholas",
+        "Yu Joyce E",
+        "Hernandez-Trujillo Vivian P",
+        "Ip Winnie",
+        "Franco Jose",
+        "Gambineri Eleonora",
+        "Hickey Scott E",
+        "Varga Elizabeth",
+        "Markert M Louise"
+      ],
+      "journal": "Journal of clinical immunology",
+      "year": "2023",
+      "publication_types": [
+        "Review",
+        "Journal Article"
+      ],
+      "abstract": "Current practices vary widely regarding the immunological work-up and management of patients affected with defects in thymic development (DTD), which include chromosome 22q11.2 microdeletion syndrome (22q11.2del) and other causes of DiGeorge syndrome (DGS) and coloboma, heart defect, atresia choanae, retardation of growth and development, genital hypoplasia, ear anomalies/deafness (CHARGE) syndrome. Practice variations affect the initial and subsequent assessment of immune function, the terminology used to describe the condition and immune status, the accepted criteria for recommending live vaccines, and how often follow-up is needed based on the degree of immune compromise. The lack of consensus and widely varying practices highlight the need to establish updated immunological clinical practice guidelines. These guideline recommendations provide a comprehensive review for immunologists and other clinicians who manage immune aspects of this group of disorders.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "DiGeorge Syndrome",
+        "Chromosome Deletion",
+        "CHARGE Syndrome",
+        "Chromosomes",
+        "Heart Defects, Congenital"
+      ],
+      "keywords": [
+        "22q11.2 deletion",
+        "CHARGE syndrome",
+        "Defects in thymic development",
+        "DiGeorge syndrome",
+        "Immunology guidelines",
+        "Thymic implant"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9892161/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9892161/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s10875-022-01418-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36648576/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36648576/"
+    },
+    {
+      "pmid": "20125192",
+      "doi": "10.1038/ejhg.2010.5",
+      "pmc_id": "PMC2987430",
+      "pmc_verify": null,
+      "title": "Clinical utility gene card for: DiGeorge syndrome, velocardiofacial syndrome, Shprintzen syndrome, chromosome 22q11.2 deletion syndrome (22q11.2, TBX1).",
+      "authors": [
+        "Schwinger Eberhard",
+        "Devriendt Koen",
+        "Rauch Anita",
+        "Philip Nicole"
+      ],
+      "journal": "European journal of human genetics : EJHG",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 22",
+        "DiGeorge Syndrome",
+        "Humans",
+        "Sensitivity and Specificity"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987430/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2987430/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/ejhg.2010.5"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20125192/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20125192/"
+    },
+    {
+      "pmid": "38382530",
+      "doi": "10.1016/j.stem.2024.01.010",
+      "pmc_id": "PMC10939828",
+      "pmc_verify": null,
+      "title": "Thalamocortical organoids enable in vitro modeling of 22q11.2 microdeletion associated with neuropsychiatric disorders.",
+      "authors": [
+        "Shin David",
+        "Kim Chang N",
+        "Ross Jayden",
+        "Hennick Kelsey M",
+        "Wu Sih-Rong",
+        "Paranjape Neha",
+        "Leonard Rachel",
+        "Wang Jerrick C",
+        "Keefe Matthew G",
+        "Pavlovic Bryan J",
+        "Donohue Kevin C",
+        "Moreau Clara",
+        "Wigdor Emilie M",
+        "Larson H Hanh",
+        "Allen Denise E",
+        "Cadwell Cathryn R",
+        "Bhaduri Aparna",
+        "Popova Galina",
+        "Bearden Carrie E",
+        "Pollen Alex A",
+        "Jacquemont Sebastien",
+        "Sanders Stephan J",
+        "Haussler David",
+        "Wiita Arun P",
+        "Frost Nicholas A",
+        "Sohal Vikaas S",
+        "Nowakowski Tomasz J"
+      ],
+      "journal": "Cell stem cell",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "Thalamic dysfunction has been implicated in multiple psychiatric disorders. We sought to study the mechanisms by which abnormalities emerge in the context of the 22q11.2 microdeletion, which confers significant genetic risk for psychiatric disorders. We investigated early stages of human thalamus development using human pluripotent stem cell-derived organoids and show that the 22q11.2 microdeletion underlies widespread transcriptional dysregulation associated with psychiatric disorders in thalamic neurons and glia, including elevated expression of FOXP2. Using an organoid co-culture model, we demonstrate that the 22q11.2 microdeletion mediates an overgrowth of thalamic axons in a FOXP2-dependent manner. Finally, we identify ROBO2 as a candidate molecular mediator of the effects of FOXP2 overexpression on thalamic axon overgrowth. Together, our study suggests that early steps in thalamic development are dysregulated in a model of genetic risk for schizophrenia and contribute to neural phenotypes in 22q11.2 deletion syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Schizophrenia",
+        "DiGeorge Syndrome",
+        "Phenotype"
+      ],
+      "keywords": [
+        "22q11 microdeletion",
+        "DiGeorge syndrome",
+        "neurodevelopmental disorders",
+        "organoid",
+        "thalamocortical",
+        "velocardiofacial syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10939828/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10939828/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.stem.2024.01.010"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38382530/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38382530/"
+    },
+    {
+      "pmid": "34845825",
+      "doi": "10.1002/ajmg.a.62577",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "22q11.2 duplications: Expanding the clinical presentation.",
+      "authors": [
+        "Bartik Lauren E",
+        "Hughes Susan S",
+        "Tracy Meghan",
+        "Feldt M Max",
+        "Zhang Lei",
+        "Arganbright Jill",
+        "Kaye Alison"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "22q11.2 duplication syndrome has a frequency of ~1/700 in the intellectual disability population. Despite this frequency, there is limited information on the variable clinical presentation. Although the phenotype and incidence of congenital anomalies are well described for 22q11.2 deletion syndrome, they are not as well understood for individuals with 22q11.2 duplication syndrome. This study is a single-center, retrospective review of patients diagnosed with 22q11.2 duplication syndrome designed to categorize the variable phenotype seen in these individuals. The data suggest that the incidence of congenital anomalies may be higher than previously reported for this syndrome. Affected individuals are at increased risk for a variety of problems including gastrointestinal complications, endocrine dysfunction, ophthalmologic abnormalities, palatal anomalies, congenital heart disease, musculoskeletal differences, and neurologic abnormalities. Individuals with 22q11.2 duplication syndrome would benefit from care coordinated by a multidisciplinary team and managed according to the 22q11.2 deletion syndrome guidelines.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosome Deletion",
+        "Chromosome Duplication",
+        "Chromosomes, Human, Pair 22",
+        "DiGeorge Syndrome",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Phenotype"
+      ],
+      "keywords": [
+        "TBX1",
+        "chromosome 22q11.2",
+        "chromosome microarray",
+        "microduplication",
+        "multidisciplinary care",
+        "multiple anomaly syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.62577"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34845825/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34845825/"
+    },
+    {
+      "pmid": "30565249",
+      "doi": "10.1111/imr.12701",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Chromosome 22q11.2 deletion syndrome and DiGeorge syndrome.",
+      "authors": [
+        "Sullivan Kathleen E"
+      ],
+      "journal": "Immunological reviews",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Chromosome 22q11.2 deletion syndrome is the most common microdeletion syndrome in humans. The effects are protean and highly variable, making a unified approach difficult. Nevertheless, commonalities have been identified and white papers with recommended evaluations and anticipatory guidance have been published. This review will cover the immune system in detail and discuss both the primary features and the secondary features related to thymic hypoplasia. A brief discussion of the other organ system involvement will be provided for context. The immune system, percolating throughout the body can impact the function of other organs through allergy or autoimmune disease affecting organs in deleterious manners. Our work has shown that the primary effect of thymic hypoplasia is to restrict T cell production. Subsequent homeostatic proliferation and perhaps other factors drive a Th2 polarization, most obvious in adulthood. This contributes to atopic risk in this population. Thymic hypoplasia also contributes to low regulatory T cells and this may be part of the overall increased risk of autoimmunity. Collectively, the effects are complex and often age-dependent. Future goals of improving thymic function or augmenting thymic volume may offer a direct intervention to ameliorate infections, atopy, and autoimmunity.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Autoimmunity",
+        "Cell Differentiation",
+        "Chromosomes, Human, Pair 22",
+        "DiGeorge Syndrome",
+        "Humans",
+        "Hypersensitivity, Immediate",
+        "Infections",
+        "Sequence Deletion",
+        "T-Lymphocytes",
+        "Thymus Gland"
+      ],
+      "keywords": [
+        "DiGeorge syndrome",
+        "T cell development",
+        "hypogammaglobulinemia",
+        "velocardiofacial syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/imr.12701"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30565249/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30565249/"
+    },
+    {
+      "pmid": "17562586",
+      "doi": "10.1016/j.chc.2007.03.005",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Velocardiofacial syndrome.",
+      "authors": [
+        "Gothelf Doron"
+      ],
+      "journal": "Child and adolescent psychiatric clinics of North America",
+      "year": "2007",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Velocardiofacial syndrome (VCFS) is the most common known microdeletion in humans. It is also the most common known genetic risk factor for schizophrenia. The aim of this article is to describe the clinical characteristics of the syndrome, with emphasis on the myriad psychiatric disorders and abnormal behaviors from a developmental perspective. In addition, the possible pathways that lead to the psychotic symptoms and cognitive deficits are discussed. Guidelines are suggested to alert clinicians to the possibility of the presence of VCFS, and the cumulative clinical experience and limited research on psychiatric treatments for VCFS are presented. There is an urgent need to conduct treatment trials in this high-risk population.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Adolescent",
+        "Child",
+        "DiGeorge Syndrome",
+        "Humans",
+        "Learning Disabilities",
+        "Prevalence"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.chc.2007.03.005"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17562586/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17562586/"
+    },
+    {
+      "pmid": "40038168",
+      "doi": "10.1007/s12016-025-09035-4",
+      "pmc_id": "8373039",
+      "pmc_verify": null,
+      "title": "Review of the Pathophysiology and Clinical Manifestations of 22q11.2 Deletion and Duplication Syndromes.",
+      "authors": [
+        "Purow Jeremy",
+        "Waidner Lauren",
+        "Ale Hanadys"
+      ],
+      "journal": "Clinical reviews in allergy & immunology",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "22q11.2 deletion and duplication syndromes are complex genetic syndromes composed of a wide spectrum of clinical manifestations, mostly affecting cardiovascular, endocrine, neurodevelopmental, and immune functioning. 22q11.2 deletion syndrome (22q11.2 DS) is more common and widely recognized compared to the duplication counterpart. Most of the literature focuses on delineating the genetic, molecular, and clinical impact of 22q11.2 DS, and less information focuses on the 22q11.2 duplication syndrome (22q11.2 DupS). We will cover both variants in this review and shed light on the less reported atypical 22q11.2 deletions and duplications. Variants in multiple genes in the 22q11.2 region, especially the TBX1 and DGCR8 genes, have been linked to the clinical phenotypes of 22q11.2 DS and 22q11.2 DupS. Variations in genes on the non-deleted homologous chromosome in the critical 22q11.2 region can further influence phenotypes by revealing recessive diseases. This effect has been documented for several genes in this area, such as SNAP29 and GP1BB. Neural crest development is usually impacted leading to various cardiovascular defects including Tetralogy of Fallot and truncus arteriosus. It can also cause palatal defects, especially velopharyngeal deficiency, considered another hallmark of 22q11DS. Individuals may also present with hypocalcemia and thyroid dysfunction due to impaired parathyroid gland formation and thyroid dysgenesis, respectively. Immunodeficiencies result from impaired T-cell development due to thymic hypoplasia, also a consequence of abnormal neural crest development. Humoral defects are also now increasingly recognized in these individuals. Psychiatric, neurocognitive, and developmental features are common, but severity varies across affected individuals. Other systems like the genitourinary, gastrointestinal, skeletal, and hematological are also involved. Monitoring and treating all the possible clinical manifestations require a multi-disciplinary approach to effectively address the plethora of clinical findings. The complex nature of the treatment guidelines reflects the clinical heterogeneity of these genetic variations. Further research is required to continue exploring the mechanisms relating to the impact of genetic aberrations in the 22q11.2 region on various clinical parameters. This will hopefully guide future updates to the current clinical practice guidelines to continue tailoring them to the individual needs of each affected person.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "DiGeorge Syndrome",
+        "Phenotype",
+        "Chromosomes, Human, Pair 22",
+        "Chromosome Duplication",
+        "Genetic Predisposition to Disease",
+        "Chromosome Deletion",
+        "Animals"
+      ],
+      "keywords": [
+        "22q11.2 deletion syndrome",
+        "Chromosome 22q11.2",
+        "Congenital heart defects",
+        "DiGeorge syndrome",
+        "Immune deficiency",
+        "Thymic hypoplasia"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8373039/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8373039/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s12016-025-09035-4"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40038168/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40038168/"
+    },
+    {
+      "pmid": "34776076",
+      "doi": "10.1016/j.hfc.2021.07.009",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Clinical Manifestations of 22q11.2 Deletion Syndrome.",
+      "authors": [
+        "Cirillo Annapaola",
+        "Lioncino Michele",
+        "Maratea Annachiara",
+        "Passariello Annalisa",
+        "Fusco Adelaide",
+        "Fratta Fiorella",
+        "Monda Emanuele",
+        "Caiazza Martina",
+        "Signore Giovanni",
+        "Esposito Augusto",
+        "Baban Anwar",
+        "Versacci Paolo",
+        "Putotto Carolina",
+        "Marino Bruno",
+        "Pignata Claudio",
+        "Cirillo Emilia",
+        "Giardino Giuliana",
+        "Sarubbi Berardo",
+        "Limongelli Giuseppe",
+        "Russo Maria Giovanna"
+      ],
+      "journal": "Heart failure clinics",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "DiGeorge syndrome (DGS), also known as \"22q11.2 deletion syndrome\" (22q11DS) (MIM # 192430 # 188400), is a genetic disorder caused by hemizygous microdeletion of the long arm of chromosome 22. In the last decades, the introduction of fluorescence in situ hybridization assays, and in selected cases the use of multiplex ligation-dependent probe amplification, has allowed the detection of chromosomal microdeletions that could not be previously identified using standard karyotype analysis. The aim of this review is to address cardiovascular and systemic involvement in children with DGS, provide genotype-phenotype correlations, and discuss their medical management and therapeutic options.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Deletion",
+        "DiGeorge Syndrome",
+        "Heart Defects, Congenital",
+        "Humans",
+        "In Situ Hybridization, Fluorescence",
+        "Karyotyping",
+        "Marfan Syndrome"
+      ],
+      "keywords": [
+        "22q11.2 deletion syndrome",
+        "Aortic arch abnormalities",
+        "Conotruncal abnormalities",
+        "Di George syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.hfc.2021.07.009"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34776076/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34776076/"
+    },
+    {
+      "pmid": "21200182",
+      "doi": "10.1097/MD.0b013e3182060469",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Chromosome 22q11.2 deletion syndrome (DiGeorge syndrome/velocardiofacial syndrome).",
+      "authors": [
+        "McDonald-McGinn Donna M",
+        "Sullivan Kathleen E"
+      ],
+      "journal": "Medicine",
+      "year": "2011",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Chromosome 22q11.2 deletion syndrome is a common syndrome also known as DiGeorge syndrome and velocardiofacial syndrome. It occurs in approximately 1:4000 births, and the incidence is increasing due to affected parents bearing their own affected children. The manifestations of this syndrome cross all medical specialties, and care of the children and adults can be complex. Many patients have a mild to moderate immune deficiency, and the majority of patients have a cardiac anomaly. Additional features include renal anomalies, eye anomalies, hypoparathyroidism, skeletal defects, and developmental delay. Each child's needs must be tailored to his or her specific medical problems, and as the child transitions to adulthood, additional issues will arise. A holistic approach, addressing medical and behavioral needs, can be very helpful.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 22",
+        "DiGeorge Syndrome",
+        "Disease Models, Animal",
+        "Genotype",
+        "Humans",
+        "Mice",
+        "Phenotype",
+        "Prevalence"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/MD.0b013e3182060469"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21200182/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21200182/"
+    },
+    {
+      "pmid": "24075926",
+      "doi": "10.1016/j.jconrel.2013.09.015",
+      "pmc_id": "PMC3891846",
+      "pmc_verify": null,
+      "title": "Progress in microRNA delivery.",
+      "authors": [
+        "Zhang Yu",
+        "Wang Zaijie",
+        "Gemeinhart Richard A"
+      ],
+      "journal": "Journal of controlled release : official journal of the Controlled Release Society",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "MicroRNAs (miRNAs) are non-coding endogenous RNAs that direct post-transcriptional regulation of gene expression by several mechanisms. Activity is primarily through binding to the 3' untranslated regions (UTRs) of messenger RNAs (mRNA) resulting in degradation and translation repression. Unlike other small-RNAs, miRNAs do not require perfect base pairing, and thus, can regulate a network of broad, yet specific, genes. Although we have only just begun to gain insights into the full range of biologic functions of miRNA, their involvement in the onset and progression of disease has generated significant interest for therapeutic development. Mounting evidence suggests that miRNA-based therapies, either restoring or repressing miRNAs expression and activity, hold great promise. However, despite the early promise and exciting potential, critical hurdles often involving delivery of miRNA-targeting agents remain to be overcome before transition to clinical applications. Limitations that may be overcome by delivery include, but are not limited to, poor in vivo stability, inappropriate biodistribution, disruption and saturation of endogenous RNA machinery, and untoward side effects. Both viral vectors and nonviral delivery systems can be developed to circumvent these challenges. Viral vectors are efficient delivery agents but toxicity and immunogenicity limit their clinical usage. Herein, we review the recent advances in the mechanisms and strategies of nonviral miRNA delivery systems and provide a perspective on the future of miRNA-based therapeutics.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Dendrimers",
+        "Drug Delivery Systems",
+        "Gene Expression Regulation",
+        "Gene Transfer Techniques",
+        "Humans",
+        "Lactic Acid",
+        "Lipids",
+        "MicroRNAs",
+        "Polyethyleneimine",
+        "Polyglycolic Acid",
+        "Polylactic Acid-Polyglycolic Acid Copolymer",
+        "Tissue Distribution"
+      ],
+      "keywords": [
+        "1,2-Di-O-octadecenyl-3-trimethylammonium propane",
+        "2′-MOE",
+        "2′-Me",
+        "2′-methoxyethyl",
+        "2′-methyl",
+        "AMO",
+        "APP",
+        "BBB",
+        "CNS",
+        "CSC",
+        "DDAB",
+        "DGCR8",
+        "DNA",
+        "DOTMA",
+        "DiGeorge syndrome critical region gene",
+        "FANA",
+        "GC4",
+        "HCV",
+        "Human disease",
+        "IR",
+        "LAC",
+        "LNA",
+        "LPH",
+        "MicroRNA",
+        "NLE",
+        "NSCLC",
+        "Nonviral delivery",
+        "ODN",
+        "PEI",
+        "PNA",
+        "PU",
+        "RISC",
+        "RNA",
+        "RNA induced silencing complex: scFv, single-chain variable fragment",
+        "Small RNA delivery",
+        "TEPA-PCL",
+        "TPGS",
+        "UTR",
+        "VEGF",
+        "amyloid precursor protein",
+        "anti-miRNA oligonucleotides",
+        "base pairs",
+        "blood–brain barrier",
+        "bp",
+        "cancer stem cell",
+        "central nervous system",
+        "d-alpha-tocopheryl polyethylene glycol 1000 succinate",
+        "deoxyribonucleic acid",
+        "dicetyl phosphate-tetraethylenepentamine-based polycation liposomes",
+        "dimethyldioctadecylammonium bromide",
+        "fluorine derivatives nucleic acid",
+        "hepatitis C virus",
+        "iNOP",
+        "ionizing radiation",
+        "liposome-hyaluronic acid",
+        "locked nucleic acid",
+        "lung adenocarcinoma",
+        "miRNA",
+        "miRNA therapeutics",
+        "microRNA",
+        "nanotransporter interfering nanoparticle-7",
+        "neutral lipid emulsion",
+        "non-small cell lung cancer",
+        "nt",
+        "nucleotides",
+        "oligodeoxynucleotides",
+        "peptide nucleic acids",
+        "phage identified internalizing scFvs that target tumor sphere cells",
+        "polyethyleneimine",
+        "polyurethane",
+        "ribonucleic acid",
+        "siRNA",
+        "small interfering RNA",
+        "untranslated regions",
+        "vascular endothelial growth factor"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3891846/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3891846/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jconrel.2013.09.015"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24075926/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24075926/"
+    },
+    {
+      "pmid": "20236866",
+      "doi": "10.1016/j.clim.2010.02.007",
+      "pmc_id": "PMC3646264",
+      "pmc_verify": null,
+      "title": "Thymus transplantation.",
+      "authors": [
+        "Markert M Louise",
+        "Devlin Blythe H",
+        "McCarthy Elizabeth A"
+      ],
+      "journal": "Clinical immunology (Orlando, Fla.)",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Thymus transplantation is a promising investigational therapy for infants born with no thymus. Because of the athymia, these infants lack T cell development and have a severe primary immunodeficiency. Although thymic hypoplasia or aplasia is characteristic of DiGeorge anomaly, in \"complete\" DiGeorge anomaly, there is no detectable thymus as determined by the absence of naive (CD45RA(+), CD62L(+)) T cells. Transplantation of postnatal allogeneic cultured thymus tissue was performed in sixty subjects with complete DiGeorge anomaly who were under the age of 2 years. Recipient survival was over 70%. Naive T cells developed 3-5 months after transplantation. The graft recipients were able to discontinue antibiotic prophylaxis, and immunoglobulin replacement. Immunosuppression was used in a subset of subjects but was discontinued when naive T cells developed. The adverse events have been acceptable with thyroid disease being the most common. Research continues on mechanisms underlying immune reconstitution after thymus transplantation.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cell Count",
+        "DiGeorge Syndrome",
+        "Humans",
+        "Infant",
+        "T-Lymphocytes",
+        "Thymus Gland",
+        "Transplantation, Homologous",
+        "Treatment Outcome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3646264/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3646264/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.clim.2010.02.007"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20236866/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20236866/"
+    },
+    {
+      "pmid": "18755723",
+      "doi": "10.1136/jcp.2007.051144",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "T cell immunodeficiency.",
+      "authors": [
+        "Edgar J D M"
+      ],
+      "journal": "Journal of clinical pathology",
+      "year": "2008",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "T cell immunodeficiency can occur as one of a group of primary disorders or develop secondary to chronic infection, illness or drug therapy. Primary T cell disorders are rare, accounting for approximately 11% of reported primary immunodeficiencies, and generally present in infancy or early childhood. Early recognition is very important as many of these patients will require bone marrow transplantation prior to the onset of severe infection or other complications. Because of their rarity, these infants usually present to clinicians who have little or no prior experience of these conditions, and therefore laboratory-based clinicians with knowledge of the key laboratory/pathological abnormalities and clinical features have a valuable role in identifying the possibility of immunodeficiency. Secondary T cell deficiency is a cardinal feature of HIV infection and the specific susceptibility to infectious micro-organisms is highlighted. The possibility of T cell immunodeficiency should be considered in any patient presenting with unusual or severe viral, fungal or protozoal infection.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Antineoplastic Agents",
+        "Ataxia Telangiectasia",
+        "Candidiasis",
+        "DiGeorge Syndrome",
+        "Female",
+        "HIV Infections",
+        "Humans",
+        "Immunologic Deficiency Syndromes",
+        "Male",
+        "Severe Combined Immunodeficiency",
+        "T-Lymphocytes"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/jcp.2007.051144"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18755723/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18755723/"
+    },
+    {
+      "pmid": "16083798",
+      "doi": "10.1016/j.jaci.2005.05.010",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Basic and clinical immunology.",
+      "authors": [
+        "Chinen Javier",
+        "Shearer William T"
+      ],
+      "journal": "The Journal of allergy and clinical immunology",
+      "year": "2005",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The authors selected articles published in the literature from January 2004 through December 2004 that were relevant to the areas of basic and clinical immunology. Several articles explored the development of TH1 or TH2 response and the role of the monocyte-T cell interaction. Others were articles describing the action of drugs commonly used in asthma to inhibit cytokine responses and the anti-inflammatory role of nonimmune pulmonary cells present in the lung. Several reports show how dendritic cells are being developed as vehicles for DNA vaccines aimed at stimulating cellular responses, an advance of great importance for HIV researchers working on vaccines, who are concerned about the different ways HIV evades the immune response. Other publications described Toll-like receptors in diverse cells, including mast cells and CD4+ T cells, for the recognition of viruses and bacteria. In the area of clinical immunology, an updated classification for primary immunodeficiencies with more than 100 identified genes responsible for these diseases and the report on the second clinical trial of gene therapy for X-linked severe combined immunodeficiency syndrome were published. Significant advances included the clinical prognosis in common variable immunodeficiency for patients presenting with lung pathology, the safety of live vaccines in partial DiGeorge syndrome, the report of patients with complete DiGeorge syndrome with the presence of peripheral blood T cells, the clinical spectrum of patients with NF-kappaB essential modifier (NEMO) gene deficiency, the publication of a consensus algorithm for the management of hereditary angioedema, and the report of immune restoration syndrome in pediatric HIV infection.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Complement System Proteins",
+        "Cytokines",
+        "Drug Hypersensitivity",
+        "Genome, Human",
+        "HIV Infections",
+        "Humans",
+        "Immunity, Innate",
+        "Immunologic Deficiency Syndromes",
+        "T-Lymphocytes",
+        "Th1 Cells",
+        "Th2 Cells",
+        "Vaccines, DNA"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jaci.2005.05.010"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16083798/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16083798/"
+    },
+    {
+      "pmid": "323803",
+      "doi": "10.1016/s0031-3955(16)33421-6",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Immunoreconstitution.",
+      "authors": [
+        "Buckley R H"
+      ],
+      "journal": "Pediatric clinics of North America",
+      "year": "1977",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Blood Transfusion",
+        "Bone Marrow",
+        "Bone Marrow Cells",
+        "Bone Marrow Transplantation",
+        "Child",
+        "DiGeorge Syndrome",
+        "Female",
+        "Fetus",
+        "Humans",
+        "Immunity, Cellular",
+        "Immunoglobulins",
+        "Immunologic Deficiency Syndromes",
+        "Infant",
+        "Male",
+        "Plasma",
+        "Thymosin",
+        "Thymus Gland",
+        "Transfer Factor",
+        "Transplantation, Homologous"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s0031-3955(16)33421-6"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/323803/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/323803/"
+    },
+    {
+      "pmid": "40073125",
+      "doi": "10.1126/sciadv.adq2807",
+      "pmc_id": "PMC11900866",
+      "pmc_verify": null,
+      "title": "Synaptic-dependent developmental dysconnectivity in 22q11.2 deletion syndrome.",
+      "authors": [
+        "Alvino Filomena Grazia",
+        "Gini Silvia",
+        "Minetti Antea",
+        "Pagani Marco",
+        "Sastre-Yagüe David",
+        "Barsotti Noemi",
+        "De Guzman Elizabeth",
+        "Schleifer Charles",
+        "Stuefer Alexia",
+        "Kushan Leila",
+        "Montani Caterina",
+        "Galbusera Alberto",
+        "Papaleo Francesco",
+        "Kates Wendy R",
+        "Murphy Declan",
+        "Lombardo Michael Vincent",
+        "Pasqualetti Massimo",
+        "Bearden Carrie E",
+        "Gozzi Alessandro"
+      ],
+      "journal": "Science advances",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Chromosome 22q11.2 deletion increases the risk of neuropsychiatric disorders like autism and schizophrenia. Disruption of large-scale functional connectivity in 22q11 deletion syndrome (22q11DS) has been widely reported, but the biological factors driving these changes remain unclear. We used a cross-species design to uncover the developmental trajectory and neural underpinnings of brain dysconnectivity in 22q11DS. In LgDel mice, a model for 22q11DS, we found age-specific patterns of brain dysconnectivity, with widespread fMRI hyperconnectivity in juvenile mice reconfiguring to hippocampal hypoconnectivity over puberty. These changes correlated with developmental alterations in dendritic spine density, and both were transiently normalized by GSK3β inhibition, suggesting a synaptic origin for this phenomenon. Notably, analogous pubertal hyperconnectivity-to-hypoconnectivity reconfiguration occurs in human 22q11DS, affecting cortical regions enriched for GSK3β-associated synaptic genes and autism-relevant transcripts. This dysconnectivity also predicts age-dependent social alterations in 22q11DS individuals. These results suggest that synaptic mechanisms underlie developmental brain dysconnectivity in 22q11DS.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Mice",
+        "Humans",
+        "DiGeorge Syndrome",
+        "Glycogen Synthase Kinase 3 beta",
+        "Magnetic Resonance Imaging",
+        "Synapses",
+        "Male",
+        "Disease Models, Animal",
+        "Female",
+        "Brain",
+        "Hippocampus",
+        "Dendritic Spines"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11900866/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11900866/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1126/sciadv.adq2807"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40073125/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40073125/"
+    },
+    {
+      "pmid": "29696780",
+      "doi": "10.1002/ajmg.a.38709",
+      "pmc_id": "PMC6202262",
+      "pmc_verify": null,
+      "title": "Neurodevelopmental outcome in 22q11.2 deletion syndrome and management.",
+      "authors": [
+        "Swillen Ann",
+        "Moss Edward",
+        "Duijff Sasja"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Review"
+      ],
+      "abstract": "The 22q11.2 deletion syndrome (22q11.2 DS) places affected individuals at an increased risk for neurodevelopmental/cognitive, behavioral and social-emotional difficulties. Poor cognitive functioning and intellectual disabilities, attention and executive functioning deficits, learning disorders, emotional dysregulation and impairments in social processing are common among individuals with 22q11.2 DS. Identifying risk and protective/resilience factors that can be detected in early life and can predict neurodevelopmental outcomes for people with 22q11.2 DS is of significant clinical relevance and might allow for early detection and intervention. Given the focus of this review, we will discuss the possible contributing factors that influence the neurodevelopmental outcome in 22q1.2 DS, the cognitive phenotype in 22q11.2 DS, the different developmental trajectories across life span, and the implications for clinical practice and management.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Age Factors",
+        "Cognition",
+        "DiGeorge Syndrome",
+        "Female",
+        "Humans",
+        "Male",
+        "Phenotype"
+      ],
+      "keywords": [
+        "22q11.2 DS",
+        "contributing factors",
+        "neurodevelopmental outcome",
+        "practice and management"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6202262/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6202262/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.38709"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29696780/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29696780/"
+    },
+    {
+      "pmid": "25989227",
+      "doi": "10.1002/ajmg.c.31435",
+      "pmc_id": "PMC5061035",
+      "pmc_verify": null,
+      "title": "Developmental trajectories in 22q11.2 deletion.",
+      "authors": [
+        "Swillen Ann",
+        "McDonald-McGinn Donna"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Chromosome 22q11.2 deletion syndrome (22q11.2DS), a neurogenetic condition, is the most common microdeletion syndrome affecting 1 in 2,000-4,000 live births and involving haploinsufficiency of ∼50 genes resulting in a multisystem disorder. Phenotypic expression is highly variable and ranges from severe life-threatening conditions to only a few associated features. Most common medical problems include: congenital heart disease, in particular conotruncal anomalies; palatal abnormalities, most frequently velopharyngeal incompetence (VPI); immunodeficiency; hypocalcemia due to hypoparathyroidism; genitourinary anomalies; severe feeding/gastrointestinal differences; and subtle dysmorphic facial features. The neurocognitive profile is also highly variable, both between individuals and during the course of development. From infancy onward, motor delays (often with hypotonia) and speech/language deficits are commonly observed. During the preschool and primary school ages, learning difficulties are very common. The majority of patients with 22q11.2DS have an intellectual level that falls in the borderline range (IQ 70-84), and about one-third have mild to moderate intellectual disability. More severe levels of intellectual disability are uncommon in children and adolescents but are more frequent in adults. Individuals with 22q11.2DS are at an increased risk for developing several psychiatric disorders including attention deficit with hyperactivity disorder (ADHD), autism spectrum disorder (ASD), anxiety and mood disorders, and psychotic disorders and schizophrenia. In this review, we will focus on the developmental phenotypic transitions regarding cognitive development in 22q11.2DS from early preschool to adulthood, and on the changing behavioral/psychiatric phenotype across age, on a background of frequently complex medical conditions.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Anxiety Disorders",
+        "Attention Deficit Disorder with Hyperactivity",
+        "Autism Spectrum Disorder",
+        "Child",
+        "Cognition",
+        "Developmental Disabilities",
+        "DiGeorge Syndrome",
+        "Female",
+        "Humans",
+        "Language",
+        "Male",
+        "Motor Skills",
+        "Schizophrenia",
+        "Severity of Illness Index"
+      ],
+      "keywords": [
+        "22q11.2 deletion",
+        "Di George",
+        "chromosome 22",
+        "developmental trajectories"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5061035/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5061035/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.31435"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25989227/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25989227/"
+    },
+    {
+      "pmid": "7911041",
+      "doi": "10.1097/00001573-199401000-00010",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cardiovascular molecular genetics.",
+      "authors": [
+        "Anderson P A"
+      ],
+      "journal": "Current opinion in cardiology",
+      "year": "1994",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "This monograph reviews advances in understanding the genetic basis of heritable disorders of the heart and vasculature, including hypertrophic cardiomyopathy, Marfan syndrome, conotruncal malformations, atrioventricular septal defects, supravalvular aortic stenosis, and the field defects associated with DiGeorge and velocardiofacial syndromes. The prognostic value and the functional effects of beta myosin heavy chain gene mutations in familial hypertrophic cardiomyopathy are discussed. The relation between Marfan syndrome and fibrillin mutations and that between supravalvular aortic stenosis and William syndromes and elastin mutations are reviewed, as is the presence of microdeletions in 22q11 in DiGeorge syndrome, velocardiofacial syndrome, and nonsyndromic patients with conotruncal malformations. The relation between neural crest cells and field defects are considered in the context of the genetic basis of Patch, a mutation that results in abnormal neural crest cell migration and conotruncal malformations. The role of transforming growth factor beta isoforms in cardiac morphogenesis is considered in the light of apparently normal morphogenesis in transforming growth factor beta 1 null mice.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Chromosome Aberrations",
+        "Chromosome Disorders",
+        "Female",
+        "Genes, Homeobox",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Mutation",
+        "Phenotype",
+        "Pregnancy",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/00001573-199401000-00010"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7911041/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7911041/"
+    },
+    {
+      "pmid": "40750773",
+      "doi": "10.1038/s41467-025-62187-x",
+      "pmc_id": "PMC12316906",
+      "pmc_verify": null,
+      "title": "Aberrant pace of cortical neuron development in brain organoids from patients with 22q11.2 deletion syndrome-associated schizophrenia.",
+      "authors": [
+        "Rao Sneha B",
+        "Sun Zhixiong",
+        "Brundu Francesco",
+        "Chen Yannan",
+        "Sun Yan",
+        "Zhu Huixiang",
+        "Shprintzen Robert J",
+        "Tomer Raju",
+        "Rabadan Raul",
+        "Leong Kam W",
+        "Markx Sander",
+        "Kushner Steven A",
+        "Xu Bin",
+        "Gogos Joseph A"
+      ],
+      "journal": "Nature communications",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Children and adults with 22q11.2 deletion syndrome (22q11.2DS) experience cognitive and emotional challenges and face a markedly increased risk for schizophrenia (SCZ), yet how this deletion alters early human brain development remains unclear. Using cerebral cortex organoids derived from individuals with 22q11.2DS and SCZ, we identify cell-type-specific developmental abnormalities. Single-cell RNA sequencing and experimental validation reveal delayed cortical neuron maturation, with increased neural progenitor proliferation and a reduced proportion of more mature neurons. We observe disrupted molecular programs linked to neuronal maturation, sparser neurites, and blunted glutamate-induced Ca²⁺ responses. The aberrant transcriptional profile is enriched for neuropsychiatric risk genes. MicroRNA profiling suggests that DGCR8 haploinsufficiency contributes to these effects via dysregulation of genes that control the pace of maturation. Protein-protein interaction network analysis highlights complementary roles for additional deleted genes. Our study reveals consistent developmental and molecular defects caused by 22q11.2 deletions, offering insights into disease mechanisms and therapeutic strategies.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Schizophrenia",
+        "Organoids",
+        "DiGeorge Syndrome",
+        "Neurons",
+        "Cerebral Cortex",
+        "RNA-Binding Proteins",
+        "MicroRNAs",
+        "Female",
+        "Male",
+        "Adult",
+        "Child",
+        "Neural Stem Cells",
+        "Neurogenesis",
+        "Cell Proliferation",
+        "Haploinsufficiency",
+        "Single-Cell Analysis",
+        "Protein Interaction Maps"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12316906/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12316906/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41467-025-62187-x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40750773/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40750773/"
+    },
+    {
+      "pmid": "37730998",
+      "doi": "10.1038/s41586-023-06570-y",
+      "pmc_id": "PMC10567566",
+      "pmc_verify": null,
+      "title": "Transcriptional linkage analysis with in vivo AAV-Perturb-seq.",
+      "authors": [
+        "Santinha Antonio J",
+        "Klingler Esther",
+        "Kuhn Maria",
+        "Farouni Rick",
+        "Lagler Sandra",
+        "Kalamakis Georgios",
+        "Lischetti Ulrike",
+        "Jabaudon Denis",
+        "Platt Randall J"
+      ],
+      "journal": "Nature",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "The ever-growing compendium of genetic variants associated with human pathologies demands new methods to study genotype-phenotype relationships in complex tissues in a high-throughput manner1,2. Here we introduce adeno-associated virus (AAV)-mediated direct in vivo single-cell CRISPR screening, termed AAV-Perturb-seq, a tuneable and broadly applicable method for transcriptional linkage analysis as well as high-throughput and high-resolution phenotyping of genetic perturbations in vivo. We applied AAV-Perturb-seq using gene editing and transcriptional inhibition to systematically dissect the phenotypic landscape underlying 22q11.2 deletion syndrome3,4 genes in the adult mouse brain prefrontal cortex. We identified three 22q11.2-linked genes involved in known and previously undescribed pathways orchestrating neuronal functions in vivo that explain approximately 40% of the transcriptional changes observed in a 22q11.2-deletion mouse model. Our findings suggest that the 22q11.2-deletion syndrome transcriptional phenotype found in mature neurons may in part be due to the broad dysregulation of a class of genes associated with disease susceptibility that are important for dysfunctional RNA processing and synaptic function. Our study establishes a flexible and scalable direct in vivo method to facilitate causal understanding of biological and disease mechanisms with potential applications to identify genetic interventions and therapeutic targets for treating disease.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Humans",
+        "Mice",
+        "Dependovirus",
+        "Gene Editing",
+        "Genetic Association Studies",
+        "Neurons",
+        "Phenotype",
+        "Prefrontal Cortex",
+        "Transcription, Genetic",
+        "Single-Cell Analysis",
+        "CRISPR-Cas Systems",
+        "DiGeorge Syndrome",
+        "Disease Models, Animal",
+        "RNA Processing, Post-Transcriptional",
+        "Synapses",
+        "Genetic Predisposition to Disease"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10567566/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10567566/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41586-023-06570-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37730998/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37730998/"
+    },
+    {
+      "pmid": "40744517",
+      "doi": "10.1136/jmg-2025-110624",
+      "pmc_id": "PMC12573319",
+      "pmc_verify": null,
+      "title": "Congenital heart disease in 22q11.2 deletion syndrome: a meta-analysis and systematic review of the literature.",
+      "authors": [
+        "Sauter Carina",
+        "Hofbeck Michael",
+        "Franz Paula",
+        "Kettenstock Laura",
+        "Steger Klara",
+        "Linhardt Matthias",
+        "Reiter Andrea",
+        "Störk Stefan",
+        "Romanos Marcel",
+        "Radtke Franziska"
+      ],
+      "journal": "Journal of medical genetics",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "abstract": "The 22q11.2 deletion syndrome (22q11.2DS) results from a heterozygous deletion at chromosomal locus 22q11.2 and is associated with multisystem symptoms, including cardiovascular, psychiatric and palatal manifestations. Although congenital cardiovascular aberrations are frequent in patients with 22q11.DS, exact prevalence figures remain unclear. Literature was searched in August 2022 and updated in May 2024 using the databases PubMed, Web of Science and Cochrane library to retrieve studies in English and German focusing only on studies involving 22q11.2DS. Prevalence data for cardiovascular aberrations were arcsine transformed and summarised by random-effects models using Meta-XL. Evidence quality was assessed via the Grading of Recommendations, Assessment, Development and Evaluation (GRADE) approach. The systematic searches identified 4338 studies, of which 7 were included for the meta-analysis of prevalence using random-effects models and sensitivity analyses. The pooled prevalence for heart defects (mean; 95% CI) was found to be elevated for tetralogy of Fallot (20%; 0.17 to 0.23), ventricular septal defect (14%; 0.12 to 0.16), pulmonary atresia with ventricular septal defect (9%; 0.06; 0.12), interrupted aortic arch (10%; 0.06 to 0.15), truncus arteriosus communis (9%; 0.07 to 0.12) and atrial septal defect (3%; 0.01 to 0.04). The risk of bias of the included studies was low to moderate. This study, to our knowledge, represents the first systematic review and meta-analysis of prevalences for congenital cardiovascular aberrations in individuals with 22q11.2DS. The high frequencies observed underline the need for cardiovascular screening in patients with 22q11.2DS and genetic screening for 22q11.2DS in congenital heart disease.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "DiGeorge Syndrome",
+        "Heart Defects, Congenital",
+        "Prevalence"
+      ],
+      "keywords": [
+        "Cardiovascular Abnormalities",
+        "Genetic Testing",
+        "Heart Defects, Congenital"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12573319/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12573319/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/jmg-2025-110624"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40744517/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40744517/"
+    },
+    {
+      "pmid": "40509778",
+      "doi": "10.1017/S0033291725100536",
+      "pmc_id": "PMC12180507",
+      "pmc_verify": null,
+      "title": "Genetic abnormalities in catatonia: a systematic review.",
+      "authors": [
+        "Conti Isabella",
+        "Ramachandran Kanchana",
+        "Badenoch James B",
+        "Fanshawe Jack B",
+        "Rengasamy Emma",
+        "Cross Ben",
+        "Rogdaki Maria",
+        "David Anthony S",
+        "Santosh Paramala",
+        "Rogers Jonathan P",
+        "Watson Cameron"
+      ],
+      "journal": "Psychological medicine",
+      "year": "2025",
+      "publication_types": [
+        "Systematic Review",
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND: Catatonia has many potential underlying causes, but in some patients, no clear etiology is identified, sparking growing interest in its genetic basis. We aimed to provide the first comprehensive synthesis of genetic abnormalities in catatonia. METHODS: In this systematic review (PROSPERO CRD42023455118) we searched MEDLINE All, Embase Classic + Embase, PsycINFO, and AMED up to August 15, 2023, for studies on genetic testing and catatonia phenotyping in all age groups. Catatonia was diagnosed using specified diagnostic criteria or description of clinical features. Risk of bias was assessed using the Joanna Briggs Institute quality assessment tools. Results were summarized with a narrative synthesis. RESULTS: We included 99 studies involving 8600 individuals. Sex was reported for 6080 individuals, of whom 3208 (52.8%) were male. Mean age at onset of catatonia was 28.8 years (SD 16.3). The median duration of the index catatonic episode was 180 days (IQR 38 to 668). Stupor and mutism were the most frequently reported symptoms. Forty-seven genetic conditions were reported in catatonia, including Phelan-McDermid syndrome (n = 80), 22q11.2 deletion syndrome (n = 23), and Down's syndrome (n = 19). Study quality was good in 29 studies, moderate in 53, and poor in 17. The major focus of association studies has centered on periodic catatonia; despite identifying candidate genes at both 22q13 and 15q15, none have been replicated. CONCLUSIONS: Catatonia can manifest in a wide range of genetic syndromes, suggesting a shared vulnerability across diverse genetic and developmental disorders. We did not identify a unique phenomenology or treatment response profile in genetic associations of catatonia.",
+      "abstract_sections": {
+        "BACKGROUND": "Catatonia has many potential underlying causes, but in some patients, no clear etiology is identified, sparking growing interest in its genetic basis. We aimed to provide the first comprehensive synthesis of genetic abnormalities in catatonia.",
+        "METHODS": "In this systematic review (PROSPERO CRD42023455118) we searched MEDLINE All, Embase Classic + Embase, PsycINFO, and AMED up to August 15, 2023, for studies on genetic testing and catatonia phenotyping in all age groups. Catatonia was diagnosed using specified diagnostic criteria or description of clinical features. Risk of bias was assessed using the Joanna Briggs Institute quality assessment tools. Results were summarized with a narrative synthesis.",
+        "RESULTS": "We included 99 studies involving 8600 individuals. Sex was reported for 6080 individuals, of whom 3208 (52.8%) were male. Mean age at onset of catatonia was 28.8 years (SD 16.3). The median duration of the index catatonic episode was 180 days (IQR 38 to 668). Stupor and mutism were the most frequently reported symptoms. Forty-seven genetic conditions were reported in catatonia, including Phelan-McDermid syndrome (n = 80), 22q11.2 deletion syndrome (n = 23), and Down's syndrome (n = 19). Study quality was good in 29 studies, moderate in 53, and poor in 17. The major focus of association studies has centered on periodic catatonia; despite identifying candidate genes at both 22q13 and 15q15, none have been replicated.",
+        "CONCLUSIONS": "Catatonia can manifest in a wide range of genetic syndromes, suggesting a shared vulnerability across diverse genetic and developmental disorders. We did not identify a unique phenomenology or treatment response profile in genetic associations of catatonia."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Catatonia",
+        "Male",
+        "Female",
+        "Adult"
+      ],
+      "keywords": [
+        "DiGeorge syndrome",
+        "Phelan-McDermid syndrome",
+        "catatonia",
+        "down’s syndrome",
+        "systematic review"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12180507/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12180507/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1017/S0033291725100536"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40509778/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40509778/"
+    },
+    {
+      "pmid": "39960552",
+      "doi": "10.1007/s00383-025-05976-1",
+      "pmc_id": "4900471",
+      "pmc_verify": null,
+      "title": "Thymus transplantation for DiGeorge Syndrome: a systematic review.",
+      "authors": [
+        "Ahmed H Shafeeq",
+        "Dias Akhil Fravis",
+        "Pulkurthi Sneha Reddy"
+      ],
+      "journal": "Pediatric surgery international",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "BACKGROUND: DiGeorge syndrome (DGS) is a condition typically associated with athymia, parathyroid hypoplasia or aplasia, and congenital heart defects. Athymia in these patients causes severe immunodeficiency, causing high mortality and morbidity, often requiring thymic tissue transplantation. The present systematic review aims to consolidate the present evidence on thymus transplantation in DGS. METHODS: An electronic literature search of five databases (PubMed, Medline, Scopus, EBSCOhost, and CINAHL) was performed from inception till September 2024. Relevant articles were selected, and data was extracted by two independent reviewers. RESULTS: A total of 16 articles were included from an initial set of 1227 articles. Patients diagnosed with DGS in the included studies were predominantly male, and the age at which thymus transplantation was done typically varied from 0.8 to 26 months. Several patients had chromosome 22q11 hemizygosity. Thymic tissue was taken from tissues of pediatric patients undergoing cardiothoracic surgery. Pre-transplant medication included immunosuppressants with rabbit anti-thymocyte globulin (RATGAM) being frequently used alongside steroids and tacrolimus. This tissue was cultured and transplanted into the quadriceps muscle of the patients under general anesthesia. Thymopoiesis was well described in most patients with graft failures and rejections occurring rarely. Naive T-cell development was noted in almost all patients with clearance of infections in many cases. Common postoperative complications include sepsis, haemorrhage, gastrointestinal disturbances, among others. Mortality was uncommon but often associated with intracerebral hemorrhages and sepsis. CONCLUSION: Thymus transplantation is a relatively safe and effective procedure in patients with DGS with athymia. Future research should explore the addition of allogenic parathyroid gland transplantation along with thymic tissue.",
+      "abstract_sections": {
+        "BACKGROUND": "DiGeorge syndrome (DGS) is a condition typically associated with athymia, parathyroid hypoplasia or aplasia, and congenital heart defects. Athymia in these patients causes severe immunodeficiency, causing high mortality and morbidity, often requiring thymic tissue transplantation. The present systematic review aims to consolidate the present evidence on thymus transplantation in DGS.",
+        "METHODS": "An electronic literature search of five databases (PubMed, Medline, Scopus, EBSCOhost, and CINAHL) was performed from inception till September 2024. Relevant articles were selected, and data was extracted by two independent reviewers.",
+        "RESULTS": "A total of 16 articles were included from an initial set of 1227 articles. Patients diagnosed with DGS in the included studies were predominantly male, and the age at which thymus transplantation was done typically varied from 0.8 to 26 months. Several patients had chromosome 22q11 hemizygosity. Thymic tissue was taken from tissues of pediatric patients undergoing cardiothoracic surgery. Pre-transplant medication included immunosuppressants with rabbit anti-thymocyte globulin (RATGAM) being frequently used alongside steroids and tacrolimus. This tissue was cultured and transplanted into the quadriceps muscle of the patients under general anesthesia. Thymopoiesis was well described in most patients with graft failures and rejections occurring rarely. Naive T-cell development was noted in almost all patients with clearance of infections in many cases. Common postoperative complications include sepsis, haemorrhage, gastrointestinal disturbances, among others. Mortality was uncommon but often associated with intracerebral hemorrhages and sepsis.",
+        "CONCLUSION": "Thymus transplantation is a relatively safe and effective procedure in patients with DGS with athymia. Future research should explore the addition of allogenic parathyroid gland transplantation along with thymic tissue."
+      },
+      "mesh_terms": [
+        "Humans",
+        "DiGeorge Syndrome",
+        "Thymus Gland"
+      ],
+      "keywords": [
+        "Congenital abnormalities",
+        "Graft",
+        "Immunodeficiency",
+        "Lymphocyte",
+        "Thymus glands"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4900471/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4900471/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s00383-025-05976-1"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39960552/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39960552/"
+    },
+    {
+      "pmid": "36729052",
+      "doi": "10.1016/j.gim.2022.11.012",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Updated clinical practice recommendations for managing adults with 22q11.2 deletion syndrome.",
+      "authors": [
+        "Boot Erik",
+        "Óskarsdóttir Sólveig",
+        "Loo Joanne C Y",
+        "Crowley Terrence Blaine",
+        "Orchanian-Cheff Ani",
+        "Andrade Danielle M",
+        "Arganbright Jill M",
+        "Castelein René M",
+        "Cserti-Gazdewich Christine",
+        "de Reuver Steven",
+        "Fiksinski Ania M",
+        "Klingberg Gunilla",
+        "Lang Anthony E",
+        "Mascarenhas Maria R",
+        "Moss Edward M",
+        "Nowakowska Beata Anna",
+        "Oechslin Erwin",
+        "Palmer Lisa",
+        "Repetto Gabriela M",
+        "Reyes Nikolai Gil D",
+        "Schneider Maude",
+        "Silversides Candice",
+        "Sullivan Kathleen E",
+        "Swillen Ann",
+        "van Amelsvoort Therese A M J",
+        "Van Batavia Jason P",
+        "Vingerhoets Claudia",
+        "McDonald-McGinn Donna M",
+        "Bassett Anne S"
+      ],
+      "journal": "Genetics in medicine : official journal of the American College of Medical Genetics",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "This review aimed to update the clinical practice guidelines for managing adults with 22q11.2 deletion syndrome (22q11.2DS). The 22q11.2 Society recruited expert clinicians worldwide to revise the original clinical practice guidelines for adults in a stepwise process according to best practices: (1) a systematic literature search (1992-2021), (2) study selection and synthesis by clinical experts from 8 countries, covering 24 subspecialties, and (3) formulation of consensus recommendations based on the literature and further shaped by patient advocate survey results. Of 2441 22q11.2DS-relevant publications initially identified, 2344 received full-text review, with 2318 meeting inclusion criteria (clinical care relevance to 22q11.2DS) including 894 with potential relevance to adults. The evidence base remains limited. Thus multidisciplinary recommendations represent statements of current best practice for this evolving field, informed by the available literature. These recommendations provide guidance for the recognition, evaluation, surveillance, and management of the many emerging and chronic 22q11.2DS-associated multisystem morbidities relevant to adults. The recommendations also address key genetic counseling and psychosocial considerations for the increasing numbers of adults with this complex condition.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Humans",
+        "Clinical Relevance",
+        "Consensus",
+        "DiGeorge Syndrome",
+        "Genetic Counseling",
+        "Surveys and Questionnaires"
+      ],
+      "keywords": [
+        "Adults",
+        "Aging",
+        "Clinical practice guidelines",
+        "DiGeorge syndrome",
+        "Treatment"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.gim.2022.11.012"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36729052/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36729052/"
+    },
+    {
+      "pmid": "34110308",
+      "doi": "10.1097/DBP.0000000000000927",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Longitudinal Psychiatric and Developmental Outcomes in 22q11.2 Deletion Syndrome: A Systematic Review.",
+      "authors": [
+        "Jhawar Nandini",
+        "Brown Marissa J",
+        "Cutler-Landsman Donna",
+        "Kates Wendy R",
+        "Angkustsiri Kathleen",
+        "Antshel Kevin M"
+      ],
+      "journal": "Journal of developmental and behavioral pediatrics : JDBP",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "OBJECTIVE: 22q11.2 deletion syndrome (22q11DS) is a common genetic deletion syndrome associated with psychiatric disorders and developmental delays. A significant amount of 22q11DS research literature is published annually; here, we focus exclusively on longitudinal data that have been published in the past 5 years regarding psychiatric disorders and/or cognitive and social development. After a review, areas for future research consideration and clinical recommendations are presented. METHODS: Articles were reviewed and organized in adherence with Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines for conducting systematic reviews. The literature search identified 852 studies, and 22 studies met inclusion criteria. RESULTS: Longitudinal study findings indicate that developmental considerations for youth with 22q11DS should focus on the primacy and enduring nature of social and executive functioning deficits, attention-deficit/hyperactivity disorder, anxiety, and negative symptoms of psychosis. CONCLUSION: From the diathesis of physiological conditions and genetic variance, 22q11DS and its associated phenotype of persistent cognitive deficits, comorbid psychiatric disorders, and social impairments likely conspire to increase the risk for stress in adolescence. The diathesis-stress framework, along with chronic stress, increases psychosis risk in individuals with 22q11DS. The existing literature has a heavy focus on the impact of the deletion on individual skills and attributes, such as cognition, but lacks information on the impact of the environment. Future 22q11DS research should consider specific aspects of social functioning, including interactions with parenting styles and family communication, as well as high demands in educational settings, as possible risk factors for psychosis.",
+      "abstract_sections": {
+        "OBJECTIVE": "22q11.2 deletion syndrome (22q11DS) is a common genetic deletion syndrome associated with psychiatric disorders and developmental delays. A significant amount of 22q11DS research literature is published annually; here, we focus exclusively on longitudinal data that have been published in the past 5 years regarding psychiatric disorders and/or cognitive and social development. After a review, areas for future research consideration and clinical recommendations are presented.",
+        "METHODS": "Articles were reviewed and organized in adherence with Preferred Reporting Items for Systematic Reviews and Meta-Analyses guidelines for conducting systematic reviews. The literature search identified 852 studies, and 22 studies met inclusion criteria.",
+        "RESULTS": "Longitudinal study findings indicate that developmental considerations for youth with 22q11DS should focus on the primacy and enduring nature of social and executive functioning deficits, attention-deficit/hyperactivity disorder, anxiety, and negative symptoms of psychosis.",
+        "CONCLUSION": "From the diathesis of physiological conditions and genetic variance, 22q11DS and its associated phenotype of persistent cognitive deficits, comorbid psychiatric disorders, and social impairments likely conspire to increase the risk for stress in adolescence. The diathesis-stress framework, along with chronic stress, increases psychosis risk in individuals with 22q11DS. The existing literature has a heavy focus on the impact of the deletion on individual skills and attributes, such as cognition, but lacks information on the impact of the environment. Future 22q11DS research should consider specific aspects of social functioning, including interactions with parenting styles and family communication, as well as high demands in educational settings, as possible risk factors for psychosis."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Anxiety Disorders",
+        "Cognition",
+        "DiGeorge Syndrome",
+        "Humans",
+        "Longitudinal Studies",
+        "Psychotic Disorders"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/DBP.0000000000000927"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34110308/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34110308/"
+    },
+    {
+      "pmid": "27189754",
+      "doi": "10.1038/nrdp.2015.71",
+      "pmc_id": "PMC4900471",
+      "pmc_verify": null,
+      "title": "22q11.2 deletion syndrome.",
+      "authors": [
+        "McDonald-McGinn Donna M",
+        "Sullivan Kathleen E",
+        "Marino Bruno",
+        "Philip Nicole",
+        "Swillen Ann",
+        "Vorstman Jacob A S",
+        "Zackai Elaine H",
+        "Emanuel Beverly S",
+        "Vermeesch Joris R",
+        "Morrow Bernice E",
+        "Scambler Peter J",
+        "Bassett Anne S"
+      ],
+      "journal": "Nature reviews. Disease primers",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "22q11.2 deletion syndrome (22q11.2DS) is the most common chromosomal microdeletion disorder, estimated to result mainly from de novo non-homologous meiotic recombination events occurring in approximately 1 in every 1,000 fetuses. The first description in the English language of the constellation of findings now known to be due to this chromosomal difference was made in the 1960s in children with DiGeorge syndrome, who presented with the clinical triad of immunodeficiency, hypoparathyroidism and congenital heart disease. The syndrome is now known to have a heterogeneous presentation that includes multiple additional congenital anomalies and later-onset conditions, such as palatal, gastrointestinal and renal abnormalities, autoimmune disease, variable cognitive delays, behavioural phenotypes and psychiatric illness - all far extending the original description of DiGeorge syndrome. Management requires a multidisciplinary approach involving paediatrics, general medicine, surgery, psychiatry, psychology, interventional therapies (physical, occupational, speech, language and behavioural) and genetic counselling. Although common, lack of recognition of the condition and/or lack of familiarity with genetic testing methods, together with the wide variability of clinical presentation, delays diagnosis. Early diagnosis, preferably prenatally or neonatally, could improve outcomes, thus stressing the importance of universal screening. Equally important, 22q11.2DS has become a model for understanding rare and frequent congenital anomalies, medical conditions, psychiatric and developmental disorders, and may provide a platform to better understand these disorders while affording opportunities for translational strategies across the lifespan for both patients with 22q11.2DS and those with these associated features in the general population.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Child",
+        "DiGeorge Syndrome",
+        "Genetic Testing",
+        "Humans",
+        "Infant, Newborn",
+        "Patient Care Team"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4900471/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4900471/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/nrdp.2015.71"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27189754/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27189754/"
+    },
+    {
+      "pmid": "36010058",
+      "doi": "10.3390/children9081168",
+      "pmc_id": "PMC9406687",
+      "pmc_verify": null,
+      "title": "Deletion Syndrome 22q11.2: A Systematic Review.",
+      "authors": [
+        "Cortés-Martín Jonathan",
+        "Peñuela Nuria López",
+        "Sánchez-García Juan Carlos",
+        "Montiel-Troya Maria",
+        "Díaz-Rodríguez Lourdes",
+        "Rodríguez-Blanque Raquel"
+      ],
+      "journal": "Children (Basel, Switzerland)",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "22q11.2 deletion syndrome (DS 22q11.2) is a rare disease of genetic origin, caused by the loss of the q11.2 region of chromosome 22. It affects one in 4000 live newborns, and among the clinical manifestations that can occur in this syndrome are abnormalities in the parathyroid glands (producing calcium deficits), the palate, the heart and the thymus. It is also known as DiGeorge syndrome or velocardiofacial syndrome, among other names, depending on the clinical presentation of each individual. The main objective of the review was to update information on DS 22q11.2 from publications in the scientific literature. The daily activities of these patients are seriously impaired, due to the impact of the clinical manifestations. Interventions can be performed to improve their social, cognitive and emotional skills, thus increasing their ability to perform different daily activities.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "22q11.2 deletion syndrome",
+        "DiGeorge syndrome",
+        "congenital anomalies",
+        "daily activities",
+        "rare disease",
+        "velocardiofacial syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9406687/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9406687/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/children9081168"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36010058/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36010058/"
+    },
+    {
+      "pmid": "38884729",
+      "doi": "10.1007/978-3-031-44087-8_27",
+      "pmc_id": "4066638",
+      "pmc_verify": null,
+      "title": "Human Genetics of Ventricular Septal Defect.",
+      "authors": [
+        "Perrot Andreas",
+        "Rickert-Sperling Silke"
+      ],
+      "journal": "Advances in experimental medicine and biology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Ventricular septal defects (VSDs) are recognized as one of the commonest congenital heart diseases (CHD), accounting for up to 40% of all cardiac malformations, and occur as isolated CHDs as well as together with other cardiac and extracardiac congenital malformations in individual patients and families. The genetic etiology of VSD is complex and extraordinarily heterogeneous. Chromosomal abnormalities such as aneuploidy and structural variations as well as rare point mutations in various genes have been reported to be associated with this cardiac defect. This includes both well-defined syndromes with known genetic cause (e.g., DiGeorge syndrome and Holt-Oram syndrome) and so far undefined syndromic forms characterized by unspecific symptoms. Mutations in genes encoding cardiac transcription factors (e.g., NKX2-5 and GATA4) and signaling molecules (e.g., CFC1) have been most frequently found in VSD cases. Moreover, new high-resolution methods such as comparative genomic hybridization enabled the discovery of a high number of different copy number variations, leading to gain or loss of chromosomal regions often containing multiple genes, in patients with VSD. In this chapter, we will describe the broad genetic heterogeneity observed in VSD patients considering recent advances in this field.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Chromosome Aberrations",
+        "DNA Copy Number Variations",
+        "Genetic Predisposition to Disease",
+        "Heart Septal Defects, Ventricular",
+        "Mutation",
+        "Transcription Factors"
+      ],
+      "keywords": [
+        "22q11 deletion syndrome",
+        "ACP6",
+        "ACTC1",
+        "ADCY2",
+        "ASD",
+        "Adams–Oliver syndrome",
+        "Alagille syndrome",
+        "Atrial septal defect",
+        "B3GALTL",
+        "BCL9",
+        "BCOR",
+        "Blepharophimosis syndrome",
+        "Brugada syndrome",
+        "CACNA1D",
+        "CACNA1F",
+        "CACNA1S",
+        "CFC1",
+        "CHARGE syndrome",
+        "CHD1",
+        "CHD7",
+        "CITED2",
+        "CNV",
+        "CRKL",
+        "CRYPTIC",
+        "Char syndrome",
+        "Copy number variation",
+        "Cornelia de Lange syndrome",
+        "Costello syndrome",
+        "Cri-du-chat syndrome",
+        "DVL1",
+        "DiGeorge syndrome",
+        "Diaphragmatic hernia",
+        "Down syndrome",
+        "EVC1",
+        "EVC2",
+        "Edwards syndrome",
+        "Ellis–van Creveld syndrome",
+        "FBN1",
+        "FGFR3",
+        "FMO5",
+        "FOXL2",
+        "Frank–ter Haar syndrome",
+        "GATA4GATA binding protein (GATA)GATA4",
+        "GATA6",
+        "GDF3Growth differentiation factor (GDF)GDF3",
+        "GJA5",
+        "GPC3",
+        "GWAS",
+        "HAS2",
+        "HEY2",
+        "HRAS",
+        "Holt–Oram syndrome",
+        "Hypophosphatemia",
+        "IRX4",
+        "ISL1",
+        "JAG1",
+        "Jacobsen syndrome",
+        "KMT2A",
+        "Kabuki syndrome",
+        "Kleefstra syndrome",
+        "LBR",
+        "LVNC",
+        "Larsen-like syndrome",
+        "MAML3",
+        "MEIS2",
+        "MESP1",
+        "MID1",
+        "MKRN2",
+        "MLL2",
+        "MYBPC3",
+        "MYH6",
+        "MYH7",
+        "Marfan syndrome",
+        "Mowat–Wilson syndrome",
+        "Muenke syndrome",
+        "NF1",
+        "NIPBL",
+        "NKX2-5",
+        "NKX2-6",
+        "NOTCH1",
+        "NOTCH2",
+        "NSD1",
+        "NTRK3",
+        "Neurofibromatosis",
+        "Nodal",
+        "Noncompaction",
+        "Noonan syndrome",
+        "Noonan-like syndrome",
+        "Oculofaciocardiodental syndrome",
+        "Okihiro syndrome",
+        "Opitz syndrome",
+        "PITX2",
+        "PLCB2",
+        "PRKAB2",
+        "PTPN11",
+        "Pallister–Killian syndrome",
+        "Patau syndrome",
+        "Pelger–Huet anomaly",
+        "Peters plus syndrome",
+        "Potocki–Lupski syndrome",
+        "ROR2",
+        "Ras/MAPK",
+        "Robinow syndrome",
+        "SALL1",
+        "SALL4",
+        "SCN5A",
+        "SH3PXD2B",
+        "SHOC2",
+        "SMAD2",
+        "SOX7",
+        "Simpson–Golabi–Behmel syndrome",
+        "Sotos syndrome",
+        "TBX1",
+        "TBX15",
+        "TBX20T-box (TBX)TBX20",
+        "TBX3",
+        "TBX5",
+        "TDGF1",
+        "TFAP2B",
+        "TGFβTransforming growth factors (TGFs)TGFß",
+        "TNNI3",
+        "Townes–Brock syndrome",
+        "Trisomy 13",
+        "Trisomy 18",
+        "Trisomy 21",
+        "Ulnar–mammary syndrome",
+        "VSD",
+        "Velocardiofacial syndrome",
+        "Ventricular septal defect",
+        "Ventricular septum",
+        "WES",
+        "WNT5A",
+        "Whole exome sequencing",
+        "Williams–Beuren syndrome",
+        "Wolf–Hirschhorn syndrome",
+        "ZFHX1B",
+        "ZIC3"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4066638/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4066638/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/978-3-031-44087-8_27"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+    },
+    {
+      "pmid": "37176024",
+      "doi": "10.3390/ijms24098317",
+      "pmc_id": "PMC10179617",
+      "pmc_verify": null,
+      "title": "Chromosome 22q11.2 Deletion Syndrome: A Comprehensive Review of Molecular Genetics in the Context of Multidisciplinary Clinical Approach.",
+      "authors": [
+        "Szczawińska-Popłonyk Aleksandra",
+        "Schwartzmann Eyal",
+        "Chmara Zuzanna",
+        "Głukowska Antonina",
+        "Krysa Tomasz",
+        "Majchrzycki Maksymilian",
+        "Olejnicki Maurycy",
+        "Ostrowska Paulina",
+        "Babik Joanna"
+      ],
+      "journal": "International journal of molecular sciences",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The 22q11.2 deletion syndrome is a multisystemic disorder characterized by a marked variability of phenotypic features, making the diagnosis challenging for clinicians. The wide spectrum of clinical manifestations includes congenital heart defects-most frequently conotruncal cardiac anomalies-thymic hypoplasia and predominating cellular immune deficiency, laryngeal developmental defects, midline anomalies with cleft palate and velar insufficiency, structural airway defects, facial dysmorphism, parathyroid and thyroid gland hormonal dysfunctions, speech delay, developmental delay, and neurocognitive and psychiatric disorders. Significant progress has been made in understanding the complex molecular genetic etiology of 22q11.2 deletion syndrome underpinning the heterogeneity of clinical manifestations. The deletion is caused by chromosomal rearrangements in meiosis and is mediated by non-allelic homologous recombination events between low copy repeats or segmental duplications in the 22q11.2 region. A range of genetic modifiers and environmental factors, as well as the impact of hemizygosity on the remaining allele, contribute to the intricate genotype-phenotype relationships. This comprehensive review has been aimed at highlighting the molecular genetic background of 22q11.2 deletion syndrome in correlation with a clinical multidisciplinary approach.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "DiGeorge Syndrome",
+        "Chromosome Deletion",
+        "Heart Defects, Congenital",
+        "Molecular Biology",
+        "Chromosomes"
+      ],
+      "keywords": [
+        "22q11.2 deletion",
+        "DiGeorge syndrome",
+        "congenital heart defect",
+        "dysmorphism",
+        "hypocalcemia",
+        "inborn errors of immunity",
+        "microdeletion",
+        "thymus",
+        "velocardiofacial syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10179617/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10179617/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/ijms24098317"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37176024/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37176024/"
+    },
+    {
+      "pmid": "33098288",
+      "doi": "10.1093/abbs/gmaa113",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "22q11.2 deletion syndrome and schizophrenia.",
+      "authors": [
+        "Qin Xianzheng",
+        "Chen Jiang",
+        "Zhou Tian"
+      ],
+      "journal": "Acta biochimica et biophysica Sinica",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "22q11.2 deletion is a common microdeletion that causes an array of developmental defects including 22q11.2 deletion syndrome (22q11DS) or DiGeorge syndrome and velocardiofacial syndrome. About 30% of patients with 22q11.2 deletion develop schizophrenia. Mice with deletion of the ortholog region in mouse chromosome 16qA13 exhibit schizophrenia-like abnormal behaviors. It is suggested that the genes deleted in 22q11DS are involved in the pathogenesis of schizophrenia. Among these genes, COMT, ZDHHC8, DGCR8, and PRODH have been identified as schizophrenia susceptibility genes. And DGCR2 is also found to be associated with schizophrenia. In this review, we focused on these five genes and reviewed their functions in the brain and the potential pathophysiological mechanisms in schizophrenia, which will give us a deeper understanding of the pathology of schizophrenia.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Acyltransferases",
+        "Animals",
+        "Catechol O-Methyltransferase",
+        "DiGeorge Syndrome",
+        "Humans",
+        "Membrane Proteins",
+        "Platelet Glycoprotein GPIb-IX Complex",
+        "Proline Oxidase",
+        "RNA-Binding Proteins",
+        "Schizophrenia"
+      ],
+      "keywords": [
+        "COMT",
+        "DGCR2",
+        "PRODH",
+        "22q11DS",
+        "schizophrenia"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/abbs/gmaa113"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33098288/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33098288/"
+    },
+    {
+      "pmid": "26235889",
+      "doi": "10.1111/nyas.12849",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Severe combined immunodeficiency--an update.",
+      "authors": [
+        "Cirillo Emilia",
+        "Giardino Giuliana",
+        "Gallo Vera",
+        "D'Assante Roberta",
+        "Grasso Fiorentino",
+        "Romano Roberta",
+        "Di Lillo Cristina",
+        "Galasso Giovanni",
+        "Pignata Claudio"
+      ],
+      "journal": "Annals of the New York Academy of Sciences",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Severe combined immunodeficiencies (SCIDs) are a group of inherited disorders responsible for severe dysfunctions of the immune system. These diseases are life-threatening when the diagnosis is made too late; they are the most severe forms of primary immunodeficiency. SCID patients often die during the first two years of life if appropriate treatments to reconstitute their immune system are not undertaken. Conventionally, SCIDs are classified according either to the main pathway affected by the molecular defect or on the basis of the specific immunologic phenotype that reflects the stage where the blockage occurs during the differentiation process. However, during the last few years many new causative gene alterations have been associated with unusual clinical and immunological phenotypes. Many of these novel forms of SCID also show extra-hematopoietic alterations, leading to complex phenotypes characterized by a functional impairment of several organs, which may lead to a considerable delay in the diagnosis. Here we review the biological and clinical features of SCIDs paying particular attention to the most recently identified forms and to their unusual or extra-immunological clinical features.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Severe Combined Immunodeficiency"
+      ],
+      "keywords": [
+        "DiGeorge syndrome",
+        "SCID",
+        "cytokine",
+        "nude/SCID",
+        "primary immunodeficiency",
+        "severe combined immunodeficiency",
+        "thymus"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/nyas.12849"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26235889/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26235889/"
+    },
+    {
+      "pmid": "17041894",
+      "doi": "10.1002/bies.20484",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "DiGeorge syndrome and pharyngeal apparatus development.",
+      "authors": [
+        "Wurdak Heiko",
+        "Ittner Lars M",
+        "Sommer Lukas"
+      ],
+      "journal": "BioEssays : news and reviews in molecular, cellular and developmental biology",
+      "year": "2006",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "DiGeorge syndrome is the most frequent microdeletion syndrome in humans, and is characterized by cardiovascular, thymic and parathyroid, and craniofacial anomalies. The underlying cause is disturbed formation of the pharyngeal apparatus, a transient structure present during vertebrate development that gives rise to endocrine glands, craniofacial tissue, and the cardiac outflow tract. The pharyngeal apparatus is composed of derivatives of ectoderm, endoderm, mesoderm and the neural crest. Thus, complex interactions between cell types from different origins have to be orchestrated in the correct spatiotemporal manner to establish proper formation of the pharyngeal system. The analysis of engineered mouse mutants developing a phenotype resembling DiGeorge syndrome has revealed genes and signalling pathways crucial for this process. Intriguingly, these mouse models reveal that interference with either of two distinct phases of pharyngeal apparatus development can contribute to the aetiology of DiGeorge syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "DiGeorge Syndrome",
+        "Disease Progression",
+        "Humans",
+        "Pharyngeal Diseases",
+        "Signal Transduction",
+        "Time Factors"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/bies.20484"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17041894/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17041894/"
+    },
+    {
+      "pmid": "12125909",
+      "doi": "10.2302/kjm.51.77",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The 22q11.2 deletion syndrome.",
+      "authors": [
+        "Yamagishi Hiroyuki"
+      ],
+      "journal": "The Keio journal of medicine",
+      "year": "2002",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The 22q11.2 deletion syndrome (22q11DS) encompasses DiGeorge syndrome, velo-cardio-facial syndrome and conotruncal anomaly face syndrome and is due to a microdeletion of chromosome 22q11.2. This is the most frequent known interstitial deletion found in human with an incidence of 1 in 4,000 live births. A large number of clinical findings have been reported in affected patients, including cardiac defects, characteristic facial features, thymic hypoplasia, cleft palate, hypoparathyroidism, learning difficulties and psychiatric disorders. A comprehensive evaluation and follow-up program is necessary for patients with 22q11DS. A striking aspect of the 22q11DS phenotype is its variability, the basis of which remains unclear, and no phenotype-genotype correlation has been made. The structures primarily affected in patients with 22q11DS are derivatives of the embryonic pharyngeal arches and pouches suggesting that haploinsufficiency of the gene(s) on the deleted region, spanning 2-3 Mb, is important in pharyngeal arch/pouch development. Extensive gene searches have been successful in identifying more than 30 genes in the deleted segment. Although standard positional cloning has failed to demonstrate a role for any of these genes in the syndrome, the use of experimental animal models and advanced genome manipulation technologies in mice have been providing an insight into the developmental role of some of these genes, including TBXI. In this review, the clinical features and management of patients with 22q11DS are integrated with our current understanding of the embryological and molecular basis of this syndrome, as presented at the 1235th Meeting of The Keio Medical Society.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosomes, Human, Pair 22",
+        "DiGeorge Syndrome",
+        "Gene Deletion",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Hypoparathyroidism",
+        "Velopharyngeal Insufficiency"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2302/kjm.51.77"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12125909/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12125909/"
+    },
+    {
+      "pmid": "39753334",
+      "doi": "10.1136/gutjnl-2024-333522",
+      "pmc_id": "PMC12229063",
+      "pmc_verify": null,
+      "title": "Construction of exosome non-coding RNA feature for non-invasive, early detection of gastric cancer patients by machine learning: a multi-cohort study.",
+      "authors": [
+        "Cai Ze-Rong",
+        "Zheng Yong-Qiang",
+        "Hu Yan",
+        "Ma Meng-Yao",
+        "Wu Yi-Jin",
+        "Liu Jia",
+        "Yang Lu-Ping",
+        "Zheng Jia-Bo",
+        "Tian Tian",
+        "Hu Pei-Shan",
+        "Liu Ze-Xian",
+        "Zhang Lin",
+        "Xu Rui-Hua",
+        "Ju Huai-Qiang"
+      ],
+      "journal": "Gut",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND AND OBJECTIVE: Gastric cancer (GC) remains a prevalent and preventable disease, yet accurate early diagnostic methods are lacking. Exosome non-coding RNAs (ncRNAs), a type of liquid biopsy, have emerged as promising diagnostic biomarkers for various tumours. This study aimed to identify a serum exosome ncRNA feature for enhancing GC diagnosis. DESIGNS: Serum exosomes from patients with GC (n=37) and healthy donors (n=20) were characterised using RNA sequencing, and potential biomarkers for GC were validated through quantitative reverse transcription PCR (qRT-PCR) in both serum exosomes and tissues. A combined diagnostic model was developed using LASSO-logistic regression based on a cohort of 518 GC patients and 460 healthy donors, and its diagnostic performance was evaluated via receiver operating characteristic curves. RESULTS: RNA sequencing identified 182 candidate biomarkers for GC, of which 31 were validated as potential biomarkers by qRT-PCR. The combined diagnostic score (cd-score), derived from the expression levels of four long ncRNAs (RP11.443C10.1, CTD-2339L15.3, LINC00567 and DiGeorge syndrome critical region gene (DGCR9)), was found to surpass commonly used biomarkers, such as carcinoembryonic antigen, carbohydrate antigen 19-9 (CA19-9) and CA72-4, in distinguishing GC patients from healthy donors across training, testing and external validation cohorts, with AUC values of 0.959, 0.942 and 0.949, respectively. Additionally, the cd-score could effectively identify GC patients with negative gastrointestinal tumour biomarkers and those in early-stage. Furthermore, molecular biological assays revealed that knockdown of DGCR9 inhibited GC tumour growth. CONCLUSIONS: Our proposed serum exosome ncRNA feature provides a promising liquid biopsy approach for enhancing the early diagnosis of GC.",
+      "abstract_sections": {
+        "BACKGROUND AND OBJECTIVE": "Gastric cancer (GC) remains a prevalent and preventable disease, yet accurate early diagnostic methods are lacking. Exosome non-coding RNAs (ncRNAs), a type of liquid biopsy, have emerged as promising diagnostic biomarkers for various tumours. This study aimed to identify a serum exosome ncRNA feature for enhancing GC diagnosis.",
+        "DESIGNS": "Serum exosomes from patients with GC (n=37) and healthy donors (n=20) were characterised using RNA sequencing, and potential biomarkers for GC were validated through quantitative reverse transcription PCR (qRT-PCR) in both serum exosomes and tissues. A combined diagnostic model was developed using LASSO-logistic regression based on a cohort of 518 GC patients and 460 healthy donors, and its diagnostic performance was evaluated via receiver operating characteristic curves.",
+        "RESULTS": "RNA sequencing identified 182 candidate biomarkers for GC, of which 31 were validated as potential biomarkers by qRT-PCR. The combined diagnostic score (cd-score), derived from the expression levels of four long ncRNAs (RP11.443C10.1, CTD-2339L15.3, LINC00567 and DiGeorge syndrome critical region gene (DGCR9)), was found to surpass commonly used biomarkers, such as carcinoembryonic antigen, carbohydrate antigen 19-9 (CA19-9) and CA72-4, in distinguishing GC patients from healthy donors across training, testing and external validation cohorts, with AUC values of 0.959, 0.942 and 0.949, respectively. Additionally, the cd-score could effectively identify GC patients with negative gastrointestinal tumour biomarkers and those in early-stage. Furthermore, molecular biological assays revealed that knockdown of DGCR9 inhibited GC tumour growth.",
+        "CONCLUSIONS": "Our proposed serum exosome ncRNA feature provides a promising liquid biopsy approach for enhancing the early diagnosis of GC."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Stomach Neoplasms",
+        "Exosomes",
+        "Early Detection of Cancer",
+        "Male",
+        "Female",
+        "Biomarkers, Tumor",
+        "Middle Aged",
+        "Machine Learning",
+        "RNA, Long Noncoding",
+        "Aged",
+        "Cohort Studies",
+        "RNA, Untranslated",
+        "ROC Curve"
+      ],
+      "keywords": [
+        "GASTRIC CANCER",
+        "RNA EXPRESSION",
+        "TUMOUR MARKERS"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12229063/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12229063/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/gutjnl-2024-333522"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39753334/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39753334/"
+    },
+    {
+      "pmid": "36688311",
+      "doi": "10.1161/CIRCRESAHA.122.321722",
+      "pmc_id": "PMC10316962",
+      "pmc_verify": null,
+      "title": "ADAR1 Non-Editing Function in Macrophage Activation and Abdominal Aortic Aneurysm.",
+      "authors": [
+        "Cai Dunpeng",
+        "Sun Chenming",
+        "Murashita Takashi",
+        "Que Xingyi",
+        "Chen Shi-You"
+      ],
+      "journal": "Circulation research",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: Macrophage activation plays a critical role in abdominal aortic aneurysm (AAA) development. However, molecular mechanisms controlling macrophage activation and vascular inflammation in AAA remain largely unknown. The objective of the study was to identify novel mechanisms underlying adenosine deaminase acting on RNA (ADAR1) function in macrophage activation and AAA formation. METHODS: Aortic transplantation was conducted to determine the importance of nonvascular ADAR1 in AAA development/dissection. Ang II (Angiotensin II) infusion of ApoE-/- mouse model combined with macrophage-specific knockout of ADAR1 was used to study ADAR1 macrophage-specific role in AAA formation/dissection. The relevance of macrophage ADAR1 to human AAA was examined using human aneurysm specimens. Moreover, a novel humanized AAA model was established to test the role of human macrophages in aneurysm formation in human arteries. RESULTS: Allograft transplantation of wild-type abdominal aortas to ADAR1+/- recipient mice significantly attenuated AAA formation, suggesting that nonvascular ADAR1 is essential for AAA development. ADAR1 deficiency in hematopoietic cells decreased the prevalence and severity of AAA while inhibited macrophage infiltration and aorta wall inflammation. ADAR1 deletion blocked the classic macrophage activation, diminished NF-κB (nuclear factor kappa B) signaling, and enhanced the expression of a number of anti-inflammatory microRNAs. Mechanistically, ADAR1 interacted with Drosha to promote its degradation, which attenuated Drosha-DGCR8 (DiGeorge syndrome critical region 8) interaction, and consequently inhibited pri- to pre-microRNA processing of microRNAs targeting IKKβ, resulting in an increased IKKβ (inhibitor of nuclear factor kappa-B) expression and enhanced NF-κB signaling. Significantly, ADAR1 was induced in macrophages and interacted with Drosha in human AAA lesions. Reconstitution of ADAR1-deficient, but not the wild type, human monocytes to immunodeficient mice blocked the aneurysm formation in transplanted human arteries. CONCLUSIONS: Macrophage ADAR1 promotes aneurysm formation in both mouse and human arteries through a novel mechanism, that is, Drosha protein degradation, which inhibits the processing of microRNAs targeting NF-kB signaling and thus elicits macrophage-mediated vascular inflammation in AAA.",
+      "abstract_sections": {
+        "BACKGROUND": "Macrophage activation plays a critical role in abdominal aortic aneurysm (AAA) development. However, molecular mechanisms controlling macrophage activation and vascular inflammation in AAA remain largely unknown. The objective of the study was to identify novel mechanisms underlying adenosine deaminase acting on RNA (ADAR1) function in macrophage activation and AAA formation.",
+        "METHODS": "Aortic transplantation was conducted to determine the importance of nonvascular ADAR1 in AAA development/dissection. Ang II (Angiotensin II) infusion of ApoE-/- mouse model combined with macrophage-specific knockout of ADAR1 was used to study ADAR1 macrophage-specific role in AAA formation/dissection. The relevance of macrophage ADAR1 to human AAA was examined using human aneurysm specimens. Moreover, a novel humanized AAA model was established to test the role of human macrophages in aneurysm formation in human arteries.",
+        "RESULTS": "Allograft transplantation of wild-type abdominal aortas to ADAR1+/- recipient mice significantly attenuated AAA formation, suggesting that nonvascular ADAR1 is essential for AAA development. ADAR1 deficiency in hematopoietic cells decreased the prevalence and severity of AAA while inhibited macrophage infiltration and aorta wall inflammation. ADAR1 deletion blocked the classic macrophage activation, diminished NF-κB (nuclear factor kappa B) signaling, and enhanced the expression of a number of anti-inflammatory microRNAs. Mechanistically, ADAR1 interacted with Drosha to promote its degradation, which attenuated Drosha-DGCR8 (DiGeorge syndrome critical region 8) interaction, and consequently inhibited pri- to pre-microRNA processing of microRNAs targeting IKKβ, resulting in an increased IKKβ (inhibitor of nuclear factor kappa-B) expression and enhanced NF-κB signaling. Significantly, ADAR1 was induced in macrophages and interacted with Drosha in human AAA lesions. Reconstitution of ADAR1-deficient, but not the wild type, human monocytes to immunodeficient mice blocked the aneurysm formation in transplanted human arteries.",
+        "CONCLUSIONS": "Macrophage ADAR1 promotes aneurysm formation in both mouse and human arteries through a novel mechanism, that is, Drosha protein degradation, which inhibits the processing of microRNAs targeting NF-kB signaling and thus elicits macrophage-mediated vascular inflammation in AAA."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Mice",
+        "Animals",
+        "NF-kappa B",
+        "MicroRNAs",
+        "I-kappa B Kinase",
+        "Macrophage Activation",
+        "Mice, Knockout",
+        "RNA-Binding Proteins",
+        "Aortic Aneurysm, Abdominal",
+        "Aorta, Abdominal",
+        "Inflammation",
+        "Angiotensin II",
+        "Disease Models, Animal",
+        "Mice, Inbred C57BL",
+        "Adenosine Deaminase"
+      ],
+      "keywords": [
+        "abdominal aortic aneurysm",
+        "adenosine deaminases acting on RNA1",
+        "humanized AAA model",
+        "macrophage",
+        "microRNA"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10316962/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10316962/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1161/CIRCRESAHA.122.321722"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36688311/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36688311/"
+    },
+    {
+      "pmid": "11005797",
+      "doi": "10.1093/hmg/9.16.2421",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The 22q11 deletion syndromes.",
+      "authors": [
+        "Scambler P J"
+      ],
+      "journal": "Human molecular genetics",
+      "year": "2000",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "DiGeorge syndrome, velocardiofacial syndrome and various other malformations have been described in association with deletions and translocations involving human chromosome 22q11. Many of the structural malformations observed are also seen in animal models of neural crest disruption suggesting that the haplo-insufficiency resulting from the deletion somehow affects this group of cells or their interactions. Over the past few years it has been shown that the deletion predisposes to a range of psychotic conditions prompting the hypothesis that the deleted region may contain a predisposition locus for psychotic illness. The DiGeorge chromosomal region has been entirely sequenced and many of the genes mapping to the deletion interval have been studied in some detail. Despite these efforts, no gene has yet been proved to play a defined role in the pathogenesis of the syndrome. Current efforts are directed at the study of engineered chromosome mouse models which offer the potential to dissect at least some of the developmental pathways disrupted in this intriguing group of malformation syndromes.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Animals",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 22",
+        "Disease Models, Animal",
+        "Forecasting",
+        "Humans",
+        "Mice",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/hmg/9.16.2421"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11005797/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11005797/"
+    },
+    {
+      "pmid": "11892070",
+      "doi": "10.1007/s11882-001-0029-z",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "DiGeorge syndrome/chromosome 22q11.2 deletion syndrome.",
+      "authors": [
+        "Sullivan K E"
+      ],
+      "journal": "Current allergy and asthma reports",
+      "year": "2001",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "DiGeorge syndrome is characterized by conotruncal cardiac defects, hypocalcemia, and a hypoplastic thymus. Many, but not all, patients have a heterozygous deletion of chromosome 22q11.2. In its most severe form, it represents a devastating syndrome with high mortality. Patients with severe immunodeficiency are candidates for a thymic transplant or a fully matched bone marrow transplant. Fortunately, the majority of patients with either DiGeorge syndrome or chromosome 22q11.2 deletion syndrome have a mild to moderate immunodeficiency. These patients may develop recurrent infections or autoimmune disease.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 22",
+        "DiGeorge Syndrome",
+        "Humans",
+        "Immunologic Deficiency Syndromes"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s11882-001-0029-z"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11892070/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11892070/"
+    },
+    {
+      "pmid": "37129215",
+      "doi": "10.1177/19322968231170884",
+      "pmc_id": "PMC10658697",
+      "pmc_verify": null,
+      "title": "Evidence and Diabetes Technology: A Catch-22?",
+      "authors": [
+        "Hermanns Norbert",
+        "Kulzer Bernd",
+        "Klonoff David C",
+        "Heinemann Lutz"
+      ],
+      "journal": "Journal of diabetes science and technology",
+      "year": "2023",
+      "publication_types": [
+        "Editorial"
+      ],
+      "abstract": "Diabetes technology is a dynamically evolving field. Sometimes the pace of evaluation of new diabetes technologies does not keep pace with its dynamic development. This leads to a dilemma: either the evaluation lags behind the developing technologies or diabetes technologies are used without sufficient evaluation. This situation is known as the Catch 22 dilemma. The aim of this paper is a discussion of ideas for a timely assessment, taking account of the speed of technological development and the need for evidence and safety improvement.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Blood Glucose",
+        "Blood Glucose Self-Monitoring",
+        "Diabetes Mellitus",
+        "Diabetes Mellitus, Type 1",
+        "Technology",
+        "Insulin",
+        "Hypoglycemic Agents"
+      ],
+      "keywords": [
+        "CGM systems",
+        "diabetes technology",
+        "evidence",
+        "glucose monitoring",
+        "insulin pens"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10658697/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10658697/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1177/19322968231170884"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37129215/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37129215/"
+    },
+    {
+      "pmid": "28648505",
+      "doi": "10.1016/j.beem.2017.04.004",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Hypothyroidism associated with parathyroid disorders.",
+      "authors": [
+        "Mantovani Giovanna",
+        "Elli Francesca Marta",
+        "Corbetta Sabrina"
+      ],
+      "journal": "Best practice & research. Clinical endocrinology & metabolism",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Hypothyroidism may occur in association with congenital parathyroid disorders determining parathyroid hormone insufficiency, which is characterized by hypocalcemia and concomitant inappropriately low secretion of parathormone (PTH). The association is often due to loss of function of genes common to thyroid and parathyroid glands embryonic development. Hypothyroidism associated with hypoparathyroidism is generally mild and not associated with goiter; moreover, it is usually part of a multisystemic involvement not restricted to endocrine function as occurs in patients with 22q11 microdeletion/DiGeorge syndrome, the most frequent disorders. Hypothyroidism and hypoparathyroidism may also follow endocrine glands' damages due to autoimmunity or chronic iron overload in thalassemic disorders, both genetically determined conditions. Finally, besides PTH deficiency, hypocalcemia can be due to PTH resistance in pseudohypoparathyroidism; when hormone resistance is generalized, patients can suffer from hypothyroidism due to TSH resistance. In evaluating patients with hypothyroidism and hypocalcemia, physical examination and clinical history are essential to drive the diagnostic process, while routine genetic screening is not recommended.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Autoimmunity",
+        "Calcium",
+        "Female",
+        "Goiter",
+        "Humans",
+        "Hypocalcemia",
+        "Hypoparathyroidism",
+        "Hypothyroidism",
+        "Male",
+        "Parathyroid Diseases",
+        "Parathyroid Glands",
+        "Parathyroid Hormone",
+        "Thyroid Hormone Resistance Syndrome"
+      ],
+      "keywords": [
+        "DiGeorge syndrome",
+        "hypoparathyroidism",
+        "parathyroid",
+        "pseudohypoparathyroidism",
+        "thyroid"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.beem.2017.04.004"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28648505/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28648505/"
+    },
+    {
+      "pmid": "15096950",
+      "doi": "10.1097/00001573-200405000-00002",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "DiGeorge syndrome: an update.",
+      "authors": [
+        "Baldini Antonio"
+      ],
+      "journal": "Current opinion in cardiology",
+      "year": "2004",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: This article is an update on DiGeorge syndrome research focusing on the synergy of human and model systems genetics toward the understanding of conotruncal and aortic arch defects. RECENT FINDINGS: The identification of mutations of the human T-Box1 (TBX1) gene and progress on research of Tbx1 function in mouse development demonstrate the pathogenetic role of this gene in DiGeorge syndrome and generate new hypotheses about its function in cardiovascular development. SUMMARY: The Tbx1 genetic pathway and the cell biology of tissues contributing to pharyngeal arch arteries and cardiac outflow tract are the foundation for understanding congenital heart disease in DiGeorge syndrome.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "This article is an update on DiGeorge syndrome research focusing on the synergy of human and model systems genetics toward the understanding of conotruncal and aortic arch defects.",
+        "RECENT FINDINGS": "The identification of mutations of the human T-Box1 (TBX1) gene and progress on research of Tbx1 function in mouse development demonstrate the pathogenetic role of this gene in DiGeorge syndrome and generate new hypotheses about its function in cardiovascular development.",
+        "SUMMARY": "The Tbx1 genetic pathway and the cell biology of tissues contributing to pharyngeal arch arteries and cardiac outflow tract are the foundation for understanding congenital heart disease in DiGeorge syndrome."
+      },
+      "mesh_terms": [
+        "Animals",
+        "Aorta, Thoracic",
+        "DiGeorge Syndrome",
+        "Heart Septal Defects, Ventricular",
+        "Humans",
+        "Mutation",
+        "T-Box Domain Proteins",
+        "Tetralogy of Fallot"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/00001573-200405000-00002"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15096950/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15096950/"
+    },
+    {
+      "pmid": "35645294",
+      "doi": "10.3390/jdb10020018",
+      "pmc_id": "PMC9149807",
+      "pmc_verify": null,
+      "title": "Craniofacial Phenotypes and Genetics of DiGeorge Syndrome.",
+      "authors": [
+        "Funato Noriko"
+      ],
+      "journal": "Journal of developmental biology",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The 22q11.2 deletion is one of the most common genetic microdeletions, affecting approximately 1 in 4000 live births in humans. A 1.5 to 2.5 Mb hemizygous deletion of chromosome 22q11.2 causes DiGeorge syndrome (DGS) and velocardiofacial syndrome (VCFS). DGS/VCFS are associated with prevalent cardiac malformations, thymic and parathyroid hypoplasia, and craniofacial defects. Patients with DGS/VCFS manifest craniofacial anomalies involving the cranium, cranial base, jaws, pharyngeal muscles, ear-nose-throat, palate, teeth, and cervical spine. Most craniofacial phenotypes of DGS/VCFS are caused by proximal 1.5 Mb microdeletions, resulting in a hemizygosity of coding genes, microRNAs, and long noncoding RNAs. TBX1, located on chromosome 22q11.21, encodes a T-box transcription factor and is a candidate gene for DGS/VCFS. TBX1 regulates the fate of progenitor cells in the cranial and pharyngeal apparatus during embryogenesis. Tbx1-null mice exhibit the most clinical features of DGS/VCFS, including craniofacial phenotypes. Despite the frequency of DGS/VCFS, there has been a limited review of the craniofacial phenotypes of DGC/VCFS. This review focuses on these phenotypes and summarizes the current understanding of the genetic factors that impact DGS/VCFS-related phenotypes. We also review DGS/VCFS mouse models that have been designed to better understand the pathogenic processes of DGS/VCFS.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "22q11.2 deletion syndrome",
+        "DiGeorge syndrome",
+        "cleft palate",
+        "cleidocranial dysplasia",
+        "hyoid bone",
+        "skull base",
+        "teeth abnormalities",
+        "velocardiofacial syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9149807/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9149807/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/jdb10020018"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35645294/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35645294/"
+    }
+  ],
+  "pubmed_discovery": {
+    "review": {
+      "query": "(\"DiGeorge syndrome\"[Title/Abstract] OR \"Catch22\"[Title/Abstract] OR \"THIRD AND FOURTH PHARYNGEAL POUCH SYNDROME\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "27189754",
+        "36897497",
+        "36010058",
+        "21200182",
+        "34776076"
+      ]
+    },
+    "genetics": {
+      "query": "(\"DiGeorge syndrome\"[Title/Abstract] OR \"Catch22\"[Title/Abstract] OR \"THIRD AND FOURTH PHARYNGEAL POUCH SYNDROME\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "36897497",
+        "36010058",
+        "34776076",
+        "21200182",
+        "38884729",
+        "40038168",
+        "31747205",
+        "37176024",
+        "36648576",
+        "33098288"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"DiGeorge syndrome\"[Title/Abstract] OR \"Catch22\"[Title/Abstract] OR \"THIRD AND FOURTH PHARYNGEAL POUCH SYNDROME\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "34776076",
+        "31747205",
+        "37176024",
+        "26235889",
+        "17041894",
+        "12125909",
+        "39753334",
+        "36688311",
+        "11005797",
+        "24075926"
+      ]
+    },
+    "cohort": {
+      "query": "(\"DiGeorge syndrome\"[Title/Abstract] OR \"Catch22\"[Title/Abstract] OR \"THIRD AND FOURTH PHARYNGEAL POUCH SYNDROME\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "21200182",
+        "36010058",
+        "31747205",
+        "36648576",
+        "33098288"
+      ]
+    },
+    "general": {
+      "query": "(\"DiGeorge syndrome\"[Title/Abstract] OR \"Catch22\"[Title/Abstract] OR \"THIRD AND FOURTH PHARYNGEAL POUCH SYNDROME\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "36897497",
+        "21200182",
+        "36010058",
+        "36648576",
+        "11892070",
+        "37129215",
+        "28648505",
+        "15096950",
+        "35645294",
+        "30565249"
+      ]
+    }
+  },
+  "meta": {
+    "syndrome": "DiGeorge syndrome",
+    "collected_at": "2026-08-12T04:26:00.359406Z",
+    "work_dir": "output/digeorge_syndrome",
+    "steps": {
+      "01_disease_info": "output/digeorge_syndrome/01_disease_info.json",
+      "02_articles": "output/digeorge_syndrome/02_articles.json",
+      "03_markers": "output/digeorge_syndrome/03_markers.json"
+    },
+    "annotation_sources": {
+      "medgen": "NCBI MedGen HTML (공개)",
+      "pubmed": "NCBI PubMed ESearch+EFetch (공개)",
+      "ncbi_gene": "NCBI Gene ESearch+ESummary",
+      "clingen": "https://ftp.clinicalgenome.org/ClinGen_gene_curation_list_GRCh38.tsv",
+      "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+      "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+    }
+  }
+}

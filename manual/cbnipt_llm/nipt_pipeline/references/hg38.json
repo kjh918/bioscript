@@ -1,0 +1,127 @@
+{
+  "assembly": "GRCh38",
+  "version": "GRCh38.p14",
+  "source": "UCSC hg38 / NCBI GRCh38.p14 (GCA_000001405.29)",
+  "chromosomes": {
+    "chr1": {
+      "p_arm":      { "start": 1,         "end": 121700000 },
+      "centromere": { "start": 121700001, "end": 125100000 },
+      "q_arm":      { "start": 125100001, "end": 248956422 }
+    },
+    "chr2": {
+      "p_arm":      { "start": 1,         "end": 91800000 },
+      "centromere": { "start": 91800001,  "end": 96000000 },
+      "q_arm":      { "start": 96000001,  "end": 242193529 }
+    },
+    "chr3": {
+      "p_arm":      { "start": 1,         "end": 87900000 },
+      "centromere": { "start": 87900001,  "end": 93900000 },
+      "q_arm":      { "start": 93900001,  "end": 198295559 }
+    },
+    "chr4": {
+      "p_arm":      { "start": 1,         "end": 48200000 },
+      "centromere": { "start": 48200001,  "end": 52700000 },
+      "q_arm":      { "start": 52700001,  "end": 190214555 }
+    },
+    "chr5": {
+      "p_arm":      { "start": 1,         "end": 46100000 },
+      "centromere": { "start": 46100001,  "end": 51400000 },
+      "q_arm":      { "start": 51400001,  "end": 181538259 }
+    },
+    "chr6": {
+      "p_arm":      { "start": 1,         "end": 58500000 },
+      "centromere": { "start": 58500001,  "end": 63600000 },
+      "q_arm":      { "start": 63600001,  "end": 170805979 }
+    },
+    "chr7": {
+      "p_arm":      { "start": 1,         "end": 58900000 },
+      "centromere": { "start": 58900001,  "end": 63900000 },
+      "q_arm":      { "start": 63900001,  "end": 159345973 }
+    },
+    "chr8": {
+      "p_arm":      { "start": 1,         "end": 43200000 },
+      "centromere": { "start": 43200001,  "end": 47200000 },
+      "q_arm":      { "start": 47200001,  "end": 145138636 }
+    },
+    "chr9": {
+      "p_arm":      { "start": 1,         "end": 42200000 },
+      "centromere": { "start": 42200001,  "end": 46600000 },
+      "q_arm":      { "start": 46600001,  "end": 138394717 }
+    },
+    "chr10": {
+      "p_arm":      { "start": 1,         "end": 38000000 },
+      "centromere": { "start": 38000001,  "end": 41600000 },
+      "q_arm":      { "start": 41600001,  "end": 133797422 }
+    },
+    "chr11": {
+      "p_arm":      { "start": 1,         "end": 51000000 },
+      "centromere": { "start": 51000001,  "end": 55800000 },
+      "q_arm":      { "start": 55800001,  "end": 135086622 }
+    },
+    "chr12": {
+      "p_arm":      { "start": 1,         "end": 33200000 },
+      "centromere": { "start": 33200001,  "end": 37800000 },
+      "q_arm":      { "start": 37800001,  "end": 133275309 }
+    },
+    "chr13": {
+      "p_arm":      { "start": 1,         "end": 16500000 },
+      "centromere": { "start": 16500001,  "end": 18900000 },
+      "q_arm":      { "start": 18900001,  "end": 114364328 }
+    },
+    "chr14": {
+      "p_arm":      { "start": 1,         "end": 16100000 },
+      "centromere": { "start": 16100001,  "end": 18200000 },
+      "q_arm":      { "start": 18200001,  "end": 107043718 }
+    },
+    "chr15": {
+      "p_arm":      { "start": 1,         "end": 17500000 },
+      "centromere": { "start": 17500001,  "end": 20500000 },
+      "q_arm":      { "start": 20500001,  "end": 101991189 }
+    },
+    "chr16": {
+      "p_arm":      { "start": 1,         "end": 35300000 },
+      "centromere": { "start": 35300001,  "end": 38400000 },
+      "q_arm":      { "start": 38400001,  "end": 90338345 }
+    },
+    "chr17": {
+      "p_arm":      { "start": 1,         "end": 22700000 },
+      "centromere": { "start": 22700001,  "end": 27400000 },
+      "q_arm":      { "start": 27400001,  "end": 83257441 }
+    },
+    "chr18": {
+      "p_arm":      { "start": 1,         "end": 15400000 },
+      "centromere": { "start": 15400001,  "end": 21500000 },
+      "q_arm":      { "start": 21500001,  "end": 80373285 }
+    },
+    "chr19": {
+      "p_arm":      { "start": 1,         "end": 24200000 },
+      "centromere": { "start": 24200001,  "end": 28100000 },
+      "q_arm":      { "start": 28100001,  "end": 58617616 }
+    },
+    "chr20": {
+      "p_arm":      { "start": 1,         "end": 25700000 },
+      "centromere": { "start": 25700001,  "end": 30400000 },
+      "q_arm":      { "start": 30400001,  "end": 64444167 }
+    },
+    "chr21": {
+      "p_arm":      { "start": 1,         "end": 10900000 },
+      "centromere": { "start": 10900001,  "end": 13000000 },
+      "q_arm":      { "start": 13000001,  "end": 46709983 }
+    },
+    "chr22": {
+      "p_arm":      { "start": 1,         "end": 13700000 },
+      "centromere": { "start": 13700001,  "end": 17400000 },
+      "q_arm":      { "start": 17400001,  "end": 50818468 }
+    },
+    "chrX": {
+      "p_arm":      { "start": 1,         "end": 58100000 },
+      "centromere": { "start": 58100001,  "end": 63800000 },
+      "q_arm":      { "start": 63800001,  "end": 156040895 }
+    },
+    "chrY": {
+      "p_arm":      { "start": 1,         "end": 10300000 },
+      "centromere": { "start": 10300001,  "end": 10600000 },
+      "q_arm":      { "start": 10600001,  "end": 57227415 }
+    }
+  }
+}
