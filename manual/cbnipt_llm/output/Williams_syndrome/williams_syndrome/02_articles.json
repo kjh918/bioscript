@@ -1,0 +1,2687 @@
+{
+  "discovery": {
+    "review": {
+      "query": "(\"Williams syndrome\"[Title/Abstract] OR \"CHROMOSOME 7q11.23 DELETION SYNDROME, 1.5- TO 1.8-MB\"[Title/Abstract] OR \"WILLIAMS-BEUREN SYNDROME\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "34140529",
+        "20089974",
+        "20301427",
+        "27906503",
+        "38460606"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Williams syndrome\"[Title/Abstract] OR \"CHROMOSOME 7q11.23 DELETION SYNDROME, 1.5- TO 1.8-MB\"[Title/Abstract] OR \"WILLIAMS-BEUREN SYNDROME\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "34140529",
+        "20301427",
+        "30811742",
+        "38884729",
+        "31334998",
+        "29501665",
+        "33101065",
+        "39368701",
+        "36152627",
+        "11701637"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Williams syndrome\"[Title/Abstract] OR \"CHROMOSOME 7q11.23 DELETION SYNDROME, 1.5- TO 1.8-MB\"[Title/Abstract] OR \"WILLIAMS-BEUREN SYNDROME\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "34140529",
+        "20301427",
+        "26610320",
+        "20425781",
+        "29681090",
+        "16472876",
+        "35196168",
+        "11701637",
+        "10469848",
+        "38085853"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Williams syndrome\"[Title/Abstract] OR \"CHROMOSOME 7q11.23 DELETION SYNDROME, 1.5- TO 1.8-MB\"[Title/Abstract] OR \"WILLIAMS-BEUREN SYNDROME\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "30811742",
+        "31334998",
+        "29681090",
+        "7547491",
+        "39368701"
+      ]
+    },
+    "general": {
+      "query": "(\"Williams syndrome\"[Title/Abstract] OR \"CHROMOSOME 7q11.23 DELETION SYNDROME, 1.5- TO 1.8-MB\"[Title/Abstract] OR \"WILLIAMS-BEUREN SYNDROME\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "20089974",
+        "20301427",
+        "30811742",
+        "31964759",
+        "31334998",
+        "21189808",
+        "34891220",
+        "34317455",
+        "7547491",
+        "34140526"
+      ]
+    }
+  },
+  "pmids": [
+    "36520254",
+    "31964759",
+    "28382779",
+    "37589562",
+    "37037070",
+    "33369485",
+    "31419598",
+    "30045083",
+    "34140529",
+    "34140526",
+    "20089974",
+    "7547491",
+    "32127269",
+    "26456018",
+    "26138838",
+    "34619410",
+    "26705693",
+    "23539923",
+    "16472876",
+    "35416284",
+    "17562583",
+    "36007813",
+    "32157657",
+    "32087508",
+    "31336213",
+    "30231111",
+    "20301427",
+    "27906503",
+    "38460606",
+    "30811742",
+    "38884729",
+    "31334998",
+    "29501665",
+    "33101065",
+    "39368701",
+    "36152627",
+    "11701637",
+    "26610320",
+    "20425781",
+    "29681090",
+    "35196168",
+    "10469848",
+    "38085853",
+    "21189808",
+    "34891220",
+    "34317455"
+  ],
+  "articles": {
+    "36520254": {
+      "pmid": "36520254",
+      "doi": "10.1007/s11065-022-09571-2",
+      "pmc_id": "2805335",
+      "pmc_verify": null,
+      "title": "Neuropsychological Genotype-Phenotype in Patients with Williams Syndrome with Atypical Deletions: A Systematic Review.",
+      "authors": [
+        "Serrano-Juárez Carlos Alberto",
+        "Prieto-Corona Belén",
+        "Rodríguez-Camacho Mario",
+        "Sandoval-Lira Lucero",
+        "Villalva-Sánchez Ángel Fernando",
+        "Yáñez-Téllez Ma Guillermina",
+        "López María Fernanda Rangel"
+      ],
+      "journal": "Neuropsychology review",
+      "year": "2023",
+      "publication_types": [
+        "Systematic Review",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Williams syndrome (WS) is a neurodevelopmental disorder caused by a microdeletion in the q11.23 region of chromosome 7. Recent case series reports and clinical case studies have suggested that the cognitive, behavioral, emotional, and social profile in WS could depend on the genes involved in the deletion. The objective of this systematic review was to analyze and synthesize the variability of the cognitive and behavioral profile of WS with atypical deletion and its probable relationship with the affected genes. The medical subject headings searched were \"Williams syndrome,\" \"genotype,\" \"phenotype,\" \"cognitive profile,\" and \"atypical deletion.\" The studies included were in English or Spanish, with children and adults, and published between January 2000 and October 2022. Twenty-three studies are reported. The characteristics of the participants, the genes involved, the neuropsychological domains and instruments, and the prevalence of the WS cognitive profile criteria were used for the genotype-phenotype analysis. The genes with a major impact on the cognitive profile of WS were (a) LIMK1 and those belonging to the GTF2I family, the former with a greater influence on visuospatial abilities; (b) GTF2IRD1 and GTF2I, which have an impact on intellectual capacity as well as on visuospatial and social skills; (c) FZD9, BAZ1B, STX1A, and CLIP2, which influence the cognitive profile if other genes are also effected; and (d) GTF2IRD2, which is related to the severity of the effect on visuospatial and social skills, producing a behavioral phenotype like that of the autism spectrum. The review revealed four neuropsychological phenotypes, depending on the genes involved, and established the need for more comprehensive study of the neuropsychological profile of these patients. Based on the results found, we propose a model for the investigation of and clinical approach to the WS neuropsychological phenotype.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Adult",
+        "Humans",
+        "Williams Syndrome",
+        "Genotype",
+        "Phenotype",
+        "Neurodevelopmental Disorders",
+        "Transcription Factors, TFIII",
+        "Lim Kinases",
+        "Bromodomain Containing Proteins",
+        "Transcription Factors"
+      ],
+      "keywords": [
+        "Cognition",
+        "Genes",
+        "Genotype",
+        "Neuropsychological phenotype",
+        "Williams syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2805335/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2805335/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s11065-022-09571-2"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36520254/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36520254/"
+    },
+    "31964759": {
+      "pmid": "31964759",
+      "doi": "10.1542/peds.2019-3761",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Health Care Supervision for Children With Williams Syndrome.",
+      "authors": [
+        "Morris Colleen A",
+        "Braddock Stephen R",
+        "COUNCIL ON GENETICS"
+      ],
+      "journal": "Pediatrics",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
+      ],
+      "abstract": "This set of recommendations is designed to assist the pediatrician in caring for children with Williams syndrome (WS) who were diagnosed by using clinical features and with chromosome 7 microdeletion confirmed by fluorescence in situ hybridization, chromosome microarray, or multiplex ligation-dependent probe amplification. The recommendations in this report reflect review of the current literature, including previously peer-reviewed and published management suggestions for WS, as well as the consensus of physicians and psychologists with expertise in the care of individuals with WS. These general recommendations for the syndrome do not replace individualized medical assessment and treatment.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Age Factors",
+        "Cardiovascular Abnormalities",
+        "Child",
+        "Child, Preschool",
+        "Constipation",
+        "Dental Care for Children",
+        "Facies",
+        "Female",
+        "Hearing Disorders",
+        "Humans",
+        "Hypercalcemia",
+        "Hypothyroidism",
+        "Infant",
+        "Male",
+        "Nervous System Diseases",
+        "Photography",
+        "Physical Examination",
+        "Problem Behavior",
+        "Transition to Adult Care",
+        "Urinary Tract",
+        "Williams Syndrome",
+        "Young Adult"
+      ],
+      "keywords": [
+        "ADHD",
+        "SVAS",
+        "WS",
+        "Williams syndrome",
+        "attention-deficit/hyperactivity disorder",
+        "supravalvular aortic stenosis"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1542/peds.2019-3761"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31964759/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31964759/"
+    },
+    "28382779": {
+      "pmid": "28382779",
+      "doi": "10.1111/chd.12447",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Peri-procedural risk stratification and management of patients with Williams syndrome.",
+      "authors": [
+        "Collins Ii R Thomas",
+        "Collins Margaret G",
+        "Schmitz Michael L",
+        "Hamrick Justin T"
+      ],
+      "journal": "Congenital heart disease",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Williams syndrome (WS) is a congenital, multisystem disorder affecting the cardiovascular, connective tissue, and central nervous systems in 1 in 10 000 live births. Cardiovascular involvement is the most common cause of morbidity and mortality in patients with WS, and noninvasive and invasive procedures are common. Sudden cardiovascular collapse in patients with WS is a well-known phenomenon, especially in the peri-procedural period. Detailed guidelines for peri-procedural management of patients with WS are limited. The goal of this review is to provide thoughtful, safe and effective management strategies for the peri-procedural care of patients with WS with careful consideration of hemodynamic impacts of anesthetic strategies. In addition, an expanded risk stratification system for anesthetic administration is provided.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anesthesia",
+        "Cardiovascular System",
+        "Death, Sudden, Cardiac",
+        "Hemodynamics",
+        "Humans",
+        "Risk Assessment",
+        "Risk Factors",
+        "Shock",
+        "Treatment Outcome",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Williams syndrome",
+        "anesthesia",
+        "cardiac arrest",
+        "dentistry",
+        "perioperative care",
+        "surgery"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/chd.12447"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28382779/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28382779/"
+    },
+    "37589562": {
+      "pmid": "37589562",
+      "doi": "10.1097/ICU.0000000000000990",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Ocular features in Williams-Beuren syndrome: a review of the literature.",
+      "authors": [
+        "Nassisi Marco",
+        "Mainetti Claudia",
+        "Aretti Andrea",
+        "Sperti Andrea",
+        "Nicotra Valeria",
+        "Rinaldi Berardo",
+        "Natacci Federica",
+        "Bedeschi Maria Francesca",
+        "Viola Francesco"
+      ],
+      "journal": "Current opinion in ophthalmology",
+      "year": "2023",
+      "publication_types": [
+        "Review",
+        "Journal Article"
+      ],
+      "abstract": "PURPOSE OF REVIEW: The current review will discuss the pathophysiology, work-up and clinical relevance of the ocular phenotype in Williams-Beuren syndrome in detail. RECENT FINDINGS: Few case reports, case series and retrospective studies reported the ophthalmic features in Williams-Beuren syndrome, focusing on specific aspects of the ocular involvement. Recently, novel retinal findings have been described in association with the disease. SUMMARY: Numerous ocular features have been described in Williams-Beuren syndrome. Some of them, such as the stellate pattern of the iris or the retinal arteriolar tortuosity may be helpful for the diagnosis but have no significant clinical implications; others, such as strabismus and refractive errors require early treatment to reduce the risk of irreversible visual impairment. Finally, some features, such as a broad foveal pit and thinner retina still have unknown significance and require further longitudinal and multimodal studies.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "The current review will discuss the pathophysiology, work-up and clinical relevance of the ocular phenotype in Williams-Beuren syndrome in detail.",
+        "RECENT FINDINGS": "Few case reports, case series and retrospective studies reported the ophthalmic features in Williams-Beuren syndrome, focusing on specific aspects of the ocular involvement. Recently, novel retinal findings have been described in association with the disease.",
+        "SUMMARY": "Numerous ocular features have been described in Williams-Beuren syndrome. Some of them, such as the stellate pattern of the iris or the retinal arteriolar tortuosity may be helpful for the diagnosis but have no significant clinical implications; others, such as strabismus and refractive errors require early treatment to reduce the risk of irreversible visual impairment. Finally, some features, such as a broad foveal pit and thinner retina still have unknown significance and require further longitudinal and multimodal studies."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Williams Syndrome",
+        "Retrospective Studies",
+        "Strabismus",
+        "Retina",
+        "Iris"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/ICU.0000000000000990"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37589562/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37589562/"
+    },
+    "37037070": {
+      "pmid": "37037070",
+      "doi": "10.1016/j.amjcard.2023.03.004",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Arrhythmias in Williams Syndrome.",
+      "authors": [
+        "Deitch Anna M",
+        "Giacone Heather M",
+        "Chubb Henry",
+        "Algaze Claudia A",
+        "Lechich Kirstie MacMillen",
+        "Collins R Thomas"
+      ],
+      "journal": "The American journal of cardiology",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Williams syndrome (WS) is a congenital, multisystem disorder in which 80% of patients have cardiovascular abnormalities. Sudden cardiac death occurs 25 to 100 times more often in WS than in the general population, and cardiac repolarization is abnormal in WS. We sought to determine the prevalence of primary arrhythmias in patients with WS and whether QTc prolongation impacts arrhythmia risk. We retrospectively reviewed all patients with WS with ambulatory electrocardiogram (ECG) monitoring at our institution between October 2017 and January 2022. The primary outcome was the presence of arrhythmia. Predictors pre-determined for analysis included premature ventricular and atrial complex burden (%), degree of QTc change with varying heart rates, intervals and rhythm on 12-lead ECG, age, gender, symptomatology, and clinical and surgical history. A total of 74 patients (55% female, median age 8 years (3, 13) underwent 108 ambulatory monitors. Arrhythmias were present in 9 patients (12%). Within this group of 9 patients, 18/24 serial monitors were abnormal, and 3/9 patients (33%) had >1 arrhythmia type. Older age (p = 0.002) and symptoms (syncope, p = 0.005) were associated with arrhythmias. Arrhythmia was not associated with the degree of structural heart disease. Atrial tachycardia was the most identified arrhythmia (n = 6; 67% of patients with arrhythmias and 8% of the total cohort). The QTc abnormally increased with higher heart rates in all groups. There was a higher number of premature ventricular and atrial complexes per hour in patients with arrhythmias. In conclusion, atrial arrhythmias were the most common arrhythmia in patients with WS and routine ambulatory ECG and intermittent rhythm monitoring are indicated in WS, particularly given the high risk of sudden cardiac death in WS.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Child",
+        "Male",
+        "Williams Syndrome",
+        "Retrospective Studies",
+        "Arrhythmias, Cardiac",
+        "Electrocardiography",
+        "Electrocardiography, Ambulatory",
+        "Death, Sudden, Cardiac"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.amjcard.2023.03.004"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37037070/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37037070/"
+    },
+    "33369485": {
+      "pmid": "33369485",
+      "doi": "10.1080/14740338.2021.1867535",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Psychopharmacology of Williams syndrome: safety, tolerability, and effectiveness.",
+      "authors": [
+        "Thom Robyn P",
+        "Pober Barbara R",
+        "McDougle Christopher J"
+      ],
+      "journal": "Expert opinion on drug safety",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Introduction: Williams syndrome (WS) is a neurogenetic disorder characterized by a hyper-social personality, intellectual disability, and multiple medical co-morbidities. Psychiatric co-morbidities are also common. Since medical co-morbidities are common in this population, the risk-benefit of the use of psychiatric medications must be carefully considered and monitoring for safety and tolerability is needed.Areas covered: We review the cognitive profile and common medical co-morbidities in WS. We then discuss the common presentations of psychiatric disorders and review the available evidence on the use of psychiatric medications in WS. No prospective psychiatric medication trials have been conducted. We highlight the side effect profile of common psychiatric medications as they pertain to WS.Expert opinion: Psychiatric disorders can have a major effect on the quality of life of individuals with WS. The lack of long-term safety data and high likelihood of medical co-morbidities in WS make the judicious use of psychiatric medications more challenging; however, they can play an important role in decreasing distress and improving functioning. We provide recommendations for first- and second-line classes of medications based on our clinical experience and consideration of adverse effect profiles, as well as safety monitoring parameters at baseline and periodically.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Mental Disorders",
+        "Psychopharmacology",
+        "Psychotropic Drugs",
+        "Quality of Life",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Williams syndrome",
+        "anxiety",
+        "psychiatry",
+        "psychopharmacology"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/14740338.2021.1867535"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33369485/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33369485/"
+    },
+    "31419598": {
+      "pmid": "31419598",
+      "doi": "10.1016/j.ejmg.2019.103740",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Mild macrocytosis in Williams-Beuren syndrome.",
+      "authors": [
+        "Yu Eric",
+        "Feinn Richard",
+        "Bona Robert",
+        "Brink Benjamin",
+        "Sindhar Sampat",
+        "Kozel Beth A",
+        "Pober Barbara R"
+      ],
+      "journal": "European journal of medical genetics",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: To evaluate the occurrence and estimate the frequency of macrocytosis in Williams-Beuren syndrome (WBS). STUDY DESIGN: Complete blood count (CBC) data from 179 subjects with WBS aged 1-69 were collected, with common parameters assessed for trends. Z-transformed mean corpuscular volume (MCV) was compared with each laboratory's reference range as well as with control data from the National Health and Nutrition Examination Survey (NHANES) 2013-2014 data archives. RESULTS: Just over a third (35%) subjects had at least one recorded incidence of macrocytosis. In comparisons of CBC parameters with an expected population mean, MCV and MCH were greater than, while Hct and RDW were lower than, expected values. The distribution of erythrocyte MCV is shifted to the right in WBS compared to controls, as was the mean value. Despite this, anemia was absent, except in a single medically complex WBS subject. Though there was a paucity of data available of variables that could potentially cause an elevated MCV, no obvious etiology could be elucidated. CONCLUSIONS: Mild macrocytosis without anemia affects a moderate subset of WBS patients, leading to a rightward shift in the MCV distribution curve. Providers encountering isolated mild macrocytosis in WBS can consider observation over further workup.",
+      "abstract_sections": {
+        "OBJECTIVE": "To evaluate the occurrence and estimate the frequency of macrocytosis in Williams-Beuren syndrome (WBS).",
+        "STUDY DESIGN": "Complete blood count (CBC) data from 179 subjects with WBS aged 1-69 were collected, with common parameters assessed for trends. Z-transformed mean corpuscular volume (MCV) was compared with each laboratory's reference range as well as with control data from the National Health and Nutrition Examination Survey (NHANES) 2013-2014 data archives.",
+        "RESULTS": "Just over a third (35%) subjects had at least one recorded incidence of macrocytosis. In comparisons of CBC parameters with an expected population mean, MCV and MCH were greater than, while Hct and RDW were lower than, expected values. The distribution of erythrocyte MCV is shifted to the right in WBS compared to controls, as was the mean value. Despite this, anemia was absent, except in a single medically complex WBS subject. Though there was a paucity of data available of variables that could potentially cause an elevated MCV, no obvious etiology could be elucidated.",
+        "CONCLUSIONS": "Mild macrocytosis without anemia affects a moderate subset of WBS patients, leading to a rightward shift in the MCV distribution curve. Providers encountering isolated mild macrocytosis in WBS can consider observation over further workup."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Aged",
+        "Anemia",
+        "Blood Cell Count",
+        "Child",
+        "Child, Preschool",
+        "Cohort Studies",
+        "Erythrocyte Indices",
+        "Erythrocytes",
+        "Female",
+        "Hematologic Diseases",
+        "Humans",
+        "Infant",
+        "Male",
+        "Middle Aged",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Hematology",
+        "Macrocytosis",
+        "Williams syndrome",
+        "Williams-Beuren syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ejmg.2019.103740"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31419598/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31419598/"
+    },
+    "30045083": {
+      "pmid": "30045083",
+      "doi": "10.1097/MOP.0000000000000664",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cardiovascular disease in Williams syndrome.",
+      "authors": [
+        "Collins R Thomas"
+      ],
+      "journal": "Current opinion in pediatrics",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: Williams syndrome is a multisystem disorder seen with some regularity at most pediatric centers and usually fairly often at larger centers. Cardiovascular abnormalities, because of elastin deficiency, are the leading cause of morbidity and mortality in patients with Williams syndrome. The present article presents a review of the most recent developments regarding the cardiovascular issues in Williams syndrome. RECENT FINDINGS: Cardiovascular abnormalities occur in 80% of patients with Williams syndrome, the majority of which are arterial stenoses. The stenoses seen in Williams syndrome now appear to arise from deficient circumferential arterial growth. Pharmacological therapies aimed at improving the vascular stenoses have shown some promise in animal models. Surgical outcomes for supravalvar aortic stenosis are good at most centers. Transcatheter interventions are largely ineffective in Williams syndrome. Multilevel surgical pulmonary artery reconstruction has excellent results for peripheral pulmonary artery stenosis. Periprocedural risk stratification and management algorithms may decrease the risk of cardiovascular complications. SUMMARY: Cardiovascular abnormalities are a major determining factor in the clinical picture and trajectory of patients with Williams syndrome. Advances in surgical techniques, medical therapeutic options, and periprocedural management hold promise for significant improvements in the cardiovascular outcomes of these patients.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "Williams syndrome is a multisystem disorder seen with some regularity at most pediatric centers and usually fairly often at larger centers. Cardiovascular abnormalities, because of elastin deficiency, are the leading cause of morbidity and mortality in patients with Williams syndrome. The present article presents a review of the most recent developments regarding the cardiovascular issues in Williams syndrome.",
+        "RECENT FINDINGS": "Cardiovascular abnormalities occur in 80% of patients with Williams syndrome, the majority of which are arterial stenoses. The stenoses seen in Williams syndrome now appear to arise from deficient circumferential arterial growth. Pharmacological therapies aimed at improving the vascular stenoses have shown some promise in animal models. Surgical outcomes for supravalvar aortic stenosis are good at most centers. Transcatheter interventions are largely ineffective in Williams syndrome. Multilevel surgical pulmonary artery reconstruction has excellent results for peripheral pulmonary artery stenosis. Periprocedural risk stratification and management algorithms may decrease the risk of cardiovascular complications.",
+        "SUMMARY": "Cardiovascular abnormalities are a major determining factor in the clinical picture and trajectory of patients with Williams syndrome. Advances in surgical techniques, medical therapeutic options, and periprocedural management hold promise for significant improvements in the cardiovascular outcomes of these patients."
+      },
+      "mesh_terms": [
+        "Aortic Stenosis, Supravalvular",
+        "Contraindications",
+        "Humans",
+        "Risk Assessment",
+        "Tomography, X-Ray Computed",
+        "Ventricular Outflow Obstruction",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/MOP.0000000000000664"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30045083/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30045083/"
+    },
+    "34140529": {
+      "pmid": "34140529",
+      "doi": "10.1038/s41572-021-00276-z",
+      "pmc_id": "PMC9437774",
+      "pmc_verify": null,
+      "title": "Williams syndrome.",
+      "authors": [
+        "Kozel Beth A",
+        "Barak Boaz",
+        "Kim Chong Ae",
+        "Mervis Carolyn B",
+        "Osborne Lucy R",
+        "Porter Melanie",
+        "Pober Barbara R"
+      ],
+      "journal": "Nature reviews. Disease primers",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Intramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Williams syndrome (WS) is a relatively rare microdeletion disorder that occurs in as many as 1:7,500 individuals. WS arises due to the mispairing of low-copy DNA repetitive elements at meiosis. The deletion size is similar across most individuals with WS and leads to the loss of one copy of 25-27 genes on chromosome 7q11.23. The resulting unique disorder affects multiple systems, with cardinal features including but not limited to cardiovascular disease (characteristically stenosis of the great arteries and most notably supravalvar aortic stenosis), a distinctive craniofacial appearance, and a specific cognitive and behavioural profile that includes intellectual disability and hypersociability. Genotype-phenotype evidence is strongest for ELN, the gene encoding elastin, which is responsible for the vascular and connective tissue features of WS, and for the transcription factor genes GTF2I and GTF2IRD1, which are known to affect intellectual ability, social functioning and anxiety. Mounting evidence also ascribes phenotypic consequences to the deletion of BAZ1B, LIMK1, STX1A and MLXIPL, but more work is needed to understand the mechanism by which these deletions contribute to clinical outcomes. The age of diagnosis has fallen in regions of the world where technological advances, such as chromosomal microarray, enable clinicians to make the diagnosis of WS without formally suspecting it, allowing earlier intervention by medical and developmental specialists. Phenotypic variability is considerable for all cardinal features of WS but the specific sources of this variability remain unknown. Further investigation to identify the factors responsible for these differences may lead to mechanism-based rather than symptom-based therapies and should therefore be a high research priority.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cognition",
+        "Elastin",
+        "Humans",
+        "Transcription Factors",
+        "Williams Syndrome",
+        "Bromodomain Containing Proteins"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9437774/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9437774/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41572-021-00276-z"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34140529/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34140529/"
+    },
+    "34140526": {
+      "pmid": "34140526",
+      "doi": "10.1038/s41572-021-00283-0",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Williams syndrome.",
+      "authors": [],
+      "journal": "Nature reviews. Disease primers",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41572-021-00283-0"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34140526/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34140526/"
+    },
+    "20089974": {
+      "pmid": "20089974",
+      "doi": "10.1056/NEJMra0903074",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Williams-Beuren syndrome.",
+      "authors": [
+        "Pober Barbara R"
+      ],
+      "journal": "The New England journal of medicine",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Aortic Stenosis, Supravalvular",
+        "Diabetes Mellitus",
+        "Humans",
+        "Sequence Deletion",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1056/NEJMra0903074"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20089974/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20089974/"
+    },
+    "7547491": {
+      "pmid": "7547491",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Williams syndrome.",
+      "authors": [
+        "Oncag A",
+        "Gunbay S",
+        "Parlar A"
+      ],
+      "journal": "The Journal of clinical pediatric dentistry",
+      "year": "1995",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Williams syndrome is a rare syndrome. It usually can be diagnosed first in dental clinics because of the typical oral and facial features of the syndrome. The aim of this article is to report this 8 year old Turkish boy with Williams syndrome, and to revise the dental features of these special patients and the dental treatment procedures that can be followed for these patients.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Dental Care for Persons with Disabilities",
+        "Dental Caries",
+        "Facies",
+        "Humans",
+        "Male",
+        "Tooth Abnormalities",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7547491/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7547491/"
+    },
+    "32127269": {
+      "pmid": "32127269",
+      "doi": "10.1053/j.jvca.2020.01.022",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Anesthetic Considerations for Patients With Williams Syndrome.",
+      "authors": [
+        "Staudt Genevieve E",
+        "Eagle Susan S"
+      ],
+      "journal": "Journal of cardiothoracic and vascular anesthesia",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Williams syndrome (WS) is a relatively rare congenital disorder which manifests across multiple organ systems with a wide spectrum of severity. Cardiovascular anomalies are the most common and concerning manifestations of WS, with supravalvar aortic stenosis present in up to 70% of patients with WS. Although a relatively rare disease, these patients frequently require sedation or anesthesia for a variety of medical procedures. The risk of sudden death in this population is 25 to 100 times that of the general population, with many documented deaths associated with sedation or anesthesia. This increased risk coupled with a disproportionately frequent need for anesthetic care renders it prudent for the anesthesiologist to have a firm understanding of the manifestations of WS. In the following review, the authors discuss pertinent clinical characteristics of WS along with particular anesthetic considerations for the anesthesiologist caring for patients with WS presenting for non-cardiac surgery.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anesthesia",
+        "Anesthetics",
+        "Aortic Stenosis, Supravalvular",
+        "Humans",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Williams syndrome",
+        "congenital heart disease",
+        "genetic syndrome",
+        "supravalvar aortic stenosis"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1053/j.jvca.2020.01.022"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32127269/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32127269/"
+    },
+    "26456018": {
+      "pmid": "26456018",
+      "doi": "10.1111/pan.12775",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Risk assessment and anesthetic management of patients with Williams syndrome: a comprehensive review.",
+      "authors": [
+        "Matisoff Andrew J",
+        "Olivieri Laura",
+        "Schwartz Jamie M",
+        "Deutsch Nina"
+      ],
+      "journal": "Paediatric anaesthesia",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Since the first description in 1961, several case reports have documented an increased incidence of anesthesia-related cardiac arrest in patients with Williams-Beuren syndrome, commonly known as Williams syndrome (WS). Widespread arteriopathy secondary to an elastin gene defect results in various cardiac defects, including supravalvar aortic stenosis (SVAS) and coronary artery anomalies, which can increase the risk of myocardial ischemia. Even though patients with WS are known to have increased risk of adverse events during anesthesia and sedation, they often undergo several procedures that require anesthesia during their lifetimes, and cases of perianesthetic cardiac arrest continue to be reported. To date, no prospective studies have been reported that quantify anesthetic risk in individual patients with WS. In this article, we review the clinical manifestations of WS, propose a consensus, expert-informed method to estimate anesthetic risk based on the current literature, and provide recommendations for periprocedural management of this patient population.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anesthesia",
+        "Child",
+        "Heart Arrest",
+        "Humans",
+        "Intraoperative Complications",
+        "Perioperative Care",
+        "Risk Assessment",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "cardiac anesthesia",
+        "chromosome 7q11.23 deletion syndrome",
+        "perioperative medicine"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/pan.12775"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26456018/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26456018/"
+    },
+    "26138838": {
+      "pmid": "26138838",
+      "doi": "10.1159/000380998",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Approach to the Child with Hypercalcaemia.",
+      "authors": [
+        "Davies Justin H"
+      ],
+      "journal": "Endocrine development",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Hypercalcaemia is rare in children. In adulthood, the causes are most frequently malignancy and primary hyperparathyroidism. In children, however, the aetiologies are diverse and age specific, and many have an underlying genetic basis. Hypercalcaemia is a serious condition that frequently leads to end-organ damage. In order to provide the most appropriate treatment, a key part of the management pathway is to establish the correct diagnosis promptly. When considering a practical approach to hypercalcaemia in children, it is helpful to consider the causes of hypercalcaemia according to the accompanying levels of parathyroid hormone (PTH), indicating whether the causes are PTH dependent or PTH independent. This chapter reviews the recent advances in this area and presents a practical approach to the investigation and subsequent management of this condition.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Bone Density Conservation Agents",
+        "Child",
+        "Diphosphonates",
+        "Humans",
+        "Hypercalcemia",
+        "Hyperparathyroidism",
+        "Kidney Failure, Chronic",
+        "Neoplasms",
+        "Osteochondrodysplasias",
+        "Parathyroid Hormone",
+        "Parathyroid Hormone-Related Protein",
+        "Parathyroid Neoplasms",
+        "Parathyroidectomy",
+        "Renal Dialysis",
+        "Vitamin D",
+        "Vitamins",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1159/000380998"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26138838/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26138838/"
+    },
+    "34619410": {
+      "pmid": "34619410",
+      "doi": "10.1016/j.jaclp.2021.09.007",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Functional Neurological Symptom Disorder in Williams Syndrome: Case Series and Review of Relevant Literature.",
+      "authors": [
+        "Thom Robyn P",
+        "Balaj Kayla",
+        "Keary Christopher J",
+        "Pober Barbara R",
+        "McDougle Christopher J"
+      ],
+      "journal": "Journal of the Academy of Consultation-Liaison Psychiatry",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "BACKGROUND: Williams syndrome (WS) is a neurodevelopmental disorder associated with several medical and psychiatric comorbidities. OBJECTIVE: To describe the clinical presentation and treatment course of functional neurological symptom disorder (FNSD) in 3 adult patients with WS. METHODS: This report describes the clinical presentation and long-term follow-up of 3 individuals with WS and FNSD who experienced a range of clinical presentations and responses to treatment. The literature on the clinical assessment and treatment of FNSD as it applies to patients with neurodevelopmental disorders is reviewed. RESULTS: FNSD treatment strategies used in the general population were successfully adapted for these 3 patients. Literature on the diagnosis and treatment of FNSD in patients with neurodevelopmental disorders is lacking. CONCLUSIONS: FNSD may be more common in individuals with WS than previously appreciated, and future studies describing the prevalence, clinical presentation, risk factors, and treatment of FNSD in WS are needed.",
+      "abstract_sections": {
+        "BACKGROUND": "Williams syndrome (WS) is a neurodevelopmental disorder associated with several medical and psychiatric comorbidities.",
+        "OBJECTIVE": "To describe the clinical presentation and treatment course of functional neurological symptom disorder (FNSD) in 3 adult patients with WS.",
+        "METHODS": "This report describes the clinical presentation and long-term follow-up of 3 individuals with WS and FNSD who experienced a range of clinical presentations and responses to treatment. The literature on the clinical assessment and treatment of FNSD as it applies to patients with neurodevelopmental disorders is reviewed.",
+        "RESULTS": "FNSD treatment strategies used in the general population were successfully adapted for these 3 patients. Literature on the diagnosis and treatment of FNSD in patients with neurodevelopmental disorders is lacking.",
+        "CONCLUSIONS": "FNSD may be more common in individuals with WS than previously appreciated, and future studies describing the prevalence, clinical presentation, risk factors, and treatment of FNSD in WS are needed."
+      },
+      "mesh_terms": [
+        "Adult",
+        "Comorbidity",
+        "Conversion Disorder",
+        "Humans",
+        "Prevalence",
+        "Risk Factors",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Williams syndrome",
+        "case series",
+        "conversion disorder",
+        "functional neurological symptom disorder",
+        "pseudoseizure"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jaclp.2021.09.007"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34619410/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34619410/"
+    },
+    "26705693": {
+      "pmid": "26705693",
+      "doi": "10.1016/j.conb.2015.11.003",
+      "pmc_id": "PMC4738077",
+      "pmc_verify": null,
+      "title": "Modeling psychiatric disorders with patient-derived iPSCs.",
+      "authors": [
+        "Wen Zhexing",
+        "Christian Kimberly M",
+        "Song Hongjun",
+        "Ming Guo-li"
+      ],
+      "journal": "Current opinion in neurobiology",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Psychiatric disorders are heterogeneous disorders characterized by complex genetics, variable symptomatology, and anatomically distributed pathology, all of which present challenges for effective treatment. Current treatments are often blunt tools used to ameliorate the most severe symptoms, often at the risk of disrupting functional neural systems, thus there is a pressing need to develop rational therapeutics. Induced pluripotent stem cells (iPSCs) reprogrammed from patient somatic cells offer an unprecedented opportunity to recapitulate both normal and pathologic human tissue and organ development, and provides new approaches for understanding disease mechanisms and for drug discovery with higher predictability of their effects in humans. Here we review recent progress and challenges in using human iPSCs for modeling neuropsychiatric disorders and developing novel therapeutic strategies.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Autism Spectrum Disorder",
+        "Autistic Disorder",
+        "Bipolar Disorder",
+        "Chromosome Deletion",
+        "Chromosome Disorders",
+        "Chromosomes, Human, Pair 22",
+        "Major Depressive Disorder",
+        "Humans",
+        "Induced Pluripotent Stem Cells",
+        "Long QT Syndrome",
+        "Mental Disorders",
+        "Models, Neurological",
+        "Rett Syndrome",
+        "Schizophrenia",
+        "Syndactyly",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4738077/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4738077/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.conb.2015.11.003"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26705693/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26705693/"
+    },
+    "23539923": {
+      "pmid": "23539923",
+      "doi": "10.2298/sarh1302122r",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Celiac disease.",
+      "authors": [
+        "Radlović Nedeljko"
+      ],
+      "journal": "Srpski arhiv za celokupno lekarstvo",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Celiac disease is a multysystemic autoimmune disease induced by gluten in wheat, barley and rye. It is characterized by polygenic predisposition, high prevalence (1%), widely heterogeneous expression and frequent association with other autoimmune diseases, selective deficit of IgA and Down, Turner and Williams syndrome. The basis of the disease and the key finding in its diagnostics is symptomatic or asymptomatic inflammation of the small intestinal mucosa which resolves by gluten-free diet. Therefore, the basis of the treatment involves elimination diet, so that the disorder, if timely recognized and adequately treated, also characterizes excellent prognosis.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Celiac Disease",
+        "Humans"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2298/sarh1302122r"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23539923/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23539923/"
+    },
+    "16472876": {
+      "pmid": "16472876",
+      "doi": "10.1016/j.tins.2006.01.007",
+      "pmc_id": "PMC3113697",
+      "pmc_verify": null,
+      "title": "Mapping brain maturation.",
+      "authors": [
+        "Toga Arthur W",
+        "Thompson Paul M",
+        "Sowell Elizabeth R"
+      ],
+      "journal": "Trends in neurosciences",
+      "year": "2006",
+      "publication_types": [
+        "Comparative Study",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Human brain maturation is a complex, lifelong process that can now be examined in detail using neuroimaging techniques. Ongoing projects scan subjects longitudinally with structural magnetic resonance imaging (MRI), enabling the time-course and anatomical sequence of development to be reconstructed. Here, we review recent progress on imaging studies of development. We focus on cortical and subcortical changes observed in healthy children, and contrast them with abnormal developmental changes in early-onset schizophrenia, fetal alcohol syndrome, attention-deficit-hyperactivity disorder (ADHD) and Williams syndrome. We relate these structural changes to the cellular processes that underlie them, and to cognitive and behavioral changes occurring throughout childhood and adolescence.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Attention Deficit Disorder with Hyperactivity",
+        "Brain",
+        "Brain Mapping",
+        "Child",
+        "Child, Preschool",
+        "Developmental Disabilities",
+        "Female",
+        "Fetal Alcohol Spectrum Disorders",
+        "Humans",
+        "Magnetic Resonance Imaging",
+        "Male",
+        "Organ Size",
+        "Pregnancy",
+        "Reference Values",
+        "Schizophrenia",
+        "Twin Studies as Topic",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3113697/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3113697/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.tins.2006.01.007"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16472876/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16472876/"
+    },
+    "35416284": {
+      "pmid": "35416284",
+      "doi": "10.1111/jcpp.13613",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Epigenetic aging in Williams syndrome.",
+      "authors": [
+        "Okazaki Satoshi",
+        "Kimura Ryo",
+        "Otsuka Ikuo",
+        "Tomiwa Kiyotaka",
+        "Funabiki Yasuko",
+        "Hagiwara Masatoshi",
+        "Murai Toshiya",
+        "Hishimoto Akitoyo"
+      ],
+      "journal": "Journal of child psychology and psychiatry, and allied disciplines",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: Williams syndrome (WS) is a rare genetic disorder caused by a microdeletion at the 7q11.23 region and is characterized by diverse symptoms encompassing physical and cognitive features. WS was reported to be associated to altered DNA methylation (DNAm) patterns. However, due to the limited information from long-term studies, it remains unclear whether WS accelerates aging. Genome-wide DNAm profiles can serve as \"epigenetic clocks\" to help estimate biological aging along with age-related markers, such as plasma proteins and telomere length. METHODS: We investigated GrimAge, DNAm-based telomere length (DNAmTL), and other epigenetic clocks in blood samples of 32 patients with WS and 32 healthy controls. RESULTS: We observed a significant acceleration in GrimAge, DNAmTL, and other epigenetic clocks in patients with WS as compared with those of controls. In addition, several GrimAge components, such as adrenomedullin, growth differentiation factor-15, leptin and plasminogen activator inhibitor-1, were altered in patients with WS. CONCLUSIONS: This study provides novel evidence supporting the hypothesis that WS may be associated to accelerated biological aging. A better understanding of the overall underlying biological effects of WS can provide new foundations for improved patient care; thus, long-term follow-up studies are still warranted.",
+      "abstract_sections": {
+        "BACKGROUND": "Williams syndrome (WS) is a rare genetic disorder caused by a microdeletion at the 7q11.23 region and is characterized by diverse symptoms encompassing physical and cognitive features. WS was reported to be associated to altered DNA methylation (DNAm) patterns. However, due to the limited information from long-term studies, it remains unclear whether WS accelerates aging. Genome-wide DNAm profiles can serve as \"epigenetic clocks\" to help estimate biological aging along with age-related markers, such as plasma proteins and telomere length.",
+        "METHODS": "We investigated GrimAge, DNAm-based telomere length (DNAmTL), and other epigenetic clocks in blood samples of 32 patients with WS and 32 healthy controls.",
+        "RESULTS": "We observed a significant acceleration in GrimAge, DNAmTL, and other epigenetic clocks in patients with WS as compared with those of controls. In addition, several GrimAge components, such as adrenomedullin, growth differentiation factor-15, leptin and plasminogen activator inhibitor-1, were altered in patients with WS.",
+        "CONCLUSIONS": "This study provides novel evidence supporting the hypothesis that WS may be associated to accelerated biological aging. A better understanding of the overall underlying biological effects of WS can provide new foundations for improved patient care; thus, long-term follow-up studies are still warranted."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Williams Syndrome",
+        "Aging",
+        "DNA Methylation",
+        "Biomarkers",
+        "Epigenesis, Genetic"
+      ],
+      "keywords": [
+        "Aging",
+        "Williams syndrome",
+        "epigenetics"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/jcpp.13613"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35416284/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35416284/"
+    },
+    "17562583": {
+      "pmid": "17562583",
+      "doi": "10.1016/j.chc.2007.03.006",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Social phenotypes in neurogenetic syndromes.",
+      "authors": [
+        "Feinstein Carl",
+        "Singh Sonia"
+      ],
+      "journal": "Child and adolescent psychiatric clinics of North America",
+      "year": "2007",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Many of the known genetically based neurodevelopmental disorders are associated with a distinctive behavioral phenotype. As these behavioral phenotypes have been elucidated by clinical research, distinctive profiles of social traits have emerged as prominent syndromic features. This article reviews social phenotypic findings for fragile X syndrome, Down syndrome, Prader-Willi syndrome, Smith-Magenis syndrome, Turner syndrome, Williams syndrome, and velocardiofacial syndrome. An analysis of these social profiles raises several questions regarding the relationship between identified social impairments and autism and the relationship between social impairments in neurodevelopmental disorders and those found in normative child populations. The unique profile of certain of the known behavioral phenotypes also serves to distinguish several dimensions of sociability that are not readily observed in typical populations.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "DiGeorge Syndrome",
+        "Down Syndrome",
+        "Fragile X Syndrome",
+        "Humans",
+        "Phenotype",
+        "Prader-Willi Syndrome",
+        "Social Behavior",
+        "Turner Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.chc.2007.03.006"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17562583/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17562583/"
+    },
+    "36007813": {
+      "pmid": "36007813",
+      "doi": "10.1016/j.jaac.2022.06.020",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Systematic Review: Emotion Dysregulation in Syndromic Causes of Intellectual and Developmental Disabilities.",
+      "authors": [
+        "Shaffer Rebecca C",
+        "Reisinger Debra L",
+        "Schmitt Lauren M",
+        "Lamy Martine",
+        "Dominick Kelli C",
+        "Smith Elizabeth G",
+        "Coffman Marika C",
+        "Esbensen Anna J"
+      ],
+      "journal": "Journal of the American Academy of Child and Adolescent Psychiatry",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "OBJECTIVE: To summarize the current state of the literature regarding emotion dysregulation (ED) in syndromic intellectual disabilities (S-IDs) in 6 of the most common forms of S-IDs-Down syndrome, fragile X syndrome (FXS), tuberous sclerosis complex, Williams syndrome, Prader-Willi syndrome, and Angelman syndrome-and to determine future research directions for identification and treatment of ED. METHOD: PubMed bibliographic database was searched from date of inception to May 2021. PRISMA 2020 guidelines were followed with the flowchart, table of included studies, list of excluded studies, and checklist provided. Filters applied included human research and English. Only original research articles were included in the final set, but review articles were used to identify secondary citations of primary studies. All articles were reviewed for appropriateness by 2 authors and summarized. Inclusion criteria were met by 145 articles (Down syndrome = 29, FXS = 55, tuberous sclerosis complex = 11, Williams syndrome = 18, Prader-Willi syndrome = 24, Angelman syndrome = 8). RESULTS: Each syndrome review was summarized separately and further subdivided into articles related to underlying neurobiology, behaviors associated with ED, assessment, and targeted intervention. FXS had the most thorough research base, followed by Down syndrome and Prader-Willi syndrome, with the other syndromes having more limited available research. Very limited research was available regarding intervention for all disorders except FXS. CONCLUSION: Core underlying characteristics of S-IDs appear to place youth at higher risk for ED, but further research is needed to better assess and treat ED in S-IDs. Future studies should have a standard assessment measure of ED, such as the Emotion Dysregulation Inventory, and explore adapting established curricula for ED from the neurotypical and autism spectrum disorder fields.",
+      "abstract_sections": {
+        "OBJECTIVE": "To summarize the current state of the literature regarding emotion dysregulation (ED) in syndromic intellectual disabilities (S-IDs) in 6 of the most common forms of S-IDs-Down syndrome, fragile X syndrome (FXS), tuberous sclerosis complex, Williams syndrome, Prader-Willi syndrome, and Angelman syndrome-and to determine future research directions for identification and treatment of ED.",
+        "METHOD": "PubMed bibliographic database was searched from date of inception to May 2021. PRISMA 2020 guidelines were followed with the flowchart, table of included studies, list of excluded studies, and checklist provided. Filters applied included human research and English. Only original research articles were included in the final set, but review articles were used to identify secondary citations of primary studies. All articles were reviewed for appropriateness by 2 authors and summarized. Inclusion criteria were met by 145 articles (Down syndrome = 29, FXS = 55, tuberous sclerosis complex = 11, Williams syndrome = 18, Prader-Willi syndrome = 24, Angelman syndrome = 8).",
+        "RESULTS": "Each syndrome review was summarized separately and further subdivided into articles related to underlying neurobiology, behaviors associated with ED, assessment, and targeted intervention. FXS had the most thorough research base, followed by Down syndrome and Prader-Willi syndrome, with the other syndromes having more limited available research. Very limited research was available regarding intervention for all disorders except FXS.",
+        "CONCLUSION": "Core underlying characteristics of S-IDs appear to place youth at higher risk for ED, but further research is needed to better assess and treat ED in S-IDs. Future studies should have a standard assessment measure of ED, such as the Emotion Dysregulation Inventory, and explore adapting established curricula for ED from the neurotypical and autism spectrum disorder fields."
+      },
+      "mesh_terms": [
+        "Child",
+        "Adolescent",
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Angelman Syndrome",
+        "Down Syndrome",
+        "Autism Spectrum Disorder",
+        "Developmental Disabilities",
+        "Tuberous Sclerosis",
+        "Intellectual Disability",
+        "Fragile X Syndrome",
+        "Williams Syndrome",
+        "Emotions"
+      ],
+      "keywords": [
+        "Down syndrome",
+        "Williams syndrome",
+        "emotion dysregulation",
+        "fragile X syndrome",
+        "intellectual disability"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jaac.2022.06.020"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36007813/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36007813/"
+    },
+    "32157657": {
+      "pmid": "32157657",
+      "doi": "10.1007/s13353-020-00551-x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Growth assessment in children with Williams-Beuren syndrome: a systematic review.",
+      "authors": [
+        "de Sousa Lima Strafacci Amanda",
+        "Fernandes Camargo Juliana",
+        "Bertapelli Fábio",
+        "Guerra Júnior Gil"
+      ],
+      "journal": "Journal of applied genetics",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "Williams-Beuren syndrome (WBS) is a rare genetic disease caused by a sporadic heterozygous microdeletion in 7q11.23. It is characterized by distinctive facial appearance, cardiopathy, short stature, intellectual disability, and endocrine abnormalities. To evaluate the growth pattern of patients with WBS and to identify the prevalence of malnutrition, overweight, and obesity in this population, a systematic review of studies published in English, between 1987 and 2018, was performed following the PRISMA protocol using the PubMed, Cochrane, and BIREME databases. Original articles and articles that evaluated growth status using weight, or height, or head circumference (HC), or body mass index (BMI) of individuals with WBS were included. Case reports, articles with data from other syndromes, and articles that did not present as a central theme the evaluation of growth were not included. WBS presented specific growth pattern, characterized by intrauterine growth restriction, low weight, length, and HC at birth. This global growth delay persisted during childhood and adolescence. BMI was not different to the reference population, and obesity was not observed in childhood. The mechanisms that determine this typical growth pattern are not totally clear; however, the typical pubertal development of these patients and the intrinsic and secondary lesions caused by microdeletion at 7q11.23 seem to be the major factors involved. Conclusion: Patients with WBS have a growth pattern different from the general reference population. The reference charts for normal population should not be used for WBS patients because it often underestimate their growth. Specific growth charts for WBS patients are necessary.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Body Mass Index",
+        "Body Weight",
+        "Child",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 7",
+        "Facies",
+        "Female",
+        "Humans",
+        "Male",
+        "Obesity",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Body height",
+        "Body mass index",
+        "Body weight",
+        "Cephalometry",
+        "Growth charts",
+        "Williams-Beuren syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s13353-020-00551-x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32157657/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32157657/"
+    },
+    "32087508": {
+      "pmid": "32087508",
+      "doi": "10.1016/j.ridd.2020.103609",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Mathematical development in Williams syndrome: A systematic review.",
+      "authors": [
+        "Van Herwegen Jo",
+        "Simms Victoria"
+      ],
+      "journal": "Research in developmental disabilities",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "BACKGROUND: The current systematic review is the first to systematically explore and synthesis research to date on mathematical abilities in Williams syndrome (WS), a rare genetic disorder that results in an uneven cognitive profile. As mathematical development is complex and relies on both domain-specific and domain-general abilities, it is currently not clear what mathematical abilities have been examined in WS and also what the current gaps in this research area are. METHODS AND PROCEDURES: A total of 27 studies across 22 publications were identified through a systematic review search process. RESULTS: Overall, all mathematical abilities, except for simple counting and subitizing abilities, were reported to be impaired but in line with overall mental-age abilities. However, the literature to date has not established the underlying causes of these mathematical difficulties in WS. Some studies suggested that mathematical abilities in WS follow an atypical developmental pathway with a greater reliance on verbal abilities than in typical development but coupled with impaired understanding of counting and knowledge of the number system more broadly. However, most included studies used different assessments of mathematical skills and there is a lack of studies that have examined more than one particular aspect of mathematical development within the same study. In addition, studies have often included large age ranges and small participant samples, despite the known large individual variability in WS. CONCLUSION: Although we know mathematical abilities in WS are impaired, this area is under-researched and there is a lack of longitudinal studies that provide insight into the cognitive mechanisms that underpin mathematical development in WS. Therefore, there is a lack of an evidence-base to inform interventions or educational practice.",
+      "abstract_sections": {
+        "BACKGROUND": "The current systematic review is the first to systematically explore and synthesis research to date on mathematical abilities in Williams syndrome (WS), a rare genetic disorder that results in an uneven cognitive profile. As mathematical development is complex and relies on both domain-specific and domain-general abilities, it is currently not clear what mathematical abilities have been examined in WS and also what the current gaps in this research area are.",
+        "METHODS AND PROCEDURES": "A total of 27 studies across 22 publications were identified through a systematic review search process.",
+        "RESULTS": "Overall, all mathematical abilities, except for simple counting and subitizing abilities, were reported to be impaired but in line with overall mental-age abilities. However, the literature to date has not established the underlying causes of these mathematical difficulties in WS. Some studies suggested that mathematical abilities in WS follow an atypical developmental pathway with a greater reliance on verbal abilities than in typical development but coupled with impaired understanding of counting and knowledge of the number system more broadly. However, most included studies used different assessments of mathematical skills and there is a lack of studies that have examined more than one particular aspect of mathematical development within the same study. In addition, studies have often included large age ranges and small participant samples, despite the known large individual variability in WS.",
+        "CONCLUSION": "Although we know mathematical abilities in WS are impaired, this area is under-researched and there is a lack of longitudinal studies that provide insight into the cognitive mechanisms that underpin mathematical development in WS. Therefore, there is a lack of an evidence-base to inform interventions or educational practice."
+      },
+      "mesh_terms": [
+        "Adult",
+        "Child",
+        "Child Development",
+        "Cognition",
+        "Humans",
+        "Mathematics",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Mathematics",
+        "Number development",
+        "Systematic review",
+        "Williams syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ridd.2020.103609"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32087508/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32087508/"
+    },
+    "31336213": {
+      "pmid": "31336213",
+      "doi": "10.1016/j.jormas.2019.07.010",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Ameloblastoma associated with syndromes: A systematic review.",
+      "authors": [
+        "Atarbashi-Moghadam S",
+        "Atarbashi-Moghadam F",
+        "Sijanivandi S",
+        "Mokhtari S"
+      ],
+      "journal": "Journal of stomatology, oral and maxillofacial surgery",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "Odontogenic lesions have been described in several syndromes. Despite multiple reports of ameloblastoma's association with various syndromes, it has not been added to the diagnostic criteria for any syndrome. Thus, the aim of this systematic review was gathering such cases' data. An electronic search in PubMed Central's database was performed. The search strategy was limited to human studies (case reports and case series), full-text English articles published from first of January 1975 until the end of 2018. Irrelevant articles or articles with inadequate information were omitted. Associated syndrome, patients' age and sex, lesions' location, radiographic features, and treatment modality were collected and analyzed. Ameloblastoma was reported in association with Gorlin syndrome (6 cases), epidermal nevus syndrome (2 cases), Gardner syndrome (2 cases), Simpson-Golabi-Behmel syndrome (1 case), and Williams syndrome (1 case). The commonest associated syndrome was Gorlin syndrome (50%) with maxillary and female predilections. Both cases of epidermal nevus syndrome (ENS) were female with mandibular involvement. In syndromes that odontogenic lesions are one of the diagnostic criteria, it is important to rule out ameloblastic changes. Although the relationship between ameloblastoma and these syndromes is not well known, any related information may be helpful in understanding the pathogenesis and the nature of this neoplasm.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Ameloblastoma",
+        "Basal Cell Nevus Syndrome",
+        "Female",
+        "Gardner Syndrome",
+        "Gigantism",
+        "Humans",
+        "Mandible"
+      ],
+      "keywords": [
+        "Ameloblastoma",
+        "Basal cell nevus syndrome",
+        "Odontogenic tumors",
+        "Syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jormas.2019.07.010"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31336213/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31336213/"
+    },
+    "30231111": {
+      "pmid": "30231111",
+      "doi": "10.1590/2317-1782/20182017267",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Characteristics of auditory evaluation in Williams syndrome: a systematic review.",
+      "authors": [
+        "Silva Liliane Aparecida Fagundes",
+        "Kim Chong Ae",
+        "Matas Carla Gentile"
+      ],
+      "journal": "CoDAS",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "PURPOSE: Identify the characteristics of the clinical audiological evaluation of individuals with Williams syndrome by means of a systematic literature review. RESEARCH STRATEGIES: The following research question was initially determined: \"What are the characteristics of clinical auditory assessment in individuals with Williams syndrome?\". From this, a bibliographic search was conducted in four databases using the descriptors: Williams syndrome, Hearing loss, and Audiology. SELECTION CRITERIA: Only full articles with evidence levels 1 or 2, published in Brazilian Portuguese or English, were selected. DATA ANALYSIS: Results obtained in the auditory tests used in the clinical routine, namely: immittance test, pure-tone audiometry, otoacoustic emissions, and brainstem auditory evoked potential were analyzed. RESULTS: Two hundred nine studies were found, but only 12 met the inclusion criteria for the study. It was possible to observe prevalence of type A tympanometry curve, which may occur with absence of acoustic reflexes, mild to moderate sensorineural hearing loss, affecting mainly the high frequencies, absent or less amplified otoacoustic emissions, and brainstem auditory evoked potential without retrocochlear alteration. CONCLUSION: Cochlear impairment is common in individuals with Williams syndrome and the main disorders found in the hearing assessment in this population are absence of otoacoustic emissions and acoustic reflexes, as well as presence of mild to moderate sensorineural hearing loss, mainly in the high-frequency range, observed by audiometry.",
+      "abstract_sections": {
+        "PURPOSE": "Identify the characteristics of the clinical audiological evaluation of individuals with Williams syndrome by means of a systematic literature review.",
+        "RESEARCH STRATEGIES": "The following research question was initially determined: \"What are the characteristics of clinical auditory assessment in individuals with Williams syndrome?\". From this, a bibliographic search was conducted in four databases using the descriptors: Williams syndrome, Hearing loss, and Audiology.",
+        "SELECTION CRITERIA": "Only full articles with evidence levels 1 or 2, published in Brazilian Portuguese or English, were selected.",
+        "DATA ANALYSIS": "Results obtained in the auditory tests used in the clinical routine, namely: immittance test, pure-tone audiometry, otoacoustic emissions, and brainstem auditory evoked potential were analyzed.",
+        "RESULTS": "Two hundred nine studies were found, but only 12 met the inclusion criteria for the study. It was possible to observe prevalence of type A tympanometry curve, which may occur with absence of acoustic reflexes, mild to moderate sensorineural hearing loss, affecting mainly the high frequencies, absent or less amplified otoacoustic emissions, and brainstem auditory evoked potential without retrocochlear alteration.",
+        "CONCLUSION": "Cochlear impairment is common in individuals with Williams syndrome and the main disorders found in the hearing assessment in this population are absence of otoacoustic emissions and acoustic reflexes, as well as presence of mild to moderate sensorineural hearing loss, mainly in the high-frequency range, observed by audiometry."
+      },
+      "mesh_terms": [
+        "Acoustic Impedance Tests",
+        "Audiology",
+        "Audiometry, Pure-Tone",
+        "Brazil",
+        "Evoked Potentials, Auditory, Brain Stem",
+        "Hearing Loss",
+        "Humans",
+        "Otoacoustic Emissions, Spontaneous",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1590/2317-1782/20182017267"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30231111/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30231111/"
+    },
+    "27906503": {
+      "pmid": "27906503",
+      "doi": "10.1002/wcs.1398",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Neurodevelopmental disorders.",
+      "authors": [
+        "D'Souza Hana",
+        "Karmiloff-Smith Annette"
+      ],
+      "journal": "Wiley interdisciplinary reviews. Cognitive science",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Recent technological advances allow us to measure how the infant brain functions in ways that were not possible just a decade ago. Although methodological advances are exciting, we must also consider how theories guide research: what we look for and how we explain what we find. Indeed, the ways in which research findings are interpreted affects the design of policies, educational practices, and interventions. Thus, the theoretical approaches adopted by scientists have a real impact on the lives of children with neurodevelopmental disorders (NDDs) and their families, as well as on the wider community. Here, we introduce and compare two theoretical approaches that are used to understand NDDs: the neuropsychological account and neuroconstructivism. We show how the former, adult account, is inadequate for explaining NDDs and illustrate this using the examples of Williams syndrome and specific language impairment. Neuroconstructivism, by contrast, focuses on the developing organism and is helping to change the way in which NDDs are investigated. Whereas neuropsychological static approaches assume that one or more 'modules' (e.g., visuospatial ability in Williams syndrome) are impaired while the rest of the system is spared (e.g., language in Williams syndrome), neuroconstructivism proposes that basic-level deficits have subtle cascading effects on numerous domains over development. Neuroconstructivism leads researchers to embrace complexity by establishing large research consortia to integrate findings at multiple levels (e.g., genetic, neural, cognitive, environmental) across developmental time. WIREs Cogn Sci 2017, 8:e1398. doi: 10.1002/wcs.1398 For further resources related to this article, please visit the WIREs website.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain",
+        "Brain Mapping",
+        "Electroencephalography",
+        "Humans",
+        "Magnetic Resonance Imaging",
+        "Models, Neurological",
+        "Neurodevelopmental Disorders",
+        "Neuropsychological Tests",
+        "Research Design",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/wcs.1398"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27906503/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27906503/"
+    },
+    "38460606": {
+      "pmid": "38460606",
+      "doi": "10.1053/j.gastro.2024.02.044",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Celiac Disease-Related Conditions: Who to Test?",
+      "authors": [
+        "Zingone Fabiana",
+        "Bai Julio C",
+        "Cellier Christophe",
+        "Ludvigsson Jonas F"
+      ],
+      "journal": "Gastroenterology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Celiac disease (CeD) is a chronic immune-mediated condition triggered by gluten consumption in genetically predisposed individuals. Approximately 1% of the general population is affected by the disorder. Disease presentation is heterogeneous and, despite growing awareness among physicians and the public, it continues to be underestimated. The most effective strategy for identifying undiagnosed CeD is proactive case finding through serologic testing in high-risk groups. We reviewed the most recent evidence on the association between CeD and more than 20 conditions. In light of this review, CeD screening is recommended in individuals with (1) autoimmune disease and accompanying symptoms suggestive of CeD; (2) diseases that may mimic CeD (eg, irritable bowel syndrome [IBS], inflammatory bowel disease [IBD], and microscopic colitis); and (3) among patients with conditions with a high CeD prevalence: first-degree relatives, idiopathic pancreatitis, unexplained liver enzyme abnormalities, autoimmune hepatitis, primary biliary cholangitis, hyposplenism or functional asplenia with severe bacterial infection, type 1 diabetes mellitus, Hashimoto's thyroiditis and Graves' disease, Sjögren's syndrome, dermatitis herpetiformis, recurrent aphthous syndrome and enamel defects, unexplained ataxia, peripheral neuropathy, delayed menarche or premature menopause, Down syndrome, Turner syndrome, Williams syndrome, chronic fatigue syndrome, IgA nephropathy, and IgA deficiency. CeD serology should be the initial step in the screening process. However, for patients with any of the aforementioned disorders who are undergoing upper endoscopy, biopsies should be performed to rule out CeD.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Celiac Disease",
+        "Autoimmune Diseases",
+        "Diagnosis, Differential",
+        "Inflammatory Bowel Diseases",
+        "Serologic Tests",
+        "Risk Factors",
+        "Prevalence",
+        "Genetic Predisposition to Disease"
+      ],
+      "keywords": [
+        "Associated Conditions",
+        "Celiac Disease",
+        "Comorbidity",
+        "Gluten",
+        "Screening",
+        "Testing"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1053/j.gastro.2024.02.044"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38460606/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38460606/"
+    },
+    "30811742": {
+      "pmid": "30811742",
+      "doi": "10.1111/pan.13620",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Williams syndrome.",
+      "authors": [
+        "Twite Mark D",
+        "Stenquist Scott",
+        "Ing Richard J"
+      ],
+      "journal": "Paediatric anaesthesia",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Williams syndrome affects approximately one in 10 000 people and is caused by the deletion of genes on chromosome 7q11.23 which code for elastin. The phenotypic appearance of people with Williams syndrome is well characterized, but there continues to be new genetic and therapeutic discoveries. Patients with Williams syndrome have increased morbidity and mortality under sedation and anesthesia, largely as a result of cardiovascular abnormalities. This review article focuses on new information about Williams syndrome and outlines a structured approach to patients with Williams syndrome in the perioperative period.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anesthesia",
+        "Child",
+        "Child, Preschool",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Williams syndrome",
+        "Williams-Beuren syndrome",
+        "anesthesia",
+        "prolonged QTc",
+        "pulmonary artery stenosis",
+        "sudden death",
+        "supravalvar aortic stenosis"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/pan.13620"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30811742/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30811742/"
+    },
+    "38884729": {
+      "pmid": "38884729",
+      "doi": "10.1007/978-3-031-44087-8_27",
+      "pmc_id": "4066638",
+      "pmc_verify": null,
+      "title": "Human Genetics of Ventricular Septal Defect.",
+      "authors": [
+        "Perrot Andreas",
+        "Rickert-Sperling Silke"
+      ],
+      "journal": "Advances in experimental medicine and biology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Ventricular septal defects (VSDs) are recognized as one of the commonest congenital heart diseases (CHD), accounting for up to 40% of all cardiac malformations, and occur as isolated CHDs as well as together with other cardiac and extracardiac congenital malformations in individual patients and families. The genetic etiology of VSD is complex and extraordinarily heterogeneous. Chromosomal abnormalities such as aneuploidy and structural variations as well as rare point mutations in various genes have been reported to be associated with this cardiac defect. This includes both well-defined syndromes with known genetic cause (e.g., DiGeorge syndrome and Holt-Oram syndrome) and so far undefined syndromic forms characterized by unspecific symptoms. Mutations in genes encoding cardiac transcription factors (e.g., NKX2-5 and GATA4) and signaling molecules (e.g., CFC1) have been most frequently found in VSD cases. Moreover, new high-resolution methods such as comparative genomic hybridization enabled the discovery of a high number of different copy number variations, leading to gain or loss of chromosomal regions often containing multiple genes, in patients with VSD. In this chapter, we will describe the broad genetic heterogeneity observed in VSD patients considering recent advances in this field.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Chromosome Aberrations",
+        "DNA Copy Number Variations",
+        "Genetic Predisposition to Disease",
+        "Heart Septal Defects, Ventricular",
+        "Mutation",
+        "Transcription Factors"
+      ],
+      "keywords": [
+        "22q11 deletion syndrome",
+        "ACP6",
+        "ACTC1",
+        "ADCY2",
+        "ASD",
+        "Adams–Oliver syndrome",
+        "Alagille syndrome",
+        "Atrial septal defect",
+        "B3GALTL",
+        "BCL9",
+        "BCOR",
+        "Blepharophimosis syndrome",
+        "Brugada syndrome",
+        "CACNA1D",
+        "CACNA1F",
+        "CACNA1S",
+        "CFC1",
+        "CHARGE syndrome",
+        "CHD1",
+        "CHD7",
+        "CITED2",
+        "CNV",
+        "CRKL",
+        "CRYPTIC",
+        "Char syndrome",
+        "Copy number variation",
+        "Cornelia de Lange syndrome",
+        "Costello syndrome",
+        "Cri-du-chat syndrome",
+        "DVL1",
+        "DiGeorge syndrome",
+        "Diaphragmatic hernia",
+        "Down syndrome",
+        "EVC1",
+        "EVC2",
+        "Edwards syndrome",
+        "Ellis–van Creveld syndrome",
+        "FBN1",
+        "FGFR3",
+        "FMO5",
+        "FOXL2",
+        "Frank–ter Haar syndrome",
+        "GATA4GATA binding protein (GATA)GATA4",
+        "GATA6",
+        "GDF3Growth differentiation factor (GDF)GDF3",
+        "GJA5",
+        "GPC3",
+        "GWAS",
+        "HAS2",
+        "HEY2",
+        "HRAS",
+        "Holt–Oram syndrome",
+        "Hypophosphatemia",
+        "IRX4",
+        "ISL1",
+        "JAG1",
+        "Jacobsen syndrome",
+        "KMT2A",
+        "Kabuki syndrome",
+        "Kleefstra syndrome",
+        "LBR",
+        "LVNC",
+        "Larsen-like syndrome",
+        "MAML3",
+        "MEIS2",
+        "MESP1",
+        "MID1",
+        "MKRN2",
+        "MLL2",
+        "MYBPC3",
+        "MYH6",
+        "MYH7",
+        "Marfan syndrome",
+        "Mowat–Wilson syndrome",
+        "Muenke syndrome",
+        "NF1",
+        "NIPBL",
+        "NKX2-5",
+        "NKX2-6",
+        "NOTCH1",
+        "NOTCH2",
+        "NSD1",
+        "NTRK3",
+        "Neurofibromatosis",
+        "Nodal",
+        "Noncompaction",
+        "Noonan syndrome",
+        "Noonan-like syndrome",
+        "Oculofaciocardiodental syndrome",
+        "Okihiro syndrome",
+        "Opitz syndrome",
+        "PITX2",
+        "PLCB2",
+        "PRKAB2",
+        "PTPN11",
+        "Pallister–Killian syndrome",
+        "Patau syndrome",
+        "Pelger–Huet anomaly",
+        "Peters plus syndrome",
+        "Potocki–Lupski syndrome",
+        "ROR2",
+        "Ras/MAPK",
+        "Robinow syndrome",
+        "SALL1",
+        "SALL4",
+        "SCN5A",
+        "SH3PXD2B",
+        "SHOC2",
+        "SMAD2",
+        "SOX7",
+        "Simpson–Golabi–Behmel syndrome",
+        "Sotos syndrome",
+        "TBX1",
+        "TBX15",
+        "TBX20T-box (TBX)TBX20",
+        "TBX3",
+        "TBX5",
+        "TDGF1",
+        "TFAP2B",
+        "TGFβTransforming growth factors (TGFs)TGFß",
+        "TNNI3",
+        "Townes–Brock syndrome",
+        "Trisomy 13",
+        "Trisomy 18",
+        "Trisomy 21",
+        "Ulnar–mammary syndrome",
+        "VSD",
+        "Velocardiofacial syndrome",
+        "Ventricular septal defect",
+        "Ventricular septum",
+        "WES",
+        "WNT5A",
+        "Whole exome sequencing",
+        "Williams–Beuren syndrome",
+        "Wolf–Hirschhorn syndrome",
+        "ZFHX1B",
+        "ZIC3"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4066638/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4066638/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/978-3-031-44087-8_27"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+    },
+    "29501665": {
+      "pmid": "29501665",
+      "doi": "10.1016/j.matbio.2018.02.021",
+      "pmc_id": "PMC8409172",
+      "pmc_verify": null,
+      "title": "Elastin-driven genetic diseases.",
+      "authors": [
+        "Duque Lasio Maria Laura",
+        "Kozel Beth A"
+      ],
+      "journal": "Matrix biology : journal of the International Society for Matrix Biology",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Review"
+      ],
+      "abstract": "Elastic fibers provide recoil to tissues that undergo repeated deformation, such as blood vessels, lungs and skin. Composed of elastin and its accessory proteins, the fibers are produced within a restricted developmental window and are stable for decades. Their eventual breakdown is associated with a loss of tissue resiliency and aging. Rare alteration of the elastin (ELN) gene produces disease by impacting protein dosage (supravalvar aortic stenosis, Williams Beuren syndrome and Williams Beuren region duplication syndrome) and protein function (autosomal dominant cutis laxa). This review highlights aspects of the elastin molecule and its assembly process that contribute to human disease and also discusses potential therapies aimed at treating diseases of elastin insufficiency.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Aortic Stenosis, Supravalvular",
+        "Cutis Laxa",
+        "Elastin",
+        "Gene Dosage",
+        "Genetic Predisposition to Disease",
+        "Humans",
+        "Mutation",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Autosomal dominant cutis laxa",
+        "Elastin",
+        "Emphysema",
+        "Supravalvar aortic stenosis",
+        "Williams Beuren duplication syndrome",
+        "Williams Beuren syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8409172/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8409172/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.matbio.2018.02.021"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29501665/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29501665/"
+    },
+    "33101065": {
+      "pmid": "33101065",
+      "doi": "10.3389/fphys.2020.590180",
+      "pmc_id": "PMC7546208",
+      "pmc_verify": null,
+      "title": "TFII-I/Gtf2i and Erythro-Megakaryopoiesis.",
+      "authors": [
+        "Gurumurthy Aishwarya",
+        "Wu Qiong",
+        "Nar Rukiye",
+        "Paulsen Kimberly",
+        "Trumbull Alexis",
+        "Fishman Ryan C",
+        "Brand Marjorie",
+        "Strouboulis John",
+        "Qian Zhijian",
+        "Bungert Jörg"
+      ],
+      "journal": "Frontiers in physiology",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "TFII-I is a ubiquitously expressed transcription factor that positively or negatively regulates gene expression. TFII-I has been implicated in neuronal and immunologic diseases as well as in thymic epithelial cancer. Williams-Beuren Syndrome (WBS) is caused by a large hemizygous deletion on chromosome 7q11.23 which encompasses 26-28 genes, including GTF2I, the human gene encoding TFII-I. A subset of WBS patients has recently been shown to present with macrocytosis, a mild anemia characterized by enlarged erythrocytes. We conditionally deleted the TFII-I/Gtf2i gene in adult mice by tamoxifen induced Cre-recombination. Bone marrow cells revealed defects in erythro-megakaryopoiesis and an increase in expression of the adult β-globin gene. The data show that TFII-I acts as a repressor of β-globin gene transcription and that it is implicated in the differentiation of erythro-megakaryocytic cells.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Gtf2i",
+        "TFII-I",
+        "erythropoiesis",
+        "globin",
+        "megakaryopoiesis",
+        "transcription factor"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7546208/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7546208/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3389/fphys.2020.590180"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33101065/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33101065/"
+    },
+    "39368701": {
+      "pmid": "39368701",
+      "doi": "10.1016/j.jgg.2024.09.016",
+      "pmc_id": "PMC11624490",
+      "pmc_verify": null,
+      "title": "RFC2 may contribute to the pathogenicity of Williams syndrome revealed in a zebrafish model.",
+      "authors": [
+        "Park Ji-Won",
+        "Choi Tae-Ik",
+        "Kim Tae-Yoon",
+        "Lee Yu-Ri",
+        "Don Dilan Wellalage",
+        "George-Abraham Jaya K",
+        "Robak Laurie A",
+        "Trandafir Cristina C",
+        "Liu Pengfei",
+        "Rosenfeld Jill A",
+        "Kim Tae Hyeong",
+        "Petit Florence",
+        "Kim Yoo-Mi",
+        "Cheon Chong Kun",
+        "Lee Yoonsung",
+        "Kim Cheol-Hee"
+      ],
+      "journal": "Journal of genetics and genomics = Yi chuan xue bao",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Williams syndrome (WS) is a rare multisystemic disorder caused by recurrent microdeletions on 7q11.23, characterized by intellectual disability, distinctive craniofacial and dental features, and cardiovascular problems. Previous studies have explored the roles of individual genes within these microdeletions in contributing to WS phenotypes. Here, we report five patients with WS with 1.4 Mb-1.5 Mb microdeletions that include RFC2, as well as one patient with a 167-kb microdeletion involving RFC2 and six patients with intragenic variants within RFC2. To investigate the potential involvement of RFC2 in WS pathogenicity, we generate a rfc2 knockout (KO) zebrafish using CRISPR-Cas9 technology. Additionally, we generate a KO zebrafish of its paralog gene, rfc5, to better understand the functions of these RFC genes in development and disease. Both rfc2 and rfc5 KO zebrafish exhibit similar phenotypes reminiscent of WS, including small head and brain, jaw and dental defects, and vascular problems. RNA-seq analysis reveals that genes associated with neural cell survival and differentiation are specifically affected in rfc2 KO zebrafish. In addition, heterozygous rfc2 KO adult zebrafish demonstrate an anxiety-like behavior with increased social cohesion. These results suggest that RFC2 may contribute to the pathogenicity of WS, as evidenced by the zebrafish model.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Zebrafish",
+        "Williams Syndrome",
+        "Disease Models, Animal",
+        "Humans",
+        "Replication Protein C",
+        "Zebrafish Proteins",
+        "Phenotype",
+        "CRISPR-Cas Systems",
+        "Gene Knockout Techniques",
+        "Male"
+      ],
+      "keywords": [
+        "CRISPR-Cas9",
+        "Knockout",
+        "RFC2",
+        "RFC5",
+        "Williams syndrome",
+        "Zebrafish"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11624490/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11624490/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jgg.2024.09.016"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39368701/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39368701/"
+    },
+    "36152627": {
+      "pmid": "36152627",
+      "doi": "10.1016/j.cell.2022.08.022",
+      "pmc_id": "PMC9588278",
+      "pmc_verify": null,
+      "title": "Innate frequency-discrimination hyperacuity in Williams-Beuren syndrome mice.",
+      "authors": [
+        "Davenport Christopher M",
+        "Teubner Brett J W",
+        "Han Seung Baek",
+        "Patton Mary H",
+        "Eom Tae-Yeon",
+        "Garic Dusan",
+        "Lansdell Benjamin J",
+        "Shirinifard Abbas",
+        "Chang Ti-Cheng",
+        "Klein Jonathon",
+        "Pruett-Miller Shondra M",
+        "Blundon Jay A",
+        "Zakharenko Stanislav S"
+      ],
+      "journal": "Cell",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Williams-Beuren syndrome (WBS) is a rare disorder caused by hemizygous microdeletion of ∼27 contiguous genes. Despite neurodevelopmental and cognitive deficits, individuals with WBS have spared or enhanced musical and auditory abilities, potentially offering an insight into the genetic basis of auditory perception. Here, we report that the mouse models of WBS have innately enhanced frequency-discrimination acuity and improved frequency coding in the auditory cortex (ACx). Chemogenetic rescue showed frequency-discrimination hyperacuity is caused by hyperexcitable interneurons in the ACx. Haploinsufficiency of one WBS gene, Gtf2ird1, replicated WBS phenotypes by downregulating the neuropeptide receptor VIPR1. VIPR1 is reduced in the ACx of individuals with WBS and in the cerebral organoids derived from human induced pluripotent stem cells with the WBS microdeletion. Vipr1 deletion or overexpression in ACx interneurons mimicked or reversed, respectively, the cellular and behavioral phenotypes of WBS mice. Thus, the Gtf2ird1-Vipr1 mechanism in ACx interneurons may underlie the superior auditory acuity in WBS.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Auditory Cortex",
+        "Disease Models, Animal",
+        "Humans",
+        "Induced Pluripotent Stem Cells",
+        "Interneurons",
+        "Mice",
+        "Phenotype",
+        "Trans-Activators",
+        "Williams Syndrome",
+        "Muscle Proteins"
+      ],
+      "keywords": [
+        "Gtf2ird1",
+        "VIPR1",
+        "Williams-Beuren syndrome",
+        "auditory cortex",
+        "frequency-discrimination acuity",
+        "inhibitory interneurons"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9588278/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9588278/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.cell.2022.08.022"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36152627/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36152627/"
+    },
+    "11701637": {
+      "pmid": "11701637",
+      "doi": "10.1146/annurev.genom.1.1.461",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Williams syndrome and related disorders.",
+      "authors": [
+        "Morris C A",
+        "Mervis C B"
+      ],
+      "journal": "Annual review of genomics and human genetics",
+      "year": "2000",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Review"
+      ],
+      "abstract": "Three clinical conditions displaying phenotypic overlap have been linked to mutation or deletion of the elastin gene at 7q11.23. Supravalvar aortic stenosis, an autosomal dominant disorder characterized by elastin arteriopathy, is caused by mutation or intragenic deletions of ELN resulting in loss of function. Autosomal dominant cutis laxa, a primarily cutaneous condition, is the result of frameshift mutations at ELN that cause a dominant-negative effect on elastic fiber structure. Williams syndrome, a neurodevelopmental disorder is due to a 1.5 Mb deletion that includes ELN and at least 15 contiguous genes. The disorder is characterized by dysmorphic facies, mental retardation or learning difficulties, elastin arteriopathy, a unique cognitive profile of relative strength in auditory rote memory and language and extreme weakness in visuospatial constructive cognition, and a typical personality that includes overfriendliness, anxiety, and attention problems. The understanding of these disorders has progressed from phenotypic description to identification of causative mutations and insight into pathogenetic mechanisms for some aspects of the phenotype.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Aortic Stenosis, Supravalvular",
+        "Cognition Disorders",
+        "Cutis Laxa",
+        "Elastin",
+        "Humans",
+        "Language Development Disorders",
+        "Memory",
+        "Personality",
+        "Phenotype",
+        "Sequence Deletion",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1146/annurev.genom.1.1.461"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11701637/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11701637/"
+    },
+    "20425781": {
+      "pmid": "20425781",
+      "doi": "10.1002/ajmg.c.30266",
+      "pmc_id": "PMC2946897",
+      "pmc_verify": null,
+      "title": "Introduction: Williams syndrome.",
+      "authors": [
+        "Morris Colleen A"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2010",
+      "publication_types": [
+        "Introductory Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "In the nearly 50 years since the description of Williams syndrome by [Williams et al. (1961); Circulation 24:1311-1318], the focus of scientific inquiry has shifted from identification, definition, and description of the syndrome in small series to genotype-phenotype correlation, pathophysiologic investigation in both humans and in animal models, and therapeutic outcomes in large cohorts. Study of this rare syndrome has provided insight into the structure and function of the extracellular matrix, has contributed to understanding of genomic structure and rearrangement, and is beginning to elucidate genetic underpinnings of learning, language, and behavior. The results of current research not only recommend interventions that can be implemented now, but also identify areas requiring additional investigation, and suggest future therapeutic approaches.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Genetic Association Studies",
+        "Humans",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2946897/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2946897/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.30266"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20425781/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20425781/"
+    },
+    "29681090": {
+      "pmid": "29681090",
+      "doi": "10.1002/ajmg.a.38672",
+      "pmc_id": "PMC6007881",
+      "pmc_verify": null,
+      "title": "Williams-Beuren syndrome in diverse populations.",
+      "authors": [
+        "Kruszka Paul",
+        "Porras Antonio R",
+        "de Souza Deise Helena",
+        "Moresco Angélica",
+        "Huckstadt Victoria",
+        "Gill Ashleigh D",
+        "Boyle Alec P",
+        "Hu Tommy",
+        "Addissie Yonit A",
+        "Mok Gary T K",
+        "Tekendo-Ngongang Cedrik",
+        "Fieggen Karen",
+        "Prijoles Eloise J",
+        "Tanpaiboon Pranoot",
+        "Honey Engela",
+        "Luk Ho-Ming",
+        "Lo Ivan F M",
+        "Thong Meow-Keong",
+        "Muthukumarasamy Premala",
+        "Jones Kelly L",
+        "Belhassan Khadija",
+        "Ouldim Karim",
+        "El Bouchikhi Ihssane",
+        "Bouguenouch Laila",
+        "Shukla Anju",
+        "Girisha Katta M",
+        "Sirisena Nirmala D",
+        "Dissanayake Vajira H W",
+        "Paththinige C Sampath",
+        "Mishra Rupesh",
+        "Kisling Monisha S",
+        "Ferreira Carlos R",
+        "de Herreros María Beatriz",
+        "Lee Ni-Chung",
+        "Jamuar Saumya S",
+        "Lai Angeline",
+        "Tan Ee Shien",
+        "Ying Lim Jiin",
+        "Wen-Min Cham Breana",
+        "Gupta Neerja",
+        "Lotz-Esquivel Stephanie",
+        "Badilla-Porras Ramsés",
+        "Hussen Dalia Farouk",
+        "El Ruby Mona O",
+        "Ashaat Engy A",
+        "Patil Siddaramappa J",
+        "Dowsett Leah",
+        "Eaton Alison",
+        "Innes A Micheil",
+        "Shotelersuk Vorasuk",
+        "Badoe Ëben",
+        "Wonkam Ambroise",
+        "Obregon María Gabriela",
+        "Chung Brian H Y",
+        "Trubnykova Milana",
+        "La Serna Jorge",
+        "Gallardo Jugo Bertha Elena",
+        "Chávez Pastor Miguel",
+        "Abarca Barriga Hugo Hernán",
+        "Megarbane Andre",
+        "Kozel Beth A",
+        "van Haelst Mieke M",
+        "Stevenson Roger E",
+        "Summar Marshall",
+        "Adeyemo A Adebowale",
+        "Morris Colleen A",
+        "Moretti-Ferreira Danilo",
+        "Linguraru Marius George",
+        "Muenke Maximilian"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Meta-Analysis",
+        "Research Support, N.I.H., Intramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Williams-Beuren syndrome (WBS) is a common microdeletion syndrome characterized by a 1.5Mb deletion in 7q11.23. The phenotype of WBS has been well described in populations of European descent with not as much attention given to other ethnicities. In this study, individuals with WBS from diverse populations were assessed clinically and by facial analysis technology. Clinical data and images from 137 individuals with WBS were found in 19 countries with an average age of 11 years and female gender of 45%. The most common clinical phenotype elements were periorbital fullness and intellectual disability which were present in greater than 90% of our cohort. Additionally, 75% or greater of all individuals with WBS had malar flattening, long philtrum, wide mouth, and small jaw. Using facial analysis technology, we compared 286 Asian, African, Caucasian, and Latin American individuals with WBS with 286 gender and age matched controls and found that the accuracy to discriminate between WBS and controls was 0.90 when the entire cohort was evaluated concurrently. The test accuracy of the facial recognition technology increased significantly when the cohort was analyzed by specific ethnic population (P-value < 0.001 for all comparisons), with accuracies for Caucasian, African, Asian, and Latin American groups of 0.92, 0.96, 0.92, and 0.93, respectively. In summary, we present consistent clinical findings from global populations with WBS and demonstrate how facial analysis technology can support clinicians in making accurate WBS diagnoses.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anthropometry",
+        "Biological Variation, Population",
+        "Facies",
+        "Genetic Heterogeneity",
+        "Humans",
+        "Phenotype",
+        "Population Groups",
+        "Reproducibility of Results",
+        "Sensitivity and Specificity",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Africa",
+        "Asia",
+        "Latin America",
+        "Middle East",
+        "Williams",
+        "Williams-Beuren",
+        "diverse populations",
+        "facial analysis technology",
+        "syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6007881/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6007881/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.38672"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29681090/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29681090/"
+    },
+    "35196168": {
+      "pmid": "35196168",
+      "doi": "10.1152/ajpcell.00448.2021",
+      "pmc_id": "PMC9037699",
+      "pmc_verify": null,
+      "title": "Elastin, arterial mechanics, and stenosis.",
+      "authors": [
+        "Lin Chien-Jung",
+        "Cocciolone Austin J",
+        "Wagenseil Jessica E"
+      ],
+      "journal": "American journal of physiology. Cell physiology",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, U.S. Gov't, Non-P.H.S."
+      ],
+      "abstract": "Elastin is a long-lived extracellular matrix protein that is organized into elastic fibers that provide elasticity to the arterial wall, allowing stretch and recoil with each cardiac cycle. By forming lamellar units with smooth muscle cells, elastic fibers transduce tissue-level mechanics to cell-level changes through mechanobiological signaling. Altered amounts or assembly of elastic fibers leads to changes in arterial structure and mechanical behavior that compromise cardiovascular function. In particular, genetic mutations in the elastin gene (ELN) that reduce elastin protein levels are associated with focal arterial stenosis, or narrowing of the arterial lumen, such as that seen in supravalvular aortic stenosis and Williams-Beuren syndrome. Global reduction of Eln levels in mice allows investigation of the tissue- and cell-level arterial mechanical changes and associated alterations in smooth muscle cell phenotype that may contribute to stenosis formation. A loxP-floxed Eln allele in mice highlights cell type- and developmental origin-specific mechanobiological effects of reduced elastin amounts. Eln production is required in distinct cell types for elastic layer formation in different parts of the mouse vasculature. Eln deletion in smooth muscle cells from different developmental origins in the ascending aorta leads to characteristic patterns of vascular stenosis and neointima. Dissecting the mechanobiological signaling associated with local Eln depletion and subsequent smooth muscle cell response may help develop new therapeutic interventions for elastin-related diseases.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Aorta",
+        "Arteries",
+        "Constriction, Pathologic",
+        "Elastin",
+        "Mice",
+        "Myocytes, Smooth Muscle"
+      ],
+      "keywords": [
+        "extracellular matrix",
+        "mechanobiology",
+        "neointima",
+        "smooth muscle cell",
+        "vascular stenosis"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9037699/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9037699/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1152/ajpcell.00448.2021"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35196168/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35196168/"
+    },
+    "10469848": {
+      "pmid": "10469848",
+      "doi": "10.1093/hmg/8.10.1947",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Williams-Beuren syndrome: genes and mechanisms.",
+      "authors": [
+        "Francke U"
+      ],
+      "journal": "Human molecular genetics",
+      "year": "1999",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Review"
+      ],
+      "abstract": "Williams-Beuren syndrome (WBS; OMIM 194050) is caused by heterozygous deletions of approximately 1.6 Mb of chromosomal sub-band 7q11.23. The deletions are rather uniform in size as they arise spontaneously by inter- or intrachromosomal crossover events within misaligned duplicated regions of high sequence identity that flank the typical deletion. This review will discuss the status of the molecular characterization of the deletion and flanking regions, the genes identified in the deletion region and their possible roles in generating the complex multi-system clinical phenotype.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 7",
+        "Cytogenetic Analysis",
+        "Genes",
+        "Genetic Linkage",
+        "Humans",
+        "Phenotype",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/hmg/8.10.1947"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10469848/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10469848/"
+    },
+    "38085853": {
+      "pmid": "38085853",
+      "doi": "10.1097/YCO.0000000000000914",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Psychiatric and behavioral manifestations of Williams syndrome.",
+      "authors": [
+        "Thom Robyn P"
+      ],
+      "journal": "Current opinion in psychiatry",
+      "year": "2024",
+      "publication_types": [
+        "Review",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "PURPOSE OF REVIEW: The purpose of this review is to synthesize recent advances in the psychiatric and behavioral manifestations of Williams syndrome, a rare genetic syndrome. Recent advances have focused on more deeply characterizing the social phenotype and developing social skill interventions, improving the assessment and treatment of anxiety, and exploring eating behaviors. RECENT FINDINGS: The social cognitive phenotype in Williams syndrome, which consists of both high social drive and social cognition deficits, is present cross-culturally and may be related to reduced eye gaze. Social skills training for adults with Williams syndrome has demonstrated promise. Adapted exposure therapy and cognitive behavioral therapy programs for children and adults respectively, have been piloted in Williams syndrome. The majority of adults with Williams syndrome are either underweight or overweight, and problematic food-related behaviors likely contribute to bodyweight status. SUMMARY: Williams syndrome is associated with a number of core social and psychiatric difficulties which have a significant impact on functioning and quality of life. Recent work has begun to utilize a more nuanced understanding of the clinical presentations of these problems to develop interventions tailored to this unique population. However, larger trials, particularly those inclusive of a more diverse Williams syndrome population, are needed.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "The purpose of this review is to synthesize recent advances in the psychiatric and behavioral manifestations of Williams syndrome, a rare genetic syndrome. Recent advances have focused on more deeply characterizing the social phenotype and developing social skill interventions, improving the assessment and treatment of anxiety, and exploring eating behaviors.",
+        "RECENT FINDINGS": "The social cognitive phenotype in Williams syndrome, which consists of both high social drive and social cognition deficits, is present cross-culturally and may be related to reduced eye gaze. Social skills training for adults with Williams syndrome has demonstrated promise. Adapted exposure therapy and cognitive behavioral therapy programs for children and adults respectively, have been piloted in Williams syndrome. The majority of adults with Williams syndrome are either underweight or overweight, and problematic food-related behaviors likely contribute to bodyweight status.",
+        "SUMMARY": "Williams syndrome is associated with a number of core social and psychiatric difficulties which have a significant impact on functioning and quality of life. Recent work has begun to utilize a more nuanced understanding of the clinical presentations of these problems to develop interventions tailored to this unique population. However, larger trials, particularly those inclusive of a more diverse Williams syndrome population, are needed."
+      },
+      "mesh_terms": [
+        "Child",
+        "Adult",
+        "Humans",
+        "Williams Syndrome",
+        "Quality of Life",
+        "Anxiety"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/YCO.0000000000000914"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38085853/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38085853/"
+    },
+    "21189808": {
+      "pmid": "21189808",
+      "doi": "10.1016/b978-0-12-374748-8.00005-6",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Williams syndrome.",
+      "authors": [
+        "Riby Deborah M",
+        "Porter Melanie A"
+      ],
+      "journal": "Advances in child development and behavior",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Emotions",
+        "Humans",
+        "Language Development",
+        "Learning",
+        "Mental Disorders",
+        "Social Behavior",
+        "Williams Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/b978-0-12-374748-8.00005-6"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21189808/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21189808/"
+    },
+    "34891220": {
+      "pmid": "34891220",
+      "doi": "10.1111/gbb.12789",
+      "pmc_id": "PMC9744551",
+      "pmc_verify": null,
+      "title": "Focus on autism and other neurodevelopmental disorders.",
+      "authors": [
+        "Ryabinin Andrey E"
+      ],
+      "journal": "Genes, brain, and behavior",
+      "year": "2022",
+      "publication_types": [
+        "Editorial",
+        "Introductory Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Autistic Disorder",
+        "Developmental Disabilities",
+        "Humans"
+      ],
+      "keywords": [
+        "DISC1",
+        "Prader-Willi syndrome",
+        "Williams Syndrome",
+        "autism",
+        "neurodevelopment"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9744551/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9744551/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/gbb.12789"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34891220/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34891220/"
+    },
+    "34317455": {
+      "pmid": "34317455",
+      "doi": "10.1016/j.jaccas.2020.05.046",
+      "pmc_id": "PMC8311718",
+      "pmc_verify": null,
+      "title": "Has Your Physician Heard of Williams-Beuren Syndrome?",
+      "authors": [
+        "Alquran Lance",
+        "Mallipudi Rajiv M"
+      ],
+      "journal": "JACC. Case reports",
+      "year": "2020",
+      "publication_types": [
+        "Editorial"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Williams-Beuren syndrome",
+        "elfin face",
+        "supravalvular aortic stenosis"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8311718/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8311718/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jaccas.2020.05.046"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34317455/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34317455/"
+    }
+  }
+}

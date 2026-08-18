@@ -39,18 +39,18 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:13
 /* ── Banner ──────────────────────────────────────────────────────── */
 .banner{border-radius:var(--r);padding:.9rem 1.2rem;margin-bottom:1rem;
         display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
-.banner.LOW_RISK   {background:var(--teal-l);border:1.5px solid var(--teal-b);}
-.banner.HIGH_RISK {background:var(--red-l); border:1.5px solid var(--red-b);}
-.banner.SUSPECTED{background:var(--amber-l);border:1.5px solid var(--amber-b);}
+.banner.NORMAL   {background:var(--teal-l);border:1.5px solid var(--teal-b);}
+.banner.ABNORMAL {background:var(--red-l); border:1.5px solid var(--red-b);}
+.banner.SUSPICIOUS{background:var(--amber-l);border:1.5px solid var(--amber-b);}
 .bicon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;
        justify-content:center;font-size:17px;flex-shrink:0;}
-.LOW_RISK   .bicon{background:var(--teal-b);}
-.HIGH_RISK .bicon{background:var(--red-b);}
-.SUSPECTED .bicon{background:var(--amber-b);}
+.NORMAL   .bicon{background:var(--teal-b);}
+.ABNORMAL .bicon{background:var(--red-b);}
+.SUSPICIOUS .bicon{background:var(--amber-b);}
 .bres{font-size:16px;font-weight:700;}
-.LOW_RISK .bres{color:var(--teal);}
-.HIGH_RISK .bres{color:var(--red);}
-.SUSPECTED .bres{color:var(--amber);}
+.NORMAL .bres{color:var(--teal);}
+.ABNORMAL .bres{color:var(--red);}
+.SUSPICIOUS .bres{color:var(--amber);}
 .bdesc{font-size:12px;color:var(--text-sub);margin-top:2px;}
 
 /* ── Cards ───────────────────────────────────────────────────────── */
@@ -65,8 +65,8 @@ body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:13
 /* ── Info grid ───────────────────────────────────────────────────── */
 .igrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));}
 .iitem{padding:8px 12px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);}
-.iitem .il{font-size:10px;color:#1A202C;margin-bottom:1px;}
-.iitem .iv{font-size:13px;font-weight:500;color:#000000;}
+.iitem .il{font-size:10px;color:var(--text-muted);margin-bottom:1px;}
+.iitem .iv{font-size:13px;font-weight:500;}
 
 /* ── Chips ───────────────────────────────────────────────────────── */
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1rem;}

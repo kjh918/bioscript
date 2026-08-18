@@ -1,0 +1,3882 @@
+{
+  "disease_info": {
+    "syndrome": "Prader-Willi syndrome",
+    "definition": "Prader-Willi syndrome (PWS) is characterized by severe hypotonia, poor appetite, and feeding difficulties in early infancy, followed in early childhood by excessive eating and gradual development of morbid obesity (unless food intake is strictly controlled). Motor milestones and language development are delayed. All individuals have some degree of cognitive impairment. Hypogonadism is present in both males and females and manifests as genital hypoplasia, incomplete pubertal development, and, in most, infertility. Short stature is common (if not treated with growth hormone). A distinctive behavioral phenotype (temper tantrums, stubbornness, manipulative behavior, and obsessive-compulsive characteristics) is common. Characteristic facial features, strabismus, and scoliosis are often present.",
+    "synonyms": [
+      "PWS"
+    ],
+    "db_ids": {
+      "SNOMED-CT": "89392001",
+      "MONDO": "MONDO:0008300",
+      "OMIM": "176270",
+      "Orphanet": "739"
+    },
+    "gene_locations": [
+      {
+        "gene_symbol": "HERC2",
+        "ncbi_gene_id": "8924",
+        "cytoband": "15q13.1",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "IPW",
+        "ncbi_gene_id": "3653",
+        "cytoband": "15q11.2",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "MAGEL2",
+        "ncbi_gene_id": "54551",
+        "cytoband": "15q11.2",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "MKRN3",
+        "ncbi_gene_id": "7681",
+        "cytoband": "15q11.2",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "MKRN3-AS1",
+        "ncbi_gene_id": "10108",
+        "cytoband": "15q11-q13",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "NPAP1",
+        "ncbi_gene_id": "23742",
+        "cytoband": "15q11.2",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "PWAR1",
+        "ncbi_gene_id": "145624",
+        "cytoband": "15q11.2",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "PWRN1",
+        "ncbi_gene_id": "791114",
+        "cytoband": "15q11.2",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "SNORD115-1",
+        "ncbi_gene_id": "338433",
+        "cytoband": "15q11.2",
+        "source": "medgen_direct"
+      },
+      {
+        "gene_symbol": "SNORD116-1",
+        "ncbi_gene_id": "100033413",
+        "cytoband": "15q11.2",
+        "source": "medgen_direct"
+      }
+    ],
+    "genomic_targets": [],
+    "genereview_url": "/pubmed?LinkName=medgen_pubmed_genereviews&from_uid=46057",
+    "literature": {
+      "pubmed": {
+        "papers": [
+          {
+            "pmid": "38383825",
+            "title": "Bardet-Biedl syndrome: A clinical overview focusing on diagnosis, outcomes and best-practice management.",
+            "authors": "Shoemaker A",
+            "journal": "Diabetes Obes Metab",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38383825/"
+          },
+          {
+            "pmid": "31333129",
+            "title": "Prader-Willi Syndrome - Clinical Genetics, Diagnosis and Treatment Approaches: An Update.",
+            "authors": "Butler MG, Miller JL, Forster JL",
+            "journal": "Curr Pediatr Rev",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31333129/"
+          },
+          {
+            "pmid": "26541535",
+            "title": "Obstructive sleep disordered breathing in 2- to 18-year-old children: diagnosis and management.",
+            "authors": "Kaditis AG, Alonso Alvarez ML, Boudewyns A, Alexopoulos EI, Ersu R, Joosten K, Larramona H, Miano S, Narang I, Trang H, Tsaoussoglou M, Vandenbussche N, Villa MP, Van Waardenburg D, Weber S, Verhulst S",
+            "journal": "Eur Respir J",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26541535/"
+          }
+        ],
+        "see_all": {}
+      },
+      "etiology": {
+        "papers": [
+          {
+            "pmid": "36790642",
+            "title": "Sleep Consequences of Prader-Willi Syndrome.",
+            "authors": "Itani R, Gillett ES, Perez IA",
+            "journal": "Curr Neurol Neurosci Rep",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36790642/"
+          },
+          {
+            "pmid": "32555988",
+            "title": "Prader-Willi syndrome: endocrine manifestations and management.",
+            "authors": "Alves C, Franco RR",
+            "journal": "Arch Endocrinol Metab",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32555988/"
+          },
+          {
+            "pmid": "28494825",
+            "title": "Prader-Willi Syndrome: Background and Management.",
+            "authors": "Abdilla Y, Andria Barbara M, Calleja-Agius J",
+            "journal": "Neonatal Netw",
+            "year": "2017",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28494825/"
+          },
+          {
+            "pmid": "24458695",
+            "title": "Hypoglycemia in Prader-Willi syndrome.",
+            "authors": "Harrington RA, Weinstein DA, Miller JL",
+            "journal": "Am J Med Genet A",
+            "year": "2014",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24458695/"
+          },
+          {
+            "pmid": "22237428",
+            "title": "Prader-Willi syndrome.",
+            "authors": "Cassidy SB, Schwartz S, Miller JL, Driscoll DJ",
+            "journal": "Genet Med",
+            "year": "2012",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22237428/"
+          }
+        ],
+        "see_all": {}
+      },
+      "diagnosis": {
+        "papers": [
+          {
+            "pmid": "38854617",
+            "title": "Prader-Willi Syndrome: The More We Know, the Less We Know.",
+            "authors": "Whitman BY",
+            "journal": "Mo Med",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38854617/"
+          },
+          {
+            "pmid": "35985710",
+            "title": "Clinical Indications for Growth Hormone Therapy.",
+            "authors": "Danowitz M, Grimberg A",
+            "journal": "Adv Pediatr",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35985710/"
+          },
+          {
+            "pmid": "31333129",
+            "title": "Prader-Willi Syndrome - Clinical Genetics, Diagnosis and Treatment Approaches: An Update.",
+            "authors": "Butler MG, Miller JL, Forster JL",
+            "journal": "Curr Pediatr Rev",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31333129/"
+          },
+          {
+            "pmid": "26062517",
+            "title": "Prader-Willi syndrome: a review of clinical, genetic, and endocrine findings.",
+            "authors": "Angulo MA, Butler MG, Cataletto ME",
+            "journal": "J Endocrinol Invest",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26062517/"
+          },
+          {
+            "pmid": "22237428",
+            "title": "Prader-Willi syndrome.",
+            "authors": "Cassidy SB, Schwartz S, Miller JL, Driscoll DJ",
+            "journal": "Genet Med",
+            "year": "2012",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22237428/"
+          }
+        ],
+        "see_all": {}
+      },
+      "therapy": {
+        "papers": [
+          {
+            "pmid": "38321079",
+            "title": "Current and future state of pharmacological management of pediatric obesity.",
+            "authors": "Fox CK, Kelly AS, Reilly JL, Theis-Mahon N, Raatz SJ",
+            "journal": "Int J Obes (Lond)",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38321079/"
+          },
+          {
+            "pmid": "38854617",
+            "title": "Prader-Willi Syndrome: The More We Know, the Less We Know.",
+            "authors": "Whitman BY",
+            "journal": "Mo Med",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38854617/"
+          },
+          {
+            "pmid": "37919617",
+            "title": "Diazoxide choline extended-release tablet in people with Prader-Willi syndrome: results from long-term open-label study.",
+            "authors": "Miller JL, Gevers E, Bridges N, Yanovski JA, Salehi P, Obrynba KS, Felner EI, Bird LM, Shoemaker AH, Angulo M, Butler MG, Stevenson D, Goldstone AP, Wilding J, Lah M, Shaikh MG, Littlejohn E, Abuzzahab MJ, Fleischman A, Hirano P, Yen K, Cowen NM, Bhatnagar A; C601/C602 Investigators",
+            "journal": "Obesity (Silver Spring)",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37919617/"
+          },
+          {
+            "pmid": "36639249",
+            "title": "Diazoxide Choline Extended-Release Tablet in People With Prader-Willi Syndrome: A Double-Blind, Placebo-Controlled Trial.",
+            "authors": "Miller JL, Gevers E, Bridges N, Yanovski JA, Salehi P, Obrynba KS, Felner EI, Bird LM, Shoemaker AH, Angulo M, Butler MG, Stevenson D, Abuzzahab J, Barrett T, Lah M, Littlejohn E, Mathew V, Cowen NM, Bhatnagar A; DESTINY PWS Investigators",
+            "journal": "J Clin Endocrinol Metab",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36639249/"
+          },
+          {
+            "pmid": "35985710",
+            "title": "Clinical Indications for Growth Hormone Therapy.",
+            "authors": "Danowitz M, Grimberg A",
+            "journal": "Adv Pediatr",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35985710/"
+          }
+        ],
+        "see_all": {}
+      },
+      "prognosis": {
+        "papers": [
+          {
+            "pmid": "35150573",
+            "title": "Approach to the Patient With Prader-Willi Syndrome.",
+            "authors": "Höybye C, Tauber M",
+            "journal": "J Clin Endocrinol Metab",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35150573/"
+          },
+          {
+            "pmid": "33724138",
+            "title": "Benefits of multidisciplinary care in Prader-Willi syndrome.",
+            "authors": "Salvatoni A, Nosetti L, Salvatore S, Agosti M",
+            "journal": "Expert Rev Endocrinol Metab",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33724138/"
+          },
+          {
+            "pmid": "26541535",
+            "title": "Obstructive sleep disordered breathing in 2- to 18-year-old children: diagnosis and management.",
+            "authors": "Kaditis AG, Alonso Alvarez ML, Boudewyns A, Alexopoulos EI, Ersu R, Joosten K, Larramona H, Miano S, Narang I, Trang H, Tsaoussoglou M, Vandenbussche N, Villa MP, Van Waardenburg D, Weber S, Verhulst S",
+            "journal": "Eur Respir J",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26541535/"
+          },
+          {
+            "pmid": "25599341",
+            "title": "Cognitive and behavioural aspects of Prader-Willi syndrome.",
+            "authors": "Rice LJ, Einfeld SL",
+            "journal": "Curr Opin Psychiatry",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25599341/"
+          },
+          {
+            "pmid": "16597186",
+            "title": "Mortality in Prader-Willi syndrome.",
+            "authors": "Einfeld SL, Kavanagh SJ, Smith A, Evans EJ, Tonge BJ, Taffe J",
+            "journal": "Am J Ment Retard",
+            "year": "2006",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16597186/"
+          }
+        ],
+        "see_all": {}
+      },
+      "clinical_prediction": {
+        "papers": [
+          {
+            "pmid": "37919617",
+            "title": "Diazoxide choline extended-release tablet in people with Prader-Willi syndrome: results from long-term open-label study.",
+            "authors": "Miller JL, Gevers E, Bridges N, Yanovski JA, Salehi P, Obrynba KS, Felner EI, Bird LM, Shoemaker AH, Angulo M, Butler MG, Stevenson D, Goldstone AP, Wilding J, Lah M, Shaikh MG, Littlejohn E, Abuzzahab MJ, Fleischman A, Hirano P, Yen K, Cowen NM, Bhatnagar A; C601/C602 Investigators",
+            "journal": "Obesity (Silver Spring)",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37919617/"
+          },
+          {
+            "pmid": "36768472",
+            "title": "Clinical Trials in Prader-Willi Syndrome: A Review.",
+            "authors": "Mahmoud R, Kimonis V, Butler MG",
+            "journal": "Int J Mol Sci",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36768472/"
+          },
+          {
+            "pmid": "36181471",
+            "title": "Liraglutide for Weight Management in Children and Adolescents With Prader-Willi Syndrome and Obesity.",
+            "authors": "Diene G, Angulo M, Hale PM, Jepsen CH, Hofman PL, Hokken-Koelega A, Ramesh C, Turan S, Tauber M",
+            "journal": "J Clin Endocrinol Metab",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36181471/"
+          },
+          {
+            "pmid": "33647242",
+            "title": "Endocrine disorders in Prader-Willi syndrome: a model to understand and treat hypothalamic dysfunction.",
+            "authors": "Tauber M, Hoybye C",
+            "journal": "Lancet Diabetes Endocrinol",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33647242/"
+          },
+          {
+            "pmid": "28956320",
+            "title": "Oxytocin and Prader-Willi Syndrome.",
+            "authors": "Kabasakalian A, Ferretti CJ, Hollander E",
+            "journal": "Curr Top Behav Neurosci",
+            "year": "2018",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28956320/"
+          }
+        ],
+        "see_all": {}
+      },
+      "systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "30788853",
+            "title": "Physical exercise and Prader-Willi syndrome: A systematic review.",
+            "authors": "Morales JS, Valenzuela PL, Pareja-Galeano H, Rincón-Castanedo C, Rubin DA, Lucia A",
+            "journal": "Clin Endocrinol (Oxf)",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30788853/"
+          },
+          {
+            "pmid": "26584571",
+            "title": "Psychotropic treatments in Prader-Willi syndrome: a critical review of published literature.",
+            "authors": "Bonnot O, Cohen D, Thuilleaux D, Consoli A, Cabal S, Tauber M",
+            "journal": "Eur J Pediatr",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26584571/"
+          },
+          {
+            "pmid": "26331980",
+            "title": "Autism spectrum disorder in Prader-Willi syndrome: A systematic review.",
+            "authors": "Bennett JA, Germani T, Haqq AM, Zwaigenbaum L",
+            "journal": "Am J Med Genet A",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26331980/"
+          },
+          {
+            "pmid": "24737477",
+            "title": "Prader-Willi-like phenotypes: a systematic review of their chromosomal abnormalities.",
+            "authors": "Rocha CF, Paiva CL",
+            "journal": "Genet Mol Res",
+            "year": "2014",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/24737477/"
+          },
+          {
+            "pmid": "23543664",
+            "title": "GrowthHormone Research Society workshop summary: consensus guidelines for recombinant human growth hormone therapy in Prader-Willi syndrome.",
+            "authors": "Deal CL, Tony M, Höybye C, Allen DB, Tauber M, Christiansen JS; 2011 Growth Hormone in Prader-Willi Syndrome Clinical Care Guidelines Workshop Participants",
+            "journal": "J Clin Endocrinol Metab",
+            "year": "2011",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23543664/"
+          }
+        ],
+        "see_all": {}
+      }
+    },
+    "medgen_uid": "46057",
+    "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/46057"
+  },
+  "db_ids": {
+    "SNOMED-CT": "89392001",
+    "MONDO": "MONDO:0008300",
+    "OMIM": "176270",
+    "Orphanet": "739"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "HERC2",
+      "chromosome": "chr15",
+      "cytoband": "15q13.1",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "gencc_classification": "Strong",
+        "gencc_moi": "Autosomal recessive",
+        "gencc_submitters": [
+          "Labcorp Genetics (formerly Invitae)",
+          "Orphanet",
+          "G2P",
+          "PanelApp Australia",
+          "Ambry Genetics"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000635",
+            "hpo_name": "Blue irides"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          }
+        ],
+        "ncbi_gene_id": "8924"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "IPW",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct"
+      ],
+      "annotation": {
+        "ncbi_gene_id": "3653"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "MAGEL2",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "ClinGen",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "hi_score": "1",
+        "hi_score_label": "Little evidence for dosage pathogenicity",
+        "hi_disease": null,
+        "ts_score": "No evidence available",
+        "hi_pmids": [],
+        "hgnc_id": null,
+        "gencc_classification": "Definitive",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "Labcorp Genetics (formerly Invitae)",
+          "Illumina",
+          "G2P",
+          "ClinGen",
+          "PanelApp Australia"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000358",
+            "hpo_name": "Posteriorly rotated ears"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0000377",
+            "hpo_name": "Abnormal pinna morphology"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          }
+        ],
+        "ncbi_gene_id": "54551"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "MKRN3",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "gencc_classification": "Strong",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "PanelApp Australia",
+          "Ambry Genetics",
+          "Labcorp Genetics (formerly Invitae)"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "7681"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "MKRN3-AS1",
+      "chromosome": "chr15",
+      "cytoband": "15q11-q13",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct"
+      ],
+      "annotation": {
+        "ncbi_gene_id": "10108"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "NPAP1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "23742"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "PWAR1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "145624"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "PWRN1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "791114"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "SNORD115-1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "338433"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "SNORD116-1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "100033413"
+      }
+    }
+  ],
+  "evidence_literature": [
+    {
+      "pmid": "38383825",
+      "doi": "10.1111/dom.15494",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Bardet-Biedl syndrome: A clinical overview focusing on diagnosis, outcomes and best-practice management.",
+      "authors": [
+        "Shoemaker Ashley"
+      ],
+      "journal": "Diabetes, obesity & metabolism",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Bardet-Biedl syndrome (BBS) is a genetic disorder characterized by early-onset obesity, polydactyly, genital and kidney anomalies, developmental delay and vision loss due to rod-cone dystrophy. BBS is an autosomal recessive disorder with >20 implicated genes. The genotype-phenotype relationship in BBS is not clear, and there may be additional modifying factors. The underlying mechanism is dysfunction of primary cilia. In BBS, receptor trafficking in and out of the cilia is compromised, affecting multiple organ systems. Along with early-onset obesity, hyperphagia is a prominent symptom and contributes significantly to clinical morbidity and caregiver burden. While there is no cure for BBS, setmelanotide is a new pharmacotherapy approved for treatment of obesity in BBS. The differential diagnosis for BBS includes other ciliopathies, such as Alstrom syndrome, and other genetic obesity syndromes, such as Prader-Willi syndrome. Careful clinical history and genetic testing can help determine the diagnosis and a multidisciplinary team is necessary to guide clinical management.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Bardet-Biedl Syndrome",
+        "Obesity",
+        "Obesity, Morbid"
+      ],
+      "keywords": [
+        "appetite control",
+        "body composition",
+        "clinical physiology",
+        "energy regulation"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/dom.15494"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38383825/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38383825/"
+    },
+    {
+      "pmid": "31333129",
+      "doi": "10.2174/1573396315666190716120925",
+      "pmc_id": "PMC7040524",
+      "pmc_verify": null,
+      "title": "Prader-Willi Syndrome - Clinical Genetics, Diagnosis and Treatment Approaches: An Update.",
+      "authors": [
+        "Butler Merlin G",
+        "Miller Jennifer L",
+        "Forster Janice L"
+      ],
+      "journal": "Current pediatric reviews",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "BACKGROUND: Prader-Willi Syndrome (PWS) is a neurodevelopmental genomic imprinting disorder with lack of expression of genes inherited from the paternal chromosome 15q11-q13 region usually from paternal 15q11-q13 deletions (about 60%) or maternal uniparental disomy 15 or both 15s from the mother (about 35%). An imprinting center controls the expression of imprinted genes in the chromosome 15q11-q13 region. Key findings include infantile hypotonia, a poor suck, failure to thrive and hypogonadism/hypogenitalism. Short stature and small hands/feet due to growth and other hormone deficiencies, hyperphagia and marked obesity occur in early childhood, if uncontrolled. Cognitive and behavioral problems (tantrums, compulsions, compulsive skin picking) are common. OBJECTIVE: Hyperphagia and obesity with related complications are major causes of morbidity and mortality in PWS. This report will describe an accurate diagnosis with determination of specific genetic subtypes, appropriate medical management and best practice treatment approaches. METHODS AND RESULTS: An extensive literature review was undertaken related to genetics, clinical findings and laboratory testing, clinical and behavioral assessments and summary of updated health-related information addressing the importance of early PWS diagnosis and treatment. A searchable, bulleted and formatted list of topics is provided utilizing a Table of Contents approach for the clinical practitioner. CONCLUSION: Physicians and other health care providers can use this review with clinical, genetic and treatment summaries divided into sections pertinent in the context of clinical practice. Frequently asked questions by clinicians, families and other interested participants or providers will be addressed.",
+      "abstract_sections": {
+        "BACKGROUND": "Prader-Willi Syndrome (PWS) is a neurodevelopmental genomic imprinting disorder with lack of expression of genes inherited from the paternal chromosome 15q11-q13 region usually from paternal 15q11-q13 deletions (about 60%) or maternal uniparental disomy 15 or both 15s from the mother (about 35%). An imprinting center controls the expression of imprinted genes in the chromosome 15q11-q13 region. Key findings include infantile hypotonia, a poor suck, failure to thrive and hypogonadism/hypogenitalism. Short stature and small hands/feet due to growth and other hormone deficiencies, hyperphagia and marked obesity occur in early childhood, if uncontrolled. Cognitive and behavioral problems (tantrums, compulsions, compulsive skin picking) are common.",
+        "OBJECTIVE": "Hyperphagia and obesity with related complications are major causes of morbidity and mortality in PWS. This report will describe an accurate diagnosis with determination of specific genetic subtypes, appropriate medical management and best practice treatment approaches.",
+        "METHODS AND RESULTS": "An extensive literature review was undertaken related to genetics, clinical findings and laboratory testing, clinical and behavioral assessments and summary of updated health-related information addressing the importance of early PWS diagnosis and treatment. A searchable, bulleted and formatted list of topics is provided utilizing a Table of Contents approach for the clinical practitioner.",
+        "CONCLUSION": "Physicians and other health care providers can use this review with clinical, genetic and treatment summaries divided into sections pertinent in the context of clinical practice. Frequently asked questions by clinicians, families and other interested participants or providers will be addressed."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Developmental Disabilities",
+        "Disease Management",
+        "Disease Progression",
+        "Evidence-Based Medicine",
+        "Feeding Behavior",
+        "Genetic Counseling",
+        "Genetic Testing",
+        "Genomic Imprinting",
+        "Guidelines as Topic",
+        "Humans",
+        "Infant",
+        "Interdisciplinary Communication",
+        "Morbidity",
+        "Obesity",
+        "Phenotype",
+        "Prader-Willi Syndrome",
+        "Problem Behavior"
+      ],
+      "keywords": [
+        "Diagnostic protocols",
+        "Prader-Willi syndrome",
+        "caloric intake",
+        "care management",
+        "genetic testing",
+        "genomic imprinting",
+        "medication",
+        "obesity",
+        "treatment approaches."
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7040524/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7040524/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2174/1573396315666190716120925"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31333129/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31333129/"
+    },
+    {
+      "pmid": "26541535",
+      "doi": "10.1183/13993003.00385-2015",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Obstructive sleep disordered breathing in 2- to 18-year-old children: diagnosis and management.",
+      "authors": [
+        "Kaditis Athanasios G",
+        "Alonso Alvarez Maria Luz",
+        "Boudewyns An",
+        "Alexopoulos Emmanouel I",
+        "Ersu Refika",
+        "Joosten Koen",
+        "Larramona Helena",
+        "Miano Silvia",
+        "Narang Indra",
+        "Trang Ha",
+        "Tsaoussoglou Marina",
+        "Vandenbussche Nele",
+        "Villa Maria Pia",
+        "Van Waardenburg Dick",
+        "Weber Silke",
+        "Verhulst Stijn"
+      ],
+      "journal": "The European respiratory journal",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "This document summarises the conclusions of a European Respiratory Society Task Force on the diagnosis and management of obstructive sleep disordered breathing (SDB) in childhood and refers to children aged 2-18 years. Prospective cohort studies describing the natural history of SDB or randomised, double-blind, placebo-controlled trials regarding its management are scarce. Selected evidence (362 articles) can be consolidated into seven management steps. SDB is suspected when symptoms or abnormalities related to upper airway obstruction are present (step 1). Central nervous or cardiovascular system morbidity, growth failure or enuresis and predictors of SDB persistence in the long-term are recognised (steps 2 and 3), and SDB severity is determined objectively preferably using polysomnography (step 4). Children with an apnoea-hypopnoea index (AHI) >5 episodes·h(-1), those with an AHI of 1-5 episodes·h(-1) and the presence of morbidity or factors predicting SDB persistence, and children with complex conditions (e.g. Down syndrome and Prader-Willi syndrome) all appear to benefit from treatment (step 5). Treatment interventions are usually implemented in a stepwise fashion addressing all abnormalities that predispose to SDB (step 6) with re-evaluation after each intervention to detect residual disease and to determine the need for additional treatment (step 7).",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adenoidectomy",
+        "Adolescent",
+        "Child",
+        "Comorbidity",
+        "Continuous Positive Airway Pressure",
+        "Disease Management",
+        "Disease Progression",
+        "Down Syndrome",
+        "Humans",
+        "Polysomnography",
+        "Prader-Willi Syndrome",
+        "Severity of Illness Index",
+        "Sleep Apnea, Obstructive",
+        "Tonsillectomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1183/13993003.00385-2015"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26541535/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26541535/"
+    },
+    {
+      "pmid": "36790642",
+      "doi": "10.1007/s11910-023-01254-6",
+      "pmc_id": "PMC10011275",
+      "pmc_verify": null,
+      "title": "Sleep Consequences of Prader-Willi Syndrome.",
+      "authors": [
+        "Itani Reem",
+        "Gillett Emily S",
+        "Perez Iris A"
+      ],
+      "journal": "Current neurology and neuroscience reports",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "PURPOSE OF REVIEW: This paper reviews how sleep is impacted in patients with Prader-Willi syndrome (PWS), focusing on sleep-related breathing disturbances and excessive daytime sleepiness (EDS). RECENT FINDINGS: Hypothalamic dysfunction may underlie several aspects of the PWS phenotype. Central sleep apnea (CSA) can persist beyond infancy. Nocturnal hypoventilation is common and may occur without central or obstructive sleep apnea (OSA). Adenotonsillectomy, a mainstay of OSA treatment, may cause velopharyngeal insufficiency. Growth hormone (GH) is considered safe, but close surveillance for OSA remains important. Cardiac autonomic dysfunction occurs during slow wave sleep and may increase the risk of cardiovascular events. EDS and narcolepsy are also common. Modafinil and pitolisant are treatment options currently being studied. Sleep disorders are prevalent in individuals with PWS. Sleep-related breathing disorders present as CSA in infancy and later in life as OSA and hypoventilation. GH therapy has improved the clinical outcomes of patients with PWS, but close surveillance and treatment for OSA is recommended. EDS can persist even after sleep-related breathing disorders are treated, and some individuals may even develop narcolepsy. Early recognition and treatment of sleep-related disorders may prevent morbidity and result in improved survival of patients with PWS.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "This paper reviews how sleep is impacted in patients with Prader-Willi syndrome (PWS), focusing on sleep-related breathing disturbances and excessive daytime sleepiness (EDS).",
+        "RECENT FINDINGS": "Hypothalamic dysfunction may underlie several aspects of the PWS phenotype. Central sleep apnea (CSA) can persist beyond infancy. Nocturnal hypoventilation is common and may occur without central or obstructive sleep apnea (OSA). Adenotonsillectomy, a mainstay of OSA treatment, may cause velopharyngeal insufficiency. Growth hormone (GH) is considered safe, but close surveillance for OSA remains important. Cardiac autonomic dysfunction occurs during slow wave sleep and may increase the risk of cardiovascular events. EDS and narcolepsy are also common. Modafinil and pitolisant are treatment options currently being studied. Sleep disorders are prevalent in individuals with PWS. Sleep-related breathing disorders present as CSA in infancy and later in life as OSA and hypoventilation. GH therapy has improved the clinical outcomes of patients with PWS, but close surveillance and treatment for OSA is recommended. EDS can persist even after sleep-related breathing disorders are treated, and some individuals may even develop narcolepsy. Early recognition and treatment of sleep-related disorders may prevent morbidity and result in improved survival of patients with PWS."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Hypoventilation",
+        "Polysomnography",
+        "Sleep",
+        "Sleep Apnea, Obstructive",
+        "Disorders of Excessive Somnolence",
+        "Narcolepsy"
+      ],
+      "keywords": [
+        "Excessive daytime sleepiness",
+        "Growth hormone",
+        "Hypoventilation",
+        "Narcolepsy",
+        "Prader-Willi syndrome",
+        "Sleep-disordered breathing"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10011275/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10011275/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s11910-023-01254-6"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36790642/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36790642/"
+    },
+    {
+      "pmid": "32555988",
+      "doi": "10.20945/2359-3997000000248",
+      "pmc_id": "PMC10522225",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome: endocrine manifestations and management.",
+      "authors": [
+        "Alves Crésio",
+        "Franco Ruth Rocha"
+      ],
+      "journal": "Archives of endocrinology and metabolism",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is a genetic disorder caused by the absence of gene expression in the 15q11.2-q13 paternal chromosome. Patients with PWS develop hypothalamic dysfunction that can lead to various endocrine changes such as: obesity, growth hormone deficiency, hypogonadism, hypothyroidism, adrenal insufficiency and low bone mineral density. In addition, individuals with PWS have increased risk of developing type 2 diabetes mellitus. This review summarizes and updates the current knowledge about the prevention, diagnosis and treatment of endocrine manifestations associated with Prader Willi syndrome, especially diagnosis of growth hormone deficiency, management and monitoring of adverse effects; diagnosis of central adrenal insufficiency and management in stressful situations; screening for central hypothyroidism; research and treatment of hypogonadism; prevention and treatment of disorders of glucose metabolism. Careful attention to the endocrine aspects of PWS contributes significantly to the health of these individuals. Arch Endocrinol Metab. 2020;64(3):223-34.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Diabetes Mellitus",
+        "Humans",
+        "Hypogonadism",
+        "Hypothyroidism",
+        "Obesity",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10522225/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10522225/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.20945/2359-3997000000248"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32555988/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32555988/"
+    },
+    {
+      "pmid": "28494825",
+      "doi": "10.1891/0730-0832.36.3.134",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi Syndrome: Background and Management.",
+      "authors": [
+        "Abdilla Ylenia",
+        "Andria Barbara Maria",
+        "Calleja-Agius Jean"
+      ],
+      "journal": "Neonatal network : NN",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The imprinting disorder, Prader-Willi syndrome, is a condition associated with the gene region 15q11.2-q.13. The phenotype includes multiple characteristics, most of which are endocrine-related. An accurate diagnosis is done mostly through pre- or postnatal genetic testing. Management is mainly aimed at correcting the endocrine dysfunctions present in these patients. Genetic testing is also important to distinguish between the different causes and to calculate the recurrence risk for parents with affected children. Although a lot has been discovered and this syndrome can be managed to a satisfactory degree, further research is still important especially regarding new potential treatments with greater efficiency and reduced invasiveness. The neonatal nurse has an important role because the management requires thorough monitoring as well as high compliance from both the patient and the carers. Thus, it is essential for the neonatal nurse to have a good knowledge of this condition.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Female",
+        "Genetic Counseling",
+        "Genetic Testing",
+        "Genomic Imprinting",
+        "Humans",
+        "Infant, Newborn",
+        "Neonatal Nursing",
+        "Neonatal Screening",
+        "Phenotype",
+        "Prader-Willi Syndrome",
+        "Pregnancy",
+        "Prenatal Diagnosis"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1891/0730-0832.36.3.134"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28494825/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28494825/"
+    },
+    {
+      "pmid": "24458695",
+      "doi": "10.1002/ajmg.a.36405",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Hypoglycemia in Prader-Willi syndrome.",
+      "authors": [
+        "Harrington Rena A",
+        "Weinstein David A",
+        "Miller Jennifer L"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2014",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Although mouse models of Prader-Willi syndrome (PWS) suggest that hypoglycemia may be part of this syndrome, review of the literature shows little evidence that it is an issue in humans with PWS. Both adrenal and growth hormone deficiency can be seen in PWS, and both of these hormone deficiencies are associated with increased risk for hypoglycemia. We reviewed medical records for patients with PWS seen at the University of Florida Prader-Willi Program. Children were 2 months to 5 years of age. We recorded the presence, degree, and persistence of hypoglycemia, age of first occurrence, genetic diagnosis, and gestational age. Repeated hypoglycemia was determined if individuals had multiple blood glucose (BG) values <50 mg/dl before 1 month old, or BG levels <50 mg/dl once and additional BG values <70 mg/dl after 1 year of age. Of 95 patient charts reviewed, 12 (12.6%) had recorded hypoglycemia. Six of 12 patients with hypoglycemia had documented BG levels <40 mg/dl. Seven had their first episode of hypoglycemia within the first day of life. Of these seven individuals, five had BG <40 mg/dl. Repeated hypoglycemia was noted in 10 patients (83% of all patients with hypoglycemia). Only two with hypoglycemia had documented adrenal insufficiency. Our study suggests that infants with PWS may be predisposed to hypoglycemia from birth. Additional investigation is necessary to confirm our findings and define the cause of hypoglycemia. If the presence of hypoglycemia is confirmed, early detection and treatment may result in improved neurocognitive outcomes.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Blood Glucose",
+        "Female",
+        "Humans",
+        "Hypoglycemia",
+        "Infant, Newborn",
+        "Male",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [
+        "Prader-Willi syndrome",
+        "hypoglycemia"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.36405"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24458695/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24458695/"
+    },
+    {
+      "pmid": "22237428",
+      "doi": "10.1038/gim.0b013e31822bead0",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Cassidy Suzanne B",
+        "Schwartz Stuart",
+        "Miller Jennifer L",
+        "Driscoll Daniel J"
+      ],
+      "journal": "Genetics in medicine : official journal of the American College of Medical Genetics",
+      "year": "2012",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome is characterized by severe infantile hypotonia with poor suck and failure to thrive; hypogonadism causing genital hypoplasia and pubertal insufficiency; characteristic facial features; early-childhood onset obesity and hyperphagia; developmental delay/mild intellectual disability; short stature; and a distinctive behavioral phenotype. Sleep abnormalities and scoliosis are common. Growth hormone insufficiency is frequent, and replacement therapy provides improvement in growth, body composition, and physical attributes. Management is otherwise largely supportive. Consensus clinical diagnostic criteria exist, but diagnosis should be confirmed through genetic testing. Prader-Willi syndrome is due to absence of paternally expressed imprinted genes at 15q11.2-q13 through paternal deletion of this region (65-75% of individuals), maternal uniparental disomy 15 (20-30%), or an imprinting defect (1-3%). Parent-specific DNA methylation analysis will detect >99% of individuals. However, additional genetic studies are necessary to identify the molecular class. There are multiple imprinted genes in this region, the loss of which contribute to the complete phenotype of Prader-Willi syndrome. However, absence of a small nucleolar organizing RNA gene, SNORD116, seems to reproduce many of the clinical features. Sibling recurrence risk is typically <1%, but higher risks may pertain in certain cases. Prenatal diagnosis is available.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Diagnosis, Differential",
+        "Genetic Association Studies",
+        "Genetic Counseling",
+        "Genetic Testing",
+        "Humans",
+        "Morbidity",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/gim.0b013e31822bead0"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22237428/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22237428/"
+    },
+    {
+      "pmid": "38854617",
+      "doi": "10.1002/oby.20646",
+      "pmc_id": "PMC11160371",
+      "pmc_verify": null,
+      "title": "Prader-Willi Syndrome: The More We Know, the Less We Know.",
+      "authors": [
+        "Whitman Barbara Y"
+      ],
+      "journal": "Missouri medicine",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is a complex genetic neurodevelopmental disorder with multisystem impact and a unique behavior profile that evolves over the life span. Beyond the primary care needs of all children and adults, the unique medical concerns and management needs of those with PWS are best served in a multidisciplinary academic center. Our PWS center has provided care for individuals with PWS and their families since 1981. Our growth hormone studies contributed to growth hormone supplementation becoming standard of care in this country. Here, in collaboration with the primary care provider, early childhood intervention programs, schools and local parent organizations, solid, patient-centered care for affected individuals and their families can be provided across the life-span. The purpose of this article is to provide a brief overview of PWS and the attendant medical and behavior management challenges attendant to the disorder.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Prader-Willi Syndrome",
+        "Humans",
+        "Child",
+        "Human Growth Hormone"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11160371/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11160371/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/oby.20646"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38854617/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38854617/"
+    },
+    {
+      "pmid": "35985710",
+      "doi": "10.1016/j.yapd.2022.03.005",
+      "pmc_id": "PMC9754707",
+      "pmc_verify": null,
+      "title": "Clinical Indications for Growth Hormone Therapy.",
+      "authors": [
+        "Danowitz Melinda",
+        "Grimberg Adda"
+      ],
+      "journal": "Advances in pediatrics",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "Growth hormone (GH) is an injectable medication originally used to replace the deficiency of the hormone, but has expanded to treating conditions that may reduce growth and adult height even when the body maintains endogenous GH production. In the United States, there are 8 Food and Drug Administration (FDA)-approved indications for pediatric GH therapy: GH deficiency, Prader-Willi Syndrome, small for gestational age (SGA) without catch-up growth, idiopathic short stature, Turner syndrome, SHOX gene haploinsufficiency, Noonan Syndrome, and chronic renal insufficiency. We characterize the growth patterns and effects of GH treatment in each of these indications. We also review patterns of growth that warrant referral to a pediatric endocrinologist, as well as safety updates. This review is intended to guide practitioners on the initial evaluation and management of patients with short stature, and the indications for GH therapy.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Child",
+        "Dwarfism",
+        "Growth Disorders",
+        "Growth Hormone",
+        "Human Growth Hormone",
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Turner Syndrome",
+        "United States"
+      ],
+      "keywords": [
+        "Growth",
+        "Growth hormone",
+        "Growth hormone deficiency",
+        "Idiopathic short stature",
+        "Prader–Willi syndrome",
+        "Short stature",
+        "Turner syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9754707/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9754707/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.yapd.2022.03.005"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35985710/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35985710/"
+    },
+    {
+      "pmid": "26062517",
+      "doi": "10.1007/s40618-015-0312-9",
+      "pmc_id": "PMC4630255",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome: a review of clinical, genetic, and endocrine findings.",
+      "authors": [
+        "Angulo M A",
+        "Butler M G",
+        "Cataletto M E"
+      ],
+      "journal": "Journal of endocrinological investigation",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "INTRODUCTION: Prader-Willi syndrome (PWS) is a multisystemic complex genetic disorder caused by lack of expression of genes on the paternally inherited chromosome 15q11.2-q13 region. There are three main genetic subtypes in PWS: paternal 15q11-q13 deletion (65-75 % of cases), maternal uniparental disomy 15 (20-30 % of cases), and imprinting defect (1-3 %). DNA methylation analysis is the only technique that will diagnose PWS in all three molecular genetic classes and differentiate PWS from Angelman syndrome. Clinical manifestations change with age with hypotonia and a poor suck resulting in failure to thrive during infancy. As the individual ages, other features such as short stature, food seeking with excessive weight gain, developmental delay, cognitive disability and behavioral problems become evident. The phenotype is likely due to hypothalamic dysfunction, which is responsible for hyperphagia, temperature instability, high pain threshold, hypersomnia and multiple endocrine abnormalities including growth hormone and thyroid-stimulating hormone deficiencies, hypogonadism and central adrenal insufficiency. Obesity and its complications are the major causes of morbidity and mortality in PWS. METHODS: An extensive review of the literature was performed and interpreted within the context of clinical practice and frequently asked questions from referring physicians and families to include the current status of the cause and diagnosis of the clinical, genetics and endocrine findings in PWS. CONCLUSIONS: Updated information regarding the early diagnosis and management of individuals with Prader-Willi syndrome is important for all physicians and will be helpful in anticipating and managing or modifying complications associated with this rare obesity-related disorder.",
+      "abstract_sections": {
+        "INTRODUCTION": "Prader-Willi syndrome (PWS) is a multisystemic complex genetic disorder caused by lack of expression of genes on the paternally inherited chromosome 15q11.2-q13 region. There are three main genetic subtypes in PWS: paternal 15q11-q13 deletion (65-75 % of cases), maternal uniparental disomy 15 (20-30 % of cases), and imprinting defect (1-3 %). DNA methylation analysis is the only technique that will diagnose PWS in all three molecular genetic classes and differentiate PWS from Angelman syndrome. Clinical manifestations change with age with hypotonia and a poor suck resulting in failure to thrive during infancy. As the individual ages, other features such as short stature, food seeking with excessive weight gain, developmental delay, cognitive disability and behavioral problems become evident. The phenotype is likely due to hypothalamic dysfunction, which is responsible for hyperphagia, temperature instability, high pain threshold, hypersomnia and multiple endocrine abnormalities including growth hormone and thyroid-stimulating hormone deficiencies, hypogonadism and central adrenal insufficiency. Obesity and its complications are the major causes of morbidity and mortality in PWS.",
+        "METHODS": "An extensive review of the literature was performed and interpreted within the context of clinical practice and frequently asked questions from referring physicians and families to include the current status of the cause and diagnosis of the clinical, genetics and endocrine findings in PWS.",
+        "CONCLUSIONS": "Updated information regarding the early diagnosis and management of individuals with Prader-Willi syndrome is important for all physicians and will be helpful in anticipating and managing or modifying complications associated with this rare obesity-related disorder."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [
+        "Chromosome 15 abnormalities",
+        "Endocrine disturbances",
+        "Genomic imprinting",
+        "Hypogonadism",
+        "Obesity",
+        "Prader-Willi syndrome",
+        "Short stature"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4630255/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4630255/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s40618-015-0312-9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26062517/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26062517/"
+    },
+    {
+      "pmid": "38321079",
+      "doi": "10.1038/s41366-024-01465-y",
+      "pmc_id": "8511973",
+      "pmc_verify": null,
+      "title": "Current and future state of pharmacological management of pediatric obesity.",
+      "authors": [
+        "Fox Claudia K",
+        "Kelly Aaron S",
+        "Reilly Jessica L",
+        "Theis-Mahon Nicole",
+        "Raatz Sarah J"
+      ],
+      "journal": "International journal of obesity (2005)",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Pediatric obesity is a highly prevalent chronic disease, which has traditionally been treated with lifestyle therapy alone. Yet for many youth, lifestyle intervention as a monotherapy is often insufficient for achieving clinically significant and durable BMI reduction. While metabolic/bariatric surgery achieves robust and long-lasting outcomes, it is neither widely accessible nor wanted by most pediatric patients and families. In the past 3 years, this treatment gap between lifestyle therapy and metabolic/bariatric surgery has been filled with a number of landmark clinical trials examining the safety and efficacy of anti-obesity medication (AOM) for use in children and adolescents. These trials include studies of liraglutide, phentermine/topiramate ER, semaglutide, and setmelanotide, all of which have led to FDA and/or EMA approval. Concurrent with this developing evidence base, in 2023, the American Academy of Pediatrics published their first Clinical Practice Guideline on the assessment and management of childhood obesity. The Guideline includes the recommendation that pediatric health care providers should offer AOM to youth ages ≥12 years with obesity. Recognizing that AOM use in the pediatric population will likely become the standard of care and to provide perspective on the recently generated data regarding new AOM, this narrative review summarizes the published randomized controlled trials (RCTs) from the past 10 years that examine AOM for the pediatric population. This report additionally includes RCTs examining AOM for special populations of pediatric obesity including monogenic obesity, Bardet Biedl syndrome, Prader Willi syndrome, and hypothalamic obesity. Finally, the clinical application of AOM for children and adolescents, as well as future directions and challenges are discussed.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Pediatric Obesity",
+        "Anti-Obesity Agents",
+        "Child",
+        "Adolescent",
+        "Randomized Controlled Trials as Topic"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8511973/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8511973/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41366-024-01465-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38321079/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38321079/"
+    },
+    {
+      "pmid": "37919617",
+      "doi": "10.1002/oby.23928",
+      "pmc_id": "PMC12181816",
+      "pmc_verify": null,
+      "title": "Diazoxide choline extended-release tablet in people with Prader-Willi syndrome: results from long-term open-label study.",
+      "authors": [
+        "Miller Jennifer L",
+        "Gevers Evelien",
+        "Bridges Nicola",
+        "Yanovski Jack A",
+        "Salehi Parisa",
+        "Obrynba Kathryn S",
+        "Felner Eric I",
+        "Bird Lynne M",
+        "Shoemaker Ashley H",
+        "Angulo Moris",
+        "Butler Merlin G",
+        "Stevenson David",
+        "Goldstone Anthony P",
+        "Wilding John",
+        "Lah Melissa",
+        "Shaikh M Guftar",
+        "Littlejohn Elizabeth",
+        "Abuzzahab M Jennifer",
+        "Fleischman Amy",
+        "Hirano Patricia",
+        "Yen Kristen",
+        "Cowen Neil M",
+        "Bhatnagar Anish",
+        "C601/C602 Investigators"
+      ],
+      "journal": "Obesity (Silver Spring, Md.)",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: This study assessed the effect of 1-year administration of diazoxide choline extended-release tablet (DCCR) on hyperphagia and other complications of Prader-Willi syndrome (PWS). METHODS: The authors studied 125 participants with PWS, age ≥ 4 years, who were enrolled in the DESTINY PWS Phase 3 study and who received DCCR for up to 52 weeks in DESTINY PWS and/or its open-label extension. The primary efficacy endpoint was Hyperphagia Questionnaire for Clinical Trials (HQ-CT) score. Other endpoints included behavioral assessments, body composition, hormonal measures, and safety. RESULTS: DCCR administration resulted in significant improvements in HQ-CT (mean [SE] -9.9 [0.77], p < 0.0001) and greater improvements in those with more severe baseline hyperphagia (HQ-CT > 22). Improvements were seen in aggression, anxiety, and compulsivity (all p < 0.0001). There were reductions in leptin, insulin, and insulin resistance, as well as a significant increase in adiponectin (all p < 0.004). Lean body mass was increased (p < 0.0001). Disease severity was reduced as assessed by clinician and caregiver (both p < 0.0001). Common treatment-emergent adverse events included hypertrichosis, peripheral edema, and hyperglycemia. Adverse events infrequently resulted in discontinuation (7.2%). CONCLUSIONS: DCCR administration to people with PWS was well tolerated and associated with broad-ranging improvements in the syndrome. Sustained administration of DCCR has the potential to reduce disease severity and the burden of care for families.",
+      "abstract_sections": {
+        "OBJECTIVE": "This study assessed the effect of 1-year administration of diazoxide choline extended-release tablet (DCCR) on hyperphagia and other complications of Prader-Willi syndrome (PWS).",
+        "METHODS": "The authors studied 125 participants with PWS, age ≥ 4 years, who were enrolled in the DESTINY PWS Phase 3 study and who received DCCR for up to 52 weeks in DESTINY PWS and/or its open-label extension. The primary efficacy endpoint was Hyperphagia Questionnaire for Clinical Trials (HQ-CT) score. Other endpoints included behavioral assessments, body composition, hormonal measures, and safety.",
+        "RESULTS": "DCCR administration resulted in significant improvements in HQ-CT (mean [SE] -9.9 [0.77], p < 0.0001) and greater improvements in those with more severe baseline hyperphagia (HQ-CT > 22). Improvements were seen in aggression, anxiety, and compulsivity (all p < 0.0001). There were reductions in leptin, insulin, and insulin resistance, as well as a significant increase in adiponectin (all p < 0.004). Lean body mass was increased (p < 0.0001). Disease severity was reduced as assessed by clinician and caregiver (both p < 0.0001). Common treatment-emergent adverse events included hypertrichosis, peripheral edema, and hyperglycemia. Adverse events infrequently resulted in discontinuation (7.2%).",
+        "CONCLUSIONS": "DCCR administration to people with PWS was well tolerated and associated with broad-ranging improvements in the syndrome. Sustained administration of DCCR has the potential to reduce disease severity and the burden of care for families."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Child, Preschool",
+        "Prader-Willi Syndrome",
+        "Diazoxide",
+        "Hyperphagia",
+        "Body Composition",
+        "Insulin"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12181816/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12181816/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/oby.23928"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37919617/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37919617/"
+    },
+    {
+      "pmid": "36639249",
+      "doi": "10.1210/clinem/dgad014",
+      "pmc_id": "PMC10271219",
+      "pmc_verify": null,
+      "title": "Diazoxide Choline Extended-Release Tablet in People With Prader-Willi Syndrome: A Double-Blind, Placebo-Controlled Trial.",
+      "authors": [
+        "Miller Jennifer L",
+        "Gevers Evelien",
+        "Bridges Nicola",
+        "Yanovski Jack A",
+        "Salehi Parisa",
+        "Obrynba Kathryn S",
+        "Felner Eric I",
+        "Bird Lynne M",
+        "Shoemaker Ashley H",
+        "Angulo Moris",
+        "Butler Merlin G",
+        "Stevenson David",
+        "Abuzzahab Jennifer",
+        "Barrett Timothy",
+        "Lah Melissa",
+        "Littlejohn Elizabeth",
+        "Mathew Verghese",
+        "Cowen Neil M",
+        "Bhatnagar Anish",
+        "DESTINY PWS Investigators"
+      ],
+      "journal": "The Journal of clinical endocrinology and metabolism",
+      "year": "2023",
+      "publication_types": [
+        "Randomized Controlled Trial",
+        "Clinical Trial, Phase III",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "CONTEXT: Prader-Willi syndrome (PWS) is a rare neurobehavioral-metabolic disease caused by the lack of paternally expressed genes in the chromosome 15q11-q13 region, characterized by hypotonia, neurocognitive problems, behavioral difficulties, endocrinopathies, and hyperphagia resulting in severe obesity if not controlled. OBJECTIVE: The primary end point was change from baseline in hyperphagia using the Hyperphagia Questionnaire for Clinical Trials (HQ-CT). Other end points included Global Impression Scores, and changes in body composition, behaviors, and hormones. METHODS: In DESTINY PWS, a 13-week, randomized, double-blind, placebo-controlled, phase 3 trial, 127 participants with PWS aged 4 years and older with hyperphagia were randomly assigned 2:1 to diazoxide choline extended-release tablet (DCCR) or placebo. RESULTS: DCCR did not significantly improve hyperphagia (HQ-CT least-square mean (LSmean) [SE] -5.94 [0.879] vs -4.27 [1.145]; P = .198), but did so in participants with severe hyperphagia (LSmean [SE] -9.67 [1.429] vs -4.26 [1.896]; P = .012). Two of 3 secondary end points were improved (Clinical Global Impression of Improvement [CGI-I]; P = .029; fat mass; P = .023). In an analysis of results generated pre-COVID, the primary (HQ-CT; P = .037) and secondary end points were all improved (CGI-I; P = .015; Caregiver Global Impression of Change; P = .031; fat mass; P = .003). In general, DCCR was well tolerated with 83.3% in the DCCR group experiencing a treatment-emergent adverse event and 73.8% in the placebo group (not significant). CONCLUSION: DCCR did not significantly improve hyperphagia in the primary analysis but did in participants with severe baseline hyperphagia and in the pre-COVID analysis. DCCR treatment was associated with significant improvements in body composition and clinician-reported outcomes.",
+      "abstract_sections": {
+        "CONTEXT": "Prader-Willi syndrome (PWS) is a rare neurobehavioral-metabolic disease caused by the lack of paternally expressed genes in the chromosome 15q11-q13 region, characterized by hypotonia, neurocognitive problems, behavioral difficulties, endocrinopathies, and hyperphagia resulting in severe obesity if not controlled.",
+        "OBJECTIVE": "The primary end point was change from baseline in hyperphagia using the Hyperphagia Questionnaire for Clinical Trials (HQ-CT). Other end points included Global Impression Scores, and changes in body composition, behaviors, and hormones.",
+        "METHODS": "In DESTINY PWS, a 13-week, randomized, double-blind, placebo-controlled, phase 3 trial, 127 participants with PWS aged 4 years and older with hyperphagia were randomly assigned 2:1 to diazoxide choline extended-release tablet (DCCR) or placebo.",
+        "RESULTS": "DCCR did not significantly improve hyperphagia (HQ-CT least-square mean (LSmean) [SE] -5.94 [0.879] vs -4.27 [1.145]; P = .198), but did so in participants with severe hyperphagia (LSmean [SE] -9.67 [1.429] vs -4.26 [1.896]; P = .012). Two of 3 secondary end points were improved (Clinical Global Impression of Improvement [CGI-I]; P = .029; fat mass; P = .023). In an analysis of results generated pre-COVID, the primary (HQ-CT; P = .037) and secondary end points were all improved (CGI-I; P = .015; Caregiver Global Impression of Change; P = .031; fat mass; P = .003). In general, DCCR was well tolerated with 83.3% in the DCCR group experiencing a treatment-emergent adverse event and 73.8% in the placebo group (not significant).",
+        "CONCLUSION": "DCCR did not significantly improve hyperphagia in the primary analysis but did in participants with severe baseline hyperphagia and in the pre-COVID analysis. DCCR treatment was associated with significant improvements in body composition and clinician-reported outcomes."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Diazoxide",
+        "COVID-19",
+        "Obesity",
+        "Hyperphagia"
+      ],
+      "keywords": [
+        "DCCR",
+        "Prader-Willi syndrome",
+        "hyperphagia"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10271219/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10271219/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1210/clinem/dgad014"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36639249/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36639249/"
+    },
+    {
+      "pmid": "35150573",
+      "doi": "10.1210/clinem/dgac082",
+      "pmc_id": "PMC9635059",
+      "pmc_verify": null,
+      "title": "Approach to the Patient With Prader-Willi Syndrome.",
+      "authors": [
+        "Höybye Charlotte",
+        "Tauber Maithé"
+      ],
+      "journal": "The Journal of clinical endocrinology and metabolism",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is a rare, multisystemic, genetic disorder involving the hypothalamus. It is caused by loss of expression of paternally inherited genes in chromosome 15 q11-13 region. The estimated incidence is around 1 in 20.000 births. PWS is characterized by a complex lifelong trajectory involving neurodevelopmental, nutritional, endocrine, metabolic, and behavioral changes. The major symptoms are hypotonia, short stature, hypogonadism, and eating disorders ranging from anorexia in infancy to hyperphagia, a deficit of satiety, and a high risk of severe obesity. The patients display intellectual disability comprising cognitive deficit, delayed motor and language development, learning deficits, impaired social skills, and emotional regulation. Behavioral features including temper outbursts, anxiety, obsessive-compulsive symptoms and rigidity are common and become more apparent with increasing age. Almost all have hypogonadism and growth hormone deficiency. Central adrenal insufficiency is rare whereas central hypothyroidism occurs in up to 30% of children with PWS. The prevalence of obesity increases with age from almost none in early childhood to more than 90% in adulthood. Up to 25% of adults with obesity have type 2 diabetes. Obesity and its complications are the major causes of comorbidity and mortality in PWS. As there is no specific treatment, care consists of comprehensive management of feeding disorders, a restricted, controlled diet, regular exercise, hormone substitution, and screening and treatment of comorbidities. Here we present the course of PWS from birth to adulthood in 2 patients and discuss their symptoms in relation to the literature.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Child",
+        "Child, Preschool",
+        "Diabetes Mellitus, Type 2",
+        "Humans",
+        "Hyperphagia",
+        "Hypogonadism",
+        "Obesity",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [
+        "Prader–Willi syndrome",
+        "children and adults",
+        "clinical characteristics",
+        "treatment"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9635059/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9635059/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1210/clinem/dgac082"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35150573/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35150573/"
+    },
+    {
+      "pmid": "33724138",
+      "doi": "10.1080/17446651.2021.1898375",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Benefits of multidisciplinary care in Prader-Willi syndrome.",
+      "authors": [
+        "Salvatoni Alessandro",
+        "Nosetti Luana",
+        "Salvatore Silvia",
+        "Agosti Massimo"
+      ],
+      "journal": "Expert review of endocrinology & metabolism",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Introduction: Prader-Willi syndrome (PWS) is the most well-known condition of genetic obesity. Over the past 20 years, advances have been achieved in the diagnosis and treatment of PWS with a significant improvement in prognosis.Areas covered: This review focuses on the benefits of multidisciplinary approach in children and adolescents with PWS. In particular, the neonatologist and geneticist play a key role in early diagnosis and the clinical follow-up of the PWS patient must be guaranteed by a team including pediatric endocrinologist, psychologist, nutritionist/dietician, neurologist/neuropsychiatrist, sleep specialist, ears, nose and throat specialist (ENT), lung specialist, dentist, orthopedist and ophthalmologist and, eventually, gastroenterologist. We searched PubMed and critically summarized what has been reported in the last 10 years on PWS.Expert opinion: The multidisciplinary care in association with an early diagnosis and GH treatment postpones overweight development and decreases prevalence of obesity in individuals with PWS. Further prognostic improvements are expected through the selection of teams particularly experienced in the management of individuals with PWS and the discovery of new drugs.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Early Diagnosis",
+        "Humans",
+        "Obesity",
+        "Prader-Willi Syndrome",
+        "Prognosis"
+      ],
+      "keywords": [
+        "Prader-Willi",
+        "growth hormone",
+        "hypotonia",
+        "multidisciplinary",
+        "obesity",
+        "osas"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/17446651.2021.1898375"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33724138/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33724138/"
+    },
+    {
+      "pmid": "25599341",
+      "doi": "10.1097/YCO.0000000000000135",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cognitive and behavioural aspects of Prader-Willi syndrome.",
+      "authors": [
+        "Rice Lauren J",
+        "Einfeld Stewart L"
+      ],
+      "journal": "Current opinion in psychiatry",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: To provide a review of the recent advances in the diagnosis and treatment of psychiatric disorders in Prader-Willi syndrome (PWS). RECENT FINDINGS: Research in the last 12 months has provided a descriptive prognosis of psychosis in PWS and highlighted the possible genes associated with the increased risk of psychosis for those with maternal uniparental disomy (mUPD). Several studies investigating social and communication skills have shown people with PWS to have difficulty with core, receptive and expressive language skills, interpreting emotional valence in faces, playing with children of their own age, understanding personal space and a developmental delay in the theory of mind. These social and communication deficits are often more pronounced in those with mUPD. Two recent clinical trials of oxytocin provide mixed results and highlight the need for an improved understanding of the neurobiological characteristics of the PWS brain. A recent pilot study suggests N-acetylcysteine may be a viable treatment for skin picking. SUMMARY: Recent advances have contributed to our understanding of the emotional and behavioural problems associated with PWS, and provided directions for further research.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "To provide a review of the recent advances in the diagnosis and treatment of psychiatric disorders in Prader-Willi syndrome (PWS).",
+        "RECENT FINDINGS": "Research in the last 12 months has provided a descriptive prognosis of psychosis in PWS and highlighted the possible genes associated with the increased risk of psychosis for those with maternal uniparental disomy (mUPD). Several studies investigating social and communication skills have shown people with PWS to have difficulty with core, receptive and expressive language skills, interpreting emotional valence in faces, playing with children of their own age, understanding personal space and a developmental delay in the theory of mind. These social and communication deficits are often more pronounced in those with mUPD. Two recent clinical trials of oxytocin provide mixed results and highlight the need for an improved understanding of the neurobiological characteristics of the PWS brain. A recent pilot study suggests N-acetylcysteine may be a viable treatment for skin picking.",
+        "SUMMARY": "Recent advances have contributed to our understanding of the emotional and behavioural problems associated with PWS, and provided directions for further research."
+      },
+      "mesh_terms": [
+        "Child",
+        "Child Behavior Disorders",
+        "Cognition Disorders",
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Randomized Controlled Trials as Topic"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/YCO.0000000000000135"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25599341/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25599341/"
+    },
+    {
+      "pmid": "16597186",
+      "doi": "10.1352/0895-8017(2006)111[193:MIPS]2.0.CO;2",
+      "pmc_id": "PMC2422866",
+      "pmc_verify": null,
+      "title": "Mortality in Prader-Willi syndrome.",
+      "authors": [
+        "Einfeld Stewart L",
+        "Kavanagh Sophie J",
+        "Smith Arabella",
+        "Evans Elizabeth J",
+        "Tonge Bruce J",
+        "Taffe John"
+      ],
+      "journal": "American journal of mental retardation : AJMR",
+      "year": "2006",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Persons with Prader-Willi syndrome have been known to have a high mortality rate. However, intellectual disability, which usually accompanies Prader-Willi syndrome, is also associated with a higher mortality rate than in the general population. In this study, the death rates in a longitudinal cohort of people with Prader-Willi syndrome are compared with those for an epidemiologically derived control sample of people with intellectual disability from other causes. We found that those with Prader-Willi syndrome had a higher mortality rate than did controls. After the protective effect of mild intellectual disability or average intellectual function was accounted for, the hazard ratio for Prader-Willi syndrome versus controls was 6.07. Obesity and its complications were factors contributing to the mortality identified in this study.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Child, Preschool",
+        "Female",
+        "Humans",
+        "Intellectual Disability",
+        "Male",
+        "Prader-Willi Syndrome",
+        "Survival Rate"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2422866/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2422866/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1352/0895-8017(2006)111[193:MIPS]2.0.CO;2"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16597186/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16597186/"
+    },
+    {
+      "pmid": "36768472",
+      "doi": "10.3390/ijms24032150",
+      "pmc_id": "PMC9916985",
+      "pmc_verify": null,
+      "title": "Clinical Trials in Prader-Willi Syndrome: A Review.",
+      "authors": [
+        "Mahmoud Ranim",
+        "Kimonis Virginia",
+        "Butler Merlin G"
+      ],
+      "journal": "International journal of molecular sciences",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is a complex, genetic, neurodevelopmental disorder. PWS has three molecular genetic classes. The most common defect is due to a paternal 15q11-q13 deletion observed in about 60% of individuals. This is followed by maternal disomy 15 (both 15 s from the mother), found in approximately 35% of cases. the remaining individuals have a defect of the imprinting center that controls the activity of imprinted genes on chromosome 15. Mild cognitive impairment and behavior problems in PWS include self-injury, anxiety, compulsions, and outbursts in childhood, impacted by genetic subtypes. Food seeking and hyperphagia can lead to morbid obesity and contribute to diabetes and cardiovascular or orthopedic problems. The control of hyperphagia and improving food-related behaviors are the most important unmet needs in PWS and could be addressed with the development of a new therapeutic agent, as currently no approved therapeutics exist for PWS treatment. The status of clinical trials with existing results for the management of obesity and hyperphagia in PWS will be discussed in this review, including treatments such as beloranib, setmelanotide, a diazoxide choline controlled-release tablet (DCCR), an unacylated ghrelin analogue, oxytocin and related compounds, glucagon-like peptide 1 receptor agonists, surgical intervention, and transcranial direct-current stimulation.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Female",
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Transcranial Direct Current Stimulation",
+        "Hyperphagia",
+        "Anxiety",
+        "Mothers"
+      ],
+      "keywords": [
+        "Prader–Willi syndrome",
+        "clinical trials",
+        "genetics",
+        "hyperphagia",
+        "obesity"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9916985/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9916985/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/ijms24032150"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36768472/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36768472/"
+    },
+    {
+      "pmid": "36181471",
+      "doi": "10.1210/clinem/dgac549",
+      "pmc_id": "PMC9759167",
+      "pmc_verify": null,
+      "title": "Liraglutide for Weight Management in Children and Adolescents With Prader-Willi Syndrome and Obesity.",
+      "authors": [
+        "Diene Gwenaëlle",
+        "Angulo Moris",
+        "Hale Paula M",
+        "Jepsen Cecilie H",
+        "Hofman Paul L",
+        "Hokken-Koelega Anita",
+        "Ramesh Chethana",
+        "Turan Serap",
+        "Tauber Maïthé"
+      ],
+      "journal": "The Journal of clinical endocrinology and metabolism",
+      "year": "2022",
+      "publication_types": [
+        "Randomized Controlled Trial",
+        "Multicenter Study",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "CONTEXT: Prader-Willi syndrome (PWS) is characterized by lack of appetite control and hyperphagia, leading to obesity. Pharmacological options for weight management are needed. OBJECTIVE: To determine whether liraglutide treatment for weight management is superior to placebo/no treatment in pediatric individuals with PWS. METHODS: This was a multicenter, 52-week, placebo-controlled trial with a 16-week double-blinded period. Adolescents (n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; Tanner stage <2) with PWS and obesity were included. Patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or placebo for 16 weeks, after which placebo was stopped. Liraglutide was continued for 52 weeks. All patients followed a structured diet and exercise program throughout the trial. The coprimary endpoints were change in body mass index (BMI) standard deviation score (SDS) from baseline to 16 and 52 weeks. Secondary endpoints included other weight-related parameters, hyperphagia, and safety. RESULTS: Change in BMI SDS from baseline to weeks 16 and 52 was not significantly different between treatments in adolescents (estimated treatment difference: -0.07 at week 16 and -0.14 at week 52) and children (-0.06 and -0.07, respectively). Changes in other weight-related parameters between treatments were not significant. At week 52, hyperphagia total and drive scores were lower in adolescents treated with liraglutide vs no treatment. The most common adverse events with liraglutide were gastrointestinal disorders. CONCLUSION: Although the coprimary endpoints were not met, changes in hyperphagia total and drive scores in adolescents warrant further studies on liraglutide in this population.",
+      "abstract_sections": {
+        "CONTEXT": "Prader-Willi syndrome (PWS) is characterized by lack of appetite control and hyperphagia, leading to obesity. Pharmacological options for weight management are needed.",
+        "OBJECTIVE": "To determine whether liraglutide treatment for weight management is superior to placebo/no treatment in pediatric individuals with PWS.",
+        "METHODS": "This was a multicenter, 52-week, placebo-controlled trial with a 16-week double-blinded period. Adolescents (n = 31, aged 12-17 years; Tanner stage 2-5) and children (n = 24, aged 6-11 years; Tanner stage <2) with PWS and obesity were included. Patients were randomized 2:1 to liraglutide 3.0 mg (or maximum-tolerated dose) or placebo for 16 weeks, after which placebo was stopped. Liraglutide was continued for 52 weeks. All patients followed a structured diet and exercise program throughout the trial. The coprimary endpoints were change in body mass index (BMI) standard deviation score (SDS) from baseline to 16 and 52 weeks. Secondary endpoints included other weight-related parameters, hyperphagia, and safety.",
+        "RESULTS": "Change in BMI SDS from baseline to weeks 16 and 52 was not significantly different between treatments in adolescents (estimated treatment difference: -0.07 at week 16 and -0.14 at week 52) and children (-0.06 and -0.07, respectively). Changes in other weight-related parameters between treatments were not significant. At week 52, hyperphagia total and drive scores were lower in adolescents treated with liraglutide vs no treatment. The most common adverse events with liraglutide were gastrointestinal disorders.",
+        "CONCLUSION": "Although the coprimary endpoints were not met, changes in hyperphagia total and drive scores in adolescents warrant further studies on liraglutide in this population."
+      },
+      "mesh_terms": [
+        "Child",
+        "Adolescent",
+        "Humans",
+        "Liraglutide",
+        "Prader-Willi Syndrome",
+        "Obesity",
+        "Hyperphagia",
+        "Body Mass Index"
+      ],
+      "keywords": [
+        "BMI SDS",
+        "Prader–Willi Syndrome",
+        "adolescents",
+        "children",
+        "obesity",
+        "pediatric population"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9759167/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9759167/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1210/clinem/dgac549"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36181471/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36181471/"
+    },
+    {
+      "pmid": "33647242",
+      "doi": "10.1016/S2213-8587(21)00002-4",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Endocrine disorders in Prader-Willi syndrome: a model to understand and treat hypothalamic dysfunction.",
+      "authors": [
+        "Tauber Maithé",
+        "Hoybye Charlotte"
+      ],
+      "journal": "The lancet. Diabetes & endocrinology",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome is a rare genetic neurodevelopmental disorder resulting from the loss of expression of maternally imprinted genes located in the paternal chromosomal region, 15q11-13. Impaired hypothalamic development and function is the cause of most of the phenotypes comprising the developmental trajectory of Prader-Willi syndrome: from anorexia at birth to excessive weight gain preceding hyperphagia, and early severe obesity with hormonal deficiencies, behavioural problems, and dysautonomia. Growth hormone deficiency, hypogonadism, hypothyroidism, premature adrenarche, corticotropin deficiency, precocious puberty, and glucose metabolism disorders are the main endocrine dysfunctions observed. Additionally, as a result of hypothalamic dysfunction, oxytocin and ghrelin systems are impaired in most patients. Standard pituitary and gonadal hormone replacement therapies are required. In this Review, we discuss Prader-Willi syndrome as a model of hypothalamic dysfunction, and provide a comprehensive description of the accumulated knowledge on genetics, pathophysiology, and treatment approaches of this rare disorder.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Endocrine System Diseases",
+        "Humans",
+        "Hypothalamus",
+        "Prader-Willi Syndrome",
+        "Proteins",
+        "Intracellular Signaling Peptides and Proteins",
+        "Intrinsically Disordered Proteins"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/S2213-8587(21)00002-4"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33647242/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33647242/"
+    },
+    {
+      "pmid": "28956320",
+      "doi": "10.1007/7854_2017_28",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Oxytocin and Prader-Willi Syndrome.",
+      "authors": [
+        "Kabasakalian Anahid",
+        "Ferretti Casara J",
+        "Hollander Eric"
+      ],
+      "journal": "Current topics in behavioral neurosciences",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "In the chapter, we explore the relationship between the peptide hormone, oxytocin (OT), and behavioral and metabolic disturbances observed in the genetic disorder Prader-Willi Syndrome (PWS). Phenotypic and genotypic characteristics of PWS are described, as are the potential implications of an abnormal OT system with respect to neural development including the possible effects of OT dysfunction on interactions with other regulatory mediators, including neurotransmitters, neuromodulators, and hormones. The major behavioral characteristics are explored in the context of OT dysfunction, including hyperphagia, impulsivity, anxiety and emotion dysregulation, sensory processing and interoception, repetitive and restrictive behaviors, and dysfunctional social cognition. Behavioral overlaps with autistic spectrum disorders are discussed. The implications of OT dysfunction on the mechanisms of reward and satiety and their possible role in informing behavioral characteristics are also discussed. Treatment implications and future directions for investigation are considered.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Oxytocin",
+        "Prader-Willi Syndrome",
+        "Receptors, Oxytocin"
+      ],
+      "keywords": [
+        "Autistic spectrum disorder",
+        "Hyperphagia",
+        "Neuropeptide",
+        "Oxytocin",
+        "PWS",
+        "Prader-Willi",
+        "Restrictive and repetitive behaviors",
+        "Reward",
+        "Satiety"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/7854_2017_28"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28956320/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28956320/"
+    },
+    {
+      "pmid": "30788853",
+      "doi": "10.1111/cen.13953",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Physical exercise and Prader-Willi syndrome: A systematic review.",
+      "authors": [
+        "Morales Javier S",
+        "Valenzuela Pedro L",
+        "Pareja-Galeano Helios",
+        "Rincón-Castanedo Cecilia",
+        "Rubin Daniela A",
+        "Lucia Alejandro"
+      ],
+      "journal": "Clinical endocrinology",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "abstract": "OBJECTIVE: The aim of this systematic review was to summarize evidence on the acute responses of individuals with Prader-Willi syndrome (PWS) to physical exercise, and on the effectiveness of long-term exercise interventions to improve the clinical manifestations of this syndrome. DESIGN/METHODS: Relevant articles were identified in the electronic databases PubMed, Medline, CINAHL and SPORTDiscus (from inception to December 2018). Twenty-two studies including a total of 356 patients with PWS met all inclusion criteria and were included in the review. RESULTS: Patients with PWS present with a decreased physical performance and impaired cardiorespiratory (maximal oxygen consumption, heart rate recovery after exercise) and hormonal (growth hormone release) responses to exercise. Most long-term exercise interventions have proven to decrease body mass while improving physical performance. Some benefits have also been reported in biochemical (glucose homeostasis, lipid profile) and biomechanical (gait pattern) variables, although there is controversy regarding the effects on body composition. No exercise-related adverse events have been reported in patients with PWS. CONCLUSION: Physical exercise seems to be safe and effective for improving several phenotypes in PWS, notably physical fitness. However, further research is needed to confirm these results and especially to corroborate whether exercise per se or combined with dietary intervention is an effective coadjuvant treatment for reducing body mass in these patients.",
+      "abstract_sections": {
+        "OBJECTIVE": "The aim of this systematic review was to summarize evidence on the acute responses of individuals with Prader-Willi syndrome (PWS) to physical exercise, and on the effectiveness of long-term exercise interventions to improve the clinical manifestations of this syndrome.",
+        "DESIGN/METHODS": "Relevant articles were identified in the electronic databases PubMed, Medline, CINAHL and SPORTDiscus (from inception to December 2018). Twenty-two studies including a total of 356 patients with PWS met all inclusion criteria and were included in the review.",
+        "RESULTS": "Patients with PWS present with a decreased physical performance and impaired cardiorespiratory (maximal oxygen consumption, heart rate recovery after exercise) and hormonal (growth hormone release) responses to exercise. Most long-term exercise interventions have proven to decrease body mass while improving physical performance. Some benefits have also been reported in biochemical (glucose homeostasis, lipid profile) and biomechanical (gait pattern) variables, although there is controversy regarding the effects on body composition. No exercise-related adverse events have been reported in patients with PWS.",
+        "CONCLUSION": "Physical exercise seems to be safe and effective for improving several phenotypes in PWS, notably physical fitness. However, further research is needed to confirm these results and especially to corroborate whether exercise per se or combined with dietary intervention is an effective coadjuvant treatment for reducing body mass in these patients."
+      },
+      "mesh_terms": [
+        "Exercise Therapy",
+        "Humans",
+        "Outcome Assessment, Health Care",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [
+        "body composition",
+        "fitness",
+        "genetic syndrome",
+        "growth hormone",
+        "metabolic response",
+        "obesity",
+        "physical activity"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/cen.13953"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30788853/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30788853/"
+    },
+    {
+      "pmid": "26584571",
+      "doi": "10.1007/s00431-015-2670-x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Psychotropic treatments in Prader-Willi syndrome: a critical review of published literature.",
+      "authors": [
+        "Bonnot O",
+        "Cohen D",
+        "Thuilleaux D",
+        "Consoli A",
+        "Cabal S",
+        "Tauber M"
+      ],
+      "journal": "European journal of pediatrics",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "abstract": "UNLABELLED: Prader-Willi syndrome (PWS) is a rare genetic syndrome. The phenotype includes moderate to intellectual disability, dysmorphia, obesity, and behavioral disturbances (e.g., hetero and self-injurious behaviors, hyperphagia, psychosis). Psychotropic medications are widely prescribed in PWS for symptomatic control. We conducted a systematic review of published literature to examine psychotropic medications used in PWS. MEDLINE was searched to identify articles published between January 1967 and December 2014 using key words related to pharmacological treatments and PWS. Articles with original data were included based on a standardized four-step selection process. The identification of studies led to 241 records. All selected articles were evaluated for case descriptions (PWS and behavioral signs) and treatment (type, titration, efficiency, and side effects). Overall, 102 patients were included in these studies. Treatment involved risperidone (three reports, n = 11 patients), fluoxetine (five/n = 6), naltrexone (two/n = 2), topiramate (two/n = 16), fluvoxamine (one/n = 1), mazindol (one/n = 2), N-acetyl cysteine (one/n = 35), rimonabant (one/n = 15), and fenfluramine (one/n = 15). CONCLUSION: We identified promising treatment effects with topiramate for self-injury and impulsive/aggressive behaviors, risperidone for psychotic symptoms associated with uniparental disomy (UPD), and N-acetyl cysteine for skin picking. The pharmacological approach of behavioral impairment in PWS has been poorly investigated to date. Further randomized controlled studies are warranted. WHAT IS KNOWN: Behavioral disturbances in Prader-Willi syndrome including aggressive reactions, skin picking, and hyperphagia might be very difficult to manage. Antipsychotic drugs are widely prescribed, but weight gain and increased appetite are their major side effects. WHAT IS NEW: Topiramate might be efficient for self-injury and impulsive/aggressive behaviors, N-acetyl cysteine is apromising treatment for skin picking and Antidepressants are indicated for OCD symptoms. Risperidone is indicated in case of psychotic symptoms mainly associated with uniparental disomy.",
+      "abstract_sections": {
+        "UNLABELLED": "Prader-Willi syndrome (PWS) is a rare genetic syndrome. The phenotype includes moderate to intellectual disability, dysmorphia, obesity, and behavioral disturbances (e.g., hetero and self-injurious behaviors, hyperphagia, psychosis). Psychotropic medications are widely prescribed in PWS for symptomatic control. We conducted a systematic review of published literature to examine psychotropic medications used in PWS. MEDLINE was searched to identify articles published between January 1967 and December 2014 using key words related to pharmacological treatments and PWS. Articles with original data were included based on a standardized four-step selection process. The identification of studies led to 241 records. All selected articles were evaluated for case descriptions (PWS and behavioral signs) and treatment (type, titration, efficiency, and side effects). Overall, 102 patients were included in these studies. Treatment involved risperidone (three reports, n = 11 patients), fluoxetine (five/n = 6), naltrexone (two/n = 2), topiramate (two/n = 16), fluvoxamine (one/n = 1), mazindol (one/n = 2), N-acetyl cysteine (one/n = 35), rimonabant (one/n = 15), and fenfluramine (one/n = 15).",
+        "CONCLUSION": "We identified promising treatment effects with topiramate for self-injury and impulsive/aggressive behaviors, risperidone for psychotic symptoms associated with uniparental disomy (UPD), and N-acetyl cysteine for skin picking. The pharmacological approach of behavioral impairment in PWS has been poorly investigated to date. Further randomized controlled studies are warranted.",
+        "WHAT IS KNOWN": "Behavioral disturbances in Prader-Willi syndrome including aggressive reactions, skin picking, and hyperphagia might be very difficult to manage. Antipsychotic drugs are widely prescribed, but weight gain and increased appetite are their major side effects.",
+        "WHAT IS NEW": "Topiramate might be efficient for self-injury and impulsive/aggressive behaviors, N-acetyl cysteine is apromising treatment for skin picking and Antidepressants are indicated for OCD symptoms. Risperidone is indicated in case of psychotic symptoms mainly associated with uniparental disomy."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Child, Preschool",
+        "Cystine",
+        "Fructose",
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Psychotropic Drugs",
+        "Risperidone",
+        "Topiramate"
+      ],
+      "keywords": [
+        "Antidepressor",
+        "Antipsychotic",
+        "Methylphenidate",
+        "Prader-Willi syndrome",
+        "Risperidone",
+        "Topiramate"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s00431-015-2670-x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26584571/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26584571/"
+    },
+    {
+      "pmid": "26331980",
+      "doi": "10.1002/ajmg.a.37286",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Autism spectrum disorder in Prader-Willi syndrome: A systematic review.",
+      "authors": [
+        "Bennett Jeffrey A",
+        "Germani Tamara",
+        "Haqq Andrea M",
+        "Zwaigenbaum Lonnie"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is a rare genetic disorder that results from lack of expression of paternally-derived genes on chromosome 15q11-13; caused by a deletion (DEL), uniparental disomy (UPD), or a rare imprinting center defect. PWS is associated with a distinct behavioral phenotype that in some respects overlaps with autism spectrum disorder (ASD), a neurodevelopmental disorder characterized by restricted or repetitive behaviors (RRBs) and social-communication impairment. The goal of this review was to (i) review published literature investigating core ASD symptoms in PWS and (ii) provide a prevalence estimate of ASD in PWS. Two independent reviewers searched Medline, CINAHL, PsychINFO, Embase, and Web of Science to find studies that answered the research questions. Individuals with PWS demonstrate significant levels of RRBs and social-communication impairment, in some reports reaching similar levels to those of non-PWS ASD comparison groups. Individuals with UPD had more social-communication impairment than those with DEL. Of 786 PWS participants, 210 (26.7%) were reported as meeting criteria for ASD, either based on clinical diagnosis or by exceeding clinical cut-points on relevant ASD symptom measures. In studies that distinguished genetic subtypes, rates of ASD were higher in individuals with PWS with UPD (67 of 190; 35.3%) than those with DEL (47 of 254; 18.5%). Published data on the association of PWS and ASD to date are limited to sample means of 8 years of age and older. Further research is needed to identify early markers of ASD in PWS children, to support earlier diagnosis and intervention for this important comorbidity.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Autism Spectrum Disorder",
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Sequence Deletion",
+        "Social Communication Disorder",
+        "Uniparental Disomy"
+      ],
+      "keywords": [
+        "ASD",
+        "PWS",
+        "Prader-Willi syndrome",
+        "autism spectrum disorder",
+        "systematic review"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.37286"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26331980/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26331980/"
+    },
+    {
+      "pmid": "24737477",
+      "doi": "10.4238/2014.March.31.9",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi-like phenotypes: a systematic review of their chromosomal abnormalities.",
+      "authors": [
+        "Rocha C F",
+        "Paiva C L A"
+      ],
+      "journal": "Genetics and molecular research : GMR",
+      "year": "2014",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is caused by the lack of expression of genes located on paternal chromosome 15q11-q13. This lack of gene expression may be due to a deletion in this chromosomal segment, to maternal uniparental disomy of chromosome 15, or to a defect in the imprinting center on 15q11-q13. PWS is characterized by hypotonia during the neonatal stage and in childhood, accompanied by a delay in neuropsychomotor development. Overeating, obesity, and mental deficiency arise later on. The syndrome has a clinical overlap with other diseases, which makes it difficult to accurately diagnose. The purpose of this article is to review the Prader-Willi-like phenotype in the scientific literature from 2000 to 2013, i.e., to review the cases of PWS caused by chromosomal abnormalities different from those found on chromosome 15. A search was carried out using the \"National Center for Biotechnology Information\" (www.pubmed.com) and \"Scientific Electronic Library Online (www.scielo.br) databases and combinations of key words such as \"Prader-Willi-like phenotype\" and \"Prader-Willi syndrome phenotype\". Editorials, letters, reviews, and guidelines were excluded. Articles chosen contained descriptions of patients diagnosed with the PWS phenotype but who were negative for alterations on 15q11-q13. Our search found 643 articles about PWS, but only 14 of these matched with the Prader-Willi-like phenotype and with the selected years of publication (2000-2013). If two or more articles reported the same chromosomal alterations for Prader-Willi-like phenotype, the most recent was chosen. Twelve articles of 14 were case reports and 2 reported series of cases.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Aberrations",
+        "Diagnosis, Differential",
+        "Female",
+        "Humans",
+        "Male",
+        "Phenotype",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.4238/2014.March.31.9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24737477/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24737477/"
+    },
+    {
+      "pmid": "23543664",
+      "doi": "10.1210/jc.2012-3888",
+      "pmc_id": "PMC3789886",
+      "pmc_verify": null,
+      "title": "GrowthHormone Research Society workshop summary: consensus guidelines for recombinant human growth hormone therapy in Prader-Willi syndrome.",
+      "authors": [
+        "Deal Cheri L",
+        "Tony Michèle",
+        "Höybye Charlotte",
+        "Allen David B",
+        "Tauber Maïthé",
+        "Christiansen Jens Sandahl",
+        "2011 Growth Hormone in Prader-Willi Syndrome Clinical Care Guidelines Workshop Participants"
+      ],
+      "journal": "The Journal of clinical endocrinology and metabolism",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "abstract": "CONTEXT: Recombinant human GH (rhGH) therapy in Prader-Willi syndrome (PWS) has been used by the medical community and advocated by parental support groups since its approval in the United States in 2000 and in Europe in 2001. Its use in PWS represents a unique therapeutic challenge that includes treating individuals with cognitive disability, varied therapeutic goals that are not focused exclusively on increased height, and concerns about potential life-threatening adverse events. OBJECTIVE: The aim of the study was to formulate recommendations for the use of rhGH in children and adult patients with PWS. EVIDENCE: We performed a systematic review of the clinical evidence in the pediatric population, including randomized controlled trials, comparative observational studies, and long-term studies (>3.5 y). Adult studies included randomized controlled trials of rhGH treatment for ≥ 6 months and uncontrolled trials. Safety data were obtained from case reports, clinical trials, and pharmaceutical registries. METHODOLOGY: Forty-three international experts and stakeholders followed clinical practice guideline development recommendations outlined by the AGREE Collaboration (www.agreetrust.org). Evidence was synthesized and graded using a comprehensive multicriteria methodology (EVIDEM) (http://bit.ly.PWGHIN). CONCLUSIONS: Following a multidisciplinary evaluation, preferably by experts, rhGH treatment should be considered for patients with genetically confirmed PWS in conjunction with dietary, environmental, and lifestyle interventions. Cognitive impairment should not be a barrier to treatment, and informed consent/assent should include benefit/risk information. Exclusion criteria should include severe obesity, uncontrolled diabetes mellitus, untreated severe obstructive sleep apnea, active cancer, or psychosis. Clinical outcome priorities should vary depending upon age and the presence of physical, mental, and social disability, and treatment should be continued for as long as demonstrated benefits outweigh the risks.",
+      "abstract_sections": {
+        "CONTEXT": "Recombinant human GH (rhGH) therapy in Prader-Willi syndrome (PWS) has been used by the medical community and advocated by parental support groups since its approval in the United States in 2000 and in Europe in 2001. Its use in PWS represents a unique therapeutic challenge that includes treating individuals with cognitive disability, varied therapeutic goals that are not focused exclusively on increased height, and concerns about potential life-threatening adverse events.",
+        "OBJECTIVE": "The aim of the study was to formulate recommendations for the use of rhGH in children and adult patients with PWS.",
+        "EVIDENCE": "We performed a systematic review of the clinical evidence in the pediatric population, including randomized controlled trials, comparative observational studies, and long-term studies (>3.5 y). Adult studies included randomized controlled trials of rhGH treatment for ≥ 6 months and uncontrolled trials. Safety data were obtained from case reports, clinical trials, and pharmaceutical registries.",
+        "METHODOLOGY": "Forty-three international experts and stakeholders followed clinical practice guideline development recommendations outlined by the AGREE Collaboration (www.agreetrust.org). Evidence was synthesized and graded using a comprehensive multicriteria methodology (EVIDEM) (http://bit.ly.PWGHIN).",
+        "CONCLUSIONS": "Following a multidisciplinary evaluation, preferably by experts, rhGH treatment should be considered for patients with genetically confirmed PWS in conjunction with dietary, environmental, and lifestyle interventions. Cognitive impairment should not be a barrier to treatment, and informed consent/assent should include benefit/risk information. Exclusion criteria should include severe obesity, uncontrolled diabetes mellitus, untreated severe obstructive sleep apnea, active cancer, or psychosis. Clinical outcome priorities should vary depending upon age and the presence of physical, mental, and social disability, and treatment should be continued for as long as demonstrated benefits outweigh the risks."
+      },
+      "mesh_terms": [
+        "Adult",
+        "Child",
+        "Human Growth Hormone",
+        "Humans",
+        "Infant",
+        "Practice Guidelines as Topic",
+        "Prader-Willi Syndrome",
+        "Recombinant Proteins",
+        "Treatment Outcome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3789886/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3789886/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1210/jc.2012-3888"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23543664/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23543664/"
+    },
+    {
+      "pmid": "35449162",
+      "doi": "10.1038/s41572-022-00351-z",
+      "pmc_id": "8084117",
+      "pmc_verify": null,
+      "title": "Hypothalamic syndrome.",
+      "authors": [
+        "Müller Hermann L",
+        "Tauber Maithé",
+        "Lawson Elizabeth A",
+        "Özyurt Jale",
+        "Bison Brigitte",
+        "Martinez-Barbera Juan-Pedro",
+        "Puget Stephanie",
+        "Merchant Thomas E",
+        "van Santen Hanneke M"
+      ],
+      "journal": "Nature reviews. Disease primers",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Hypothalamic syndrome (HS) is a rare disorder caused by disease-related and/or treatment-related injury to the hypothalamus, most commonly associated with rare, non-cancerous parasellar masses, such as craniopharyngiomas, germ cell tumours, gliomas, cysts of Rathke's pouch and Langerhans cell histiocytosis, as well as with genetic neurodevelopmental syndromes, such as Prader-Willi syndrome and septo-optic dysplasia. HS is characterized by intractable weight gain associated with severe morbid obesity, multiple endocrine abnormalities and memory impairment, attention deficit and reduced impulse control as well as increased risk of cardiovascular and metabolic disorders. Currently, there is no cure for this condition but treatments for general obesity are often used in patients with HS, including surgery, medication and counselling. However, these are mostly ineffective and no medications that are specifically approved for the treatment of HS are available. Specific challenges in HS are because the syndrome represents an adverse effect of different diseases, and that diagnostic criteria, aetiology, pathogenesis and management of HS are not completely defined.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Craniopharyngioma",
+        "Endocrine System Diseases",
+        "Humans",
+        "Hypothalamus",
+        "Pituitary Neoplasms",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8084117/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8084117/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41572-022-00351-z"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35449162/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35449162/"
+    },
+    {
+      "pmid": "37386011",
+      "doi": "10.1038/s41572-023-00443-4",
+      "pmc_id": "8157728",
+      "pmc_verify": null,
+      "title": "Imprinting disorders.",
+      "authors": [
+        "Eggermann Thomas",
+        "Monk David",
+        "de Nanclares Guiomar Perez",
+        "Kagami Masayo",
+        "Giabicani Eloïse",
+        "Riccio Andrea",
+        "Tümer Zeynep",
+        "Kalish Jennifer M",
+        "Tauber Maithé",
+        "Duis Jessica",
+        "Weksberg Rosanna",
+        "Maher Eamonn R",
+        "Begemann Matthias",
+        "Elbracht Miriam"
+      ],
+      "journal": "Nature reviews. Disease primers",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Imprinting disorders (ImpDis) are congenital conditions that are characterized by disturbances of genomic imprinting. The most common individual ImpDis are Prader-Willi syndrome, Angelman syndrome and Beckwith-Wiedemann syndrome. Individual ImpDis have similar clinical features, such as growth disturbances and developmental delay, but the disorders are heterogeneous and the key clinical manifestations are often non-specific, rendering diagnosis difficult. Four types of genomic and imprinting defect (ImpDef) affecting differentially methylated regions (DMRs) can cause ImpDis. These defects affect the monoallelic and parent-of-origin-specific expression of imprinted genes. The regulation within DMRs as well as their functional consequences are mainly unknown, but functional cross-talk between imprinted genes and functional pathways has been identified, giving insight into the pathophysiology of ImpDefs. Treatment of ImpDis is symptomatic. Targeted therapies are lacking owing to the rarity of these disorders; however, personalized treatments are in development. Understanding the underlying mechanisms of ImpDis, and improving diagnosis and treatment of these disorders, requires a multidisciplinary approach with input from patient representatives.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8157728/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8157728/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41572-023-00443-4"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37386011/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37386011/"
+    },
+    {
+      "pmid": "37051256",
+      "doi": "10.2147/TACG.S372708",
+      "pmc_id": "PMC10084876",
+      "pmc_verify": null,
+      "title": "Prader-Willi and Angelman Syndromes: Mechanisms and Management.",
+      "authors": [
+        "Ma Van K",
+        "Mao Rong",
+        "Toth Jessica N",
+        "Fulmer Makenzie L",
+        "Egense Alena S",
+        "Shankar Suma P"
+      ],
+      "journal": "The application of clinical genetics",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) and Angelman syndrome (AS) are genetic imprinting disorders resulting from absent or reduced expression of paternal or maternal genes in chromosome 15q11q13 region, respectively. The most common etiology is deletion of the maternal or paternal 15q11q13 region. Methylation is the first line for molecular diagnostic testing; MS-MLPA is the most sensitive test. The molecular subtype of PWS/AS provides more accurate recurrence risk information for parents and for the individual affected with the condition. Management should include a multidisciplinary team by various medical subspecialists and therapists. Developmental and behavioral management of PWS and AS in infancy and early childhood includes early intervention services and individualized education programs for school-aged children. Here, we compare and discuss the mechanisms, pathophysiology, clinical features, and management of the two imprinting disorders, PWS and AS.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "chromosome 15",
+        "developmental delay",
+        "hyperphagia",
+        "imprinting disorders",
+        "obesity",
+        "uniparental disomy"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10084876/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10084876/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2147/TACG.S372708"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37051256/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37051256/"
+    },
+    {
+      "pmid": "36901699",
+      "doi": "10.3390/ijms24054271",
+      "pmc_id": "PMC10002205",
+      "pmc_verify": null,
+      "title": "Prader-Willi Syndrome and Chromosome 15q11.2 BP1-BP2 Region: A Review.",
+      "authors": [
+        "Butler Merlin G"
+      ],
+      "journal": "International journal of molecular sciences",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is a complex genetic disorder with three PWS molecular genetic classes and presents as severe hypotonia, failure to thrive, hypogonadism/hypogenitalism and developmental delay during infancy. Hyperphagia, obesity, learning and behavioral problems, short stature with growth and other hormone deficiencies are identified during childhood. Those with the larger 15q11-q13 Type I deletion with the absence of four non-imprinted genes (NIPA1, NIPA2, CYFIP1, TUBGCP5) from the 15q11.2 BP1-BP2 region are more severely affected compared with those with PWS having a smaller Type II deletion. NIPA1 and NIPA2 genes encode magnesium and cation transporters, supporting brain and muscle development and function, glucose and insulin metabolism and neurobehavioral outcomes. Lower magnesium levels are reported in those with Type I deletions. The CYFIP1 gene encodes a protein associated with fragile X syndrome. The TUBGCP5 gene is associated with attention-deficit hyperactivity disorder (ADHD) and compulsions, more commonly seen in PWS with the Type I deletion. When the 15q11.2 BP1-BP2 region alone is deleted, neurodevelopment, motor, learning and behavioral problems including seizures, ADHD, obsessive-compulsive disorder (OCD) and autism may occur with other clinical findings recognized as Burnside-Butler syndrome. The genes in the 15q11.2 BP1-BP2 region may contribute to more clinical involvement and comorbidities in those with PWS and Type I deletions.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Carrier Proteins",
+        "Chromosomes",
+        "Chromosomes, Human, Pair 15",
+        "Magnesium",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [
+        "15q11.2 BP1-BP2 deletion",
+        "PWS molecular genetic classes",
+        "Prader–Willi syndrome (PWS)",
+        "Type II deletions",
+        "clinical findings",
+        "typical 15q11-q13 Type I"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10002205/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10002205/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/ijms24054271"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36901699/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36901699/"
+    },
+    {
+      "pmid": "9391886",
+      "doi": "10.1136/jmg.34.11.917",
+      "pmc_id": "PMC1051120",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Cassidy S B"
+      ],
+      "journal": "Journal of medical genetics",
+      "year": "1997",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome is a complex disorder affecting multiple systems with many manifestations relating to hypothalamic insufficiency. Major findings include infantile hypotonia, developmental delay and mental retardation, behaviour disorder, characteristic facial appearance, obesity, hypogonadism, and short stature. Obesity and the behavioural problems are the major causes of morbidity and mortality. Prader-Willi syndrome is caused by abnormalities of the imprinted region of proximal 15q and results from absence of the normally active paternal genes in this region. Such absence results from paternal interstitial deletion, maternal uniparental disomy, or a mutation or other abnormality in the imprinting process. Diagnostic identification of all causes has become available in recent years, permitting early detection and institution of appropriate management. This testing has permitted recent identification of some phenotypic differences among affected subjects of different race and between those with deletions and uniparental disomy as a cause.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1051120/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1051120/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/jmg.34.11.917"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9391886/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9391886/"
+    },
+    {
+      "pmid": "18781185",
+      "doi": "10.1038/ejhg.2008.165",
+      "pmc_id": "PMC2985966",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Cassidy Suzanne B",
+        "Driscoll Daniel J"
+      ],
+      "journal": "European journal of human genetics : EJHG",
+      "year": "2009",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is a highly variable genetic disorder affecting multiple body systems whose most consistent major manifestations include hypotonia with poor suck and poor weight gain in infancy; mild mental retardation, hypogonadism, growth hormone insufficiency causing short stature for the family, early childhood-onset hyperphagia and obesity, characteristic appearance, and behavioral and sometimes psychiatric disturbance. Many more minor characteristics can be helpful in diagnosis and important in management. PWS is an example of a genetic condition involving genomic imprinting. It can occur by three main mechanisms, which lead to absence of expression of paternally inherited genes in the 15q11.2-q13 region: paternal microdeletion, maternal uniparental disomy, and imprinting defect.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Child",
+        "Child Behavior Disorders",
+        "Child, Preschool",
+        "Chromosomes, Human, Pair 15",
+        "Developmental Disabilities",
+        "Female",
+        "Genetic Counseling",
+        "Human Growth Hormone",
+        "Humans",
+        "Hypogonadism",
+        "Infant",
+        "Male",
+        "Muscle Hypotonia",
+        "Obesity",
+        "Phenotype",
+        "Prader-Willi Syndrome",
+        "Psychotic Disorders",
+        "Young Adult"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2985966/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2985966/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/ejhg.2008.165"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18781185/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18781185/"
+    },
+    {
+      "pmid": "2646521",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Cassidy S B",
+        "Ledbetter D H"
+      ],
+      "journal": "Neurologic clinics",
+      "year": "1989",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "People with Prader-Willi syndrome exhibit infantile hypotonia and failure to thrive, genital hypoplasia, childhood-onset obesity, mental deficiency and behavioral abnormalities, hypogonadism, short stature, and characteristic dysmorphology. In over half the affected individuals, prometaphase chromosome analysis reveals a small interstitial deletion of chromosome 15q, del 15(q11-q12); with most of the remaining patients showing apparently normal chromosomes. Molecular genetic technology is currently being applied to the relevant region of chromosome 15 to determine if there is etiologic heterogeneity and to seek a consistent diagnostic marker. Diagnosis at this time is primarily based upon clinical criteria.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Child Development",
+        "Child, Preschool",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 15",
+        "Genetic Markers",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Male",
+        "Prader-Willi Syndrome",
+        "Translocation, Genetic"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/2646521/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/2646521/"
+    },
+    {
+      "pmid": "34238470",
+      "doi": "10.1016/B978-0-12-820683-6.00026-9",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome: Hormone therapies.",
+      "authors": [
+        "Tauber Maithé",
+        "Diene Gwenaelle"
+      ],
+      "journal": "Handbook of clinical neurology",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) is a rare genetic neurodevelopmental disorder linked to the lack of expression of specific maternally imprinted genes located in the chromosomal region 15q11-q13. Impaired hypothalamic development and function explain most of the phenotype that is characterized by a specific trajectory from anorexia at birth to excessive weight gain at later ages, which is accompanied by hyperphagia and early severe obesity, as well as by other hormonal deficiencies, behavioral deficits, and dysautonomia. In almost all patients, their endocrine dysfunction involves growth hormone deficiency and hypogonadism, which originate from a combination of both peripheral and hypothalamic origin, central hypothyroidism in 40%, precocious adrenarche in 30% of the cases, and in rare cases, also adrenocorticotropin deficiency and precocious puberty. In addition, the oxytocin (OXT) and ghrelin systems are impaired in most patients and involved in a poor suckling response at birth, and hyperphagia with food addiction, poor social skills, and emotional dysregulation. Current hormonal replacement treatments are the same as used in classical hormonal deficiencies, and recombinant human GH treatment is registered since 2000 and has dramatically changed the phenotype of these children. OXT and OXT analogue treatments are currently investigated as well as new molecules targeting the ghrelin system. The severe condition of PWS can be seen as a model to improve the fine description and treatments of hypothalamic dysfunction.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Ghrelin",
+        "Hormone Replacement Therapy",
+        "Humans",
+        "Hyperphagia",
+        "Hypothalamus",
+        "Oxytocin",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [
+        "GH",
+        "Ghrelin",
+        "Hyperphagia",
+        "Hypogonadism",
+        "Hypothalamus",
+        "Neurodevelopmental disorder",
+        "Oxytocin",
+        "PWS"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/B978-0-12-820683-6.00026-9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34238470/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34238470/"
+    },
+    {
+      "pmid": "33659026",
+      "doi": "10.3389/fgene.2021.624581",
+      "pmc_id": "PMC7917289",
+      "pmc_verify": null,
+      "title": "Epigenetics in Prader-Willi Syndrome.",
+      "authors": [
+        "Mendiola Aron Judd P",
+        "LaSalle Janine M"
+      ],
+      "journal": "Frontiers in genetics",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi Syndrome (PWS) is a rare neurodevelopmental disorder that affects approximately 1 in 20,000 individuals worldwide. Symptom progression in PWS is classically characterized by two nutritional stages. Stage 1 is hypotonia characterized by poor muscle tone that leads to poor feeding behavior causing failure to thrive in early neonatal life. Stage 2 is followed by the development of extreme hyperphagia, also known as insatiable eating and fixation on food that often leads to obesity in early childhood. Other major features of PWS include obsessive-compulsive and hoarding behaviors, intellectual disability, and sleep abnormalities. PWS is genetic disorder mapping to imprinted 15q11.2-q13.3 locus, specifically at the paternally expressed SNORD116 locus of small nucleolar RNAs and noncoding host gene transcripts. SNORD116 is processed into several noncoding components and is hypothesized to orchestrate diurnal changes in metabolism through epigenetics, according to functional studies. Here, we review the current status of epigenetic mechanisms in PWS, with an emphasis on an emerging role for SNORD116 in circadian and sleep phenotypes. We also summarize current ongoing therapeutic strategies, as well as potential implications for more common human metabolic and psychiatric disorders.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "circadian",
+        "diurnal",
+        "epigenetic",
+        "genetic",
+        "imprinting",
+        "metabolic",
+        "neurodevelopment",
+        "obesity"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7917289/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7917289/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3389/fgene.2021.624581"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33659026/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33659026/"
+    },
+    {
+      "pmid": "37700664",
+      "doi": "10.1097/MCP.0000000000001018",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome: an update.",
+      "authors": [
+        "Duis Jessica"
+      ],
+      "journal": "Current opinion in pulmonary medicine",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "PURPOSE OF REVIEW: Sleep disorders in Prader-Willi syndrome (PWS) range from respiratory to neurological disorders of sleep. We now recognize the role of excessive daytime sleepiness (present in the infant period and throughout life), and a modified narcolepsy phenotype with or without cataplexy. Disordered sleep in PWS may present with symptoms pervasive to daily function, including inattention at school, irritability, and behavioral outbursts. This review highlights the spectrum of sleep disordered breathing and neurological disorders of sleep in individuals with PWS as well as the current knowledge of management. RECENT FINDINGS: This article covers the literature characterizing sleep disorders in PWS, including treatment strategies. SUMMARY: The review highlights the importance of considering disorders of sleep in PWS and the current treatment options.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "Sleep disorders in Prader-Willi syndrome (PWS) range from respiratory to neurological disorders of sleep. We now recognize the role of excessive daytime sleepiness (present in the infant period and throughout life), and a modified narcolepsy phenotype with or without cataplexy. Disordered sleep in PWS may present with symptoms pervasive to daily function, including inattention at school, irritability, and behavioral outbursts. This review highlights the spectrum of sleep disordered breathing and neurological disorders of sleep in individuals with PWS as well as the current knowledge of management.",
+        "RECENT FINDINGS": "This article covers the literature characterizing sleep disorders in PWS, including treatment strategies.",
+        "SUMMARY": "The review highlights the importance of considering disorders of sleep in PWS and the current treatment options."
+      },
+      "mesh_terms": [],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/MCP.0000000000001018"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37700664/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37700664/"
+    },
+    {
+      "pmid": "18230893",
+      "doi": "10.1159/000115336",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Genetic obesity syndromes.",
+      "authors": [
+        "Goldstone Anthony P",
+        "Beales Philip L"
+      ],
+      "journal": "Frontiers of hormone research",
+      "year": "2008",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "There are numerous reports of multi-system genetic disorders with obesity. Many have a characteristic presentation and several, an overlapping phenotype indicating the likelihood of a shared common underlying mechanism or pathway. By understanding the genetic causes and functional perturbations of such syndromes we stand to gain tremendous insight into obesogenic pathways. In this review we focus particularly on Bardet-Biedl syndrome, whose molecular genetics and cell biology has been elucidated recently, and Prader-Willi syndrome, the commonest obesity syndrome due to loss of imprinted genes on 15q11-13. We also discuss highlights of other genetic obesity syndromes including Alstrom syndrome, Cohen syndrome, Albright's hereditary osteodystrophy (pseudohypoparathyroidism), Carpenter syndrome, MOMO syndrome, Rubinstein-Taybi syndrome, cases with deletions of 6q16, 1p36, 2q37 and 9q34, maternal uniparental disomy of chromosome 14, fragile X syndrome and Börjeson-Forssman-Lehman syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Acrocephalosyndactylia",
+        "Animals",
+        "Bardet-Biedl Syndrome",
+        "Brain",
+        "Cell Cycle Proteins",
+        "Chromosomes, Human, Pair 1",
+        "Chromosomes, Human, Pair 14",
+        "Chromosomes, Human, Pair 2",
+        "Chromosomes, Human, Pair 6",
+        "Chromosomes, Human, Pair 9",
+        "Feeding Behavior",
+        "Fibrous Dysplasia, Polyostotic",
+        "Fragile X Syndrome",
+        "Gene Deletion",
+        "Humans",
+        "Obesity",
+        "Prader-Willi Syndrome",
+        "Proteins",
+        "Rubinstein-Taybi Syndrome",
+        "Syndrome",
+        "Vesicular Transport Proteins"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1159/000115336"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18230893/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18230893/"
+    },
+    {
+      "pmid": "3827455",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Familial Prader-Willi syndrome.",
+      "authors": [
+        "Burke C M",
+        "Kousseff B G",
+        "Gleeson M",
+        "O'Connell B M",
+        "Devlin J G"
+      ],
+      "journal": "Archives of internal medicine",
+      "year": "1987",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Three adult sisters with previously unrecognized Prader-Willi syndrome (PWS) demonstrated the six diagnostic features of this congenital condition: neonatal hypotonia, hypomentia, hypogonadism, obesity, short stature, and dysmorphism. Detailed endocrine investigations were performed, including ovarian biopsy in the propositus. HLA genotype A2 was present in each patient. The normal high-resolution prometaphase karyotypes indicated heterogeneity; the absence of the deletion 15q12 frequently found in patients with sporadic PWS distinguished this sibship as representing a possible autosomal recessive type of PWS. Current evidence suggests that the diagnosis of PWS may be often overlooked. Increased clinical awareness of the features of PWS should result in prompt diagnosis and optimal management of affected patients, together with increased understanding of this enigmatic condition.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Female",
+        "HLA Antigens",
+        "Hormones",
+        "Humans",
+        "Karyotyping",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3827455/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/3827455/"
+    },
+    {
+      "pmid": "34573411",
+      "doi": "10.3390/genes12091429",
+      "pmc_id": "PMC8471269",
+      "pmc_verify": null,
+      "title": "Special Issue: Genetics of Prader-Willi Syndrome.",
+      "authors": [
+        "Godler David E",
+        "Butler Merlin G"
+      ],
+      "journal": "Genes",
+      "year": "2021",
+      "publication_types": [
+        "Editorial",
+        "Introductory Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "This Special Issue includes 15 peer-reviewed articles for publication by experts in Prader-Willi syndrome (PWS) and their reflective area of interest impacting this rare disorder [...].",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Databases, Genetic",
+        "Genetic Association Studies",
+        "Humans",
+        "Pharmacogenomic Testing",
+        "Phenotype",
+        "Prader-Willi Syndrome",
+        "Rare Diseases"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8471269/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8471269/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/genes12091429"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34573411/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34573411/"
+    },
+    {
+      "pmid": "6365470",
+      "doi": "10.1016/0045-9380(84)90043-4",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Cassidy S B"
+      ],
+      "journal": "Current problems in pediatrics",
+      "year": "1984",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Adolescent",
+        "Child",
+        "Child, Preschool",
+        "Diagnosis, Differential",
+        "Dwarfism, Pituitary",
+        "Facial Expression",
+        "Female",
+        "Humans",
+        "Hypogonadism",
+        "Infant",
+        "Infant, Newborn",
+        "Intellectual Disability",
+        "Male",
+        "Muscle Hypotonia",
+        "Obesity",
+        "Prader-Willi Syndrome",
+        "Social Behavior Disorders"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/0045-9380(84)90043-4"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/6365470/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/6365470/"
+    },
+    {
+      "pmid": "8110011",
+      "doi": "10.1136/adc.70.1.58",
+      "pmc_id": "PMC1029686",
+      "pmc_verify": null,
+      "title": "The Prader-Willi syndrome.",
+      "authors": [
+        "Donaldson M D",
+        "Chu C E",
+        "Cooke A",
+        "Wilson A",
+        "Greene S A",
+        "Stephenson J B"
+      ],
+      "journal": "Archives of disease in childhood",
+      "year": "1994",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Age Factors",
+        "Chromosomes, Human, Pair 15",
+        "Female",
+        "Gene Deletion",
+        "Humans",
+        "Male",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1029686/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1029686/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/adc.70.1.58"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8110011/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8110011/"
+    },
+    {
+      "pmid": "4175418",
+      "doi": "10.1016/s0140-6736(68)92433-1",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Spencer D A"
+      ],
+      "journal": "Lancet (London, England)",
+      "year": "1968",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Birth Weight",
+        "Diabetes Complications",
+        "Dwarfism",
+        "Genitalia",
+        "Hand Deformities, Acquired",
+        "Humans",
+        "Intellectual Disability",
+        "Leg",
+        "Male",
+        "Obesity"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s0140-6736(68)92433-1"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/4175418/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/4175418/"
+    },
+    {
+      "pmid": "6034523",
+      "doi": "10.1111/j.1365-2788.1967.tb00198.x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Juul J",
+        "Dupont A"
+      ],
+      "journal": "Journal of mental deficiency research",
+      "year": "1967",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Aging",
+        "Birth Weight",
+        "Child",
+        "Child, Preschool",
+        "Diabetes Complications",
+        "Diagnosis, Differential",
+        "Female",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Intellectual Disability",
+        "Limb Deformities, Congenital",
+        "Male",
+        "Muscular Diseases",
+        "Nervous System Diseases",
+        "Obesity",
+        "Pregnancy",
+        "Pregnancy Complications",
+        "Sex"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/j.1365-2788.1967.tb00198.x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/6034523/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/6034523/"
+    },
+    {
+      "pmid": "5659301",
+      "doi": "10.1001/archpedi.1968.02100020213017",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Landwirth J",
+        "Schwartz A H",
+        "Grunt J A"
+      ],
+      "journal": "American journal of diseases of children (1960)",
+      "year": "1968",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Appetite",
+        "Blood Glucose",
+        "Body Height",
+        "Body Weight",
+        "Diabetes Mellitus, Type 1",
+        "Endocrine System Diseases",
+        "Fatty Acids, Nonesterified",
+        "Glucose Tolerance Test",
+        "Growth Hormone",
+        "Humans",
+        "Hypogonadism",
+        "Intellectual Disability",
+        "Male",
+        "Muscular Diseases",
+        "Obesity",
+        "Pituitary Function Tests",
+        "Pituitary-Adrenal Function Tests",
+        "Thyroid Function Tests"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1001/archpedi.1968.02100020213017"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/5659301/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/5659301/"
+    },
+    {
+      "pmid": "10457284",
+      "doi": "10.1046/j.1440-1754.1999.00397.x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Couper R"
+      ],
+      "journal": "Journal of paediatrics and child health",
+      "year": "1999",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome is a multi system disorder characterized by neonatal hypotonia, later obesity, hyperphagia and mental retardation. It occurs sporadically, either as a result of microdeletion of chromosome 15p (70%) or as a result of maternal disomy of chromosome 15 (30%). The major problems encountered by parents are those of hyperphagia, food-seeking and obesity, and conduct disorder, particularly tantrums or oppositional behaviour.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Attention Deficit and Disruptive Behavior Disorders",
+        "Child",
+        "Chromosomes, Human, Pair 15",
+        "Female",
+        "Genomic Imprinting",
+        "Humans",
+        "Hyperphagia",
+        "Infant, Newborn",
+        "Male",
+        "Obsessive-Compulsive Disorder",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1046/j.1440-1754.1999.00397.x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10457284/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10457284/"
+    },
+    {
+      "pmid": "16156341",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome.",
+      "authors": [
+        "Wattendorf Daniel J",
+        "Muenke Maximilian"
+      ],
+      "journal": "American family physician",
+      "year": "2005",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "To complement the 2005 Annual Clinical Focus on medical genomics, AFP is publishing a series of short reviews on genetic syndromes. This series was designed to increase awareness of these diseases so that family physicians can recognize and diagnose children with these disorders and understand the type of care they might require in the future. This review discusses Prader-Willi syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Chromosomes, Human, Pair 15",
+        "Humans",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16156341/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16156341/"
+    },
+    {
+      "pmid": "34891220",
+      "doi": "10.1111/gbb.12789",
+      "pmc_id": "PMC9744551",
+      "pmc_verify": null,
+      "title": "Focus on autism and other neurodevelopmental disorders.",
+      "authors": [
+        "Ryabinin Andrey E"
+      ],
+      "journal": "Genes, brain, and behavior",
+      "year": "2022",
+      "publication_types": [
+        "Editorial",
+        "Introductory Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Autistic Disorder",
+        "Developmental Disabilities",
+        "Humans"
+      ],
+      "keywords": [
+        "DISC1",
+        "Prader-Willi syndrome",
+        "Williams Syndrome",
+        "autism",
+        "neurodevelopment"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9744551/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9744551/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/gbb.12789"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34891220/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34891220/"
+    }
+  ],
+  "pubmed_discovery": {
+    "review": {
+      "query": "(\"Prader-Willi syndrome\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "22237428",
+        "35985710",
+        "31333129",
+        "35449162",
+        "37386011"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Prader-Willi syndrome\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "22237428",
+        "35985710",
+        "37051256",
+        "36768472",
+        "36901699",
+        "31985954",
+        "26062517",
+        "9391886",
+        "18781185",
+        "2646521"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Prader-Willi syndrome\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "22237428",
+        "20301505",
+        "26062517",
+        "38383825",
+        "34238470",
+        "33659026",
+        "36790642",
+        "37700664",
+        "18230893",
+        "28494825"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Prader-Willi syndrome\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "35150573",
+        "2646521",
+        "36790642",
+        "28494825",
+        "3827455"
+      ]
+    },
+    "general": {
+      "query": "(\"Prader-Willi syndrome\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "34573411",
+        "6365470",
+        "8110011",
+        "2646521",
+        "4175418",
+        "6034523",
+        "5659301",
+        "10457284",
+        "16156341",
+        "34891220"
+      ]
+    }
+  },
+  "meta": {
+    "syndrome": "Prader-Willi syndrome",
+    "collected_at": "2026-08-13T02:21:40.993093Z",
+    "work_dir": "output/Prader-Willi_syndrome/prader_willi_syndrome",
+    "steps": {
+      "01_disease_info": "output/Prader-Willi_syndrome/prader_willi_syndrome/01_disease_info.json",
+      "02_articles": "output/Prader-Willi_syndrome/prader_willi_syndrome/02_articles.json",
+      "03_markers": "output/Prader-Willi_syndrome/prader_willi_syndrome/03_markers.json"
+    },
+    "annotation_sources": {
+      "medgen": "NCBI MedGen HTML (공개)",
+      "pubmed": "NCBI PubMed ESearch+EFetch (공개)",
+      "ncbi_gene": "NCBI Gene ESearch+ESummary",
+      "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+      "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+      "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+    }
+  }
+}

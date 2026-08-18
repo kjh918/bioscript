@@ -85,8 +85,19 @@ function _setToggleBtnStyle(prefix, active) {
 // ── renderIdeogram (overview) ─────────────────────────────────────────────
 function renderIdeogram() {
   if (typeof Ideogram === 'undefined') {
-    document.getElementById('ideogram-wrap').innerHTML =
-      '<p style="color:var(--text-muted);padding:20px;font-size:12px;">ideogram.js 로드 실패</p>';
+    // 최대 5초 대기 후 재시도
+    var tries = 0;
+    var timer = setInterval(function() {
+      tries++;
+      if (typeof Ideogram !== 'undefined') {
+        clearInterval(timer);
+        _renderOverviewWithMode(overviewAnnotMode);
+      } else if (tries > 50) {
+        clearInterval(timer);
+        var el = document.getElementById('ideogram-wrap');
+        if (el) el.innerHTML = '<p style="color:var(--text-muted);padding:20px;font-size:12px;">ideogram.js 로드 실패</p>';
+      }
+    }, 100);
     return;
   }
   _renderOverviewWithMode(overviewAnnotMode);
@@ -107,13 +118,13 @@ function _renderOverviewWithMode(mode) {
     orientation:          'vertical',
     chromosomes:          S.display_chroms,
     rows:                 1,
-    chrHeight:            220,
-    chrWidth:             12,
-    chrMargin:            8,
+    chrHeight:            420,
+    chrWidth:             8,
+    chrMargin:            14,
     rotatable:            false,
-    showBandLabels:       false,
+    showBandLabels:       true,
     showChromosomeLabels: true,
-    resolution:           550,
+    resolution:           850,
     showAnnotTooltip:     true,
   };
   try {
@@ -214,7 +225,7 @@ function renderChromDetail(chrom) {
     });
     if (!syns.length) {
       chipsEl.innerHTML =
-        '<span style="font-size:11px;color:var(--text-muted);">이 염색체에 마커 없음 (LOW_RISK)</span>';
+        '<span style="font-size:11px;color:var(--text-muted);">이 염색체에 마커 없음 (LOW RISK)</span>';
     } else {
       chipsEl.innerHTML = syns.map(function(s) {
         var pc = {HIGH_RISK:'phr',SUSPECTED:'pmo',LOW_RISK:'plr',UNKNOWN:'pnc'}[s.call]||'pnc';

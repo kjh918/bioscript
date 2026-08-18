@@ -45,7 +45,7 @@ class NiptSyndrome:
     syndrome:  str
     group:     str          # Autosome Abnormality / Sex Chromosome Abnormality / Micro Deletion
     features:  list[MarkerFeature] = field(default_factory=list)
-    call:      str = "UNKNOWN"   # LOW_RISK / SUSPECTED / HIGH_RISK / UNKNOWN
+    call:      str = "UNKNOWN"   # NORMAL / SUSPICIOUS / ABNORMAL / UNKNOWN
     cn_value:  Optional[float] = None
 
     @property

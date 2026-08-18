@@ -1,0 +1,708 @@
+{
+  "db_sources": {
+    "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+    "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+    "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "HERC2",
+      "chromosome": "chr15",
+      "cytoband": "15q13.1",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "gencc_classification": "Strong",
+        "gencc_moi": "Autosomal recessive",
+        "gencc_submitters": [
+          "Labcorp Genetics (formerly Invitae)",
+          "Orphanet",
+          "G2P",
+          "PanelApp Australia",
+          "Ambry Genetics"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000635",
+            "hpo_name": "Blue irides"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          }
+        ],
+        "ncbi_gene_id": "8924"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "IPW",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct"
+      ],
+      "annotation": {
+        "ncbi_gene_id": "3653"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "MAGEL2",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "ClinGen",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "hi_score": "1",
+        "hi_score_label": "Little evidence for dosage pathogenicity",
+        "hi_disease": null,
+        "ts_score": "No evidence available",
+        "hi_pmids": [],
+        "hgnc_id": null,
+        "gencc_classification": "Definitive",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "Labcorp Genetics (formerly Invitae)",
+          "Illumina",
+          "G2P",
+          "ClinGen",
+          "PanelApp Australia"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000358",
+            "hpo_name": "Posteriorly rotated ears"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0000377",
+            "hpo_name": "Abnormal pinna morphology"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          }
+        ],
+        "ncbi_gene_id": "54551"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "MKRN3",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "gencc_classification": "Strong",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "PanelApp Australia",
+          "Ambry Genetics",
+          "Labcorp Genetics (formerly Invitae)"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "7681"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "MKRN3-AS1",
+      "chromosome": "chr15",
+      "cytoband": "15q11-q13",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct"
+      ],
+      "annotation": {
+        "ncbi_gene_id": "10108"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "NPAP1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "23742"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "PWAR1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "145624"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "PWRN1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "791114"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "SNORD115-1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "338433"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "SNORD116-1",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "HPO"
+      ],
+      "annotation": {
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011461",
+            "hpo_name": "Fetal onset"
+          },
+          {
+            "hpo_id": "HP:0000670",
+            "hpo_name": "Carious teeth"
+          },
+          {
+            "hpo_id": "HP:0008736",
+            "hpo_name": "Hypoplasia of penis"
+          },
+          {
+            "hpo_id": "HP:0000119",
+            "hpo_name": "Abnormality of the genitourinary system"
+          },
+          {
+            "hpo_id": "HP:0006487",
+            "hpo_name": "Bowing of the long bones"
+          },
+          {
+            "hpo_id": "HP:0001561",
+            "hpo_name": "Polyhydramnios"
+          },
+          {
+            "hpo_id": "HP:0000707",
+            "hpo_name": "Abnormality of the nervous system"
+          },
+          {
+            "hpo_id": "HP:0000708",
+            "hpo_name": "Atypical behavior"
+          },
+          {
+            "hpo_id": "HP:0000709",
+            "hpo_name": "Psychosis"
+          },
+          {
+            "hpo_id": "HP:0000717",
+            "hpo_name": "Autism"
+          }
+        ],
+        "ncbi_gene_id": "100033413"
+      }
+    }
+  ]
+}

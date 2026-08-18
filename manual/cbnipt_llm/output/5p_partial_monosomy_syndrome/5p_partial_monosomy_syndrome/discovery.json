@@ -1,0 +1,2725 @@
+{
+  "disease_info": {
+    "syndrome": "5p partial monosomy syndrome",
+    "definition": "Cri-du-chat syndrome was first described by Lejeune et al. (1963) as a hereditary congenital syndrome associated with deletion of part of the short arm of chromosome 5. The deletions can vary in size from extremely small and involving only band 5p15.2 to the entire short arm. Although the majority of deletions arise as new mutations, approximately 12% result from unbalanced segregation of translocations or recombination involving a pericentric inversion in one of the parents. [from OMIM ]",
+    "synonyms": [
+      "5p deletion syndrome",
+      "5p- syndrome",
+      "CAT CRY SYNDROME",
+      "CHROMOSOME 5p DELETION SYNDROME",
+      "Cri du Chat Syndrome"
+    ],
+    "db_ids": {
+      "SNOMED-CT": "70173007",
+      "MONDO": "MONDO:0007404",
+      "OMIM": "123450",
+      "Orphanet": "281"
+    },
+    "gene_locations": [],
+    "genomic_targets": [
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr5",
+        "cytoband": "5p",
+        "event": "loss",
+        "mechanism": "deletion",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr5",
+        "cytoband": "5p15.2",
+        "event": "loss",
+        "mechanism": "deletion",
+        "source": "name_synonym_or_definition"
+      }
+    ],
+    "genereview_url": null,
+    "literature": {
+      "pubmed": {
+        "papers": [
+          {
+            "pmid": "37628679",
+            "title": "Cognitive-Behavioral Profile in Pediatric Patients with Syndrome 5p-; Genotype-Phenotype Correlationships.",
+            "authors": "Bel-Fenellós C, Biencinto-López C, Sáenz-Rico B, Hernández A, Sandoval-Talamantes AK, Tenorio-Castaño J, Lapunzina P, Nevado J",
+            "journal": "Genes (Basel)",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37628679/"
+          },
+          {
+            "pmid": "30828085",
+            "title": "Clinical utility of noninvasive prenatal screening for expanded chromosome disease syndromes.",
+            "authors": "Liang D, Cram DS, Tan H, Linpeng S, Liu Y, Sun H, Zhang Y, Tian F, Zhu H, Xu M, Wang H, Yu F, Wu L",
+            "journal": "Genet Med",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30828085/"
+          },
+          {
+            "pmid": "627112",
+            "title": "Prenatal diagnosis of 5p-.",
+            "authors": "David K, Kaffe S, Strauss L, Hsu LY, Serotkin A, Hirschhorn K",
+            "journal": "Clin Genet",
+            "year": "1978",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/627112/"
+          }
+        ],
+        "see_all": {}
+      },
+      "etiology": {
+        "papers": [
+          {
+            "pmid": "38884738",
+            "title": "Human Genetics of Tetralogy of Fallot and Double-Outlet Right Ventricle.",
+            "authors": "Dorn C, Perrot A, Grunert M, Rickert-Sperling S",
+            "journal": "Adv Exp Med Biol",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38884738/"
+          },
+          {
+            "pmid": "32078008",
+            "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+            "authors": "Bewersdorf JP, Zeidan AM",
+            "journal": "Ann Hematol",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+          },
+          {
+            "pmid": "30793794",
+            "title": "Management of Self-injurious Behaviors in Children with Neurodevelopmental Disorders: A Pharmacotherapy Overview.",
+            "authors": "Sabus A, Feinstein J, Romani P, Goldson E, Blackmer A",
+            "journal": "Pharmacotherapy",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30793794/"
+          },
+          {
+            "pmid": "27475682",
+            "title": "Impact of rare diseases in oral health.",
+            "authors": "Molina-García A, Castellanos-Cosano L, Machuca-Portillo G, Posada-de la Paz M",
+            "journal": "Med Oral Patol Oral Cir Bucal",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27475682/"
+          },
+          {
+            "pmid": "18437967",
+            "title": "Cri-du-chat syndrome.",
+            "authors": "Chang CY, Lin SP, Lin HY, Chen YJ, Kao HA, Yeung CY, Hsu CH, Chi H",
+            "journal": "Acta Paediatr Taiwan",
+            "year": "2007",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18437967/"
+          }
+        ],
+        "see_all": {}
+      },
+      "diagnosis": {
+        "papers": [
+          {
+            "pmid": "26235846",
+            "title": "5p deletions: Current knowledge and future directions.",
+            "authors": "Nguyen JM, Qualmann KJ, Okashah R, Reilly A, Alexeyev MF, Campbell DJ",
+            "journal": "Am J Med Genet C Semin Med Genet",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26235846/"
+          },
+          {
+            "pmid": "25488457",
+            "title": "Cri-du-chat syndrome.",
+            "authors": "Nandhagopal R, Udayakumar AM",
+            "journal": "Indian J Med Res",
+            "year": "2014",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25488457/"
+          },
+          {
+            "pmid": "19466618",
+            "title": "Cri-du-chat.",
+            "authors": "Sigafoos J, O'Reilly MF, Lancioni GE",
+            "journal": "Dev Neurorehabil",
+            "year": "2009",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19466618/"
+          },
+          {
+            "pmid": "18437967",
+            "title": "Cri-du-chat syndrome.",
+            "authors": "Chang CY, Lin SP, Lin HY, Chen YJ, Kao HA, Yeung CY, Hsu CH, Chi H",
+            "journal": "Acta Paediatr Taiwan",
+            "year": "2007",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18437967/"
+          },
+          {
+            "pmid": "16953888",
+            "title": "Cri du Chat syndrome.",
+            "authors": "Cerruti Mainardi P",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2006",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16953888/"
+          }
+        ],
+        "see_all": {}
+      },
+      "therapy": {
+        "papers": [
+          {
+            "pmid": "32487530",
+            "title": "Ebstein anomaly associated with cri du chat (cat's cry) syndrome and 20q duplication.",
+            "authors": "Olivella A, Manotas H, Payán-Gómez C, Piñeros JG",
+            "journal": "BMJ Case Rep",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32487530/"
+          },
+          {
+            "pmid": "32078008",
+            "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+            "authors": "Bewersdorf JP, Zeidan AM",
+            "journal": "Ann Hematol",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+          },
+          {
+            "pmid": "31836684",
+            "title": "(18)F-FDG PET Identifies Altered Brain Metabolism in Patients with Cri du Chat Syndrome.",
+            "authors": "Cistaro A, Quartuccio N, Piccardo A, Fania P, Spunton M, Liava A, Danesino C, Albani G, Guala A",
+            "journal": "J Nucl Med",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31836684/"
+          },
+          {
+            "pmid": "30793794",
+            "title": "Management of Self-injurious Behaviors in Children with Neurodevelopmental Disorders: A Pharmacotherapy Overview.",
+            "authors": "Sabus A, Feinstein J, Romani P, Goldson E, Blackmer A",
+            "journal": "Pharmacotherapy",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30793794/"
+          },
+          {
+            "pmid": "6236421",
+            "title": "Infants' vocalizations as a diagnostic tool.",
+            "authors": "Weston AJ, Mader NT",
+            "journal": "Percept Mot Skills",
+            "year": "1984",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/6236421/"
+          }
+        ],
+        "see_all": {}
+      },
+      "prognosis": {
+        "papers": [
+          {
+            "pmid": "32078008",
+            "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+            "authors": "Bewersdorf JP, Zeidan AM",
+            "journal": "Ann Hematol",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+          },
+          {
+            "pmid": "25645650",
+            "title": "The molecular pathogenesis of the myelodysplastic syndromes.",
+            "authors": "Pellagatti A, Boultwood J",
+            "journal": "Eur J Haematol",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25645650/"
+          },
+          {
+            "pmid": "20038906",
+            "title": "Cri du chat syndrome: a critical review.",
+            "authors": "Rodríguez-Caballero A, Torres-Lagares D, Rodríguez-Pérez A, Serrera-Figallo MA, Hernández-Guisado JM, Machuca-Portillo G",
+            "journal": "Med Oral Patol Oral Cir Bucal",
+            "year": "2010",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20038906/"
+          },
+          {
+            "pmid": "16953888",
+            "title": "Cri du Chat syndrome.",
+            "authors": "Cerruti Mainardi P",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2006",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16953888/"
+          },
+          {
+            "pmid": "8260723",
+            "title": "Partial monosomy 5p and partial trisomy 5q due to paternal pericentric inversion of chromosome 5.",
+            "authors": "Ono K, Ohashi Y, Nakano H, Togashi H, Kannari Y, Isono S",
+            "journal": "Jpn J Hum Genet",
+            "year": "1993",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/8260723/"
+          }
+        ],
+        "see_all": {}
+      },
+      "clinical_prediction": {
+        "papers": [
+          {
+            "pmid": "38884729",
+            "title": "Human Genetics of Ventricular Septal Defect.",
+            "authors": "Perrot A, Rickert-Sperling S",
+            "journal": "Adv Exp Med Biol",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+          },
+          {
+            "pmid": "32078008",
+            "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+            "authors": "Bewersdorf JP, Zeidan AM",
+            "journal": "Ann Hematol",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+          },
+          {
+            "pmid": "27475682",
+            "title": "Impact of rare diseases in oral health.",
+            "authors": "Molina-García A, Castellanos-Cosano L, Machuca-Portillo G, Posada-de la Paz M",
+            "journal": "Med Oral Patol Oral Cir Bucal",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27475682/"
+          },
+          {
+            "pmid": "20733155",
+            "title": "Advances in the 5q- syndrome.",
+            "authors": "Boultwood J, Pellagatti A, McKenzie AN, Wainscoat JS",
+            "journal": "Blood",
+            "year": "2010",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20733155/"
+          },
+          {
+            "pmid": "10066110",
+            "title": "Prenatal traces of aberrant neurofacial growth.",
+            "authors": "Kjaer I",
+            "journal": "Acta Odontol Scand",
+            "year": "1998",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10066110/"
+          }
+        ],
+        "see_all": {}
+      },
+      "systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "40274277",
+            "title": "Shorter Telomeres and Faster Telomere Attrition in Individuals With Five Syndromic Forms of Intellectual Disability: A Systematic Review and Meta-Analysis.",
+            "authors": "Hanley SM, Schutte NS, Bellamy J, Denham J",
+            "journal": "J Intellect Disabil Res",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40274277/"
+          },
+          {
+            "pmid": "32920986",
+            "title": "Sella turcica morphology in patients with genetic syndromes: A systematic review.",
+            "authors": "Roomaney IA, Chetty M",
+            "journal": "Orthod Craniofac Res",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32920986/"
+          },
+          {
+            "pmid": "27475682",
+            "title": "Impact of rare diseases in oral health.",
+            "authors": "Molina-García A, Castellanos-Cosano L, Machuca-Portillo G, Posada-de la Paz M",
+            "journal": "Med Oral Patol Oral Cir Bucal",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27475682/"
+          },
+          {
+            "pmid": "26457586",
+            "title": "A systematic review of the oral and craniofacial manifestations of cri du chat syndrome.",
+            "authors": "Corcuera-Flores JR, Casttellanos-Cosano L, Torres-Lagares D, Serrera-Figallo MÁ, Rodríguez-Caballero Á, Machuca-Portillo G",
+            "journal": "Clin Anat",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26457586/"
+          }
+        ],
+        "see_all": {}
+      }
+    },
+    "medgen_uid": "41345",
+    "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/41345"
+  },
+  "db_ids": {
+    "SNOMED-CT": "70173007",
+    "MONDO": "MONDO:0007404",
+    "OMIM": "123450",
+    "Orphanet": "281"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "5p",
+      "chromosome": "chr5",
+      "cytoband": "5p",
+      "genomic_pos": null,
+      "event": "loss",
+      "mechanism": "deletion",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "5p15.2",
+      "chromosome": "chr5",
+      "cytoband": "5p15.2",
+      "genomic_pos": null,
+      "event": "loss",
+      "mechanism": "deletion",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    }
+  ],
+  "evidence_literature": [
+    {
+      "pmid": "37628679",
+      "doi": "10.3390/genes14081628",
+      "pmc_id": "PMC10454038",
+      "pmc_verify": null,
+      "title": "Cognitive-Behavioral Profile in Pediatric Patients with Syndrome 5p-; Genotype-Phenotype Correlationships.",
+      "authors": [
+        "Bel-Fenellós Cristina",
+        "Biencinto-López Chantal",
+        "Sáenz-Rico Belén",
+        "Hernández Adolfo",
+        "Sandoval-Talamantes Ana Karen",
+        "Tenorio-Castaño Jair",
+        "Lapunzina Pablo",
+        "Nevado Julián"
+      ],
+      "journal": "Genes",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "(1) Background: 5p minus Syndrome (S5p-) is a neurodevelopmental disorder caused by a deletion in the short arm of chromosome 5. Among the phenotypic characteristics of S5p-, the most characteristic and representative element is a monochromatic cry with a high-pitched tone reminiscent of a cat's meow. Individuals may also show great phenotypic heterogeneity and great genetic variability. Regarding cognitive-behavioral aspects of the syndrome, the studies are scarce and do not establish a general profile of the main cognitive-behavioral particularities that this syndrome presents. The main objective of this work was to describe the development profile of a cohort of 45 children with 5p minus Syndrome, concerning the biomedical, genetic, cognitive, and behavioral aspects. Establishing putative genotype-phenotype (cognitive-behavioral profiles) relationships in our cohort, from an interdisciplinary approach. (2) Methods: A selection of instruments of measures was selected for neuropsychological assessment (3) Results: In general, children with S5p- have a higher cognitive level than a communicative and motor level. Language difficulties, especially expressive ones, influence the frequency and severity of the most frequent behavioral problems in S5p. The most significant problem behavior of children with S5p-, especially girls, is self-harm. Compulsive behavior, limited preferences, and interest in monotony are significantly more frequent in subjects with better cognitive levels. We also find a significant correlation between the size of the loss of genetic material on 5p and the cognitive level of the subjects. (4) Conclusions: We described for the first time, the cognitive-behavioral profile of a cohort of minors with S5p-. Remarkably, it was found that language, especially of an expressive nature, modulates the most frequent behavioral aspects in subjects with lower cognitive levels, so it is essential to develop verbal or alternative communication strategies adjusted to these individuals.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Cri-du-Chat Syndrome",
+        "Problem Behavior",
+        "Phenotype",
+        "Cognition",
+        "Genotype"
+      ],
+      "keywords": [
+        "5p- Syndrome",
+        "Cri du Chat syndrome",
+        "SNP-arrays",
+        "behavioral assessment",
+        "cognitive assessment"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10454038/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10454038/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/genes14081628"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37628679/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37628679/"
+    },
+    {
+      "pmid": "30828085",
+      "doi": "10.1038/s41436-019-0467-4",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Clinical utility of noninvasive prenatal screening for expanded chromosome disease syndromes.",
+      "authors": [
+        "Liang Desheng",
+        "Cram David S",
+        "Tan Hu",
+        "Linpeng Siyuan",
+        "Liu Yingdi",
+        "Sun Huaiyu",
+        "Zhang Yu",
+        "Tian Feng",
+        "Zhu Hongmin",
+        "Xu Mengnan",
+        "Wang Hua",
+        "Yu Fuli",
+        "Wu Lingqian"
+      ],
+      "journal": "Genetics in medicine : official journal of the American College of Medical Genetics",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "PURPOSE: To assess the clinical performance of an expanded noninvasive prenatal screening (NIPS) test (\"NIPS-Plus\") for detection of both aneuploidy and genome-wide microdeletion/microduplication syndromes (MMS). METHODS: A total of 94,085 women with a singleton pregnancy were prospectively enrolled in the study. The cell-free plasma DNA was directly sequenced without intermediate amplification and fetal abnormalities identified using an improved copy-number variation (CNV) calling algorithm. RESULTS: A total of 1128 pregnancies (1.2%) were scored positive for clinically significant fetal chromosome abnormalities. This comprised 965 aneuploidies (1.026%) and 163 (0.174%) MMS. From follow-up tests, the positive predictive values (PPVs) for T21, T18, T13, rare trisomies, and sex chromosome aneuploidies were calculated as 95%, 82%, 46%, 29%, and 47%, respectively. For known MMS (n = 32), PPVs were 93% (DiGeorge), 68% (22q11.22 microduplication), 75% (Prader-Willi/Angleman), and 50% (Cri du Chat). For the remaining genome-wide MMS (n = 88), combined PPVs were 32% (CNVs ≥10 Mb) and 19% (CNVs <10 Mb). CONCLUSION: NIPS-Plus yielded high PPVs for common aneuploidies and DiGeorge syndrome, and moderate PPVs for other MMS. Our results present compelling evidence that NIPS-Plus can be used as a first-tier pregnancy screening method to improve detection rates of clinically significant fetal chromosome abnormalities.",
+      "abstract_sections": {
+        "PURPOSE": "To assess the clinical performance of an expanded noninvasive prenatal screening (NIPS) test (\"NIPS-Plus\") for detection of both aneuploidy and genome-wide microdeletion/microduplication syndromes (MMS).",
+        "METHODS": "A total of 94,085 women with a singleton pregnancy were prospectively enrolled in the study. The cell-free plasma DNA was directly sequenced without intermediate amplification and fetal abnormalities identified using an improved copy-number variation (CNV) calling algorithm.",
+        "RESULTS": "A total of 1128 pregnancies (1.2%) were scored positive for clinically significant fetal chromosome abnormalities. This comprised 965 aneuploidies (1.026%) and 163 (0.174%) MMS. From follow-up tests, the positive predictive values (PPVs) for T21, T18, T13, rare trisomies, and sex chromosome aneuploidies were calculated as 95%, 82%, 46%, 29%, and 47%, respectively. For known MMS (n = 32), PPVs were 93% (DiGeorge), 68% (22q11.22 microduplication), 75% (Prader-Willi/Angleman), and 50% (Cri du Chat). For the remaining genome-wide MMS (n = 88), combined PPVs were 32% (CNVs ≥10 Mb) and 19% (CNVs <10 Mb).",
+        "CONCLUSION": "NIPS-Plus yielded high PPVs for common aneuploidies and DiGeorge syndrome, and moderate PPVs for other MMS. Our results present compelling evidence that NIPS-Plus can be used as a first-tier pregnancy screening method to improve detection rates of clinically significant fetal chromosome abnormalities."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Aneuploidy",
+        "Cell-Free Nucleic Acids",
+        "Chromosome Aberrations",
+        "Chromosome Disorders",
+        "DNA Copy Number Variations",
+        "Female",
+        "Humans",
+        "Karyotyping",
+        "Middle Aged",
+        "Noninvasive Prenatal Testing",
+        "Pregnancy",
+        "Prenatal Diagnosis",
+        "Risk Factors",
+        "Sex Chromosome Aberrations",
+        "Trisomy",
+        "Young Adult"
+      ],
+      "keywords": [
+        "22q11.2 microdeletions",
+        "copy-number variation (CNV)",
+        "microdeletion/microduplication syndromes (MMS)",
+        "noninvasive prenatal screening",
+        "positive predictive value (PPV)"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41436-019-0467-4"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30828085/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30828085/"
+    },
+    {
+      "pmid": "627112",
+      "doi": "10.1111/j.1399-0004.1978.tb04253.x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prenatal diagnosis of 5p-.",
+      "authors": [
+        "David K",
+        "Kaffe S",
+        "Strauss L",
+        "Hsu L Y",
+        "Serotkin A",
+        "Hirschhorn K"
+      ],
+      "journal": "Clinical genetics",
+      "year": "1978",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S."
+      ],
+      "abstract": "With the combination of the various banding techniques (G,Q, and R), a small deletion of the short arm of a No.5 chromosome was detected prenatally in the pregnancy of a 39-year-old woman. The deletion appeared to be either intersitial in nature, involving part of p13 and p14, or the result of a translocation with deletion of p13 leads to pter. Both parents were found to have a normal chromosome constitution with normal banding patterns. Thus, this deletion was a de novo event. Repeat amniotic fluid cell chromosome analysis at the time of elective abortion, and postmortem examination of the fetus confirmed the prenatal cytogenetic diagnosis. We wish to emphasize that precise identification of a small deletion, as in this case, requires a combination of the various banding techniques.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abortion, Induced",
+        "Amniotic Fluid",
+        "Chromosome Deletion",
+        "Chromosomes, Human, 4-5",
+        "Cri-du-Chat Syndrome",
+        "Female",
+        "Humans",
+        "Maternal Age",
+        "Pregnancy",
+        "Prenatal Diagnosis"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/j.1399-0004.1978.tb04253.x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/627112/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/627112/"
+    },
+    {
+      "pmid": "38884738",
+      "doi": "10.1007/978-3-031-44087-8_36",
+      "pmc_id": "3915623",
+      "pmc_verify": null,
+      "title": "Human Genetics of Tetralogy of Fallot and Double-Outlet Right Ventricle.",
+      "authors": [
+        "Dorn Cornelia",
+        "Perrot Andreas",
+        "Grunert Marcel",
+        "Rickert-Sperling Silke"
+      ],
+      "journal": "Advances in experimental medicine and biology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Tetralogy of Fallot (TOF) and double-outlet right ventricle (DORV) are conotruncal defects resulting from disturbances of the second heart field and the neural crest, which can occur as isolated malformations or as part of multiorgan syndromes. Their etiology is multifactorial and characterized by overlapping genetic causes. In this chapter, we present the different genetic alterations underlying the two diseases, which range from chromosomal abnormalities like aneuploidies and structural mutations to rare single nucleotide variations affecting distinct genes. For example, mutations in the cardiac transcription factors NKX2-5, GATA4, and HAND2 have been identified in isolated TOF cases, while mutations of TBX5 and 22q11 deletion, leading to haploinsufficiency of TBX1, cause Holt-Oram and DiGeorge syndrome, respectively. Moreover, genes involved in signaling pathways, laterality determination, and epigenetic mechanisms have also been found mutated in TOF and/or DORV patients. Finally, genome-wide association studies identified common single nucleotide polymorphisms associated with the risk for TOF.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Tetralogy of Fallot",
+        "Double Outlet Right Ventricle",
+        "Mutation",
+        "Genome-Wide Association Study",
+        "Polymorphism, Single Nucleotide",
+        "Genetic Predisposition to Disease",
+        "Transcription Factors"
+      ],
+      "keywords": [
+        "22q11 deletion",
+        "22q11 deletion syndrome",
+        "CFC1",
+        "CHARGE syndrome",
+        "CHD7",
+        "CNVs",
+        "Cat eye syndrome",
+        "Copy number variations",
+        "Cri du chat syndrome",
+        "DORV",
+        "DiGeorge syndrome",
+        "Double-outlet right ventricle",
+        "Down syndrome",
+        "Edwards syndrome",
+        "FOG2",
+        "GATA4",
+        "GDF1",
+        "Genome-wide association studies",
+        "HAND2",
+        "Heterotaxy",
+        "Holt–Oram syndrome",
+        "JAG1",
+        "Jacobsen syndrome",
+        "LEOPARD syndrome",
+        "Laterality defects",
+        "NKX2–5",
+        "NOTCH2",
+        "Patau syndrome",
+        "SNPs",
+        "Single nucleotide polymorphisms",
+        "TBX1",
+        "TBX5",
+        "TOF",
+        "Tetralogy of Fallot",
+        "Trisomy",
+        "Velocardiofacial syndrome",
+        "Williams–Beuren syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3915623/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3915623/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/978-3-031-44087-8_36"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38884738/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38884738/"
+    },
+    {
+      "pmid": "32078008",
+      "doi": "10.1007/s00277-020-03963-1",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Evolving therapies for lower-risk myelodysplastic syndromes.",
+      "authors": [
+        "Bewersdorf Jan Philipp",
+        "Zeidan Amer M"
+      ],
+      "journal": "Annals of hematology",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The development in the therapeutic landscape of myelodysplastic syndromes (MDS) has substantially lagged behind other hematologic malignancies with no new drug approvals for MDS for 13 years since the approval of decitabine in the United States in 2006. While therapeutic concepts for MDS patients continue to be primarily defined by clinical-pathologic risk stratification tools such as the International Prognostic Scoring System (IPSS) and its revised version IPSS-R, our understanding of the genetic landscape and the molecular pathogenesis of MDS has greatly evolved over the last decade. It is expected that the therapeutic approach to MDS patients will become increasingly individualized based on prognostic and predictive genetic features and other biomarkers. Herein, we review the current treatment of lower-risk MDS patients and discuss promising agents in advanced clinical testing for the treatment of symptomatic anemia in lower-risk MDS patients such as luspatercept and imetelstat. Lastly, we review the clinical development of new agents and the implications of the wider availability of mutational analysis for the management of individual MDS patients.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anemia",
+        "Blood Transfusion",
+        "Chelation Therapy",
+        "Clinical Trials as Topic",
+        "Cri-du-Chat Syndrome",
+        "Drugs, Investigational",
+        "Forecasting",
+        "Hematinics",
+        "Hematopoietic Stem Cell Transplantation",
+        "Humans",
+        "Immunosuppressive Agents",
+        "Iron Overload",
+        "Lenalidomide",
+        "Molecular Targeted Therapy",
+        "Multicenter Studies as Topic",
+        "Myelodysplastic Syndromes",
+        "Precision Medicine",
+        "Prognosis",
+        "Risk Assessment",
+        "Severity of Illness Index"
+      ],
+      "keywords": [
+        "Lower risk",
+        "Luspatercept",
+        "MDS",
+        "Myelodysplastic syndrome",
+        "Novel agents"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s00277-020-03963-1"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32078008/"
+    },
+    {
+      "pmid": "30793794",
+      "doi": "10.1002/phar.2238",
+      "pmc_id": "PMC6555654",
+      "pmc_verify": null,
+      "title": "Management of Self-injurious Behaviors in Children with Neurodevelopmental Disorders: A Pharmacotherapy Overview.",
+      "authors": [
+        "Sabus Ashley",
+        "Feinstein James",
+        "Romani Patrick",
+        "Goldson Edward",
+        "Blackmer Allison"
+      ],
+      "journal": "Pharmacotherapy",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Review"
+      ],
+      "abstract": "Neurodevelopmental disorders (NDDs), a group of disorders affecting ~1-2% of the general population, are caused by changes in brain development that result in behavioral and cognitive alterations, sensory and motor changes, and speech and language deficits. Neurodevelopmental disorders encompass a heterogeneous group of disorders including, but not limited to, Smith-Magenis syndrome, Lesch-Nyhan disease, cri du chat syndrome, Prader-Willi syndrome, pervasive developmental disorders, fragile X syndrome, Rett syndrome, Cornelia de Lange syndrome, and Down syndrome. Self-injurious behaviors (SIBs) are common in children with NDDs; depending on the specific NDD, the incidence of SIBs is nearly 100%. The management of SIBs in this population is complex, and little high-quality data exist to guide a consistent approach to therapy. However, managing SIBs is of the utmost importance for the child as well as the family and caregivers. Behavior therapies must be implemented as first-line therapy. If behavioral interventions alone fail, pharmacotherapy becomes an essential part of management plans. The limited available evidence for the use of common pharmacologic agents, such as second-generation antipsychotics, and less common agents, such as clonidine, n-acetylcysteine, riluzole, naltrexone, and topical anesthetics, is reviewed. Additional data from well-designed studies in children with NDDs are needed to gain a better understanding of this common and troublesome problem including efficacy and safety implications associated with pharmacotherapy. Until then, clinicians must rely on the limited available data, clinical expertise, and ongoing systematic monitoring when managing SIBs in children with NDDs.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Neurodevelopmental Disorders",
+        "Psychotropic Drugs",
+        "Self-Injurious Behavior"
+      ],
+      "keywords": [
+        "children",
+        "neurodevelopmental disorders",
+        "pediatrics",
+        "pharmacotherapy",
+        "self-injurious behaviors"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6555654/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6555654/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/phar.2238"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30793794/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30793794/"
+    },
+    {
+      "pmid": "27475682",
+      "doi": "10.4317/medoral.20972",
+      "pmc_id": "PMC5005096",
+      "pmc_verify": null,
+      "title": "Impact of rare diseases in oral health.",
+      "authors": [
+        "Molina-García A",
+        "Castellanos-Cosano L",
+        "Machuca-Portillo G",
+        "Posada-de la Paz M"
+      ],
+      "journal": "Medicina oral, patologia oral y cirugia bucal",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "BACKGROUND: Rare diseases (RD) are those that present a lower prevalence than 5 cases per 10.000 population. The main objective of this review was to study the effect on oral health in rare diseases, while the secondary objective of the study is theme upgrade. MATERIAL AND METHODS: Comparative observational case-control studies were analysed and a systematic review was conducted in PubMed. Each rare disease listed on the statistical data record of the Health Portal of the Ministry of Equality, Health and Social Policies Board of Andalusia was associated with \"oral health\". The variables studied included dental, oral mucosa and occlusion alterations, oral pathologies (caries, periodontal disease) and other alterations (mouth breathing, parafunctional habits, etc). A bias analysis of the variable caries was conducted. RESULTS: Six RD were selected through our inclusion and exclusion criteria (hypogammaglobulinemia, Rett syndrome, Marfan syndrome, Prader-Willi syndrome, cystic fibrosis and Cri du chat syndrome) in a total of 8 publications, of which four trials were classified as high risk of bias and one of them as medium risk. There were not trials with low risk of bias. CONCLUSIONS: The main statistically significant differences found by Syndrome compared to a control group were in Hypogammaglobulinemia with a greater tendency to enamel hypoplasia and dry mouth. The Rett syndrome had, as well, a greater tendency to an anterior open bite, ogival palate, bruxism, mouth breathing and tongue thrusting. Prader-Willi syndrome had a tendency of dental erosion, and Cri du chat syndrome showed a higher association to Tannerella forsythia.",
+      "abstract_sections": {
+        "BACKGROUND": "Rare diseases (RD) are those that present a lower prevalence than 5 cases per 10.000 population. The main objective of this review was to study the effect on oral health in rare diseases, while the secondary objective of the study is theme upgrade.",
+        "MATERIAL AND METHODS": "Comparative observational case-control studies were analysed and a systematic review was conducted in PubMed. Each rare disease listed on the statistical data record of the Health Portal of the Ministry of Equality, Health and Social Policies Board of Andalusia was associated with \"oral health\". The variables studied included dental, oral mucosa and occlusion alterations, oral pathologies (caries, periodontal disease) and other alterations (mouth breathing, parafunctional habits, etc). A bias analysis of the variable caries was conducted.",
+        "RESULTS": "Six RD were selected through our inclusion and exclusion criteria (hypogammaglobulinemia, Rett syndrome, Marfan syndrome, Prader-Willi syndrome, cystic fibrosis and Cri du chat syndrome) in a total of 8 publications, of which four trials were classified as high risk of bias and one of them as medium risk. There were not trials with low risk of bias.",
+        "CONCLUSIONS": "The main statistically significant differences found by Syndrome compared to a control group were in Hypogammaglobulinemia with a greater tendency to enamel hypoplasia and dry mouth. The Rett syndrome had, as well, a greater tendency to an anterior open bite, ogival palate, bruxism, mouth breathing and tongue thrusting. Prader-Willi syndrome had a tendency of dental erosion, and Cri du chat syndrome showed a higher association to Tannerella forsythia."
+      },
+      "mesh_terms": [
+        "Bruxism",
+        "Cri-du-Chat Syndrome",
+        "Dental Caries",
+        "Humans",
+        "Oral Health",
+        "Rare Diseases"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5005096/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5005096/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.4317/medoral.20972"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27475682/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27475682/"
+    },
+    {
+      "pmid": "18437967",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cri-du-chat syndrome.",
+      "authors": [
+        "Chang Chia-Ying",
+        "Lin Shuan-Pei",
+        "Lin Hsiang-Yu",
+        "Chen Yen-Jiun",
+        "Kao Hsin-An",
+        "Yeung Chun-Yan",
+        "Hsu Chyong-Hsin",
+        "Chi Hsin"
+      ],
+      "journal": "Acta paediatrica Taiwanica = Taiwan er ke yi xue hui za zhi",
+      "year": "2007",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: Cri-du-chat syndrome is a genetic disorder associated with various sized deletions of the short arm of chromosome 5. There are typical physical features, but individual phenotypes vary considerably. METHODS: The records of 23 patients with cri-du-chat syndrome admitted to Mackay Memorial Hospital from June 1984 to February 2006 were retrospectively reviewed. Data abstracted from the records included abnormal facial features and physical findings, results of echocardiography, bronchoscopy, auditory evoked potential, visual evoked potential, brain ultrasonography, and karyotype. We examined the various clinical phenotypes to see if there was an association with specific karyotypes. RESULTS: Among congenital heart conditions, atrial septal defect (8/15, 53%) was the most common, followed by ventricular septal defect (4/15, 26%), tricuspid regurgitation (4/15, 26%) and patent ductus arteriosus (3/15, 20%). Laryngomalacia was the most frequent airway problem (8/23, 34%) and strabismus the commonest visual disorder (1/23). A high percentage of patients had impaired hearing (5/23, 21%). There was no clear relationship found between deletion size and major clinical manifestations in this study. CONCLUSIONS: Karyotype is not a reliable indicator of specific organ involvement in cri-du-chat syndrome. However, karyotyping is still useful, particularly if parental translocation are found to be involved. It helps for prenatal diagnosis of next pregnancy.",
+      "abstract_sections": {
+        "BACKGROUND": "Cri-du-chat syndrome is a genetic disorder associated with various sized deletions of the short arm of chromosome 5. There are typical physical features, but individual phenotypes vary considerably.",
+        "METHODS": "The records of 23 patients with cri-du-chat syndrome admitted to Mackay Memorial Hospital from June 1984 to February 2006 were retrospectively reviewed. Data abstracted from the records included abnormal facial features and physical findings, results of echocardiography, bronchoscopy, auditory evoked potential, visual evoked potential, brain ultrasonography, and karyotype. We examined the various clinical phenotypes to see if there was an association with specific karyotypes.",
+        "RESULTS": "Among congenital heart conditions, atrial septal defect (8/15, 53%) was the most common, followed by ventricular septal defect (4/15, 26%), tricuspid regurgitation (4/15, 26%) and patent ductus arteriosus (3/15, 20%). Laryngomalacia was the most frequent airway problem (8/23, 34%) and strabismus the commonest visual disorder (1/23). A high percentage of patients had impaired hearing (5/23, 21%). There was no clear relationship found between deletion size and major clinical manifestations in this study.",
+        "CONCLUSIONS": "Karyotype is not a reliable indicator of specific organ involvement in cri-du-chat syndrome. However, karyotyping is still useful, particularly if parental translocation are found to be involved. It helps for prenatal diagnosis of next pregnancy."
+      },
+      "mesh_terms": [
+        "Cri-du-Chat Syndrome",
+        "Female",
+        "Humans",
+        "Infant, Newborn",
+        "Karyotyping",
+        "Male",
+        "Retrospective Studies"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18437967/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18437967/"
+    },
+    {
+      "pmid": "26235846",
+      "doi": "10.1002/ajmg.c.31444",
+      "pmc_id": "PMC4736720",
+      "pmc_verify": null,
+      "title": "5p deletions: Current knowledge and future directions.",
+      "authors": [
+        "Nguyen Joanne M",
+        "Qualmann Krista J",
+        "Okashah Rebecca",
+        "Reilly AmySue",
+        "Alexeyev Mikhail F",
+        "Campbell Dennis J"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Disorders resulting from 5p deletions (5p-) were first recognized by Lejeune et al. in 1963 [Lejeune et al. (1963); C R Hebd Seances Acad Sci 257:3098-3102]. 5p- is caused by partial or total deletion of the short arm of chromosome 5. The most recognizable phenotype is characterized by a high-pitched cry, dysmorphic features, poor growth, and developmental delay. This report reviews 5p- disorders and their molecular basis. Hemizygosity for genes located within this region have been implicated in contributing to the phenotype. A review of the genes on 5p which may be dosage sensitive is summarized. Because of the growing knowledge of these specific genes, future directions to explore potential targeted therapies for individuals with 5p- are discussed. © 2015 Wiley Periodicals, Inc.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 5",
+        "Developmental Disabilities",
+        "Humans",
+        "Phenotype"
+      ],
+      "keywords": [
+        "5p deletion syndrome",
+        "5p minus syndrome",
+        "Cri du Chat syndrome",
+        "haploinsufficiency",
+        "hemizygosity",
+        "natural history"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4736720/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4736720/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.31444"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26235846/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26235846/"
+    },
+    {
+      "pmid": "25488457",
+      "doi": "",
+      "pmc_id": "PMC4277150",
+      "pmc_verify": null,
+      "title": "Cri-du-chat syndrome.",
+      "authors": [
+        "Nandhagopal R",
+        "Udayakumar A M"
+      ],
+      "journal": "The Indian journal of medical research",
+      "year": "2014",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Brain",
+        "Cri-du-Chat Syndrome",
+        "Diagnostic Imaging",
+        "Female",
+        "Humans",
+        "Infant",
+        "Karyotype",
+        "Magnetic Resonance Imaging",
+        "Radiography"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4277150/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4277150/",
+          "verified": null
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25488457/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25488457/"
+    },
+    {
+      "pmid": "19466618",
+      "doi": "10.1080/17518420902975720",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cri-du-chat.",
+      "authors": [
+        "Sigafoos Jeff",
+        "O'Reilly Mark F",
+        "Lancioni Giulio E"
+      ],
+      "journal": "Developmental neurorehabilitation",
+      "year": "2009",
+      "publication_types": [
+        "Editorial"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adaptation, Psychological",
+        "Child",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 5",
+        "Cri-du-Chat Syndrome",
+        "Humans",
+        "Intelligence",
+        "Language Development",
+        "Learning"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/17518420902975720"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19466618/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19466618/"
+    },
+    {
+      "pmid": "16953888",
+      "doi": "10.1186/1750-1172-1-33",
+      "pmc_id": "PMC1574300",
+      "pmc_verify": null,
+      "title": "Cri du Chat syndrome.",
+      "authors": [
+        "Cerruti Mainardi Paola"
+      ],
+      "journal": "Orphanet journal of rare diseases",
+      "year": "2006",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "The Cri du Chat syndrome (CdCS) is a genetic disease resulting from a deletion of variable size occurring on the short arm of chromosome 5 (5p-). The incidence ranges from 1:15,000 to 1:50,000 live-born infants. The main clinical features are a high-pitched monochromatic cry, microcephaly, broad nasal bridge, epicanthal folds, micrognathia, abnormal dermatoglyphics, and severe psychomotor and mental retardation. Malformations, although not very frequent, may be present: cardiac, neurological and renal abnormalities, preauricular tags, syndactyly, hypospadias, and cryptorchidism. Molecular cytogenetic analysis has allowed a cytogenetic and phenotypic map of 5p to be defined, even if results from the studies reported up to now are not completely in agreement. Genotype-phenotype correlation studies showed a clinical and cytogenetic variability. The identification of phenotypic subsets associated with a specific size and type of deletion is of diagnostic and prognostic relevance. Specific growth and psychomotor development charts have been established. Two genes, Semaphorin F (SEMAF) and delta-catenin (CTNND2), which have been mapped to the \"critical regions\", are potentially involved in cerebral development and their deletion may be associated with mental retardation in CdCS patients. Deletion of the telomerase reverse transcriptase (hTERT) gene, localised to 5p15.33, could contribute to the phenotypic changes in CdCS. The critical regions were recently refined by using array comparative genomic hybridisation. The cat-like cry critical region was further narrowed using quantitative polymerase chain reaction (PCR) and three candidate genes were characterised in this region. The diagnosis is based on typical clinical manifestations. Karyotype analysis and, in doubtful cases, FISH analysis will confirm the diagnosis. There is no specific therapy for CdCS but early rehabilitative and educational interventions improve the prognosis and considerable progress has been made in the social adjustment of CdCS patients.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Catenins",
+        "Cell Adhesion Molecules",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 5",
+        "Cri-du-Chat Syndrome",
+        "Genetic Predisposition to Disease",
+        "Humans",
+        "Infant, Newborn",
+        "Phosphoproteins",
+        "Semaphorins",
+        "Telomerase",
+        "Delta Catenin"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1574300/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1574300/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/1750-1172-1-33"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16953888/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16953888/"
+    },
+    {
+      "pmid": "32487530",
+      "doi": "10.1136/bcr-2019-233766",
+      "pmc_id": "PMC7265000",
+      "pmc_verify": null,
+      "title": "Ebstein anomaly associated with cri du chat (cat's cry) syndrome and 20q duplication.",
+      "authors": [
+        "Olivella Alberto",
+        "Manotas Hernan",
+        "Payán-Gómez César",
+        "Piñeros Juan Gabriel"
+      ],
+      "journal": "BMJ case reports",
+      "year": "2020",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Ebstein anomaly is a congenital heart defect with a low prevalence and high mortality in the early stages of life. In medical literature, there is no reported association between Ebstein anomaly and cri du chat syndrome. Here, we report the case of a full-term newborn with a low weight for his age and who had a prenatal diagnosis of Ebstein anomaly and a postnatal diagnosis of cri du chat syndrome and 20q duplication detected on array CGH. The patient required medical treatment with inotropic support, high-frequency ventilation and nitric oxide, with an adequate response. Surgical intervention was not needed.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Airway Management",
+        "Cardiotonic Agents",
+        "Chromosome Deletion",
+        "Chromosome Duplication",
+        "Chromosomes, Human, Pair 20",
+        "Cri-du-Chat Syndrome",
+        "Diagnosis, Differential",
+        "Ebstein Anomaly",
+        "Genetic Testing",
+        "Humans",
+        "Infant, Newborn",
+        "Male",
+        "Neonatal Screening",
+        "Nitric Oxide",
+        "Patient Care Management",
+        "Prenatal Diagnosis",
+        "Rare Diseases"
+      ],
+      "keywords": [
+        "congenital disorders",
+        "genetic screening / counselling",
+        "genetics",
+        "neonatal intensive care"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7265000/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7265000/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/bcr-2019-233766"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32487530/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32487530/"
+    },
+    {
+      "pmid": "31836684",
+      "doi": "10.2967/jnumed.119.236893",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "18F-FDG PET Identifies Altered Brain Metabolism in Patients with Cri du Chat Syndrome.",
+      "authors": [
+        "Cistaro Angelina",
+        "Quartuccio Natale",
+        "Piccardo Arnoldo",
+        "Fania Piercarlo",
+        "Spunton Marianna",
+        "Liava Alexandra",
+        "Danesino Cesare",
+        "Albani Giovanni",
+        "Guala Andrea"
+      ],
+      "journal": "Journal of nuclear medicine : official publication, Society of Nuclear Medicine",
+      "year": "2020",
+      "publication_types": [
+        "Clinical Trial",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Cri du chat syndrome (CDCS) is a rare genetic disease that is caused by a deletion in the short arm of chromosome 5 (5p) and has a variable clinical spectrum. To our knowledge, no study in the literature has ever applied 18F-FDG PET/CT to investigate alterations in brain glucose metabolism in these subjects. The aims of this study were to detect differences in brain 18F-FDG metabolism in CDCS patients with different clinical presentations and identify possible brain metabolic phenotypes of this syndrome. Methods: Six patients (5 male and 1 female; age range, 10-27 y) with CDCS were assessed for the presence of cognitive and behavioral symptoms using a battery of neuropsychologic tests and then classified as having either a severe or a mild phenotype. The patients then underwent brain 18F-FDG PET/CT. The PET/CT findings were compared with an age- and sex-matched control group using statistical parametric mapping (SPM). Whether there was an association between different clinical phenotypes and 18F-FDG PET/CT findings was investigated. Results: Four patients had the severe phenotype, and 2 patients demonstrated the mild phenotype. SPM single-subject analysis, and a group analysis in comparison with the control cohort, revealed significant hypometabolism in the left temporal lobe (Brodmann areas [BAs] 20, 36, and 38), in the right frontal subcallosal gyrus (BA 34) and caudate body, and in the cerebellar tonsils (P < 0.001). Hypermetabolism (P = 0.001) was revealed in the right superior and precentral frontal gyrus (BA 6) in the patient group, compared with the control cohort. In SPM single-subject analysis, the hypermetabolic areas were detected only in patients with the severe phenotype. Conclusion: This study revealed different patterns of brain glucose metabolism in patients with the severe and mild phenotypes, compared with control subjects. In particular, abnormal hypermetabolism in the brain, as evaluated by18F-FDG PET/CT, seems to correlate with the severe CDCS phenotype.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Brain",
+        "Child",
+        "Cri-du-Chat Syndrome",
+        "Female",
+        "Fluorodeoxyglucose F18",
+        "Glucose",
+        "Humans",
+        "Male",
+        "Phenotype",
+        "Positron Emission Tomography Computed Tomography",
+        "Young Adult"
+      ],
+      "keywords": [
+        "18F-FDG PET/CT",
+        "brain",
+        "cri du chat syndrome",
+        "hypometabolism",
+        "statistical parametric mapping"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2967/jnumed.119.236893"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31836684/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31836684/"
+    },
+    {
+      "pmid": "6236421",
+      "doi": "10.2466/pms.1984.58.3.787",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Infants' vocalizations as a diagnostic tool.",
+      "authors": [
+        "Weston A J",
+        "Mader N T"
+      ],
+      "journal": "Perceptual and motor skills",
+      "year": "1984",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "This article reviews the literature concerning infants' vocalizations and their relation to development of language and to diagnosis in studies of pathology. Some researchers believe that pre-speech vocalizations are reflexes, random activities that serve as practice for motor activities. Others believe they are directly related to the development of language. The literature reviewed dealing with the relationship between abnormal cries and pathology suggest a differential diagnosis of certain pathologies. Crying should be included in the collected symptoms to achieve a more accurate and comprehensive diagnosis.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Asphyxia Neonatorum",
+        "Brain Diseases",
+        "Cri-du-Chat Syndrome",
+        "Crying",
+        "Cyanosis",
+        "Down Syndrome",
+        "Humans",
+        "Infant, Newborn",
+        "Infant, Newborn, Diseases",
+        "Language Development",
+        "Laryngeal Diseases",
+        "Verbal Behavior"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2466/pms.1984.58.3.787"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/6236421/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/6236421/"
+    },
+    {
+      "pmid": "25645650",
+      "doi": "10.1111/ejh.12515",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The molecular pathogenesis of the myelodysplastic syndromes.",
+      "authors": [
+        "Pellagatti Andrea",
+        "Boultwood Jacqueline"
+      ],
+      "journal": "European journal of haematology",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Recent studies have greatly illuminated the genomic landscape of the myelodysplastic syndromes (MDS), and the pace of discovery is accelerating. The most common mutations found in MDS occur in genes involved in RNA splicing (including SF3B1, SRSF2, U2AF1, and ZRSR2) and epigenetic modification (including TET2, ASXL1, and DNMT3A). The identification of spliceosome mutations in approximately half of all patients with MDS implicates abnormalities of RNA splicing, a pathway not previously known as a target for mutation, in the MDS pathogenesis. Several regulators of signal transduction (NRAS, JAK2) and transcription factors (RUNX1, TP53) are also frequently mutated in MDS. The complex patterns of associations between gene mutations identified have revealed epistatic interactions between spliceosome components and epigenetic modifiers in MDS. The cytogenetic abnormalities found in MDS are characterized by the loss of genetic material, whereas translocations are rare. The cytogenetic deletion maps of MDS (e.g., 5q-, 7q-, 20q-) provide us with circumstantial evidence for the presence of tumor suppressor genes. It is now recognized that haploinsufficiency (a gene dosage effect) resulting from gene deletions or inactivating mutations is an important disease mechanism in MDS. Haploinsufficiency of the ribosomal protein gene RPS14 plays a critical role in the development of anemia in the 5q- syndrome, and haploinsufficiency of CUX1 is important in some patients with MDS and AML with complete or partial loss of chromosome 7. Gene expression profiling has identified key deregulated genes and pathways and new prognostic gene signatures in MDS. Recent advances in the molecular pathogenesis of MDS are leading to new biological, clinical, and therapeutic insights.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 5",
+        "Cri-du-Chat Syndrome",
+        "DNA (Cytosine-5-)-Methyltransferases",
+        "Epigenesis, Genetic",
+        "Haploinsufficiency",
+        "Humans",
+        "Mutation",
+        "Myelodysplastic Syndromes",
+        "Prognosis",
+        "RNA Splicing",
+        "Ribonucleoproteins",
+        "Spliceosomes",
+        "Transcription Factors",
+        "Trisomy"
+      ],
+      "keywords": [
+        "Myelodysplastic syndromes",
+        "gene expression",
+        "gene mutation",
+        "molecular pathogenesis"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/ejh.12515"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25645650/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25645650/"
+    },
+    {
+      "pmid": "20038906",
+      "doi": "10.4317/medoral.15.e473",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cri du chat syndrome: a critical review.",
+      "authors": [
+        "Rodríguez-Caballero Angela",
+        "Torres-Lagares Daniel",
+        "Rodríguez-Pérez Antonio",
+        "Serrera-Figallo María-Angeles",
+        "Hernández-Guisado José-María",
+        "Machuca-Portillo Guillermo"
+      ],
+      "journal": "Medicina oral, patologia oral y cirugia bucal",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "A new syndrome was identified in 1963, when Lejeune et al. reported a genetic disease resulting from a partial or total deletion on the short arm of chromosome 5 (5p-) and named it the cri du chat syndrome (CdCS). This term makes reference to the main clinical feature of the syndrome, a high-pitched monochromatic cat-like crying, that usually disappears in the first years of life. CdCS is one of the most common chromosomal deletion syndromes in humans, with an incidence of 1:15.000-1:50.000 live-births. Our purpose was to review different aspects of this syndrome (concept, epidemiology, aetiology, clinical features, diagnostic methods and prognosis) emphasizing both: the breakthrough in this field introduced by new cytogenetic and molecular techniques, and the orofacial manifestations most frequently reported. The main orofacial anomalies registered were mandibular microretrognathia, high palate but rarely cleft, variable malocclusion (frequently anterior open-bite), enamel hypoplasia, poor oral hygiene, generalized chronic periodontitis, and retardation of tooth eruption, although there is not enough evidence to support any clear association between these pathologies and the CdCS.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cri-du-Chat Syndrome",
+        "Humans"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.4317/medoral.15.e473"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20038906/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20038906/"
+    },
+    {
+      "pmid": "8260723",
+      "doi": "10.1007/BF01874142",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Partial monosomy 5p and partial trisomy 5q due to paternal pericentric inversion of chromosome 5.",
+      "authors": [
+        "Ono K",
+        "Ohashi Y",
+        "Nakano H",
+        "Togashi H",
+        "Kannari Y",
+        "Isono S"
+      ],
+      "journal": "The Japanese journal of human genetics",
+      "year": "1993",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "A male infant with partial monosomy 5p and partial trisomy 5q due to paternal pericentric inversion of chromosome 5 (46,XY,rec(5), dup q,inv(5)(p15.1q35.1)pat) is reported together with the oral findings. The phenotype was chiefly the cri-du-chat syndrome. Severe retardation of mental and motor development, microencephaly, cardiac malformation, crying and facial appearance unique to the cri-du-chat syndrome were observed. Perioral and intraoral findings included thin upper lip, down-turning corners of mouth, micrognathia, shallow palate, and cleft of soft palate. Anterior deciduous teeth were small and canine deciduous teeth were conic. The row of deciduous teeth showed a flat arch-like shape that was very wide but short in length. No abnormality was noted in the number of deciduous teeth or the timing of eruption.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Aneuploidy",
+        "Child, Preschool",
+        "Chromosome Inversion",
+        "Chromosomes, Human, Pair 5",
+        "Cri-du-Chat Syndrome",
+        "Female",
+        "Follow-Up Studies",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Karyotyping",
+        "Male",
+        "Monosomy",
+        "Phenotype",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/BF01874142"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8260723/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8260723/"
+    },
+    {
+      "pmid": "38884729",
+      "doi": "10.1007/978-3-031-44087-8_27",
+      "pmc_id": "4066638",
+      "pmc_verify": null,
+      "title": "Human Genetics of Ventricular Septal Defect.",
+      "authors": [
+        "Perrot Andreas",
+        "Rickert-Sperling Silke"
+      ],
+      "journal": "Advances in experimental medicine and biology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Ventricular septal defects (VSDs) are recognized as one of the commonest congenital heart diseases (CHD), accounting for up to 40% of all cardiac malformations, and occur as isolated CHDs as well as together with other cardiac and extracardiac congenital malformations in individual patients and families. The genetic etiology of VSD is complex and extraordinarily heterogeneous. Chromosomal abnormalities such as aneuploidy and structural variations as well as rare point mutations in various genes have been reported to be associated with this cardiac defect. This includes both well-defined syndromes with known genetic cause (e.g., DiGeorge syndrome and Holt-Oram syndrome) and so far undefined syndromic forms characterized by unspecific symptoms. Mutations in genes encoding cardiac transcription factors (e.g., NKX2-5 and GATA4) and signaling molecules (e.g., CFC1) have been most frequently found in VSD cases. Moreover, new high-resolution methods such as comparative genomic hybridization enabled the discovery of a high number of different copy number variations, leading to gain or loss of chromosomal regions often containing multiple genes, in patients with VSD. In this chapter, we will describe the broad genetic heterogeneity observed in VSD patients considering recent advances in this field.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Chromosome Aberrations",
+        "DNA Copy Number Variations",
+        "Genetic Predisposition to Disease",
+        "Heart Septal Defects, Ventricular",
+        "Mutation",
+        "Transcription Factors"
+      ],
+      "keywords": [
+        "22q11 deletion syndrome",
+        "ACP6",
+        "ACTC1",
+        "ADCY2",
+        "ASD",
+        "Adams–Oliver syndrome",
+        "Alagille syndrome",
+        "Atrial septal defect",
+        "B3GALTL",
+        "BCL9",
+        "BCOR",
+        "Blepharophimosis syndrome",
+        "Brugada syndrome",
+        "CACNA1D",
+        "CACNA1F",
+        "CACNA1S",
+        "CFC1",
+        "CHARGE syndrome",
+        "CHD1",
+        "CHD7",
+        "CITED2",
+        "CNV",
+        "CRKL",
+        "CRYPTIC",
+        "Char syndrome",
+        "Copy number variation",
+        "Cornelia de Lange syndrome",
+        "Costello syndrome",
+        "Cri-du-chat syndrome",
+        "DVL1",
+        "DiGeorge syndrome",
+        "Diaphragmatic hernia",
+        "Down syndrome",
+        "EVC1",
+        "EVC2",
+        "Edwards syndrome",
+        "Ellis–van Creveld syndrome",
+        "FBN1",
+        "FGFR3",
+        "FMO5",
+        "FOXL2",
+        "Frank–ter Haar syndrome",
+        "GATA4GATA binding protein (GATA)GATA4",
+        "GATA6",
+        "GDF3Growth differentiation factor (GDF)GDF3",
+        "GJA5",
+        "GPC3",
+        "GWAS",
+        "HAS2",
+        "HEY2",
+        "HRAS",
+        "Holt–Oram syndrome",
+        "Hypophosphatemia",
+        "IRX4",
+        "ISL1",
+        "JAG1",
+        "Jacobsen syndrome",
+        "KMT2A",
+        "Kabuki syndrome",
+        "Kleefstra syndrome",
+        "LBR",
+        "LVNC",
+        "Larsen-like syndrome",
+        "MAML3",
+        "MEIS2",
+        "MESP1",
+        "MID1",
+        "MKRN2",
+        "MLL2",
+        "MYBPC3",
+        "MYH6",
+        "MYH7",
+        "Marfan syndrome",
+        "Mowat–Wilson syndrome",
+        "Muenke syndrome",
+        "NF1",
+        "NIPBL",
+        "NKX2-5",
+        "NKX2-6",
+        "NOTCH1",
+        "NOTCH2",
+        "NSD1",
+        "NTRK3",
+        "Neurofibromatosis",
+        "Nodal",
+        "Noncompaction",
+        "Noonan syndrome",
+        "Noonan-like syndrome",
+        "Oculofaciocardiodental syndrome",
+        "Okihiro syndrome",
+        "Opitz syndrome",
+        "PITX2",
+        "PLCB2",
+        "PRKAB2",
+        "PTPN11",
+        "Pallister–Killian syndrome",
+        "Patau syndrome",
+        "Pelger–Huet anomaly",
+        "Peters plus syndrome",
+        "Potocki–Lupski syndrome",
+        "ROR2",
+        "Ras/MAPK",
+        "Robinow syndrome",
+        "SALL1",
+        "SALL4",
+        "SCN5A",
+        "SH3PXD2B",
+        "SHOC2",
+        "SMAD2",
+        "SOX7",
+        "Simpson–Golabi–Behmel syndrome",
+        "Sotos syndrome",
+        "TBX1",
+        "TBX15",
+        "TBX20T-box (TBX)TBX20",
+        "TBX3",
+        "TBX5",
+        "TDGF1",
+        "TFAP2B",
+        "TGFβTransforming growth factors (TGFs)TGFß",
+        "TNNI3",
+        "Townes–Brock syndrome",
+        "Trisomy 13",
+        "Trisomy 18",
+        "Trisomy 21",
+        "Ulnar–mammary syndrome",
+        "VSD",
+        "Velocardiofacial syndrome",
+        "Ventricular septal defect",
+        "Ventricular septum",
+        "WES",
+        "WNT5A",
+        "Whole exome sequencing",
+        "Williams–Beuren syndrome",
+        "Wolf–Hirschhorn syndrome",
+        "ZFHX1B",
+        "ZIC3"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4066638/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4066638/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/978-3-031-44087-8_27"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+    },
+    {
+      "pmid": "20733155",
+      "doi": "10.1182/blood-2010-04-273771",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Advances in the 5q- syndrome.",
+      "authors": [
+        "Boultwood Jacqueline",
+        "Pellagatti Andrea",
+        "McKenzie Andrew N J",
+        "Wainscoat James S"
+      ],
+      "journal": "Blood",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "The 5q- syndrome is the most distinct of all the myelodysplastic syndromes with a clear genotype/phenotype relationship. The significant progress made during recent years has been based on the determination of the commonly deleted region and the demonstration of haploinsufficiency for the ribosomal gene RPS14. The functional screening of all the genes in the commonly deleted region determined that RPS14 haploinsufficiency is the probable cause of the erythroid defect in the 5q- syndrome. A mouse model of the human 5q- syndrome has now been created by chromosomal engineering involving a large-scale deletion of the Cd74-Nid67 interval (containing RPS14). A variety of lines of evidence support the model of ribosomal deficiency causing p53 activation and defective erythropoiesis, including most notably the crossing of the \"5q- mice\" with p53-deficient mice, thereby ameliorating the erythroid progenitor defect. Emerging evidence supports the notion that the p53 activation observed in the mouse model may also apply to the human 5q- syndrome. Other mouse modeling data suggest that haploinsufficiency of the microRNA genes miR-145 and miR-146a may contribute to the thrombocytosis seen in the 5q- syndrome. Lenalidomide has become an established therapy for the 5q- syndrome, although its precise mode of action remains uncertain.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anemia, Macrocytic",
+        "Animals",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 5",
+        "Cri-du-Chat Syndrome",
+        "Haploinsufficiency",
+        "Humans",
+        "Mice",
+        "MicroRNAs",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1182/blood-2010-04-273771"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20733155/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20733155/"
+    },
+    {
+      "pmid": "10066110",
+      "doi": "10.1080/000163598428257",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prenatal traces of aberrant neurofacial growth.",
+      "authors": [
+        "Kjaer I"
+      ],
+      "journal": "Acta odontologica Scandinavica",
+      "year": "1998",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "The interrelation between the development of the brain/peripheral nerves and that of the surrounding bone tissue is termed neuro-osteology. In orthodontic and pediatric practice the development of the hard tissues is evaluated radiographically, but the development of the neural tissue within the bone tissue is not evaluated. In this review the emphasis is placed on two neuro-osteologic interrelations that can be observed on profile radiographs and orthopantomograms, respectively. One is the connection between the pituitary gland of the central nervous system and the sella turcica (profile radiograph), and the other is the association between the peripheral nerves and the development of the dentition (orthopantomogram). Pituitary gland/sella turcica: The correlation between prenatal malformation in the pituitary gland/sella turcica and the postnatal morphology of the sella turcica in holoprosencephaly, spina bifida/myelomeningocele, and cri-du-chat syndrome is demonstrated. Peripheral nerves/dentition: The prenatal innervation of the dentition is presented. Agenesis and tooth malformation occur in constant patterns within the dental arch fields that share the same innervation. The findings demonstrate that in postnatal diagnosis of the cranium and the teeth, traces of prenatal aberrations can be found that are important for neurofacial growth.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anodontia",
+        "Brain",
+        "Cranial Nerves",
+        "Craniofacial Abnormalities",
+        "Cri-du-Chat Syndrome",
+        "Holoprosencephaly",
+        "Humans",
+        "Meningomyelocele",
+        "Odontogenesis",
+        "Pituitary Gland",
+        "Sella Turcica",
+        "Skull",
+        "Spinal Dysraphism",
+        "Tooth Abnormalities",
+        "Tooth Germ"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/000163598428257"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10066110/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10066110/"
+    },
+    {
+      "pmid": "40274277",
+      "doi": "10.1111/jir.13244",
+      "pmc_id": "PMC12245555",
+      "pmc_verify": null,
+      "title": "Shorter Telomeres and Faster Telomere Attrition in Individuals With Five Syndromic Forms of Intellectual Disability: A Systematic Review and Meta-Analysis.",
+      "authors": [
+        "Hanley Sarah M",
+        "Schutte Nicola S",
+        "Bellamy Jessica",
+        "Denham Joshua"
+      ],
+      "journal": "Journal of intellectual disability research : JIDR",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "abstract": "BACKGROUND: People with intellectual disability suffer complex challenges due to adaptive functioning limitations, high rates of chronic diseases and shortened lifespans compared with the general population. Telomere shortening is a hallmark of ageing, and short telomeres are linked to neurological disorders. The main objective of this systematic review and meta-analysis was to identify any differences in telomere length and the rate of telomere attrition in leukocytes and fibroblasts from people with intellectual disability and controls. METHODS: PubMed, Scopus and ScienceDirect were searched. Articles that compared telomere length in individuals with intellectual disability to apparently healthy age-matched controls were included. Risk of bias was assessed using the AXIS tool and data were analysed using CMA. RESULTS: Fifteen studies comprised of 17 comparisons provided data and were included in meta-analyses. Compared with healthy controls (N = 481), people with intellectual disability (N = 366) from a known genetic syndrome (Cri du chat, Down, Hoyeraal-Hreidarsson, Williams or Nicolaides-Baraitser) possessed shorter leukocyte telomeres (SMD: -0.853 [95% CI: -1.622 to -0.084], p = 0.03). Similarly, relative to controls (N = 16), people with syndromic intellectual disability (N = 21) possessed shorter fibroblast telomeres (-1.389 [-2.179 to -0.599], p = 0.001). Furthermore, people with syndromic forms of intellectual disability also demonstrated a faster rate (2.09-fold) of telomere shortening. CONCLUSIONS: Consistent with epidemiological findings on mortality and morbidity risk, people with syndromic intellectual disability appear to undergo a faster rate of biological ageing compared to the general population. These findings emphasise the need for healthy ageing lifestyle (i.e., exercise and stress management) and therapeutic interventions for people with syndromic intellectual disability.",
+      "abstract_sections": {
+        "BACKGROUND": "People with intellectual disability suffer complex challenges due to adaptive functioning limitations, high rates of chronic diseases and shortened lifespans compared with the general population. Telomere shortening is a hallmark of ageing, and short telomeres are linked to neurological disorders. The main objective of this systematic review and meta-analysis was to identify any differences in telomere length and the rate of telomere attrition in leukocytes and fibroblasts from people with intellectual disability and controls.",
+        "METHODS": "PubMed, Scopus and ScienceDirect were searched. Articles that compared telomere length in individuals with intellectual disability to apparently healthy age-matched controls were included. Risk of bias was assessed using the AXIS tool and data were analysed using CMA.",
+        "RESULTS": "Fifteen studies comprised of 17 comparisons provided data and were included in meta-analyses. Compared with healthy controls (N = 481), people with intellectual disability (N = 366) from a known genetic syndrome (Cri du chat, Down, Hoyeraal-Hreidarsson, Williams or Nicolaides-Baraitser) possessed shorter leukocyte telomeres (SMD: -0.853 [95% CI: -1.622 to -0.084], p = 0.03). Similarly, relative to controls (N = 16), people with syndromic intellectual disability (N = 21) possessed shorter fibroblast telomeres (-1.389 [-2.179 to -0.599], p = 0.001). Furthermore, people with syndromic forms of intellectual disability also demonstrated a faster rate (2.09-fold) of telomere shortening.",
+        "CONCLUSIONS": "Consistent with epidemiological findings on mortality and morbidity risk, people with syndromic intellectual disability appear to undergo a faster rate of biological ageing compared to the general population. These findings emphasise the need for healthy ageing lifestyle (i.e., exercise and stress management) and therapeutic interventions for people with syndromic intellectual disability."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Intellectual Disability",
+        "Telomere Shortening"
+      ],
+      "keywords": [
+        "Hoyeraal–Hreidarsson syndrome",
+        "biological ageing",
+        "down syndrome",
+        "gene dosage",
+        "telomerase"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12245555/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12245555/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/jir.13244"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40274277/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40274277/"
+    },
+    {
+      "pmid": "32920986",
+      "doi": "10.1111/ocr.12426",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Sella turcica morphology in patients with genetic syndromes: A systematic review.",
+      "authors": [
+        "Roomaney Imaan A",
+        "Chetty Manogari"
+      ],
+      "journal": "Orthodontics & craniofacial research",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "The sella turcica is an important anatomical reference used in orthodontics for the evaluation of craniofacial growth. Studies have found variations in the sella turcica morphology in patients with syndromes affecting the craniofacial complex. This review aims to determine whether genetic syndromes involving the craniofacial complex are associated with abnormal radiographic sella turcica morphology and whether there is a pattern of malformation which is consistent within each syndrome. An electronic database search was conducted to identify relevant studies. We included primary studies describing the morphology of the sella turcica on lateral radiographs in human subjects with genetic syndromes involving the craniofacial complex. No restrictions were placed on language or timeframe. PROSPERO registration CRD42019148060. Thirty-eight studies were included in this review. A 'J'-shaped sella was found in patients with Hutchinson-Gilford-Progeria syndrome and other syndromes. A bulbous dorsum sellae was highly prevalent Cleidocranial dysplasia, and a bulbous dorsum sellae and uneven contours of the clivus was found in Cri du chat syndrome. A steep clivus was described in patients with Axenfeld-Rieger syndrome. An oblique anterior wall was the most frequent malformation found in Down's syndrome. Genetic syndromes affecting the craniofacial complex are associated with abnormal morphology of the radiographic sella turcica. Clinicians should be observant of abnormal sella turcica morphology which can be a sign of undiagnosed or subclinical syndromes. More high-quality studies are needed which use standardized and objective methods of determining the morphology of the sella turcica.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cephalometry",
+        "Down Syndrome",
+        "Eye Abnormalities",
+        "Humans",
+        "Radiography",
+        "Sella Turcica"
+      ],
+      "keywords": [
+        "cephalometry",
+        "craniofacial growth",
+        "sella turcica",
+        "syndromes"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/ocr.12426"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32920986/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32920986/"
+    },
+    {
+      "pmid": "26457586",
+      "doi": "10.1002/ca.22654",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "A systematic review of the oral and craniofacial manifestations of cri du chat syndrome.",
+      "authors": [
+        "Corcuera-Flores José-Ramón",
+        "Casttellanos-Cosano Lizett",
+        "Torres-Lagares Daniel",
+        "Serrera-Figallo María Ángeles",
+        "Rodríguez-Caballero Ángela",
+        "Machuca-Portillo Guillermo"
+      ],
+      "journal": "Clinical anatomy (New York, N.Y.)",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "Cri du chat syndrome is an autosomal disorder. Because it affects few people in the population it is considered a rare disease, yet it is one of the most common autosomal chromosomal syndromes in humans. It entails pathognomonic alterations that affect the craniofacial and oral anatomy of patients. The aim of this study is to review these craniofacial and oral abnormalities in patients with Cri du chat syndrome. The PubMed Medline database was searched using two different strategies. First, we used \"Dentistry\" and \"Cri du chat\" as keywords; second, we used \"Cri du chat\" and \"craniofacial.\" Seven articles in which the main orofacial and cranio-skeletal characteristics of patients with Cri du chat syndrome were described were selected according to the inclusion and exclusion criteria. Cri du Chat syndrome entails pathognomonic characteristics in the craniofacial area (epicanthus, short philtrum, and wide nasal bridge), the oral area (mandibular retrognathism and anterior open bite) and the cranial region (alterations at the cranial base angle and a small upper airway). However, more studies on larger samples are needed to specify the orofacial and craniofacial characteristics of patients with Cri du chat syndrome more accurately. Clin. Anat. 29:555-560, 2016. © 2015 Wiley Periodicals, Inc.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Craniofacial Abnormalities",
+        "Cri-du-Chat Syndrome",
+        "Humans",
+        "Mouth",
+        "Skull"
+      ],
+      "keywords": [
+        "craniofacial",
+        "cri du chat",
+        "dentistry"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ca.22654"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26457586/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26457586/"
+    },
+    {
+      "pmid": "28694012",
+      "doi": "10.1016/j.neubiorev.2017.02.027",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Self-injurious behavior.",
+      "authors": [
+        "Huisman Sylvia",
+        "Mulder Paul",
+        "Kuijk Janneke",
+        "Kerstholt Myrthe",
+        "van Eeghen Agnies",
+        "Leenders Arnold",
+        "van Balkom Ingrid",
+        "Oliver Chris",
+        "Piening Sigrid",
+        "Hennekam Raoul"
+      ],
+      "journal": "Neuroscience and biobehavioral reviews",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Self-injurious behavior (SIB) is a relatively common behavior in individuals with intellectual disabilities (ID). Severe SIB can be devastating and potentially life-threatening. There is increasing attention for somatic substrates of behavior in genetic syndromes, and growing evidence of an association between pain and discomfort with SIB in people with ID and genetic syndromes. In this review on SIB phenomenology in people with ID in general and in twelve genetic syndromes, we summarize different SIB characteristics across these etiologically distinct entities and identify influencing factors. We demonstrate that the prevalence of SIB in several well-known genetic intellectual disability syndromes is noticeably higher than in individuals with ID in general, and that characteristics such as age of onset and topographies differ widely across syndromes. Each syndrome is caused by a mutation in a different gene, and this allows detection of several pathways that lead to SIB. Studying these with the behavioral consequences as specific aim will be an important step toward targeted early interventions and prevention.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Genetic Diseases, Inborn",
+        "Genetic Predisposition to Disease",
+        "Humans",
+        "Intellectual Disability",
+        "Self-Injurious Behavior"
+      ],
+      "keywords": [
+        "Angelman syndrome",
+        "Cornelia de Lange Syndrome",
+        "Cri du Chat Syndrome",
+        "Down syndrome",
+        "Fragile X syndrome",
+        "Genes",
+        "Genetic syndromes",
+        "Intellectual disability",
+        "Interdisciplinary study",
+        "Lesch-Nyhan syndrome",
+        "Lowe syndrome",
+        "Pain",
+        "Prader-Willi syndrome",
+        "Rett syndrome",
+        "Self-injurious behavior",
+        "Smith-Magenis syndrome",
+        "Somatic factors",
+        "Tuberous Sclerosis Syndrome",
+        "Williams-Beuren syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.neubiorev.2017.02.027"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28694012/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28694012/"
+    },
+    {
+      "pmid": "40213389",
+      "doi": "10.3389/fcell.2025.1559059",
+      "pmc_id": "PMC11983503",
+      "pmc_verify": null,
+      "title": "Roles and regulation of δ-catenin in tumorigenesis and neuronal diseases.",
+      "authors": [
+        "Zhang Yang",
+        "Xie Keping",
+        "Jiang Tingting"
+      ],
+      "journal": "Frontiers in cell and developmental biology",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "CTNND2 gene is located on the short arm of human chromosome 5 and encodes δ-catenin protein, which interacts with different proteins and plays different cell functions. Studies have demonstrated that δ-catenin plays an important role in regulating synaptic maturation and neuronal integrity. The CTNND2 gene is closely associated with a variety of neurological diseases, including Cri-du-Chat syndrome, Autism spectrum disorders, Alzheimer's disease, and Epilepsy. Furthermore, an increasing number of studies have demonstrated that CTNND2 is involved in various cancers and may serve as a novel biomarker for the diagnosis and treatment for these diseases. In this review, we will focus on the signaling regulatory functions of CTNND2 and its encoded protein δ-catenin in neuro-related diseases and cancers, and discuss the limitations of previous investigative studies and the challenges of the future researches on CTNND2 and δ-catenin signaling.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "CTNND2",
+        "cancer",
+        "neuro-diseases",
+        "neurodevelopment",
+        "δ-catenin"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11983503/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11983503/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3389/fcell.2025.1559059"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40213389/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40213389/"
+    },
+    {
+      "pmid": "37974816",
+      "doi": "10.1007/s12070-023-04039-y",
+      "pmc_id": "PMC10646122",
+      "pmc_verify": null,
+      "title": "Cri-Du-Chat Syndrome - A Rare Case Report.",
+      "authors": [
+        "Dhanasekaran Balaji",
+        "Srinivasan Rajasekaran",
+        "Kanagamuthu Priya",
+        "Somu Prabakaran",
+        "R B Namasivaya Navin",
+        "Gowthame K",
+        "Kumar Sarath",
+        "Shree C Ramya",
+        "Karthika S R",
+        "Gopan Greeshma U"
+      ],
+      "journal": "Indian journal of otolaryngology and head and neck surgery : official publication of the Association of Otolaryngologists of India",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "The Cri-du-chat Syndrome (CdCs) is a rare genetic syndrome first described by Jerome Lejeune in 1963, characterized mainly by the high pitched cat like cry. The prevalence of CdCs was varied in between 1:15,000 to 1:50,000 in live birth and more common in female gender with a ratio of 4:3 [1, 2] .The condition may be accompanied by developmental and cognitive delays, poor spatial awareness, impaired ambulation, and poor sensori-motor skills. Other associated problems described include cardiovascular, renal, gastrointestinal, neurological abnormalities, preauricular tags, syndactyly, hypospadias, and cryptorchidism.1 Recent literatures show that autistic behaviours are common in various genetic disorders [3].Fatigue level of children with cri du chat syndrome was associated with the expression of autistic features [4]. Cri-du-chat syndrome is a rare genetic disorder resulting in various physical and psychological abnormalities due the deletion of chromosome 5P-. We encountered a case of cri-du-chat syndrome having external auditory canal atresia, hearing loss with speech delay. A multidisciplinary approach is required for diagnosis and management of such patients. Otological management is early identification of hearing loss and speech rehabilitation. Awareness about antenatal screening for congenital anomalies and genetic counselling is necessary among the general population.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Bera",
+        "Criduchat syndrome",
+        "External auditory canal stenosis",
+        "Hearing loss"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10646122/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10646122/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s12070-023-04039-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37974816/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37974816/"
+    },
+    {
+      "pmid": "28503406",
+      "doi": "10.1016/bs.irrdd.2016.07.005",
+      "pmc_id": "PMC5424624",
+      "pmc_verify": null,
+      "title": "Sleep in Neurodevelopmental Disorders.",
+      "authors": [
+        "Esbensen Anna J",
+        "Schwichtenberg Amy J"
+      ],
+      "journal": "International review of research in developmental disabilities",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Individuals with intellectual and developmental disabilities (IDD) experience sleep problems at higher rates than the general population. Although individuals with IDD are a heterogeneous group, several sleep problems cluster within genetic syndromes or disorders. This review summarizes the prevalence of sleep problems experienced by individuals with Angelman syndrome, Cornelia de Lange syndrome, Cri du Chat syndrome, Down syndrome, fragile X syndrome, Prader-Willi syndrome, Smith-Magenis syndrome, Williams syndrome, autism spectrum disorder, and idiopathic IDD. Factors associated with sleep problems and the evidence for sleep treatments are reviewed for each neurodevelopmental disorder. Sleep research advancements in neurodevelopmental disorders are reviewed, including the need for consistency in defining and measuring sleep problems, considerations for research design and reporting of results, and considerations when evaluating sleep treatments.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "genetic syndrome",
+        "intellectual disability",
+        "sleep"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5424624/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5424624/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/bs.irrdd.2016.07.005"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28503406/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28503406/"
+    },
+    {
+      "pmid": "21112524",
+      "doi": "10.1016/j.tripleo.2010.08.021",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Craniofacial characteristics in cri-du-chat syndrome.",
+      "authors": [
+        "Yáñez-Vico Rosa-María",
+        "Rodríguez-Caballero Angela",
+        "Iglesias-Linares Alejandro",
+        "Guerra-López Noelia",
+        "Torres-Lagares Daniel",
+        "Machuca-Portillo Guillermo",
+        "Solano-Reina Enrique",
+        "Gutiérrez-Pérez José-Luis"
+      ],
+      "journal": "Oral surgery, oral medicine, oral pathology, oral radiology, and endodontics",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "OBJECTIVE: The purpose of this study was to analyze craniofacial characteristics from lateral head profile radiographs of patients with cri-du-chat (CdC) syndrome. STUDY DESIGN: The craniofacial morphology of 10 CdC patients was evaluated using standard cephalometric methods, measuring 39 craniofacial variables on cephalometric x-ray images. RESULTS: The principal characteristics were skeletal class II malocclusion, caused by mandibular retrognathism, dental biprotrusion, and a small upper airway. Additionally, 70% of patients had a steep palatal plane angle; the cranial base angle was flattened, also in 70% of patients. CONCLUSIONS: Results indicated that the deletion of 5p had an impact on the cranial base, maxilla, mandible, and upper airway, causing distinctive features to become apparent through irregular growth.",
+      "abstract_sections": {
+        "OBJECTIVE": "The purpose of this study was to analyze craniofacial characteristics from lateral head profile radiographs of patients with cri-du-chat (CdC) syndrome.",
+        "STUDY DESIGN": "The craniofacial morphology of 10 CdC patients was evaluated using standard cephalometric methods, measuring 39 craniofacial variables on cephalometric x-ray images.",
+        "RESULTS": "The principal characteristics were skeletal class II malocclusion, caused by mandibular retrognathism, dental biprotrusion, and a small upper airway. Additionally, 70% of patients had a steep palatal plane angle; the cranial base angle was flattened, also in 70% of patients.",
+        "CONCLUSIONS": "Results indicated that the deletion of 5p had an impact on the cranial base, maxilla, mandible, and upper airway, causing distinctive features to become apparent through irregular growth."
+      },
+      "mesh_terms": [
+        "Cephalometry",
+        "Chin",
+        "Craniofacial Abnormalities",
+        "Cri-du-Chat Syndrome",
+        "Esthetics, Dental",
+        "Female",
+        "Humans",
+        "Male",
+        "Malocclusion, Angle Class II",
+        "Mandible",
+        "Maxilla",
+        "Maxillofacial Development",
+        "Nasal Bone",
+        "Palate",
+        "Pharynx",
+        "Photography",
+        "Radiography, Dental, Digital",
+        "Retrognathia",
+        "Skull Base",
+        "Vertical Dimension",
+        "Young Adult"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.tripleo.2010.08.021"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21112524/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21112524/"
+    },
+    {
+      "pmid": "9715326",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cri du chat syndrome.",
+      "authors": [
+        "Iyer S L",
+        "Duraiswamy A",
+        "Kher A S",
+        "Joshi S",
+        "Bharucha B A",
+        "Kanade S"
+      ],
+      "journal": "Journal of postgraduate medicine",
+      "year": "1996",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Three cases of cri du chat syndrome with varying ages of presentation are compared and contrasted to highlight the clinical features and evolution of the phenotype with time.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 5",
+        "Cri-du-Chat Syndrome",
+        "Disease Progression",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Karyotyping",
+        "Phenotype",
+        "Time Factors"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9715326/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9715326/"
+    },
+    {
+      "pmid": "40492093",
+      "doi": "10.1101/2025.06.01.25327945",
+      "pmc_id": "PMC12148260",
+      "pmc_verify": null,
+      "title": "Advancing Genotype-Phenotype Analysis through 3D Facial Morphometry: Insights from Cri-du-Chat Syndrome.",
+      "authors": [
+        "Vanneste Michiel",
+        "Matthews Harold",
+        "Sleyp Yoeri",
+        "Hammond Peter",
+        "Shriver Mark",
+        "Weinberg Seth M",
+        "Marazita Mary L",
+        "Walsh Susan",
+        "Hallgrímsson Benedikt",
+        "Klein Ophir D",
+        "Spritz Richard A",
+        "Van Den Bogaert Kris",
+        "Claes Peter",
+        "Peeters Hilde"
+      ],
+      "journal": "medRxiv : the preprint server for health sciences",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Preprint"
+      ],
+      "abstract": "PURPOSE: Facial dysmorphism is a feature of many monogenic disorders, and is important in diagnostics, variant interpretation and nosology. Nevertheless, comprehensively assessing the complex facial shape changes associated with specific syndromes remains challenging. Here, we present 3D morphometric approaches to overcome these limitations, utilizing Cri-du-Chat syndrome (CdCS) as a model. METHODS: We analyzed 3D facial photos from 24 individuals with CdCS, 4540 unaffected controls and 5 individuals with rare 5p15.33-15.32 deletions, incorporating two methods to account for age- and sex-related facial variation. We quantified phenotypic variation within and between groups and explored genotype-phenotype correlations in CdCS. RESULTS: We identified changes in the characteristic facial features of CdCS with age and found that facial shape in CdCS differed from controls in highly consistent directions, but with varying magnitudes of effect. 5p15.33-15.32 heterozygotes had non-specific dysmorphic features that were objectively different from those in CdCS, delineating multiple critical regions for facial dysmorphism on chromosome 5p. CONCLUSION: This work explores 3D facial morphometry to complement the standard clinical assessment of facial dysmorphism. It provides insights into the genetic basis of facial shape in CdCS and highlights the potential of 3D morphometric techniques to facilitate clinical diagnostics, variant interpretation, and delineation of syndrome nosology.",
+      "abstract_sections": {
+        "PURPOSE": "Facial dysmorphism is a feature of many monogenic disorders, and is important in diagnostics, variant interpretation and nosology. Nevertheless, comprehensively assessing the complex facial shape changes associated with specific syndromes remains challenging. Here, we present 3D morphometric approaches to overcome these limitations, utilizing Cri-du-Chat syndrome (CdCS) as a model.",
+        "METHODS": "We analyzed 3D facial photos from 24 individuals with CdCS, 4540 unaffected controls and 5 individuals with rare 5p15.33-15.32 deletions, incorporating two methods to account for age- and sex-related facial variation. We quantified phenotypic variation within and between groups and explored genotype-phenotype correlations in CdCS.",
+        "RESULTS": "We identified changes in the characteristic facial features of CdCS with age and found that facial shape in CdCS differed from controls in highly consistent directions, but with varying magnitudes of effect. 5p15.33-15.32 heterozygotes had non-specific dysmorphic features that were objectively different from those in CdCS, delineating multiple critical regions for facial dysmorphism on chromosome 5p.",
+        "CONCLUSION": "This work explores 3D facial morphometry to complement the standard clinical assessment of facial dysmorphism. It provides insights into the genetic basis of facial shape in CdCS and highlights the potential of 3D morphometric techniques to facilitate clinical diagnostics, variant interpretation, and delineation of syndrome nosology."
+      },
+      "mesh_terms": [],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12148260/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12148260/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1101/2025.06.01.25327945"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40492093/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40492093/"
+    },
+    {
+      "pmid": "12162388",
+      "doi": "10.1017/s0012162201002419",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cri du chat syndrome: genotype-phenotype correlations and recommendations for clinical management.",
+      "authors": [
+        "Cornish K",
+        "Bramble D"
+      ],
+      "journal": "Developmental medicine and child neurology",
+      "year": "2002",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Chromatin",
+        "Chromosome Deletion",
+        "Cri-du-Chat Syndrome",
+        "Disability Evaluation",
+        "Genotype",
+        "Humans",
+        "Intelligence",
+        "Phenotype"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1017/s0012162201002419"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12162388/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12162388/"
+    },
+    {
+      "pmid": "41266135",
+      "doi": "10.1136/jmg-2025-110940",
+      "pmc_id": "PMC13198709",
+      "pmc_verify": null,
+      "title": "Advancing genotype-phenotype analysis through 3D facial morphometry: insights from Cri-du-Chat syndrome.",
+      "authors": [
+        "Vanneste Michiel",
+        "Matthews Harold",
+        "Sleyp Yoeri",
+        "Hammond Peter",
+        "Shriver Mark",
+        "Weinberg Seth M",
+        "Marazita Mary L",
+        "Walsh Susan",
+        "Hallgrimsson Benedikt",
+        "Klein Ophir D",
+        "Spritz Richard",
+        "Van Den Bogaert Kris",
+        "Claes Peter",
+        "Peeters Hilde"
+      ],
+      "journal": "Journal of medical genetics",
+      "year": "2026",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "PURPOSE: Facial dysmorphism is a feature of many monogenic disorders and is important in diagnostics, variant interpretation and nosology. Nevertheless, comprehensively assessing the complex facial shape changes associated with specific syndromes remains challenging. Here, we present three-dimensional (3D) morphometric approaches to overcome these limitations, using Cri-du-Chat syndrome (CdCS) as a model. METHODS: We analysed 3D facial images from 24 participants with CdCS, 4540 unaffected controls and five participants with rare 5p15.33-15.32 deletions, incorporating two methods to account for age- and sex-related facial variation. We quantified phenotypic variation within and between groups and explored genotype-phenotype correlations in CdCS. RESULTS: We identified changes in the characteristic facial features of CdCS with age and found that facial shape in CdCS differed from controls in highly consistent directions, but with varying magnitudes of effect. 5p15.33-15.32 heterozygotes had non-specific dysmorphic features that were objectively different from those in CdCS, delineating multiple critical regions for facial dysmorphism on chromosome 5p. CONCLUSION: This work explores 3D facial morphometry to complement the standard clinical assessment of facial dysmorphism. It provides insights into the genetic basis of facial shape in CdCS and highlights the potential of 3D morphometric techniques to facilitate clinical diagnostics, variant interpretation and delineation of syndrome nosology.",
+      "abstract_sections": {
+        "PURPOSE": "Facial dysmorphism is a feature of many monogenic disorders and is important in diagnostics, variant interpretation and nosology. Nevertheless, comprehensively assessing the complex facial shape changes associated with specific syndromes remains challenging. Here, we present three-dimensional (3D) morphometric approaches to overcome these limitations, using Cri-du-Chat syndrome (CdCS) as a model.",
+        "METHODS": "We analysed 3D facial images from 24 participants with CdCS, 4540 unaffected controls and five participants with rare 5p15.33-15.32 deletions, incorporating two methods to account for age- and sex-related facial variation. We quantified phenotypic variation within and between groups and explored genotype-phenotype correlations in CdCS.",
+        "RESULTS": "We identified changes in the characteristic facial features of CdCS with age and found that facial shape in CdCS differed from controls in highly consistent directions, but with varying magnitudes of effect. 5p15.33-15.32 heterozygotes had non-specific dysmorphic features that were objectively different from those in CdCS, delineating multiple critical regions for facial dysmorphism on chromosome 5p.",
+        "CONCLUSION": "This work explores 3D facial morphometry to complement the standard clinical assessment of facial dysmorphism. It provides insights into the genetic basis of facial shape in CdCS and highlights the potential of 3D morphometric techniques to facilitate clinical diagnostics, variant interpretation and delineation of syndrome nosology."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Female",
+        "Imaging, Three-Dimensional",
+        "Face",
+        "Genetic Association Studies",
+        "Child",
+        "Child, Preschool",
+        "Cri-du-Chat Syndrome",
+        "Phenotype",
+        "Adolescent",
+        "Adult",
+        "Chromosomes, Human, Pair 5",
+        "Genotype",
+        "Infant",
+        "Young Adult"
+      ],
+      "keywords": [
+        "cytogenetic analysis",
+        "genetic diseases, inborn",
+        "genetics, medical",
+        "phenotype"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13198709/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13198709/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/jmg-2025-110940"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41266135/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41266135/"
+    },
+    {
+      "pmid": "33517598",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Retinopathy in a Full-Term Infant with Cri-du-Chat Syndrome.",
+      "authors": [
+        "Chhaya Nisarg",
+        "Chan Tineke"
+      ],
+      "journal": "Rhode Island medical journal (2013)",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Cri-du-chat (CdC) is a 5p chromosomal deletion syndrome. CdC has numerous systemic associations but only a few ocular manifestations have been documented. In this report we present novel ocular findings of peripheral avascular retina and retinal hemorrhages in a full-term female infant, born to non-consanguineous parents, who had clinical features of cri-du-chat syndrome and genetic confirmation. The retinal hemorrhages resolved. However, the temporal avascular retina in our full-term patient remained. Further analysis of the 5p locus showed 3 genes: CTNND2, SEMA5A and SLC6A18 that not only fit our patient's external phenotype and ophthalmoscopic findings of retinal hemorrhages, but were also key in proper ocular development and neurogenesis, suggesting a genetic contribution by the short-arm of chromosome 5 to proper retinal maturation. Given these findings and their association with cri-du-chat, special attention on screening examinations should include a thorough evaluation of retinal vascularization in CdC patients, even in full-term neonates.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Deletion",
+        "Cri-du-Chat Syndrome",
+        "Female",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Phenotype",
+        "Retinal Diseases"
+      ],
+      "keywords": [
+        "avascular retina",
+        "cri-du-chat",
+        "retinal hemorrhages"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33517598/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33517598/"
+    },
+    {
+      "pmid": "36660031",
+      "doi": "10.1159/000524371",
+      "pmc_id": "PMC9843554",
+      "pmc_verify": null,
+      "title": "Cri-du-Chat Syndrome: Revealing a Familial Atypical Deletion in 5p.",
+      "authors": [
+        "Almeida Vanessa T",
+        "Chehimi Samar N",
+        "Gasparini Yanca",
+        "Nascimento Amom M",
+        "Carvalho Gleyson F S",
+        "Montenegro Marília M",
+        "Zanardo Évelin Aline",
+        "Dias Alexandre T",
+        "Assunção Nilson A",
+        "Kim Chong A",
+        "Kulikowski Leslie D"
+      ],
+      "journal": "Molecular syndromology",
+      "year": "2023",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "INTRODUCTION: Cri-du-chat syndrome is generally diagnosed when patients present a high-pitched cry at birth, microcephaly, ocular hypertelorism, and prominent nasal bridge. The karyotype is useful to confirm deletions in the short arm of chromosome 5 (5p-) greater than 10 Mb. In cases of smaller deletions, it is necessary to resort to other molecular techniques such as fluorescence in situ hybridization, multiplex ligation-dependent probe amplification (MLPA) or genomic array. CASE PRESENTATION: We report a family with an atypical deletion in 5p (mother and 2 children) and variable phenotypes compared with the literature. We applied a P064 MLPA kit to evaluate 5p- in the mother and the 2 children, and we used the Infinium CytoSNP-850K BeadChip genomic array to evaluate the siblings, an 11-year-old boy and a 13-year-old girl, to better define the 5p breakpoints. Both children presented a high-pitched cry at birth, but they did not present any of the typical physical features of 5p- syndrome. The MLPA technique with 5 probes for the 5p region revealed that the patients and their mother presented an atypical deletion with only 4 probes deleted (TERT_ex2, TERT_ex13, CLPTM1L, and IRX4). The genomic array performed in the siblings' samples revealed a 6.2-Mb terminal deletion in 5p15.33p15.32, which was likely inherited from their mother, who presented similar molecular features, seen in MLPA. DISCUSSION: The sparing of the CTNND2 gene, which is associated with cerebral development, in both siblings may explain why these 2 patients had features such as better communication skills which most patients with larger 5p deletions usually do not present. In addition, both patients had smaller deletions than those found in patients with a typical 5p- phenotype. This report demonstrates the utility of genomic arrays as a diagnostic tool to better characterize atypical deletions in known syndromes such as 5p- syndrome, which will allow a better understanding of the genotype-phenotype correlations.",
+      "abstract_sections": {
+        "INTRODUCTION": "Cri-du-chat syndrome is generally diagnosed when patients present a high-pitched cry at birth, microcephaly, ocular hypertelorism, and prominent nasal bridge. The karyotype is useful to confirm deletions in the short arm of chromosome 5 (5p-) greater than 10 Mb. In cases of smaller deletions, it is necessary to resort to other molecular techniques such as fluorescence in situ hybridization, multiplex ligation-dependent probe amplification (MLPA) or genomic array.",
+        "CASE PRESENTATION": "We report a family with an atypical deletion in 5p (mother and 2 children) and variable phenotypes compared with the literature. We applied a P064 MLPA kit to evaluate 5p- in the mother and the 2 children, and we used the Infinium CytoSNP-850K BeadChip genomic array to evaluate the siblings, an 11-year-old boy and a 13-year-old girl, to better define the 5p breakpoints. Both children presented a high-pitched cry at birth, but they did not present any of the typical physical features of 5p- syndrome. The MLPA technique with 5 probes for the 5p region revealed that the patients and their mother presented an atypical deletion with only 4 probes deleted (TERT_ex2, TERT_ex13, CLPTM1L, and IRX4). The genomic array performed in the siblings' samples revealed a 6.2-Mb terminal deletion in 5p15.33p15.32, which was likely inherited from their mother, who presented similar molecular features, seen in MLPA.",
+        "DISCUSSION": "The sparing of the CTNND2 gene, which is associated with cerebral development, in both siblings may explain why these 2 patients had features such as better communication skills which most patients with larger 5p deletions usually do not present. In addition, both patients had smaller deletions than those found in patients with a typical 5p- phenotype. This report demonstrates the utility of genomic arrays as a diagnostic tool to better characterize atypical deletions in known syndromes such as 5p- syndrome, which will allow a better understanding of the genotype-phenotype correlations."
+      },
+      "mesh_terms": [],
+      "keywords": [
+        "Array",
+        "Cri-du-chat syndrome",
+        "Familial deletion",
+        "Multiplex ligation-dependent probe amplification"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9843554/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9843554/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1159/000524371"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36660031/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36660031/"
+    },
+    {
+      "pmid": "6069328",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cat cry syndrome.",
+      "authors": [
+        "Ito Y",
+        "Goto H"
+      ],
+      "journal": "The Tohoku journal of experimental medicine",
+      "year": "1967",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Chromosomes, Human, 4-5",
+        "Cri-du-Chat Syndrome",
+        "Humans",
+        "Infant, Newborn",
+        "Male"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/6069328/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/6069328/"
+    },
+    {
+      "pmid": "41079015",
+      "doi": "10.1016/j.ajoc.2025.102442",
+      "pmc_id": "PMC12514350",
+      "pmc_verify": null,
+      "title": "Iris mammillations in Cri-du-chat syndrome.",
+      "authors": [
+        "Landzberg Renée S",
+        "Oatts Julius T",
+        "Pasricha Neel D"
+      ],
+      "journal": "American journal of ophthalmology case reports",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Cri-du-chat syndrome",
+        "Iris mammillations",
+        "PSEN1 mutation"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12514350/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12514350/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajoc.2025.102442"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41079015/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41079015/"
+    }
+  ],
+  "pubmed_discovery": {
+    "review": {
+      "query": "(\"5p partial monosomy syndrome\"[Title/Abstract] OR \"5p deletion syndrome\"[Title/Abstract] OR \"5p- syndrome\"[Title/Abstract] OR \"CAT CRY SYNDROME\"[Title/Abstract] OR \"CHROMOSOME 5p DELETION SYNDROME\"[Title/Abstract] OR \"Cri du Chat Syndrome\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "16953888",
+        "28694012",
+        "20038906",
+        "40213389",
+        "26235846"
+      ]
+    },
+    "genetics": {
+      "query": "(\"5p partial monosomy syndrome\"[Title/Abstract] OR \"5p deletion syndrome\"[Title/Abstract] OR \"5p- syndrome\"[Title/Abstract] OR \"CAT CRY SYNDROME\"[Title/Abstract] OR \"CHROMOSOME 5p DELETION SYNDROME\"[Title/Abstract] OR \"Cri du Chat Syndrome\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "16953888",
+        "38884729",
+        "28694012",
+        "18437967",
+        "29494067",
+        "37974816",
+        "20038906",
+        "28503406",
+        "21112524",
+        "26235846"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"5p partial monosomy syndrome\"[Title/Abstract] OR \"5p deletion syndrome\"[Title/Abstract] OR \"5p- syndrome\"[Title/Abstract] OR \"CAT CRY SYNDROME\"[Title/Abstract] OR \"CHROMOSOME 5p DELETION SYNDROME\"[Title/Abstract] OR \"Cri du Chat Syndrome\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "16953888",
+        "29494067",
+        "9715326",
+        "26235846",
+        "40492093",
+        "12162388",
+        "41266135",
+        "33517598",
+        "36660031",
+        "37628679"
+      ]
+    },
+    "cohort": {
+      "query": "(\"5p partial monosomy syndrome\"[Title/Abstract] OR \"5p deletion syndrome\"[Title/Abstract] OR \"5p- syndrome\"[Title/Abstract] OR \"CAT CRY SYNDROME\"[Title/Abstract] OR \"CHROMOSOME 5p DELETION SYNDROME\"[Title/Abstract] OR \"Cri du Chat Syndrome\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "16953888",
+        "38884729",
+        "18437967",
+        "37974816",
+        "21112524"
+      ]
+    },
+    "general": {
+      "query": "(\"5p partial monosomy syndrome\"[Title/Abstract] OR \"5p deletion syndrome\"[Title/Abstract] OR \"5p- syndrome\"[Title/Abstract] OR \"CAT CRY SYNDROME\"[Title/Abstract] OR \"CHROMOSOME 5p DELETION SYNDROME\"[Title/Abstract] OR \"Cri du Chat Syndrome\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "16953888",
+        "38884729",
+        "28694012",
+        "25488457",
+        "18437967",
+        "6069328",
+        "41079015",
+        "29494067",
+        "37974816",
+        "20038906"
+      ]
+    }
+  },
+  "meta": {
+    "syndrome": "5p partial monosomy syndrome",
+    "collected_at": "2026-08-13T02:23:08.321486Z",
+    "work_dir": "output/5p_partial_monosomy_syndrome/5p_partial_monosomy_syndrome",
+    "steps": {
+      "01_disease_info": "output/5p_partial_monosomy_syndrome/5p_partial_monosomy_syndrome/01_disease_info.json",
+      "02_articles": "output/5p_partial_monosomy_syndrome/5p_partial_monosomy_syndrome/02_articles.json",
+      "03_markers": "output/5p_partial_monosomy_syndrome/5p_partial_monosomy_syndrome/03_markers.json"
+    },
+    "annotation_sources": {
+      "medgen": "NCBI MedGen HTML (공개)",
+      "pubmed": "NCBI PubMed ESearch+EFetch (공개)",
+      "ncbi_gene": "NCBI Gene ESearch+ESummary",
+      "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+      "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+      "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+    }
+  }
+}

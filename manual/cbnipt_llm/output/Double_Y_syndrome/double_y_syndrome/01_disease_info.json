@@ -1,0 +1,149 @@
+{
+  "syndrome": "Double Y syndrome",
+  "definition": "47,XYY syndrome is characterized by an extra copy of the Y chromosome in each of an individual's cells. Although many people with this condition are taller than average, the chromosomal change sometimes causes no unusual physical features. Most individuals with 47,XYY syndrome have normal production of the male sex hormone testosterone and normal male sexual development, and they are usually able to father children. 47,XYY syndrome is associated with an increased risk of learning disabilities and delayed development of speech and language skills. Affected children can have delayed development of motor skills (such as sitting and walking) or weak muscle tone (hypotonia). Other signs and symptoms of this condition include hand tremors or other involuntary movements (motor tics), seizures, and asthma. Individuals with 47,XYY syndrome have an increased risk of behavioral, social, and emotional difficulties compared with their unaffected peers. These problems include attention-deficit/hyperactivity disorder (ADHD); depression; anxiety; and autism spectrum disorder, which is a group of developmental conditions that affect communication and social interaction. Physical features related to 47,XYY syndrome can include increased belly fat, a large head (macrocephaly), unusually large teeth (macrodontia), flat feet (pes planus), fifth fingers that curve inward (clinodactyly), widely spaced eyes (ocular hypertelorism), and abnormal side-to-side curvature of the spine (scoliosis). These characteristics vary widely among people with this condition. [from MedlinePlus Genetics]",
+  "synonyms": [
+    "47,XYY syndrome",
+    "XYY Karyotype",
+    "XYY syndrome",
+    "YY syndrome"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "50749006",
+    "MONDO": "MONDO:0019339",
+    "Orphanet": "8"
+  },
+  "gene_locations": [],
+  "genomic_targets": [
+    {
+      "type": "TargetChromosome",
+      "chromosome": "chrY",
+      "cytoband": "Y",
+      "event": "gain",
+      "mechanism": "trisomy",
+      "source": "karyotype_notation"
+    }
+  ],
+  "genereview_url": null,
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "33372274",
+          "title": "Chromosomal abnormality: Prevalence, prenatal diagnosis and associated anomalies based on a provincial-wide birth defects monitoring system.",
+          "authors": "Xie D, Yang W, Fang J, Li H, Xiong L, Kong F, Wang A, Liu Z, Wang H",
+          "journal": "J Obstet Gynaecol Res",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33372274/"
+        },
+        {
+          "pmid": "22281282",
+          "title": "Clinical and gonadal features and early surgical management of 45,X/46,XY and 45,X/47,XYY chromosomal mosaicism presenting with genital anomalies.",
+          "authors": "Farrugia MK, Sebire NJ, Achermann JC, Eisawi A, Duffy PG, Mushtaq I",
+          "journal": "J Pediatr Urol",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22281282/"
+        },
+        {
+          "pmid": "22524445",
+          "title": "Genetic evaluation of severe male factor infertility in Turkey: a cross-sectional study.",
+          "authors": "Cavkaytar S, Batioglu S, Gunel M, Ceylaner S, Karaer A",
+          "journal": "Hum Fertil (Camb)",
+          "year": "2012",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22524445/"
+        }
+      ],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "40232995",
+          "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+          "authors": "Hall A, Furniss A, Tartaglia NN, Janusz J, Wilson R, Middleton C, Martin S, Frazier J, Martinez-Chadrom M, Hansen-Moore J, Ikomi C, Ross J, Vogiaski MG, Morrow L, Christakis DA, Lean RE, Nokoff N, Pyle L, Davis SM",
+          "journal": "J Dev Behav Pediatr",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+        },
+        {
+          "pmid": "39953941",
+          "title": "Research Priorities of Individuals and Families With Sex Chromosome Aneuploidies.",
+          "authors": "Carl A, Bothwell S, Farah F, Swenson K, Hong D, Prakash S, Strang J, Tartaglia N, Raznahan A, Ross J; INSIGHTS Consortium; GALAXY Consortium, Davis S",
+          "journal": "Am J Med Genet A",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39953941/"
+        },
+        {
+          "pmid": "30642344",
+          "title": "Changes in the cohort composition of turner syndrome and severe non-diagnosis of Klinefelter, 47,XXX and 47,XYY syndrome: a nationwide cohort study.",
+          "authors": "Berglund A, Viuff MH, Skakkebæk A, Chang S, Stochholm K, Gravholt CH",
+          "journal": "Orphanet J Rare Dis",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30642344/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "40232995",
+          "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+          "authors": "Hall A, Furniss A, Tartaglia NN, Janusz J, Wilson R, Middleton C, Martin S, Frazier J, Martinez-Chadrom M, Hansen-Moore J, Ikomi C, Ross J, Vogiaski MG, Morrow L, Christakis DA, Lean RE, Nokoff N, Pyle L, Davis SM",
+          "journal": "J Dev Behav Pediatr",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+        },
+        {
+          "pmid": "30642344",
+          "title": "Changes in the cohort composition of turner syndrome and severe non-diagnosis of Klinefelter, 47,XXX and 47,XYY syndrome: a nationwide cohort study.",
+          "authors": "Berglund A, Viuff MH, Skakkebæk A, Chang S, Stochholm K, Gravholt CH",
+          "journal": "Orphanet J Rare Dis",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30642344/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "40232995",
+          "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+          "authors": "Hall A, Furniss A, Tartaglia NN, Janusz J, Wilson R, Middleton C, Martin S, Frazier J, Martinez-Chadrom M, Hansen-Moore J, Ikomi C, Ross J, Vogiaski MG, Morrow L, Christakis DA, Lean RE, Nokoff N, Pyle L, Davis SM",
+          "journal": "J Dev Behav Pediatr",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "30642344",
+          "title": "Changes in the cohort composition of turner syndrome and severe non-diagnosis of Klinefelter, 47,XXX and 47,XYY syndrome: a nationwide cohort study.",
+          "authors": "Berglund A, Viuff MH, Skakkebæk A, Chang S, Stochholm K, Gravholt CH",
+          "journal": "Orphanet J Rare Dis",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30642344/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "40232995",
+          "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+          "authors": "Hall A, Furniss A, Tartaglia NN, Janusz J, Wilson R, Middleton C, Martin S, Frazier J, Martinez-Chadrom M, Hansen-Moore J, Ikomi C, Ross J, Vogiaski MG, Morrow L, Christakis DA, Lean RE, Nokoff N, Pyle L, Davis SM",
+          "journal": "J Dev Behav Pediatr",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "473794",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/473794"
+}

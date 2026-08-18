@@ -1,0 +1,104 @@
+{
+  "db_sources": {
+    "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+    "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+    "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "UBE3A",
+      "chromosome": "chr15",
+      "cytoband": "15q11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "ClinGen",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "hi_score": "3",
+        "hi_score_label": "Sufficient evidence for dosage pathogenicity",
+        "hi_disease": "19213023",
+        "ts_score": "No evidence available",
+        "hi_pmids": [],
+        "hgnc_id": null,
+        "gencc_classification": "Definitive",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "G2P",
+          "Labcorp Genetics (formerly Invitae)",
+          "PanelApp Australia",
+          "ClinGen"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000248",
+            "hpo_name": "Brachycephaly"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          },
+          {
+            "hpo_id": "HP:0011458",
+            "hpo_name": "Abdominal symptom"
+          }
+        ],
+        "ncbi_gene_id": "7337"
+      }
+    }
+  ]
+}

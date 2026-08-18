@@ -1,0 +1,1890 @@
+{
+  "disease_info": {
+    "syndrome": "Double Y syndrome",
+    "definition": "47,XYY syndrome is characterized by an extra copy of the Y chromosome in each of an individual's cells. Although many people with this condition are taller than average, the chromosomal change sometimes causes no unusual physical features. Most individuals with 47,XYY syndrome have normal production of the male sex hormone testosterone and normal male sexual development, and they are usually able to father children. 47,XYY syndrome is associated with an increased risk of learning disabilities and delayed development of speech and language skills. Affected children can have delayed development of motor skills (such as sitting and walking) or weak muscle tone (hypotonia). Other signs and symptoms of this condition include hand tremors or other involuntary movements (motor tics), seizures, and asthma. Individuals with 47,XYY syndrome have an increased risk of behavioral, social, and emotional difficulties compared with their unaffected peers. These problems include attention-deficit/hyperactivity disorder (ADHD); depression; anxiety; and autism spectrum disorder, which is a group of developmental conditions that affect communication and social interaction. Physical features related to 47,XYY syndrome can include increased belly fat, a large head (macrocephaly), unusually large teeth (macrodontia), flat feet (pes planus), fifth fingers that curve inward (clinodactyly), widely spaced eyes (ocular hypertelorism), and abnormal side-to-side curvature of the spine (scoliosis). These characteristics vary widely among people with this condition. [from MedlinePlus Genetics]",
+    "synonyms": [
+      "47,XYY syndrome",
+      "XYY Karyotype",
+      "XYY syndrome",
+      "YY syndrome"
+    ],
+    "db_ids": {
+      "SNOMED-CT": "50749006",
+      "MONDO": "MONDO:0019339",
+      "Orphanet": "8"
+    },
+    "gene_locations": [],
+    "genomic_targets": [
+      {
+        "type": "TargetChromosome",
+        "chromosome": "chrY",
+        "cytoband": "Y",
+        "event": "gain",
+        "mechanism": "trisomy",
+        "source": "karyotype_notation"
+      }
+    ],
+    "genereview_url": null,
+    "literature": {
+      "pubmed": {
+        "papers": [
+          {
+            "pmid": "33372274",
+            "title": "Chromosomal abnormality: Prevalence, prenatal diagnosis and associated anomalies based on a provincial-wide birth defects monitoring system.",
+            "authors": "Xie D, Yang W, Fang J, Li H, Xiong L, Kong F, Wang A, Liu Z, Wang H",
+            "journal": "J Obstet Gynaecol Res",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33372274/"
+          },
+          {
+            "pmid": "22281282",
+            "title": "Clinical and gonadal features and early surgical management of 45,X/46,XY and 45,X/47,XYY chromosomal mosaicism presenting with genital anomalies.",
+            "authors": "Farrugia MK, Sebire NJ, Achermann JC, Eisawi A, Duffy PG, Mushtaq I",
+            "journal": "J Pediatr Urol",
+            "year": "2013",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22281282/"
+          },
+          {
+            "pmid": "22524445",
+            "title": "Genetic evaluation of severe male factor infertility in Turkey: a cross-sectional study.",
+            "authors": "Cavkaytar S, Batioglu S, Gunel M, Ceylaner S, Karaer A",
+            "journal": "Hum Fertil (Camb)",
+            "year": "2012",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22524445/"
+          }
+        ],
+        "see_all": {}
+      },
+      "etiology": {
+        "papers": [
+          {
+            "pmid": "40232995",
+            "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+            "authors": "Hall A, Furniss A, Tartaglia NN, Janusz J, Wilson R, Middleton C, Martin S, Frazier J, Martinez-Chadrom M, Hansen-Moore J, Ikomi C, Ross J, Vogiaski MG, Morrow L, Christakis DA, Lean RE, Nokoff N, Pyle L, Davis SM",
+            "journal": "J Dev Behav Pediatr",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+          },
+          {
+            "pmid": "39953941",
+            "title": "Research Priorities of Individuals and Families With Sex Chromosome Aneuploidies.",
+            "authors": "Carl A, Bothwell S, Farah F, Swenson K, Hong D, Prakash S, Strang J, Tartaglia N, Raznahan A, Ross J; INSIGHTS Consortium; GALAXY Consortium, Davis S",
+            "journal": "Am J Med Genet A",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39953941/"
+          },
+          {
+            "pmid": "30642344",
+            "title": "Changes in the cohort composition of turner syndrome and severe non-diagnosis of Klinefelter, 47,XXX and 47,XYY syndrome: a nationwide cohort study.",
+            "authors": "Berglund A, Viuff MH, Skakkebæk A, Chang S, Stochholm K, Gravholt CH",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30642344/"
+          }
+        ],
+        "see_all": {}
+      },
+      "diagnosis": {
+        "papers": [
+          {
+            "pmid": "40232995",
+            "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+            "authors": "Hall A, Furniss A, Tartaglia NN, Janusz J, Wilson R, Middleton C, Martin S, Frazier J, Martinez-Chadrom M, Hansen-Moore J, Ikomi C, Ross J, Vogiaski MG, Morrow L, Christakis DA, Lean RE, Nokoff N, Pyle L, Davis SM",
+            "journal": "J Dev Behav Pediatr",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+          },
+          {
+            "pmid": "30642344",
+            "title": "Changes in the cohort composition of turner syndrome and severe non-diagnosis of Klinefelter, 47,XXX and 47,XYY syndrome: a nationwide cohort study.",
+            "authors": "Berglund A, Viuff MH, Skakkebæk A, Chang S, Stochholm K, Gravholt CH",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30642344/"
+          }
+        ],
+        "see_all": {}
+      },
+      "therapy": {
+        "papers": [
+          {
+            "pmid": "40232995",
+            "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+            "authors": "Hall A, Furniss A, Tartaglia NN, Janusz J, Wilson R, Middleton C, Martin S, Frazier J, Martinez-Chadrom M, Hansen-Moore J, Ikomi C, Ross J, Vogiaski MG, Morrow L, Christakis DA, Lean RE, Nokoff N, Pyle L, Davis SM",
+            "journal": "J Dev Behav Pediatr",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+          }
+        ],
+        "see_all": {}
+      },
+      "prognosis": {
+        "papers": [
+          {
+            "pmid": "30642344",
+            "title": "Changes in the cohort composition of turner syndrome and severe non-diagnosis of Klinefelter, 47,XXX and 47,XYY syndrome: a nationwide cohort study.",
+            "authors": "Berglund A, Viuff MH, Skakkebæk A, Chang S, Stochholm K, Gravholt CH",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30642344/"
+          }
+        ],
+        "see_all": {}
+      },
+      "clinical_prediction": {
+        "papers": [
+          {
+            "pmid": "40232995",
+            "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+            "authors": "Hall A, Furniss A, Tartaglia NN, Janusz J, Wilson R, Middleton C, Martin S, Frazier J, Martinez-Chadrom M, Hansen-Moore J, Ikomi C, Ross J, Vogiaski MG, Morrow L, Christakis DA, Lean RE, Nokoff N, Pyle L, Davis SM",
+            "journal": "J Dev Behav Pediatr",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+          }
+        ],
+        "see_all": {}
+      }
+    },
+    "medgen_uid": "473794",
+    "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/473794"
+  },
+  "db_ids": {
+    "SNOMED-CT": "50749006",
+    "MONDO": "MONDO:0019339",
+    "Orphanet": "8"
+  },
+  "markers": [
+    {
+      "feature_type": "TargetChromosome",
+      "feature_name": "chrY",
+      "chromosome": "chrY",
+      "cytoband": "Y",
+      "genomic_pos": {
+        "chromosome": "chrY",
+        "start": 1,
+        "end": 57227415,
+        "assembly": "GRCh38"
+      },
+      "event": "gain",
+      "mechanism": "trisomy",
+      "confidence": "medium",
+      "source": [
+        "karyotype_notation",
+        "hg38_chromosome"
+      ],
+      "annotation": null
+    }
+  ],
+  "evidence_literature": [
+    {
+      "pmid": "33372274",
+      "doi": "10.1111/jog.14569",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Chromosomal abnormality: Prevalence, prenatal diagnosis and associated anomalies based on a provincial-wide birth defects monitoring system.",
+      "authors": [
+        "Xie Donghua",
+        "Yang Wenzhen",
+        "Fang Junqun",
+        "Li Haoxian",
+        "Xiong Lili",
+        "Kong Fanjuan",
+        "Wang Aihua",
+        "Liu Zhiyu",
+        "Wang Hua"
+      ],
+      "journal": "The journal of obstetrics and gynaecology research",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "AIM: To investigate the epidemiology of chromosomal abnormalities (CA) in fetuses of all pregnancies based on a provincial-wide birth defects-monitoring system, which could provide scientific basis for making relatively policy and research. METHODS: Chromosomal abnormalities cases were collected from all hospitals in Hunan Province, China, between 2016 and 2019. The prevalence of CAs was calculated to examine associations among infant sex, maternal age and region. The rates of prenatal diagnosis and termination of pregnancy (TOP) involving CA or associated anomalies were calculated as rates or proportions. RESULTS: From 2016 to 2019, a total of 2 883 890 perinatal infants (28 weeks of gestation to postpartum 7 days) underwent prenatal screening and diagnostic tests, and 3181 fetuses were diagnosed as CA, with the prevalence of 11.03/10 000. The average prevalence of CAs was higher for male than female fetuses (11.33/10 000 vs 10.06/10 000) (OR = 1.13, 95% CI: 1.05-1.21), which was higher in urban areas than rural areas (23.03/10 000 vs 7.13/10 000) (OR = 3.23, 95% CI: 3.02-3.47), and the prevalence increased linearly with maternal age ( X trend 2 = 1821.844, P = 0.000). Among the fetuses with CAs, 3097 (97.36%) were diagnosed prenatally, and 3046 (98.35%) underwent TOP. The majority of CA were numerical abnormalities (90.18%). The main types of numerical autosomal abnormalities were trisomy 21 (6.69/10 000, 59.57%), trisomy 18 (1.13/10 000, 10.04%) and trisomy 13 (0.21/10 000, 1.88%). The main types of numerical gonosomal abnormalities were Klinefelter syndrome (0.68/10 000, 6.02%), Turner syndrome (0.49/10 000, 4.39%), Triple X syndrome (0.26/10 000, 2.29%) and 47,XYY syndrome (0.21/10 000, 1.91%). The three associated anomalies with the highest proportions were congenital heart defects (CHD) (41.06%), cleft palate or/and cleft lip (10.89%) and congenital talipes equinovarus (8.94%). CONCLUSION: The prevalence of CA was lower than that reported. Chromosome detection should be further promoted including test contest and coverage, especially for urban areas, older mothers and fetuses with CHD, cleft palate or/and cleft lip or congenital talipes equinovarus.",
+      "abstract_sections": {
+        "AIM": "To investigate the epidemiology of chromosomal abnormalities (CA) in fetuses of all pregnancies based on a provincial-wide birth defects-monitoring system, which could provide scientific basis for making relatively policy and research.",
+        "METHODS": "Chromosomal abnormalities cases were collected from all hospitals in Hunan Province, China, between 2016 and 2019. The prevalence of CAs was calculated to examine associations among infant sex, maternal age and region. The rates of prenatal diagnosis and termination of pregnancy (TOP) involving CA or associated anomalies were calculated as rates or proportions.",
+        "RESULTS": "From 2016 to 2019, a total of 2 883 890 perinatal infants (28 weeks of gestation to postpartum 7 days) underwent prenatal screening and diagnostic tests, and 3181 fetuses were diagnosed as CA, with the prevalence of 11.03/10 000. The average prevalence of CAs was higher for male than female fetuses (11.33/10 000 vs 10.06/10 000) (OR = 1.13, 95% CI: 1.05-1.21), which was higher in urban areas than rural areas (23.03/10 000 vs 7.13/10 000) (OR = 3.23, 95% CI: 3.02-3.47), and the prevalence increased linearly with maternal age ( X trend 2 = 1821.844, P = 0.000). Among the fetuses with CAs, 3097 (97.36%) were diagnosed prenatally, and 3046 (98.35%) underwent TOP. The majority of CA were numerical abnormalities (90.18%). The main types of numerical autosomal abnormalities were trisomy 21 (6.69/10 000, 59.57%), trisomy 18 (1.13/10 000, 10.04%) and trisomy 13 (0.21/10 000, 1.88%). The main types of numerical gonosomal abnormalities were Klinefelter syndrome (0.68/10 000, 6.02%), Turner syndrome (0.49/10 000, 4.39%), Triple X syndrome (0.26/10 000, 2.29%) and 47,XYY syndrome (0.21/10 000, 1.91%). The three associated anomalies with the highest proportions were congenital heart defects (CHD) (41.06%), cleft palate or/and cleft lip (10.89%) and congenital talipes equinovarus (8.94%).",
+        "CONCLUSION": "The prevalence of CA was lower than that reported. Chromosome detection should be further promoted including test contest and coverage, especially for urban areas, older mothers and fetuses with CHD, cleft palate or/and cleft lip or congenital talipes equinovarus."
+      },
+      "mesh_terms": [
+        "China",
+        "Chromosome Aberrations",
+        "Female",
+        "Humans",
+        "Male",
+        "Pregnancy",
+        "Prenatal Diagnosis",
+        "Prevalence",
+        "Trisomy",
+        "Ultrasonography, Prenatal"
+      ],
+      "keywords": [
+        "associated anomaly",
+        "chromosomal abnormality",
+        "prenatal diagnosis",
+        "prevalence"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/jog.14569"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33372274/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33372274/"
+    },
+    {
+      "pmid": "22281282",
+      "doi": "10.1016/j.jpurol.2011.12.012",
+      "pmc_id": "PMC3625110",
+      "pmc_verify": null,
+      "title": "Clinical and gonadal features and early surgical management of 45,X/46,XY and 45,X/47,XYY chromosomal mosaicism presenting with genital anomalies.",
+      "authors": [
+        "Farrugia M K",
+        "Sebire N J",
+        "Achermann J C",
+        "Eisawi A",
+        "Duffy P G",
+        "Mushtaq I"
+      ],
+      "journal": "Journal of pediatric urology",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "OBJECTIVE: The 45,X/46,XY and 45,X/47,XYY group of patients includes some of those previously diagnosed with 'mixed gonadal dysgenesis'. Our aim was to establish the clinical and gonadal spectrum, and early surgical management, of patients with chromosomal mosaicism presenting with genital anomalies. PATIENTS AND METHODS: We performed a retrospective review of patients with 45,X/46,XY or 45,X/47,XYY mosaicism presenting with genital ambiguity between 1988 and 2009. At least one gonadal biopsy or gonadectomy specimen was available for each patient. Gonadal histology was re-evaluated by a paediatric pathologist. RESULTS: Of 31 patients with 45,X/46,XY (n = 28) or 45,X/47,XYY (n = 3) mosaicism and genital anomalies, 19 (61%) were raised male. Histology of 46 gonads was available from patients who had undergone a gonadectomy or gonadal biopsy, at a median age of 9.5 months. 18 gonads were palpable at presentation, including 5 (28%) histologically unremarkable testes, 2 streak gonads, and 1 dysgenetic gonad with distinct areas of testicular and ovarian stroma but no oocytes. All intra-abdominal gonads were found to be dysgenetic testes (of which 2 were noted to have pre-malignant changes) or streaks, apart from 1 histologically unremarkable testis. 15 (48%) patients had other anomalies, most commonly cardiac and renal; 4 (13%) had a Turner phenotype. CONCLUSION: The anatomy and gonadal histology of 45,X/46,XY and 45,X/47,XYY individuals with genital ambiguity do not conform to a set pattern, and hence management of each patient should be individualized according to detailed anatomical and histological assessment.",
+      "abstract_sections": {
+        "OBJECTIVE": "The 45,X/46,XY and 45,X/47,XYY group of patients includes some of those previously diagnosed with 'mixed gonadal dysgenesis'. Our aim was to establish the clinical and gonadal spectrum, and early surgical management, of patients with chromosomal mosaicism presenting with genital anomalies.",
+        "PATIENTS AND METHODS": "We performed a retrospective review of patients with 45,X/46,XY or 45,X/47,XYY mosaicism presenting with genital ambiguity between 1988 and 2009. At least one gonadal biopsy or gonadectomy specimen was available for each patient. Gonadal histology was re-evaluated by a paediatric pathologist.",
+        "RESULTS": "Of 31 patients with 45,X/46,XY (n = 28) or 45,X/47,XYY (n = 3) mosaicism and genital anomalies, 19 (61%) were raised male. Histology of 46 gonads was available from patients who had undergone a gonadectomy or gonadal biopsy, at a median age of 9.5 months. 18 gonads were palpable at presentation, including 5 (28%) histologically unremarkable testes, 2 streak gonads, and 1 dysgenetic gonad with distinct areas of testicular and ovarian stroma but no oocytes. All intra-abdominal gonads were found to be dysgenetic testes (of which 2 were noted to have pre-malignant changes) or streaks, apart from 1 histologically unremarkable testis. 15 (48%) patients had other anomalies, most commonly cardiac and renal; 4 (13%) had a Turner phenotype.",
+        "CONCLUSION": "The anatomy and gonadal histology of 45,X/46,XY and 45,X/47,XYY individuals with genital ambiguity do not conform to a set pattern, and hence management of each patient should be individualized according to detailed anatomical and histological assessment."
+      },
+      "mesh_terms": [
+        "Child, Preschool",
+        "Databases, Factual",
+        "Disorders of Sex Development",
+        "Female",
+        "Gonadal Dysgenesis, 46,XY",
+        "Gonadal Dysgenesis, Mixed",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Male",
+        "Mosaicism",
+        "Phenotype",
+        "Retrospective Studies",
+        "Sex Chromosome Disorders",
+        "Turner Syndrome",
+        "XYY Karyotype"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3625110/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3625110/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jpurol.2011.12.012"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22281282/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22281282/"
+    },
+    {
+      "pmid": "22524445",
+      "doi": "10.3109/14647273.2012.685923",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Genetic evaluation of severe male factor infertility in Turkey: a cross-sectional study.",
+      "authors": [
+        "Cavkaytar Sabri",
+        "Batioglu Sertaç",
+        "Gunel Mufit",
+        "Ceylaner Serdar",
+        "Karaer Abdullah"
+      ],
+      "journal": "Human fertility (Cambridge, England)",
+      "year": "2012",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: To determine the frequency, types of chromosomal abnormalities and Y chromosome microdeletions in patients with severe male factor infertility, and the association between clinical background and genetic abnormality. STUDY DESIGN: A total of 322 infertile men; 136 men with severe oligozoospermia (sperm count <5 million/ml) and 196 with nonobstructive azoospermia were studied between April 2004 and November 2006 at the Dr. Zekai Tahir Burak Women's Health Education and Research Hospital, Ankara, Turkey. Blood, semen samples, and testicular biopsies of patients were obtained. Hormonal analysis (follicle-stimulating hormone (FSH), luteinizing hormone (LH), and testosterone levels), semen analysis, karyotype analysis, and PCR screening for Y chromosome microdeletions were performed. RESULT(S): Forty-eight out of 332 (14%) infertile men had a genetic abnormality. Twenty-four (7.2%) cases with karyotype abnormality were detected. The frequencies of karyotype abnormalities were Klinefelter's syndrome 17/24 (71%), translocation 3/24 (12%), mix gonadal dysgenesis 2/24 (8%), XX male 1/24 (4%), and 46XYY 1/24 (4%). Twenty cases (6%) infertile men had only Y chromosome microdeletions. The frequencies of the deleted areas were azoospermia factor (AZF)c 42%, AZFb 25%, AZFa 21%, AZFb, c 8%, and AZFa, c 4%. Four of the cases with Y chromosome microdeletions also had a concurrent karyotype abnormality. CONCLUSION(S): All patients with nonobstructive azoospermia and severe oligozoospermia (sperm count <5 million/ml) should undergo genetic screening.",
+      "abstract_sections": {
+        "OBJECTIVE": "To determine the frequency, types of chromosomal abnormalities and Y chromosome microdeletions in patients with severe male factor infertility, and the association between clinical background and genetic abnormality.",
+        "STUDY DESIGN": "A total of 322 infertile men; 136 men with severe oligozoospermia (sperm count <5 million/ml) and 196 with nonobstructive azoospermia were studied between April 2004 and November 2006 at the Dr. Zekai Tahir Burak Women's Health Education and Research Hospital, Ankara, Turkey. Blood, semen samples, and testicular biopsies of patients were obtained. Hormonal analysis (follicle-stimulating hormone (FSH), luteinizing hormone (LH), and testosterone levels), semen analysis, karyotype analysis, and PCR screening for Y chromosome microdeletions were performed.",
+        "RESULT(S)": "Forty-eight out of 332 (14%) infertile men had a genetic abnormality. Twenty-four (7.2%) cases with karyotype abnormality were detected. The frequencies of karyotype abnormalities were Klinefelter's syndrome 17/24 (71%), translocation 3/24 (12%), mix gonadal dysgenesis 2/24 (8%), XX male 1/24 (4%), and 46XYY 1/24 (4%). Twenty cases (6%) infertile men had only Y chromosome microdeletions. The frequencies of the deleted areas were azoospermia factor (AZF)c 42%, AZFb 25%, AZFa 21%, AZFb, c 8%, and AZFa, c 4%. Four of the cases with Y chromosome microdeletions also had a concurrent karyotype abnormality.",
+        "CONCLUSION(S)": "All patients with nonobstructive azoospermia and severe oligozoospermia (sperm count <5 million/ml) should undergo genetic screening."
+      },
+      "mesh_terms": [
+        "Adult",
+        "Azoospermia",
+        "Chromosome Aberrations",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Y",
+        "Cross-Sectional Studies",
+        "Follicle Stimulating Hormone",
+        "Gonadal Dysgenesis, Mixed",
+        "Humans",
+        "Infertility, Male",
+        "Karyotyping",
+        "Klinefelter Syndrome",
+        "Luteinizing Hormone",
+        "Male",
+        "Middle Aged",
+        "Oligospermia",
+        "Sex Chromosome Aberrations",
+        "Sex Chromosome Disorders",
+        "Sex Chromosome Disorders of Sex Development",
+        "Testosterone",
+        "Translocation, Genetic",
+        "Turkey",
+        "XYY Karyotype"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3109/14647273.2012.685923"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22524445/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22524445/"
+    },
+    {
+      "pmid": "40232995",
+      "doi": "10.1097/DBP.0000000000001342",
+      "pmc_id": "PMC12018767",
+      "pmc_verify": null,
+      "title": "Neurodevelopmental and Mental Health Outcomes in a National Clinical Sample of Youth With Sex Chromosome Trisomies Compared With Matched Controls.",
+      "authors": [
+        "Hall Adriana",
+        "Furniss Anna",
+        "Tartaglia Nicole N",
+        "Janusz Jennifer",
+        "Wilson Rebecca",
+        "Middleton Caitlin",
+        "Martin Sydney",
+        "Frazier Jacqueline",
+        "Martinez-Chadrom Michele",
+        "Hansen-Moore Jennifer",
+        "Ikomi Chijioke",
+        "Ross Judith",
+        "Vogiaski Maria G",
+        "Morrow Leela",
+        "Christakis Dimitri A",
+        "Lean Rachel E",
+        "Nokoff Natalie",
+        "Pyle Laura",
+        "Davis Shanlee M"
+      ],
+      "journal": "Journal of developmental and behavioral pediatrics : JDBP",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: To compare the prevalence of neurodevelopmental and mental health diagnoses in a national sample of youth with sex chromosome trisomies (SCTs) with matched controls. METHODS: Patients in PEDSnet and a diagnosis code mapping to 47,XXY/Klinefelter syndrome (n = 1171), 47,XYY/Double Y syndrome (n = 243), or 47,XXX/Trisomy X syndrome (n = 262) were matched with controls using propensity scores. Generalized estimating equations computed odds ratios (OR) with 95% confidence intervals (CI) for the prevalence of diagnoses within the neurodevelopmental and mental health composites, psychotropic medication prescriptions, and encounters with behavioral health and therapy providers. Alpha was set at 0.0025 to account for multiple comparisons. RESULTS: Patients with SCTs had higher odds of diagnoses within the neurodevelopmental (OR 6.3, 95% CI, 5.7-7.2) and mental health composites (OR 2.7, 95% CI, 2.3-3.2) compared with matched controls. All neurodevelopmental diagnoses were more prevalent among all SCT groups compared with controls. Within the mental health composite, only the prevalence of anxiety and mood disorder was higher in all SCT groups. A higher proportion of patients with SCTs had psychotropic prescriptions compared with controls (stimulants 13.1% vs 5.2%, selective serotonin reuptake inhibitors 8.7% vs 2.8%, antipsychotics 6.5% vs 2.4%, p < 0.0001 for all). Overall, 48% of patients with SCTs had a clinical encounter with a behavioral health provider vs 16.6% of controls (OR 5.6, 95% CI, 4.1-5.1). CONCLUSION: Compared with matched controls, youth with SCTs receiving care at US tertiary care pediatric centers have disproportionately high rates of neurodevelopmental and mental health conditions, emphasizing the need for appropriate screening and intervention in these populations.",
+      "abstract_sections": {
+        "OBJECTIVE": "To compare the prevalence of neurodevelopmental and mental health diagnoses in a national sample of youth with sex chromosome trisomies (SCTs) with matched controls.",
+        "METHODS": "Patients in PEDSnet and a diagnosis code mapping to 47,XXY/Klinefelter syndrome (n = 1171), 47,XYY/Double Y syndrome (n = 243), or 47,XXX/Trisomy X syndrome (n = 262) were matched with controls using propensity scores. Generalized estimating equations computed odds ratios (OR) with 95% confidence intervals (CI) for the prevalence of diagnoses within the neurodevelopmental and mental health composites, psychotropic medication prescriptions, and encounters with behavioral health and therapy providers. Alpha was set at 0.0025 to account for multiple comparisons.",
+        "RESULTS": "Patients with SCTs had higher odds of diagnoses within the neurodevelopmental (OR 6.3, 95% CI, 5.7-7.2) and mental health composites (OR 2.7, 95% CI, 2.3-3.2) compared with matched controls. All neurodevelopmental diagnoses were more prevalent among all SCT groups compared with controls. Within the mental health composite, only the prevalence of anxiety and mood disorder was higher in all SCT groups. A higher proportion of patients with SCTs had psychotropic prescriptions compared with controls (stimulants 13.1% vs 5.2%, selective serotonin reuptake inhibitors 8.7% vs 2.8%, antipsychotics 6.5% vs 2.4%, p < 0.0001 for all). Overall, 48% of patients with SCTs had a clinical encounter with a behavioral health provider vs 16.6% of controls (OR 5.6, 95% CI, 4.1-5.1).",
+        "CONCLUSION": "Compared with matched controls, youth with SCTs receiving care at US tertiary care pediatric centers have disproportionately high rates of neurodevelopmental and mental health conditions, emphasizing the need for appropriate screening and intervention in these populations."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Female",
+        "Adolescent",
+        "Neurodevelopmental Disorders",
+        "Child",
+        "United States",
+        "Mental Disorders",
+        "Trisomy",
+        "Sex Chromosome Disorders",
+        "Klinefelter Syndrome",
+        "Psychotropic Drugs",
+        "XYY Karyotype",
+        "Child, Preschool",
+        "Case-Control Studies",
+        "Comorbidity",
+        "Prevalence",
+        "Sex Chromosome Aberrations",
+        "Chromosomes, Human, X",
+        "Sex Chromosome Disorders of Sex Development"
+      ],
+      "keywords": [
+        "47,XXX",
+        "47,XXY",
+        "47,XYY",
+        "Jacobs syndrome",
+        "Klinefelter syndrome",
+        "PEDSnet",
+        "Trisomy X",
+        "sex chromosome aneuploidies"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12018767/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12018767/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/DBP.0000000000001342"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40232995/"
+    },
+    {
+      "pmid": "39953941",
+      "doi": "10.1002/ajmg.a.63998",
+      "pmc_id": "PMC12052495",
+      "pmc_verify": null,
+      "title": "Research Priorities of Individuals and Families With Sex Chromosome Aneuploidies.",
+      "authors": [
+        "Carl Alexandra",
+        "Bothwell Samantha",
+        "Farah Fathia",
+        "Swenson Karli",
+        "Hong David",
+        "Prakash Siddharth",
+        "Strang John",
+        "Tartaglia Nicole",
+        "Raznahan Armin",
+        "Ross Judith",
+        "INSIGHTS Consortium",
+        "GALAXY Consortium",
+        "Davis Shanlee"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "Sex chromosome aneuploidies (SCAs) are chromosomal variations that result from an atypical number of X and/or Y chromosomes. Combined, SCAs affect ~1/400 live births, including individuals with Klinefelter syndrome (47, XXY), Turner syndrome (45, X and variants), Double Y syndrome (47, XYY), Trisomy X (47, XXX), and rarer tetrasomies and pentasomies. Individuals with SCAs experience a wide variety of physical health, mental health, and healthcare experiences that differ from the standard population. To understand the priorities of the SCA community we surveyed participants in two large SCA registries, the Inspiring New Science in Guiding Healthcare in Turner Syndrome (INSIGHTS) Registry and the Generating Advancements in Longitudinal Analysis in X and Y Variations (GALAXY) Registry. 303/629 (48.1% response rate) individuals from 13 sites across the United States responded to the survey, including 251 caregivers and 52 self-advocates, with a range of ages from 3 weeks to 73 years old, and representation from all SCA groups (Turner syndrome, XXX, XXY, XYY, XXYY, and combined rare tetrasomies and pentasomies). Results demonstrate the priorities for physical health and emotional/behavioral health identified by the SCA community, as well as preferred types of research. All SCA subtypes indicated intervention studies as the top priority, emphasizing the need for researchers to focus on clinical treatments in response to priorities of the SCA community.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Male",
+        "Aneuploidy",
+        "Adult",
+        "Middle Aged",
+        "Adolescent",
+        "Child",
+        "Child, Preschool",
+        "Aged",
+        "Infant",
+        "Young Adult",
+        "Turner Syndrome",
+        "Sex Chromosome Aberrations",
+        "Klinefelter Syndrome",
+        "Infant, Newborn",
+        "Chromosomes, Human, X",
+        "Registries",
+        "Chromosomes, Human, Y",
+        "Sex Chromosome Disorders"
+      ],
+      "keywords": [
+        "Klinefelter syndrome",
+        "Turner syndrome",
+        "XXY",
+        "XXYY",
+        "XYY",
+        "research priorities",
+        "sex chromosome aneuploidies",
+        "trisomy X"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12052495/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12052495/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.63998"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39953941/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39953941/"
+    },
+    {
+      "pmid": "30642344",
+      "doi": "10.1186/s13023-018-0976-2",
+      "pmc_id": "PMC6332849",
+      "pmc_verify": null,
+      "title": "Changes in the cohort composition of turner syndrome and severe non-diagnosis of Klinefelter, 47,XXX and 47,XYY syndrome: a nationwide cohort study.",
+      "authors": [
+        "Berglund Agnethe",
+        "Viuff Mette Hansen",
+        "Skakkebæk Anne",
+        "Chang Simon",
+        "Stochholm Kirstine",
+        "Gravholt Claus Højbjerg"
+      ],
+      "journal": "Orphanet journal of rare diseases",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: Knowledge on the prevalence of sex chromosome abnormalities (SCAs) is limited, and delayed diagnosis or non-diagnosis of SCAs are a continuous concern. We aimed to investigate change over time in incidence, prevalence and age at diagnosis among Turner syndrome (TS), Klinefelter syndrome (KS), Triple X syndrome (Triple X) and Double Y syndrome (Double Y). METHODS: This study is a nationwide cohort study in a public health care system. The Danish Cytogenetic Central Registry (DCCR) holds information on all karyotypes performed in Denmark since 1961. We identified all individuals in the DCCR with a relevant SCA during 1961-2014; TS: n = 1156; KS: n = 1235; Triple X: n = 197; and Double Y: n = 287. From Statistics Denmark, which holds an extensive collection of data on the Danish population, complete data concerning dates of death and migrations in and out of Denmark were retrieved for all individuals. RESULTS: The prevalence among newborns was as follows: TS: 59 per 100,000 females; KS: 57 per 100,000 males; Triple X: 11 per 100,000 females; and Double Y: 18 per 100,000 males. Compared with the expected number among newborns, all TS, 38% of KS, 13% of Triple X, and 18% of Double Y did eventually receive a diagnosis. The incidence of TS with other karyotypes than 45,X (P < 0.0001), KS (P = 0.02), and Double Y (P = 0.03) increased during the study period whereas the incidence of 45,X TS decreased (P = 0.0006). The incidence of Triple X was stable (P = 0.22). CONCLUSIONS: The prevalence of TS is higher than previously identified, and the karyotypic composition of the TS population is changing. Non-diagnosis is extensive among KS, Triple X and Double Y, whereas all TS seem to become diagnosed. The diagnostic activity has increased among TS with other karyotypes than 45,X as well as among KS and Double Y.",
+      "abstract_sections": {
+        "BACKGROUND": "Knowledge on the prevalence of sex chromosome abnormalities (SCAs) is limited, and delayed diagnosis or non-diagnosis of SCAs are a continuous concern. We aimed to investigate change over time in incidence, prevalence and age at diagnosis among Turner syndrome (TS), Klinefelter syndrome (KS), Triple X syndrome (Triple X) and Double Y syndrome (Double Y).",
+        "METHODS": "This study is a nationwide cohort study in a public health care system. The Danish Cytogenetic Central Registry (DCCR) holds information on all karyotypes performed in Denmark since 1961. We identified all individuals in the DCCR with a relevant SCA during 1961-2014; TS: n = 1156; KS: n = 1235; Triple X: n = 197; and Double Y: n = 287. From Statistics Denmark, which holds an extensive collection of data on the Danish population, complete data concerning dates of death and migrations in and out of Denmark were retrieved for all individuals.",
+        "RESULTS": "The prevalence among newborns was as follows: TS: 59 per 100,000 females; KS: 57 per 100,000 males; Triple X: 11 per 100,000 females; and Double Y: 18 per 100,000 males. Compared with the expected number among newborns, all TS, 38% of KS, 13% of Triple X, and 18% of Double Y did eventually receive a diagnosis. The incidence of TS with other karyotypes than 45,X (P < 0.0001), KS (P = 0.02), and Double Y (P = 0.03) increased during the study period whereas the incidence of 45,X TS decreased (P = 0.0006). The incidence of Triple X was stable (P = 0.22).",
+        "CONCLUSIONS": "The prevalence of TS is higher than previously identified, and the karyotypic composition of the TS population is changing. Non-diagnosis is extensive among KS, Triple X and Double Y, whereas all TS seem to become diagnosed. The diagnostic activity has increased among TS with other karyotypes than 45,X as well as among KS and Double Y."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Child",
+        "Child, Preschool",
+        "Chromosomes, Human, X",
+        "Cohort Studies",
+        "Female",
+        "Humans",
+        "Incidence",
+        "Infant",
+        "Infant, Newborn",
+        "Karyotyping",
+        "Klinefelter Syndrome",
+        "Male",
+        "Middle Aged",
+        "Sex Chromosome Aberrations",
+        "Sex Chromosome Disorders",
+        "Sex Chromosome Disorders of Sex Development",
+        "Trisomy",
+        "Turner Syndrome",
+        "XYY Karyotype",
+        "Young Adult"
+      ],
+      "keywords": [
+        "Age at diagnosis",
+        "Double Y syndrome",
+        "Incidence",
+        "Klinefelter syndrome",
+        "Prevalence",
+        "Triple X syndrome",
+        "Turner syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6332849/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6332849/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/s13023-018-0976-2"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30642344/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30642344/"
+    },
+    {
+      "pmid": "32506765",
+      "doi": "10.1002/ajmg.c.31805",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The epidemiology of sex chromosome abnormalities.",
+      "authors": [
+        "Berglund Agnethe",
+        "Stochholm Kirstine",
+        "Gravholt Claus Højbjerg"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Sex chromosome abnormalities (SCAs) are characterized by gain or loss of entire sex chromosomes or parts of sex chromosomes with the best-known syndromes being Turner syndrome, Klinefelter syndrome, 47,XXX syndrome, and 47,XYY syndrome. Since these syndromes were first described more than 60 years ago, several papers have reported on diseases and health related problems, neurocognitive deficits, and social challenges among affected persons. However, the generally increased comorbidity burden with specific comorbidity patterns within and across syndromes as well as early death of affected persons was not recognized until the last couple of decades, where population-based epidemiological studies were undertaken. Moreover, these epidemiological studies provided knowledge of an association between SCAs and a negatively reduced socioeconomic status in terms of education, income, retirement, cohabitation with a partner and parenthood. This review is on the aspects of epidemiology in Turner, Klinefelter, 47,XXX and 47,XYY syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosomes, Human, X",
+        "Female",
+        "Humans",
+        "Karyotyping",
+        "Klinefelter Syndrome",
+        "Male",
+        "Sex Chromosome Aberrations",
+        "Sex Chromosome Disorders",
+        "Sex Chromosomes",
+        "Trisomy",
+        "Turner Syndrome",
+        "XYY Karyotype"
+      ],
+      "keywords": [
+        "47,XXX syndrome",
+        "47,XYY syndrome",
+        "Klinefelter syndrome",
+        "Turner syndrome",
+        "epidemiology"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.31805"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32506765/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32506765/"
+    },
+    {
+      "pmid": "37399523",
+      "doi": "10.1530/EC-22-0440",
+      "pmc_id": "PMC10448573",
+      "pmc_verify": null,
+      "title": "Sex chromosome aneuploidies and fertility: 47,XXY, 47,XYY, 47,XXX and 45,X/47,XXX.",
+      "authors": [
+        "Rogol Alan D"
+      ],
+      "journal": "Endocrine connections",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The overall incidence of sex chromosome aneuploidies is approximately 1 per 500 live-born infants, but far more common at conception. I shall review the fertility aspects of the sex chromosome trisomies, XXY, XYY, and XXX, with special reference to the karyotype 45,X/47,XXX. Each has a 'specific' (but variable) phenotype but may be modified by mosaicism. Although the alterations in the hypothalamic-pituitary-gonadal axis are important (and discussed), the emphasis here is on potential fertility and if one might predict that at various epochs within an individual's life span: fetal, 'mini'-puberty, childhood, puberty, and adulthood. The reproductive axis is often affected in females with the 47,XXX karyotype with diminished ovarian reserve and accelerated loss of ovarian function. Fewer than 5% of females with Turner syndrome have the 45,X/47,XXX karyotype. They have taller stature and less severe fertility issues compared to females with the 45,X or other forms of Turner syndrome mosaicism. For the 47,XXY karyotype, non-obstructive azoospermia is almost universal with sperm retrieval by micro-testicular sperm extraction possible in slightly fewer than half of the men. Men with the 47,XYY karyotype have normal to large testes and much less testicular dysfunction than those with the 47,XXY karyotype. They do have a slight increase in infertility compared to the reference population but not nearly as severe as those with the 47,XXY karyotype. Assisted reproductive technology, especially micro-testicular sperm extraction, has an important role, especially for those with 47,XXY; however, more recent data show promising techniques for the in vitro maturation of spermatogonial stem cells and 3D organoids in culture. Assisted reproductive technology is more complex for the female, but vitrification of oocytes has shown promising advances.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "XXX",
+        "XXY",
+        "XYY",
+        "assisted reproductive technology",
+        "fertility",
+        "in vitro spermatogenesis",
+        "sex chromosome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10448573/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10448573/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1530/EC-22-0440"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37399523/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37399523/"
+    },
+    {
+      "pmid": "24659916",
+      "doi": "",
+      "pmc_id": "PMC3922324",
+      "pmc_verify": null,
+      "title": "47,XYY Syndrome and Male Infertility.",
+      "authors": [
+        "Kim Ina W",
+        "Khadilkar Arjun C",
+        "Ko Edmund Y",
+        "Sabanegh Edmund S"
+      ],
+      "journal": "Reviews in urology",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Men with 47,XYY syndrome present with varying physical attributes and degrees of infertility. A retrospective chart review was performed on a male infertility and genetic anomaly database. Three patients with 47,XYY were found. Each presented with > 2 years of infertility. All were tall with elevated body mass indices. Scrotal findings ranged from normal to atrophic testicles. Semen analyses demonstrated oligospermia and varying endocrine profiles. Because of the diverse phenotype and potential lack of symptoms, identification and diagnosis of men with 47,XYY syndrome may be difficult. We recommend careful screening of 47,XYY patients and referral to primary physicians for long-term follow-up for increased incidence of health-related comorbidities.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Infertility syndromes"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3922324/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3922324/",
+          "verified": null
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24659916/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24659916/"
+    },
+    {
+      "pmid": "4159658",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The YY syndrome.",
+      "authors": [],
+      "journal": "Lancet (London, England)",
+      "year": "1966",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Aberrations",
+        "Chromosome Disorders",
+        "Criminology",
+        "Humans"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/4159658/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/4159658/"
+    },
+    {
+      "pmid": "32748612",
+      "doi": "10.23736/S0026-4946.20.05971-X",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Tall stature in children and adolescents.",
+      "authors": [
+        "Urakami Tatsuhiko"
+      ],
+      "journal": "Minerva pediatrica",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Tall stature is usually defined as a height beyond 97th percentile or more than 2 SD above the mean height for age and sex in a defined population. Familiar tall stature, also known as constitutional tall stature, is the most common cause of tall stature. Overnutrition, obesity, also usually causes overgrowth. Tall stature by itself is not a pathological condition, however, there are a number of disorders associated with tall stature. Some genetic disorders and syndromes may be associated with mental retardation and various complications. Therefore, recognition of tall stature and revealing the underlying pathogenic causes and making the diagnosis are important not to miss the serious conditions and to provide adequate medical care and genetic counseling. Pathological causes for tall statute include endocrine disorders, such as excessive growth hormone secretion, hyperthyroidism, precocious puberty and lipodystrophy, chromosome disorders, such as Trisomy X (47, XXX female), Klinefelter Syndrome (47, XXY), XYY syndrome (47, XYY male) and fragile X syndrome, and syndromes and metabolic disorders, such as Marfan Syndrome, Beckwith-Wiedemann Syndrome, Simpson-Golabi-Behmel Syndrome, Sotos Syndrome and homocystinuria. Children may require growth-reductive treatment if the predicted adult height would be excessive and unacceptable. Some hormonal, high doses of sex steroids, or surgical, bilateral percutaneous epiphysiodesis of the distal femur and proximal tibia and fibula, treatment is currently available to reduce adult height.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Algorithms",
+        "Body Height",
+        "Child",
+        "Chromosomes, Human, X",
+        "Endocrine System Diseases",
+        "Fragile X Syndrome",
+        "Growth Disorders",
+        "Humans",
+        "Hyperthyroidism",
+        "Intellectual Disability",
+        "Klinefelter Syndrome",
+        "Overnutrition",
+        "Puberty, Precocious",
+        "Reference Values",
+        "Sex Chromosome Aberrations",
+        "Sex Chromosome Disorders of Sex Development",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.23736/S0026-4946.20.05971-X"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32748612/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32748612/"
+    },
+    {
+      "pmid": "37098811",
+      "doi": "10.1530/EC-23-0024",
+      "pmc_id": "PMC10160544",
+      "pmc_verify": null,
+      "title": "Morbidity, mortality, and socioeconomics in Klinefelter syndrome and 47,XYY syndrome: a comparative review.",
+      "authors": [
+        "Ridder Lukas Ochsner",
+        "Berglund Agnethe",
+        "Stochholm Kirstine",
+        "Chang Simon",
+        "Gravholt Claus H"
+      ],
+      "journal": "Endocrine connections",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "CONTEXT: Klinefelter syndrome (KS, 47,XXY) and 47,XYY syndrome are genetic conditions characterized by a supernumerary sex chromosome. The conditions share many traits, but considerable phenotypic differences are seen between the two. Focusing on morbidity, mortality, and socioeconomics, this review highlights similarities and differences. METHODS: Relevant literature was identified through PubMed with the following search terms; 'Klinefelter', '47,XXY', '47,XYY', and 'Jacobs syndrome'. Included journal articles were chosen at the authors' discretion. RESULTS: KS and 47,XYY are the most common sex chromosome disorders in males, with an expected prevalence of 152 and 98 per 100,000 newborn males, respectively. Non-diagnosis is extensive, as only about 38% of KS and 18% of 47,XYY are diagnosed. Both conditions are associated with an increased mortality risk and increased risk of a variety of diseases and other health-related problems affecting virtually every organ system. Early diagnosis seems to predict a lesser comorbidity burden. Neurocognitive deficits as well as social and behavioral problems are commonly described. Both syndromes are associated with poor socioeconomicfor example, lower income and educational level and higher rates of crime. Infertility is a hallmark of KS, but fertility seems also reduced in 47,XYY. CONCLUSION: Being born as a boy with an extra X or Y chromosome is associated with increased mortality and excess morbidity, partially expressed in a sex chromosome-specific pattern.Both syndromes continue to be greatly underdiagnosed, even thoughearly intervention may improve the overall outcome. Earlier diagnosis to initiate timely counseling and treatment should be emphasized.",
+      "abstract_sections": {
+        "CONTEXT": "Klinefelter syndrome (KS, 47,XXY) and 47,XYY syndrome are genetic conditions characterized by a supernumerary sex chromosome. The conditions share many traits, but considerable phenotypic differences are seen between the two. Focusing on morbidity, mortality, and socioeconomics, this review highlights similarities and differences.",
+        "METHODS": "Relevant literature was identified through PubMed with the following search terms; 'Klinefelter', '47,XXY', '47,XYY', and 'Jacobs syndrome'. Included journal articles were chosen at the authors' discretion.",
+        "RESULTS": "KS and 47,XYY are the most common sex chromosome disorders in males, with an expected prevalence of 152 and 98 per 100,000 newborn males, respectively. Non-diagnosis is extensive, as only about 38% of KS and 18% of 47,XYY are diagnosed. Both conditions are associated with an increased mortality risk and increased risk of a variety of diseases and other health-related problems affecting virtually every organ system. Early diagnosis seems to predict a lesser comorbidity burden. Neurocognitive deficits as well as social and behavioral problems are commonly described. Both syndromes are associated with poor socioeconomicfor example, lower income and educational level and higher rates of crime. Infertility is a hallmark of KS, but fertility seems also reduced in 47,XYY.",
+        "CONCLUSION": "Being born as a boy with an extra X or Y chromosome is associated with increased mortality and excess morbidity, partially expressed in a sex chromosome-specific pattern.Both syndromes continue to be greatly underdiagnosed, even thoughearly intervention may improve the overall outcome. Earlier diagnosis to initiate timely counseling and treatment should be emphasized."
+      },
+      "mesh_terms": [],
+      "keywords": [
+        "47,XYY",
+        "Jacobs syndrome",
+        "Klinefelter syndrome",
+        "morbidity",
+        "mortality"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10160544/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10160544/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1530/EC-23-0024"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37098811/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37098811/"
+    },
+    {
+      "pmid": "38212558",
+      "doi": "10.1038/s42003-023-05642-z",
+      "pmc_id": "PMC10784527",
+      "pmc_verify": null,
+      "title": "Detection of chromosomal aneuploidy in ancient genomes.",
+      "authors": [
+        "Anastasiadou Kyriaki",
+        "Silva Marina",
+        "Booth Thomas",
+        "Speidel Leo",
+        "Audsley Tony",
+        "Barrington Christopher",
+        "Buckberry Jo",
+        "Fernandes Diana",
+        "Ford Ben",
+        "Gibson Mark",
+        "Gilardet Alexandre",
+        "Glocke Isabelle",
+        "Keefe Katie",
+        "Kelly Monica",
+        "Masters Mackenzie",
+        "McCabe Jesse",
+        "McIntyre Lauren",
+        "Ponce Paola",
+        "Rowland Stephen",
+        "Ruiz Ventura Jordi",
+        "Swali Pooja",
+        "Tait Frankie",
+        "Walker David",
+        "Webb Helen",
+        "Williams Mia",
+        "Witkin Annsofie",
+        "Holst Malin",
+        "Loe Louise",
+        "Armit Ian",
+        "Schulting Rick",
+        "Skoglund Pontus"
+      ],
+      "journal": "Communications biology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Ancient DNA is a valuable tool for investigating genetic and evolutionary history that can also provide detailed profiles of the lives of ancient individuals. In this study, we develop a generalised computational approach to detect aneuploidies (atypical autosomal and sex chromosome karyotypes) in the ancient genetic record and distinguish such karyotypes from contamination. We confirm that aneuploidies can be detected even in low-coverage genomes ( ~ 0.0001-fold), common in ancient DNA. We apply this method to ancient skeletal remains from Britain to document the first instance of mosaic Turner syndrome (45,X0/46,XX) in the ancient genetic record in an Iron Age individual sequenced to average 9-fold coverage, the earliest known incidence of an individual with a 47,XYY karyotype from the Early Medieval period, as well as individuals with Klinefelter (47,XXY) and Down syndrome (47,XY, + 21). Overall, our approach provides an accessible and automated framework allowing for the detection of individuals with aneuploidies, which extends previous binary approaches. This tool can facilitate the interpretation of burial context and living conditions, as well as elucidate past perceptions of biological sex and people with diverse biological traits.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Male",
+        "Humans",
+        "Klinefelter Syndrome",
+        "DNA, Ancient",
+        "Aneuploidy",
+        "Down Syndrome",
+        "Sex Chromosomes"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10784527/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10784527/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s42003-023-05642-z"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38212558/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38212558/"
+    },
+    {
+      "pmid": "36609636",
+      "doi": "10.1007/s12687-022-00630-y",
+      "pmc_id": "PMC9947201",
+      "pmc_verify": null,
+      "title": "Understanding the phenotypic spectrum and family experiences of XYY syndrome: Important considerations for genetic counseling.",
+      "authors": [
+        "Jodarski Colleen",
+        "Duncan Rylee",
+        "Torres Erin",
+        "Gore Rachel",
+        "Raznahan Armin",
+        "Similuk Morgan"
+      ],
+      "journal": "Journal of community genetics",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "XYY syndrome is characterized by a variable neurodevelopmental phenotype, with features including developmental delays, cognitive impairments, and an increased risk for mental health conditions. There are two recent developments that have primarily motivated this review. The first is the increased use of non-invasive prenatal screening (NIPS), which will likely result in more individuals being diagnosed with XYY prenatally. As such, health care providers (HCPs) both within genetics and outside of the specialty are more likely to encounter this diagnosis in the future. The second is advances in the understanding of the phenotypic variability of XYY through biobank and deep phenotyping efforts. As the phenotypic spectrum of XYY syndrome continues to expand, families will face greater uncertainty when receiving this diagnosis. Given both of these developments, HCPs will need to have up-to-date and accurate information about XYY to better counsel families. Furthermore, the ability to employ effective counseling techniques, such as anticipatory guidance, will aid in supporting and guiding families through the diagnostic journey. This review aims to provide insight on the neurodevelopmental and psychosocial aspects of XYY syndrome by discussing current research and borrowing from the relevant psychosocial literature of other genetic conditions. In this way, we hope to equip HCPs with the ultimate goal of improving the care and support provided to individuals with XYY and their families.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Genetic counseling",
+        "Management",
+        "Neurodevelopment",
+        "Psychosocial",
+        "XYY syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9947201/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9947201/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s12687-022-00630-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36609636/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36609636/"
+    },
+    {
+      "pmid": "18413060",
+      "doi": "10.1016/s1472-6483(10)60458-0",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Underlying karyotype abnormalities in IVF/ICSI patients.",
+      "authors": [
+        "Chantot-Bastaraud S",
+        "Ravel C",
+        "Siffroi J P"
+      ],
+      "journal": "Reproductive biomedicine online",
+      "year": "2008",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Cytogenetic investigations are performed in couples asking for IVF or intracytoplasmic sperm injection (ICSI) treatment. These serve a diagnostic purpose because male or female infertility might have a chromosomal origin. Chromosomal aberrations found in these patients include numerical abnormalities, such as Klinefelter syndrome, XYY karyotype or Turner syndrome and its variants; sex reversions, such as XX males or XY females; and also structural abnormalities, such as Robertsonian or reciprocal translocations and inversions. Finding the chromosomal origin of infertility in a patient also has a prognostic value because it aids the management of pregnancies obtained after IVF or ICSI and may lead to a proposal of prenatal or preimplantation genetic diagnosis.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Aberrations",
+        "Disorders of Sex Development",
+        "Female",
+        "Fertilization in Vitro",
+        "Heterochromatin",
+        "Humans",
+        "Infertility",
+        "Male",
+        "Polymorphism, Genetic",
+        "Pregnancy",
+        "Sex Chromosome Disorders",
+        "Sex Chromosomes",
+        "Sperm Injections, Intracytoplasmic"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s1472-6483(10)60458-0"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18413060/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18413060/"
+    },
+    {
+      "pmid": "32118782",
+      "doi": "10.1097/MD.0000000000019375",
+      "pmc_id": "PMC7478696",
+      "pmc_verify": null,
+      "title": "Reproductive outcomes of 3 infertile males with XYY syndrome: Retrospective case series and literature review.",
+      "authors": [
+        "Zhang Xinyue",
+        "Liu Xiangyin",
+        "Xi Qi",
+        "Zhu Haibo",
+        "Li Linlin",
+        "Liu Ruizhi",
+        "Yu Yang"
+      ],
+      "journal": "Medicine",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The aim of this study is to evaluate the pregnancy outcomes of males with a 47, XYY karyotype following assisted reproductive treatment.A retrospective study was performed using data from infertile men with 47, XYY at a center for reproductive medicine in 2004 to 2017. Of the 19,842 infertile males treated, a total of 21 showed the 47, XYY karyotype and were included in the present study. Clinical variables were collected. Three men were under treatment with their partner before either in vitro fertilization (IVF) or intracytoplasmic sperm injection (ICSI).The incidence of 47, XYY in infertile men is 1/945 (21/19842). Most men are azoospermic or severely oligospermic. Three men and their partners underwent IVF or ICSI treatment with fresh ejaculate samples. The fertilization rate was 52.94% to 83.33%. The embryo cleavage rate was 50% to 90%. One man had abnormal sex hormonal levels and his partner had no clinical pregnancy. The other 2 couples had healthy baby boys.Live spermatozoa can be gathered and fertility is possible for infertile males with 47, XYY syndrome when IVF or ICSI treatment is used. It is recommended that genetic counseling is provided in such cases.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Case-Control Studies",
+        "Female",
+        "Fertilization in Vitro",
+        "Humans",
+        "Infertility, Male",
+        "Male",
+        "Pregnancy",
+        "Pregnancy Outcome",
+        "Retrospective Studies",
+        "XYY Karyotype"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7478696/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7478696/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/MD.0000000000019375"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32118782/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32118782/"
+    },
+    {
+      "pmid": "23810129",
+      "doi": "10.1016/j.jpeds.2013.05.037",
+      "pmc_id": "PMC4097881",
+      "pmc_verify": null,
+      "title": "47,XYY syndrome: clinical phenotype and timing of ascertainment.",
+      "authors": [
+        "Bardsley Martha Zeger",
+        "Kowal Karen",
+        "Levy Carly",
+        "Gosek Ania",
+        "Ayari Natalie",
+        "Tartaglia Nicole",
+        "Lahlou Najiba",
+        "Winder Breanna",
+        "Grimes Shannon",
+        "Ross Judith L"
+      ],
+      "journal": "The Journal of pediatrics",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "OBJECTIVE: To describe auxologic, physical, and behavioral features in a large cohort of males with 47,XYY (XYY), ages newborn to young adult. STUDY DESIGN: This is a cross-sectional descriptive study of male subjects with XYY who were evaluated at 1 of 2 specialized academic sites. Subjects underwent a history, physical examination, laboratory testing, and cognitive/behavioral evaluation. RESULTS: In 90 males with XYY (mean age 9.6 ± 5.3 years [range 0.5-36.5]), mean height SD was above average (1.0 ± 1.2 SD). Macrocephaly (head circumference >2 SD) was noted in 28/84 (33%), hypotonia in 57/90 (63%), clinodactyly in 47/90 (52%), and hypertelorism in 53/90 (59%). There was testicular enlargement for age (>2 SD) in 41/82 (50%), but no increase in genital anomalies. No physical phenotypic differences were seen in boys diagnosed prenatally vs postnatally. Testosterone, luteinizing hormone, and follicle stimulating hormone levels were in the normal range in most boys. There was an increased incidence of asthma, seizures, tremor, and autistic spectrum disorder (ASD) compared with the general population rates. Prenatally diagnosed boys scored significantly better on cognitive testing and were less likely to be diagnosed with ASD (P < .01). CONCLUSIONS: The XYY phenotype commonly includes tall stature, macrocephaly, macroorchidism, hypotonia, hypertelorism, and tremor. Physical phenotypic features were similar in boys diagnosed prenatally vs postnatally. Prenatal diagnosis was associated with higher cognitive function and less likelihood of an ASD diagnosis.",
+      "abstract_sections": {
+        "OBJECTIVE": "To describe auxologic, physical, and behavioral features in a large cohort of males with 47,XYY (XYY), ages newborn to young adult.",
+        "STUDY DESIGN": "This is a cross-sectional descriptive study of male subjects with XYY who were evaluated at 1 of 2 specialized academic sites. Subjects underwent a history, physical examination, laboratory testing, and cognitive/behavioral evaluation.",
+        "RESULTS": "In 90 males with XYY (mean age 9.6 ± 5.3 years [range 0.5-36.5]), mean height SD was above average (1.0 ± 1.2 SD). Macrocephaly (head circumference >2 SD) was noted in 28/84 (33%), hypotonia in 57/90 (63%), clinodactyly in 47/90 (52%), and hypertelorism in 53/90 (59%). There was testicular enlargement for age (>2 SD) in 41/82 (50%), but no increase in genital anomalies. No physical phenotypic differences were seen in boys diagnosed prenatally vs postnatally. Testosterone, luteinizing hormone, and follicle stimulating hormone levels were in the normal range in most boys. There was an increased incidence of asthma, seizures, tremor, and autistic spectrum disorder (ASD) compared with the general population rates. Prenatally diagnosed boys scored significantly better on cognitive testing and were less likely to be diagnosed with ASD (P < .01).",
+        "CONCLUSIONS": "The XYY phenotype commonly includes tall stature, macrocephaly, macroorchidism, hypotonia, hypertelorism, and tremor. Physical phenotypic features were similar in boys diagnosed prenatally vs postnatally. Prenatal diagnosis was associated with higher cognitive function and less likelihood of an ASD diagnosis."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Child",
+        "Child Behavior",
+        "Child, Preschool",
+        "Cognition Disorders",
+        "Cohort Studies",
+        "Cross-Sectional Studies",
+        "Hand Deformities",
+        "Humans",
+        "Infant",
+        "Male",
+        "Megalencephaly",
+        "Muscle Hypotonia",
+        "Neuropsychological Tests",
+        "Phenotype",
+        "Sex Chromosome Disorders",
+        "Social Class",
+        "Surveys and Questionnaires",
+        "XYY Karyotype",
+        "Young Adult"
+      ],
+      "keywords": [
+        "47,XYY",
+        "ADHD",
+        "ADI-R",
+        "AMH",
+        "ASD",
+        "Anti-mullerian hormone",
+        "Attention deficit hyperactivity disorder",
+        "Autism Diagnostic Interview–Revised",
+        "Autistism spectrum disorder",
+        "BMI",
+        "Body mass index",
+        "CBCL",
+        "CDI-2",
+        "Child Behavior Checklist",
+        "Children's Depression Inventory–Second Edition",
+        "FSH",
+        "FSIQ",
+        "Follicle stimulating hormone",
+        "Full scale IQ",
+        "HC",
+        "Head circumference",
+        "LH",
+        "Luteinzing hormone",
+        "SCQ",
+        "SES",
+        "SRS",
+        "Social Communicative Questionnaire",
+        "Social Responsiveness Scale",
+        "Socioeconomic status",
+        "WC",
+        "Waist circumference",
+        "XYY"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4097881/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4097881/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jpeds.2013.05.037"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23810129/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23810129/"
+    },
+    {
+      "pmid": "32544298",
+      "doi": "10.1002/ajmg.c.31790",
+      "pmc_id": "PMC7413633",
+      "pmc_verify": null,
+      "title": "Testicular function in boys with 47,XYY and relationship to phenotype.",
+      "authors": [
+        "Davis Shanlee M",
+        "Bloy Luke",
+        "Roberts Timothy P L",
+        "Kowal Karen",
+        "Alston Amanda",
+        "Tahsin Aysha",
+        "Truxon Alyssa",
+        "Ross Judith L"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, U.S. Gov't, Non-P.H.S."
+      ],
+      "abstract": "An additional Y chromosome occurs in ~1 in 1,000 males, resulting in the karyotype 47,XYY. The phenotype includes tall stature, hypotonia, neuropsychiatric comorbidities, and an increased risk of infertility in adulthood. Little is known about testicular function in childhood and adolescence in 47,XYY. This cross-sectional study aimed to assess testicular function serum biomarkers, including total testosterone, inhibin B, and anti-mullerian hormone (AMH), in 82 boys with XYY (11.3 ± 3.8 years) compared with 66 male controls (11.6 ± 3.8 years). The association of testicular hormones with physical features, neuropsychological phenotype, and magnetoencephalography (MEG) was assessed with multiple linear regression models. Results indicate males with XYY have significantly lower inhibin B (median 84 pg/ml vs. 109 pg/ml, p = .004) and higher AMH (median 41 ng/ml vs. 29 ng/ml, p = .011); however, testosterone, testicular volume, and stretched penile length were not different from controls. In the exploratory analysis of relationships between hormone concentrations and phenotypic assessments, higher inhibin B concentrations were positively correlated with lower BMI and better cognitive, academic, and behavioral outcomes in the XYY group. Testosterone concentrations were positively associated with better behavioral outcomes in boys with XYY. Higher testosterone and inhibin B concentrations were also associated with shorter auditory latencies measured using magnetoencephalography (MEG) in XYY. With a few exceptions, testicular hormones were not associated with phenotypic outcomes in controls. In conclusion, there is evidence of subtle impaired testicular function in boys with XYY and a newly described relationship between measures of testicular function and some aspects of the XYY phenotype.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Anti-Mullerian Hormone",
+        "Brain",
+        "Child",
+        "Cross-Sectional Studies",
+        "Humans",
+        "Inhibins",
+        "Magnetoencephalography",
+        "Male",
+        "Phenotype",
+        "Sex Chromosome Disorders",
+        "Testosterone",
+        "XYY Karyotype"
+      ],
+      "keywords": [
+        "Sertoli cell function",
+        "XYY syndrome",
+        "infertility",
+        "inhibin b",
+        "testicular insufficiency"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7413633/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7413633/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.31790"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32544298/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32544298/"
+    },
+    {
+      "pmid": "41750232",
+      "doi": "10.3390/brainsci16020232",
+      "pmc_id": "PMC12938337",
+      "pmc_verify": null,
+      "title": "Neuropsychiatric Phenotype and Treatment Challenges in 47,XYY Syndrome: A Narrative Review with a Case Series of Adolescents.",
+      "authors": [
+        "D'Acunto Maria Giulia",
+        "Bosetti Chiara",
+        "Rinaldi Deianira",
+        "Ricci Marika",
+        "Berloffa Stefano",
+        "Masi Gabriele",
+        "Mucci Maria"
+      ],
+      "journal": "Brain sciences",
+      "year": "2026",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "BACKGROUND: 47,XYY syndrome is a relatively common sex chromosome aneuploidy that remains largely underdiagnosed. While its somatic phenotype is often mild, growing evidence indicates a substantial burden of neurodevelopmental and psychiatric morbidity. However, the characterization of the neuropsychiatric phenotype across development, particularly during adolescence, and the associated treatment challenges remain incomplete. OBJECTIVES: To provide a comprehensive narrative review of the neuropsychiatric phenotype of 47,XYY syndrome and to illustrate clinical complexity and treatment response through a case series of adolescents. METHODS: A narrative review of the literature was conducted focusing on genetics, neurodevelopmental and psychiatric features, neuroimaging and neurophysiology findings, clinical course, and management strategies in 47,XYY syndrome. This review is complemented by a case series of adolescents with confirmed 47,XYY karyotype, evaluated for developmental history, psychiatric comorbidity and response to pharmacological and non-pharmacological interventions. RESULTS: The literature consistently describes increased risks of language impairment, executive dysfunction, ADHD, autism spectrum traits, and emotional and behavioral dysregulation in males with 47,XYY syndrome. Psychiatric vulnerability appears to increase during adolescence and adulthood, with elevated rates of mood, psychotic, and substance use disorders. The presented cases illustrate a convergent clinical trajectory marked by early developmental delays, progressive behavioral dysregulation in adolescence and limited or inconsistent response to multiple classes of psychotropic medications, suggesting a pattern of pharmacoresistance in a subset of patients. CONCLUSIONS: 47,XYY syndrome is associated with a distinct and heterogeneous neuropsychiatric phenotype that extends beyond early neurodevelopmental disorders. Early diagnosis alone may be insufficient to prevent severe psychiatric outcomes, highlighting the need for long-term monitoring and integrated, multidisciplinary management. Further research is required to identify early predictors of high-risk trajectories and to optimize treatment strategies for this population.",
+      "abstract_sections": {
+        "BACKGROUND": "47,XYY syndrome is a relatively common sex chromosome aneuploidy that remains largely underdiagnosed. While its somatic phenotype is often mild, growing evidence indicates a substantial burden of neurodevelopmental and psychiatric morbidity. However, the characterization of the neuropsychiatric phenotype across development, particularly during adolescence, and the associated treatment challenges remain incomplete.",
+        "OBJECTIVES": "To provide a comprehensive narrative review of the neuropsychiatric phenotype of 47,XYY syndrome and to illustrate clinical complexity and treatment response through a case series of adolescents.",
+        "METHODS": "A narrative review of the literature was conducted focusing on genetics, neurodevelopmental and psychiatric features, neuroimaging and neurophysiology findings, clinical course, and management strategies in 47,XYY syndrome. This review is complemented by a case series of adolescents with confirmed 47,XYY karyotype, evaluated for developmental history, psychiatric comorbidity and response to pharmacological and non-pharmacological interventions.",
+        "RESULTS": "The literature consistently describes increased risks of language impairment, executive dysfunction, ADHD, autism spectrum traits, and emotional and behavioral dysregulation in males with 47,XYY syndrome. Psychiatric vulnerability appears to increase during adolescence and adulthood, with elevated rates of mood, psychotic, and substance use disorders. The presented cases illustrate a convergent clinical trajectory marked by early developmental delays, progressive behavioral dysregulation in adolescence and limited or inconsistent response to multiple classes of psychotropic medications, suggesting a pattern of pharmacoresistance in a subset of patients.",
+        "CONCLUSIONS": "47,XYY syndrome is associated with a distinct and heterogeneous neuropsychiatric phenotype that extends beyond early neurodevelopmental disorders. Early diagnosis alone may be insufficient to prevent severe psychiatric outcomes, highlighting the need for long-term monitoring and integrated, multidisciplinary management. Further research is required to identify early predictors of high-risk trajectories and to optimize treatment strategies for this population."
+      },
+      "mesh_terms": [],
+      "keywords": [
+        "47,XYY syndrome",
+        "Jacobs syndrome",
+        "adolescent psychiatry",
+        "antipsychotic treatment",
+        "emotional and behavioral dysregulation",
+        "intellectual disability",
+        "neurodevelopmental disorders",
+        "pharmacoresistance",
+        "psychiatric comorbidity"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12938337/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12938337/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/brainsci16020232"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41750232/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41750232/"
+    },
+    {
+      "pmid": "37399516",
+      "doi": "10.1530/EC-23-0011",
+      "pmc_id": "PMC10448593",
+      "pmc_verify": null,
+      "title": "The multi-omic landscape of sex chromosome abnormalities: current status and future directions.",
+      "authors": [
+        "Tallaksen Helene Bandsholm Leere",
+        "Johannsen Emma B",
+        "Just Jesper",
+        "Viuff Mette Hansen",
+        "Gravholt Claus H",
+        "Skakkebæk Anne"
+      ],
+      "journal": "Endocrine connections",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Sex chromosome abnormalities (SCAs) are chromosomal disorders with either a complete or partial loss or gain of sex chromosomes. The most frequent SCAs include Turner syndrome (45,X), Klinefelter syndrome (47,XXY), Trisomy X syndrome (47,XXX), and Double Y syndrome (47,XYY). The phenotype seen in SCAs is highly variable and may not merely be due to the direct genomic imbalance from altered sex chromosome gene dosage but also due to additive alterations in gene networks and regulatory pathways across the genome as well as individual genetic modifiers. This review summarizes the current insight into the genomics of SCAs. In addition, future directions of research that can contribute to decipher the genomics of SCA are discussed such as single-cell omics, spatial transcriptomics, system biology thinking, human-induced pluripotent stem cells, and animal models, and how these data may be combined to bridge the gap between genomics and the clinical phenotype.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Klinefelter syndrome",
+        "Turner syndrome",
+        "genetics",
+        "sex chromosome abnormalities"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10448593/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10448593/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1530/EC-23-0011"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37399516/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37399516/"
+    },
+    {
+      "pmid": "30896674",
+      "doi": "10.1097/WNR.0000000000001233",
+      "pmc_id": "PMC6544154",
+      "pmc_verify": null,
+      "title": "Auditory evoked response delays in children with 47,XYY syndrome.",
+      "authors": [
+        "Bloy Luke",
+        "Ku Matthew",
+        "Edgar J Christopher",
+        "Miller Judith S",
+        "Blaskey Lisa",
+        "Ross Judith",
+        "Roberts Timothy P L"
+      ],
+      "journal": "Neuroreport",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, U.S. Gov't, P.H.S."
+      ],
+      "abstract": "47,XYY syndrome (XYY) is a male sex chromosome disorder where individuals have an X chromosome and two copies of the Y chromosome. XYY is associated with a physical phenotype and carries increased risk of neurodevelopmental disorders such as autism spectrum disorder (ASD). Latencies of auditory evoked responses measured by magnetoencephalography have shown atypical prolongations in several neuropsychiatric and genetic disorders; specifically, delayed auditory responses have been observed in ASD. In this study, we investigated the associations of genotype and clinical phenotype with auditory processing. Whole cortex magnetoencephalography recorded during a passive auditory paradigm (500 Hz tones) was used to assess the auditory evoked response in three groups of male children: idiopathic ASD, typically developing, and XYY boys. Response waveforms were computed for left and right auditory cortex and latencies of the ∼50 ms (M50) and ∼100 ms (M100) components were determined. M50 latencies were significantly delayed compared with typically developing controls in children with ASD in the right hemisphere only, and in children with XYY in the left hemisphere only, irrespective of whether they met diagnostic criteria for ASD. Findings on the later M100 component trended in the same directions but did not attain significance, due to increased variance. Replicating previous findings, decreased M50 and M100 latencies with age were observed bilaterally. Overall, while XYY shares an electrophysiological phenotype (delayed evoked response latency) with idiopathic ASD, the hemispheric differences warrant further investigation.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Autism Spectrum Disorder",
+        "Child",
+        "Evoked Potentials, Auditory",
+        "Humans",
+        "Male",
+        "Sex Chromosome Disorders",
+        "XYY Karyotype"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6544154/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6544154/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/WNR.0000000000001233"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30896674/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30896674/"
+    },
+    {
+      "pmid": "37502878",
+      "doi": "10.1101/2023.06.19.23291614",
+      "pmc_id": "PMC10371113",
+      "pmc_verify": null,
+      "title": "X- vs. Y-Chromosome Influences on Human Behavior: A Deep Phenotypic Comparison of Psychopathology in XXY and XYY Syndromes.",
+      "authors": [
+        "Schaffer Lukas",
+        "Rau Srishti",
+        "Clasen Liv",
+        "Warling Allysa",
+        "Whitman Ethan T",
+        "Nadig Ajay",
+        "McDermott Cassidy",
+        "Xenophontos Anastasia",
+        "Wilson Kathleen",
+        "Blumenthal Jonathan",
+        "Torres Erin",
+        "Raznahan Armin"
+      ],
+      "journal": "medRxiv : the preprint server for health sciences",
+      "year": "2023",
+      "publication_types": [
+        "Preprint",
+        "Journal Article"
+      ],
+      "abstract": "Do different genetic disorders impart different psychiatric risk profiles? This question has major implications for biological and translational aspects of psychiatry, but has been difficult to tackle given limited access to shared batteries of fine-grained clinical data across genetic disorders. Using a new suite of generalizable analytic approaches, we examine gold-standard diagnostic ratings, scores on 66 dimensional measures of psychopathology, and measures of cognition and functioning in two different sex chromosome aneuploidies (SCAs) - Klinefelter (XXY/KS) and XYY syndrome (n=102 and 64 vs. n=74 and 60 matched XY controls, total n=300). We focus on SCAs for their high collective prevalence, informativeness regarding differential X- vs. Y-chromosome effects, and potential relevance for normative sex differences. We show that XXY/KS elevates rates for most psychiatric diagnoses as previously reported for XYY, but disproportionately so for anxiety disorders. Fine-mapping across all 66 traits provides a detailed profile of psychopathology in XXY/KS which is strongly correlated with that of XYY (r=.75 across traits) and robust to ascertainment biases, but reveals: (i) a greater penetrance of XYY than KS/XXY for most traits except mood/anxiety problems, and (ii) a disproportionate impact of XYY vs. XXY/KS on social problems. XXY/KS and XXY showed a similar coupling of psychopathology with adaptive function and caregiver strain, but not IQ. This work provides new tools for deep-phenotypic comparisons of genetic disorders in psychiatry and uses these to detail unique and shared effects of the X- and Y-chromosome on human behavior.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10371113/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10371113/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1101/2023.06.19.23291614"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37502878/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37502878/"
+    },
+    {
+      "pmid": "39981656",
+      "doi": "10.1530/EC-24-0697",
+      "pmc_id": "PMC11906151",
+      "pmc_verify": null,
+      "title": "Gonadal function in patients with 47,XYY syndrome: a systematic review and meta-analysis.",
+      "authors": [
+        "Cannarella Rossella",
+        "Pedano Andrea",
+        "Compagnone Michele",
+        "La Vignera Sandro",
+        "Condorelli Rosita A",
+        "Calogero Aldo E"
+      ],
+      "journal": "Endocrine connections",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The 47,XYY syndrome, or Jacobs syndrome, is a chromosomal disorder affecting approximately one in 1000 male births. While often asymptomatic or mildly expressed, it is associated with various physical, cognitive and behavioral features. Early studies erroneously linked the condition to aggressive behavior and elevated testosterone levels, largely based on incarcerated populations. Recent evidence contradicts this, showing testosterone levels in 47,XYY individuals are typically normal or lower than in 46,XY males. This systematic review and meta-analysis of 362 patients examine hormonal, testicular and fertility outcomes in 47,XYY syndrome. Findings reveal significantly lower testosterone levels and elevated luteinizing hormone and follicle-stimulating hormone, indicating impaired gonadal function. While testicular volumes are often normal, many patients exhibit reduced size and a notable proportion experience oligozoospermia or azoospermia. These outcomes highlight the need for counseling regarding infertility and hormonal imbalances. This review dispels the myth of 47,XYY as a 'super-male syndrome', emphasizing the complexity of hormonal, testicular and psychological factors. It underscores the importance of early diagnosis and a multidisciplinary approach to address endocrine and reproductive health. Regular monitoring for hypogonadism and consideration of assisted reproductive technologies are recommended to support affected individuals.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "47,XXY",
+        "Jacobs’ syndrome",
+        "hypogonadism",
+        "testosterone"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11906151/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11906151/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1530/EC-24-0697"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39981656/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39981656/"
+    },
+    {
+      "pmid": "5664278",
+      "doi": "10.1177/003591576806100705",
+      "pmc_id": "PMC1902730",
+      "pmc_verify": null,
+      "title": "XYY syndrome.",
+      "authors": [
+        "Price W H"
+      ],
+      "journal": "Proceedings of the Royal Society of Medicine",
+      "year": "1968",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Body Height",
+        "Criminal Psychology",
+        "Humans",
+        "Intellectual Disability",
+        "Male",
+        "Personality Disorders",
+        "Sex Chromosome Aberrations"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1902730/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1902730/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1177/003591576806100705"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/5664278/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/5664278/"
+    },
+    {
+      "pmid": "5821156",
+      "doi": "10.5694/j.1326-5377.1969.tb107190.x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The \"YY syndrome\".",
+      "authors": [
+        "Cowling D C",
+        "Rigo S",
+        "Martin F I"
+      ],
+      "journal": "The Medical journal of Australia",
+      "year": "1969",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Aggression",
+        "Criminal Psychology",
+        "Growth Disorders",
+        "Hemoglobinometry",
+        "Humans",
+        "Karyotyping",
+        "Male",
+        "Sex Characteristics",
+        "Sex Chromosome Aberrations",
+        "Testosterone",
+        "Varicose Veins"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.5694/j.1326-5377.1969.tb107190.x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/5821156/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/5821156/"
+    }
+  ],
+  "pubmed_discovery": {
+    "review": {
+      "query": "(\"Double Y syndrome\"[Title/Abstract] OR \"47,XYY syndrome\"[Title/Abstract] OR \"XYY Karyotype\"[Title/Abstract] OR \"XYY syndrome\"[Title/Abstract] OR \"YY syndrome\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "32506765",
+        "37399523",
+        "24659916",
+        "25905302",
+        "4159658"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Double Y syndrome\"[Title/Abstract] OR \"47,XYY syndrome\"[Title/Abstract] OR \"XYY Karyotype\"[Title/Abstract] OR \"XYY syndrome\"[Title/Abstract] OR \"YY syndrome\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "32491631",
+        "35015420",
+        "24659916",
+        "25905302",
+        "32748612",
+        "37098811",
+        "38212558",
+        "36609636",
+        "18413060",
+        "32118782"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Double Y syndrome\"[Title/Abstract] OR \"47,XYY syndrome\"[Title/Abstract] OR \"XYY Karyotype\"[Title/Abstract] OR \"XYY syndrome\"[Title/Abstract] OR \"YY syndrome\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "23810129",
+        "37399523",
+        "35015420",
+        "24659916",
+        "36609636",
+        "32544298",
+        "41750232",
+        "37399516",
+        "30896674",
+        "37502878"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Double Y syndrome\"[Title/Abstract] OR \"47,XYY syndrome\"[Title/Abstract] OR \"XYY Karyotype\"[Title/Abstract] OR \"XYY syndrome\"[Title/Abstract] OR \"YY syndrome\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "23810129",
+        "32491631",
+        "35015420",
+        "24659916",
+        "39981656"
+      ]
+    },
+    "general": {
+      "query": "(\"Double Y syndrome\"[Title/Abstract] OR \"47,XYY syndrome\"[Title/Abstract] OR \"XYY Karyotype\"[Title/Abstract] OR \"XYY syndrome\"[Title/Abstract] OR \"YY syndrome\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "32506765",
+        "23810129",
+        "37399523",
+        "32491631",
+        "5664278",
+        "35015420",
+        "24659916",
+        "25905302",
+        "4159658",
+        "5821156"
+      ]
+    }
+  },
+  "meta": {
+    "syndrome": "Double Y syndrome",
+    "collected_at": "2026-08-13T02:19:21.445401Z",
+    "work_dir": "output/Double_Y_syndrome/double_y_syndrome",
+    "steps": {
+      "01_disease_info": "output/Double_Y_syndrome/double_y_syndrome/01_disease_info.json",
+      "02_articles": "output/Double_Y_syndrome/double_y_syndrome/02_articles.json",
+      "03_markers": "output/Double_Y_syndrome/double_y_syndrome/03_markers.json"
+    },
+    "annotation_sources": {
+      "medgen": "NCBI MedGen HTML (공개)",
+      "pubmed": "NCBI PubMed ESearch+EFetch (공개)",
+      "ncbi_gene": "NCBI Gene ESearch+ESummary",
+      "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+      "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+      "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+    }
+  }
+}

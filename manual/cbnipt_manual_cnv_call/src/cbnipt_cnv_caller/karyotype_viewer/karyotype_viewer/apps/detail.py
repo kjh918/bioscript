@@ -157,9 +157,9 @@ _DETAIL_MESSAGE_JS = r"""
 # Helpers
 # ---------------------------------------------------------------------------
 _PILL_MAP = {
-    "HIGH_RISK":  ("phr", "HIGH_RISK"),
-    "SUSPECTED":("pmo", "SUSPECTED"),
-    "LOW_RISK":    ("plr", "LOW_RISK"),
+    "ABNORMAL":  ("phr", "ABNORMAL"),
+    "SUSPICIOUS":("pmo", "SUSPICIOUS"),
+    "NORMAL":    ("plr", "NORMAL"),
     "UNKNOWN":   ("pnc", "UNKNOWN"),
 }
 _GROUP_ORDER = ["Autosome Abnormality", "Sex Chromosome Abnormality", "Micro Deletion"]
@@ -179,15 +179,15 @@ def _parse_bp(value, default: int = 0) -> int:
 def _overall_call(syndromes: dict) -> tuple[str, str, str, str]:
     """(css_class, icon, title, desc)"""
     calls = [s.call for s in syndromes.values()]
-    abn  = [s.syndrome for s in syndromes.values() if s.call == "HIGH_RISK"]
-    susp = [s.syndrome for s in syndromes.values() if s.call == "SUSPECTED"]
-    if "HIGH_RISK" in calls:
+    abn  = [s.syndrome for s in syndromes.values() if s.call == "ABNORMAL"]
+    susp = [s.syndrome for s in syndromes.values() if s.call == "SUSPICIOUS"]
+    if "ABNORMAL" in calls:
         desc = f"{', '.join(abn)} — 이상 소견 확인."
         if susp: desc += f" 추가 확인 필요: {', '.join(susp)}."
-        return "hr", "⚠", "HIGH_RISK — 이상 소견 확인", desc
-    if "SUSPECTED" in calls:
-        return "mo", "〜", "SUSPECTED — 추가 확인 필요", f"{', '.join(susp)}"
-    return "lr", "✓", "LOW_RISK — 이상 소견 없음", "검사한 전 항목에서 이상 소견이 관찰되지 않았습니다."
+        return "hr", "⚠", "ABNORMAL — 이상 소견 확인", desc
+    if "SUSPICIOUS" in calls:
+        return "mo", "〜", "SUSPICIOUS — 추가 확인 필요", f"{', '.join(susp)}"
+    return "lr", "✓", "NORMAL — 이상 소견 없음", "검사한 전 항목에서 이상 소견이 관찰되지 않았습니다."
 
 
 def _syndrome_table(syndromes: dict) -> html.Table:

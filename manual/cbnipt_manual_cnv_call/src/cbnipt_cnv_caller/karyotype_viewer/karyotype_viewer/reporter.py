@@ -87,7 +87,7 @@ def _build_manifest(
                 "cnv_file":      (
                     f"/api/cnv/{s.primary_chrom}" if mode == "inline"
                     else f"data/cnv/chr{s.primary_chrom}.tsv"
-                ) if s.primary_chrom in affected_chroms else None,
+                ) if s.primary_chrom in CHROM_SIZES else None,
                 "features": features,
             })
 
@@ -220,7 +220,8 @@ def save_report_dir(
 
     # 3. affected chroms
     affected = sorted(
-        {s.primary_chrom for s in syndromes.values() if s.primary_chrom in CHROM_SIZES},
+        {s.primary_chrom for s in syndromes.values() if s.primary_chrom in CHROM_SIZES}
+        | {c for c in cnv_data.keys() if c in CHROM_SIZES},   # cnv_data 있으면 추가
         key=lambda c: (int(c) if c.isdigit() else 100 + ord(c[0])),
     )
     chroms_to_export = affected if affected_only else list(CHROM_SIZES.keys())

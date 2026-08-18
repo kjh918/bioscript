@@ -2,12 +2,9 @@
     --bam /storage/home/jhkim/workspace/test/projects/NIPT/260729-GCX-NIPT-PieplineSetup/Results/SRR19224105/bam/SRR19224105.analysisReady.bam \
     --out-dir  /storage/home/jhkim/workspace/test/projects/NIPT/260729-GCX-NIPT-PieplineSetup/Results/WPS \
     --bin-bed  /storage/home/jhkim/Projects/NIPT/GCX-NIPT-260121/Resources/reference/Binning/hg38.fa.bin_100.0K.bed.gz \
-    --marker-bed /storage/home/jhkim/workspace/test/projects/NIPT/260729-GCX-NIPT-PieplineSetup/Results/WPS/temp.bed \
+    --marker-bed /storage/home/jhkim/workspace/test/projects/NIPT/260729-GCX-NIPT-PieplineSetup/Resources/local/refs/merged_marker.bed \
     --fasta    /storage/references_and_index/hg38/fasta/cbNIPT/hg38.fa \
     --vcf    /storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Resources/reference/KOVA_v7/kova_sites_vcf/KOVA_v7_merged.vcf.gz \
     --bw       /storage/home/jhkim/Projects/NIPT/GCX-NIPT-260121/Resources/reference/hg38.100mer.bw \
     --bin-size 100000 --jobs 8 \
-    --wps-mode L S \
-    --wps-frag long short \
-    --wps-extend 2000 \
     --sample-id SRR19224105 --resume

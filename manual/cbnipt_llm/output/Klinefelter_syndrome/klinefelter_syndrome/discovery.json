@@ -1,0 +1,2441 @@
+{
+  "disease_info": {
+    "syndrome": "Klinefelter syndrome",
+    "definition": "Klinefelter syndrome, also called 47,XXY, is a chromosomal condition that affects male development. The signs and symptoms of Klinefelter syndrome vary. In some cases, the features are so mild that the condition is not diagnosed until puberty or adulthood. Researchers believe that up to 65 percent of people with Klinefelter syndrome are never diagnosed. Individuals with Klinefelter syndrome typically have small testes that produce a reduced amount of testosterone (primary testicular insufficiency). Testosterone is the hormone that directs male sexual development before birth and during puberty. A small percentage of affected individuals are born with undescended testes (cryptorchidism). Without treatment, the shortage of testosterone can lead to delayed or incomplete puberty, breast enlargement (gynecomastia), decreased muscle mass, decreased bone density, a reduced amount of facial and body hair, and fatigue. Klinefelter syndrome can make it difficult for people with this condition to have biological children (a condition called infertility), but up to half of people with Klinefelter syndrome may be able to have children using assisted reproductive technologies..Â The other physical changes associated with Klinefelter syndrome are usually subtle. Most commonly, affected individuals are taller than average and 2 to 3 inches taller than would be expected for their family. Other features can include curved pinky fingers (fifth finger clinodactyly), flat feet (pes planus), and, less commonly, abnormal fusion of certain bones in the forearm (radioulnar synostosis). Children with Klinefelter syndrome may have low muscle tone (hypotonia), difficulty coordinating movements, and mild delays of certain developmental skills, such as rolling over or walking. Affected children have an increased risk of mild delays in speech and language development. People with Klinefelter syndrome tend to have better receptive language skills (the ability to understand speech) than expressive language skills (vocabulary and the production of speech) and may have difficulty communicating and expressing themselves. Affected individuals have an increased risk for learning disabilities, most commonly problems with reading (dyslexia) and written expression. People with Klinefelter syndrome very rarely have intellectual disabilities.Â Individuals with Klinefelter syndrome may have have anxiety, depression, Â impaired social skills, or behavioral differences, such as emotional immaturity during childhood or difficulty with frustration. Affected individuals also have an increased risk for attention-deficit/hyperactivity disorder (ADHD), though they tend to have problems with attention and distractability rather than hyperactivity. People with Klinefelter syndrome are more likely than those without Klinefelter syndrome to have autism spectrum disorder, which is a developmental disorder that affects communication and social interaction. People with Klinefelter syndrome have an increased risk of developing metabolic syndrome, which is a group of conditions that include high blood glucose levels during prolonged periods without food (fasting), high blood pressure (hypertension), increased belly fat, and high levels of fats (lipids) such as cholesterol and triglycerides in the blood. Compared with unaffected people, adults with Klinefelter syndrome also have an increased risk of developing involuntary trembling (tremors) in their arms or hands, breast cancer (if gynecomastia develops), thinning and weakening of the bones (osteoporosis), and autoimmune disorders such as systemic lupus erythematosus and rheumatoid arthritis. Autoimmune disorders are a large group of conditions that occur when the immune system attacks the body's own tissues and organs. [from MedlinePlus Genetics]",
+    "synonyms": [
+      "47,XXY",
+      "Klinefelter's syndrome, XXY",
+      "XXY syndrome",
+      "XXY trisomy"
+    ],
+    "db_ids": {
+      "SNOMED-CT": "405769009",
+      "MONDO": "MONDO:0006823"
+    },
+    "gene_locations": [],
+    "genomic_targets": [
+      {
+        "type": "TargetChromosome",
+        "chromosome": "chrX",
+        "cytoband": "X",
+        "event": "gain",
+        "mechanism": "trisomy",
+        "source": "karyotype_notation"
+      },
+      {
+        "type": "TargetChromosome",
+        "chromosome": "chrY",
+        "cytoband": "Y",
+        "event": "gain",
+        "mechanism": "trisomy",
+        "source": "karyotype_notation"
+      }
+    ],
+    "genereview_url": null,
+    "literature": {
+      "pubmed": {
+        "papers": [
+          {
+            "pmid": "40314150",
+            "title": "Update on Physical, Psychological, and Quality of Life Management in Klinefelter Syndrome.",
+            "authors": "Mehmet B, Dwyer AA, Jayasena CN, Gillard S, Llahana S",
+            "journal": "J Clin Endocrinol Metab",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40314150/"
+          },
+          {
+            "pmid": "35353710",
+            "title": "Pubertal induction and transition to adult sex hormone replacement in patients with congenital pituitary or gonadal reproductive hormone deficiency: an Endo-ERN clinical practice guideline.",
+            "authors": "Nordenström A, Ahmed SF, van den Akker E, Blair J, Bonomi M, Brachet C, Broersen LHA, Claahsen-van der Grinten HL, Dessens AB, Gawlik A, Gravholt CH, Juul A, Krausz C, Raivio T, Smyth A, Touraine P, Vitali D, Dekkers OM",
+            "journal": "Eur J Endocrinol",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35353710/"
+          },
+          {
+            "pmid": "32959490",
+            "title": "European academy of andrology guidelines on Klinefelter Syndrome Endorsing Organization: European Society of Endocrinology.",
+            "authors": "Zitzmann M, Aksglaede L, Corona G, Isidori AM, Juul A, T'Sjoen G, Kliesch S, D'Hauwers K, Toppari J, Słowikowska-Hilczer J, Tüttelmann F, Ferlin A",
+            "journal": "Andrology",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32959490/"
+          }
+        ],
+        "see_all": {}
+      },
+      "etiology": {
+        "papers": [
+          {
+            "pmid": "40314150",
+            "title": "Update on Physical, Psychological, and Quality of Life Management in Klinefelter Syndrome.",
+            "authors": "Mehmet B, Dwyer AA, Jayasena CN, Gillard S, Llahana S",
+            "journal": "J Clin Endocrinol Metab",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40314150/"
+          },
+          {
+            "pmid": "39932051",
+            "title": "New Horizons in Klinefelter Syndrome: Current Evidence, Gaps, and Research Priorities.",
+            "authors": "Lucas-Herald AK, Aksglaede L, Caspersen ID, Ahmed SF, Carlomagno F, Isidori AM",
+            "journal": "Endocr Rev",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39932051/"
+          },
+          {
+            "pmid": "35948402",
+            "title": "Klinefelter syndrome: going beyond the diagnosis.",
+            "authors": "Butler G, Srirangalingam U, Faithfull J, Sangster P, Senniappan S, Mitchell R",
+            "journal": "Arch Dis Child",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35948402/"
+          },
+          {
+            "pmid": "27644703",
+            "title": "Klinefelter syndrome (KS): genetics, clinical phenotype and hypogonadism.",
+            "authors": "Bonomi M, Rochira V, Pasquali D, Balercia G, Jannini EA, Ferlin A; Klinefelter ItaliaN Group (KING)",
+            "journal": "J Endocrinol Invest",
+            "year": "2017",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27644703/"
+          },
+          {
+            "pmid": "23118429",
+            "title": "Clinical review: Klinefelter syndrome--a clinical update.",
+            "authors": "Groth KA, Skakkebæk A, Høst C, Gravholt CH, Bojesen A",
+            "journal": "J Clin Endocrinol Metab",
+            "year": "2013",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23118429/"
+          }
+        ],
+        "see_all": {}
+      },
+      "diagnosis": {
+        "papers": [
+          {
+            "pmid": "39932051",
+            "title": "New Horizons in Klinefelter Syndrome: Current Evidence, Gaps, and Research Priorities.",
+            "authors": "Lucas-Herald AK, Aksglaede L, Caspersen ID, Ahmed SF, Carlomagno F, Isidori AM",
+            "journal": "Endocr Rev",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39932051/"
+          },
+          {
+            "pmid": "39806878",
+            "title": "Klinefelter Syndrome: A Review.",
+            "authors": "Blackburn J, Ramakrishnan A, Graham C, Bambang K, Sriranglingam U, Senniappan S",
+            "journal": "Clin Endocrinol (Oxf)",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39806878/"
+          },
+          {
+            "pmid": "35948402",
+            "title": "Klinefelter syndrome: going beyond the diagnosis.",
+            "authors": "Butler G, Srirangalingam U, Faithfull J, Sangster P, Senniappan S, Mitchell R",
+            "journal": "Arch Dis Child",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35948402/"
+          },
+          {
+            "pmid": "23118429",
+            "title": "Clinical review: Klinefelter syndrome--a clinical update.",
+            "authors": "Groth KA, Skakkebæk A, Høst C, Gravholt CH, Bojesen A",
+            "journal": "J Clin Endocrinol Metab",
+            "year": "2013",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23118429/"
+          },
+          {
+            "pmid": "15262106",
+            "title": "Klinefelter's syndrome.",
+            "authors": "Lanfranco F, Kamischke A, Zitzmann M, Nieschlag E",
+            "journal": "Lancet",
+            "year": "2004",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15262106/"
+          }
+        ],
+        "see_all": {}
+      },
+      "therapy": {
+        "papers": [
+          {
+            "pmid": "42207626",
+            "title": "Adult Male Hypogonadism: A Review.",
+            "authors": "Anawalt BD, O'Connor KM, Grossmann M",
+            "journal": "JAMA",
+            "year": "2026",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42207626/"
+          },
+          {
+            "pmid": "39932051",
+            "title": "New Horizons in Klinefelter Syndrome: Current Evidence, Gaps, and Research Priorities.",
+            "authors": "Lucas-Herald AK, Aksglaede L, Caspersen ID, Ahmed SF, Carlomagno F, Isidori AM",
+            "journal": "Endocr Rev",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39932051/"
+          },
+          {
+            "pmid": "37592101",
+            "title": "Gynecomastia.",
+            "authors": "Ayyavoo A",
+            "journal": "Indian J Pediatr",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37592101/"
+          },
+          {
+            "pmid": "35948402",
+            "title": "Klinefelter syndrome: going beyond the diagnosis.",
+            "authors": "Butler G, Srirangalingam U, Faithfull J, Sangster P, Senniappan S, Mitchell R",
+            "journal": "Arch Dis Child",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35948402/"
+          },
+          {
+            "pmid": "15262106",
+            "title": "Klinefelter's syndrome.",
+            "authors": "Lanfranco F, Kamischke A, Zitzmann M, Nieschlag E",
+            "journal": "Lancet",
+            "year": "2004",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15262106/"
+          }
+        ],
+        "see_all": {}
+      },
+      "prognosis": {
+        "papers": [
+          {
+            "pmid": "39899286",
+            "title": "Testicular Germ Cell Tumors: A Review.",
+            "authors": "Singla N, Bagrodia A, Baraban E, Fankhauser CD, Ged YMA",
+            "journal": "JAMA",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39899286/"
+          },
+          {
+            "pmid": "32484281",
+            "title": "Epigenetics and genomics in Klinefelter syndrome.",
+            "authors": "Skakkebaek A, Viuff M, Nielsen MM, Gravholt CH",
+            "journal": "Am J Med Genet C Semin Med Genet",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32484281/"
+          },
+          {
+            "pmid": "31587581",
+            "title": "Fertility management of Klinefelter syndrome.",
+            "authors": "Fainberg J, Hayden RP, Schlegel PN",
+            "journal": "Expert Rev Endocrinol Metab",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31587581/"
+          },
+          {
+            "pmid": "31266283",
+            "title": "Klinefelter's syndrome and taurodontism.",
+            "authors": "Giambersio E, Barile V, Giambersio AM",
+            "journal": "Arch Ital Urol Androl",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31266283/"
+          },
+          {
+            "pmid": "9645824",
+            "title": "Klinefelter syndrome.",
+            "authors": "Smyth CM, Bremner WJ",
+            "journal": "Arch Intern Med",
+            "year": "1998",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9645824/"
+          }
+        ],
+        "see_all": {}
+      },
+      "clinical_prediction": {
+        "papers": [
+          {
+            "pmid": "42207626",
+            "title": "Adult Male Hypogonadism: A Review.",
+            "authors": "Anawalt BD, O'Connor KM, Grossmann M",
+            "journal": "JAMA",
+            "year": "2026",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42207626/"
+          },
+          {
+            "pmid": "39899286",
+            "title": "Testicular Germ Cell Tumors: A Review.",
+            "authors": "Singla N, Bagrodia A, Baraban E, Fankhauser CD, Ged YMA",
+            "journal": "JAMA",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39899286/"
+          },
+          {
+            "pmid": "31587581",
+            "title": "Fertility management of Klinefelter syndrome.",
+            "authors": "Fainberg J, Hayden RP, Schlegel PN",
+            "journal": "Expert Rev Endocrinol Metab",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31587581/"
+          },
+          {
+            "pmid": "31367971",
+            "title": "Klinefelter Syndrome and Diabetes.",
+            "authors": "O'Connor MJ, Snyder EA, Hayes FJ",
+            "journal": "Curr Diab Rep",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31367971/"
+          },
+          {
+            "pmid": "31266283",
+            "title": "Klinefelter's syndrome and taurodontism.",
+            "authors": "Giambersio E, Barile V, Giambersio AM",
+            "journal": "Arch Ital Urol Androl",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31266283/"
+          }
+        ],
+        "see_all": {}
+      },
+      "systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "38128110",
+            "title": "Gonadotropins for pubertal induction in males with hypogonadotropic hypogonadism: systematic review and meta-analysis.",
+            "authors": "Alexander EC, Faruqi D, Farquhar R, Unadkat A, Ng Yin K, Hoskyns R, Varughese R, Howard SR",
+            "journal": "Eur J Endocrinol",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38128110/"
+          },
+          {
+            "pmid": "35394664",
+            "title": "Clinical features and prevalence of Klinefelter syndrome in transgender individuals: A systematic review.",
+            "authors": "Liang B, Cheung AS, Nolan BJ",
+            "journal": "Clin Endocrinol (Oxf)",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35394664/"
+          },
+          {
+            "pmid": "34498060",
+            "title": "A systematic review of the validated monogenic causes of human male infertility: 2020 update and a discussion of emerging gene-disease relationships.",
+            "authors": "Houston BJ, Riera-Escamilla A, Wyrwoll MJ, Salas-Huetos A, Xavier MJ, Nagirnaja L, Friedrich C, Conrad DF, Aston KI, Krausz C, Tüttelmann F, O'Bryan MK, Veltman JA, Oud MS",
+            "journal": "Hum Reprod Update",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34498060/"
+          },
+          {
+            "pmid": "29680294",
+            "title": "Klinefelter Syndrome. The Effects of Early Androgen Therapy on Competence and Behavioral Phenotype.",
+            "authors": "Flannigan R, Patel P, Paduch DA",
+            "journal": "Sex Med Rev",
+            "year": "2018",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29680294/"
+          },
+          {
+            "pmid": "28782868",
+            "title": "Klinefelter's syndrome and sexual offending - A literature review.",
+            "authors": "O'Donovan R, Völlm B",
+            "journal": "Crim Behav Ment Health",
+            "year": "2018",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28782868/"
+          }
+        ],
+        "see_all": {}
+      }
+    },
+    "medgen_uid": "44033",
+    "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/44033"
+  },
+  "db_ids": {
+    "SNOMED-CT": "405769009",
+    "MONDO": "MONDO:0006823"
+  },
+  "markers": [
+    {
+      "feature_type": "TargetChromosome",
+      "feature_name": "chrX",
+      "chromosome": "chrX",
+      "cytoband": "X",
+      "genomic_pos": {
+        "chromosome": "chrX",
+        "start": 1,
+        "end": 156040895,
+        "assembly": "GRCh38"
+      },
+      "event": "gain",
+      "mechanism": "trisomy",
+      "confidence": "medium",
+      "source": [
+        "karyotype_notation",
+        "hg38_chromosome"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "TargetChromosome",
+      "feature_name": "chrY",
+      "chromosome": "chrY",
+      "cytoband": "Y",
+      "genomic_pos": {
+        "chromosome": "chrY",
+        "start": 1,
+        "end": 57227415,
+        "assembly": "GRCh38"
+      },
+      "event": "gain",
+      "mechanism": "trisomy",
+      "confidence": "medium",
+      "source": [
+        "karyotype_notation",
+        "hg38_chromosome"
+      ],
+      "annotation": null
+    }
+  ],
+  "evidence_literature": [
+    {
+      "pmid": "40314150",
+      "doi": "10.1210/clinem/dgaf261",
+      "pmc_id": "PMC12261102",
+      "pmc_verify": null,
+      "title": "Update on Physical, Psychological, and Quality of Life Management in Klinefelter Syndrome.",
+      "authors": [
+        "Mehmet Brien",
+        "Dwyer Andrew A",
+        "Jayasena Channa N",
+        "Gillard Steve",
+        "Llahana Sofia"
+      ],
+      "journal": "The Journal of clinical endocrinology and metabolism",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "CONTEXT: Klinefelter syndrome (KS), most commonly arises from a 47,XXY karyotype. While KS affects around 1 in 450 to 600 male births, an estimated 50% to 75% of cases go undiagnosed. Individuals with KS are at increased risk of metabolic, cardiovascular, and reproductive comorbidities, increasing mortality risk, psychological burden, and significantly diminished health-related quality of life (HR-QoL) compared to healthy controls. We provide an updated review of the recent literature on the clinical management for people with KS, associated comorbidities, and the implications on HR-QoL. EVIDENCE ACQUISITION: A comprehensive literature search was conducted of key databases MEDLINE, CINAHL, Cochrane, Psychinfo, and EMBASE, followed by a gray search of relevant key papers in KS with medical guideline organizations being searched online and, where available, their publications and proposed guidelines being assessed. All databases were searched from their inception until December 2024, and English-language restrictions applied. EVIDENCE SYNTHESIS: Current evidence highlights the need for early detection, the importance of appropriate medication management, and multidisciplinary care to address infertility, cancer risks, neurocognitive deficits, and adverse mental health. Lifespan-specific interventions remain underexplored, necessitating further research to optimize outcomes and refine clinical guidelines. CONCLUSION: KS management is guided by only one endorsed guideline. International and interprofessional collaboration is needed to develop consensus documents. Existing guidelines pay minimal attention to the numerous HR-QoL challenges, overlooking the effect and diagnosis of psychological comorbidities. Enhancing HR-QoL and optimizing physical and mental well-being should be prioritized to improve HR-QoL outcomes in people with KS.",
+      "abstract_sections": {
+        "CONTEXT": "Klinefelter syndrome (KS), most commonly arises from a 47,XXY karyotype. While KS affects around 1 in 450 to 600 male births, an estimated 50% to 75% of cases go undiagnosed. Individuals with KS are at increased risk of metabolic, cardiovascular, and reproductive comorbidities, increasing mortality risk, psychological burden, and significantly diminished health-related quality of life (HR-QoL) compared to healthy controls. We provide an updated review of the recent literature on the clinical management for people with KS, associated comorbidities, and the implications on HR-QoL.",
+        "EVIDENCE ACQUISITION": "A comprehensive literature search was conducted of key databases MEDLINE, CINAHL, Cochrane, Psychinfo, and EMBASE, followed by a gray search of relevant key papers in KS with medical guideline organizations being searched online and, where available, their publications and proposed guidelines being assessed. All databases were searched from their inception until December 2024, and English-language restrictions applied.",
+        "EVIDENCE SYNTHESIS": "Current evidence highlights the need for early detection, the importance of appropriate medication management, and multidisciplinary care to address infertility, cancer risks, neurocognitive deficits, and adverse mental health. Lifespan-specific interventions remain underexplored, necessitating further research to optimize outcomes and refine clinical guidelines.",
+        "CONCLUSION": "KS management is guided by only one endorsed guideline. International and interprofessional collaboration is needed to develop consensus documents. Existing guidelines pay minimal attention to the numerous HR-QoL challenges, overlooking the effect and diagnosis of psychological comorbidities. Enhancing HR-QoL and optimizing physical and mental well-being should be prioritized to improve HR-QoL outcomes in people with KS."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Klinefelter Syndrome",
+        "Quality of Life",
+        "Male"
+      ],
+      "keywords": [
+        "Klinefelter syndrome",
+        "clinical guidelines",
+        "quality of life"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12261102/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12261102/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1210/clinem/dgaf261"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40314150/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40314150/"
+    },
+    {
+      "pmid": "35353710",
+      "doi": "10.1530/EJE-22-0073",
+      "pmc_id": "PMC9066594",
+      "pmc_verify": null,
+      "title": "Pubertal induction and transition to adult sex hormone replacement in patients with congenital pituitary or gonadal reproductive hormone deficiency: an Endo-ERN clinical practice guideline.",
+      "authors": [
+        "Nordenström A",
+        "Ahmed S F",
+        "van den Akker E",
+        "Blair J",
+        "Bonomi M",
+        "Brachet C",
+        "Broersen L H A",
+        "Claahsen-van der Grinten H L",
+        "Dessens A B",
+        "Gawlik A",
+        "Gravholt C H",
+        "Juul A",
+        "Krausz C",
+        "Raivio T",
+        "Smyth A",
+        "Touraine P",
+        "Vitali D",
+        "Dekkers O M"
+      ],
+      "journal": "European journal of endocrinology",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "abstract": "An Endo-European Reference Network guideline initiative was launched including 16 clinicians experienced in endocrinology, pediatric and adult and 2 patient representatives. The guideline was endorsed by the European Society for Pediatric Endocrinology, the European Society for Endocrinology and the European Academy of Andrology. The aim was to create practice guidelines for clinical assessment and puberty induction in individuals with congenital pituitary or gonadal hormone deficiency. A systematic literature search was conducted, and the evidence was graded according to the Grading of Recommendations, Assessment, Development and Evaluation system. If the evidence was insufficient or lacking, then the conclusions were based on expert opinion. The guideline includes recommendations for puberty induction with oestrogen or testosterone. Publications on the induction of puberty with follicle-stimulation hormone and human chorionic gonadotrophin in hypogonadotropic hypogonadism are reviewed. Specific issues in individuals with Klinefelter syndrome or androgen insensitivity syndrome are considered. The expert panel recommends that pubertal induction or sex hormone replacement to sustain puberty should be cared for by a multidisciplinary team. Children with a known condition should be followed from the age of 8 years for girls and 9 years for boys. Puberty induction should be individualised but considered at 11 years in girls and 12 years in boys. Psychological aspects of puberty and fertility issues are especially important to address in individuals with sex development disorders or congenital pituitary deficiencies. The transition of these young adults highlights the importance of a multidisciplinary approach, to discuss both medical issues and social and psychological issues that arise in the context of these chronic conditions.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Female",
+        "Gonadal Steroid Hormones",
+        "Hormone Replacement Therapy",
+        "Humans",
+        "Hypogonadism",
+        "Male",
+        "Pituitary Diseases",
+        "Puberty",
+        "Puberty, Delayed",
+        "Testosterone",
+        "Young Adult"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9066594/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9066594/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1530/EJE-22-0073"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35353710/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35353710/"
+    },
+    {
+      "pmid": "32959490",
+      "doi": "10.1111/andr.12909",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "European academy of andrology guidelines on Klinefelter Syndrome Endorsing Organization: European Society of Endocrinology.",
+      "authors": [
+        "Zitzmann Michael",
+        "Aksglaede Lise",
+        "Corona Giovanni",
+        "Isidori Andrea M",
+        "Juul Anders",
+        "T'Sjoen Guy",
+        "Kliesch Sabine",
+        "D'Hauwers Kathleen",
+        "Toppari Jorma",
+        "Słowikowska-Hilczer Jolanta",
+        "Tüttelmann Frank",
+        "Ferlin Alberto"
+      ],
+      "journal": "Andrology",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
+      ],
+      "abstract": "BACKGROUND: Knowledge about Klinefelter syndrome (KS) has increased substantially since its first description almost 80 years ago. A variety of treatment options concerning the spectrum of symptoms associated with KS exists, also regarding aspects beyond testicular dysfunction. Nevertheless, the diagnostic rate is still low in relation to prevalence and no international guidelines are available for KS. OBJECTIVE: To create the first European Academy of Andrology (EAA) guidelines on KS. METHODS: An expert group of academicians appointed by the EAA generated a consensus guideline according to the GRADE (Grading of Recommendations, Assessment, Development and Evaluation) system. RESULTS: Clinical features are highly variable among patients with KS, although common characteristics are severely attenuated spermatogenesis and Leydig cell impairment, resulting in azoospermia and hypergonadotropic hypogonadism. In addition, various manifestations of neurocognitive and psychosocial phenotypes have been described as well as an increased prevalence of adverse cardiovascular, metabolic and bone-related conditions which might explain the increased morbidity/mortality in KS. Moreover, compared to the general male population, a higher prevalence of dental, coagulation and autoimmune disorders is likely to exist in patients with KS. Both genetic and epigenetic effects due to the supernumerary X chromosome as well as testosterone deficiency contribute to this pathological pattern. The majority of patients with KS is diagnosed during adulthood, but symptoms can already become obvious during infancy, childhood or adolescence. The paediatric and juvenile patients with KS require specific attention regarding their development and fertility. CONCLUSION: These guidelines provide recommendations and suggestions to care for patients with KS in various developmental stages ranging from childhood and adolescence to adulthood. This advice is based on recent research data and respective evaluations as well as validations performed by a group of experts.",
+      "abstract_sections": {
+        "BACKGROUND": "Knowledge about Klinefelter syndrome (KS) has increased substantially since its first description almost 80 years ago. A variety of treatment options concerning the spectrum of symptoms associated with KS exists, also regarding aspects beyond testicular dysfunction. Nevertheless, the diagnostic rate is still low in relation to prevalence and no international guidelines are available for KS.",
+        "OBJECTIVE": "To create the first European Academy of Andrology (EAA) guidelines on KS.",
+        "METHODS": "An expert group of academicians appointed by the EAA generated a consensus guideline according to the GRADE (Grading of Recommendations, Assessment, Development and Evaluation) system.",
+        "RESULTS": "Clinical features are highly variable among patients with KS, although common characteristics are severely attenuated spermatogenesis and Leydig cell impairment, resulting in azoospermia and hypergonadotropic hypogonadism. In addition, various manifestations of neurocognitive and psychosocial phenotypes have been described as well as an increased prevalence of adverse cardiovascular, metabolic and bone-related conditions which might explain the increased morbidity/mortality in KS. Moreover, compared to the general male population, a higher prevalence of dental, coagulation and autoimmune disorders is likely to exist in patients with KS. Both genetic and epigenetic effects due to the supernumerary X chromosome as well as testosterone deficiency contribute to this pathological pattern. The majority of patients with KS is diagnosed during adulthood, but symptoms can already become obvious during infancy, childhood or adolescence. The paediatric and juvenile patients with KS require specific attention regarding their development and fertility.",
+        "CONCLUSION": "These guidelines provide recommendations and suggestions to care for patients with KS in various developmental stages ranging from childhood and adolescence to adulthood. This advice is based on recent research data and respective evaluations as well as validations performed by a group of experts."
+      },
+      "mesh_terms": [
+        "Andrology",
+        "Humans",
+        "Klinefelter Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/andr.12909"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32959490/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32959490/"
+    },
+    {
+      "pmid": "39932051",
+      "doi": "10.1210/endrev/bnaf005",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "New Horizons in Klinefelter Syndrome: Current Evidence, Gaps, and Research Priorities.",
+      "authors": [
+        "Lucas-Herald Angela K",
+        "Aksglaede Lise",
+        "Caspersen Ida Dyhr",
+        "Ahmed S Faisal",
+        "Carlomagno Francesco",
+        "Isidori Andrea M"
+      ],
+      "journal": "Endocrine reviews",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Klinefelter syndrome (KS) is caused by the presence of a supernumerary X chromosome (conferring the classical 47,XXY karyotype) and is the most common sex chromosome abnormality in men. The clinical features described in the early characterization of the syndrome include tall stature, small testes, hypogonadism, gynecomastia, and neurodevelopmental deficits. However, the syndrome presents a broad phenotypic spectrum that seems to be evolving, along with environmental and general health changes. Although a proportion of men with KS are asymptomatic, others experience numerous severe comorbidities, ranging from cardiovascular to autoimmune disorders. Once considered a hallmark of the syndrome, the inability to conceive can now be overcome with assisted reproductive technology. The neuropsychological stigmata, once overstated, thereafter inadvertently dismissed, now demand a more balanced and objective approach. Significant advances have been made in our understanding of KS over recent years, including the molecular machinery involved in the chromosomal disjunction that gives rise to the syndrome. Our understanding of the risk-benefit of testosterone replacement therapy has greatly improved; however, many gaps persist. Future work should be prioritized according to the needs of people with KS. There are opportunities for new research addressing the fields of fertility, cardiovascular prevention, neurodevelopment, quality of life, and bone health. Above all, solid registries and extensive prospective longitudinal studies are needed to enroll people with KS to determine their evolving needs as they progress through their lifespan. These studies would be best initiated with international collaboration to ensure the results apply to all those with this condition worldwide.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Klinefelter Syndrome",
+        "Humans",
+        "Male",
+        "Hormone Replacement Therapy",
+        "Testosterone",
+        "Biomedical Research"
+      ],
+      "keywords": [
+        "Klinefelter",
+        "bone",
+        "cardiovascular",
+        "fertility",
+        "neurodevelopment",
+        "testosterone"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1210/endrev/bnaf005"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39932051/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39932051/"
+    },
+    {
+      "pmid": "35948402",
+      "doi": "10.1136/archdischild-2020-320831",
+      "pmc_id": "PMC7614197",
+      "pmc_verify": null,
+      "title": "Klinefelter syndrome: going beyond the diagnosis.",
+      "authors": [
+        "Butler Gary",
+        "Srirangalingam Umasuthan",
+        "Faithfull Jennie",
+        "Sangster Philippa",
+        "Senniappan Senthil",
+        "Mitchell Rod"
+      ],
+      "journal": "Archives of disease in childhood",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Although Klinefelter syndrome (KS) is common, it is rarely recognised in childhood, sometimes being identified with speech or developmental delay or incidental antenatal diagnosis. The only regular feature is testicular dysfunction. Postnatal gonadotropin surge (mini-puberty) may be lower, but treatment with testosterone needs prospective studies. The onset of puberty is at the normal age and biochemical hypogonadism does not typically occur until late puberty. Testosterone supplementation can be considered then or earlier for clinical hypogonadism. The size at birth is normal, but growth acceleration is more rapid in early and mid-childhood, with adult height greater than mid-parental height. Extreme tall stature is unusual. The incidence of adolescent gynaecomastia (35.6%) is not increased compared with typically developing boys and can be reduced or resolved by testosterone supplementation, potentially preventing the need for surgery. Around two-thirds require speech and language therapy or developmental support and early institution of therapy is important. Provision of psychological support may be helpful in ameliorating these experiences and provide opportunities to develop strategies to recognise, process and express feelings and thoughts. Boys with KS are at increased risk of impairment in social cognition and less accurate perceptions of social emotional cues. The concept of likely fertility problems needs introduction alongside regular reviews of puberty and sexual function in adolescents. Although there is now greater success in harvesting sperm through techniques such as testicular sperm extraction, it is more successful in later than in early adolescence. In vitro maturation of germ cells is still experimental.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Female",
+        "Pregnancy",
+        "Adult",
+        "Adolescent",
+        "Infant, Newborn",
+        "Humans",
+        "Male",
+        "Child",
+        "Klinefelter Syndrome",
+        "Prospective Studies",
+        "Semen",
+        "Testis",
+        "Hypogonadism",
+        "Testosterone"
+      ],
+      "keywords": [
+        "child development",
+        "endocrinology",
+        "genetics",
+        "growth",
+        "mental health"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7614197/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7614197/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/archdischild-2020-320831"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35948402/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35948402/"
+    },
+    {
+      "pmid": "27644703",
+      "doi": "10.1007/s40618-016-0541-6",
+      "pmc_id": "PMC5269463",
+      "pmc_verify": null,
+      "title": "Klinefelter syndrome (KS): genetics, clinical phenotype and hypogonadism.",
+      "authors": [
+        "Bonomi M",
+        "Rochira V",
+        "Pasquali D",
+        "Balercia G",
+        "Jannini E A",
+        "Ferlin A",
+        "Klinefelter ItaliaN Group (KING)"
+      ],
+      "journal": "Journal of endocrinological investigation",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Klinefelter Syndrome (KS) is characterized by an extreme heterogeneity in its clinical and genetic presentation. The relationship between clinical phenotype and genetic background has been partially disclosed; nevertheless, physicians are aware that several aspects concerning this issue are far to be fully understood. By improving our knowledge on the role of some genetic aspects as well as on the KS, patients' interindividual differences in terms of health status will result in a better management of this chromosomal disease. The aim of this review is to provide an update on both genetic and clinical phenotype and their interrelationships.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Hypogonadism",
+        "Klinefelter Syndrome",
+        "Phenotype"
+      ],
+      "keywords": [
+        "Azoospermia",
+        "Chromosome abnormalities",
+        "Hypergonadotropic hypogonadism",
+        "KS",
+        "Klinefelter syndrome",
+        "Male infertility",
+        "Testosterone"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5269463/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5269463/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s40618-016-0541-6"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27644703/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27644703/"
+    },
+    {
+      "pmid": "23118429",
+      "doi": "10.1210/jc.2012-2382",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Clinical review: Klinefelter syndrome--a clinical update.",
+      "authors": [
+        "Groth Kristian A",
+        "Skakkebæk Anne",
+        "Høst Christian",
+        "Gravholt Claus Højbjerg",
+        "Bojesen Anders"
+      ],
+      "journal": "The Journal of clinical endocrinology and metabolism",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "CONTEXT: Recently, new clinically important information regarding Klinefelter syndrome (KS) has been published. We review aspects of epidemiology, endocrinology, metabolism, body composition, and neuropsychology with reference to recent genetic discoveries. EVIDENCE ACQUISITION: PubMed was searched for \"Klinefelter,\" \"Klinefelter's,\" and \"XXY\" in titles and abstracts. Relevant papers were obtained and reviewed, as well as other articles selected by the authors. EVIDENCE SYNTHESIS: KS is the most common sex chromosome disorder in males, affecting one in 660 men. The genetic background is the extra X-chromosome, which may be inherited from either parent. Most genes from the extra X undergo inactivation, but some escape and serve as the putative genetic cause of the syndrome. KS is severely underdiagnosed or is diagnosed late in life, roughly 25% are diagnosed, and the mean age of diagnosis is in the mid-30s. KS is associated with an increased morbidity resulting in loss of approximately 2 yr in life span with an increased mortality from many different diseases. The key findings in KS are small testes, hypergonadotropic hypogonadism, and cognitive impairment. The hypogonadism may lead to changes in body composition and a risk of developing metabolic syndrome and type 2 diabetes. The cognitive impairment is mainly in the area of language processing. Boys with KS are often in need of speech therapy, and many suffer from learning disability and may benefit from special education. Medical treatment is mainly testosterone replacement therapy to alleviate acute and long-term consequences of hypogonadism as well as treating or preventing the frequent comorbidity. CONCLUSIONS: More emphasis should be placed on increasing the rate of diagnosis and generating evidence for timing and dose of testosterone replacement. Treatment of KS should be a multidisciplinary task including pediatricians, speech therapists, general practitioners, psychologists, infertility specialists, urologists, and endocrinologists.",
+      "abstract_sections": {
+        "CONTEXT": "Recently, new clinically important information regarding Klinefelter syndrome (KS) has been published. We review aspects of epidemiology, endocrinology, metabolism, body composition, and neuropsychology with reference to recent genetic discoveries.",
+        "EVIDENCE ACQUISITION": "PubMed was searched for \"Klinefelter,\" \"Klinefelter's,\" and \"XXY\" in titles and abstracts. Relevant papers were obtained and reviewed, as well as other articles selected by the authors.",
+        "EVIDENCE SYNTHESIS": "KS is the most common sex chromosome disorder in males, affecting one in 660 men. The genetic background is the extra X-chromosome, which may be inherited from either parent. Most genes from the extra X undergo inactivation, but some escape and serve as the putative genetic cause of the syndrome. KS is severely underdiagnosed or is diagnosed late in life, roughly 25% are diagnosed, and the mean age of diagnosis is in the mid-30s. KS is associated with an increased morbidity resulting in loss of approximately 2 yr in life span with an increased mortality from many different diseases. The key findings in KS are small testes, hypergonadotropic hypogonadism, and cognitive impairment. The hypogonadism may lead to changes in body composition and a risk of developing metabolic syndrome and type 2 diabetes. The cognitive impairment is mainly in the area of language processing. Boys with KS are often in need of speech therapy, and many suffer from learning disability and may benefit from special education. Medical treatment is mainly testosterone replacement therapy to alleviate acute and long-term consequences of hypogonadism as well as treating or preventing the frequent comorbidity.",
+        "CONCLUSIONS": "More emphasis should be placed on increasing the rate of diagnosis and generating evidence for timing and dose of testosterone replacement. Treatment of KS should be a multidisciplinary task including pediatricians, speech therapists, general practitioners, psychologists, infertility specialists, urologists, and endocrinologists."
+      },
+      "mesh_terms": [
+        "Body Composition",
+        "Genetic Testing",
+        "Glucose",
+        "Homeostasis",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male",
+        "Models, Biological",
+        "Physical Fitness",
+        "Pituitary Gland",
+        "Testis"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1210/jc.2012-2382"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23118429/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23118429/"
+    },
+    {
+      "pmid": "39806878",
+      "doi": "10.1111/cen.15200",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter Syndrome: A Review.",
+      "authors": [
+        "Blackburn James",
+        "Ramakrishnan Anand",
+        "Graham Catherine",
+        "Bambang Katerina",
+        "Sriranglingam Umasuthan",
+        "Senniappan Senthil"
+      ],
+      "journal": "Clinical endocrinology",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "BACKGROUND: Klinefelter syndrome (KS) is an uncommonly recognised condition typified by gynaecomastia, small testes and aspermatogenesis. It is caused by a supernumerary X chromosome, resulting in a 47 XXY karyotype. Since its first description, the phenotype of KS has evolved and there is a much greater appreciation of the subtle features of the condition. METHOD: In this review, we explore the phenotype of the KS with particular consideration to patients with pre-natal and early infancy diagnosis, given that this is becoming increasingly common. The current understanding of the genetic mechanisms of KS, caused by supernumerary X chromosome are explored and the genotype-phenotype correlation are discussed. RESULTS: The implications of the condition both in childhood and later development are explored in detail, with particular focus on social and educational implications. Potential treatments, with emphasis on preservation of fertility are discussed. We highlight the optimal therapeutic conditions in which fertility preservation is most likely to be achieved, compared to those which can be more challenging. Finally, we discuss the other health challenges which can be associated with KS. These include poor bone health, diabetes, cardiovascular complications, and malignancy. The challenges in managing these co-morbid conditions and most up-to-date management recommendations are also explored.",
+      "abstract_sections": {
+        "BACKGROUND": "Klinefelter syndrome (KS) is an uncommonly recognised condition typified by gynaecomastia, small testes and aspermatogenesis. It is caused by a supernumerary X chromosome, resulting in a 47 XXY karyotype. Since its first description, the phenotype of KS has evolved and there is a much greater appreciation of the subtle features of the condition.",
+        "METHOD": "In this review, we explore the phenotype of the KS with particular consideration to patients with pre-natal and early infancy diagnosis, given that this is becoming increasingly common. The current understanding of the genetic mechanisms of KS, caused by supernumerary X chromosome are explored and the genotype-phenotype correlation are discussed.",
+        "RESULTS": "The implications of the condition both in childhood and later development are explored in detail, with particular focus on social and educational implications. Potential treatments, with emphasis on preservation of fertility are discussed. We highlight the optimal therapeutic conditions in which fertility preservation is most likely to be achieved, compared to those which can be more challenging. Finally, we discuss the other health challenges which can be associated with KS. These include poor bone health, diabetes, cardiovascular complications, and malignancy. The challenges in managing these co-morbid conditions and most up-to-date management recommendations are also explored."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male",
+        "Phenotype"
+      ],
+      "keywords": [
+        "Klinefelter syndrome",
+        "X chromosome",
+        "fertility",
+        "male",
+        "microdissection",
+        "spermatozoa",
+        "testosterone"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/cen.15200"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39806878/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39806878/"
+    },
+    {
+      "pmid": "15262106",
+      "doi": "10.1016/S0140-6736(04)16678-6",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter's syndrome.",
+      "authors": [
+        "Lanfranco Fabio",
+        "Kamischke Axel",
+        "Zitzmann Michael",
+        "Nieschlag Eberhard"
+      ],
+      "journal": "Lancet (London, England)",
+      "year": "2004",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Klinefelter's syndrome is the most common genetic cause of human male infertility, but many cases remain undiagnosed because of substantial variation in clinical presentation and insufficient professional awareness of the syndrome itself. Early recognition and hormonal treatment of the disorder can substantially improve quality of life and prevent serious consequences. Testosterone replacement corrects symptoms of androgen deficiency but has no positive effect on infertility. However, nowadays patients with Klinefelter's syndrome, including the non-mosaic type, need no longer be considered irrevocably infertile, because intracytoplasmic sperm injection offers an opportunity for procreation even when there are no spermatozoa in the ejaculate. In a substantial number of azoospermic patients, spermatozoa can be extracted from testicular biopsy samples, and pregnancies and livebirths have been achieved. The frequency of sex chromosomal hyperploidy and autosomal aneuploidies is higher in spermatozoa from patients with Klinefelter's syndrome than in those from normal men. Thus, chromosomal errors might in some cases be transmitted to the offspring of men with this syndrome. The genetic implications of the fertilisation procedures, including pretransfer or prenatal genetic assessment, must be explained to patients and their partners.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Anthropometry",
+        "Humans",
+        "Karyotyping",
+        "Klinefelter Syndrome",
+        "Male",
+        "Testis",
+        "Testosterone"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/S0140-6736(04)16678-6"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15262106/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15262106/"
+    },
+    {
+      "pmid": "42207626",
+      "doi": "10.1001/jama.2026.8526",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Adult Male Hypogonadism: A Review.",
+      "authors": [
+        "Anawalt Bradley D",
+        "O'Connor Kim M",
+        "Grossmann Mathis"
+      ],
+      "journal": "JAMA",
+      "year": "2026",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "IMPORTANCE: Male hypogonadism is a clinical syndrome of signs and symptoms of testosterone deficiency and consistently low morning serum testosterone concentrations. The prevalence of hypogonadism due to hypothalamus, pituitary, or testes pathology is less than 1%, and the prevalence due to obesity (body mass index ≥30) is from 2% to 8%. OBSERVATIONS: The most common signs and symptoms of hypogonadism are decreased libido, decreased spontaneous erections, and small testes. Primary hypogonadism is characterized by deficient testicular production of testosterone despite elevated luteinizing hormone (LH) concentrations. The most common cause of primary hypogonadism is Klinefelter syndrome (≥2 X chromosomes and 1 Y chromosome), which affects 2 in 1000 men and is frequently undiagnosed. Secondary hypogonadism is caused by hypothalamic or pituitary dysfunction and is characterized by low testosterone concentrations and low or inappropriately normal LH and follicle-stimulating hormone (FSH) concentrations. The most common permanent causes of secondary hypogonadism are head and neck radiation and severe head trauma. The most common potentially reversible causes of secondary hypogonadism are obesity, severe illness, and medication use (opioids, corticosteroids, checkpoint inhibitors, and medications that cause hyperprolactinemia). Testing for hypogonadism is reserved for men with signs and symptoms of androgen deficiency. Hypogonadism is confirmed if an individual's serum testosterone concentration is less than 264 to 300 ng/dL in at least 2 fasting samples collected between 7 and 10 am and measured with an accurate and external quality-controlled assay. Assessment of calculated free testosterone concentration derived using total testosterone and sex hormone-binding globulin (SHBG) concentrations is necessary for men with obesity, diabetes, and other conditions that cause low serum SHBG concentrations. Patients diagnosed with hypogonadism should have serum FSH and LH concentrations measured to distinguish primary from secondary hypogonadism. For men with obesity-induced hypogonadism, the recommended first-line management is weight loss. In men with obesity, weight loss of at least 5% typically increases serum total testosterone concentration significantly, and weight loss is associated with improved physical function, libido, and erectile function. Men with permanent hypogonadism, or those unable to discontinue medications that cause hypogonadism, may be treated with testosterone. The testosterone formulation (injection, gel, or pill) and dosage should be individualized with monitoring of serum testosterone concentration, hematocrit percentage, and possibly prostate-specific antigen concentration. CONCLUSIONS AND RELEVANCE: Primary hypogonadism affects less than 1% of men, whereas secondary hypogonadism due to obesity (body mass index ≥30) occurs in 2% to 8%. First-line treatment for obesity-induced hypogonadism is weight loss. Testosterone therapy should be initiated for men with permanent hypogonadism or those who are unable to discontinue medications that cause hypogonadism.",
+      "abstract_sections": {
+        "IMPORTANCE": "Male hypogonadism is a clinical syndrome of signs and symptoms of testosterone deficiency and consistently low morning serum testosterone concentrations. The prevalence of hypogonadism due to hypothalamus, pituitary, or testes pathology is less than 1%, and the prevalence due to obesity (body mass index ≥30) is from 2% to 8%.",
+        "OBSERVATIONS": "The most common signs and symptoms of hypogonadism are decreased libido, decreased spontaneous erections, and small testes. Primary hypogonadism is characterized by deficient testicular production of testosterone despite elevated luteinizing hormone (LH) concentrations. The most common cause of primary hypogonadism is Klinefelter syndrome (≥2 X chromosomes and 1 Y chromosome), which affects 2 in 1000 men and is frequently undiagnosed. Secondary hypogonadism is caused by hypothalamic or pituitary dysfunction and is characterized by low testosterone concentrations and low or inappropriately normal LH and follicle-stimulating hormone (FSH) concentrations. The most common permanent causes of secondary hypogonadism are head and neck radiation and severe head trauma. The most common potentially reversible causes of secondary hypogonadism are obesity, severe illness, and medication use (opioids, corticosteroids, checkpoint inhibitors, and medications that cause hyperprolactinemia). Testing for hypogonadism is reserved for men with signs and symptoms of androgen deficiency. Hypogonadism is confirmed if an individual's serum testosterone concentration is less than 264 to 300 ng/dL in at least 2 fasting samples collected between 7 and 10 am and measured with an accurate and external quality-controlled assay. Assessment of calculated free testosterone concentration derived using total testosterone and sex hormone-binding globulin (SHBG) concentrations is necessary for men with obesity, diabetes, and other conditions that cause low serum SHBG concentrations. Patients diagnosed with hypogonadism should have serum FSH and LH concentrations measured to distinguish primary from secondary hypogonadism. For men with obesity-induced hypogonadism, the recommended first-line management is weight loss. In men with obesity, weight loss of at least 5% typically increases serum total testosterone concentration significantly, and weight loss is associated with improved physical function, libido, and erectile function. Men with permanent hypogonadism, or those unable to discontinue medications that cause hypogonadism, may be treated with testosterone. The testosterone formulation (injection, gel, or pill) and dosage should be individualized with monitoring of serum testosterone concentration, hematocrit percentage, and possibly prostate-specific antigen concentration.",
+        "CONCLUSIONS AND RELEVANCE": "Primary hypogonadism affects less than 1% of men, whereas secondary hypogonadism due to obesity (body mass index ≥30) occurs in 2% to 8%. First-line treatment for obesity-induced hypogonadism is weight loss. Testosterone therapy should be initiated for men with permanent hypogonadism or those who are unable to discontinue medications that cause hypogonadism."
+      },
+      "mesh_terms": [
+        "Adult",
+        "Humans",
+        "Male",
+        "Hypogonadism",
+        "Hypothalamic-Pituitary-Gonadal Axis",
+        "Klinefelter Syndrome",
+        "Luteinizing Hormone",
+        "Obesity",
+        "Testosterone",
+        "Prevalence",
+        "Hypothalamus",
+        "Pituitary Gland",
+        "Follicle Stimulating Hormone",
+        "Sex Hormone-Binding Globulin",
+        "Diagnosis, Differential",
+        "Testis"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1001/jama.2026.8526"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42207626/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42207626/"
+    },
+    {
+      "pmid": "37592101",
+      "doi": "10.1007/s12098-023-04810-7",
+      "pmc_id": "2770912",
+      "pmc_verify": null,
+      "title": "Gynecomastia.",
+      "authors": [
+        "Ayyavoo Ahila"
+      ],
+      "journal": "Indian journal of pediatrics",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Enlargement of breasts among boys is termed gynecomastia. This could be due to an alteration in the androgen-estrogen ratio along with the effects of other hormones including growth hormone, insulin like growth factor 1, prolactin, and other factors affecting aromatase enzyme. The common causes of gynecomastia are pubertal gynecomastia, obesity, drugs and hypogonadism. Several other diseases including liver or renal failure, thyrotoxicosis, Klinefelter syndrome, tumors and environmental pollutants can cause gynecomastia. History and clinical examination will help formulate targeted investigations and management. The factors to be evaluated in these include examination of breasts and testes, in addition to other parts of systemic examination. Treatment of underlying disorders can improve gynecomastia, such as use of testosterone in hypogonadism. Some boys may not need any intervention as gynecomastia may resolve on its own. Medical management is useful in simple gynecomastia. Tamoxifen has been tried successfully in adolescents with gynecomastia. Other drugs including clomiphene, danazol, letrozole and anastrozole have not been consistently useful in this age group. In severe chronic gynecomastia, surgery is the treatment of choice.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Male",
+        "Humans",
+        "Gynecomastia",
+        "Hypertrophy",
+        "Tamoxifen",
+        "Growth Hormone",
+        "Hypogonadism"
+      ],
+      "keywords": [
+        "Aromatase",
+        "Estrogen",
+        "Gynecomastia",
+        "Surgery",
+        "Tamoxifen"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2770912/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/2770912/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s12098-023-04810-7"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37592101/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37592101/"
+    },
+    {
+      "pmid": "39899286",
+      "doi": "10.1001/jama.2024.27122",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Testicular Germ Cell Tumors: A Review.",
+      "authors": [
+        "Singla Nirmish",
+        "Bagrodia Aditya",
+        "Baraban Ezra",
+        "Fankhauser Christian D",
+        "Ged Yasser M A"
+      ],
+      "journal": "JAMA",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "IMPORTANCE: Testicular cancer is the most common solid malignancy among males aged 15 to 40 years in the US, with approximately 10 000 new cases diagnosed each year. Between 90% and 95% of testicular cancers are germ cell tumors (GCTs). OBSERVATIONS: The mean age at diagnosis for testicular cancer is 33 years. GCTs are categorized as seminomas and nonseminomatous GCTs (NSGCTs) based on their embryonic origins and path of differentiation. Risk factors include cryptorchidism, family history of testicular cancer, gonadal dysgenesis, infertility, cannabis use, and genetic conditions such as Klinefelter syndrome. The most common presenting symptom of testicular cancer is a painless testicular mass. History, physical examination, scrotal ultrasound, laboratory assessment of GCT-associated serum tumor markers (α-fetoprotein, β-human chorionic gonadotropin, and lactate dehydrogenase), and prompt referral to a urologist are indicated when testicular cancer is suspected. Early diagnosis and treatment, starting with a radical inguinal orchiectomy, are important to optimize outcomes. At diagnosis, GCT is stage I (localized to the testicle) in 70% to 75% of patients, stage II (metastatic only to the retroperitoneal lymph nodes) in 20%, and stage III (widely metastatic) in 10%. Treatment of GCTs is guided by histology, clinical staging, and risk classification, with 5-year survival rates of 99%, 92%, and 85% for those diagnosed at stages I, II, and III, respectively. Optimal treatment often involves a multidisciplinary team at high-volume, experienced medical centers and may include surveillance (serum tumor markers [α-fetoprotein, β-human chorionic gonadotropin, and lactate dehydrogenase] and imaging of the chest, abdomen, and pelvis), surgery (retroperitoneal lymph node dissection), chemotherapy, and/or radiation. Treatment decisions should consider long-term survivorship concerns, including body image, fertility, hypogonadism, mental health, financial cost, adherence to follow-up, and late adverse effects of therapy such as cardiovascular disease, secondary malignancies, and potential psychosocial effects such as anxiety, depression, and social isolation. CONCLUSIONS AND RELEVANCE: Testicular cancer is the most common solid malignancy in young men in the US, and 90% to 95% are GCTs. Patients with testicular GCT have a 5-year survival rate of 99%, 92%, and 85% for stages I, II, and III, respectively. Prompt diagnosis and treatment are important to optimize outcomes, and treatment decisions should balance oncologic control with survivorship concerns to minimize long-term adverse effects of treatment.",
+      "abstract_sections": {
+        "IMPORTANCE": "Testicular cancer is the most common solid malignancy among males aged 15 to 40 years in the US, with approximately 10 000 new cases diagnosed each year. Between 90% and 95% of testicular cancers are germ cell tumors (GCTs).",
+        "OBSERVATIONS": "The mean age at diagnosis for testicular cancer is 33 years. GCTs are categorized as seminomas and nonseminomatous GCTs (NSGCTs) based on their embryonic origins and path of differentiation. Risk factors include cryptorchidism, family history of testicular cancer, gonadal dysgenesis, infertility, cannabis use, and genetic conditions such as Klinefelter syndrome. The most common presenting symptom of testicular cancer is a painless testicular mass. History, physical examination, scrotal ultrasound, laboratory assessment of GCT-associated serum tumor markers (α-fetoprotein, β-human chorionic gonadotropin, and lactate dehydrogenase), and prompt referral to a urologist are indicated when testicular cancer is suspected. Early diagnosis and treatment, starting with a radical inguinal orchiectomy, are important to optimize outcomes. At diagnosis, GCT is stage I (localized to the testicle) in 70% to 75% of patients, stage II (metastatic only to the retroperitoneal lymph nodes) in 20%, and stage III (widely metastatic) in 10%. Treatment of GCTs is guided by histology, clinical staging, and risk classification, with 5-year survival rates of 99%, 92%, and 85% for those diagnosed at stages I, II, and III, respectively. Optimal treatment often involves a multidisciplinary team at high-volume, experienced medical centers and may include surveillance (serum tumor markers [α-fetoprotein, β-human chorionic gonadotropin, and lactate dehydrogenase] and imaging of the chest, abdomen, and pelvis), surgery (retroperitoneal lymph node dissection), chemotherapy, and/or radiation. Treatment decisions should consider long-term survivorship concerns, including body image, fertility, hypogonadism, mental health, financial cost, adherence to follow-up, and late adverse effects of therapy such as cardiovascular disease, secondary malignancies, and potential psychosocial effects such as anxiety, depression, and social isolation.",
+        "CONCLUSIONS AND RELEVANCE": "Testicular cancer is the most common solid malignancy in young men in the US, and 90% to 95% are GCTs. Patients with testicular GCT have a 5-year survival rate of 99%, 92%, and 85% for stages I, II, and III, respectively. Prompt diagnosis and treatment are important to optimize outcomes, and treatment decisions should balance oncologic control with survivorship concerns to minimize long-term adverse effects of treatment."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Humans",
+        "Male",
+        "Neoplasm Staging",
+        "Neoplasms, Germ Cell and Embryonal",
+        "Orchiectomy",
+        "Prognosis",
+        "Risk Factors",
+        "Seminoma",
+        "Testicular Neoplasms",
+        "Young Adult",
+        "United States",
+        "Survival Rate",
+        "Watchful Waiting",
+        "Testis",
+        "Infertility, Male",
+        "Hypogonadism",
+        "Mental Health",
+        "Fertility Preservation",
+        "Age Factors"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1001/jama.2024.27122"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39899286/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39899286/"
+    },
+    {
+      "pmid": "32484281",
+      "doi": "10.1002/ajmg.c.31802",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Epigenetics and genomics in Klinefelter syndrome.",
+      "authors": [
+        "Skakkebaek Anne",
+        "Viuff Mette",
+        "Nielsen Morten M",
+        "Gravholt Claus H"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Since the first description of Klinefelter syndrome (KS) was published in 1942 in The Journal of Clinical Endocrinology, large inter-individual variability in the phenotypic presentation has been demonstrated. However, our understanding of the global impact of the additional X chromosome on the genome remains an enigma. Evidence from the existing literature of KS indicates that not just one single genetic mechanism can explain the phenotype and the variable expressivity, but several mechanisms may be at play concurrently. In this review, we describe different genetic mechanisms and recent advances in the understanding of the genome, epigenome, and transcriptome of KS and the link to the phenotype and clinical heterogeneity. Future studies are needed to unite clinical data, genomic data, and basic research attempting to understand the genetics behind KS. Unraveling the genetics of KS will be of clinical relevance as it may enable the use of polygenic risk scores to predict future disease susceptibility and enable clinical risk stratification of KS patients in the future.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Aberrations",
+        "Chromosomes, Human, X",
+        "Epigenomics",
+        "Gene Expression Regulation",
+        "Genomics",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Phenotype"
+      ],
+      "keywords": [
+        "Klinefelter syndrome",
+        "epigenetics",
+        "genomics",
+        "genotype",
+        "phenotype",
+        "sex chromosomes"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.31802"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32484281/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32484281/"
+    },
+    {
+      "pmid": "31587581",
+      "doi": "10.1080/17446651.2019.1671821",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Fertility management of Klinefelter syndrome.",
+      "authors": [
+        "Fainberg Jonathan",
+        "Hayden Russell P",
+        "Schlegel Peter N"
+      ],
+      "journal": "Expert review of endocrinology & metabolism",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Introduction: Klinefelter syndrome (KS) represents the most common chromosomal abnormality in the general population, and one of the most common genetic etiologies of nonobstructive azoospermia (NOA) and in severe oligospermia. Once considered untreatable, men with KS and NOA now have a variety of treatment options to obtain paternity.Areas covered: The cornerstone of treatment for both KS and NOA patients remains the surgical retrieval of viable sperm, which can be used for intracytoplasmic sperm injection to obtain pregnancy. Although the field has advanced significantly since the early 1990s, approximately half of men with KS will ultimately fail fertility treatments. Presented is a critical review of the available evidence that has attempted to identify predictive factors for successful sperm recovery. To optimize surgical success, a variety of treatment modalities have also been suggested and evaluated, including hormonal manipulation and timing of retrieval.Expert opinion: Individuals with KS have a relatively good prognosis for sperm recovery compared to other men with idiopathic NOA. Surgical success is heavily dependent upon surgical technique and the experience of the andrology/embryology team tasked with the identification and use of testicular sperm.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Azoospermia",
+        "Fertility Preservation",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male",
+        "Semen Preservation",
+        "Sperm Injections, Intracytoplasmic",
+        "Sperm Retrieval",
+        "Testis",
+        "Testosterone"
+      ],
+      "keywords": [
+        "Fertility preservation",
+        "Klinefelter syndrome",
+        "hormonal manipulation",
+        "microTESE",
+        "sperm retrieval rate",
+        "surgical sperm retrieval"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/17446651.2019.1671821"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31587581/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31587581/"
+    },
+    {
+      "pmid": "31266283",
+      "doi": "10.4081/aiua.2019.2.130",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter's syndrome and taurodontism.",
+      "authors": [
+        "Giambersio Emilia",
+        "Barile Vincenzo",
+        "Giambersio Antonio Marcello"
+      ],
+      "journal": "Archivio italiano di urologia, andrologia : organo ufficiale [di] Societa italiana di ecografia urologica e nefrologica",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: Taurodontism is a dental anomaly characterized by an enlarged pulp chamber and apycal displacement of the pulpar floor. The prevalence of taurodontism in normal population is controversial. It has been reported that taurodontism is frequently observed in Klinefelter's patients. The purpose of this study was to assess the prevalence of taurodontism in a group of Italian Klinefelter's patients and in a randomly selected male population of Italy and to compare the results with published data. MATERIALS AND METHODS: Digital panoramic radiographs of 16 Klinefelter's patients and of 100 normal males were retrospectively studied in order to investigate the prevalence of taurodontism in these groups of patients. RESULTS: Taurodont teeth were observed in 2 of the 16 Klinefelter's patients (12.5%) and in 2 of 100 normal males (2.0%). CONCLUSIONS: Our results confirm the higher prevalence of taurodontism in Klinefelter's patients compared to the normal population (12.5% vs. 2.0%). Due to the wide discrepancy of incidence of taurodontism reported in literature (0.04%-48.0% in normal population; 12.5%-88.0% in Klinefelter's patients), we conclude that it is not possible to state which is the prevalence of taurodontism in a normal population nor among Klinefelter's patients.",
+      "abstract_sections": {
+        "OBJECTIVE": "Taurodontism is a dental anomaly characterized by an enlarged pulp chamber and apycal displacement of the pulpar floor. The prevalence of taurodontism in normal population is controversial. It has been reported that taurodontism is frequently observed in Klinefelter's patients. The purpose of this study was to assess the prevalence of taurodontism in a group of Italian Klinefelter's patients and in a randomly selected male population of Italy and to compare the results with published data.",
+        "MATERIALS AND METHODS": "Digital panoramic radiographs of 16 Klinefelter's patients and of 100 normal males were retrospectively studied in order to investigate the prevalence of taurodontism in these groups of patients.",
+        "RESULTS": "Taurodont teeth were observed in 2 of the 16 Klinefelter's patients (12.5%) and in 2 of 100 normal males (2.0%).",
+        "CONCLUSIONS": "Our results confirm the higher prevalence of taurodontism in Klinefelter's patients compared to the normal population (12.5% vs. 2.0%). Due to the wide discrepancy of incidence of taurodontism reported in literature (0.04%-48.0% in normal population; 12.5%-88.0% in Klinefelter's patients), we conclude that it is not possible to state which is the prevalence of taurodontism in a normal population nor among Klinefelter's patients."
+      },
+      "mesh_terms": [
+        "Dental Pulp Cavity",
+        "Humans",
+        "Incidence",
+        "Italy",
+        "Klinefelter Syndrome",
+        "Male",
+        "Prevalence",
+        "Retrospective Studies",
+        "Tooth Abnormalities"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.4081/aiua.2019.2.130"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31266283/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31266283/"
+    },
+    {
+      "pmid": "9645824",
+      "doi": "10.1001/archinte.158.12.1309",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter syndrome.",
+      "authors": [
+        "Smyth C M",
+        "Bremner W J"
+      ],
+      "journal": "Archives of internal medicine",
+      "year": "1998",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Klinefelter syndrome is the most common sex chromosome disorder. Affected males carry an additional X chromosome, which results in male hypogonadism, androgen deficiency, and impaired spermatogenesis. Some patients may exhibit all of the classic signs of this disorder, including gynecomastia, small testes, sparse body hair, tallness, and infertility, whereas others, because of the wide variability in clinical expression, lack many of these features. Treatment consists of testosterone replacement therapy to correct the androgen deficiency and to provide patients with appropriate virilization. This therapy also has positive effects on mood and self-esteem and has been shown to protect against osteoporosis, although it will not reverse infertility. Although the diagnosis of Klinefelter syndrome is now made definitively using chromosomal karyotyping, revealing in most instances a 47,XXY genotype, the diagnosis also can be made using a careful history and results of a physical examination, with the hallmark being small, firm testes. As it affects 1 in 500 male patients and presents with a variety of clinical features, primary care physicians should be familiar with this condition.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Diagnosis, Differential",
+        "Humans",
+        "Incidence",
+        "Klinefelter Syndrome",
+        "Male",
+        "Mass Screening"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1001/archinte.158.12.1309"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9645824/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9645824/"
+    },
+    {
+      "pmid": "31367971",
+      "doi": "10.1007/s11892-019-1197-3",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter Syndrome and Diabetes.",
+      "authors": [
+        "O'Connor Mark J",
+        "Snyder Emma A",
+        "Hayes Frances J"
+      ],
+      "journal": "Current diabetes reports",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: Klinefelter syndrome (KS) is associated with increased insulin resistance and high rates of type 2 diabetes (T2DM). Our aim was to review what is known about the prevalence of diabetes in men with KS, potential mechanisms underlying the observed metabolic phenotype, and the data that are available to guide treatment decisions. RECENT FINDINGS: The increased prevalence of T2DM seen in men with KS appears to be the result of multiple mechanisms including increased truncal adiposity and socioeconomic disadvantages, but it is likely not a direct consequence of hypogonadism alone. No randomized trials have been conducted to evaluate the impact of testosterone replacement therapy on T2DM in men with KS, but observational data suggest that testosterone replacement is not associated with lower rates of diabetes or improved glycemic control. Metabolic derangements are common in KS, but treatment strategies specific to this population are lacking. Early lifestyle and dietary interventions are likely important. Additional research is needed to dissect the complex interaction between genotype and metabolic phenotype. Collaboration between academic centers caring for men with KS is needed to facilitate the development of evidence-based clinical practice guidelines, which would inform optimal screening and treatment strategies for this patient population.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "Klinefelter syndrome (KS) is associated with increased insulin resistance and high rates of type 2 diabetes (T2DM). Our aim was to review what is known about the prevalence of diabetes in men with KS, potential mechanisms underlying the observed metabolic phenotype, and the data that are available to guide treatment decisions.",
+        "RECENT FINDINGS": "The increased prevalence of T2DM seen in men with KS appears to be the result of multiple mechanisms including increased truncal adiposity and socioeconomic disadvantages, but it is likely not a direct consequence of hypogonadism alone. No randomized trials have been conducted to evaluate the impact of testosterone replacement therapy on T2DM in men with KS, but observational data suggest that testosterone replacement is not associated with lower rates of diabetes or improved glycemic control. Metabolic derangements are common in KS, but treatment strategies specific to this population are lacking. Early lifestyle and dietary interventions are likely important. Additional research is needed to dissect the complex interaction between genotype and metabolic phenotype. Collaboration between academic centers caring for men with KS is needed to facilitate the development of evidence-based clinical practice guidelines, which would inform optimal screening and treatment strategies for this patient population."
+      },
+      "mesh_terms": [
+        "Androgens",
+        "Diabetes Mellitus, Type 2",
+        "Hormone Replacement Therapy",
+        "Humans",
+        "Insulin Resistance",
+        "Klinefelter Syndrome",
+        "Male",
+        "Prevalence",
+        "Testosterone"
+      ],
+      "keywords": [
+        "Insulin resistance",
+        "Klinefelter syndrome",
+        "Sex chromosome aneuploidy",
+        "Testosterone replacement therapy",
+        "Type 2 diabetes"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s11892-019-1197-3"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31367971/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31367971/"
+    },
+    {
+      "pmid": "38128110",
+      "doi": "10.1093/ejendo/lvad166",
+      "pmc_id": "PMC10773669",
+      "pmc_verify": null,
+      "title": "Gonadotropins for pubertal induction in males with hypogonadotropic hypogonadism: systematic review and meta-analysis.",
+      "authors": [
+        "Alexander Emma C",
+        "Faruqi Duaa",
+        "Farquhar Robert",
+        "Unadkat Ayesha",
+        "Ng Yin Kyla",
+        "Hoskyns Rebecca",
+        "Varughese Rachel",
+        "Howard Sasha R"
+      ],
+      "journal": "European journal of endocrinology",
+      "year": "2024",
+      "publication_types": [
+        "Meta-Analysis",
+        "Systematic Review",
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: Hypogonadotropic hypogonadism is characterized by inadequate secretion of pituitary gonadotropins, leading to absent, partial, or arrested puberty. In males, classical treatment with testosterone promotes virilization but not testicular growth or spermatogenesis. To quantify treatment practices and efficacy, we systematically reviewed all studies investigating gonadotropins for the achievement of pubertal outcomes in males with hypogonadotropic hypogonadism. DESIGN: Systematic review and meta-analysis. METHODS: A systematic review of Medline, Embase, Global Health, and PsycINFO databases in December 2022. Risk of Bias 2.0/Risk Of Bias In Non-randomized Studies of Interventions/National Heart, Lung, and Blood Institute tools for quality appraisal. Protocol registered on PROSPERO (CRD42022381713). RESULTS: After screening 3925 abstracts, 103 studies were identified including 5328 patients from 21 countries. The average age of participants was <25 years in 45.6% (n = 47) of studies. Studies utilized human chorionic gonadotropin (hCG) (n = 93, 90.3% of studies), human menopausal gonadotropin (n = 42, 40.8%), follicle-stimulating hormone (FSH) (n = 37, 35.9%), and gonadotropin-releasing hormone (28.2% n = 29). The median reported duration of treatment/follow-up was 18 months (interquartile range 10.5-24 months). Gonadotropins induced significant increases in testicular volume, penile size, and testosterone in over 98% of analyses. Spermatogenesis rates were higher with hCG + FSH (86%, 95% confidence interval [CI] 82%-91%) as compared with hCG alone (40%, 95% CI 25%-56%). However, study heterogeneity and treatment variability were high. CONCLUSIONS: This systematic review provides convincing evidence of the efficacy of gonadotropins for pubertal induction. However, there remains substantial heterogeneity in treatment choice, dose, duration, and outcomes assessed. Formal guidelines and randomized studies are needed.",
+      "abstract_sections": {
+        "OBJECTIVE": "Hypogonadotropic hypogonadism is characterized by inadequate secretion of pituitary gonadotropins, leading to absent, partial, or arrested puberty. In males, classical treatment with testosterone promotes virilization but not testicular growth or spermatogenesis. To quantify treatment practices and efficacy, we systematically reviewed all studies investigating gonadotropins for the achievement of pubertal outcomes in males with hypogonadotropic hypogonadism.",
+        "DESIGN": "Systematic review and meta-analysis.",
+        "METHODS": "A systematic review of Medline, Embase, Global Health, and PsycINFO databases in December 2022. Risk of Bias 2.0/Risk Of Bias In Non-randomized Studies of Interventions/National Heart, Lung, and Blood Institute tools for quality appraisal. Protocol registered on PROSPERO (CRD42022381713).",
+        "RESULTS": "After screening 3925 abstracts, 103 studies were identified including 5328 patients from 21 countries. The average age of participants was <25 years in 45.6% (n = 47) of studies. Studies utilized human chorionic gonadotropin (hCG) (n = 93, 90.3% of studies), human menopausal gonadotropin (n = 42, 40.8%), follicle-stimulating hormone (FSH) (n = 37, 35.9%), and gonadotropin-releasing hormone (28.2% n = 29). The median reported duration of treatment/follow-up was 18 months (interquartile range 10.5-24 months). Gonadotropins induced significant increases in testicular volume, penile size, and testosterone in over 98% of analyses. Spermatogenesis rates were higher with hCG + FSH (86%, 95% confidence interval [CI] 82%-91%) as compared with hCG alone (40%, 95% CI 25%-56%). However, study heterogeneity and treatment variability were high.",
+        "CONCLUSIONS": "This systematic review provides convincing evidence of the efficacy of gonadotropins for pubertal induction. However, there remains substantial heterogeneity in treatment choice, dose, duration, and outcomes assessed. Formal guidelines and randomized studies are needed."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Chorionic Gonadotropin",
+        "Follicle Stimulating Hormone",
+        "Gonadotropin-Releasing Hormone",
+        "Gonadotropins",
+        "Hypogonadism",
+        "Klinefelter Syndrome",
+        "Spermatogenesis",
+        "Testis",
+        "Testosterone",
+        "Young Adult"
+      ],
+      "keywords": [
+        "Kallmann syndrome",
+        "gonadotropins",
+        "hypogonadotropic hypogonadism",
+        "puberty",
+        "spermatogenesis"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10773669/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10773669/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/ejendo/lvad166"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38128110/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38128110/"
+    },
+    {
+      "pmid": "35394664",
+      "doi": "10.1111/cen.14734",
+      "pmc_id": "PMC9540025",
+      "pmc_verify": null,
+      "title": "Clinical features and prevalence of Klinefelter syndrome in transgender individuals: A systematic review.",
+      "authors": [
+        "Liang Bonnie",
+        "Cheung Ada S",
+        "Nolan Brendan J"
+      ],
+      "journal": "Clinical endocrinology",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "OBJECTIVE: Previous studies have suggested a higher prevalence of Klinefelter syndrome amongst transgender individuals. We undertook a systematic review to determine the prevalence of Klinefelter syndrome amongst transgender individuals presumed male at birth and summarize the clinical features and potential treatment implications for individuals with Klinefelter syndrome commencing gender-affirming hormone therapy. DESIGN: Using preferred reporting items for systematic review and meta-analysis guidelines, we searched EMBASE, MEDLINE and the Cochrane Central Register of Controlled Trials (CENTRAL) up to 31 December 2021. All studies reporting on the prevalence or clinical features of transgender individuals with Klinefelter syndrome were included. This study is registered with the International Prospective Register of Systematic Reviews, number CRD42021227916. RESULTS: Our search strategy retrieved 11 cohort studies comprising 1376 transgender individuals. In all, 14 of 1376 (1.02%) individuals were diagnosed with Klinefelter syndrome. Based on the seven studies in which karyotype was undertaken in all individuals, the prevalence is 9/1013 (0.88%; 95% CI, 0.41%-1.68%). Case reports highlight unique treatment considerations in this population, including azoospermia, venous thromboembolism, and monitoring of breast cancer and bone health. CONCLUSIONS: Compared to the general population, observational studies document a higher prevalence of Klinefelter syndrome amongst transgender individuals, though underdiagnosis in the general population limits conclusions. Routine karyotype in transgender people initiating gender-affirming hormone therapy is not supported unless clinical features of Klinefelter syndrome, such as small testicular volume, or hypergonadotropic hypogonadism are present. Transgender individuals with Klinefelter syndrome need to manage a unique risk profile if they desire feminizing gender-affirming hormone therapy.",
+      "abstract_sections": {
+        "OBJECTIVE": "Previous studies have suggested a higher prevalence of Klinefelter syndrome amongst transgender individuals. We undertook a systematic review to determine the prevalence of Klinefelter syndrome amongst transgender individuals presumed male at birth and summarize the clinical features and potential treatment implications for individuals with Klinefelter syndrome commencing gender-affirming hormone therapy.",
+        "DESIGN": "Using preferred reporting items for systematic review and meta-analysis guidelines, we searched EMBASE, MEDLINE and the Cochrane Central Register of Controlled Trials (CENTRAL) up to 31 December 2021. All studies reporting on the prevalence or clinical features of transgender individuals with Klinefelter syndrome were included. This study is registered with the International Prospective Register of Systematic Reviews, number CRD42021227916.",
+        "RESULTS": "Our search strategy retrieved 11 cohort studies comprising 1376 transgender individuals. In all, 14 of 1376 (1.02%) individuals were diagnosed with Klinefelter syndrome. Based on the seven studies in which karyotype was undertaken in all individuals, the prevalence is 9/1013 (0.88%; 95% CI, 0.41%-1.68%). Case reports highlight unique treatment considerations in this population, including azoospermia, venous thromboembolism, and monitoring of breast cancer and bone health.",
+        "CONCLUSIONS": "Compared to the general population, observational studies document a higher prevalence of Klinefelter syndrome amongst transgender individuals, though underdiagnosis in the general population limits conclusions. Routine karyotype in transgender people initiating gender-affirming hormone therapy is not supported unless clinical features of Klinefelter syndrome, such as small testicular volume, or hypergonadotropic hypogonadism are present. Transgender individuals with Klinefelter syndrome need to manage a unique risk profile if they desire feminizing gender-affirming hormone therapy."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Hormones",
+        "Klinefelter Syndrome",
+        "Prevalence",
+        "Transgender Persons",
+        "Female",
+        "Adolescent",
+        "Young Adult",
+        "Adult"
+      ],
+      "keywords": [
+        "Klinefelter syndrome",
+        "XXY Syndrome",
+        "disorders of sex development",
+        "gender dysphoria",
+        "gender identity",
+        "gender incongruence",
+        "transgender"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9540025/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9540025/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/cen.14734"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35394664/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35394664/"
+    },
+    {
+      "pmid": "34498060",
+      "doi": "10.1093/humupd/dmab030",
+      "pmc_id": "PMC8730311",
+      "pmc_verify": null,
+      "title": "A systematic review of the validated monogenic causes of human male infertility: 2020 update and a discussion of emerging gene-disease relationships.",
+      "authors": [
+        "Houston Brendan J",
+        "Riera-Escamilla Antoni",
+        "Wyrwoll Margot J",
+        "Salas-Huetos Albert",
+        "Xavier Miguel J",
+        "Nagirnaja Liina",
+        "Friedrich Corinna",
+        "Conrad Don F",
+        "Aston Kenneth I",
+        "Krausz Csilla",
+        "Tüttelmann Frank",
+        "O'Bryan Moira K",
+        "Veltman Joris A",
+        "Oud Manon S"
+      ],
+      "journal": "Human reproduction update",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "abstract": "BACKGROUND: Human male infertility has a notable genetic component, including well-established diagnoses such as Klinefelter syndrome, Y-chromosome microdeletions and monogenic causes. Approximately 4% of all infertile men are now diagnosed with a genetic cause, but a majority (60-70%) remain without a clear diagnosis and are classified as unexplained. This is likely in large part due to a delay in the field adopting next-generation sequencing (NGS) technologies, and the absence of clear statements from field leaders as to what constitutes a validated cause of human male infertility (the current paper aims to address this). Fortunately, there has been a significant increase in the number of male infertility NGS studies. These have revealed a considerable number of novel gene-disease relationships (GDRs), which each require stringent assessment to validate the strength of genotype-phenotype associations. To definitively assess which of these GDRs are clinically relevant, the International Male Infertility Genomics Consortium (IMIGC) has identified the need for a systematic review and a comprehensive overview of known male infertility genes and an assessment of the evidence for reported GDRs. OBJECTIVE AND RATIONALE: In 2019, the first standardised clinical validity assessment of monogenic causes of male infertility was published. Here, we provide a comprehensive update of the subsequent 1.5 years, employing the joint expertise of the IMIGC to systematically evaluate all available evidence (as of 1 July 2020) for monogenic causes of isolated or syndromic male infertility, endocrine disorders or reproductive system abnormalities affecting the male sex organs. In addition, we systematically assessed the evidence for all previously reported possible monogenic causes of male infertility, using a framework designed for a more appropriate clinical interpretation of disease genes. SEARCH METHODS: We performed a literature search according to the PRISMA guidelines up until 1 July 2020 for publications in English, using search terms related to 'male infertility' in combination with the word 'genetics' in PubMed. Next, the quality and the extent of all evidence supporting selected genes were assessed using an established and standardised scoring method. We assessed the experimental quality, patient phenotype assessment and functional evidence based on gene expression, mutant in-vitro cell and in-vivo animal model phenotypes. A final score was used to determine the clinical validity of each GDR, across the following five categories: no evidence, limited, moderate, strong or definitive. Variants were also reclassified according to the American College of Medical Genetics and Genomics-Association for Molecular Pathology (ACMG-AMP) guidelines and were recorded in spreadsheets for each GDR, which are available at imigc.org. OUTCOMES: The primary outcome of this review was an overview of all known GDRs for monogenic causes of human male infertility and their clinical validity. We identified a total of 120 genes that were moderately, strongly or definitively linked to 104 infertility phenotypes. WIDER IMPLICATIONS: Our systematic review curates all currently available evidence to reveal the strength of GDRs in male infertility. The existing guidelines for genetic testing in male infertility cases are based on studies published 25 years ago, and an update is far overdue. The identification of 104 high-probability 'human male infertility genes' is a 33% increase from the number identified in 2019. The insights generated in the current review will provide the impetus for an update of existing guidelines, will inform novel evidence-based genetic testing strategies used in clinics, and will identify gaps in our knowledge of male infertility genetics. We discuss the relevant international guidelines regarding research related to gene discovery and provide specific recommendations to the field of male infertility. Based on our findings, the IMIGC consortium recommend several updates to the genetic testing standards currently employed in the field of human male infertility, most important being the adoption of exome sequencing, or at least sequencing of the genes validated in this study, and expanding the patient groups for which genetic testing is recommended.",
+      "abstract_sections": {
+        "BACKGROUND": "Human male infertility has a notable genetic component, including well-established diagnoses such as Klinefelter syndrome, Y-chromosome microdeletions and monogenic causes. Approximately 4% of all infertile men are now diagnosed with a genetic cause, but a majority (60-70%) remain without a clear diagnosis and are classified as unexplained. This is likely in large part due to a delay in the field adopting next-generation sequencing (NGS) technologies, and the absence of clear statements from field leaders as to what constitutes a validated cause of human male infertility (the current paper aims to address this). Fortunately, there has been a significant increase in the number of male infertility NGS studies. These have revealed a considerable number of novel gene-disease relationships (GDRs), which each require stringent assessment to validate the strength of genotype-phenotype associations. To definitively assess which of these GDRs are clinically relevant, the International Male Infertility Genomics Consortium (IMIGC) has identified the need for a systematic review and a comprehensive overview of known male infertility genes and an assessment of the evidence for reported GDRs.",
+        "OBJECTIVE AND RATIONALE": "In 2019, the first standardised clinical validity assessment of monogenic causes of male infertility was published. Here, we provide a comprehensive update of the subsequent 1.5 years, employing the joint expertise of the IMIGC to systematically evaluate all available evidence (as of 1 July 2020) for monogenic causes of isolated or syndromic male infertility, endocrine disorders or reproductive system abnormalities affecting the male sex organs. In addition, we systematically assessed the evidence for all previously reported possible monogenic causes of male infertility, using a framework designed for a more appropriate clinical interpretation of disease genes.",
+        "SEARCH METHODS": "We performed a literature search according to the PRISMA guidelines up until 1 July 2020 for publications in English, using search terms related to 'male infertility' in combination with the word 'genetics' in PubMed. Next, the quality and the extent of all evidence supporting selected genes were assessed using an established and standardised scoring method. We assessed the experimental quality, patient phenotype assessment and functional evidence based on gene expression, mutant in-vitro cell and in-vivo animal model phenotypes. A final score was used to determine the clinical validity of each GDR, across the following five categories: no evidence, limited, moderate, strong or definitive. Variants were also reclassified according to the American College of Medical Genetics and Genomics-Association for Molecular Pathology (ACMG-AMP) guidelines and were recorded in spreadsheets for each GDR, which are available at imigc.org.",
+        "OUTCOMES": "The primary outcome of this review was an overview of all known GDRs for monogenic causes of human male infertility and their clinical validity. We identified a total of 120 genes that were moderately, strongly or definitively linked to 104 infertility phenotypes.",
+        "WIDER IMPLICATIONS": "Our systematic review curates all currently available evidence to reveal the strength of GDRs in male infertility. The existing guidelines for genetic testing in male infertility cases are based on studies published 25 years ago, and an update is far overdue. The identification of 104 high-probability 'human male infertility genes' is a 33% increase from the number identified in 2019. The insights generated in the current review will provide the impetus for an update of existing guidelines, will inform novel evidence-based genetic testing strategies used in clinics, and will identify gaps in our knowledge of male infertility genetics. We discuss the relevant international guidelines regarding research related to gene discovery and provide specific recommendations to the field of male infertility. Based on our findings, the IMIGC consortium recommend several updates to the genetic testing standards currently employed in the field of human male infertility, most important being the adoption of exome sequencing, or at least sequencing of the genes validated in this study, and expanding the patient groups for which genetic testing is recommended."
+      },
+      "mesh_terms": [
+        "Animals",
+        "Chromosome Deletion",
+        "Genetic Testing",
+        "Genomics",
+        "High-Throughput Nucleotide Sequencing",
+        "Humans",
+        "Infertility, Male",
+        "Male"
+      ],
+      "keywords": [
+        "clinical validity",
+        "gene panel",
+        "genetics",
+        "gene–disease relationship",
+        "male infertility",
+        "multiple morphological abnormalities of the sperm flagella",
+        "next-generation sequencing",
+        "spermatogenic failure",
+        "systematic review"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8730311/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8730311/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/humupd/dmab030"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34498060/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34498060/"
+    },
+    {
+      "pmid": "29680294",
+      "doi": "10.1016/j.sxmr.2018.02.008",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter Syndrome. The Effects of Early Androgen Therapy on Competence and Behavioral Phenotype.",
+      "authors": [
+        "Flannigan Ryan",
+        "Patel Premal",
+        "Paduch Darius A"
+      ],
+      "journal": "Sexual medicine reviews",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "abstract": "INTRODUCTION: Klinefelter syndrome (KS) is the result of sex chromosome aneuploidy most often characterized as 47,XXY. The typical features of KS include tall stature, gynecomastia, small firm testicles, hypergonadotropic hypogonadism, and infertility. However, abnormalities in neurodevelopment, cognition, and social and behavioral functioning also can be present. The abnormalities in neurodevelopment are believed to be due in part to androgen deficiency during early development and puberty. AIM: To discuss the role of androgens in normal adolescent development; discuss the cognitive, behavioral, and social functioning of children with KS; evaluate the evidence for early androgen therapy in men with KS; and discuss management strategies in the development of boys with KS. METHODS: A systematic review of early androgen therapy and KS was performed using PubMed-Medline and Scopus databases. Relevant articles commenting on social, behavioral, cognitive, and physical outcomes among infants, children, and adolescents were included for reporting and discussion. MAIN OUTCOME MEASURES: Social and behavior functioning; cognitive outcomes; adverse effects associated with androgen therapy. RESULTS: 3 retrospective articles and 2 randomized controlled trials addressing early androgen therapy in boys with KS were reviewed. These studies showed an improvement in several aspects of social and cognitive functioning based on validated questionnaires. Treatment strategies, potential negative effects, and limitations of the literature on early androgen therapy in boys with KS are discussed. CONCLUSION: Our findings indicate that early androgen supplementation in children with KS combined with specific educational, family, and social support improves behavioral functioning. The optimal timing of hormonal therapy might require prospective studies, but based on our data and review of the literature, the benefit of early hormonal and therapeutic intervention in KS is very encouraging. Flannigan R, Patel P, Paduch DA. Klinefelter Syndrome. The Effects of Early Androgen Therapy on Competence and Behavioral Phenotype. Sex Med Rev 2018;6:595-606.",
+      "abstract_sections": {
+        "INTRODUCTION": "Klinefelter syndrome (KS) is the result of sex chromosome aneuploidy most often characterized as 47,XXY. The typical features of KS include tall stature, gynecomastia, small firm testicles, hypergonadotropic hypogonadism, and infertility. However, abnormalities in neurodevelopment, cognition, and social and behavioral functioning also can be present. The abnormalities in neurodevelopment are believed to be due in part to androgen deficiency during early development and puberty.",
+        "AIM": "To discuss the role of androgens in normal adolescent development; discuss the cognitive, behavioral, and social functioning of children with KS; evaluate the evidence for early androgen therapy in men with KS; and discuss management strategies in the development of boys with KS.",
+        "METHODS": "A systematic review of early androgen therapy and KS was performed using PubMed-Medline and Scopus databases. Relevant articles commenting on social, behavioral, cognitive, and physical outcomes among infants, children, and adolescents were included for reporting and discussion.",
+        "MAIN OUTCOME MEASURES": "Social and behavior functioning; cognitive outcomes; adverse effects associated with androgen therapy.",
+        "RESULTS": "3 retrospective articles and 2 randomized controlled trials addressing early androgen therapy in boys with KS were reviewed. These studies showed an improvement in several aspects of social and cognitive functioning based on validated questionnaires. Treatment strategies, potential negative effects, and limitations of the literature on early androgen therapy in boys with KS are discussed.",
+        "CONCLUSION": "Our findings indicate that early androgen supplementation in children with KS combined with specific educational, family, and social support improves behavioral functioning. The optimal timing of hormonal therapy might require prospective studies, but based on our data and review of the literature, the benefit of early hormonal and therapeutic intervention in KS is very encouraging. Flannigan R, Patel P, Paduch DA. Klinefelter Syndrome. The Effects of Early Androgen Therapy on Competence and Behavioral Phenotype. Sex Med Rev 2018;6:595-606."
+      },
+      "mesh_terms": [
+        "Androgens",
+        "Gynecomastia",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male",
+        "Phenotype",
+        "Psychomotor Performance",
+        "Social Behavior",
+        "Treatment Outcome"
+      ],
+      "keywords": [
+        "47,XXY",
+        "Androgen",
+        "Behavioral Phenotype",
+        "Klinefelter Syndrome",
+        "Neurodevelopment",
+        "Testosterone"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.sxmr.2018.02.008"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29680294/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29680294/"
+    },
+    {
+      "pmid": "28782868",
+      "doi": "10.1002/cbm.2052",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter's syndrome and sexual offending - A literature review.",
+      "authors": [
+        "O'Donovan Rebecca",
+        "Völlm Birgit"
+      ],
+      "journal": "Criminal behaviour and mental health : CBMH",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "BACKGROUND: Klinefelter's syndrome is a sex chromosome abnormality affecting approximately 1 in 1000 men. There have been suggestions that it is associated with a higher than average prevalence of sexual offending but to what extent does research evidence support this assertion? AIMS: This study aimed to conduct a systematic review of published research to establish the prevalence of sexual offending in men with Klinefelter's syndrome. METHOD: The databases MEDLINE, PsycINFO and EMBASE were searched from inception until 31 December 2016 by using a range of terms for Klinefelter's syndrome and for sexual offending. All selected papers were examined for quality by using the Strengthening the Reporting of Observational Studies in Epidemiology checklist. RESULTS: We identified 53 relevant papers of which 10 met our inclusion criteria. All but one were prevalence studies conducted in a prison or hospital setting. The one, Danish, register-based cohort study did suggest an increased risk of sex offending among Klinefelter men, probably established before the diagnosis was made and, therefore, any hormone replacement instituted. CONCLUSION: There is insufficient evidence to date to support concerns about exceptional risk of sex offending among men with Klinefelter's syndrome. Rather, it is arguable that there is a research gap in understanding how the experience of and treatment for their condition may affect them. Copyright © 2017 John Wiley & Sons, Ltd.",
+      "abstract_sections": {
+        "BACKGROUND": "Klinefelter's syndrome is a sex chromosome abnormality affecting approximately 1 in 1000 men. There have been suggestions that it is associated with a higher than average prevalence of sexual offending but to what extent does research evidence support this assertion?",
+        "AIMS": "This study aimed to conduct a systematic review of published research to establish the prevalence of sexual offending in men with Klinefelter's syndrome.",
+        "METHOD": "The databases MEDLINE, PsycINFO and EMBASE were searched from inception until 31 December 2016 by using a range of terms for Klinefelter's syndrome and for sexual offending. All selected papers were examined for quality by using the Strengthening the Reporting of Observational Studies in Epidemiology checklist.",
+        "RESULTS": "We identified 53 relevant papers of which 10 met our inclusion criteria. All but one were prevalence studies conducted in a prison or hospital setting. The one, Danish, register-based cohort study did suggest an increased risk of sex offending among Klinefelter men, probably established before the diagnosis was made and, therefore, any hormone replacement instituted.",
+        "CONCLUSION": "There is insufficient evidence to date to support concerns about exceptional risk of sex offending among men with Klinefelter's syndrome. Rather, it is arguable that there is a research gap in understanding how the experience of and treatment for their condition may affect them. Copyright © 2017 John Wiley & Sons, Ltd."
+      },
+      "mesh_terms": [
+        "Cohort Studies",
+        "Cross-Sectional Studies",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male",
+        "Sex Offenses"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/cbm.2052"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28782868/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28782868/"
+    },
+    {
+      "pmid": "12476264",
+      "doi": "10.1080/00224490209552139",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "How common is intersex? a response to Anne Fausto-Sterling.",
+      "authors": [
+        "Sax Leonard"
+      ],
+      "journal": "Journal of sex research",
+      "year": "2002",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Anne Fausto-Sterling s suggestion that the prevalence of intersex might be as high as 1.7% has attracted wide attention in both the scholarly press and the popular media. Many reviewers are not aware that this figure includes conditions which most clinicians do not recognize as intersex, such as Klinefelter syndrome, Turner syndrome, and late-onset adrenal hyperplasia. If the term intersex is to retain any meaning, the term should be restricted to those conditions in which chromosomal sex is inconsistent with phenotypic sex, or in which the phenotype is not classifiable as either male or female. Applying this more precise definition, the true prevalence of intersex is seen to be about 0.018%, almost 100 times lower than Fausto-Sterling s estimate of 1.7%.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adrenal Hyperplasia, Congenital",
+        "Birth Rate",
+        "Disorders of Sex Development",
+        "Female",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male",
+        "Phenotype",
+        "Prevalence",
+        "Sex Chromosome Aberrations",
+        "Sex Determination Analysis",
+        "Turner Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/00224490209552139"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12476264/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12476264/"
+    },
+    {
+      "pmid": "32506765",
+      "doi": "10.1002/ajmg.c.31805",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The epidemiology of sex chromosome abnormalities.",
+      "authors": [
+        "Berglund Agnethe",
+        "Stochholm Kirstine",
+        "Gravholt Claus Højbjerg"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Sex chromosome abnormalities (SCAs) are characterized by gain or loss of entire sex chromosomes or parts of sex chromosomes with the best-known syndromes being Turner syndrome, Klinefelter syndrome, 47,XXX syndrome, and 47,XYY syndrome. Since these syndromes were first described more than 60 years ago, several papers have reported on diseases and health related problems, neurocognitive deficits, and social challenges among affected persons. However, the generally increased comorbidity burden with specific comorbidity patterns within and across syndromes as well as early death of affected persons was not recognized until the last couple of decades, where population-based epidemiological studies were undertaken. Moreover, these epidemiological studies provided knowledge of an association between SCAs and a negatively reduced socioeconomic status in terms of education, income, retirement, cohabitation with a partner and parenthood. This review is on the aspects of epidemiology in Turner, Klinefelter, 47,XXX and 47,XYY syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosomes, Human, X",
+        "Female",
+        "Humans",
+        "Karyotyping",
+        "Klinefelter Syndrome",
+        "Male",
+        "Sex Chromosome Aberrations",
+        "Sex Chromosome Disorders",
+        "Sex Chromosomes",
+        "Trisomy",
+        "Turner Syndrome",
+        "XYY Karyotype"
+      ],
+      "keywords": [
+        "47,XXX syndrome",
+        "47,XYY syndrome",
+        "Klinefelter syndrome",
+        "Turner syndrome",
+        "epidemiology"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.31805"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32506765/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32506765/"
+    },
+    {
+      "pmid": "33806855",
+      "doi": "10.3390/ijms22063264",
+      "pmc_id": "PMC8004677",
+      "pmc_verify": null,
+      "title": "Genetics of Azoospermia.",
+      "authors": [
+        "Cioppi Francesca",
+        "Rosta Viktoria",
+        "Krausz Csilla"
+      ],
+      "journal": "International journal of molecular sciences",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Azoospermia affects 1% of men, and it can be due to: (i) hypothalamic-pituitary dysfunction, (ii) primary quantitative spermatogenic disturbances, (iii) urogenital duct obstruction. Known genetic factors contribute to all these categories, and genetic testing is part of the routine diagnostic workup of azoospermic men. The diagnostic yield of genetic tests in azoospermia is different in the different etiological categories, with the highest in Congenital Bilateral Absence of Vas Deferens (90%) and the lowest in Non-Obstructive Azoospermia (NOA) due to primary testicular failure (~30%). Whole-Exome Sequencing allowed the discovery of an increasing number of monogenic defects of NOA with a current list of 38 candidate genes. These genes are of potential clinical relevance for future gene panel-based screening. We classified these genes according to the associated-testicular histology underlying the NOA phenotype. The validation and the discovery of novel NOA genes will radically improve patient management. Interestingly, approximately 37% of candidate genes are shared in human male and female gonadal failure, implying that genetic counselling should be extended also to female family members of NOA patients.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Alleles",
+        "Animals",
+        "Azoospermia",
+        "Biomarkers",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Y",
+        "Female",
+        "Genetic Association Studies",
+        "Genetic Predisposition to Disease",
+        "Genetic Testing",
+        "Humans",
+        "Male",
+        "Phenotype",
+        "Spermatogenesis",
+        "Exome Sequencing"
+      ],
+      "keywords": [
+        "CBAVD",
+        "Klinefelter syndrome",
+        "NGS",
+        "NOA",
+        "Y chromosome microdeletions",
+        "azoospermia",
+        "congenital hypogonadotropic hypogonadism",
+        "exome",
+        "genetics",
+        "infertility"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8004677/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8004677/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/ijms22063264"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33806855/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33806855/"
+    },
+    {
+      "pmid": "39836465",
+      "doi": "10.3238/arztebl.m2024.0259",
+      "pmc_id": "PMC12452503",
+      "pmc_verify": null,
+      "title": "The Genetics of Female and Male Infertility.",
+      "authors": [
+        "Tüttelmann Frank",
+        "Wyrwoll Margot Julia",
+        "Steingröver Johanna",
+        "Wieacker Peter"
+      ],
+      "journal": "Deutsches Arzteblatt international",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: An estimated 17% of all couples worldwide are involuntarily childless (infertile). The clinically identifiable causes of infertility can be found in the male or female partner or in both. The molecular pathophysiology of infertility still remains unclear in many cases but is increasingly being revealed by genetic analyses. METHODS: This review article is based on pertinent publications retrieved by a selective literature search. RESULTS: The clinical diagnostic evaluation of an infertile couple may yield an indication for genetic analysis. Women with premature ovarian insufficiency should undergo chromosomal analysis and study of the FMR1 gene. If congenital adrenal hyperplasia is suspected, the CYP21A2 gene should be investigated. In men, genetic diagnosis is based primarily on the findings of semen analysis. Klinefelter syndrome and deletions of the Y-chromosomal azoospermia factors may severely limit sperm production. In both male and female partners, the analysis of a gene panel selected on the basis of the individual indication may identify the cause of infertility, e.g., hypogonadotropic hypogonadism, premature ovarian insufficiency, or severe disturbances of spermatogenesis. In some cases, genetic analysis can help determine the likelihood of success of sperm retrieval via testicular biopsy in men, and the potential indication for oocyte cryopreservation in women. CONCLUSION: Genetic causes, disease patterns, and the related investigations are becoming increasingly important in the diagnostic evaluation of infertile couples and have implications for further treatment, for the children of the affected couple, and for other family members.",
+      "abstract_sections": {
+        "BACKGROUND": "An estimated 17% of all couples worldwide are involuntarily childless (infertile). The clinically identifiable causes of infertility can be found in the male or female partner or in both. The molecular pathophysiology of infertility still remains unclear in many cases but is increasingly being revealed by genetic analyses.",
+        "METHODS": "This review article is based on pertinent publications retrieved by a selective literature search.",
+        "RESULTS": "The clinical diagnostic evaluation of an infertile couple may yield an indication for genetic analysis. Women with premature ovarian insufficiency should undergo chromosomal analysis and study of the FMR1 gene. If congenital adrenal hyperplasia is suspected, the CYP21A2 gene should be investigated. In men, genetic diagnosis is based primarily on the findings of semen analysis. Klinefelter syndrome and deletions of the Y-chromosomal azoospermia factors may severely limit sperm production. In both male and female partners, the analysis of a gene panel selected on the basis of the individual indication may identify the cause of infertility, e.g., hypogonadotropic hypogonadism, premature ovarian insufficiency, or severe disturbances of spermatogenesis. In some cases, genetic analysis can help determine the likelihood of success of sperm retrieval via testicular biopsy in men, and the potential indication for oocyte cryopreservation in women.",
+        "CONCLUSION": "Genetic causes, disease patterns, and the related investigations are becoming increasingly important in the diagnostic evaluation of infertile couples and have implications for further treatment, for the children of the affected couple, and for other family members."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Male",
+        "Infertility, Male",
+        "Infertility, Female",
+        "Genetic Predisposition to Disease",
+        "Genetic Testing",
+        "Genetic Markers"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12452503/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12452503/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3238/arztebl.m2024.0259"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39836465/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39836465/"
+    },
+    {
+      "pmid": "40181750",
+      "doi": "10.1097/MOU.0000000000001287",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Genetics of male infertility.",
+      "authors": [
+        "Corsini Christian",
+        "Pozzi Edoardo",
+        "Salonia Andrea"
+      ],
+      "journal": "Current opinion in urology",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: The aim of this study was to outline the role of genetic abnormalities, including chromosomal anomalies, single-gene mutations, epigenetic changes, and mitochondrial DNA (mtDNA) defects, in male factor infertility. RECENT FINDINGS: Recent advances in genetic research have brought incredible new perspectives to understanding male infertility, thanks in large part to next-generation sequencing. Chromosomal abnormalities like Klinefelter syndrome and Y chromosome microdeletions remain key contributors, with new insights into their variable presentations and impact on sperm retrieval. Advanced discoveries in genes such as CFTR and ADGRG2 have reframed our approach to conditions like CBAVD, while epigenetic disruptions and mitochondrial DNA mutations are revealing previously unrecognized mechanisms behind impaired spermatogenesis and sperm motility. Rare copy number variations and genetic syndromes like Kallmann and Noonan further underscore the complex interplay between systemic disorders and male fertility. SUMMARY: The field of genetic infertility is rapidly evolving, offering new insights into the molecular mechanisms behind impaired spermatogenesis and fertility. These findings highlight the importance of integrating genetic testing into infertility evaluations to guide personalized management strategies.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "The aim of this study was to outline the role of genetic abnormalities, including chromosomal anomalies, single-gene mutations, epigenetic changes, and mitochondrial DNA (mtDNA) defects, in male factor infertility.",
+        "RECENT FINDINGS": "Recent advances in genetic research have brought incredible new perspectives to understanding male infertility, thanks in large part to next-generation sequencing. Chromosomal abnormalities like Klinefelter syndrome and Y chromosome microdeletions remain key contributors, with new insights into their variable presentations and impact on sperm retrieval. Advanced discoveries in genes such as CFTR and ADGRG2 have reframed our approach to conditions like CBAVD, while epigenetic disruptions and mitochondrial DNA mutations are revealing previously unrecognized mechanisms behind impaired spermatogenesis and sperm motility. Rare copy number variations and genetic syndromes like Kallmann and Noonan further underscore the complex interplay between systemic disorders and male fertility.",
+        "SUMMARY": "The field of genetic infertility is rapidly evolving, offering new insights into the molecular mechanisms behind impaired spermatogenesis and fertility. These findings highlight the importance of integrating genetic testing into infertility evaluations to guide personalized management strategies."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Infertility, Male",
+        "Spermatogenesis",
+        "Genetic Testing",
+        "DNA, Mitochondrial",
+        "Genetic Predisposition to Disease",
+        "Mutation",
+        "Epigenesis, Genetic",
+        "Fertility",
+        "Phenotype",
+        "DNA Copy Number Variations",
+        "Chromosome Aberrations"
+      ],
+      "keywords": [
+        "epidemiology",
+        "genetics",
+        "male infertility"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/MOU.0000000000001287"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40181750/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40181750/"
+    },
+    {
+      "pmid": "21397196",
+      "doi": "10.1016/j.beem.2010.09.006",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter syndrome.",
+      "authors": [
+        "Wikström Anne M",
+        "Dunkel Leo"
+      ],
+      "journal": "Best practice & research. Clinical endocrinology & metabolism",
+      "year": "2011",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Klinefelter syndrome (KS) is the most common genetic form of male hypogonadism, but overt phenotype becomes evident only after puberty. During childhood, and even during early puberty, pituitary-gonadal function in 47,XXY subjects is relatively normal, but from midpuberty onwards, FSH and LH levels increase to hypergonadotropic levels, inhibin B decreases to undetectable levels, and testosterone levels after some increase plateau at low-normal levels for healthy adult men. Hence, most adult KS males display a clear hypergonadotropism with a varying degree of androgen deficiency; subsequently testosterone substitution therapy is widely used to prevent symptoms and sequels of androgen deficiency. Testicular biopsies of prepubertal KS boys have shown preservation of seminiferous tubules with reduced numbers of germ cells, but Sertoli and Leydig cells have appeared normal. The testes in the adult KS male are characterized by extensive fibrosis and hyalinization of the seminiferous tubules, and hyperplasia of the interstitium. However, the tubules may show residual foci of spermatogenesis. Introduction of testicular sperm extraction (TESE) in combination with intracytoplasmic sperm injection (ICSI) techniques has allowed non-mosaic KS males to father children.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Child",
+        "Fertility",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male",
+        "Puberty",
+        "Seminiferous Tubules",
+        "Sperm Injections, Intracytoplasmic",
+        "Sperm Retrieval",
+        "Testis",
+        "Testosterone"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.beem.2010.09.006"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21397196/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21397196/"
+    },
+    {
+      "pmid": "29325624",
+      "doi": "10.1016/B978-0-444-63233-3.00024-5",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Sex chromosome aneuploidies.",
+      "authors": [
+        "Skuse David",
+        "Printzlau Frida",
+        "Wolstencroft Jeanne"
+      ],
+      "journal": "Handbook of clinical neurology",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Sex chromosome aneuploidies comprise a relatively common group of chromosome disorders characterized by the loss or gain of one or more sex chromosomes. We discuss five of the better-known sex aneuploidies: Turner syndrome (XO), Klinefelter syndrome (XXY), trisomy X (XXX), XYY, and XXYY. Despite their prevalence in the general population, these disorders are underdiagnosed and the specific genetic mechanisms underlying their phenotypes are poorly understood. Although there is considerable variation between them in terms of associated functional impairment, each disorder has a characteristic physical, cognitive, and neurologic profile. The most common cause of sex chromosome aneuploidies is nondisjunction, which can occur during meiosis or during the early stages of postzygotic development. The loss or gain of genetic material can affect all daughter cells or it may be partial, leading to tissue mosaicism. In both typical and atypical sex chromosome karyotypes, there is random inactivation of all but one X chromosome. The mechanisms by which a phenotype results from sex chromosome aneuploidies are twofold: dosage imbalance arising from a small number of genes that escape inactivation, and their endocrinologic consequences.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Disorders",
+        "Cognition Disorders",
+        "Female",
+        "Humans",
+        "Karyotyping",
+        "Male",
+        "Sex Chromosomes"
+      ],
+      "keywords": [
+        "Klinefelter syndrome",
+        "Turner syndrome",
+        "XO",
+        "XXX",
+        "XXY",
+        "XXYY",
+        "XYY",
+        "sex chromosome aneuploidies"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/B978-0-444-63233-3.00024-5"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29325624/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29325624/"
+    },
+    {
+      "pmid": "16342850",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter syndrome.",
+      "authors": [
+        "Wattendorf Daniel J",
+        "Muenke Maximilian"
+      ],
+      "journal": "American family physician",
+      "year": "2005",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "To complement the 2005 Annual Clinical Focus on medical genomics, AFP is publishing a series of short reviews on genetic syndromes. This series was designed to increase awareness of these diseases so that family physicians can recognize and diagnose children with these disorders and understand the kind of care they might require in the future. This review discusses Klinefelter syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16342850/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16342850/"
+    },
+    {
+      "pmid": "37399523",
+      "doi": "10.1530/EC-22-0440",
+      "pmc_id": "PMC10448573",
+      "pmc_verify": null,
+      "title": "Sex chromosome aneuploidies and fertility: 47,XXY, 47,XYY, 47,XXX and 45,X/47,XXX.",
+      "authors": [
+        "Rogol Alan D"
+      ],
+      "journal": "Endocrine connections",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The overall incidence of sex chromosome aneuploidies is approximately 1 per 500 live-born infants, but far more common at conception. I shall review the fertility aspects of the sex chromosome trisomies, XXY, XYY, and XXX, with special reference to the karyotype 45,X/47,XXX. Each has a 'specific' (but variable) phenotype but may be modified by mosaicism. Although the alterations in the hypothalamic-pituitary-gonadal axis are important (and discussed), the emphasis here is on potential fertility and if one might predict that at various epochs within an individual's life span: fetal, 'mini'-puberty, childhood, puberty, and adulthood. The reproductive axis is often affected in females with the 47,XXX karyotype with diminished ovarian reserve and accelerated loss of ovarian function. Fewer than 5% of females with Turner syndrome have the 45,X/47,XXX karyotype. They have taller stature and less severe fertility issues compared to females with the 45,X or other forms of Turner syndrome mosaicism. For the 47,XXY karyotype, non-obstructive azoospermia is almost universal with sperm retrieval by micro-testicular sperm extraction possible in slightly fewer than half of the men. Men with the 47,XYY karyotype have normal to large testes and much less testicular dysfunction than those with the 47,XXY karyotype. They do have a slight increase in infertility compared to the reference population but not nearly as severe as those with the 47,XXY karyotype. Assisted reproductive technology, especially micro-testicular sperm extraction, has an important role, especially for those with 47,XXY; however, more recent data show promising techniques for the in vitro maturation of spermatogonial stem cells and 3D organoids in culture. Assisted reproductive technology is more complex for the female, but vitrification of oocytes has shown promising advances.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "XXX",
+        "XXY",
+        "XYY",
+        "assisted reproductive technology",
+        "fertility",
+        "in vitro spermatogenesis",
+        "sex chromosome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10448573/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10448573/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1530/EC-22-0440"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37399523/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37399523/"
+    },
+    {
+      "pmid": "29382506",
+      "doi": "10.1016/j.metabol.2017.09.017",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Klinefelter syndrome: more than hypogonadism.",
+      "authors": [
+        "Kanakis George A",
+        "Nieschlag Eberhard"
+      ],
+      "journal": "Metabolism: clinical and experimental",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Klinefelter syndrome (KS) is the most frequent chromosome disorder in males (1:650 newborn males), defined by 47,XXY karyotype. The classical phenotype is that of a tall male with relatively long legs, small, firm testes and gynecomastia. Azoospermia and infertility are almost inevitably present, but may be overcome by TESE and ICSI. Nevertheless, a broad spectrum of phenotypes has been described and more than 70% of the actually existing KS men may remain undiagnosed throughout their lifespan. Accordingly, hypogonadism is usually not evident until early adulthood and progresses with ageing. KS patients present a series of comorbidities that increase morbidity and mortality by 40%. Such disturbances are the impaired metabolic profile (obesity, dyslipidemia, insulin resistance) and a tendency to thrombosis, which all favor cardiovascular disease. They also present susceptibility for specific neoplasias (breast cancer, extragonadal germ cell tumors), autoimmune diseases as well as osteoporosis and bone fractures. Moreover, KS has been associated with verbal processing and attention deficits as well as social skill impairments, leading KS individuals to academic and professional achievements inferior to those of their peers of comparable socio-economic status. Nevertheless, the majority fall within the average range regarding their intellectual abilities and adaptive functioning. Testosterone replacement therapy (TRT) is the mainstay of treatment in hypogonadal KS patients; however, randomized trials are needed to determine optimal therapeutic regimens and follow-up schedules.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cardiovascular Diseases",
+        "Comorbidity",
+        "Humans",
+        "Hypogonadism",
+        "Infant, Newborn",
+        "Insulin Resistance",
+        "Klinefelter Syndrome",
+        "Male",
+        "Neoplasms",
+        "Osteoporosis",
+        "Phenotype"
+      ],
+      "keywords": [
+        "Azoospermia",
+        "Hypogonadism",
+        "Klinefelter syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.metabol.2017.09.017"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29382506/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29382506/"
+    },
+    {
+      "pmid": "33000452",
+      "doi": "10.1007/s42000-020-00241-7",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Oncologic manifestations of Klinefelter syndrome.",
+      "authors": [
+        "Rojas Alexsandra P",
+        "Vo Diana V",
+        "Mwangi Lance",
+        "Rehman Shabnam",
+        "Peiris Alan N"
+      ],
+      "journal": "Hormones (Athens, Greece)",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Klinefelter syndrome (47,XXY) has a prevalence of approximately 1 in 500 males. It is a condition characterized by an extra X chromosome and is an underdiagnosed clinical entity. Inactivation of genes enables their escape from regulatory mechanisms, which can result in such classic physical manifestations as hypogonadism, gynecomastia, infertility, and various hormonal and physical abnormalities. While the endocrine manifestations of 47,XXY are well-known, the oncologic manifestations have received less attention. An association between cancer and 47,XXY has not as yet been clearly defined, with variability noted in the prevalence of different malignancies in 47,XXY patients. The mechanisms underlying these altered oncologic risks are still under debate. Some of the proposed explanations include hormone imbalance, developmental malfunctions, and failed DNA repair mechanisms. However, the recognition of the oncological associations linked to 47,XXY could be helpful. Screening measures in certain malignancies may enable an earlier diagnosis of 47,XXY and the implementation of more customized care in 47,XXY and the mosaic variants.. The data for this review was compiled from relevant PubMed articles published within the last three decades and organized based on cancer type.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Klinefelter Syndrome",
+        "Male",
+        "Neoplasms"
+      ],
+      "keywords": [
+        "Cancer",
+        "Karyotyping",
+        "Klinefelter syndrome",
+        "Underdiagnosis"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s42000-020-00241-7"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33000452/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33000452/"
+    },
+    {
+      "pmid": "40318915",
+      "doi": "10.1016/j.beem.2025.102002",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The epidemiology of disorders of sex development.",
+      "authors": [
+        "Berglund Agnethe",
+        "Chang Simon",
+        "Lind-Holst Marie",
+        "Stochholm Kirstine",
+        "Gravholt Claus Højbjerg"
+      ],
+      "journal": "Best practice & research. Clinical endocrinology & metabolism",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "During recent years the epidemiology of disorders of sex development (DSD) has been more clearly delineated. Here, we provide a detailed and up-to-date synopsis of the epidemiology of DSD, incorporating the latest body of knowledge in the field for sex chromosome DSD (Turner, Klinefelter, 47,XXX, and 47,XXY syndrome, and 45,X/46,XY mosaicism) as well as for 46,XX DSD and 46,XY DSD focusing on females with congenital adrenal hyperplasia (CAH), males with 46,XX DSD, females with Mayer-Rokitansky-Küster-Hauser syndrome and females with 46,XY DSD. Despite not fitting directly within the Chicago Consensus classification for DSD, we also include the few epidemiological studies addressing ambiguous genitalia. We show that epidemiological studies have improved our understanding of DSD and led to sound estimates of prevalence, have detailed morbidity and mortality patterns and have for some conditions also shed light on the impact on socioeconomic achievements.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Disorders of Sex Development",
+        "Male",
+        "Adrenal Hyperplasia, Congenital",
+        "Prevalence",
+        "46, XX Disorders of Sex Development"
+      ],
+      "keywords": [
+        "DSD",
+        "disorders of sex development",
+        "epidemiology",
+        "morbidity",
+        "prevalence"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.beem.2025.102002"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40318915/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40318915/"
+    }
+  ],
+  "pubmed_discovery": {
+    "review": {
+      "query": "(\"Klinefelter syndrome\"[Title/Abstract] OR \"47,XXY\"[Title/Abstract] OR \"Klinefelter's syndrome, XXY\"[Title/Abstract] OR \"XXY syndrome\"[Title/Abstract] OR \"XXY trisomy\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "39806878",
+        "12476264",
+        "35948402",
+        "23118429",
+        "32506765"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Klinefelter syndrome\"[Title/Abstract] OR \"47,XXY\"[Title/Abstract] OR \"Klinefelter's syndrome, XXY\"[Title/Abstract] OR \"XXY syndrome\"[Title/Abstract] OR \"XXY trisomy\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "39806878",
+        "33806855",
+        "27644703",
+        "23118429",
+        "39836465",
+        "40181750",
+        "29493939",
+        "21397196",
+        "29325624",
+        "16342850"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Klinefelter syndrome\"[Title/Abstract] OR \"47,XXY\"[Title/Abstract] OR \"Klinefelter's syndrome, XXY\"[Title/Abstract] OR \"XXY syndrome\"[Title/Abstract] OR \"XXY trisomy\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "12476264",
+        "39806878",
+        "27644703",
+        "33806855",
+        "29493939",
+        "37399523",
+        "21397196",
+        "31367971",
+        "29325624",
+        "29382506"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Klinefelter syndrome\"[Title/Abstract] OR \"47,XXY\"[Title/Abstract] OR \"Klinefelter's syndrome, XXY\"[Title/Abstract] OR \"XXY syndrome\"[Title/Abstract] OR \"XXY trisomy\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "39806878",
+        "27644703",
+        "9645824",
+        "29382506",
+        "33000452"
+      ]
+    },
+    "general": {
+      "query": "(\"Klinefelter syndrome\"[Title/Abstract] OR \"47,XXY\"[Title/Abstract] OR \"Klinefelter's syndrome, XXY\"[Title/Abstract] OR \"XXY syndrome\"[Title/Abstract] OR \"XXY trisomy\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "39806878",
+        "29493939",
+        "40318915",
+        "39932051",
+        "40314150",
+        "21397196",
+        "29325624",
+        "9645824",
+        "29382506",
+        "33000452"
+      ]
+    }
+  },
+  "meta": {
+    "syndrome": "Klinefelter syndrome",
+    "collected_at": "2026-08-13T02:22:39.458024Z",
+    "work_dir": "output/Klinefelter_syndrome/klinefelter_syndrome",
+    "steps": {
+      "01_disease_info": "output/Klinefelter_syndrome/klinefelter_syndrome/01_disease_info.json",
+      "02_articles": "output/Klinefelter_syndrome/klinefelter_syndrome/02_articles.json",
+      "03_markers": "output/Klinefelter_syndrome/klinefelter_syndrome/03_markers.json"
+    },
+    "annotation_sources": {
+      "medgen": "NCBI MedGen HTML (공개)",
+      "pubmed": "NCBI PubMed ESearch+EFetch (공개)",
+      "ncbi_gene": "NCBI Gene ESearch+ESummary",
+      "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+      "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+      "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+    }
+  }
+}

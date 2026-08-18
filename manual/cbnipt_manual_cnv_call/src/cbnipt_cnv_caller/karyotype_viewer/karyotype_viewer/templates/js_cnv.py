@@ -13,7 +13,7 @@ var cnvCache  = {};
 var plotCache = {};
 
 // ── renderCnvTabs ─────────────────────────────────────────────────────────
-// 전체 염색체 탭 생성 — affected는 색상 강조, 나머지는 LOW_RISK 표시
+// 전체 염색체 탭 생성 — affected는 색상 강조, 나머지는 NORMAL 표시
 function renderCnvTabs() {
   var M        = MANIFEST;
   var affected = M.affected_chroms || [];
@@ -110,12 +110,14 @@ function switchTab(chrom) {
 // ── switchToChrom ─────────────────────────────────────────────────────────
 // 외부(ideogram 클릭, syndrome 행 클릭)에서 호출
 function switchToChrom(chrom) {
-  chrom = String(chrom).replace('chr', '').toUpperCase();
-  var btn = document.querySelector('.ctab[data-chrom="' + chrom + '"]');
-  if (btn) {
-    switchTab(chrom);
-    btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'nearest'});
-  }
+  chrom = String(chrom).replace(/^chr/i, '');
+  // data-chrom 대소문자 모두 시도
+  var btn = document.querySelector('.ctab[data-chrom="' + chrom + '"]')
+         || document.querySelector('.ctab[data-chrom="' + chrom.toUpperCase() + '"]')
+         || document.querySelector('.ctab[data-chrom="' + chrom.toLowerCase() + '"]');
+  if (!btn) return;
+  switchTab(btn.dataset.chrom);
+  btn.scrollIntoView({behavior:'smooth', block:'nearest', inline:'nearest'});
 }
 
 // ── loadCnv ───────────────────────────────────────────────────────────────
@@ -170,7 +172,7 @@ function loadCnv(chrom) {
     plotCache[chrom] = true;
     plotDiv.innerHTML =
       '<p style="color:var(--text-muted);padding:16px;font-size:12px;">' +
-      'chr' + chrom + ' — CNV 데이터 없음 (LOW_RISK 추정)</p>';
+      'chr' + chrom + ' — CNV 데이터 없음 (LOW RISK 추정)</p>';
     if (statusEl) statusEl.textContent = '';
   };
   document.head.appendChild(s);
@@ -178,9 +180,9 @@ function loadCnv(chrom) {
 
 // ── drawPlot ──────────────────────────────────────────────────────────────
 function drawPlot(chrom, rows, syns, plotDiv) {
-  var posCols = ['pos','position','start','chromstart'];
-  var cnCols  = ['cn','copy_number','copynumber','ratio','log2'];
-  var bafCols = ['baf','vaf','b_allele_freq','allele_freq'];
+  var posCols = ['pos','start','position','chromstart'];
+  var cnCols  = ['cn','copy_number_signal','copy_number','copynumber','ratio','log2','observed_cn'];
+  var bafCols = ['baf','bin_baf','b_allele_freq','allele_freq','vaf'];
   var posCol  = posCols.find(function(c) { return rows[0] && c in rows[0]; });
   var cnCol   = cnCols.find(function(c)  { return rows[0] && c in rows[0]; });
   var bafCol  = bafCols.find(function(c) { return rows[0] && c in rows[0]; });

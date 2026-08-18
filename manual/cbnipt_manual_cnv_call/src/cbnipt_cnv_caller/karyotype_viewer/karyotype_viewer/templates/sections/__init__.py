@@ -8,6 +8,7 @@ from .s07_chrom_detail import SECTION_CHROM_DETAIL
 from .s08_findings    import SECTION_FINDINGS
 from .s09_footer      import SECTION_FOOTER
 
+# 렌더링 순서 리스트 — html_layout.py에서 순서대로 조합
 ALL_SECTIONS = [
     SECTION_HEADER,
     SECTION_PATIENT,

@@ -1,6 +1,0 @@
-sample_id	sex	chr	type	cn	iscn	start	stop	color	gene
-DEMO_NIPT	female	21	trisomy	3	+21	1	46709983	#FC8181	
-DEMO_NIPT	female	X	monosomy	1	-X	1	156040895	#90CDF4	
-DEMO_NIPT	female	5	partial_loss	1	del(5p)	1	18400000	#90CDF4	
-DEMO_NIPT	female	22	partial_loss	1	del(22q11)	17400000	25500000	#F6AD55	
-DEMO_NIPT	female	15	partial_loss	1	del(15q11)	20500000	33400000	#FBD38D	

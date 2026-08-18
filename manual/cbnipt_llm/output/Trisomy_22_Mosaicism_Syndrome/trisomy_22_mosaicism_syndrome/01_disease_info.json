@@ -1,0 +1,233 @@
+{
+  "syndrome": "Trisomy 22 Mosaicism Syndrome",
+  "definition": "Mosaic trisomy 22 is a rare chromosomal anomaly syndrome, with a highly variable phenotype, principally characterized by prenatal and postnatal growth delay, mild to severe intellectual disability, hemiatrophy, webbed neck, ocular and cutaneous pigmentary anomalies, craniofacial dysmorphic features (e.g. microcephaly, upslanted palpebral fissures, ptosis, ear malformations, flat nasal bridge, micrognathia) and cardiac abnormalities (including ventricular and atrial septal defect, pulmonary or aortic stenosis). Hearing loss and limb malformations (e.g. cubitus valgus, syn/brachydactyly), as well as renal and genital anomalies, have also been reported. [from ORDO]",
+  "synonyms": [
+    "Uniparental disomy of  22"
+  ],
+  "db_ids": {
+    "MONDO": "MONDO:0019869",
+    "Orphanet": "96068"
+  },
+  "gene_locations": [],
+  "genomic_targets": [
+    {
+      "type": "TargetChromosome",
+      "chromosome": "chr22",
+      "cytoband": "22",
+      "event": "gain",
+      "mechanism": "trisomy",
+      "source": "name_or_synonym"
+    }
+  ],
+  "genereview_url": null,
+  "literature": {
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "22447382",
+          "title": "Isolated left ventricular noncompaction in a newborn with Pierre-Robin sequence.",
+          "authors": "Aypar E, Sert A, Gokmen Z, Aslan E, Odabas D",
+          "journal": "Pediatr Cardiol",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22447382/"
+        },
+        {
+          "pmid": "17663479",
+          "title": "A longitudinal case study of a child with mosaic trisomy 22: language, cognitive, behavioral, physical, and dental outcomes.",
+          "authors": "Lewis B, Fulton S, Short E, Nelson S, Lombardi G, Rosenbaum D, Kercsmar C, Baley J, Singer LT",
+          "journal": "Am J Med Genet A",
+          "year": "2007",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17663479/"
+        },
+        {
+          "pmid": "16906599",
+          "title": "Non-mosaic trisomy 22: a report of 2 cases.",
+          "authors": "Mokate T, Leask K, Mehta S, Sharif S, Smith A, Saxena A, Mahmood T",
+          "journal": "Prenat Diagn",
+          "year": "2006",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16906599/"
+        },
+        {
+          "pmid": "9286446",
+          "title": "Mosaic trisomy 22: a case presentation and literature review of trisomy 22 phenotypes.",
+          "authors": "Crowe CA, Schwartz S, Black CJ, Jaswaney V",
+          "journal": "Am J Med Genet",
+          "year": "1997",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9286446/"
+        },
+        {
+          "pmid": "8633655",
+          "title": "Risk of fetal mosaicism when placental mosaicism is diagnosed by chorionic villus sampling.",
+          "authors": "Phillips OP, Tharapel AT, Lerner JL, Park VM, Wachtel SS, Shulman LP",
+          "journal": "Am J Obstet Gynecol",
+          "year": "1996",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8633655/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "38540405",
+          "title": "Trisomy 22 Mosaicism from Prenatal to Postnatal Findings: A Case Series and Systematic Review of the Literature.",
+          "authors": "Trevisan V, Meroni A, Leoni C, Sirchia F, Politano D, Fiandrino G, Giorgio V, Rigante D, Limongelli D, Perri L, Sforza E, Leonardi F, Viscogliosi G, Contaldo I, Orteschi D, Proietti L, Zampino G, Onesimo R",
+          "journal": "Genes (Basel)",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38540405/"
+        },
+        {
+          "pmid": "37957608",
+          "title": "Occurrence of mosaic trisomy 22 and pericentric inversion of chromosome 9 in a patient with a good prognosis.",
+          "authors": "Nardelli A, Laskoski LV, Luiz AF, Silveira MAD, d'Arce LPG",
+          "journal": "BMC Med Genomics",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37957608/"
+        },
+        {
+          "pmid": "31542095",
+          "title": "Mosaic trisomy 22 at amniocentesis: Prenatal diagnosis and literature review.",
+          "authors": "Chen CP, Huang MC, Chern SR, Wu PS, Chen SW, Chuang TY, Town DD, Wang W",
+          "journal": "Taiwan J Obstet Gynecol",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31542095/"
+        },
+        {
+          "pmid": "11755102",
+          "title": "A rare case: mosaic trisomy 22.",
+          "authors": "Basaran N, Berkil H, Ay N, Durak B, Ataman C, Ozdemir M, Ozon YH, Kaya I",
+          "journal": "Ann Genet",
+          "year": "2001",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11755102/"
+        },
+        {
+          "pmid": "9286446",
+          "title": "Mosaic trisomy 22: a case presentation and literature review of trisomy 22 phenotypes.",
+          "authors": "Crowe CA, Schwartz S, Black CJ, Jaswaney V",
+          "journal": "Am J Med Genet",
+          "year": "1997",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9286446/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "15194961",
+          "title": "Neuroblastoma, maternal valproic acid use, in-vitro fertilization and family history of mosaic chromosome 22: coincidence or causal relationship?",
+          "authors": "Merks JH, Ceelie N, Caron HN, Hennekam RC",
+          "journal": "Clin Dysmorphol",
+          "year": "2004",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15194961/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "37926071",
+          "title": "Trisomy 22: First and Second Trimester Cytogenetic Analysis and Phenotypic Presentation in a Series of Seven Cases.",
+          "authors": "Minella C, Jeandidier E, Koch A, Antal MC, Favre R, Sananes N, Weingertner AS",
+          "journal": "Fetal Diagn Ther",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37926071/"
+        },
+        {
+          "pmid": "37957608",
+          "title": "Occurrence of mosaic trisomy 22 and pericentric inversion of chromosome 9 in a patient with a good prognosis.",
+          "authors": "Nardelli A, Laskoski LV, Luiz AF, Silveira MAD, d'Arce LPG",
+          "journal": "BMC Med Genomics",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37957608/"
+        },
+        {
+          "pmid": "36932325",
+          "title": "Non-mosaic trisomy 22 and congenital heart surgery using the shared decision making model: a case report.",
+          "authors": "Phung V, Singh KE, Danon S, Tan CA, Dabagh S",
+          "journal": "BMC Pediatr",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36932325/"
+        },
+        {
+          "pmid": "25257307",
+          "title": "Co-occurrence of non-mosaic trisomy 22 and inherited balanced t(4;6)(q33;q23.3) in a liveborn female: case report and review of the literature.",
+          "authors": "Kehinde FI, Anderson CE, McGowan JE, Jethva RN, Wahab MA, Glick AR, Sterner MR Jr, Pascasio JM, Punnett HH, Liu J",
+          "journal": "Am J Med Genet A",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25257307/"
+        },
+        {
+          "pmid": "23529842",
+          "title": "Trisomy 22 mosaicism and normal developmental outcome: report of two patients and review of the literature.",
+          "authors": "Abdelgadir D, Nowaczyk MJ, Li C",
+          "journal": "Am J Med Genet A",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23529842/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "38540405",
+          "title": "Trisomy 22 Mosaicism from Prenatal to Postnatal Findings: A Case Series and Systematic Review of the Literature.",
+          "authors": "Trevisan V, Meroni A, Leoni C, Sirchia F, Politano D, Fiandrino G, Giorgio V, Rigante D, Limongelli D, Perri L, Sforza E, Leonardi F, Viscogliosi G, Contaldo I, Orteschi D, Proietti L, Zampino G, Onesimo R",
+          "journal": "Genes (Basel)",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38540405/"
+        },
+        {
+          "pmid": "37926071",
+          "title": "Trisomy 22: First and Second Trimester Cytogenetic Analysis and Phenotypic Presentation in a Series of Seven Cases.",
+          "authors": "Minella C, Jeandidier E, Koch A, Antal MC, Favre R, Sananes N, Weingertner AS",
+          "journal": "Fetal Diagn Ther",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37926071/"
+        },
+        {
+          "pmid": "37957608",
+          "title": "Occurrence of mosaic trisomy 22 and pericentric inversion of chromosome 9 in a patient with a good prognosis.",
+          "authors": "Nardelli A, Laskoski LV, Luiz AF, Silveira MAD, d'Arce LPG",
+          "journal": "BMC Med Genomics",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37957608/"
+        },
+        {
+          "pmid": "30259573",
+          "title": "Mosaic trisomy 22 in a 4-year-old boy with congenital heart disease and general hypotrophy: A case report.",
+          "authors": "Kalayinia S, Shahani T, Biglari A, Maleki M, Rokni-Zadeh H, Razavi Z, Mahdieh N",
+          "journal": "J Clin Lab Anal",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30259573/"
+        },
+        {
+          "pmid": "8633655",
+          "title": "Risk of fetal mosaicism when placental mosaicism is diagnosed by chorionic villus sampling.",
+          "authors": "Phillips OP, Tharapel AT, Lerner JL, Park VM, Wachtel SS, Shulman LP",
+          "journal": "Am J Obstet Gynecol",
+          "year": "1996",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8633655/"
+        }
+      ],
+      "see_all": {}
+    },
+    "systematic_reviews": {
+      "papers": [
+        {
+          "pmid": "38540405",
+          "title": "Trisomy 22 Mosaicism from Prenatal to Postnatal Findings: A Case Series and Systematic Review of the Literature.",
+          "authors": "Trevisan V, Meroni A, Leoni C, Sirchia F, Politano D, Fiandrino G, Giorgio V, Rigante D, Limongelli D, Perri L, Sforza E, Leonardi F, Viscogliosi G, Contaldo I, Orteschi D, Proietti L, Zampino G, Onesimo R",
+          "journal": "Genes (Basel)",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38540405/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "419045",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/419045"
+}

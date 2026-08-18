@@ -1,0 +1,352 @@
+{
+  "syndrome": "Wolf-Hirschhorn syndrome",
+  "definition": "Wolf-Hirschhorn syndrome is a congenital malformation syndrome characterized by pre- and postnatal growth deficiency, developmental disability of variable degree, characteristic craniofacial features ('Greek warrior helmet' appearance of the nose, high forehead, prominent glabella, hypertelorism, high-arched eyebrows, protruding eyes, epicanthal folds, short philtrum, distinct mouth with downturned corners, and micrognathia), and a seizure disorder (Battaglia et al., 2008). [from OMIM ]",
+  "synonyms": [
+    "CHROMOSOME 4p16.3 DELETION SYNDROME",
+    "PITT SYNDROME",
+    "WHS",
+    "WITTWER SYNDROME",
+    "Wolf-Hirschhorn syndrome"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "17122004",
+    "MONDO": "MONDO:0008684",
+    "OMIM": "194190",
+    "Orphanet": "280"
+  },
+  "gene_locations": [
+    {
+      "gene_symbol": "CPLX1",
+      "ncbi_gene_id": "10815",
+      "cytoband": "4p16.3",
+      "source": "medgen_direct"
+    },
+    {
+      "gene_symbol": "CTBP1",
+      "ncbi_gene_id": "1487",
+      "cytoband": "4p16.3",
+      "source": "medgen_direct"
+    },
+    {
+      "gene_symbol": "FGFRL1",
+      "ncbi_gene_id": "53834",
+      "cytoband": "4p16.3",
+      "source": "medgen_direct"
+    },
+    {
+      "gene_symbol": "LETM1",
+      "ncbi_gene_id": "3954",
+      "cytoband": "4p16.3",
+      "source": "medgen_direct"
+    },
+    {
+      "gene_symbol": "NSD2",
+      "ncbi_gene_id": "7468",
+      "cytoband": "4p16.3",
+      "source": "medgen_direct"
+    }
+  ],
+  "genomic_targets": [
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr4",
+      "cytoband": "4p16.3",
+      "event": "loss",
+      "mechanism": "deletion",
+      "source": "name_synonym_or_definition"
+    }
+  ],
+  "genereview_url": null,
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "40684108",
+          "title": "Prenatal diagnosis and genetic assessment of fetuses with single umbilical artery using chromosomal microarray analysis: a seven-year single-center retrospective study.",
+          "authors": "Zhuang J, Huang N, Chen Y, Wu J, Ye X, Chen C",
+          "journal": "BMC Pregnancy Childbirth",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40684108/"
+        },
+        {
+          "pmid": "26451378",
+          "title": "Rare Diseases Leading to Childhood Glaucoma: Epidemiology, Pathophysiogenesis, and Management.",
+          "authors": "Abdolrahimzadeh S, Fameli V, Mollo R, Contestabile MT, Perdicchi A, Recupero SM",
+          "journal": "Biomed Res Int",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26451378/"
+        },
+        {
+          "pmid": "10559766",
+          "title": "Health supervision and anticipatory guidance of individuals with Wolf-Hirschhorn syndrome.",
+          "authors": "Battaglia A, Carey JC",
+          "journal": "Am J Med Genet",
+          "year": "1999",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10559766/"
+        }
+      ],
+      "see_all": {}
+    },
+    "curated": {
+      "papers": [
+        {
+          "pmid": "21150881",
+          "title": "Clinical utility gene card for: Wolf-Hirschhorn (4p-) syndrome.",
+          "authors": "Battaglia A, South S, Carey JC",
+          "journal": "Eur J Hum Genet",
+          "year": "2011",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21150881/"
+        }
+      ],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "36849216",
+          "title": "Prenatal phenotype of Wolf-Hirschhorn syndrome: A case series and literature review.",
+          "authors": "Tang F, Zeng Y, Wang L, Yin D, Chen L, Xie D, Wang J",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36849216/"
+        },
+        {
+          "pmid": "36053618",
+          "title": "Gastrostomy and congenital anomalies: a European population-based study.",
+          "authors": "Garne E, Tan J, Loane M, Baldacci S, Ballardini E, Brigden J, Cavero-Carbonell C, García-Villodre L, Gissler M, Given J, Heino A, Jordan S, Limb E, Neville AJ, Rissmann A, Santoro M, Scanlon L, Urhoj SK, Wellesley DG, Morris J",
+          "journal": "BMJ Paediatr Open",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36053618/"
+        },
+        {
+          "pmid": "26451378",
+          "title": "Rare Diseases Leading to Childhood Glaucoma: Epidemiology, Pathophysiogenesis, and Management.",
+          "authors": "Abdolrahimzadeh S, Fameli V, Mollo R, Contestabile MT, Perdicchi A, Recupero SM",
+          "journal": "Biomed Res Int",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26451378/"
+        },
+        {
+          "pmid": "15734578",
+          "title": "The etiology of Wolf-Hirschhorn syndrome.",
+          "authors": "Bergemann AD, Cole F, Hirschhorn K",
+          "journal": "Trends Genet",
+          "year": "2005",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15734578/"
+        },
+        {
+          "pmid": "11480768",
+          "title": "Wolf-Hirschhorn (4p-) syndrome.",
+          "authors": "Battaglia A, Carey JC, Wright TJ",
+          "journal": "Adv Pediatr",
+          "year": "2001",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11480768/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "38353053",
+          "title": "Clinical details of individuals with Rauch-Steindl syndrome due to NSD2 truncating variants.",
+          "authors": "Nishi E, Yanagi K, Kaname T, Okamoto N",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38353053/"
+        },
+        {
+          "pmid": "36526544",
+          "title": "Clinical and epilepsy characteristics in Wolf-Hirschhorn syndrome (4p-): A review.",
+          "authors": "Paprocka J, Kaminiów K, Yetkin O, Tekturk P, Baykan B, Leiz S, Kluger G, Striano P",
+          "journal": "Seizure",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36526544/"
+        },
+        {
+          "pmid": "26239400",
+          "title": "Wolf-Hirschhorn syndrome: A review and update.",
+          "authors": "Battaglia A, Carey JC, South ST",
+          "journal": "Am J Med Genet C Semin Med Genet",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26239400/"
+        },
+        {
+          "pmid": "16023553",
+          "title": "Seizure and EEG patterns in Wolf-Hirschhorn (4p-) syndrome.",
+          "authors": "Battaglia A, Carey JC",
+          "journal": "Brain Dev",
+          "year": "2005",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16023553/"
+        },
+        {
+          "pmid": "6773328",
+          "title": "4p- (Wolf-Hirschhorn) syndrome.",
+          "authors": "Magill HL, Shackelford GD, McAlister WH, Graviss ER",
+          "journal": "AJR Am J Roentgenol",
+          "year": "1980",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/6773328/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "37075791",
+          "title": "Efficacy of Antiseizure Medications in Wolf-Hirschhorn Syndrome.",
+          "authors": "Horiguchi A, Koichihara R, Kikuchi K, Nonoyama H, Daida A, Oba D, Hirata Y, Matsuura R, Ohashi H, Hamano SI",
+          "journal": "Neuropediatrics",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37075791/"
+        },
+        {
+          "pmid": "35124168",
+          "title": "Glucocorticoid receptor gene mutations confer glucocorticoid resistance in B-cell precursor acute lymphoblastic leukemia.",
+          "authors": "Tamai M, Kasai S, Akahane K, Thu TN, Kagami K, Komatsu C, Abe M, Watanabe A, Goi K, Miyake K, Inaba T, Takita J, Goto H, Minegishi M, Iwamoto S, Sugita K, Inukai T",
+          "journal": "J Steroid Biochem Mol Biol",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35124168/"
+        },
+        {
+          "pmid": "25942451",
+          "title": "The NSD family of protein methyltransferases in human cancer.",
+          "authors": "Vougiouklakis T, Hamamoto R, Nakamura Y, Saloura V",
+          "journal": "Epigenomics",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25942451/"
+        },
+        {
+          "pmid": "15660782",
+          "title": "Epilepsy in Wolf-Hirschhorn syndrome (4p-).",
+          "authors": "Kagitani-Shimono K, Imai K, Otani K, Kamio N, Okinaga T, Toribe Y, Suzuki Y, Ozono K",
+          "journal": "Epilepsia",
+          "year": "2005",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15660782/"
+        },
+        {
+          "pmid": "12767462",
+          "title": "A study of EEG and epilepsy profile in Wolf-Hirschhorn syndrome and considerations regarding its correlation with other chromosomal disorders.",
+          "authors": "Valente KD, Freitas A, Fiore LA, Kim CA",
+          "journal": "Brain Dev",
+          "year": "2003",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12767462/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "40725476",
+          "title": "Clinician-Based Functional Scoring and Genomic Insights for Prognostic Stratification in Wolf-Hirschhorn Syndrome.",
+          "authors": "Nevado J, Blanco-Lago R, Bel-Fenellós C, Hernández A, Mori-Álvarez MA, Biencinto-López C, Málaga I, Pachajoa H, Mansilla E, García-Santiago FA, Barrúz P, Tenorio-Castaño JA, Muñoz-GªPorrero Y, Vallcorba I, Lapunzina P",
+          "journal": "Genes (Basel)",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40725476/"
+        },
+        {
+          "pmid": "36849216",
+          "title": "Prenatal phenotype of Wolf-Hirschhorn syndrome: A case series and literature review.",
+          "authors": "Tang F, Zeng Y, Wang L, Yin D, Chen L, Xie D, Wang J",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36849216/"
+        },
+        {
+          "pmid": "26451378",
+          "title": "Rare Diseases Leading to Childhood Glaucoma: Epidemiology, Pathophysiogenesis, and Management.",
+          "authors": "Abdolrahimzadeh S, Fameli V, Mollo R, Contestabile MT, Perdicchi A, Recupero SM",
+          "journal": "Biomed Res Int",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26451378/"
+        },
+        {
+          "pmid": "11480768",
+          "title": "Wolf-Hirschhorn (4p-) syndrome.",
+          "authors": "Battaglia A, Carey JC, Wright TJ",
+          "journal": "Adv Pediatr",
+          "year": "2001",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11480768/"
+        },
+        {
+          "pmid": "954225",
+          "title": "The Wolf-Hirschhorn (4p-) syndrome.",
+          "authors": "Johnson VP, Mulder RD, Hosen R",
+          "journal": "Clin Genet",
+          "year": "1976",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/954225/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "40849623",
+          "title": "Elevated levels of Letm1 drives mitochondrial dysfunction and cardiomyocyte stress-mediated apoptosis in cultured cardiomyocytes.",
+          "authors": "Deshpande A, Weirauch L, Baral TK, Steier M, Borlepawar A, Kumari M, Kilian LS, Richter K, Hammer E, Frank D, Schmidt C, Frey N, Rangrez AY",
+          "journal": "Cell Commun Signal",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40849623/"
+        },
+        {
+          "pmid": "40725476",
+          "title": "Clinician-Based Functional Scoring and Genomic Insights for Prognostic Stratification in Wolf-Hirschhorn Syndrome.",
+          "authors": "Nevado J, Blanco-Lago R, Bel-Fenellós C, Hernández A, Mori-Álvarez MA, Biencinto-López C, Málaga I, Pachajoa H, Mansilla E, García-Santiago FA, Barrúz P, Tenorio-Castaño JA, Muñoz-GªPorrero Y, Vallcorba I, Lapunzina P",
+          "journal": "Genes (Basel)",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40725476/"
+        },
+        {
+          "pmid": "38884729",
+          "title": "Human Genetics of Ventricular Septal Defect.",
+          "authors": "Perrot A, Rickert-Sperling S",
+          "journal": "Adv Exp Med Biol",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+        },
+        {
+          "pmid": "36849216",
+          "title": "Prenatal phenotype of Wolf-Hirschhorn syndrome: A case series and literature review.",
+          "authors": "Tang F, Zeng Y, Wang L, Yin D, Chen L, Xie D, Wang J",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36849216/"
+        },
+        {
+          "pmid": "11480768",
+          "title": "Wolf-Hirschhorn (4p-) syndrome.",
+          "authors": "Battaglia A, Carey JC, Wright TJ",
+          "journal": "Adv Pediatr",
+          "year": "2001",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11480768/"
+        }
+      ],
+      "see_all": {}
+    },
+    "systematic_reviews": {
+      "papers": [
+        {
+          "pmid": "36526544",
+          "title": "Clinical and epilepsy characteristics in Wolf-Hirschhorn syndrome (4p-): A review.",
+          "authors": "Paprocka J, Kaminiów K, Yetkin O, Tekturk P, Baykan B, Leiz S, Kluger G, Striano P",
+          "journal": "Seizure",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36526544/"
+        },
+        {
+          "pmid": "29239919",
+          "title": "Accessory Auricles: Systematic Review of Definition, Associated Conditions, and Recommendations for Clinical Practice.",
+          "authors": "Amirhassankhani S, Lloyd MS",
+          "journal": "J Craniofac Surg",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29239919/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "408255",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/408255"
+}

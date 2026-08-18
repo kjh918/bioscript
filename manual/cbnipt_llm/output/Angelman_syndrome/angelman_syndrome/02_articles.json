@@ -1,0 +1,2414 @@
+{
+  "discovery": {
+    "review": {
+      "query": "(\"Angelman syndrome\"[Title/Abstract] OR \"HAPPY PUPPET SYNDROME\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "26040994",
+        "37386011",
+        "34203304",
+        "32087041",
+        "32893075"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Angelman syndrome\"[Title/Abstract] OR \"HAPPY PUPPET SYNDROME\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "26040994",
+        "34203304",
+        "37051256",
+        "37599585",
+        "32809705",
+        "27786435",
+        "22675103",
+        "40646322",
+        "28494826",
+        "38837855"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Angelman syndrome\"[Title/Abstract] OR \"HAPPY PUPPET SYNDROME\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "34203304",
+        "26062517",
+        "32809705",
+        "23622177",
+        "20803658",
+        "28494826",
+        "17848870",
+        "20803659",
+        "39108836",
+        "39721588"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Angelman syndrome\"[Title/Abstract] OR \"HAPPY PUPPET SYNDROME\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "37599585",
+        "32893075",
+        "35150089",
+        "40884397",
+        "28494826"
+      ]
+    },
+    "general": {
+      "query": "(\"Angelman syndrome\"[Title/Abstract] OR \"HAPPY PUPPET SYNDROME\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "34203304",
+        "32087041",
+        "37599585",
+        "39168152",
+        "32809705",
+        "39847371",
+        "22675103",
+        "28494826",
+        "26758979",
+        "40643417"
+      ]
+    }
+  },
+  "pmids": [
+    "37599585",
+    "35150089",
+    "34203304",
+    "40956616",
+    "40646322",
+    "38837855",
+    "20803658",
+    "39804213",
+    "26062517",
+    "26040994",
+    "41820375",
+    "32893075",
+    "40179454",
+    "33395098",
+    "33087932",
+    "28494826",
+    "1634750",
+    "39721588",
+    "36750385",
+    "36833226",
+    "36007813",
+    "35303699",
+    "31869773",
+    "30014250",
+    "37386011",
+    "32087041",
+    "37051256",
+    "32809705",
+    "27786435",
+    "22675103",
+    "23622177",
+    "17848870",
+    "20803659",
+    "39108836",
+    "40884397",
+    "39168152",
+    "39847371",
+    "26758979",
+    "40643417"
+  ],
+  "articles": {
+    "37599585": {
+      "pmid": "37599585",
+      "doi": "10.1080/14737175.2023.2245568",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Current and emerging treatment options for Angelman syndrome.",
+      "authors": [
+        "Keary Christopher J",
+        "McDougle Christopher J"
+      ],
+      "journal": "Expert review of neurotherapeutics",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "INTRODUCTION: Angelman syndrome (AS) is a neurodevelopmental disorder characterized by intellectual disability, limited expressive language, epilepsy, and motor impairment. Angelman syndrome is caused by haploinsufficiency of the UBE3A gene on the maternal copy of chromosome 15. There have been ongoing advances in the understanding of neurological, behavioral, and sleep-based problems and associated treatments for patients with AS. These results along with gene-based therapies entering into clinical development prompted this review. AREAS COVERED: The authors summarize the research basis describing phenomenology of epilepsy and behavioral concerns such as hyperactivity behavior, aggression, self-injury, repetitive behavior, and sleep disorder. The evidence for recent treatment advances in these target symptom domains of concern is reviewed, and the potential for emerging gene therapy treatments is considered. EXPERT OPINION: The prospect for emerging gene therapies means that increasing efforts should be directed toward the early identification of AS implemented equitably. Recent studies emphasize the important role of behavioral therapy in addressing mental health concerns such as aggression and disordered sleep.",
+      "abstract_sections": {
+        "INTRODUCTION": "Angelman syndrome (AS) is a neurodevelopmental disorder characterized by intellectual disability, limited expressive language, epilepsy, and motor impairment. Angelman syndrome is caused by haploinsufficiency of the UBE3A gene on the maternal copy of chromosome 15. There have been ongoing advances in the understanding of neurological, behavioral, and sleep-based problems and associated treatments for patients with AS. These results along with gene-based therapies entering into clinical development prompted this review.",
+        "AREAS COVERED": "The authors summarize the research basis describing phenomenology of epilepsy and behavioral concerns such as hyperactivity behavior, aggression, self-injury, repetitive behavior, and sleep disorder. The evidence for recent treatment advances in these target symptom domains of concern is reviewed, and the potential for emerging gene therapy treatments is considered.",
+        "EXPERT OPINION": "The prospect for emerging gene therapies means that increasing efforts should be directed toward the early identification of AS implemented equitably. Recent studies emphasize the important role of behavioral therapy in addressing mental health concerns such as aggression and disordered sleep."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Angelman Syndrome",
+        "Cognition",
+        "Aggression",
+        "Behavior Therapy",
+        "Epilepsy"
+      ],
+      "keywords": [
+        "Angelman Syndrome",
+        "Antisense oligonucleotide therapy",
+        "Behavior",
+        "Epilepsy",
+        "Sleep Disorder",
+        "Treatment"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/14737175.2023.2245568"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37599585/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37599585/"
+    },
+    "35150089": {
+      "pmid": "35150089",
+      "doi": "10.1002/mgg3.1843",
+      "pmc_id": "PMC8922964",
+      "pmc_verify": null,
+      "title": "A multidisciplinary approach and consensus statement to establish standards of care for Angelman syndrome.",
+      "authors": [
+        "Duis Jessica",
+        "Nespeca Mark",
+        "Summers Jane",
+        "Bird Lynne",
+        "Bindels-de Heus Karen G C B",
+        "Valstar M J",
+        "de Wit Marie-Claire Y",
+        "Navis C",
+        "Ten Hooven-Radstaake Maartje",
+        "van Iperen-Kolk Bianca M",
+        "Ernst Susan",
+        "Dendrinos Melina",
+        "Katz Terry",
+        "Diaz-Medina Gloria",
+        "Katyayan Akshat",
+        "Nangia Srishti",
+        "Thibert Ronald",
+        "Glaze Daniel",
+        "Keary Christopher",
+        "Pelc Karine",
+        "Simon Nicole",
+        "Sadhwani Anjali",
+        "Heussler Helen",
+        "Wheeler Anne",
+        "Woeber Caroline",
+        "DeRamus Margaret",
+        "Thomas Amy",
+        "Kertcher Emily",
+        "DeValk Lauren",
+        "Kalemeris Kristen",
+        "Arps Kara",
+        "Baym Carol",
+        "Harris Nicole",
+        "Gorham John P",
+        "Bohnsack Brenda L",
+        "Chambers Reid C",
+        "Harris Sarah",
+        "Chambers Henry G",
+        "Okoniewski Katherine",
+        "Jalazo Elizabeth R",
+        "Berent Allyson",
+        "Bacino Carlos A",
+        "Williams Charles",
+        "Anderson Anne"
+      ],
+      "journal": "Molecular genetics & genomic medicine",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review",
+        "Consensus Statement"
+      ],
+      "abstract": "BACKGROUND: Angelman syndrome (AS) is a rare neurogenetic disorder present in approximately 1/12,000 individuals and characterized by developmental delay, cognitive impairment, motor dysfunction, seizures, gastrointestinal concerns, and abnormal electroencephalographic background. AS is caused by absent expression of the paternally imprinted gene UBE3A in the central nervous system. Disparities in the management of AS are a major problem in preparing for precision therapies and occur even in patients with access to experts and recognized clinics. AS patients receive care based on collective provider experience due to limited evidence-based literature. We present a consensus statement and comprehensive literature review that proposes a standard of care practices for the management of AS at a critical time when therapeutics to alter the natural history of the disease are on the horizon. METHODS: We compiled the key recognized clinical features of AS based on consensus from a team of specialists managing patients with AS. Working groups were established to address each focus area with committees comprised of providers who manage >5 individuals. Committees developed management guidelines for their area of expertise. These were compiled into a final document to provide a framework for standardizing management. Evidence from the medical literature was also comprehensively reviewed. RESULTS: Areas covered by working groups in the consensus document include genetics, developmental medicine, psychology, general health concerns, neurology (including movement disorders), sleep, psychiatry, orthopedics, ophthalmology, communication, early intervention and therapies, and caregiver health. Working groups created frameworks, including flowcharts and tables, to help with quick access for providers. Data from the literature were incorporated to ensure providers had review of experiential versus evidence-based care guidelines. CONCLUSION: Standards of care in the management of AS are keys to ensure optimal care at a critical time when new disease-modifying therapies are emerging. This document is a framework for providers of all familiarity levels.",
+      "abstract_sections": {
+        "BACKGROUND": "Angelman syndrome (AS) is a rare neurogenetic disorder present in approximately 1/12,000 individuals and characterized by developmental delay, cognitive impairment, motor dysfunction, seizures, gastrointestinal concerns, and abnormal electroencephalographic background. AS is caused by absent expression of the paternally imprinted gene UBE3A in the central nervous system. Disparities in the management of AS are a major problem in preparing for precision therapies and occur even in patients with access to experts and recognized clinics. AS patients receive care based on collective provider experience due to limited evidence-based literature. We present a consensus statement and comprehensive literature review that proposes a standard of care practices for the management of AS at a critical time when therapeutics to alter the natural history of the disease are on the horizon.",
+        "METHODS": "We compiled the key recognized clinical features of AS based on consensus from a team of specialists managing patients with AS. Working groups were established to address each focus area with committees comprised of providers who manage >5 individuals. Committees developed management guidelines for their area of expertise. These were compiled into a final document to provide a framework for standardizing management. Evidence from the medical literature was also comprehensively reviewed.",
+        "RESULTS": "Areas covered by working groups in the consensus document include genetics, developmental medicine, psychology, general health concerns, neurology (including movement disorders), sleep, psychiatry, orthopedics, ophthalmology, communication, early intervention and therapies, and caregiver health. Working groups created frameworks, including flowcharts and tables, to help with quick access for providers. Data from the literature were incorporated to ensure providers had review of experiential versus evidence-based care guidelines.",
+        "CONCLUSION": "Standards of care in the management of AS are keys to ensure optimal care at a critical time when new disease-modifying therapies are emerging. This document is a framework for providers of all familiarity levels."
+      },
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Humans",
+        "Standard of Care"
+      ],
+      "keywords": [
+        "Angelman Syndrome",
+        "UBE3A",
+        "genetics",
+        "management",
+        "neurogenetics"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8922964/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8922964/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/mgg3.1843"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35150089/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35150089/"
+    },
+    "34203304": {
+      "pmid": "34203304",
+      "doi": "10.3390/genes12070987",
+      "pmc_id": "PMC8304328",
+      "pmc_verify": null,
+      "title": "Genotype-Phenotype Correlations in Angelman Syndrome.",
+      "authors": [
+        "Yang Lili",
+        "Shu Xiaoli",
+        "Mao Shujiong",
+        "Wang Yi",
+        "Du Xiaonan",
+        "Zou Chaochun"
+      ],
+      "journal": "Genes",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Angelman syndrome (AS) is a rare neurodevelopmental disease that is caused by the loss of function of the maternal copy of ubiquitin-protein ligase E3A (UBE3A) on the chromosome 15q11-13 region. AS is characterized by global developmental delay, severe intellectual disability, lack of speech, happy disposition, ataxia, epilepsy, and distinct behavioral profile. There are four molecular mechanisms of etiology: maternal deletion of chromosome 15q11-q13, paternal uniparental disomy of chromosome 15q11-q13, imprinting defects, and maternally inherited UBE3A mutations. Different genetic types may show different phenotypes in performance, seizure, behavior, sleep, and other aspects. AS caused by maternal deletion of 15q11-13 appears to have worse development, cognitive skills, albinism, ataxia, and more autistic features than those of other genotypes. Children with a UBE3A mutation have less severe phenotypes and a nearly normal development quotient. In this review, we proposed to review genotype-phenotype correlations based on different genotypes. Understanding the pathophysiology of the different genotypes and the genotype-phenotype correlations will offer an opportunity for individualized treatment and genetic counseling. Genotype-phenotype correlations based on larger data should be carried out for identifying new treatment modalities.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Chromosomes, Human, Pair 15",
+        "Genetic Association Studies",
+        "Genetic Counseling",
+        "Genotype",
+        "Humans",
+        "Mutation",
+        "Phenotype",
+        "Seizures",
+        "Ubiquitin-Protein Ligases"
+      ],
+      "keywords": [
+        "Angelman syndrome",
+        "genotype",
+        "imprinting",
+        "intellectual disability",
+        "neurodevelopment",
+        "phenotype"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8304328/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8304328/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/genes12070987"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34203304/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34203304/"
+    },
+    "40956616": {
+      "pmid": "40956616",
+      "doi": "10.1172/JCI193956",
+      "pmc_id": "PMC12618081",
+      "pmc_verify": null,
+      "title": "Open-label phase IV trial evaluating nusinersen after onasemnogene abeparvovec in children with spinal muscular atrophy.",
+      "authors": [
+        "Proud Crystal M",
+        "Finkel Richard S",
+        "Parsons Julie A",
+        "Masson Riccardo",
+        "Brandsema John F",
+        "Kuntz Nancy L",
+        "Foster Richard",
+        "Li Wenjing",
+        "Littauer Ross",
+        "Sohn Jihee",
+        "Fradette Stephanie",
+        "Youn Bora",
+        "Paradis Angela D",
+        "RESPOND Study Group"
+      ],
+      "journal": "The Journal of clinical investigation",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Clinical Trial, Phase IV",
+        "Multicenter Study",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUNDSpinal muscular atrophy (SMA) is a rare genetic neuromuscular disease caused by deletions or mutations of the survival motor neuron 1 (SMN1) gene. Despite the availability of genetically based treatments for SMA, functional impairments and weakness persist in treated symptomatic individuals. This study addresses whether additional treatment after gene transfer therapy could provide further clinical benefits.METHODSInterim day 302 findings are described from the phase IV open-label RESPOND trial evaluating nusinersen in participants aged ≤36 months who had suboptimal clinical status following onasemnogene abeparvovec (OA) treatment, as determined by the investigator.RESULTSThirty-seven participants included in the interim analysis were symptomatic at the time of OA administration. Most (92%) had 2 SMN2 gene copies. Age at first nusinersen dose (median) was 9.1 (range, 3-33) months for participants with 2 SMN2 copies and 34.2 (range, 31-36) months for those with 3 SMN2 copies, while time from OA dose to first nusinersen dose (median) was 6.3 (range, 3-31) and 13.3 (range, 10-22) months, respectively. Participants had elevated neurofilament light chain (NfL) levels and low compound muscle action potential (CMAP) amplitudes at baseline, suggesting active neurodegeneration and severe denervation at study entry. Improvements from baseline were observed across a range of outcomes on day 302, including motor function (HINE-2 and CHOP-INTEND total score), achievement of independent sitting, NfL levels, CMAP, and investigator- and caregiver-reported outcomes. Mean NfL levels decreased rapidly from baseline to day 183 and remained low on day 302. Mean ulnar and peroneal CMAP amplitudes increased. No safety concerns were identified.CONCLUSIONImprovements in clinical and biomarker outcomes support the benefit of nusinersen treatment in infants and children with suboptimal clinical status following OA.TRIAL REGISTRATIONClinicalTrials.gov NCT04488133; EudraCT 2020-003492-18.FUNDINGThis study was sponsored by Biogen.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Oligonucleotides",
+        "Female",
+        "Male",
+        "Infant",
+        "Child, Preschool",
+        "Muscular Atrophy, Spinal",
+        "Survival of Motor Neuron 2 Protein",
+        "Biological Products",
+        "Spinal Muscular Atrophies of Childhood",
+        "Survival of Motor Neuron 1 Protein",
+        "Recombinant Fusion Proteins"
+      ],
+      "keywords": [
+        "Clinical Research",
+        "Gene therapy",
+        "Muscle biology"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12618081/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12618081/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1172/JCI193956"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40956616/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40956616/"
+    },
+    "40646322": {
+      "pmid": "40646322",
+      "doi": "10.1038/s41591-025-03784-7",
+      "pmc_id": "6871525",
+      "pmc_verify": null,
+      "title": "The UBE3A-ATS antisense oligonucleotide rugonersen in children with Angelman syndrome: a phase 1 trial.",
+      "authors": [
+        "Hipp Jörg F",
+        "Bacino Carlos A",
+        "Bird Lynne M",
+        "Bruenig-Traebert Ina",
+        "Chan Daniel",
+        "de Wit Marie Claire",
+        "Fontoura Paulo",
+        "Hooper Gregory",
+        "Jagasia Ravi",
+        "Krishnan Michelle L",
+        "Murtagh Lorraine",
+        "Noci Alessandro",
+        "Martínez Ana Roche",
+        "Schwab Dietmar",
+        "Serrano Mercedes",
+        "Shen Mark D",
+        "Tillmann Julian",
+        "Tjeertes Jorrit",
+        "Vincenzi Brenda",
+        "Berry-Kravis Elizabeth",
+        "Bonni Azad",
+        "Rugonersen Study Group",
+        "all TANGELO investigators"
+      ],
+      "journal": "Nature medicine",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Clinical Trial, Phase I",
+        "Multicenter Study"
+      ],
+      "abstract": "Angelman syndrome (AS) is a severe genetic neurodevelopmental disorder with no disease-modifying treatments. AS is caused by deletion or mutation of the neuronally imprinted gene encoding the ubiquitin-protein ligase E3A (UBE3A). Rugonersen (RO7248824) is an antisense oligonucleotide that reinstates UBE3A by derepressing the silenced paternal allele. TANGELO was a phase 1, multicenter, open-label, multiple-ascending-dose trial with a long-term extension to investigate the safety and tolerability (primary) and pharmacokinetics (secondary) of rugonersen in children aged 1-12 years with AS (n = 61, F/M: 28/33). Key exploratory endpoints assessing changes following rugonersen treatment were electroencephalogram δ-power (2-4 Hz) and domains of the Bayley Scales of Infant and Toddler Development-Third Edition and Vineland Adaptive Behavior Scales-Third Edition. The primary endpoint was met; rugonersen had an acceptable safety and tolerability profile. Analysis of exploratory endpoints showed that rugonersen led to a dose-dependent partial normalization of the AS-associated electroencephalogram abnormality and revealed signals of clinical improvement in core AS symptom domains beyond expectation from natural history data. The results of the primary study objective support continued development of rugonersen for AS. ClinicalTrials.gov registration: NCT04428281 .",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Angelman Syndrome",
+        "Ubiquitin-Protein Ligases",
+        "Male",
+        "Child",
+        "Female",
+        "Child, Preschool",
+        "Oligonucleotides, Antisense",
+        "Infant",
+        "Electroencephalography",
+        "Treatment Outcome",
+        "Oligonucleotides"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6871525/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/6871525/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41591-025-03784-7"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40646322/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40646322/"
+    },
+    "38837855": {
+      "pmid": "38837855",
+      "doi": "10.1002/epi4.12951",
+      "pmc_id": "PMC11296106",
+      "pmc_verify": null,
+      "title": "Epilepsy, EEG and chromosomal rearrangements.",
+      "authors": [
+        "Paprocka Justyna",
+        "Coppola Antonietta",
+        "Cuccurullo Claudia",
+        "Stawicka Elżbieta",
+        "Striano Pasquale"
+      ],
+      "journal": "Epilepsia open",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Chromosomal abnormalities are associated with a broad spectrum of clinical manifestations, one of the more commonly observed of which is epilepsy. The frequency, severity, and type of epileptic seizures vary according to the macro- and microrearrangements present. Even within a single chromosomal anomaly, we most often deal with a phenotypic spectrum. The aim of the study was to look for chromosomal rearrangements with a characteristic electroencephalographic pattern. Only a few disorders have peculiar electroclinical abnormalities: 1p36, 4p16, 6q terminal or trisomy 12p, Angelman syndrome, inv dup 15, 15q13.3 deletions, ring 20, Down syndrome, or Xp11.22-11.23 duplication. We also reviewed studies on epileptic seizures and typical electroencephalographic patterns described in certain chromosomal rearrangements, focusing on the quest for potential electroclinical biomarkers. The comprehensive review concludes with clinical presentations of the most common micro and macro chromosomal rearrangements, such as 17q21.31 microdeletion, 6q terminal deletion, 15q inv dup syndrome, 2q24.4 deletion, Xp11.22-11.23 duplication, 15q13.3 microdeletion, 1p36 terminal deletion, 5q14.3 microdeletion, and Xq28 duplication. The papers reviewed did not identify any specific interictal electroencephalographic patterns that were unique and significant biomarkers for a given chromosomal microrearrangement. The types of seizures described varied, with both generalized and focal seizures of various morphologies being reported. Patients with chromosomal anomalies may also meet the criteria for specific epileptic syndromes such as Infantile Epilepsy Spasms Syndrome (IESS, West syndrome): 16p13.11, 15q13.3 and 17q21.31 microdeletions, 5q inv dup. syndrome; Dravet syndrome (2q24.4 deletion), Lennox-Gastaut syndrome (15q11 duplication. 1q13.3, 5q inv dup.); or Self-Limited Epilepsy with Autonomic Features (SeLEAS, Panayiotopoulos syndrome: terminal deletion of 6q.n), Self-Limited Epilepsy with Centrotemporal Spikes (SeLECT): fragile X syndrome. It is essential to better characterize groups of patients to more accurately define patterns of epilepsy and EEG abnormalities. This could lead to new treatment strategies. Future research is required to better understand epileptic syndromes and chromosomal rearrangements. PLAIN LANGUAGE SUMMARY: This paper presents EEG recording abnormalities in patients with various gene abnormalities that can cause epilepsy. The authors summarize these EEG variations based on a literature review to see if they occur frequently enough in other chromosomal abnormalities (in addition to those already known) to be a clue for further diagnosis.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Electroencephalography",
+        "Epilepsy",
+        "Chromosome Aberrations",
+        "Chromosome Disorders"
+      ],
+      "keywords": [
+        "EEG",
+        "children",
+        "chromosomal complex rearrangements",
+        "chromosomal microrearrangements",
+        "epilepsy"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11296106/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11296106/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/epi4.12951"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38837855/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38837855/"
+    },
+    "20803658": {
+      "pmid": "20803658",
+      "doi": "10.1002/ajmg.c.30274",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Russell-Silver syndrome.",
+      "authors": [
+        "Eggermann Thomas"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "In comparison to Prader-Willi or Angelman syndrome, Russell-Silver syndrome (RSS) is a relatively \"young\" imprinting disorder. This congenital disease is characterized by intrauterine and postnatal growth retardation, relative macrocephaly, a typical triangular face, asymmetry, and further less constant characteristic features. Genetic and epigenetic disturbances can meanwhile be detected in approximately 50% of patients with typical RSS features. Up to 5% of patients carry a maternal uniparental disomy of chromosome 7 (UPD(7)mat), at least 44% show hypomethylation in the chromosome 11p15 imprinting center 1 (IC). In 1-2% of RSS patients, (sub)microscopic chromosomal aberrations can be observed. The diagnostic workup should therefore include methylation/genomic testing for chromosome 11p15, UPD(7)mat analysis and molecular karyotyping. The recurrence risk is generally low in RSS but it can be strongly increased in cases of familial epimutations or a chromosomal rearrangement. Interestingly, in approximately 7% of cases with chromosome 11p15 hypomethylation, hypomethylation of additional imprinted loci can be detected. Clinically, patients with hypomethylation at multiple loci do not differ from those with isolated 11p15 hypomethylation whereas the UPD(7)mat patients generally show a milder phenotype. Nevertheless, (epi)genotype-phenotype correlations are still evolving. Furthermore, the pathophysiological mechanisms resulting in the RSS phenotype still remain unknown despite the recent progress in deciphering the molecular defects associated with this condition.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Aberrations",
+        "Chromosomes, Human, Pair 11",
+        "DNA Methylation",
+        "Fetal Growth Retardation",
+        "Genetic Association Studies",
+        "Genetic Testing",
+        "Genomic Imprinting",
+        "Humans",
+        "Karyotyping",
+        "Mutation",
+        "Silver-Russell Syndrome",
+        "Uniparental Disomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.30274"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20803658/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20803658/"
+    },
+    "39804213": {
+      "pmid": "39804213",
+      "doi": "10.1097/YCO.0000000000000981",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Genetics of Prader-Willi and Angelman syndromes: 2024 update.",
+      "authors": [
+        "Godler David E",
+        "Singh Deepan",
+        "Butler Merlin G"
+      ],
+      "journal": "Current opinion in psychiatry",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: Prader-Willi (PWS) and Angelman (AS) syndromes arise from errors in 15q11-q13 imprinting. This review describes recent advances in genomics and how these expand our understanding of these rare disorders, guiding treatment strategies to improve patient outcomes. RECENT FINDINGS: PWS features include severe infantile hypotonia, failure to thrive, hypogonadism, developmental delay, behavioral and psychiatric features, hyperphagia, and morbid obesity, if unmanaged. AS presents severe intellectual disability, motor dysfunction, seizures, absent speech, and a characteristic happy demeanor. Standard-of-care testing involves SNRPN promoter methylation, microarray and genomic analyses for individuals presenting with these features. These tests identify syndromic-specific DNA methylation patterns and molecular genetic classes responsible for disease etiology. This review provides an update on studies of genotype-phenotype relationships and novel genomic technologies used for diagnostic purposes. SUMMARY: We give an overview and update on the genetics and underlying mechanisms associated with symptoms and potential treatments with focus on features reported to be different between specific molecular genetic classes. The review also describes laboratory testing methods for diagnosis of these imprinting disorders with implications for clinical practice.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "Prader-Willi (PWS) and Angelman (AS) syndromes arise from errors in 15q11-q13 imprinting. This review describes recent advances in genomics and how these expand our understanding of these rare disorders, guiding treatment strategies to improve patient outcomes.",
+        "RECENT FINDINGS": "PWS features include severe infantile hypotonia, failure to thrive, hypogonadism, developmental delay, behavioral and psychiatric features, hyperphagia, and morbid obesity, if unmanaged. AS presents severe intellectual disability, motor dysfunction, seizures, absent speech, and a characteristic happy demeanor. Standard-of-care testing involves SNRPN promoter methylation, microarray and genomic analyses for individuals presenting with these features. These tests identify syndromic-specific DNA methylation patterns and molecular genetic classes responsible for disease etiology. This review provides an update on studies of genotype-phenotype relationships and novel genomic technologies used for diagnostic purposes.",
+        "SUMMARY": "We give an overview and update on the genetics and underlying mechanisms associated with symptoms and potential treatments with focus on features reported to be different between specific molecular genetic classes. The review also describes laboratory testing methods for diagnosis of these imprinting disorders with implications for clinical practice."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Angelman Syndrome",
+        "Chromosomes, Human, Pair 15",
+        "Genomic Imprinting"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/YCO.0000000000000981"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39804213/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39804213/"
+    },
+    "26062517": {
+      "pmid": "26062517",
+      "doi": "10.1007/s40618-015-0312-9",
+      "pmc_id": "PMC4630255",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome: a review of clinical, genetic, and endocrine findings.",
+      "authors": [
+        "Angulo M A",
+        "Butler M G",
+        "Cataletto M E"
+      ],
+      "journal": "Journal of endocrinological investigation",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "INTRODUCTION: Prader-Willi syndrome (PWS) is a multisystemic complex genetic disorder caused by lack of expression of genes on the paternally inherited chromosome 15q11.2-q13 region. There are three main genetic subtypes in PWS: paternal 15q11-q13 deletion (65-75 % of cases), maternal uniparental disomy 15 (20-30 % of cases), and imprinting defect (1-3 %). DNA methylation analysis is the only technique that will diagnose PWS in all three molecular genetic classes and differentiate PWS from Angelman syndrome. Clinical manifestations change with age with hypotonia and a poor suck resulting in failure to thrive during infancy. As the individual ages, other features such as short stature, food seeking with excessive weight gain, developmental delay, cognitive disability and behavioral problems become evident. The phenotype is likely due to hypothalamic dysfunction, which is responsible for hyperphagia, temperature instability, high pain threshold, hypersomnia and multiple endocrine abnormalities including growth hormone and thyroid-stimulating hormone deficiencies, hypogonadism and central adrenal insufficiency. Obesity and its complications are the major causes of morbidity and mortality in PWS. METHODS: An extensive review of the literature was performed and interpreted within the context of clinical practice and frequently asked questions from referring physicians and families to include the current status of the cause and diagnosis of the clinical, genetics and endocrine findings in PWS. CONCLUSIONS: Updated information regarding the early diagnosis and management of individuals with Prader-Willi syndrome is important for all physicians and will be helpful in anticipating and managing or modifying complications associated with this rare obesity-related disorder.",
+      "abstract_sections": {
+        "INTRODUCTION": "Prader-Willi syndrome (PWS) is a multisystemic complex genetic disorder caused by lack of expression of genes on the paternally inherited chromosome 15q11.2-q13 region. There are three main genetic subtypes in PWS: paternal 15q11-q13 deletion (65-75 % of cases), maternal uniparental disomy 15 (20-30 % of cases), and imprinting defect (1-3 %). DNA methylation analysis is the only technique that will diagnose PWS in all three molecular genetic classes and differentiate PWS from Angelman syndrome. Clinical manifestations change with age with hypotonia and a poor suck resulting in failure to thrive during infancy. As the individual ages, other features such as short stature, food seeking with excessive weight gain, developmental delay, cognitive disability and behavioral problems become evident. The phenotype is likely due to hypothalamic dysfunction, which is responsible for hyperphagia, temperature instability, high pain threshold, hypersomnia and multiple endocrine abnormalities including growth hormone and thyroid-stimulating hormone deficiencies, hypogonadism and central adrenal insufficiency. Obesity and its complications are the major causes of morbidity and mortality in PWS.",
+        "METHODS": "An extensive review of the literature was performed and interpreted within the context of clinical practice and frequently asked questions from referring physicians and families to include the current status of the cause and diagnosis of the clinical, genetics and endocrine findings in PWS.",
+        "CONCLUSIONS": "Updated information regarding the early diagnosis and management of individuals with Prader-Willi syndrome is important for all physicians and will be helpful in anticipating and managing or modifying complications associated with this rare obesity-related disorder."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Prader-Willi Syndrome"
+      ],
+      "keywords": [
+        "Chromosome 15 abnormalities",
+        "Endocrine disturbances",
+        "Genomic imprinting",
+        "Hypogonadism",
+        "Obesity",
+        "Prader-Willi syndrome",
+        "Short stature"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4630255/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4630255/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s40618-015-0312-9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26062517/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26062517/"
+    },
+    "26040994": {
+      "pmid": "26040994",
+      "doi": "10.1007/s13311-015-0361-y",
+      "pmc_id": "PMC4489961",
+      "pmc_verify": null,
+      "title": "Angelman Syndrome.",
+      "authors": [
+        "Margolis Seth S",
+        "Sell Gabrielle L",
+        "Zbinden Mark A",
+        "Bird Lynne M"
+      ],
+      "journal": "Neurotherapeutics : the journal of the American Society for Experimental NeuroTherapeutics",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "In this review we summarize the clinical and genetic aspects of Angelman syndrome (AS), its molecular and cellular underpinnings, and current treatment strategies. AS is a neurodevelopmental disorder characterized by severe cognitive disability, motor dysfunction, speech impairment, hyperactivity, and frequent seizures. AS is caused by disruption of the maternally expressed and paternally imprinted UBE3A, which encodes an E3 ubiquitin ligase. Four mechanisms that render the maternally inherited UBE3A nonfunctional are recognized, the most common of which is deletion of the maternal chromosomal region 15q11-q13. Remarkably, duplication of the same chromosomal region is one of the few characterized persistent genetic abnormalities associated with autistic spectrum disorder, occurring in >1-2% of all cases of autism spectrum disorder. While the overall morphology of the brain and connectivity of neural projections appear largely normal in AS mouse models, major functional defects are detected at the level of context-dependent learning, as well as impaired maturation of hippocampal and neocortical circuits. While these findings demonstrate a crucial role for ubiquitin protein ligase E3A in synaptic development, the mechanisms by which deficiency of ubiquitin protein ligase E3A leads to AS pathophysiology in humans remain poorly understood. However, recent efforts have shown promise in restoring functions disrupted in AS mice, renewing hope that an effective treatment strategy can be found.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Animals",
+        "Autism Spectrum Disorder",
+        "Brain",
+        "Clinical Trials as Topic",
+        "Disease Models, Animal",
+        "Female",
+        "Humans",
+        "Male",
+        "Mice",
+        "Mutation",
+        "Neurons",
+        "Ubiquitin-Protein Ligases"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4489961/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4489961/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s13311-015-0361-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26040994/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26040994/"
+    },
+    "41820375": {
+      "pmid": "41820375",
+      "doi": "10.1038/s41572-026-00688-9",
+      "pmc_id": "5217262",
+      "pmc_verify": null,
+      "title": "Tuberous sclerosis complex.",
+      "authors": [
+        "Winden Kellen",
+        "Bebin E Martina",
+        "Jeste Shafali",
+        "Krueger Darcy A",
+        "Paul Elahna",
+        "Sahin Mustafa"
+      ],
+      "journal": "Nature reviews. Disease primers",
+      "year": "2026",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Tuberous sclerosis complex (TSC) is a rare genetic disease caused by heterozygous loss-of-function variants in TSC1 or TSC2. Patients present with benign tumours known as hamartomas in the brain, eyes, lungs, kidneys, heart and skin. Many hamartomas contain mosaic second hit variants in TSC1 or TSC2. The most disabling features of TSC include epilepsy and TSC-associated neuropsychiatric disorders (TAND) such as intellectual disability and autism spectrum disorder. Remarkable progress has been made both in understanding the pathogenesis of TSC and in its clinical management, largely due to the discovery of the link between TSC1 and TSC2 and the mechanistic target of rapamycin (mTOR) signalling pathway. TSC1 and TSC2 form a protein complex that inhibits mTOR. Naturally occurring inhibitors of mTOR (rapamycin) and its analogues, collectively known as rapalogues, have been used to test various hypotheses in preclinical models and are approved for the treatment of several manifestations of TSC. Approved drug treatments (rapalogues) exist for subependymal giant cell astrocytomas, renal angiomyolipomas, pulmonary lymphangioleiomyomatosis, facial angiofibromas and refractory seizures. However, there is still an unmet need for effective treatment of TAND and refractory epilepsy, despite the available medical and surgical options.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Tuberous Sclerosis",
+        "Tuberous Sclerosis Complex 2 Protein",
+        "Tuberous Sclerosis Complex 1 Protein",
+        "Angiofibroma",
+        "TOR Serine-Threonine Kinases",
+        "Epilepsy",
+        "MTOR Inhibitors",
+        "Lymphangioleiomyomatosis",
+        "Astrocytoma"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5217262/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5217262/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41572-026-00688-9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41820375/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41820375/"
+    },
+    "32893075": {
+      "pmid": "32893075",
+      "doi": "10.1016/j.braindev.2020.08.014",
+      "pmc_id": "PMC7688500",
+      "pmc_verify": null,
+      "title": "Epilepsy in Angelman syndrome: A scoping review.",
+      "authors": [
+        "Samanta Debopam"
+      ],
+      "journal": "Brain & development",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Scoping Review"
+      ],
+      "abstract": "Angelman Syndrome (AS) is characterized by severe developmental delays including marked speech impairment, movement abnormalities(ataxia, tremor), and unique behaviors such as frequent laughter and is caused by dysfunctional maternal UBE3A gene (maternal 15q11-13 deletions, maternal specific UBE3A mutation, uniparental disomy, and imprinting defect). Intractable epileptic seizures since early childhood with characteristic EEG abnormalities are present in 80-90% patients with AS. Underlying pathophysiology may involve neocortical and thalamocortical hyperexcitability secondary to severe reduction of GABAergic input, as well as dysfunctional synaptic plasticity, deficient synaptogenesis, and neuronal morphological immaturity. The onset of epilepsy is most prevalent between 1 and 3 years of age; however, approximately 25% of patients developed epilepsy before one year of age. Various types of generalized seizures are most prevalent, with most common types are myoclonic and atypical absence.More than 95% of epilepsy patients may have daily seizures at least for a limited time during early childhood, and two-third patients develop disabling seizures. Fever provoked seizures, and frequent occurrence of nonconvulsive status epilepticus are two unique features. Seizures are frequently pharmacoresistant. Considering underlying prominent GABAergic dysfunction, clinicians had used AEDs that target GABAergic signaling such as valproate, phenobarbital, and clonazepam as first-line therapies for AS. However, due to the unfavorable side effect profile of these AEDs, a recent treatment approach involves priority use of levetiracetam, clobazam, topiramate, lamotrigine, ethosuximide, VNS, and carbohydrate-restricted diets. Besides symptomatic management, there has been recent progress to find a curative treatment with the following approaches: 1. Gene/protein replacement therapy (Adeno and lentiviral vector therapy to deliver a gene or secretory protein); 2. Activation of the intact but silent paternal copy of UBE3A (antisense oligonucleotide therapy and artificial transcription factors); and 3. Downstream therapies (OV101/gaboxadol, ketone supplement, novel compounds/peptides, anti-inflammatory/regenerative therapy).",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Anticonvulsants",
+        "Child",
+        "Child, Preschool",
+        "Electroencephalography",
+        "Epilepsy",
+        "Female",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Male",
+        "Seizures",
+        "Status Epilepticus",
+        "Ubiquitin-Protein Ligases",
+        "Valproic Acid"
+      ],
+      "keywords": [
+        "Angelman syndrome",
+        "Epilepsy",
+        "Gene therapy",
+        "Molecular therapy",
+        "UBE3A",
+        "seizures, EEG"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7688500/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7688500/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.braindev.2020.08.014"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32893075/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32893075/"
+    },
+    "40179454": {
+      "pmid": "40179454",
+      "doi": "10.1016/j.yebeh.2025.110360",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Epilepsy associated with chromosomal disorders.",
+      "authors": [
+        "Montenegro Maria A",
+        "Vincentiis Silvia",
+        "Valente Kette D"
+      ],
+      "journal": "Epilepsy & behavior : E&B",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Chromosomal disorders are multisystemic conditions frequently presenting developmental delay and epilepsy as primary neurological symptoms. Epilepsy in these syndromes significantly impacts morbidity, quality of life, and neurodevelopment. Angelman syndrome, ring chromosome 20, Down syndrome, Dup15q syndrome, and others display suggestive electroclinical profiles that may help diagnose and treatment. Understanding the associated electroencephalographic (EEG) findings is critical for clinicians to tailor interventions and optimize outcomes. This review highlights the prevalence, onset, seizure types, EEG characteristics, and treatment approaches for epilepsy in major chromosomal disorders. Angelman syndrome features epilepsy with atypical absences and myoclonic seizures, often associated with specific EEG patterns such as rhythmic delta activity. Ring chromosome 20 syndrome presents with focal frontal seizures, including non-convulsive status epilepticus. Down syndrome has a biphasic epilepsy distribution, from infantile spasms to late-onset myoclonic epilepsy. Similarly, Dup15q syndrome is marked by drug-resistant epilepsy, with EEG showing beta rhythms and hypsarrhythmia. Knowing the electroclinical patterns associated with chromosomal disorders may improve diagnosis and epilepsy management, which enhances patient care and prognosis accuracy.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Epilepsy",
+        "Electroencephalography",
+        "Chromosome Disorders"
+      ],
+      "keywords": [
+        "Chromosomal Disorders",
+        "EEG (Electroencephalogram)",
+        "Epilepsy",
+        "Neurogenetics"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.yebeh.2025.110360"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40179454/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40179454/"
+    },
+    "33395098": {
+      "pmid": "33395098",
+      "doi": "10.1097/YCO.0000000000000674",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Emerging Therapies and challenges for individuals with Angelman syndrome.",
+      "authors": [
+        "Heussler Helen S"
+      ],
+      "journal": "Current opinion in psychiatry",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: This review describes current understandings in the search for therapies to support children with Angelman syndrome. There is a rapid progression in particular in genetic therapies in this disorder supported by the Angelman community. RECENT FINDINGS: Recent papers shed light on the timing of therapies and novel genetic therapies coming to trial as well as potential therapies still in preclinical phases. Further understanding of UBE3A and its role in neuronal development and plasticity as well as other mechanisms contributing to the Angelman phenotype is offering an opportunity for novel therapeutics. SUMMARY: Greater understanding of the pathophysiology of the different phenotypes will offer an opportunity for novel therapeutics and may well change the course of this disorder over time where previously there has been minimal ability to intervene.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "This review describes current understandings in the search for therapies to support children with Angelman syndrome. There is a rapid progression in particular in genetic therapies in this disorder supported by the Angelman community.",
+        "RECENT FINDINGS": "Recent papers shed light on the timing of therapies and novel genetic therapies coming to trial as well as potential therapies still in preclinical phases. Further understanding of UBE3A and its role in neuronal development and plasticity as well as other mechanisms contributing to the Angelman phenotype is offering an opportunity for novel therapeutics.",
+        "SUMMARY": "Greater understanding of the pathophysiology of the different phenotypes will offer an opportunity for novel therapeutics and may well change the course of this disorder over time where previously there has been minimal ability to intervene."
+      },
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Genetic Therapy",
+        "Humans",
+        "Phenotype",
+        "Ubiquitin-Protein Ligases"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/YCO.0000000000000674"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33395098/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33395098/"
+    },
+    "33087932": {
+      "pmid": "33087932",
+      "doi": "10.1038/s41586-020-2835-2",
+      "pmc_id": "PMC8020672",
+      "pmc_verify": null,
+      "title": "Cas9 gene therapy for Angelman syndrome traps Ube3a-ATS long non-coding RNA.",
+      "authors": [
+        "Wolter Justin M",
+        "Mao Hanqian",
+        "Fragola Giulia",
+        "Simon Jeremy M",
+        "Krantz James L",
+        "Bazick Hannah O",
+        "Oztemiz Baris",
+        "Stein Jason L",
+        "Zylka Mark J"
+      ],
+      "journal": "Nature",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Angelman syndrome (AS) is a severe neurodevelopmental disorder caused by a mutation or deletion of the maternally inherited UBE3A allele. In neurons, the paternally inherited UBE3A allele is silenced in cis by a long non-coding RNA called UBE3A-ATS. Here, as part of a systematic screen, we found that Cas9 can be used to activate ('unsilence') paternal Ube3a in cultured mouse and human neurons when targeted to Snord115 genes, which are small nucleolar RNAs that are clustered in the 3' region of Ube3a-ATS. A short Cas9 variant and guide RNA that target about 75 Snord115 genes were packaged into an adeno-associated virus and administered to a mouse model of AS during the embryonic and early postnatal stages, when the therapeutic benefit of restoring Ube3a is predicted to be greatest1,2. This early treatment unsilenced paternal Ube3a throughout the brain for at least 17 months and rescued anatomical and behavioural phenotypes in AS mice. Genomic integration of the adeno-associated virus vector into Cas9 target sites caused premature termination of Ube3a-ATS at the vector-derived polyA cassette, or when integrated in the reverse orientation, by transcriptional collision with the vector-derived Cas9 transcript. Our study shows that targeted genomic integration of a gene therapy vector can restore the function of paternally inherited UBE3A throughout life, providing a path towards a disease-modifying treatment for a syndromic neurodevelopmental disorder.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Animals",
+        "CRISPR-Associated Protein 9",
+        "CRISPR-Cas Systems",
+        "Dependovirus",
+        "Disease Models, Animal",
+        "Female",
+        "Gene Editing",
+        "Gene Silencing",
+        "Genetic Therapy",
+        "Genetic Vectors",
+        "Humans",
+        "Male",
+        "Mice",
+        "Mice, Inbred C57BL",
+        "Nervous System",
+        "Paternal Inheritance",
+        "Phenotype",
+        "RNA, Long Noncoding",
+        "Ubiquitin-Protein Ligases"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8020672/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8020672/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41586-020-2835-2"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33087932/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33087932/"
+    },
+    "28494826": {
+      "pmid": "28494826",
+      "doi": "10.1891/0730-0832.36.3.142",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Angelman Syndrome: Identification and Management.",
+      "authors": [
+        "Bonello Daniela",
+        "Camilleri Francesca",
+        "Calleja-Agius Jean"
+      ],
+      "journal": "Neonatal network : NN",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Angelman syndrome (AS) is a neurobehavioral and genetically determined condition, which affects approximately 1 in 15,000 individuals. It is caused by various genetic mutations and deletions of the maternally-inherited UBE3A gene, on the 15q11-13 chromosomal region. The UBE3A gene, which encodes E3 ubiquitin ligase, shows tissue-specific imprinting, being expressed entirely from the maternal allele.The diagnosis of AS is confirmed either by methylation test or by mutation analysis. A more severe clinical picture is linked with the deletion phenotype.Patients with AS have a behavioral and motor pattern defined as \"happy puppet\" because it is characterized by puppet-like ataxic jerky movements; a happy, sociable disposition; and paroxysms of laughter. There is currently no cure for AS, and management is mainly symptomatic. Novel therapeutic options are directed toward the possibility of activating the silenced paternal copy of the UBE3A gene.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Diagnosis, Differential",
+        "Genetic Counseling",
+        "Genetic Testing",
+        "Genomic Imprinting",
+        "Humans",
+        "Infant, Newborn",
+        "Mutation",
+        "Neonatal Nursing",
+        "Phenotype",
+        "Prognosis"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1891/0730-0832.36.3.142"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28494826/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28494826/"
+    },
+    "1634750": {
+      "pmid": "1634750",
+      "doi": "10.1177/088307389200700307",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Angelman syndrome: clinical profile.",
+      "authors": [
+        "Zori R T",
+        "Hendrickson J",
+        "Woolven S",
+        "Whidden E M",
+        "Gray B",
+        "Williams C A"
+      ],
+      "journal": "Journal of child neurology",
+      "year": "1992",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "To further delineate the clinical and developmental features of Angelman syndrome, we collected data through three sources of information: (1) physical examinations; (2) laboratory data and family questionnaire data of affected individuals; and (3) literature review. The questionnaire data describes a generally normal prenatal and birth history. Feeding difficulties, developmental delay, or seizures were the presenting problems in all infants. The diagnosis of Angelman syndrome, however, was not made in any infant prior to 1 year of age. Except for seizures, no medical or surgical complication was common, although a variety of visual complaints or findings were common. Sixty percent of Angelman syndrome children had a cytogenetically demonstrated deletion of chromosome 15q11-q13. The individuals with and without a deletion could not be differentiated clinically. Diagnosis in early childhood is therefore difficult, and a high index of suspicion is recommended.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Child",
+        "Child, Preschool",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 15",
+        "Female",
+        "Follow-Up Studies",
+        "Humans",
+        "Infant",
+        "Intellectual Disability",
+        "Language Development Disorders",
+        "Male",
+        "Neurologic Examination",
+        "Smiling",
+        "Spinocerebellar Degenerations",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1177/088307389200700307"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1634750/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1634750/"
+    },
+    "39721588": {
+      "pmid": "39721588",
+      "doi": "10.1016/j.ajhg.2024.11.009",
+      "pmc_id": "PMC11739880",
+      "pmc_verify": null,
+      "title": "Heterozygous UBR5 variants result in a neurodevelopmental syndrome with developmental delay, autism, and intellectual disability.",
+      "authors": [
+        "Sabeh Pascale",
+        "Dumas Samantha A",
+        "Maios Claudia",
+        "Daghar Hiba",
+        "Korzeniowski Marek",
+        "Rousseau Justine",
+        "Lines Matthew",
+        "Guerin Andrea",
+        "Millichap John J",
+        "Landsverk Megan",
+        "Grebe Theresa",
+        "Lindstrom Kristin",
+        "Strober Jonathan",
+        "Ait Mouhoub Tarik",
+        "Zweier Christiane",
+        "Steinraths Michelle",
+        "Hebebrand Moritz",
+        "Callewaert Bert",
+        "Abou Jamra Rami",
+        "Kautza-Lucht Monika",
+        "Wegler Meret",
+        "Kruszka Paul",
+        "Kumps Candy",
+        "Banne Ehud",
+        "Waberski Marta Biderman",
+        "Dieux Anne",
+        "Raible Sarah",
+        "Krantz Ian",
+        "Medne Livija",
+        "Pechter Kieran",
+        "Villard Laurent",
+        "Guerrini Renzo",
+        "Bianchini Claudia",
+        "Barba Carmen",
+        "Mei Davide",
+        "Blanc Xavier",
+        "Kallay Christine",
+        "Ranza Emmanuelle",
+        "Yang Xiao-Ru",
+        "O'Heir Emily",
+        "Donald Kirsten A",
+        "Murugasen Serini",
+        "Bruwer Zandre",
+        "Calikoglu Muge",
+        "Mathews Jennifer M",
+        "Lesieur-Sebellin Marion",
+        "Baujat Geneviève",
+        "Derive Nicolas",
+        "Pierson Tyler Mark",
+        "Murrell Jill R",
+        "Shillington Amelle",
+        "Ormieres Clothilde",
+        "Rondeau Sophie",
+        "Reis André",
+        "Fernandez-Jaen Alberto",
+        "Au Ping Yee Billie",
+        "Sweetser David A",
+        "Briere Lauren C",
+        "Couque Nathalie",
+        "Perrin Laurence",
+        "Schymick Jennifer",
+        "Gueguen Paul",
+        "Lefebvre Mathilde",
+        "Van Andel Michael",
+        "Juusola Jane",
+        "Antonarakis Stylianos E",
+        "Parker J Alex",
+        "Burnett Barrington G",
+        "Campeau Philippe M"
+      ],
+      "journal": "American journal of human genetics",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "E3 ubiquitin ligases have been linked to developmental diseases including autism, Angelman syndrome (UBE3A), and Johanson-Blizzard syndrome (JBS) (UBR1). Here, we report variants in the E3 ligase UBR5 in 29 individuals presenting with a neurodevelopmental syndrome that includes developmental delay, autism, intellectual disability, epilepsy, movement disorders, and/or genital anomalies. Their phenotype is distinct from JBS due to the absence of exocrine pancreatic insufficiency and the presence of autism, epilepsy, and, in some probands, a movement disorder. E3 ubiquitin ligases are responsible for transferring ubiquitin to substrate proteins to regulate a variety of cellular functions, including protein degradation, protein-protein interactions, and protein localization. Knocking out ubr-5 in C. elegans resulted in a lower movement score compared to the wild type, supporting a role for UBR5 in neurodevelopment. Using an in vitro autoubiquitination assay and confocal microscopy for the human protein, we found decreased ubiquitination activity and altered cellular localization in several variants found in our cohort compared to the wild type. In conclusion, we found that variants in UBR5 cause a neurodevelopmental syndrome that can be associated with a movement disorder, reinforcing the role of the UBR protein family in a neurodevelopmental disease that differs from previously described ubiquitin-ligase-related syndromes. We also provide evidence for the pathogenic potential loss of UBR5 function with functional experiments in C. elegans and in vitro ubiquitination assays.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Ubiquitin-Protein Ligases",
+        "Intellectual Disability",
+        "Caenorhabditis elegans",
+        "Animals",
+        "Male",
+        "Developmental Disabilities",
+        "Female",
+        "Autistic Disorder",
+        "Neurodevelopmental Disorders",
+        "Child",
+        "Heterozygote",
+        "Child, Preschool",
+        "Ubiquitination",
+        "Adolescent",
+        "Phenotype",
+        "Infant",
+        "Adult"
+      ],
+      "keywords": [
+        "Mendelian phenotype",
+        "UBR5",
+        "autism",
+        "autosomal dominant",
+        "developmental disease",
+        "epilepsy",
+        "intellectual disability",
+        "movement disorders",
+        "ubiquitin"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11739880/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11739880/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajhg.2024.11.009"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39721588/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39721588/"
+    },
+    "36750385": {
+      "pmid": "36750385",
+      "doi": "10.1212/WNL.0000000000207080",
+      "pmc_id": "PMC10115508",
+      "pmc_verify": null,
+      "title": "Rates of Status Epilepticus and Sudden Unexplained Death in Epilepsy in People With Genetic Developmental and Epileptic Encephalopathies.",
+      "authors": [
+        "Donnan Alice M",
+        "Schneider Amy L",
+        "Russ-Hall Sophie",
+        "Churilov Leonid",
+        "Scheffer Ingrid E"
+      ],
+      "journal": "Neurology",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND AND OBJECTIVES: The genetic developmental and epileptic encephalopathies (DEEs) comprise a large group of severe epilepsy syndromes, with a wide phenotypic spectrum. Currently, the rates of convulsive status epilepticus (CSE), nonconvulsive status epilepticus (NCSE), and sudden unexplained death in epilepsy (SUDEP) in these diseases are not well understood. We aimed to describe the proportions of patients with frequently observed genetic DEEs who developed CSE, NCSE, mortality, and SUDEP. Understanding the risks of these serious presentations in each genetic DEE will enable earlier diagnosis and appropriate management. METHODS: In this retrospective analysis of patients with a genetic DEE, we estimated the proportions with CSE, NCSE, and SUDEP and the overall and SUDEP-specific mortality rates for each genetic diagnosis. We included patients with a pathogenic variant in the genes SCN1A, SCN2A, SCN8A, SYNGAP1, NEXMIF, CHD2, PCDH19, STXBP1, GRIN2A, KCNT1, and KCNQ2 and with Angelman syndrome (AS). RESULTS: The cohort comprised 510 individuals with a genetic DEE, in whom we observed CSE in 47% and NCSE in 19%. The highest proportion of CSE occurred in patients with SCN1A-associated DEEs, including 181/203 (89%; 95% CI 84-93) patients with Dravet syndrome and 8/15 (53%; 95% CI 27-79) non-Dravet SCN1A-DEEs. CSE was also notable in patients with pathogenic variants in KCNT1 (6/10; 60%; 95% CI 26-88) and SCN2A (8/15; 53%; 95% CI 27-79). NCSE was common in patients with non-Dravet SCN1A-DEEs (8/15; 53%; 95% CI 27-79) and was notable in patients with CHD2-DEEs (6/14; 43%; 95% CI 18-71) and AS (6/19; 32%; 95% CI 13-57). There were 42/510 (8%) deaths among the cohort, producing a mortality rate of 6.1 per 1,000 person-years (95% CI 4.4-8.3). Cases of SUDEP accounted for 19/42 (48%) deaths. Four genes were associated with SUDEP: SCN1A, SCN2A, SCN8A, and STXBP1. The estimated SUDEP rate was 2.8 per 1,000 person-years (95% CI 1.6-4.3). DISCUSSION: We showed that proportions of patients with CSE, NCSE, and SUDEP differ for commonly encountered genetic DEEs. The estimates for each genetic DEE studied will inform early diagnosis and management of status epilepticus and SUDEP and inform disease-specific counseling for patients and families in this high-risk group of conditions.",
+      "abstract_sections": {
+        "BACKGROUND AND OBJECTIVES": "The genetic developmental and epileptic encephalopathies (DEEs) comprise a large group of severe epilepsy syndromes, with a wide phenotypic spectrum. Currently, the rates of convulsive status epilepticus (CSE), nonconvulsive status epilepticus (NCSE), and sudden unexplained death in epilepsy (SUDEP) in these diseases are not well understood. We aimed to describe the proportions of patients with frequently observed genetic DEEs who developed CSE, NCSE, mortality, and SUDEP. Understanding the risks of these serious presentations in each genetic DEE will enable earlier diagnosis and appropriate management.",
+        "METHODS": "In this retrospective analysis of patients with a genetic DEE, we estimated the proportions with CSE, NCSE, and SUDEP and the overall and SUDEP-specific mortality rates for each genetic diagnosis. We included patients with a pathogenic variant in the genes SCN1A, SCN2A, SCN8A, SYNGAP1, NEXMIF, CHD2, PCDH19, STXBP1, GRIN2A, KCNT1, and KCNQ2 and with Angelman syndrome (AS).",
+        "RESULTS": "The cohort comprised 510 individuals with a genetic DEE, in whom we observed CSE in 47% and NCSE in 19%. The highest proportion of CSE occurred in patients with SCN1A-associated DEEs, including 181/203 (89%; 95% CI 84-93) patients with Dravet syndrome and 8/15 (53%; 95% CI 27-79) non-Dravet SCN1A-DEEs. CSE was also notable in patients with pathogenic variants in KCNT1 (6/10; 60%; 95% CI 26-88) and SCN2A (8/15; 53%; 95% CI 27-79). NCSE was common in patients with non-Dravet SCN1A-DEEs (8/15; 53%; 95% CI 27-79) and was notable in patients with CHD2-DEEs (6/14; 43%; 95% CI 18-71) and AS (6/19; 32%; 95% CI 13-57). There were 42/510 (8%) deaths among the cohort, producing a mortality rate of 6.1 per 1,000 person-years (95% CI 4.4-8.3). Cases of SUDEP accounted for 19/42 (48%) deaths. Four genes were associated with SUDEP: SCN1A, SCN2A, SCN8A, and STXBP1. The estimated SUDEP rate was 2.8 per 1,000 person-years (95% CI 1.6-4.3).",
+        "DISCUSSION": "We showed that proportions of patients with CSE, NCSE, and SUDEP differ for commonly encountered genetic DEEs. The estimates for each genetic DEE studied will inform early diagnosis and management of status epilepticus and SUDEP and inform disease-specific counseling for patients and families in this high-risk group of conditions."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Retrospective Studies",
+        "Sudden Unexpected Death in Epilepsy",
+        "Status Epilepticus",
+        "Epilepsies, Myoclonic",
+        "Epileptic Syndromes",
+        "Angelman Syndrome",
+        "Death, Sudden",
+        "Protocadherins",
+        "Potassium Channels, Sodium-Activated",
+        "Nerve Tissue Proteins"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10115508/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10115508/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1212/WNL.0000000000207080"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36750385/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36750385/"
+    },
+    "36833226": {
+      "pmid": "36833226",
+      "doi": "10.3390/genes14020299",
+      "pmc_id": "PMC9956098",
+      "pmc_verify": null,
+      "title": "Status Epilepticus in Chromosomal Disorders Associated with Epilepsy: A Systematic Review.",
+      "authors": [
+        "Bergonzini Luca",
+        "Pruccoli Jacopo",
+        "Pettenuzzo Ilaria",
+        "Pugliano Rosa",
+        "Soliani Luca",
+        "Fetta Anna",
+        "Cordelli Duccio Maria"
+      ],
+      "journal": "Genes",
+      "year": "2023",
+      "publication_types": [
+        "Systematic Review",
+        "Journal Article"
+      ],
+      "abstract": "Status Epilepticus (SE) is a neurological emergency resulting from the failure of mechanisms of seizure termination or from the initiation of mechanisms that lead to prolonged seizures. The International League Against Epilepsy (ILAE) identified 13 chromosomal disorders associated with epilepsy (CDAE); data regarding SE occurrence in these patients is lacking. A systematic scoping review was conducted to outline current literature evidence about clinical features, treatments, and outcomes of SE in pediatric and adult patients with CDAE. A total of 373 studies were identified with the initial search; 65 of these were selected and regarded as SE in Angelman Syndrome (AS, n = 20), Ring 20 Syndrome (R20, n = 24), and other syndromes (n = 21). Non-convulsive status epilepticus (NCSE) is frequently observed in AS and R20. No specific, targeted therapies for SE in CDAE are available to date; anecdotal reports about SE treatment are described in the text, as well as various brief- and long-term outcomes. Further evidence is needed to precisely portray the clinical features, treatment options, and outcomes of SE in these patients.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Humans",
+        "Child",
+        "Status Epilepticus",
+        "Epilepsy",
+        "Seizures",
+        "Chromosome Disorders",
+        "Ring Chromosomes"
+      ],
+      "keywords": [
+        "Angelman Syndrome",
+        "Ring 20 Syndrome",
+        "Status Epilepticus",
+        "anti-seizure medications",
+        "chromosomal disorders",
+        "epilepsy"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9956098/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9956098/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/genes14020299"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36833226/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36833226/"
+    },
+    "36007813": {
+      "pmid": "36007813",
+      "doi": "10.1016/j.jaac.2022.06.020",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Systematic Review: Emotion Dysregulation in Syndromic Causes of Intellectual and Developmental Disabilities.",
+      "authors": [
+        "Shaffer Rebecca C",
+        "Reisinger Debra L",
+        "Schmitt Lauren M",
+        "Lamy Martine",
+        "Dominick Kelli C",
+        "Smith Elizabeth G",
+        "Coffman Marika C",
+        "Esbensen Anna J"
+      ],
+      "journal": "Journal of the American Academy of Child and Adolescent Psychiatry",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "OBJECTIVE: To summarize the current state of the literature regarding emotion dysregulation (ED) in syndromic intellectual disabilities (S-IDs) in 6 of the most common forms of S-IDs-Down syndrome, fragile X syndrome (FXS), tuberous sclerosis complex, Williams syndrome, Prader-Willi syndrome, and Angelman syndrome-and to determine future research directions for identification and treatment of ED. METHOD: PubMed bibliographic database was searched from date of inception to May 2021. PRISMA 2020 guidelines were followed with the flowchart, table of included studies, list of excluded studies, and checklist provided. Filters applied included human research and English. Only original research articles were included in the final set, but review articles were used to identify secondary citations of primary studies. All articles were reviewed for appropriateness by 2 authors and summarized. Inclusion criteria were met by 145 articles (Down syndrome = 29, FXS = 55, tuberous sclerosis complex = 11, Williams syndrome = 18, Prader-Willi syndrome = 24, Angelman syndrome = 8). RESULTS: Each syndrome review was summarized separately and further subdivided into articles related to underlying neurobiology, behaviors associated with ED, assessment, and targeted intervention. FXS had the most thorough research base, followed by Down syndrome and Prader-Willi syndrome, with the other syndromes having more limited available research. Very limited research was available regarding intervention for all disorders except FXS. CONCLUSION: Core underlying characteristics of S-IDs appear to place youth at higher risk for ED, but further research is needed to better assess and treat ED in S-IDs. Future studies should have a standard assessment measure of ED, such as the Emotion Dysregulation Inventory, and explore adapting established curricula for ED from the neurotypical and autism spectrum disorder fields.",
+      "abstract_sections": {
+        "OBJECTIVE": "To summarize the current state of the literature regarding emotion dysregulation (ED) in syndromic intellectual disabilities (S-IDs) in 6 of the most common forms of S-IDs-Down syndrome, fragile X syndrome (FXS), tuberous sclerosis complex, Williams syndrome, Prader-Willi syndrome, and Angelman syndrome-and to determine future research directions for identification and treatment of ED.",
+        "METHOD": "PubMed bibliographic database was searched from date of inception to May 2021. PRISMA 2020 guidelines were followed with the flowchart, table of included studies, list of excluded studies, and checklist provided. Filters applied included human research and English. Only original research articles were included in the final set, but review articles were used to identify secondary citations of primary studies. All articles were reviewed for appropriateness by 2 authors and summarized. Inclusion criteria were met by 145 articles (Down syndrome = 29, FXS = 55, tuberous sclerosis complex = 11, Williams syndrome = 18, Prader-Willi syndrome = 24, Angelman syndrome = 8).",
+        "RESULTS": "Each syndrome review was summarized separately and further subdivided into articles related to underlying neurobiology, behaviors associated with ED, assessment, and targeted intervention. FXS had the most thorough research base, followed by Down syndrome and Prader-Willi syndrome, with the other syndromes having more limited available research. Very limited research was available regarding intervention for all disorders except FXS.",
+        "CONCLUSION": "Core underlying characteristics of S-IDs appear to place youth at higher risk for ED, but further research is needed to better assess and treat ED in S-IDs. Future studies should have a standard assessment measure of ED, such as the Emotion Dysregulation Inventory, and explore adapting established curricula for ED from the neurotypical and autism spectrum disorder fields."
+      },
+      "mesh_terms": [
+        "Child",
+        "Adolescent",
+        "Humans",
+        "Prader-Willi Syndrome",
+        "Angelman Syndrome",
+        "Down Syndrome",
+        "Autism Spectrum Disorder",
+        "Developmental Disabilities",
+        "Tuberous Sclerosis",
+        "Intellectual Disability",
+        "Fragile X Syndrome",
+        "Williams Syndrome",
+        "Emotions"
+      ],
+      "keywords": [
+        "Down syndrome",
+        "Williams syndrome",
+        "emotion dysregulation",
+        "fragile X syndrome",
+        "intellectual disability"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jaac.2022.06.020"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36007813/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36007813/"
+    },
+    "35303699": {
+      "pmid": "35303699",
+      "doi": "10.3171/2022.1.PEDS222",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The role of vagus nerve stimulation in genetic etiologies of drug-resistant epilepsy: a meta-analysis.",
+      "authors": [
+        "Hajtovic Sabastian",
+        "LoPresti Melissa A",
+        "Zhang Lu",
+        "Katlowitz Kalman A",
+        "Kizek Dominic J",
+        "Lam Sandi"
+      ],
+      "journal": "Journal of neurosurgery. Pediatrics",
+      "year": "2022",
+      "publication_types": [
+        "Systematic Review",
+        "Meta-Analysis",
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: Drug-resistant epilepsy (DRE) affects many children. Vagus nerve stimulation (VNS) may improve seizure control; however, its role in children with genetic etiologies of epilepsy is not well described. The authors systematically reviewed the literature to examine the effectiveness of VNS in this cohort. METHODS: In January 2021, the authors performed a systematic review of the PubMed/MEDLINE, SCOPUS/Embase, Cochrane, and Web of Science databases to investigate the impact of VNS on seizure outcomes in children with genetic etiologies of epilepsy. Primary outcomes included seizure freedom rate, ≥ 90% seizure reduction rate, and ≥ 50% seizure reduction rate. Secondary outcomes were seizure severity and quality of life (QOL), including cognitive, functional, and behavioral outcomes. A random-effects meta-analysis was performed. RESULTS: The authors identified 125 articles, of which 47 with 216 nonduplicate patients were analyzed. Common diagnoses were Dravet syndrome (DS) (92/216 patients [42.6%]) and tuberous sclerosis complex (TSC) (63/216 [29.2%]). Seizure freedom was not reported in any patient with DS; the pooled proportion (95% CI) of patients with ≥ 50% seizure reduction was 41% (21%-58%). Secondary cognitive outcomes of VNS were variable in DS patients, but these patients demonstrated benefits in seizure duration and status epilepticus. In TSC patients, the pooled (95% CI) seizure freedom rate was 40% (12%-71%), ≥ 90% seizure reduction rate was 31% (8%-56%), and ≥ 50% reduction rate was 68% (48%-91%). Regarding the secondary outcomes of VNS in TSC patients, several studies reported decreased seizure severity and improved QOL outcomes. There was limited evidence regarding the use of VNS to treat patients with other genetic etiologies of epilepsy, such as mitochondrial disease, Rett syndrome, Doose syndrome, Landau-Kleffner syndrome, Aicardi syndrome, Angelman syndrome, ring chromosome 20 syndrome, and lissencephaly; variable responses were reported in a limited number of cases. CONCLUSIONS: The authors conducted a systematic review of VNS outcomes in children with genetic etiologies of DRE. Among the most studied conditions, patients with TSC had substantial seizure reduction and improvements in QOL, whereas those with DS had less robust seizure reduction. Increased testing, diagnosis, and long-term follow-up studies are necessary to better characterize VNS response in these children.",
+      "abstract_sections": {
+        "OBJECTIVE": "Drug-resistant epilepsy (DRE) affects many children. Vagus nerve stimulation (VNS) may improve seizure control; however, its role in children with genetic etiologies of epilepsy is not well described. The authors systematically reviewed the literature to examine the effectiveness of VNS in this cohort.",
+        "METHODS": "In January 2021, the authors performed a systematic review of the PubMed/MEDLINE, SCOPUS/Embase, Cochrane, and Web of Science databases to investigate the impact of VNS on seizure outcomes in children with genetic etiologies of epilepsy. Primary outcomes included seizure freedom rate, ≥ 90% seizure reduction rate, and ≥ 50% seizure reduction rate. Secondary outcomes were seizure severity and quality of life (QOL), including cognitive, functional, and behavioral outcomes. A random-effects meta-analysis was performed.",
+        "RESULTS": "The authors identified 125 articles, of which 47 with 216 nonduplicate patients were analyzed. Common diagnoses were Dravet syndrome (DS) (92/216 patients [42.6%]) and tuberous sclerosis complex (TSC) (63/216 [29.2%]). Seizure freedom was not reported in any patient with DS; the pooled proportion (95% CI) of patients with ≥ 50% seizure reduction was 41% (21%-58%). Secondary cognitive outcomes of VNS were variable in DS patients, but these patients demonstrated benefits in seizure duration and status epilepticus. In TSC patients, the pooled (95% CI) seizure freedom rate was 40% (12%-71%), ≥ 90% seizure reduction rate was 31% (8%-56%), and ≥ 50% reduction rate was 68% (48%-91%). Regarding the secondary outcomes of VNS in TSC patients, several studies reported decreased seizure severity and improved QOL outcomes. There was limited evidence regarding the use of VNS to treat patients with other genetic etiologies of epilepsy, such as mitochondrial disease, Rett syndrome, Doose syndrome, Landau-Kleffner syndrome, Aicardi syndrome, Angelman syndrome, ring chromosome 20 syndrome, and lissencephaly; variable responses were reported in a limited number of cases.",
+        "CONCLUSIONS": "The authors conducted a systematic review of VNS outcomes in children with genetic etiologies of DRE. Among the most studied conditions, patients with TSC had substantial seizure reduction and improvements in QOL, whereas those with DS had less robust seizure reduction. Increased testing, diagnosis, and long-term follow-up studies are necessary to better characterize VNS response in these children."
+      },
+      "mesh_terms": [
+        "Child",
+        "Humans",
+        "Quality of Life",
+        "Vagus Nerve Stimulation",
+        "Drug Resistant Epilepsy",
+        "Epilepsy",
+        "Seizures",
+        "Treatment Outcome",
+        "Vagus Nerve",
+        "Retrospective Studies"
+      ],
+      "keywords": [
+        "drug-resistant epilepsy",
+        "genetic epilepsy",
+        "pediatric",
+        "surgical epilepsy",
+        "vagus nerve stimulation"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3171/2022.1.PEDS222"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35303699/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35303699/"
+    },
+    "31869773": {
+      "pmid": "31869773",
+      "doi": "10.1016/j.ridd.2019.103554",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Interventions to improve sleep for individuals with Angelman syndrome: A systematic review.",
+      "authors": [
+        "Egan Mary",
+        "Farrell Karen",
+        "Hoey Eimear",
+        "McGuire Brian E",
+        "Lydon Helena Kay"
+      ],
+      "journal": "Research in developmental disabilities",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "OBJECTIVE: The aim of the review was to synthesise the literature on the types and effectiveness of interventions to improve sleep for individuals with Angelman Syndrome (AS). METHOD: Four databases were searched using predetermined search terms. Data extraction was performed on studies to examine (a) participant characteristics (b) study design (c) intervention procedures (d) intervention duration (e) dependent (outcome)variables. Intervention outcomes were categorised as positive, negative or and certainty of evidence as a measure of quality was reported for each study. RESULTS: Ten studies, including 54 participants with AS, met the inclusion criteria. Included studies comprised of both single subject designs (n = 3) and group-based designs (n = 7). Pharmacological interventions (n = 8) were the most commonly used followed by combined pharmacological and behavioral treatment (n = 1) or behavioral interventions as a single intervention (n = 1). Pharmacological interventions demonstrated both positive (n = 2) and mixed outcomes (n = 6) and were categorised at a suggestive level of evidence. Behavioral interventions as a sole intervention (n = 1) and as a combined intervention (with pharmacological intervention; n = 1) were found to have positive outcomes and was also categorised at a suggestive level of evidence. CONCLUSION: This review found provisional evidence but weak evidence for the effectiveness of behavioral interventions, and mixed outcomes for the effectiveness of Melatonin for the treatment of sleep problems in AS. All 10 studies only achieved a suggestive level of certainty, therefore, further high-quality research is needed to evaluate interventions for the treatment of sleep problems in this population.",
+      "abstract_sections": {
+        "OBJECTIVE": "The aim of the review was to synthesise the literature on the types and effectiveness of interventions to improve sleep for individuals with Angelman Syndrome (AS).",
+        "METHOD": "Four databases were searched using predetermined search terms. Data extraction was performed on studies to examine (a) participant characteristics (b) study design (c) intervention procedures (d) intervention duration (e) dependent (outcome)variables. Intervention outcomes were categorised as positive, negative or and certainty of evidence as a measure of quality was reported for each study.",
+        "RESULTS": "Ten studies, including 54 participants with AS, met the inclusion criteria. Included studies comprised of both single subject designs (n = 3) and group-based designs (n = 7). Pharmacological interventions (n = 8) were the most commonly used followed by combined pharmacological and behavioral treatment (n = 1) or behavioral interventions as a single intervention (n = 1). Pharmacological interventions demonstrated both positive (n = 2) and mixed outcomes (n = 6) and were categorised at a suggestive level of evidence. Behavioral interventions as a sole intervention (n = 1) and as a combined intervention (with pharmacological intervention; n = 1) were found to have positive outcomes and was also categorised at a suggestive level of evidence.",
+        "CONCLUSION": "This review found provisional evidence but weak evidence for the effectiveness of behavioral interventions, and mixed outcomes for the effectiveness of Melatonin for the treatment of sleep problems in AS. All 10 studies only achieved a suggestive level of certainty, therefore, further high-quality research is needed to evaluate interventions for the treatment of sleep problems in this population."
+      },
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Behavior Therapy",
+        "Central Nervous System Depressants",
+        "Humans",
+        "Melatonin",
+        "Sleep",
+        "Sleep Initiation and Maintenance Disorders",
+        "Sleep Wake Disorders"
+      ],
+      "keywords": [
+        "Angelman syndrome",
+        "Behavioral intervention",
+        "Pharmacological intervention",
+        "Sleep"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ridd.2019.103554"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31869773/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31869773/"
+    },
+    "30014250": {
+      "pmid": "30014250",
+      "doi": "10.1007/s10803-018-3658-y",
+      "pmc_id": "PMC6331489",
+      "pmc_verify": null,
+      "title": "Movement Disorders and Syndromic Autism: A Systematic Review.",
+      "authors": [
+        "Bell L",
+        "Wittkowski A",
+        "Hare D J"
+      ],
+      "journal": "Journal of autism and developmental disorders",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "Movement disorders are reported in idiopathic autism but the extent to which comparable movement disorders are found in syndromic/co-morbid autism is unknown. A systematic search of Medline, Embase, PsychINFO and CINAHL on the prevalence of specific movement disorder in syndromic autism associated with specific genetic syndromes identified 16 papers, all relating to Angelman syndrome or Rett syndrome. Prevalence rates of 72.7-100% and 25.0-27.3% were reported for ataxia and tremor, respectively, in Angelman syndrome. In Rett syndrome, prevalence rates of 43.6-50% were reported for ataxia and 27.3-48.3% for tremor with additional reports of dystonia, rigidity and pyramidal signs. However, reliable assessment measures were rarely used and recruitment was often not described in sufficient detail.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Autistic Disorder",
+        "Comorbidity",
+        "Humans",
+        "Movement Disorders",
+        "Prevalence",
+        "Rett Syndrome"
+      ],
+      "keywords": [
+        "Angelman",
+        "Ataxia",
+        "Autism",
+        "Dystonia",
+        "Extra-pyramidal",
+        "Movement disorder",
+        "Retts",
+        "Rigidity",
+        "Tremor"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6331489/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6331489/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s10803-018-3658-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30014250/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30014250/"
+    },
+    "37386011": {
+      "pmid": "37386011",
+      "doi": "10.1038/s41572-023-00443-4",
+      "pmc_id": "8157728",
+      "pmc_verify": null,
+      "title": "Imprinting disorders.",
+      "authors": [
+        "Eggermann Thomas",
+        "Monk David",
+        "de Nanclares Guiomar Perez",
+        "Kagami Masayo",
+        "Giabicani Eloïse",
+        "Riccio Andrea",
+        "Tümer Zeynep",
+        "Kalish Jennifer M",
+        "Tauber Maithé",
+        "Duis Jessica",
+        "Weksberg Rosanna",
+        "Maher Eamonn R",
+        "Begemann Matthias",
+        "Elbracht Miriam"
+      ],
+      "journal": "Nature reviews. Disease primers",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Imprinting disorders (ImpDis) are congenital conditions that are characterized by disturbances of genomic imprinting. The most common individual ImpDis are Prader-Willi syndrome, Angelman syndrome and Beckwith-Wiedemann syndrome. Individual ImpDis have similar clinical features, such as growth disturbances and developmental delay, but the disorders are heterogeneous and the key clinical manifestations are often non-specific, rendering diagnosis difficult. Four types of genomic and imprinting defect (ImpDef) affecting differentially methylated regions (DMRs) can cause ImpDis. These defects affect the monoallelic and parent-of-origin-specific expression of imprinted genes. The regulation within DMRs as well as their functional consequences are mainly unknown, but functional cross-talk between imprinted genes and functional pathways has been identified, giving insight into the pathophysiology of ImpDefs. Treatment of ImpDis is symptomatic. Targeted therapies are lacking owing to the rarity of these disorders; however, personalized treatments are in development. Understanding the underlying mechanisms of ImpDis, and improving diagnosis and treatment of these disorders, requires a multidisciplinary approach with input from patient representatives.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8157728/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8157728/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41572-023-00443-4"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37386011/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37386011/"
+    },
+    "32087041": {
+      "pmid": "32087041",
+      "doi": "10.1111/febs.15258",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Angelman syndrome: a journey through the brain.",
+      "authors": [
+        "Maranga Carina",
+        "Fernandes Tiago G",
+        "Bekman Evguenia",
+        "da Rocha Simão Teixeira"
+      ],
+      "journal": "The FEBS journal",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Angelman syndrome (AS) is an incurable neurodevelopmental disease caused by loss of function of the maternally inherited UBE3A gene. AS is characterized by a defined set of symptoms, namely severe developmental delay, speech impairment, uncontrolled laughter, and ataxia. Current understanding of the pathophysiology of AS relies mostly on studies using the murine model of the disease, although alternative models based on patient-derived stem cells are now emerging. Here, we summarize the literature of the last decade concerning the three major brain areas that have been the subject of study in the context of AS: hippocampus, cortex, and the cerebellum. Our comprehensive analysis highlights the major phenotypes ascribed to the different brain areas. Moreover, we also discuss the major drawbacks of current models and point out future directions for research in the context of AS, which will hopefully lead us to an effective treatment of this condition in humans.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Animals",
+        "Brain",
+        "Cerebellar Cortex",
+        "Cerebellum",
+        "Hippocampus",
+        "Humans",
+        "Loss of Function Mutation",
+        "Mice",
+        "Neurodevelopmental Disorders",
+        "Ubiquitin-Protein Ligases"
+      ],
+      "keywords": [
+        "UBE3A",
+        "Angelman syndrome",
+        "cerebellum",
+        "cortex",
+        "hippocampus"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/febs.15258"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32087041/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32087041/"
+    },
+    "37051256": {
+      "pmid": "37051256",
+      "doi": "10.2147/TACG.S372708",
+      "pmc_id": "PMC10084876",
+      "pmc_verify": null,
+      "title": "Prader-Willi and Angelman Syndromes: Mechanisms and Management.",
+      "authors": [
+        "Ma Van K",
+        "Mao Rong",
+        "Toth Jessica N",
+        "Fulmer Makenzie L",
+        "Egense Alena S",
+        "Shankar Suma P"
+      ],
+      "journal": "The application of clinical genetics",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) and Angelman syndrome (AS) are genetic imprinting disorders resulting from absent or reduced expression of paternal or maternal genes in chromosome 15q11q13 region, respectively. The most common etiology is deletion of the maternal or paternal 15q11q13 region. Methylation is the first line for molecular diagnostic testing; MS-MLPA is the most sensitive test. The molecular subtype of PWS/AS provides more accurate recurrence risk information for parents and for the individual affected with the condition. Management should include a multidisciplinary team by various medical subspecialists and therapists. Developmental and behavioral management of PWS and AS in infancy and early childhood includes early intervention services and individualized education programs for school-aged children. Here, we compare and discuss the mechanisms, pathophysiology, clinical features, and management of the two imprinting disorders, PWS and AS.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "chromosome 15",
+        "developmental delay",
+        "hyperphagia",
+        "imprinting disorders",
+        "obesity",
+        "uniparental disomy"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10084876/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10084876/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2147/TACG.S372708"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37051256/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37051256/"
+    },
+    "22675103": {
+      "pmid": "22675103",
+      "doi": "10.1136/bcr.09.2011.4747",
+      "pmc_id": "PMC3207767",
+      "pmc_verify": null,
+      "title": "Happy Puppet syndrome.",
+      "authors": [
+        "Sarkar Priyanka Airen",
+        "Shigli Anand",
+        "Patidar Chetan"
+      ],
+      "journal": "BMJ case reports",
+      "year": "2011",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Happy Puppet syndrome is characterised by a partial deficit of paired autosomal chromosome 15. It is a neuro-genetic disorder characterised by intellectual and developmental delay, sleep disturbance, seizures, jerky movements (especially hand-flapping), frequent laughter or smiling and usually a happy demeanour. It is also called as Angelman syndrome (AS). People with AS are sometimes known as 'angels', both because of the syndrome's name and because of their youthful, happy appearance. A 6.5-year-old girl is presented and clinical suspicion of AS was raised at the age of 4 years when she presented with mental retardation and epilepsy, absence of speech, inability to gait and unprovoked episodes of laughter. Fluorescent in situ hybridisation chromosomal analysis revealed micro deletion on the maternally derived allele of 15q chromosome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Child",
+        "Chromosome Aberrations",
+        "Chromosomes, Human, Pair 15",
+        "Dental Caries",
+        "Dental Restoration Repair",
+        "Female",
+        "Glass Ionomer Cements",
+        "Humans"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3207767/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3207767/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/bcr.09.2011.4747"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22675103/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22675103/"
+    },
+    "23622177": {
+      "pmid": "23622177",
+      "doi": "10.1016/B978-0-444-52891-9.00032-4",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Angelman syndrome.",
+      "authors": [
+        "Kyllerman Mårten"
+      ],
+      "journal": "Handbook of clinical neurology",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Angelman syndrome combines severe mental retardation, epilepsy, ataxia, speech impairment, and unique behavior with happy demeanor, laughing, short attention span, hyperactivity, and sleep disturbance. Occurrence has been calculated at 1:20000 to 1:12000 constituting about 6% of all children with severe mental retardation and epilepsy. The physical \"prototype\" includes microcephaly with flat neck, fair skin and hair, wide-spaced teeth, and open mouth with tongue protrusion. Epilepsy is characterized by atypical absences, erratic myoclonus, and occasional tonic-clonic seizures. EEG demonstrates high-amplitude 2-3Hz delta activity with spike and slow-wave discharges and sleep-activated generalized epileptiform discharges. Sodium valproate, benzodiazepines, and priacetam are frequently used and effective. Development is generally slow, the majority attaining independent walking in the first 2.5-6 years. Vocabulary is limited to a few single words with superior speech and object apprehension. The condition is due to a lack of expression of the UBE3A gene on chromosome 15q. Maternal deletions of 15q11-13 produce the most pronounced phenotype (65-70% of probands), uniparental disomy and imprinting center mutations (10%), and UBE3A point mutations (11%) produce milder phenotypes.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Humans"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/B978-0-444-52891-9.00032-4"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23622177/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23622177/"
+    },
+    "17848870": {
+      "pmid": "17848870",
+      "doi": "10.1097/01.nrl.0000253067.32759.aa",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Angelman syndrome revisited.",
+      "authors": [
+        "Paprocka Justyna",
+        "Jamroz Ewa",
+        "Szwed-Białozyt Barbara",
+        "Jezela-Stanek Aleksandra",
+        "Kopyta Ilona",
+        "Marszał Elzbieta"
+      ],
+      "journal": "The neurologist",
+      "year": "2007",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVES: Angelman syndrome (AS) is characterized by severe mental retardation, epilepsy, absent speech, dysmorphic facial features, and a characteristic behavioral phenotype. It is caused by deficiency of gene expression from maternally derived chromosome 15q11-q13. STUDY DESIGN: The authors present the clinical picture of 9 children (median age, 4.9 years; range, 1 to 10 years) with confirmed Angelman syndrome. The patients complied with the international consensus criteria for AS and were consecutively investigated for psychomotor development, epilepsy, and electroencephalogram (EEG) profiles. RESULTS: The median age at diagnosis was 3.9 years. The motor milestones were delayed. Median developmental quotient level was 26. All patients but 1 experienced predominantly polymorphic seizures. In 4 cases, the epilepsy was refractory to treatment. The EEG of all patients displayed an abnormal sleep pattern and generalized abnormalities, with a maximum over the posterior areas. CONCLUSIONS: Milder or less typical phenotypes of AS may remain undiagnosed, leading to an overall underdiagnosis of the disease. The EEG shows no clear relation to genotype, clinical picture, or to the presence and severity of epilepsy. AS should be considered in the differential diagnosis of children with severe cryptogenic epilepsy and a characteristic configuration of clinical features.",
+      "abstract_sections": {
+        "OBJECTIVES": "Angelman syndrome (AS) is characterized by severe mental retardation, epilepsy, absent speech, dysmorphic facial features, and a characteristic behavioral phenotype. It is caused by deficiency of gene expression from maternally derived chromosome 15q11-q13.",
+        "STUDY DESIGN": "The authors present the clinical picture of 9 children (median age, 4.9 years; range, 1 to 10 years) with confirmed Angelman syndrome. The patients complied with the international consensus criteria for AS and were consecutively investigated for psychomotor development, epilepsy, and electroencephalogram (EEG) profiles.",
+        "RESULTS": "The median age at diagnosis was 3.9 years. The motor milestones were delayed. Median developmental quotient level was 26. All patients but 1 experienced predominantly polymorphic seizures. In 4 cases, the epilepsy was refractory to treatment. The EEG of all patients displayed an abnormal sleep pattern and generalized abnormalities, with a maximum over the posterior areas.",
+        "CONCLUSIONS": "Milder or less typical phenotypes of AS may remain undiagnosed, leading to an overall underdiagnosis of the disease. The EEG shows no clear relation to genotype, clinical picture, or to the presence and severity of epilepsy. AS should be considered in the differential diagnosis of children with severe cryptogenic epilepsy and a characteristic configuration of clinical features."
+      },
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Anticonvulsants",
+        "Behavior",
+        "Child",
+        "Child, Preschool",
+        "Drug Resistance",
+        "Electroencephalography",
+        "Epilepsy",
+        "Female",
+        "Genotype",
+        "Humans",
+        "Infant",
+        "Intellectual Disability",
+        "Magnetic Resonance Imaging",
+        "Male",
+        "Movement Disorders",
+        "Phenotype",
+        "Seizures",
+        "Speech Disorders"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/01.nrl.0000253067.32759.aa"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17848870/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17848870/"
+    },
+    "20803659": {
+      "pmid": "20803659",
+      "doi": "10.1002/ajmg.c.30273",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prader-Willi syndrome and Angelman syndrome.",
+      "authors": [
+        "Buiting Karin"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Prader-Willi syndrome (PWS) and Angelman syndrome (AS) are two distinct neurogenetic disorders in which imprinted genes on the proximal long arm of chromosome 15 are affected. Although the SNORD116 gene cluster has become a prime candidate for PWS, it cannot be excluded that other paternally expressed genes in the chromosomal region 15q11q13 contribute to the full phenotype. AS is caused by a deficiency of the UBE3A gene, which in the brain is expressed from the maternal allele only. The most frequent genetic lesions in both disorders are a de novo deletion of the chromosomal region 15q11q13, uniparental disomy 15, an imprinting defect or, in the case of AS, a mutation of the UBE3A gene. Microdeletions in a small number of patients with PWS and AS have led to the identification of the chromosome 15 imprinting center (IC). The IC consists of two critical elements, which act in cis to regulate imprinting in the whole chromosome 15q11q13 imprinted domain.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 15",
+        "Gene Expression",
+        "Genomic Imprinting",
+        "Humans",
+        "Multigene Family",
+        "Prader-Willi Syndrome",
+        "Ubiquitin-Protein Ligases",
+        "Uniparental Disomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.30273"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20803659/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20803659/"
+    },
+    "39108836": {
+      "pmid": "39108836",
+      "doi": "10.3389/fcell.2024.1413248",
+      "pmc_id": "PMC11300358",
+      "pmc_verify": null,
+      "title": "Epigenetics in rare neurological diseases.",
+      "authors": [
+        "Roberts Chris-Tiann",
+        "Arezoumand Khatereh Saei",
+        "Kadar Shahib Ashraf",
+        "Davie James R",
+        "Rastegar Mojgan"
+      ],
+      "journal": "Frontiers in cell and developmental biology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Rare neurological diseases include a vast group of heterogenous syndromes with primary impairment(s) in the peripheral and/or central nervous systems. Such rare disorders may have overlapping phenotypes, despite their distinct genetic etiology. One unique aspect of rare neurological diseases is their potential common association with altered epigenetic mechanisms. Epigenetic mechanisms include regulatory processes that control gene expression and cellular phenotype without changing the composition of the corresponding DNA sequences. Epigenetic factors include three types of proteins, the \"readers, writers, and erasers\" of DNA and DNA-bound proteins. Thus, epigenetic impairments of many neurological diseases may contribute to their pathology and manifested phenotypes. Here, we aim to provide a comprehensive review on the general etiology of selected rare neurological diseases, that include Rett Syndrome, Prader-Willi Syndrome, Rubinstein-Taybi Syndrome, Huntington's disease, and Angelman syndrome, with respect to their associated aberrant epigenetic mechanisms.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Angelman Syndrome",
+        "DNA methylation",
+        "MeCP2",
+        "Prader-Willi Syndrome",
+        "Rett Syndrome",
+        "epigenetics",
+        "histone modifications",
+        "rare neurological diseases"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11300358/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11300358/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3389/fcell.2024.1413248"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39108836/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39108836/"
+    },
+    "40884397": {
+      "pmid": "40884397",
+      "doi": "10.1093/nar/gkaf851",
+      "pmc_id": "PMC12397906",
+      "pmc_verify": null,
+      "title": "Angelman syndrome patient-derived neuron screen leads to clinical ASO rugonersen targeting UBE3A-ATS with long-lasting effect in monkeys.",
+      "authors": [
+        "Jagasia Ravi",
+        "Bon Charlotte",
+        "Rasmussen Soren V",
+        "Badillo Solveig",
+        "Tehler Disa",
+        "Buchy Danièle",
+        "Berrera Marco",
+        "Prasad Megana",
+        "Chamberlain Stormy",
+        "Terrigno Marco",
+        "Pandya Nikhil J",
+        "Costa Veronica",
+        "Wang Congwei",
+        "Pedersen Lykke",
+        "Miller Meghan T",
+        "Erichsen Kamille Dumong",
+        "Joenson Lars",
+        "Patsch Christoph",
+        "Hipp Joerg F",
+        "Bonni Azad",
+        "Müller Lutz",
+        "Braendli-Baiocco Annamaria",
+        "Kremer Thomas",
+        "Koller Erich",
+        "Hoener Marius C"
+      ],
+      "journal": "Nucleic acids research",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Angelman syndrome (AS) is a severe neurodevelopmental disorder caused by the loss of neuronal ubiquitin E3 ligase UBE3A, with no available treatment. Restoring UBE3A by downregulating the paternally cis-acting long noncoding antisense transcript (UBE3A-ATS) is a potentially disease modifying strategy. However, developing molecules targeting human UBE3A-ATS is challenging due to its selective expression in mature neurons and lack of sequence conservation across species. To overcome this, we screened a library of locked nucleic acid (LNA)-modified antisense oligonucleotides (ASOs) in AS patient-derived neurons. This let to the identification of rugonersen (RO7248824), which selectively and potently reduces UBE3A-ATS and upregulates UBE3A messenger RNA (mRNA) and protein in neurons derived from neurotypical humans, AS patients, and cynomolgus monkeys. In vivo studies with rugonersen or tool molecules in wild-type and AS mice, and cynomolgus monkeys revealed a steep relationship between Ube3a-ats knock-down and UBE3A mRNA/protein upregulation, requiring ∼90% knock-down for 50% upregulation. Two studies of up to three lumbar intrathecal (IT) rugonersen doses in monkeys showed no adverse effects and produced long-lasting paternal UBE3A mRNA/protein reactivation in key brain regions. In summary, we identified rugonersen, an ASO targeting UBE3A-ATS with excellent drug-like properties. Its sustained efficacy supports infrequent, IT dosing, and underlies its ongoing clinical development for AS.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Animals",
+        "Humans",
+        "Ubiquitin-Protein Ligases",
+        "Neurons",
+        "Mice",
+        "Oligonucleotides, Antisense",
+        "Macaca fascicularis",
+        "RNA, Long Noncoding",
+        "Male",
+        "Female",
+        "RNA, Messenger",
+        "Disease Models, Animal"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12397906/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12397906/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/nar/gkaf851"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40884397/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40884397/"
+    },
+    "39168152": {
+      "pmid": "39168152",
+      "doi": "10.1055/a-2399-0191",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Precision Medicine in Angelman Syndrome.",
+      "authors": [
+        "Manssen Lena",
+        "Krey Ilona",
+        "Gburek-Augustat Janina",
+        "von Hagen Cornelia",
+        "Lemke Johannes R",
+        "Merkenschlager Andreas",
+        "Weigand Heike",
+        "Makowski Christine"
+      ],
+      "journal": "Neuropediatrics",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Angelman syndrome (AS) is a rare neurogenetic disorder caused by a loss of function of UBE3A on the maternal allele. Clinical features include severe neurodevelopmental delay, epilepsy, sleep disturbances, and behavioral disorders. Therapy currently evolves from conventional symptomatic, supportive, and antiseizure treatments toward alteration of mRNA expression, which is subject of several ongoing clinical trials.This article will provide an overview of clinical research and therapeutic approaches on AS.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Humans",
+        "Precision Medicine",
+        "Ubiquitin-Protein Ligases"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1055/a-2399-0191"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39168152/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39168152/"
+    },
+    "39847371": {
+      "pmid": "39847371",
+      "doi": "10.1001/jama.2024.27673",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Baby Jack.",
+      "authors": [
+        "Hunter Grace"
+      ],
+      "journal": "JAMA",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1001/jama.2024.27673"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39847371/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39847371/"
+    },
+    "26758979": {
+      "pmid": "26758979",
+      "doi": "10.1007/s10354-015-0408-z",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Pharmacological therapies for Angelman syndrome.",
+      "authors": [
+        "Tan Wen-Hann",
+        "Bird Lynne M"
+      ],
+      "journal": "Wiener medizinische Wochenschrift (1946)",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Angelman syndrome (AS) is a severe neurodevelopmental disorder caused by a loss of the maternally inherited UBE3A; the paternal UBE3A is silenced in neurons by a mechanism involving an antisense transcript (UBE3A-AS). We reviewed the published information on clinical trials that have been completed as well as the publicly available information on ongoing trials of therapies for AS. Attempts at hypermethylating the maternal locus through dietary compounds were ineffective. The results of a clinical trial using minocycline as a matrix metalloproteinase-9 inhibitor were inconclusive; another clinical trial is underway. Findings from a clinical trial using L-dopa to alter phosphorylation of calcium/calmodulin-dependent kinase II are awaited. Topoisomerase inhibitors and antisense oligonucleotides are being developed to directly inhibit UBE3A-AS. Other strategies targeting specific pathways are briefly discussed. We also reviewed the medications that are currently used to treat seizures and sleep disturbances, which are two of the more debilitating manifestations of AS.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Angelman Syndrome",
+        "Animals",
+        "Clinical Trials as Topic",
+        "Disease Models, Animal",
+        "Gene Silencing",
+        "Levodopa",
+        "Mice",
+        "Minocycline",
+        "Oligoribonucleotides, Antisense",
+        "Seizures",
+        "Sleep Wake Disorders",
+        "Topoisomerase Inhibitors",
+        "Ubiquitin-Protein Ligases"
+      ],
+      "keywords": [
+        "Angelman syndrome",
+        "Clinical trial",
+        "Mouse model",
+        "Therapeutic",
+        "Therapy"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s10354-015-0408-z"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26758979/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26758979/"
+    },
+    "40643417": {
+      "pmid": "40643417",
+      "doi": "10.1016/j.pedhc.2025.06.005",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Angelman Syndrome: Multidisciplinary Management.",
+      "authors": [
+        "Bridges Whitney A",
+        "Temples Heide S",
+        "Lowe Tracy B"
+      ],
+      "journal": "Journal of pediatric health care : official publication of National Association of Pediatric Nurse Associates & Practitioners",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Case Reports"
+      ],
+      "abstract": "Angelman syndrome is a rare genetic disorder with various phenotypes caused by the combination of genomic imprinting and loss of the maternal UBE3A gene. The case presentation involves a nine-month-old who continues with developmental delays after working with an early intervention therapist and was later diagnosed with Angelman syndrome following several specialty referrals and genetic testing. Currently, there is no cure for Angelman syndrome, only supportive symptomatic treatment. Angelman syndrome requires a multidisciplinary approach across providers who understand the complex care essential for these patients to thrive. The case study reviews the clinical presentation for early identification of infants with Angelman Syndrome, the diagnostic criteria, symptomatic management, family resources, implications for the primary care provider, and promising future therapies.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Infant",
+        "Angelman Syndrome",
+        "Genetic Testing",
+        "Patient Care Team"
+      ],
+      "keywords": [
+        "Angelman Syndrome",
+        "UBE3A gene",
+        "neurodevelopmental disorder"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.pedhc.2025.06.005"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40643417/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40643417/"
+    }
+  }
+}

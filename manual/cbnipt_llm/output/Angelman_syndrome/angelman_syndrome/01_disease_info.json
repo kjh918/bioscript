@@ -1,0 +1,331 @@
+{
+  "syndrome": "Angelman syndrome",
+  "definition": "Angelman syndrome (AS) is characterized by severe developmental delay or intellectual disability, severe speech impairment, gait ataxia and/or tremulousness of the limbs, and unique behavior with an apparent happy demeanor that includes frequent laughing, smiling, and excitability. Microcephaly and seizures are also common. Developmental delays are first noted at around age six months; however, the unique clinical features of AS do not become manifest until after age one year.",
+  "synonyms": [
+    "AS",
+    "HAPPY PUPPET SYNDROME"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "76880004",
+    "MONDO": "MONDO:0007113",
+    "OMIM": "105830",
+    "Orphanet": "72"
+  },
+  "gene_locations": [
+    {
+      "gene_symbol": "UBE3A",
+      "ncbi_gene_id": "7337",
+      "cytoband": "15q11.2",
+      "source": "medgen_direct"
+    }
+  ],
+  "genomic_targets": [],
+  "genereview_url": "/pubmed?LinkName=medgen_pubmed_genereviews&from_uid=58144",
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "37599585",
+          "title": "Current and emerging treatment options for Angelman syndrome.",
+          "authors": "Keary CJ, McDougle CJ",
+          "journal": "Expert Rev Neurother",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37599585/"
+        },
+        {
+          "pmid": "35150089",
+          "title": "A multidisciplinary approach and consensus statement to establish standards of care for Angelman syndrome.",
+          "authors": "Duis J, Nespeca M, Summers J, Bird L, Bindels-de Heus KGCB, Valstar MJ, de Wit MY, Navis C, Ten Hooven-Radstaake M, van Iperen-Kolk BM, Ernst S, Dendrinos M, Katz T, Diaz-Medina G, Katyayan A, Nangia S, Thibert R, Glaze D, Keary C, Pelc K, Simon N, Sadhwani A, Heussler H, Wheeler A, Woeber C, DeRamus M, Thomas A, Kertcher E, DeValk L, Kalemeris K, Arps K, Baym C, Harris N, Gorham JP, Bohnsack BL, Chambers RC, Harris S, Chambers HG, Okoniewski K, Jalazo ER, Berent A, Bacino CA, Williams C, Anderson A",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35150089/"
+        },
+        {
+          "pmid": "34203304",
+          "title": "Genotype-Phenotype Correlations in Angelman Syndrome.",
+          "authors": "Yang L, Shu X, Mao S, Wang Y, Du X, Zou C",
+          "journal": "Genes (Basel)",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34203304/"
+        }
+      ],
+      "see_all": {}
+    },
+    "curated": {
+      "papers": [],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "40956616",
+          "title": "Open-label phase IV trial evaluating nusinersen after onasemnogene abeparvovec in children with spinal muscular atrophy.",
+          "authors": "Proud CM, Finkel RS, Parsons JA, Masson R, Brandsema JF, Kuntz NL, Foster R, Li W, Littauer R, Sohn J, Fradette S, Youn B, Paradis AD; RESPOND Study Group",
+          "journal": "J Clin Invest",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40956616/"
+        },
+        {
+          "pmid": "40646322",
+          "title": "The UBE3A-ATS antisense oligonucleotide rugonersen in children with Angelman syndrome: a phase 1 trial.",
+          "authors": "Hipp JF, Bacino CA, Bird LM, Bruenig-Traebert I, Chan D, de Wit MC, Fontoura P, Hooper G, Jagasia R, Krishnan ML, Murtagh L, Noci A, Martínez AR, Schwab D, Serrano M, Shen MD, Tillmann J, Tjeertes J, Vincenzi B, Berry-Kravis E, Bonni A; Rugonersen Study Group; all TANGELO investigators",
+          "journal": "Nat Med",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40646322/"
+        },
+        {
+          "pmid": "38837855",
+          "title": "Epilepsy, EEG and chromosomal rearrangements.",
+          "authors": "Paprocka J, Coppola A, Cuccurullo C, Stawicka E, Striano P",
+          "journal": "Epilepsia Open",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38837855/"
+        },
+        {
+          "pmid": "35150089",
+          "title": "A multidisciplinary approach and consensus statement to establish standards of care for Angelman syndrome.",
+          "authors": "Duis J, Nespeca M, Summers J, Bird L, Bindels-de Heus KGCB, Valstar MJ, de Wit MY, Navis C, Ten Hooven-Radstaake M, van Iperen-Kolk BM, Ernst S, Dendrinos M, Katz T, Diaz-Medina G, Katyayan A, Nangia S, Thibert R, Glaze D, Keary C, Pelc K, Simon N, Sadhwani A, Heussler H, Wheeler A, Woeber C, DeRamus M, Thomas A, Kertcher E, DeValk L, Kalemeris K, Arps K, Baym C, Harris N, Gorham JP, Bohnsack BL, Chambers RC, Harris S, Chambers HG, Okoniewski K, Jalazo ER, Berent A, Bacino CA, Williams C, Anderson A",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35150089/"
+        },
+        {
+          "pmid": "20803658",
+          "title": "Russell-Silver syndrome.",
+          "authors": "Eggermann T",
+          "journal": "Am J Med Genet C Semin Med Genet",
+          "year": "2010",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20803658/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "39804213",
+          "title": "Genetics of Prader-Willi and Angelman syndromes: 2024 update.",
+          "authors": "Godler DE, Singh D, Butler MG",
+          "journal": "Curr Opin Psychiatry",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39804213/"
+        },
+        {
+          "pmid": "35150089",
+          "title": "A multidisciplinary approach and consensus statement to establish standards of care for Angelman syndrome.",
+          "authors": "Duis J, Nespeca M, Summers J, Bird L, Bindels-de Heus KGCB, Valstar MJ, de Wit MY, Navis C, Ten Hooven-Radstaake M, van Iperen-Kolk BM, Ernst S, Dendrinos M, Katz T, Diaz-Medina G, Katyayan A, Nangia S, Thibert R, Glaze D, Keary C, Pelc K, Simon N, Sadhwani A, Heussler H, Wheeler A, Woeber C, DeRamus M, Thomas A, Kertcher E, DeValk L, Kalemeris K, Arps K, Baym C, Harris N, Gorham JP, Bohnsack BL, Chambers RC, Harris S, Chambers HG, Okoniewski K, Jalazo ER, Berent A, Bacino CA, Williams C, Anderson A",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35150089/"
+        },
+        {
+          "pmid": "34203304",
+          "title": "Genotype-Phenotype Correlations in Angelman Syndrome.",
+          "authors": "Yang L, Shu X, Mao S, Wang Y, Du X, Zou C",
+          "journal": "Genes (Basel)",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34203304/"
+        },
+        {
+          "pmid": "26062517",
+          "title": "Prader-Willi syndrome: a review of clinical, genetic, and endocrine findings.",
+          "authors": "Angulo MA, Butler MG, Cataletto ME",
+          "journal": "J Endocrinol Invest",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26062517/"
+        },
+        {
+          "pmid": "26040994",
+          "title": "Angelman Syndrome.",
+          "authors": "Margolis SS, Sell GL, Zbinden MA, Bird LM",
+          "journal": "Neurotherapeutics",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26040994/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "41820375",
+          "title": "Tuberous sclerosis complex.",
+          "authors": "Winden K, Bebin EM, Jeste S, Krueger DA, Paul E, Sahin M",
+          "journal": "Nat Rev Dis Primers",
+          "year": "2026",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41820375/"
+        },
+        {
+          "pmid": "40956616",
+          "title": "Open-label phase IV trial evaluating nusinersen after onasemnogene abeparvovec in children with spinal muscular atrophy.",
+          "authors": "Proud CM, Finkel RS, Parsons JA, Masson R, Brandsema JF, Kuntz NL, Foster R, Li W, Littauer R, Sohn J, Fradette S, Youn B, Paradis AD; RESPOND Study Group",
+          "journal": "J Clin Invest",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40956616/"
+        },
+        {
+          "pmid": "40646322",
+          "title": "The UBE3A-ATS antisense oligonucleotide rugonersen in children with Angelman syndrome: a phase 1 trial.",
+          "authors": "Hipp JF, Bacino CA, Bird LM, Bruenig-Traebert I, Chan D, de Wit MC, Fontoura P, Hooper G, Jagasia R, Krishnan ML, Murtagh L, Noci A, Martínez AR, Schwab D, Serrano M, Shen MD, Tillmann J, Tjeertes J, Vincenzi B, Berry-Kravis E, Bonni A; Rugonersen Study Group; all TANGELO investigators",
+          "journal": "Nat Med",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40646322/"
+        },
+        {
+          "pmid": "32893075",
+          "title": "Epilepsy in Angelman syndrome: A scoping review.",
+          "authors": "Samanta D",
+          "journal": "Brain Dev",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32893075/"
+        },
+        {
+          "pmid": "26040994",
+          "title": "Angelman Syndrome.",
+          "authors": "Margolis SS, Sell GL, Zbinden MA, Bird LM",
+          "journal": "Neurotherapeutics",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26040994/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "40179454",
+          "title": "Epilepsy associated with chromosomal disorders.",
+          "authors": "Montenegro MA, Vincentiis S, Valente KD",
+          "journal": "Epilepsy Behav",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40179454/"
+        },
+        {
+          "pmid": "33395098",
+          "title": "Emerging Therapies and challenges for individuals with Angelman syndrome.",
+          "authors": "Heussler HS",
+          "journal": "Curr Opin Psychiatry",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33395098/"
+        },
+        {
+          "pmid": "33087932",
+          "title": "Cas9 gene therapy for Angelman syndrome traps Ube3a-ATS long non-coding RNA.",
+          "authors": "Wolter JM, Mao H, Fragola G, Simon JM, Krantz JL, Bazick HO, Oztemiz B, Stein JL, Zylka MJ",
+          "journal": "Nature",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33087932/"
+        },
+        {
+          "pmid": "28494826",
+          "title": "Angelman Syndrome: Identification and Management.",
+          "authors": "Bonello D, Camilleri F, Calleja-Agius J",
+          "journal": "Neonatal Netw",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28494826/"
+        },
+        {
+          "pmid": "1634750",
+          "title": "Angelman syndrome: clinical profile.",
+          "authors": "Zori RT, Hendrickson J, Woolven S, Whidden EM, Gray B, Williams CA",
+          "journal": "J Child Neurol",
+          "year": "1992",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1634750/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "40956616",
+          "title": "Open-label phase IV trial evaluating nusinersen after onasemnogene abeparvovec in children with spinal muscular atrophy.",
+          "authors": "Proud CM, Finkel RS, Parsons JA, Masson R, Brandsema JF, Kuntz NL, Foster R, Li W, Littauer R, Sohn J, Fradette S, Youn B, Paradis AD; RESPOND Study Group",
+          "journal": "J Clin Invest",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40956616/"
+        },
+        {
+          "pmid": "39721588",
+          "title": "Heterozygous UBR5 variants result in a neurodevelopmental syndrome with developmental delay, autism, and intellectual disability.",
+          "authors": "Sabeh P, Dumas SA, Maios C, Daghar H, Korzeniowski M, Rousseau J, Lines M, Guerin A, Millichap JJ, Landsverk M, Grebe T, Lindstrom K, Strober J, Ait Mouhoub T, Zweier C, Steinraths M, Hebebrand M, Callewaert B, Abou Jamra R, Kautza-Lucht M, Wegler M, Kruszka P, Kumps C, Banne E, Waberski MB, Dieux A, Raible S, Krantz I, Medne L, Pechter K, Villard L, Guerrini R, Bianchini C, Barba C, Mei D, Blanc X, Kallay C, Ranza E, Yang XR, O'Heir E, Donald KA, Murugasen S, Bruwer Z, Calikoglu M, Mathews JM, Lesieur-Sebellin M, Baujat G, Derive N, Pierson TM, Murrell JR, Shillington A, Ormieres C, Rondeau S, Reis A, Fernandez-Jaen A, Au PYB, Sweetser DA, Briere LC, Couque N, Perrin L, Schymick J, Gueguen P, Lefebvre M, Van Andel M, Juusola J, Antonarakis SE, Parker JA, Burnett BG, Campeau PM",
+          "journal": "Am J Hum Genet",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39721588/"
+        },
+        {
+          "pmid": "38837855",
+          "title": "Epilepsy, EEG and chromosomal rearrangements.",
+          "authors": "Paprocka J, Coppola A, Cuccurullo C, Stawicka E, Striano P",
+          "journal": "Epilepsia Open",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38837855/"
+        },
+        {
+          "pmid": "36750385",
+          "title": "Rates of Status Epilepticus and Sudden Unexplained Death in Epilepsy in People With Genetic Developmental and Epileptic Encephalopathies.",
+          "authors": "Donnan AM, Schneider AL, Russ-Hall S, Churilov L, Scheffer IE",
+          "journal": "Neurology",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36750385/"
+        },
+        {
+          "pmid": "20803658",
+          "title": "Russell-Silver syndrome.",
+          "authors": "Eggermann T",
+          "journal": "Am J Med Genet C Semin Med Genet",
+          "year": "2010",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20803658/"
+        }
+      ],
+      "see_all": {}
+    },
+    "systematic_reviews": {
+      "papers": [
+        {
+          "pmid": "36833226",
+          "title": "Status Epilepticus in Chromosomal Disorders Associated with Epilepsy: A Systematic Review.",
+          "authors": "Bergonzini L, Pruccoli J, Pettenuzzo I, Pugliano R, Soliani L, Fetta A, Cordelli DM",
+          "journal": "Genes (Basel)",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36833226/"
+        },
+        {
+          "pmid": "36007813",
+          "title": "Systematic Review: Emotion Dysregulation in Syndromic Causes of Intellectual and Developmental Disabilities.",
+          "authors": "Shaffer RC, Reisinger DL, Schmitt LM, Lamy M, Dominick KC, Smith EG, Coffman MC, Esbensen AJ",
+          "journal": "J Am Acad Child Adolesc Psychiatry",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36007813/"
+        },
+        {
+          "pmid": "35303699",
+          "title": "The role of vagus nerve stimulation in genetic etiologies of drug-resistant epilepsy: a meta-analysis.",
+          "authors": "Hajtovic S, LoPresti MA, Zhang L, Katlowitz KA, Kizek DJ, Lam S",
+          "journal": "J Neurosurg Pediatr",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35303699/"
+        },
+        {
+          "pmid": "31869773",
+          "title": "Interventions to improve sleep for individuals with Angelman syndrome: A systematic review.",
+          "authors": "Egan M, Farrell K, Hoey E, McGuire BE, Lydon HK",
+          "journal": "Res Dev Disabil",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31869773/"
+        },
+        {
+          "pmid": "30014250",
+          "title": "Movement Disorders and Syndromic Autism: A Systematic Review.",
+          "authors": "Bell L, Wittkowski A, Hare DJ",
+          "journal": "J Autism Dev Disord",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30014250/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "58144",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/58144"
+}

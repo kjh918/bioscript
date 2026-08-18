@@ -1,0 +1,136 @@
+{
+  "db_sources": {
+    "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+    "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+    "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "TBX1",
+      "chromosome": "chr22",
+      "cytoband": "22q11.21",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "ClinGen",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "hi_score": "1",
+        "hi_score_label": "Little evidence for dosage pathogenicity",
+        "hi_disease": "30083032",
+        "ts_score": "No evidence available",
+        "hi_pmids": [
+          "23828768",
+          "26036351"
+        ],
+        "hgnc_id": null,
+        "gencc_classification": "Definitive",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "Ambry Genetics",
+          "PanelApp Australia",
+          "Labcorp Genetics (formerly Invitae)",
+          "G2P",
+          "Orphanet"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000581",
+            "hpo_name": "Blepharophimosis"
+          },
+          {
+            "hpo_id": "HP:0000581",
+            "hpo_name": "Blepharophimosis"
+          },
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0000587",
+            "hpo_name": "Abnormal optic nerve morphology"
+          },
+          {
+            "hpo_id": "HP:0033151",
+            "hpo_name": "Abnormal pharynx morphology"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0007957",
+            "hpo_name": "Corneal opacity"
+          },
+          {
+            "hpo_id": "HP:0000238",
+            "hpo_name": "Hydrocephalus"
+          },
+          {
+            "hpo_id": "HP:0000389",
+            "hpo_name": "Chronic otitis media"
+          },
+          {
+            "hpo_id": "HP:3000036",
+            "hpo_name": "Abnormal head blood vessel morphology"
+          },
+          {
+            "hpo_id": "HP:3000050",
+            "hpo_name": "Abnormal odontoid tissue morphology"
+          },
+          {
+            "hpo_id": "HP:0008544",
+            "hpo_name": "Abnormally folded helix"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0004467",
+            "hpo_name": "Preauricular pit"
+          }
+        ],
+        "ncbi_gene_id": "6899"
+      }
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "22q11.2",
+      "chromosome": "chr22",
+      "cytoband": "22q11.2",
+      "genomic_pos": null,
+      "event": "loss",
+      "mechanism": "deletion",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "22q11",
+      "chromosome": "chr22",
+      "cytoband": "22q11",
+      "genomic_pos": null,
+      "event": "loss",
+      "mechanism": "deletion",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    }
+  ]
+}

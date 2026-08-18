@@ -1,0 +1,291 @@
+{
+  "syndrome": "Miller-Dieker lissencephaly syndrome",
+  "definition": "Lissencephaly (LIS), literally meaning smooth brain, is characterized by smooth or nearly smooth cerebral surface and a paucity of gyral and sulcal development, encompassing a spectrum of brain surface malformations ranging from complete agyria to subcortical band heterotopia (SBH). Classic lissencephaly is associated with an abnormally thick cortex, reduced or abnormal lamination, and diffuse neuronal heterotopia. SBH consists of circumferential bands of heterotopic neurons located just beneath the cortex and separated from it by a thin band of white matter. SBH represents the less severe end of the lissencephaly spectrum of malformations (Pilz et al., 1999, summary by Kato and Dobyns, 2003). Agyria, i.e., brain without convolutions or gyri, was considered a rare malformation until recent progress in neuroradiology (Bordarier et al., 1986). With this technical advantage, a number of lissencephaly syndromes have been distinguished. Classic lissencephaly (formerly type I) is a brain malformation caused by abnormal neuronal migration at 9 to 13 weeks' gestation, resulting in a spectrum of agyria, mixed agyria/pachygyria, and pachygyria. It is characterized by an abnormally thick and poorly organized cortex with 4 primitive layers, diffuse neuronal heterotopia, enlarged and dysmorphic ventricles, and often hypoplasia of the corpus callosum (Lo Nigro et al., 1997). Kato and Dobyns (2003) presented a classification system for neuronal migration disorders based on brain imaging findings and molecular analysis. The authors also reviewed the contributions and interactions of the 5 genes then known to cause human lissencephaly: LIS1 (PAFAH1B1), 14-3-3-epsilon (YWHAE), DCX, RELN, and ARX. Genetic Heterogeneity of Lissencephaly Lissencephaly is a genetically heterogeneous disorder. See also LIS2 (257320), caused by mutation in the RELN gene (600514) on chromosome 7q22; LIS4 (614019), caused by mutation in the NDE1 gene (609449) on chromosome 16p13; LIS5 (615191), caused by mutation in the LAMB1 gene (150240) on chromosome 7q31; LIS6 (616212), caused by mutation in the KATNB1 gene (602703) on chromosome 16q21; LIS7 (616342), caused by mutation in the CDK5 gene (123831) on chromosome 7q36; LIS8 (617255), caused by mutation in the TMTC3 gene (617218) on chromosome 12q21; LIS9 (618325), caused by mutation in the MACF1 gene (608271) on chromosome 1p34; and LIS10 (618873), caused by mutation in the CEP85L gene (618865) on chromosome 6q22. X-linked forms include LISX1 (300067), caused by mutation in the DCX gene (300121) on chromosome Xq23, and LISX2 (300215), caused by mutation in the ARX gene (300382) on chromosome Xp21. LIS3 has been reclassified as complex cortical dysplasia with other brain malformations-16 (CDCBM16; 611603). See also Miller-Dieker lissencephaly syndrome (MDLS; 247200), a contiguous gene microdeletion syndrome involving chromosome 17p13 and including the PAFAH1B1 and YWHAE (605066) genes. Lissencephaly caused by mutations in the PAFAH1B1 gene is also called 'isolated' lissencephaly to distinguish it from the accompanying features of MDLS. [from OMIM ]",
+  "synonyms": [
+    "Type I lissencephaly"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "253147000",
+    "MONDO": "MONDO:0015146",
+    "OMIM": "601545",
+    "Orphanet": "102009"
+  },
+  "gene_locations": [],
+  "genomic_targets": [
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr7",
+      "cytoband": "7q22",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr16",
+      "cytoband": "16p13",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr7",
+      "cytoband": "7q31",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr16",
+      "cytoband": "16q21",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr7",
+      "cytoband": "7q36",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr12",
+      "cytoband": "12q21",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr1",
+      "cytoband": "1p34",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr6",
+      "cytoband": "6q22",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chrX",
+      "cytoband": "Xq23",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chrX",
+      "cytoband": "Xp21",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr17",
+      "cytoband": "17p13",
+      "event": "unknown",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    }
+  ],
+  "genereview_url": null,
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "15921231",
+          "title": "Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.",
+          "authors": "Leventer RJ",
+          "journal": "J Child Neurol",
+          "year": "2005",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15921231/"
+        }
+      ],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "39214127",
+          "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+          "authors": "Proepper CR, Schuetz SM, Schwarz LM, Au KV, Bast T, Beaud N, Borggraefe I, Bosch F, Budde J, Busse M, Chung J, Debus O, Diepold K, Fries T, Gersdorff GV, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+          "journal": "Neuropediatrics",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+        },
+        {
+          "pmid": "36283405",
+          "title": "Bi-allelic CAMSAP1 variants cause a clinically recognizable neuronal migration disorder.",
+          "authors": "Khalaf-Nazzal R, Fasham J, Inskeep KA, Blizzard LE, Leslie JS, Wakeling MN, Ubeyratna N, Mitani T, Griffith JL, Baker W, Al-Hijawi F, Keough KC, Gezdirici A, Pena L, Spaeth CG, Turnpenny PD, Walsh JR, Ray R, Neilson A, Kouranova E, Cui X, Curiel DT, Pehlivan D, Akdemir ZC, Posey JE, Lupski JR, Dobyns WB, Stottmann RW, Crosby AH, Baple EL",
+          "journal": "Am J Hum Genet",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36283405/"
+        },
+        {
+          "pmid": "26494205",
+          "title": "LIS1-associated classic lissencephaly: A retrospective, multicenter survey of the epileptogenic phenotype and response to antiepileptic drugs.",
+          "authors": "Herbst SM, Proepper CR, Geis T, Borggraefe I, Hahn A, Debus O, Haeussler M, von Gersdorff G, Kurlemann G, Ensslen M, Beaud N, Budde J, Gilbert M, Heiming R, Morgner R, Philippi H, Ross S, Strobl-Wildemann G, Muelleder K, Vosschulte P, Morris-Rosendahl DJ, Schuierer G, Hehr U",
+          "journal": "Brain Dev",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26494205/"
+        },
+        {
+          "pmid": "20036930",
+          "title": "Lissencephalic syndromes: brain and beyond.",
+          "authors": "Pavone L, Corsello G, Pavone P, Iannetti P",
+          "journal": "Front Biosci (Schol Ed)",
+          "year": "2010",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20036930/"
+        },
+        {
+          "pmid": "15007136",
+          "title": "Mutation screening in a cohort of patients with lissencephaly and subcortical band heterotopia.",
+          "authors": "Torres FR, Montenegro MA, Marques-De-Faria AP, Guerreiro MM, Cendes F, Lopes-Cendes I",
+          "journal": "Neurology",
+          "year": "2004",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15007136/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "42177523",
+          "title": "Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.",
+          "authors": "Proepper CR, Schwarz LM, Schuetz SM, von Au K, Bast T, Beaud N, Borggraefe I, Bosch F, Busse M, Chung J, Debus O, Diepold K, Fries T, von Gersdorff G, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+          "journal": "Orphanet J Rare Dis",
+          "year": "2026",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42177523/"
+        },
+        {
+          "pmid": "39214127",
+          "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+          "authors": "Proepper CR, Schuetz SM, Schwarz LM, Au KV, Bast T, Beaud N, Borggraefe I, Bosch F, Budde J, Busse M, Chung J, Debus O, Diepold K, Fries T, Gersdorff GV, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+          "journal": "Neuropediatrics",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+        },
+        {
+          "pmid": "29048727",
+          "title": "Mutations of KIF5C cause a neurodevelopmental disorder of infantile-onset epilepsy, absent language, and distinctive malformations of cortical development.",
+          "authors": "Michels S, Foss K, Park K, Golden-Grant K, Saneto R, Lopez J, Mirzaa GM",
+          "journal": "Am J Med Genet A",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29048727/"
+        },
+        {
+          "pmid": "10788746",
+          "title": "99Tc-HmPAO SPECT in 13 patients with classic lissencephaly.",
+          "authors": "Yilmaz Y, Ozmen M, Adalet I, Calişkan M, Unal S, Aydinli N, Minareci O",
+          "journal": "Pediatr Neurol",
+          "year": "2000",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10788746/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "39214127",
+          "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+          "authors": "Proepper CR, Schuetz SM, Schwarz LM, Au KV, Bast T, Beaud N, Borggraefe I, Bosch F, Budde J, Busse M, Chung J, Debus O, Diepold K, Fries T, Gersdorff GV, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+          "journal": "Neuropediatrics",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+        },
+        {
+          "pmid": "26494205",
+          "title": "LIS1-associated classic lissencephaly: A retrospective, multicenter survey of the epileptogenic phenotype and response to antiepileptic drugs.",
+          "authors": "Herbst SM, Proepper CR, Geis T, Borggraefe I, Hahn A, Debus O, Haeussler M, von Gersdorff G, Kurlemann G, Ensslen M, Beaud N, Budde J, Gilbert M, Heiming R, Morgner R, Philippi H, Ross S, Strobl-Wildemann G, Muelleder K, Vosschulte P, Morris-Rosendahl DJ, Schuierer G, Hehr U",
+          "journal": "Brain Dev",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26494205/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "42177523",
+          "title": "Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.",
+          "authors": "Proepper CR, Schwarz LM, Schuetz SM, von Au K, Bast T, Beaud N, Borggraefe I, Bosch F, Busse M, Chung J, Debus O, Diepold K, Fries T, von Gersdorff G, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+          "journal": "Orphanet J Rare Dis",
+          "year": "2026",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42177523/"
+        },
+        {
+          "pmid": "39214127",
+          "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+          "authors": "Proepper CR, Schuetz SM, Schwarz LM, Au KV, Bast T, Beaud N, Borggraefe I, Bosch F, Budde J, Busse M, Chung J, Debus O, Diepold K, Fries T, Gersdorff GV, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+          "journal": "Neuropediatrics",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+        },
+        {
+          "pmid": "15921231",
+          "title": "Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.",
+          "authors": "Leventer RJ",
+          "journal": "J Child Neurol",
+          "year": "2005",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15921231/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "42177523",
+          "title": "Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.",
+          "authors": "Proepper CR, Schwarz LM, Schuetz SM, von Au K, Bast T, Beaud N, Borggraefe I, Bosch F, Busse M, Chung J, Debus O, Diepold K, Fries T, von Gersdorff G, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+          "journal": "Orphanet J Rare Dis",
+          "year": "2026",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42177523/"
+        },
+        {
+          "pmid": "33565082",
+          "title": "Human cytomegalovirus infection is associated with increased expression of the lissencephaly gene PAFAH1B1 encoding LIS1 in neural stem cells and congenitally infected brains.",
+          "authors": "Rolland M, Martin H, Bergamelli M, Sellier Y, Bessières B, Aziza J, Benchoua A, Leruez-Ville M, Gonzalez-Dunia D, Chavanas S",
+          "journal": "J Pathol",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33565082/"
+        },
+        {
+          "pmid": "15921231",
+          "title": "Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.",
+          "authors": "Leventer RJ",
+          "journal": "J Child Neurol",
+          "year": "2005",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15921231/"
+        },
+        {
+          "pmid": "10788746",
+          "title": "99Tc-HmPAO SPECT in 13 patients with classic lissencephaly.",
+          "authors": "Yilmaz Y, Ozmen M, Adalet I, Calişkan M, Unal S, Aydinli N, Minareci O",
+          "journal": "Pediatr Neurol",
+          "year": "2000",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10788746/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "98463",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/98463"
+}

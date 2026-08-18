@@ -1,0 +1,3261 @@
+{
+  "disease_info": {
+    "syndrome": "Edwards syndrome",
+    "definition": "Trisomy 18 is a chromosomal abnormality associated with the presence of an extra chromosome 18 and characterized by growth delay, dolichocephaly, a characteristic facies, limb anomalies and visceral malformations. [from ORDO]",
+    "synonyms": [
+      "Edwards syndrome"
+    ],
+    "db_ids": {
+      "MONDO": "MONDO:0018071",
+      "Orphanet": "3380"
+    },
+    "gene_locations": [],
+    "genomic_targets": [
+      {
+        "type": "TargetChromosome",
+        "chromosome": "chr18",
+        "cytoband": "18",
+        "event": "gain",
+        "mechanism": "trisomy",
+        "source": "name_or_synonym"
+      }
+    ],
+    "genereview_url": null,
+    "literature": {
+      "pubmed": {
+        "papers": [
+          {
+            "pmid": "40685149",
+            "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+            "authors": "Pyle AK, George TN, Cummings JJ, Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn",
+            "journal": "Pediatrics",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+          },
+          {
+            "pmid": "36524989",
+            "title": "Noninvasive prenatal screening (NIPS) for fetal chromosome abnormalities in a general-risk population: An evidence-based clinical guideline of the American College of Medical Genetics and Genomics (ACMG).",
+            "authors": "Dungan JS, Klugman S, Darilek S, Malinowski J, Akkari YMN, Monaghan KG, Erwin A, Best RG; ACMG Board of Directors. Electronic address: documents@acmg.net",
+            "journal": "Genet Med",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36524989/"
+          },
+          {
+            "pmid": "34171388",
+            "title": "Society for Maternal-Fetal Medicine Consult Series #57: Evaluation and management of isolated soft ultrasound markers for aneuploidy in the second trimester: (Replaces Consults #10, Single umbilical artery, October 2010; #16, Isolated echogenic bowel diagnosed on second-trimester ultrasound, August 2011; #17, Evaluation and management of isolated renal pelviectasis on second-trimester ultrasound, December 2011; #25, Isolated fetal choroid plexus cysts, April 2013; #27, Isolated echogenic intracardiac focus, August 2013).",
+            "authors": "Society for Maternal-Fetal Medicine (SMFM). Electronic address: pubs@smfm.org, Prabhu M, Kuller JA, Biggio JR",
+            "journal": "Am J Obstet Gynecol",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34171388/"
+          }
+        ],
+        "see_all": {}
+      },
+      "curated": {
+        "papers": [],
+        "see_all": {}
+      },
+      "etiology": {
+        "papers": [
+          {
+            "pmid": "40685149",
+            "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+            "authors": "Pyle AK, George TN, Cummings JJ, Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn",
+            "journal": "Pediatrics",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+          },
+          {
+            "pmid": "35608568",
+            "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+            "authors": "Rose NC, Barrie ES, Malinowski J, Jenkins GP, McClain MR, LaGrave D, Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net",
+            "journal": "Genet Med",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+          },
+          {
+            "pmid": "34171388",
+            "title": "Society for Maternal-Fetal Medicine Consult Series #57: Evaluation and management of isolated soft ultrasound markers for aneuploidy in the second trimester: (Replaces Consults #10, Single umbilical artery, October 2010; #16, Isolated echogenic bowel diagnosed on second-trimester ultrasound, August 2011; #17, Evaluation and management of isolated renal pelviectasis on second-trimester ultrasound, December 2011; #25, Isolated fetal choroid plexus cysts, April 2013; #27, Isolated echogenic intracardiac focus, August 2013).",
+            "authors": "Society for Maternal-Fetal Medicine (SMFM). Electronic address: pubs@smfm.org, Prabhu M, Kuller JA, Biggio JR",
+            "journal": "Am J Obstet Gynecol",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34171388/"
+          },
+          {
+            "pmid": "31708118",
+            "title": "TRIDENT-2: National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.",
+            "authors": "van der Meij KRM, Sistermans EA, Macville MVE, Stevens SJC, Bax CJ, Bekker MN, Bilardo CM, Boon EMJ, Boter M, Diderich KEM, de Die-Smulders CEM, Duin LK, Faas BHW, Feenstra I, Haak MC, Hoffer MJV, den Hollander NS, Hollink IHIM, Jehee FS, Knapen MFCM, Kooper AJA, van Langen IM, Lichtenbelt KD, Linskens IH, van Maarle MC, Oepkes D, Pieters MJ, Schuring-Blom GH, Sikkel E, Sikkema-Raddatz B, Smeets DFCM, Srebniak MI, Suijkerbuijk RF, Tan-Sindhunata GM, van der Ven AJEM, van Zelderen-Bhola SL, Henneman L, Galjaard RH, Van Opstal D, Weiss MM; Dutch NIPT Consortium",
+            "journal": "Am J Hum Genet",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+          },
+          {
+            "pmid": "23088440",
+            "title": "The trisomy 18 syndrome.",
+            "authors": "Cereda A, Carey JC",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2012",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23088440/"
+          }
+        ],
+        "see_all": {}
+      },
+      "diagnosis": {
+        "papers": [
+          {
+            "pmid": "40685149",
+            "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+            "authors": "Pyle AK, George TN, Cummings JJ, Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn",
+            "journal": "Pediatrics",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+          },
+          {
+            "pmid": "35608568",
+            "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+            "authors": "Rose NC, Barrie ES, Malinowski J, Jenkins GP, McClain MR, LaGrave D, Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net",
+            "journal": "Genet Med",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+          },
+          {
+            "pmid": "33527722",
+            "title": "Surveillance guidelines for children with trisomy 18.",
+            "authors": "Kepple JW, Fishler KP, Peeples ES",
+            "journal": "Am J Med Genet A",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33527722/"
+          },
+          {
+            "pmid": "31566869",
+            "title": "Trisomy 13 and 18-Prevalence and mortality-A multi-registry population based analysis.",
+            "authors": "Goel N, Morris JK, Tucker D, de Walle HEK, Bakker MK, Kancherla V, Marengo L, Canfield MA, Kallen K, Lelong N, Camelo JL, Stallings EB, Jones AM, Nance A, Huynh MP, Martínez-Fernández ML, Sipek A, Pierini A, Nembhard WN, Goetz D, Rissmann A, Groisman B, Luna-Muñoz L, Szabova E, Lapchenko S, Zarante I, Hurtado-Villa P, Martinez LE, Tagliabue G, Landau D, Gatt M, Dastgiri S, Morgan M",
+            "journal": "Am J Med Genet A",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31566869/"
+          },
+          {
+            "pmid": "29437136",
+            "title": "Trisomies.",
+            "authors": "Levy PA, Marion R",
+            "journal": "Pediatr Rev",
+            "year": "2018",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29437136/"
+          }
+        ],
+        "see_all": {}
+      },
+      "therapy": {
+        "papers": [
+          {
+            "pmid": "36601988",
+            "title": "Seizures in trisomy 18: Prevalence, description, and treatment.",
+            "authors": "Jaspersen SL, Bruns DA, Candee MS, Battaglia A, Carey JC, Fishler KP",
+            "journal": "Am J Med Genet A",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36601988/"
+          },
+          {
+            "pmid": "35608568",
+            "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+            "authors": "Rose NC, Barrie ES, Malinowski J, Jenkins GP, McClain MR, LaGrave D, Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net",
+            "journal": "Genet Med",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+          },
+          {
+            "pmid": "34719838",
+            "title": "Direct hyperbilirubinemia and cholestasis in trisomy 13 and 18.",
+            "authors": "Kepple JW, Peeples ES",
+            "journal": "Am J Med Genet A",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34719838/"
+          },
+          {
+            "pmid": "31787159",
+            "title": "Radial Ray Malformation.",
+            "authors": "Society for Maternal-Fetal Medicine (SMFM), Gandhi M, Rac MWF, McKinney J",
+            "journal": "Am J Obstet Gynecol",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31787159/"
+          },
+          {
+            "pmid": "28397325",
+            "title": "Analysis of cell-free DNA in maternal blood in screening for aneuploidies: updated meta-analysis.",
+            "authors": "Gil MM, Accurti V, Santacruz B, Plana MN, Nicolaides KH",
+            "journal": "Ultrasound Obstet Gynecol",
+            "year": "2017",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28397325/"
+          }
+        ],
+        "see_all": {}
+      },
+      "prognosis": {
+        "papers": [
+          {
+            "pmid": "40685149",
+            "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+            "authors": "Pyle AK, George TN, Cummings JJ, Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn",
+            "journal": "Pediatrics",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+          },
+          {
+            "pmid": "33168220",
+            "title": "Dandy-Walker Malformation.",
+            "authors": "Society for Maternal-Fetal Medicine (SMFM), Monteagudo A",
+            "journal": "Am J Obstet Gynecol",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33168220/"
+          },
+          {
+            "pmid": "33168217",
+            "title": "Holoprosencephaly.",
+            "authors": "Society for Maternal-Fetal Medicine (SMFM), Monteagudo A",
+            "journal": "Am J Obstet Gynecol",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33168217/"
+          },
+          {
+            "pmid": "31566869",
+            "title": "Trisomy 13 and 18-Prevalence and mortality-A multi-registry population based analysis.",
+            "authors": "Goel N, Morris JK, Tucker D, de Walle HEK, Bakker MK, Kancherla V, Marengo L, Canfield MA, Kallen K, Lelong N, Camelo JL, Stallings EB, Jones AM, Nance A, Huynh MP, Martínez-Fernández ML, Sipek A, Pierini A, Nembhard WN, Goetz D, Rissmann A, Groisman B, Luna-Muñoz L, Szabova E, Lapchenko S, Zarante I, Hurtado-Villa P, Martinez LE, Tagliabue G, Landau D, Gatt M, Dastgiri S, Morgan M",
+            "journal": "Am J Med Genet A",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31566869/"
+          },
+          {
+            "pmid": "23088440",
+            "title": "The trisomy 18 syndrome.",
+            "authors": "Cereda A, Carey JC",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2012",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/23088440/"
+          }
+        ],
+        "see_all": {}
+      },
+      "clinical_prediction": {
+        "papers": [
+          {
+            "pmid": "38884729",
+            "title": "Human Genetics of Ventricular Septal Defect.",
+            "authors": "Perrot A, Rickert-Sperling S",
+            "journal": "Adv Exp Med Biol",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+          },
+          {
+            "pmid": "37620607",
+            "title": "Consequences of gaining an extra chromosome.",
+            "authors": "Torres EM",
+            "journal": "Chromosome Res",
+            "year": "2023",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37620607/"
+          },
+          {
+            "pmid": "31708118",
+            "title": "TRIDENT-2: National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.",
+            "authors": "van der Meij KRM, Sistermans EA, Macville MVE, Stevens SJC, Bax CJ, Bekker MN, Bilardo CM, Boon EMJ, Boter M, Diderich KEM, de Die-Smulders CEM, Duin LK, Faas BHW, Feenstra I, Haak MC, Hoffer MJV, den Hollander NS, Hollink IHIM, Jehee FS, Knapen MFCM, Kooper AJA, van Langen IM, Lichtenbelt KD, Linskens IH, van Maarle MC, Oepkes D, Pieters MJ, Schuring-Blom GH, Sikkel E, Sikkema-Raddatz B, Smeets DFCM, Srebniak MI, Suijkerbuijk RF, Tan-Sindhunata GM, van der Ven AJEM, van Zelderen-Bhola SL, Henneman L, Galjaard RH, Van Opstal D, Weiss MM; Dutch NIPT Consortium",
+            "journal": "Am J Hum Genet",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+          },
+          {
+            "pmid": "25963912",
+            "title": "Effects of Maternal and Fetal Characteristics on Cell-Free Fetal DNA Fraction in Maternal Plasma.",
+            "authors": "Zhou Y, Zhu Z, Gao Y, Yuan Y, Guo Y, Zhou L, Liao K, Wang J, Du B, Hou Y, Chen Z, Chen F, Zhang H, Yu C, Zhao L, Lau TK, Jiang F, Wang W",
+            "journal": "Reprod Sci",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25963912/"
+          },
+          {
+            "pmid": "9803202",
+            "title": "Intrauterine growth retardation.",
+            "authors": "Vandenbosche RC, Kirchner JT",
+            "journal": "Am Fam Physician",
+            "year": "1998",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9803202/"
+          }
+        ],
+        "see_all": {}
+      },
+      "systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "40537699",
+            "title": "Outcomes of heart surgery in neonates with trisomy 13 and 18: a systematic review with metanalysis.",
+            "authors": "de Sá Bittencourt Câmara Bastos C, Vale da Cruz L, Hirano Arruda Moraes L, Jornada Krebs VL, de Carvalho WB",
+            "journal": "Eur J Pediatr",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40537699/"
+          },
+          {
+            "pmid": "40389136",
+            "title": "Perinatal outcomes of cystic hygroma: a systematic review and meta-analysis.",
+            "authors": "Wang MJ, Bazan M, Hsieh T, Mita C, Ferrés MA, Oyelese Y",
+            "journal": "Am J Obstet Gynecol MFM",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40389136/"
+          },
+          {
+            "pmid": "35608568",
+            "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+            "authors": "Rose NC, Barrie ES, Malinowski J, Jenkins GP, McClain MR, LaGrave D, Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net",
+            "journal": "Genet Med",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+          },
+          {
+            "pmid": "27889224",
+            "title": "Fetal megacystis: A systematic review.",
+            "authors": "Taghavi K, Sharpe C, Stringer MD",
+            "journal": "J Pediatr Urol",
+            "year": "2017",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27889224/"
+          },
+          {
+            "pmid": "27474103",
+            "title": "A tumor profile in Edwards syndrome (trisomy 18).",
+            "authors": "Satgé D, Nishi M, Sirvent N, Vekemans M",
+            "journal": "Am J Med Genet C Semin Med Genet",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27474103/"
+          }
+        ],
+        "see_all": {}
+      }
+    },
+    "medgen_uid": "1384417",
+    "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/1384417"
+  },
+  "db_ids": {
+    "MONDO": "MONDO:0018071",
+    "Orphanet": "3380"
+  },
+  "markers": [
+    {
+      "feature_type": "TargetChromosome",
+      "feature_name": "chr18",
+      "chromosome": "chr18",
+      "cytoband": "18",
+      "genomic_pos": {
+        "chromosome": "chr18",
+        "start": 1,
+        "end": 80373285,
+        "assembly": "GRCh38"
+      },
+      "event": "gain",
+      "mechanism": "trisomy",
+      "confidence": "medium",
+      "source": [
+        "name_or_synonym",
+        "hg38_chromosome"
+      ],
+      "annotation": null
+    }
+  ],
+  "evidence_literature": [
+    {
+      "pmid": "40685149",
+      "doi": "10.1542/peds.2025-072719",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+      "authors": [
+        "Pyle Alaina K",
+        "George Thomas N",
+        "Cummings James J",
+        "Laventhal Naomi T",
+        "Committee on Bioethics",
+        "Section on Neonatal-Perinatal Medicine",
+        "Committee on Fetus and Newborn"
+      ],
+      "journal": "Pediatrics",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Practice Guideline",
+        "Review"
+      ],
+      "abstract": "Over the last several decades, there has been a steady increase in medical and surgical interventions provided for infants and children with trisomy 13 or trisomy 18 (chromosomal syndromes associated with a range of congenital anomalies and universally severe neurodevelopmental impairment). Despite previous characterizations of these disorders as being uniformly lethal, multiple studies have demonstrated improved morbidity and mortality when indicated interventions, such as cardiac surgery, are performed, and these interventions and their potential risks and benefits can be carefully explored with parents who may wish to pursue them. Although the presence of trisomy 13 or trisomy 18 impacts prognosis for survival and long-term outcomes and cannot be disregarded in complex decision making, there are no ethical justifications for universal, principle-based differential treatment based solely on these genetic diagnoses. Thus, which medical and surgical interventions are offered, denied, or required for patients should be based on the best available evidence and appropriately tailored to the individual's clinical context, should respect the same moral principles as are applied to other children, and should not vary widely between institutions. Pediatric and obstetric clinicians participating in the care of these patients should maintain current knowledge of the literature to provide adequate counseling through a shared decision-making process and offer the broad range of support that is needed for families throughout the continuum of care from the prenatal to postnatal time period and extending throughout the child's life.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1542/peds.2025-072719"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+    },
+    {
+      "pmid": "36524989",
+      "doi": "10.1016/j.gim.2022.11.004",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Noninvasive prenatal screening (NIPS) for fetal chromosome abnormalities in a general-risk population: An evidence-based clinical guideline of the American College of Medical Genetics and Genomics (ACMG).",
+      "authors": [
+        "Dungan Jeffrey S",
+        "Klugman Susan",
+        "Darilek Sandra",
+        "Malinowski Jennifer",
+        "Akkari Yassmine M N",
+        "Monaghan Kristin G",
+        "Erwin Angelika",
+        "Best Robert G",
+        "ACMG Board of Directors. Electronic address: documents@acmg.net"
+      ],
+      "journal": "Genetics in medicine : official journal of the American College of Medical Genetics",
+      "year": "2023",
+      "publication_types": [
+        "Practice Guideline",
+        "Journal Article"
+      ],
+      "abstract": "PURPOSE: This workgroup aimed to develop an evidence-based clinical practice guideline for the use of noninvasive prenatal screening (NIPS) for pregnant individuals at general risk for fetal trisomy 21, trisomy 18, or trisomy 13 and to evaluate the utility of NIPS for other chromosomal disorders. METHODS: The NIPS Evidence-Based Guideline Work Group (n = 7) relied on the results from the recent American College of Medical Genetics and Genomics (ACMG) systematic review to form the evidentiary basis of this guideline. Workgroup members used the Grading of Recommendations Assessment, Development, and Evaluation Evidence to Decision framework to draft recommendations. The guideline underwent extensive internal and external peer review with a public comment period before approval by the ACMG Board of Directors. RESULTS: Evidence consistently demonstrated improved accuracy of NIPS compared with traditional screening methods for trisomies 21, 18, and 13 in singleton and twin gestations. Identification of rare autosomal trisomies and other microdeletion syndromes with NIPS is an emerging area of interest. CONCLUSION: ACMG strongly recommends NIPS over traditional screening methods for all pregnant patients with singleton and twin gestations for fetal trisomies 21, 18, and 13 and strongly recommends NIPS be offered to patients to screen for fetal sex chromosome aneuploidy.",
+      "abstract_sections": {
+        "PURPOSE": "This workgroup aimed to develop an evidence-based clinical practice guideline for the use of noninvasive prenatal screening (NIPS) for pregnant individuals at general risk for fetal trisomy 21, trisomy 18, or trisomy 13 and to evaluate the utility of NIPS for other chromosomal disorders.",
+        "METHODS": "The NIPS Evidence-Based Guideline Work Group (n = 7) relied on the results from the recent American College of Medical Genetics and Genomics (ACMG) systematic review to form the evidentiary basis of this guideline. Workgroup members used the Grading of Recommendations Assessment, Development, and Evaluation Evidence to Decision framework to draft recommendations. The guideline underwent extensive internal and external peer review with a public comment period before approval by the ACMG Board of Directors.",
+        "RESULTS": "Evidence consistently demonstrated improved accuracy of NIPS compared with traditional screening methods for trisomies 21, 18, and 13 in singleton and twin gestations. Identification of rare autosomal trisomies and other microdeletion syndromes with NIPS is an emerging area of interest.",
+        "CONCLUSION": "ACMG strongly recommends NIPS over traditional screening methods for all pregnant patients with singleton and twin gestations for fetal trisomies 21, 18, and 13 and strongly recommends NIPS be offered to patients to screen for fetal sex chromosome aneuploidy."
+      },
+      "mesh_terms": [
+        "Pregnancy",
+        "Female",
+        "Humans",
+        "United States",
+        "Trisomy",
+        "Prenatal Diagnosis",
+        "Noninvasive Prenatal Testing",
+        "Aneuploidy",
+        "Genetics, Medical",
+        "Chromosome Aberrations",
+        "Down Syndrome",
+        "Genomics"
+      ],
+      "keywords": [
+        "Cell-free DNA",
+        "Down syndrome",
+        "Noninvasive prenatal screening"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.gim.2022.11.004"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36524989/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36524989/"
+    },
+    {
+      "pmid": "34171388",
+      "doi": "10.1016/j.ajog.2021.06.079",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Society for Maternal-Fetal Medicine Consult Series #57: Evaluation and management of isolated soft ultrasound markers for aneuploidy in the second trimester: (Replaces Consults #10, Single umbilical artery, October 2010; #16, Isolated echogenic bowel diagnosed on second-trimester ultrasound, August 2011; #17, Evaluation and management of isolated renal pelviectasis on second-trimester ultrasound, December 2011; #25, Isolated fetal choroid plexus cysts, April 2013; #27, Isolated echogenic intracardiac focus, August 2013).",
+      "authors": [
+        "Society for Maternal-Fetal Medicine (SMFM). Electronic address: pubs@smfm.org",
+        "Prabhu Malavika",
+        "Kuller Jeffrey A",
+        "Biggio Joseph R"
+      ],
+      "journal": "American journal of obstetrics and gynecology",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "abstract": "Soft markers were originally introduced to prenatal ultrasonography to improve the detection of trisomy 21 over that achievable with age-based and serum screening strategies. As prenatal genetic screening strategies have greatly evolved in the last 2 decades, the relative importance of soft markers has shifted. The purpose of this document is to discuss the recommended evaluation and management of isolated soft markers in the context of current maternal serum screening and cell-free DNA screening options. In this document, \"isolated\" is used to describe a soft marker that has been identified in the absence of any fetal structural anomaly, growth restriction, or additional soft marker following a detailed obstetrical ultrasound examination. In this document, \"serum screening methods\" refers to all maternal screening strategies, including first-trimester screen, integrated screen, sequential screen, contingent screen, or quad screen. The Society for Maternal-Fetal Medicine recommends the following approach to the evaluation and management of isolated soft markers: (1) we do not recommend diagnostic testing for aneuploidy solely for the evaluation of an isolated soft marker following a negative serum or cell-free DNA screening result (GRADE 1B); (2) for pregnant people with no previous aneuploidy screening and isolated echogenic intracardiac focus, echogenic bowel, urinary tract dilation, or shortened humerus, femur, or both, we recommend counseling to estimate the probability of trisomy 21 and a discussion of options for noninvasive aneuploidy screening with cell-free DNA or quad screen if cell-free DNA is unavailable or cost-prohibitive (GRADE 1B); (3) for pregnant people with no previous aneuploidy screening and isolated thickened nuchal fold or isolated absent or hypoplastic nasal bone, we recommend counseling to estimate the probability of trisomy 21 and a discussion of options for noninvasive aneuploidy screening through cell-free DNA or quad screen if cell-free DNA is unavailable or cost-prohibitive or diagnostic testing via amniocentesis, depending on clinical circumstances and patient preference (GRADE 1B); (4) for pregnant people with no previous aneuploidy screening and isolated choroid plexus cysts, we recommend counseling to estimate the probability of trisomy 18 and a discussion of options for noninvasive aneuploidy screening with cell-free DNA or quad screen if cell-free DNA is unavailable or cost-prohibitive (GRADE 1C); (5) for pregnant people with negative serum or cell-free DNA screening results and an isolated echogenic intracardiac focus, we recommend no further evaluation as this finding is a normal variant of no clinical importance with no indication for fetal echocardiography, follow-up ultrasound imaging, or postnatal evaluation (GRADE 1B); (6) for pregnant people with negative serum or cell-free DNA screening results and isolated fetal echogenic bowel, urinary tract dilation, or shortened humerus, femur, or both, we recommend no further aneuploidy evaluation (GRADE 1B); (7) for pregnant people with negative serum screening results and isolated thickened nuchal fold or absent or hypoplastic nasal bone, we recommend counseling to estimate the probability of trisomy 21 and discussion of options for no further aneuploidy evaluation, noninvasive aneuploidy screening through cell-free DNA, or diagnostic testing via amniocentesis, depending on clinical circumstances and patient preference (GRADE 1B); (8) for pregnant people with negative cell-free DNA screening results and isolated thickened nuchal fold or absent or hypoplastic nasal bone, we recommend no further aneuploidy evaluation (GRADE 1B); (9) for pregnant people with negative serum or cell-free DNA screening results and isolated choroid plexus cysts, we recommend no further aneuploidy evaluation, as this finding is a normal variant of no clinical importance with no indication for follow-up ultrasound imaging or postnatal evaluation (GRADE 1C); (10) for fetuses with isolated echogenic bowel, we recommend an evaluation for cystic fibrosis and fetal cytomegalovirus infection and a third-trimester ultrasound examination for reassessment and evaluation of growth (GRADE 1C); (11) for fetuses with an isolated single umbilical artery, we recommend no additional evaluation for aneuploidy, regardless of whether results of previous aneuploidy screening were low risk or testing was declined. We recommend a third-trimester ultrasound examination to evaluate growth and consideration of weekly antenatal fetal surveillance beginning at 36 0/7 weeks of gestation (GRADE 1C); (12) for fetuses with isolated urinary tract dilation A1, we recommend an ultrasound examination at ≥32 weeks of gestation to determine if postnatal pediatric urology or nephrology follow-up is needed. For fetuses with urinary tract dilation A2-3, we recommend an individualized follow-up ultrasound assessment with planned postnatal follow-up (GRADE 1C); (13) for fetuses with isolated shortened humerus, femur, or both, we recommend a third-trimester ultrasound examination for reassessment and evaluation of growth (GRADE 1C).",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Aneuploidy",
+        "Choroid Plexus",
+        "Chromosome Disorders",
+        "Cystic Fibrosis",
+        "Cysts",
+        "Cytomegalovirus Infections",
+        "Dilatation, Pathologic",
+        "Down Syndrome",
+        "Echogenic Bowel",
+        "Female",
+        "Humans",
+        "Kidney Pelvis",
+        "Maternal Serum Screening Tests",
+        "Nasal Bone",
+        "Noninvasive Prenatal Testing",
+        "Nuchal Translucency Measurement",
+        "Pregnancy",
+        "Pregnancy Trimester, Second",
+        "Single Umbilical Artery",
+        "Trisomy 18 Syndrome",
+        "Ultrasonography, Prenatal"
+      ],
+      "keywords": [
+        "aneuploidy assessment",
+        "aneuploidy screening",
+        "cell-free DNA screening",
+        "serum markers",
+        "soft markers",
+        "ultrasound"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajog.2021.06.079"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34171388/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34171388/"
+    },
+    {
+      "pmid": "35608568",
+      "doi": "10.1016/j.gim.2022.03.019",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+      "authors": [
+        "Rose Nancy C",
+        "Barrie Elizabeth S",
+        "Malinowski Jennifer",
+        "Jenkins Gabrielle P",
+        "McClain Monica R",
+        "LaGrave Danielle",
+        "Leung Marco L",
+        "ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net"
+      ],
+      "journal": "Genetics in medicine : official journal of the American College of Medical Genetics",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "PURPOSE: Noninvasive prenatal screening (NIPS) using cell-free DNA has been assimilated into prenatal care. Prior studies examined clinical validity and technical performance in high-risk populations. This systematic evidence review evaluates NIPS performance in a general-risk population. METHODS: Medline (PubMed) and Embase were used to identify studies examining detection of Down syndrome (T21), trisomy 18 (T18), trisomy 13 (T13), sex chromosome aneuploidies, rare autosomal trisomies, copy number variants, and maternal conditions, as well as studies assessing the psychological impact of NIPS and the rate of subsequent diagnostic testing. Random-effects meta-analyses were used to calculate pooled estimates of NIPS performance (P < .05). Heterogeneity was investigated through subgroup analyses. Risk of bias was assessed. RESULTS: A total of 87 studies met inclusion criteria. Diagnostic odds ratios were significant (P < .0001) for T21, T18, and T13 for singleton and twin pregnancies. NIPS was accurate (≥99.78%) in detecting sex chromosome aneuploidies. Performance for rare autosomal trisomies and copy number variants was variable. Use of NIPS reduced diagnostic tests by 31% to 79%. Conclusions regarding psychosocial outcomes could not be drawn owing to lack of data. Identification of maternal conditions was rare. CONCLUSION: NIPS is a highly accurate screening method for T21, T18, and T13 in both singleton and twin pregnancies.",
+      "abstract_sections": {
+        "PURPOSE": "Noninvasive prenatal screening (NIPS) using cell-free DNA has been assimilated into prenatal care. Prior studies examined clinical validity and technical performance in high-risk populations. This systematic evidence review evaluates NIPS performance in a general-risk population.",
+        "METHODS": "Medline (PubMed) and Embase were used to identify studies examining detection of Down syndrome (T21), trisomy 18 (T18), trisomy 13 (T13), sex chromosome aneuploidies, rare autosomal trisomies, copy number variants, and maternal conditions, as well as studies assessing the psychological impact of NIPS and the rate of subsequent diagnostic testing. Random-effects meta-analyses were used to calculate pooled estimates of NIPS performance (P < .05). Heterogeneity was investigated through subgroup analyses. Risk of bias was assessed.",
+        "RESULTS": "A total of 87 studies met inclusion criteria. Diagnostic odds ratios were significant (P < .0001) for T21, T18, and T13 for singleton and twin pregnancies. NIPS was accurate (≥99.78%) in detecting sex chromosome aneuploidies. Performance for rare autosomal trisomies and copy number variants was variable. Use of NIPS reduced diagnostic tests by 31% to 79%. Conclusions regarding psychosocial outcomes could not be drawn owing to lack of data. Identification of maternal conditions was rare.",
+        "CONCLUSION": "NIPS is a highly accurate screening method for T21, T18, and T13 in both singleton and twin pregnancies."
+      },
+      "mesh_terms": [
+        "Cell-Free Nucleic Acids",
+        "Down Syndrome",
+        "Female",
+        "Humans",
+        "Noninvasive Prenatal Testing",
+        "Pregnancy",
+        "Prenatal Diagnosis",
+        "Sex Chromosome Aberrations",
+        "Trisomy",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [
+        "Cell-free DNA",
+        "Down syndrome",
+        "Noninvasive prenatal screening",
+        "Trisomy"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.gim.2022.03.019"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+    },
+    {
+      "pmid": "31708118",
+      "doi": "10.1016/j.ajhg.2019.10.005",
+      "pmc_id": "PMC6904791",
+      "pmc_verify": null,
+      "title": "TRIDENT-2: National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.",
+      "authors": [
+        "van der Meij Karuna R M",
+        "Sistermans Erik A",
+        "Macville Merryn V E",
+        "Stevens Servi J C",
+        "Bax Caroline J",
+        "Bekker Mireille N",
+        "Bilardo Caterina M",
+        "Boon Elles M J",
+        "Boter Marjan",
+        "Diderich Karin E M",
+        "de Die-Smulders Christine E M",
+        "Duin Leonie K",
+        "Faas Brigitte H W",
+        "Feenstra Ilse",
+        "Haak Monique C",
+        "Hoffer Mariëtte J V",
+        "den Hollander Nicolette S",
+        "Hollink Iris H I M",
+        "Jehee Fernanda S",
+        "Knapen Maarten F C M",
+        "Kooper Angelique J A",
+        "van Langen Irene M",
+        "Lichtenbelt Klaske D",
+        "Linskens Ingeborg H",
+        "van Maarle Merel C",
+        "Oepkes Dick",
+        "Pieters Mijntje J",
+        "Schuring-Blom G Heleen",
+        "Sikkel Esther",
+        "Sikkema-Raddatz Birgit",
+        "Smeets Dominique F C M",
+        "Srebniak Malgorzata I",
+        "Suijkerbuijk Ron F",
+        "Tan-Sindhunata Gita M",
+        "van der Ven A Jeanine E M",
+        "van Zelderen-Bhola Shama L",
+        "Henneman Lidewij",
+        "Galjaard Robert-Jan H",
+        "Van Opstal Diane",
+        "Weiss Marjan M",
+        "Dutch NIPT Consortium"
+      ],
+      "journal": "American journal of human genetics",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "The Netherlands launched a nationwide implementation study on non-invasive prenatal testing (NIPT) as a first-tier test offered to all pregnant women. This started on April 1, 2017 as the TRIDENT-2 study, licensed by the Dutch Ministry of Health. In the first year, NIPT was performed in 73,239 pregnancies (42% of all pregnancies), 7,239 (4%) chose first-trimester combined testing, and 54% did not participate. The number of trisomies 21 (239, 0.33%), 18 (49, 0.07%), and 13 (55, 0.08%) found in this study is comparable to earlier studies, but the Positive Predictive Values (PPV)-96% for trisomy 21, 98% for trisomy 18, and 53% for trisomy 13-were higher than expected. Findings other than trisomy 21, 18, or 13 were reported on request of the pregnant women; 78% of women chose to have these reported. The number of additional findings was 207 (0.36%); these included other trisomies (101, 0.18%, PPV 6%, many of the remaining 94% of cases are likely confined placental mosaics and possibly clinically significant), structural chromosomal aberrations (95, 0.16%, PPV 32%,) and complex abnormal profiles indicative of maternal malignancies (11, 0.02%, PPV 64%). The implementation of genome-wide NIPT is under debate because the benefits of detecting other fetal chromosomal aberrations must be balanced against the risks of discordant positives, parental anxiety, and a potential increase in (invasive) diagnostic procedures. Our first-year data, including clinical data and laboratory follow-up data, will fuel this debate. Furthermore, we describe how NIPT can successfully be embedded into a national screening program with a single chain for prenatal care including counseling, testing, and follow-up.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Chromosome Aberrations",
+        "Down Syndrome",
+        "Female",
+        "Follow-Up Studies",
+        "Genetic Testing",
+        "Genome, Human",
+        "Health Plan Implementation",
+        "Humans",
+        "Middle Aged",
+        "Netherlands",
+        "Pregnancy",
+        "Pregnancy Trimester, First",
+        "Prenatal Diagnosis",
+        "Prognosis",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome",
+        "Young Adult"
+      ],
+      "keywords": [
+        "NIPS",
+        "NIPT",
+        "cfDNA",
+        "common trisomies",
+        "fetal trisomy",
+        "first tier test",
+        "genome-wide",
+        "implementation study",
+        "prenatal screening",
+        "rare autosomal trisomies"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6904791/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6904791/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajhg.2019.10.005"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+    },
+    {
+      "pmid": "23088440",
+      "doi": "10.1186/1750-1172-7-81",
+      "pmc_id": "PMC3520824",
+      "pmc_verify": null,
+      "title": "The trisomy 18 syndrome.",
+      "authors": [
+        "Cereda Anna",
+        "Carey John C"
+      ],
+      "journal": "Orphanet journal of rare diseases",
+      "year": "2012",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "The trisomy 18 syndrome, also known as Edwards syndrome, is a common chromosomal disorder due to the presence of an extra chromosome 18, either full, mosaic trisomy, or partial trisomy 18q. The condition is the second most common autosomal trisomy syndrome after trisomy 21. The live born prevalence is estimated as 1/6,000-1/8,000, but the overall prevalence is higher (1/2500-1/2600) due to the high frequency of fetal loss and pregnancy termination after prenatal diagnosis. The prevalence of trisomy 18 rises with the increasing maternal age. The recurrence risk for a family with a child with full trisomy 18 is about 1%. Currently most cases of trisomy 18 are prenatally diagnosed, based on screening by maternal age, maternal serum marker screening, or detection of sonographic abnormalities (e.g., increased nuchal translucency thickness, growth retardation, choroid plexus cyst, overlapping of fingers, and congenital heart defects ). The recognizable syndrome pattern consists of major and minor anomalies, prenatal and postnatal growth deficiency, an increased risk of neonatal and infant mortality, and marked psychomotor and cognitive disability. Typical minor anomalies include characteristic craniofacial features, clenched fist with overriding fingers, small fingernails, underdeveloped thumbs, and short sternum. The presence of major malformations is common, and the most frequent are heart and kidney anomalies. Feeding problems occur consistently and may require enteral nutrition. Despite the well known infant mortality, approximately 50% of babies with trisomy 18 live longer than 1 week and about 5-10% of children beyond the first year. The major causes of death include central apnea, cardiac failure due to cardiac malformations, respiratory insufficiency due to hypoventilation, aspiration, or upper airway obstruction and, likely, the combination of these and other factors (including decisions regarding aggressive care). Upper airway obstruction is likely more common than previously realized and should be investigated when full care is opted by the family and medical team. The complexity and the severity of the clinical presentation at birth and the high neonatal and infant mortality make the perinatal and neonatal management of babies with trisomy 18 particularly challenging, controversial, and unique among multiple congenital anomaly syndromes. Health supervision should be diligent, especially in the first 12 months of life, and can require multiple pediatric and specialist evaluations.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosomes, Human, Pair 18",
+        "Diagnosis, Differential",
+        "Female",
+        "Genetic Counseling",
+        "Humans",
+        "Male",
+        "Prognosis",
+        "Syndrome",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3520824/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3520824/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/1750-1172-7-81"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23088440/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23088440/"
+    },
+    {
+      "pmid": "33527722",
+      "doi": "10.1002/ajmg.a.62097",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Surveillance guidelines for children with trisomy 18.",
+      "authors": [
+        "Kepple Jeffrey W",
+        "Fishler Kristen P",
+        "Peeples Eric S"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Trisomy 18 is the second most common aneuploidy syndromes in live born infants. It is associated with high mortality rates, estimated to be 75%-95% in the first year of life, as well as significant morbidity in survivors. The low survival is largely due to the high prevalence of severe congenital anomalies in infants with this diagnosis. However, interventions to repair or palliate those life-threatening anomalies are being performed at a higher rate for these infants, resulting in increased rates of survival beyond the first year of life. While it is well documented that trisomy 18 is associated with several cardiac malformations, these patients also have respiratory, neurological, neoplastic, genitourinary, abdominal, otolaryngologic, and orthopedic complications that can impact their quality of life. The goal of this review is to present a comprehensive description of complications in children with trisomy 18 to aid in the development of monitoring and treatment guidelines for the increasing number of providers who will be caring for these patients throughout their lives. Where the evidence is available, this review presents screening recommendations to allow for more rapid detection and documentation of these complications.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Aneuploidy",
+        "Child",
+        "Chromosomes, Human, Pair 18",
+        "Female",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Male",
+        "Prenatal Diagnosis",
+        "Quality of Life",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [
+        "Edward's syndrome",
+        "hepatoblastoma",
+        "management",
+        "screening"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.62097"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33527722/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33527722/"
+    },
+    {
+      "pmid": "31566869",
+      "doi": "10.1002/ajmg.a.61365",
+      "pmc_id": "PMC6848757",
+      "pmc_verify": null,
+      "title": "Trisomy 13 and 18-Prevalence and mortality-A multi-registry population based analysis.",
+      "authors": [
+        "Goel Nitin",
+        "Morris Joan K",
+        "Tucker David",
+        "de Walle Hermien E K",
+        "Bakker Marian K",
+        "Kancherla Vijaya",
+        "Marengo Lisa",
+        "Canfield Mark A",
+        "Kallen Karin",
+        "Lelong Nathalie",
+        "Camelo Jorge L",
+        "Stallings Erin B",
+        "Jones Abbey M",
+        "Nance Amy",
+        "Huynh My-Phuong",
+        "Martínez-Fernández Maria-Luisa",
+        "Sipek Antonin",
+        "Pierini Anna",
+        "Nembhard Wendy N",
+        "Goetz Dorit",
+        "Rissmann Anke",
+        "Groisman Boris",
+        "Luna-Muñoz Leonora",
+        "Szabova Elena",
+        "Lapchenko Serhiy",
+        "Zarante Ignacio",
+        "Hurtado-Villa Paula",
+        "Martinez Laura E",
+        "Tagliabue Giovanna",
+        "Landau Danielle",
+        "Gatt Miriam",
+        "Dastgiri Saeed",
+        "Morgan Margery"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "The aim of the study is to determine the prevalence, outcomes, and survival (among live births [LB]), in pregnancies diagnosed with trisomy 13 (T13) and 18 (T18), by congenital anomaly register and region. Twenty-four population- and hospital-based birth defects surveillance registers from 18 countries, contributed data on T13 and T18 between 1974 and 2014 using a common data-reporting protocol. The mean total birth prevalence (i.e., LB, stillbirths, and elective termination of pregnancy for fetal anomalies [ETOPFA]) in the registers with ETOPFA (n = 15) for T13 was 1.68 (95% CI 1.3-2.06), and for T18 was 4.08 (95% CI 3.01-5.15), per 10,000 births. The prevalence varied among the various registers. The mean prevalence among LB in all registers for T13 was 0.55 (95%CI 0.38-0.72), and for T18 was 1.07 (95% CI 0.77-1.38), per 10,000 births. The median mortality in the first week of life was 48% for T13 and 42% for T18, across all registers, half of which occurred on the first day of life. Across 16 registers with complete 1-year follow-up, mortality in first year of life was 87% for T13 and 88% for T18. This study provides an international perspective on prevalence and mortality of T13 and T18. Overall outcomes and survival among LB were poor with about half of live born infants not surviving first week of life; nevertheless about 10% survived the first year of life. Prevalence and outcomes varied by country and termination policies. The study highlights the variation in screening, data collection, and reporting practices for these conditions.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Female",
+        "Humans",
+        "Live Birth",
+        "Mortality",
+        "Population Surveillance",
+        "Pregnancy",
+        "Pregnancy Outcome",
+        "Prenatal Diagnosis",
+        "Prevalence",
+        "Registries",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [
+        "Edwards syndrome",
+        "Patau syndrome",
+        "congenital anomaly register",
+        "trisomies",
+        "trisomy 13",
+        "trisomy 18"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6848757/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6848757/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.61365"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31566869/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31566869/"
+    },
+    {
+      "pmid": "29437136",
+      "doi": "10.1542/pir.2016-0198",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Trisomies.",
+      "authors": [
+        "Levy Paul A",
+        "Marion Robert"
+      ],
+      "journal": "Pediatrics in review",
+      "year": "2018",
+      "publication_types": [
+        "Editorial"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Down Syndrome",
+        "Genetic Counseling",
+        "Humans",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1542/pir.2016-0198"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29437136/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29437136/"
+    },
+    {
+      "pmid": "36601988",
+      "doi": "10.1002/ajmg.a.63113",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Seizures in trisomy 18: Prevalence, description, and treatment.",
+      "authors": [
+        "Jaspersen Sue L",
+        "Bruns Deborah A",
+        "Candee Meghan S",
+        "Battaglia Agatino",
+        "Carey John C",
+        "Fishler Kristen P"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Changes in medical intervention over the last decade have improved outcomes for individuals with trisomy 18, the second most common human aneuploidy syndrome at birth. As children with trisomy 18 live longer, a shared concern of medical experts and parents is the occurrence and treatment of seizures. Previously published surveillance guidelines for this condition have not addressed seizure management. Using parent-reported data collected as part of the Tracking Rare Incidence Syndromes project, we report on the prevalence, course, and management of seizures in individuals with trisomy 18. Twenty-eight percent (52/186) of individuals diagnosed with trisomy 18 in our retrospective cohort experienced generalized, focal, or mixed seizures at some point in their lifetime. For many individuals, seizures were effectively managed by broad-spectrum anti-seizure medications. Correlation analysis showed that focal and generalized seizures were more likely to occur in individuals who had previously experienced infantile spasms or central apnea. Electroencephalogram testing should be considered as part of a standard screening approach in individuals with trisomy 18 to enable early diagnosis and treatment of seizures. An international registry that incorporates parent-reported and clinical data for patients with trisomy 18 may facilitate ongoing research and recruitment into clinical trials for seizure management.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Infant, Newborn",
+        "Humans",
+        "Anticonvulsants",
+        "Trisomy 18 Syndrome",
+        "Prevalence",
+        "Retrospective Studies",
+        "Spasms, Infantile"
+      ],
+      "keywords": [
+        "brain malformations",
+        "central apnea",
+        "epilepsy",
+        "infantile spasms",
+        "seizures",
+        "trisomy 18"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.63113"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36601988/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36601988/"
+    },
+    {
+      "pmid": "34719838",
+      "doi": "10.1002/ajmg.a.62552",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Direct hyperbilirubinemia and cholestasis in trisomy 13 and 18.",
+      "authors": [
+        "Kepple Jeffrey W",
+        "Peeples Eric S"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Trisomy 13 and 18 are common chromosomal abnormalities that affect multiple organ systems. There is a paucity of published data, however, on the hepatic complications seen in these patient populations. One of the most common pathologic hepatobiliary issues seen in the newborn period is direct hyperbilirubinemia (DH). Thus, this study sought to estimate the incidence and evaluate possible etiologies of DH in neonates with trisomy 13 or 18. This retrospective cohort study included all infants admitted to our two neonatal intensive care units between 2012 and 2020 with the diagnosis of trisomy 13 or 18. DH is most commonly diagnosed as a direct bilirubin >1 mg/dl but a cutoff of >2 mg/dl is more specific for cholestasis, so both cutoffs were evaluated. Continuous data were compared using Fisher's exact test and categorical variables by the Mann-Whitney U test. Thirty-five patients met inclusion: 13 with trisomy 13 and 22 with trisomy 18. DH of >2 mg/dl was seen in seven (53.8%) patients with trisomy 13 and five (22.7%) with trisomy 18. Using a cutoff of >1 mg/dl, the rate of trisomy 13 was unchanged, but the rate in trisomy 18 increased to 9/22 (40.9%). There was a trend toward more DH in trisomy 13 patients (p = 0.079) versus trisomy 18 and higher rates in infants who received total parenteral nutrition (TPN) (50.0 vs. 13.3%, p = 0.026). The presence of cardiac or ultrasound-defined hepatobiliary abnormalities was not correlated with DH. Due to the high rates of DH in hospitalized neonates with trisomy 13 and 18, we recommend screening newborns with trisomy 13 or 18 for DH starting in the first week of life and continuing at least weekly until 4 weeks of life or until completion of TPN, whichever comes later. Future studies should further evaluate possible etiologies of DH in this population.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cholestasis",
+        "Humans",
+        "Hyperbilirubinemia",
+        "Infant",
+        "Infant, Newborn",
+        "Parenteral Nutrition, Total",
+        "Retrospective Studies",
+        "Trisomy 13 Syndrome"
+      ],
+      "keywords": [
+        "Edward syndrome",
+        "Patau syndrome",
+        "conjugated hyperbilirubinemia",
+        "screening",
+        "total parenteral nutrition"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.62552"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34719838/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34719838/"
+    },
+    {
+      "pmid": "31787159",
+      "doi": "10.1016/j.ajog.2019.09.024",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Radial Ray Malformation.",
+      "authors": [
+        "Society for Maternal-Fetal Medicine (SMFM)",
+        "Gandhi Manisha",
+        "Rac Martha W F",
+        "McKinney Jennifer"
+      ],
+      "journal": "American journal of obstetrics and gynecology",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Drug-Induced",
+        "Abnormalities, Multiple",
+        "Amniocentesis",
+        "Amniotic Band Syndrome",
+        "Anal Canal",
+        "Carpal Bones",
+        "Chorionic Villi Sampling",
+        "Congenital Bone Marrow Failure Syndromes",
+        "Diagnosis, Differential",
+        "Esophagus",
+        "Fanconi Anemia",
+        "Female",
+        "Genetic Testing",
+        "Heart Defects, Congenital",
+        "Heart Septal Defects, Atrial",
+        "Humans",
+        "Kidney",
+        "Limb Deformities, Congenital",
+        "Lower Extremity Deformities, Congenital",
+        "Microarray Analysis",
+        "Pregnancy",
+        "Radius",
+        "Spine",
+        "Thrombocytopenia",
+        "Thumb",
+        "Trachea",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome",
+        "Ultrasonography, Prenatal",
+        "Upper Extremity Deformities, Congenital",
+        "Valproic Acid"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajog.2019.09.024"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31787159/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31787159/"
+    },
+    {
+      "pmid": "28397325",
+      "doi": "10.1002/uog.17484",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Analysis of cell-free DNA in maternal blood in screening for aneuploidies: updated meta-analysis.",
+      "authors": [
+        "Gil M M",
+        "Accurti V",
+        "Santacruz B",
+        "Plana M N",
+        "Nicolaides K H"
+      ],
+      "journal": "Ultrasound in obstetrics & gynecology : the official journal of the International Society of Ultrasound in Obstetrics and Gynecology",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Meta-Analysis",
+        "Review"
+      ],
+      "abstract": "OBJECTIVES: To review clinical validation or implementation studies of maternal blood cell-free (cf) DNA analysis and define the performance of screening for fetal trisomies 21, 18 and 13 and sex chromosome aneuploidies (SCA). METHODS: Searches of PubMed, EMBASE and The Cochrane Library were performed to identify all peer-reviewed articles on cfDNA testing in screening for aneuploidies between January 2011, when the first such study was published, and 31 December 2016. The inclusion criteria were peer-reviewed study reporting on clinical validation or implementation of maternal cfDNA testing in screening for aneuploidies, in which data on pregnancy outcome were provided for more than 85% of the study population. We excluded case-control studies, proof-of-principle articles and studies in which the laboratory scientists carrying out the tests were aware of fetal karyotype or pregnancy outcome. Pooled detection rates (DRs) and false-positive rates (FPRs) were calculated using bivariate random-effects regression models. RESULTS: In total, 35 relevant studies were identified and these were used for the meta-analysis on the performance of cfDNA testing in screening for aneuploidies. These studies reported cfDNA results in relation to fetal karyotype from invasive testing or clinical outcome. In the combined total of 1963 cases of trisomy 21 and 223 932 non-trisomy 21 singleton pregnancies, the weighted pooled DR and FPR were 99.7% (95% CI, 99.1-99.9%) and 0.04% (95% CI, 0.02-0.07%), respectively. In a total of 563 cases of trisomy 18 and 222 013 non-trisomy 18 singleton pregnancies, the weighted pooled DR and FPR were 97.9% (95% CI, 94.9-99.1%) and 0.04% (95% CI, 0.03-0.07%), respectively. In a total of 119 cases of trisomy 13 and 212 883 non-trisomy 13 singleton pregnancies, the weighted pooled DR and FPR were 99.0% (95% CI, 65.8-100%) and 0.04% (95% CI, 0.02-0.07%), respectively. In a total of 36 cases of monosomy X and 7676 unaffected singleton pregnancies, the weighted pooled DR and FPR were 95.8% (95% CI, 70.3-99.5%) and 0.14% (95% CI, 0.05-0.38%), respectively. In a combined total of 17 cases of SCA other than monosomy X and 5400 unaffected singleton pregnancies, the weighted pooled DR and FPR were 100% (95% CI, 83.6-100%) and 0.004% (95% CI, 0.0-0.08%), respectively. For twin pregnancies, in a total of 24 cases of trisomy 21 and 1111 non-trisomy 21 cases, the DR was 100% (95% CI, 95.2-100%) and FPR was 0.0% (95% CI, 0.0-0.003%), respectively. CONCLUSIONS: Screening by analysis of cfDNA in maternal blood in singleton pregnancies could detect > 99% of fetuses with trisomy 21, 98% of trisomy 18 and 99% of trisomy 13 at a combined FPR of 0.13%. The number of reported cases of SCA is too small for accurate assessment of performance of screening. In twin pregnancies, performance of screening for trisomy 21 is encouraging but the number of cases reported is small. Copyright © 2017 ISUOG. Published by John Wiley & Sons Ltd.",
+      "abstract_sections": {
+        "OBJECTIVES": "To review clinical validation or implementation studies of maternal blood cell-free (cf) DNA analysis and define the performance of screening for fetal trisomies 21, 18 and 13 and sex chromosome aneuploidies (SCA).",
+        "METHODS": "Searches of PubMed, EMBASE and The Cochrane Library were performed to identify all peer-reviewed articles on cfDNA testing in screening for aneuploidies between January 2011, when the first such study was published, and 31 December 2016. The inclusion criteria were peer-reviewed study reporting on clinical validation or implementation of maternal cfDNA testing in screening for aneuploidies, in which data on pregnancy outcome were provided for more than 85% of the study population. We excluded case-control studies, proof-of-principle articles and studies in which the laboratory scientists carrying out the tests were aware of fetal karyotype or pregnancy outcome. Pooled detection rates (DRs) and false-positive rates (FPRs) were calculated using bivariate random-effects regression models.",
+        "RESULTS": "In total, 35 relevant studies were identified and these were used for the meta-analysis on the performance of cfDNA testing in screening for aneuploidies. These studies reported cfDNA results in relation to fetal karyotype from invasive testing or clinical outcome. In the combined total of 1963 cases of trisomy 21 and 223 932 non-trisomy 21 singleton pregnancies, the weighted pooled DR and FPR were 99.7% (95% CI, 99.1-99.9%) and 0.04% (95% CI, 0.02-0.07%), respectively. In a total of 563 cases of trisomy 18 and 222 013 non-trisomy 18 singleton pregnancies, the weighted pooled DR and FPR were 97.9% (95% CI, 94.9-99.1%) and 0.04% (95% CI, 0.03-0.07%), respectively. In a total of 119 cases of trisomy 13 and 212 883 non-trisomy 13 singleton pregnancies, the weighted pooled DR and FPR were 99.0% (95% CI, 65.8-100%) and 0.04% (95% CI, 0.02-0.07%), respectively. In a total of 36 cases of monosomy X and 7676 unaffected singleton pregnancies, the weighted pooled DR and FPR were 95.8% (95% CI, 70.3-99.5%) and 0.14% (95% CI, 0.05-0.38%), respectively. In a combined total of 17 cases of SCA other than monosomy X and 5400 unaffected singleton pregnancies, the weighted pooled DR and FPR were 100% (95% CI, 83.6-100%) and 0.004% (95% CI, 0.0-0.08%), respectively. For twin pregnancies, in a total of 24 cases of trisomy 21 and 1111 non-trisomy 21 cases, the DR was 100% (95% CI, 95.2-100%) and FPR was 0.0% (95% CI, 0.0-0.003%), respectively.",
+        "CONCLUSIONS": "Screening by analysis of cfDNA in maternal blood in singleton pregnancies could detect > 99% of fetuses with trisomy 21, 98% of trisomy 18 and 99% of trisomy 13 at a combined FPR of 0.13%. The number of reported cases of SCA is too small for accurate assessment of performance of screening. In twin pregnancies, performance of screening for trisomy 21 is encouraging but the number of cases reported is small. Copyright © 2017 ISUOG. Published by John Wiley & Sons Ltd."
+      },
+      "mesh_terms": [
+        "Aneuploidy",
+        "Cell-Free Nucleic Acids",
+        "Down Syndrome",
+        "Female",
+        "Humans",
+        "Maternal Serum Screening Tests",
+        "Pregnancy"
+      ],
+      "keywords": [
+        "Turner syndrome",
+        "cell-free fetal DNA",
+        "fetal aneuploidy",
+        "monosomy X",
+        "non-invasive prenatal testing",
+        "sex chromosome aneuploidy",
+        "trisomy 13",
+        "trisomy 18",
+        "trisomy 21"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/uog.17484"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28397325/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28397325/"
+    },
+    {
+      "pmid": "33168220",
+      "doi": "10.1016/j.ajog.2020.08.184",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Dandy-Walker Malformation.",
+      "authors": [
+        "Society for Maternal-Fetal Medicine (SMFM)",
+        "Monteagudo Ana"
+      ],
+      "journal": "American journal of obstetrics and gynecology",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Aortic Coarctation",
+        "Cerebellar Vermis",
+        "Cerebellum",
+        "Chromosome Aberrations",
+        "Ciliary Motility Disorders",
+        "Cranial Fossa, Posterior",
+        "Craniofacial Abnormalities",
+        "Dandy-Walker Syndrome",
+        "Dura Mater",
+        "Encephalocele",
+        "Eye Abnormalities",
+        "Female",
+        "Fourth Ventricle",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Kidney Diseases, Cystic",
+        "Neurocutaneous Syndromes",
+        "Polycystic Kidney Diseases",
+        "Pregnancy",
+        "Prognosis",
+        "Retina",
+        "Retinitis Pigmentosa",
+        "Transverse Sinuses",
+        "Trisomy 18 Syndrome",
+        "Ultrasonography, Prenatal",
+        "Walker-Warburg Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajog.2020.08.184"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33168220/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33168220/"
+    },
+    {
+      "pmid": "33168217",
+      "doi": "10.1016/j.ajog.2020.08.178",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Holoprosencephaly.",
+      "authors": [
+        "Society for Maternal-Fetal Medicine (SMFM)",
+        "Monteagudo Ana"
+      ],
+      "journal": "American journal of obstetrics and gynecology",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abortion, Induced",
+        "Craniofacial Abnormalities",
+        "Female",
+        "Hedgehog Proteins",
+        "Holoprosencephaly",
+        "Humans",
+        "Microarray Analysis",
+        "Pregnancy",
+        "Prognosis",
+        "Triploidy",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome",
+        "Ultrasonography, Prenatal"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajog.2020.08.178"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33168217/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33168217/"
+    },
+    {
+      "pmid": "38884729",
+      "doi": "10.1007/978-3-031-44087-8_27",
+      "pmc_id": "4066638",
+      "pmc_verify": null,
+      "title": "Human Genetics of Ventricular Septal Defect.",
+      "authors": [
+        "Perrot Andreas",
+        "Rickert-Sperling Silke"
+      ],
+      "journal": "Advances in experimental medicine and biology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Ventricular septal defects (VSDs) are recognized as one of the commonest congenital heart diseases (CHD), accounting for up to 40% of all cardiac malformations, and occur as isolated CHDs as well as together with other cardiac and extracardiac congenital malformations in individual patients and families. The genetic etiology of VSD is complex and extraordinarily heterogeneous. Chromosomal abnormalities such as aneuploidy and structural variations as well as rare point mutations in various genes have been reported to be associated with this cardiac defect. This includes both well-defined syndromes with known genetic cause (e.g., DiGeorge syndrome and Holt-Oram syndrome) and so far undefined syndromic forms characterized by unspecific symptoms. Mutations in genes encoding cardiac transcription factors (e.g., NKX2-5 and GATA4) and signaling molecules (e.g., CFC1) have been most frequently found in VSD cases. Moreover, new high-resolution methods such as comparative genomic hybridization enabled the discovery of a high number of different copy number variations, leading to gain or loss of chromosomal regions often containing multiple genes, in patients with VSD. In this chapter, we will describe the broad genetic heterogeneity observed in VSD patients considering recent advances in this field.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Chromosome Aberrations",
+        "DNA Copy Number Variations",
+        "Genetic Predisposition to Disease",
+        "Heart Septal Defects, Ventricular",
+        "Mutation",
+        "Transcription Factors"
+      ],
+      "keywords": [
+        "22q11 deletion syndrome",
+        "ACP6",
+        "ACTC1",
+        "ADCY2",
+        "ASD",
+        "Adams–Oliver syndrome",
+        "Alagille syndrome",
+        "Atrial septal defect",
+        "B3GALTL",
+        "BCL9",
+        "BCOR",
+        "Blepharophimosis syndrome",
+        "Brugada syndrome",
+        "CACNA1D",
+        "CACNA1F",
+        "CACNA1S",
+        "CFC1",
+        "CHARGE syndrome",
+        "CHD1",
+        "CHD7",
+        "CITED2",
+        "CNV",
+        "CRKL",
+        "CRYPTIC",
+        "Char syndrome",
+        "Copy number variation",
+        "Cornelia de Lange syndrome",
+        "Costello syndrome",
+        "Cri-du-chat syndrome",
+        "DVL1",
+        "DiGeorge syndrome",
+        "Diaphragmatic hernia",
+        "Down syndrome",
+        "EVC1",
+        "EVC2",
+        "Edwards syndrome",
+        "Ellis–van Creveld syndrome",
+        "FBN1",
+        "FGFR3",
+        "FMO5",
+        "FOXL2",
+        "Frank–ter Haar syndrome",
+        "GATA4GATA binding protein (GATA)GATA4",
+        "GATA6",
+        "GDF3Growth differentiation factor (GDF)GDF3",
+        "GJA5",
+        "GPC3",
+        "GWAS",
+        "HAS2",
+        "HEY2",
+        "HRAS",
+        "Holt–Oram syndrome",
+        "Hypophosphatemia",
+        "IRX4",
+        "ISL1",
+        "JAG1",
+        "Jacobsen syndrome",
+        "KMT2A",
+        "Kabuki syndrome",
+        "Kleefstra syndrome",
+        "LBR",
+        "LVNC",
+        "Larsen-like syndrome",
+        "MAML3",
+        "MEIS2",
+        "MESP1",
+        "MID1",
+        "MKRN2",
+        "MLL2",
+        "MYBPC3",
+        "MYH6",
+        "MYH7",
+        "Marfan syndrome",
+        "Mowat–Wilson syndrome",
+        "Muenke syndrome",
+        "NF1",
+        "NIPBL",
+        "NKX2-5",
+        "NKX2-6",
+        "NOTCH1",
+        "NOTCH2",
+        "NSD1",
+        "NTRK3",
+        "Neurofibromatosis",
+        "Nodal",
+        "Noncompaction",
+        "Noonan syndrome",
+        "Noonan-like syndrome",
+        "Oculofaciocardiodental syndrome",
+        "Okihiro syndrome",
+        "Opitz syndrome",
+        "PITX2",
+        "PLCB2",
+        "PRKAB2",
+        "PTPN11",
+        "Pallister–Killian syndrome",
+        "Patau syndrome",
+        "Pelger–Huet anomaly",
+        "Peters plus syndrome",
+        "Potocki–Lupski syndrome",
+        "ROR2",
+        "Ras/MAPK",
+        "Robinow syndrome",
+        "SALL1",
+        "SALL4",
+        "SCN5A",
+        "SH3PXD2B",
+        "SHOC2",
+        "SMAD2",
+        "SOX7",
+        "Simpson–Golabi–Behmel syndrome",
+        "Sotos syndrome",
+        "TBX1",
+        "TBX15",
+        "TBX20T-box (TBX)TBX20",
+        "TBX3",
+        "TBX5",
+        "TDGF1",
+        "TFAP2B",
+        "TGFβTransforming growth factors (TGFs)TGFß",
+        "TNNI3",
+        "Townes–Brock syndrome",
+        "Trisomy 13",
+        "Trisomy 18",
+        "Trisomy 21",
+        "Ulnar–mammary syndrome",
+        "VSD",
+        "Velocardiofacial syndrome",
+        "Ventricular septal defect",
+        "Ventricular septum",
+        "WES",
+        "WNT5A",
+        "Whole exome sequencing",
+        "Williams–Beuren syndrome",
+        "Wolf–Hirschhorn syndrome",
+        "ZFHX1B",
+        "ZIC3"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4066638/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/4066638/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/978-3-031-44087-8_27"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38884729/"
+    },
+    {
+      "pmid": "37620607",
+      "doi": "10.1007/s10577-023-09732-w",
+      "pmc_id": "PMC10449985",
+      "pmc_verify": null,
+      "title": "Consequences of gaining an extra chromosome.",
+      "authors": [
+        "Torres Eduardo M"
+      ],
+      "journal": "Chromosome research : an international journal on the molecular, supramolecular and evolutionary aspects of chromosome biology",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "Mistakes in chromosome segregation leading to aneuploidy are the primary cause of miscarriages in humans. Excluding sex chromosomes, viable aneuploidies in humans include trisomies of chromosomes 21, 18, or 13, which cause Down, Edwards, or Patau syndromes, respectively. While individuals with trisomy 18 or 13 die soon after birth, people with Down syndrome live to adulthood but have intellectual disabilities and are prone to multiple diseases. At the cellular level, mistakes in the segregation of a single chromosome leading to a cell losing a chromosome are lethal. In contrast, the cell that gains a chromosome can survive. Several studies support the hypothesis that gaining an extra copy of a chromosome causes gene-specific phenotypes and phenotypes independent of the identity of the genes encoded within that chromosome. The latter, referred to as aneuploidy-associated phenotypes, are the focus of this review. Among the conserved aneuploidy-associated phenotypes observed in yeast and human cells are lower viability, increased gene expression, increased protein synthesis and turnover, abnormal nuclear morphology, and altered metabolism. Notably, abnormal nuclear morphology of aneuploid cells is associated with increased metabolic demand for de novo synthesis of sphingolipids. These findings reveal important insights into the possible pathological role of aneuploidy in Down syndrome. Despite the adverse effects on cell physiology, aneuploidy is a hallmark of cancer cells. Understanding how aneuploidy affects cell physiology can reveal insights into the selective pressure that aneuploid cancer cells must overcome to support unlimited proliferation.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Down Syndrome",
+        "Sex Chromosomes",
+        "Aneuploidy",
+        "Trisomy",
+        "Chromosome Segregation"
+      ],
+      "keywords": [
+        "Aneuploidy",
+        "Down syndrome",
+        "Human trisomy",
+        "Nuclear morphology",
+        "Serine synthesis",
+        "Sphingolipids",
+        "Yeast"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10449985/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10449985/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s10577-023-09732-w"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37620607/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37620607/"
+    },
+    {
+      "pmid": "25963912",
+      "doi": "10.1177/1933719115584445",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Effects of Maternal and Fetal Characteristics on Cell-Free Fetal DNA Fraction in Maternal Plasma.",
+      "authors": [
+        "Zhou Yi",
+        "Zhu Zhongyi",
+        "Gao Ya",
+        "Yuan Yuying",
+        "Guo Yulai",
+        "Zhou Lijun",
+        "Liao KaiKai",
+        "Wang Jun",
+        "Du Bole",
+        "Hou Yumei",
+        "Chen Zhonglin",
+        "Chen Fang",
+        "Zhang Hongyun",
+        "Yu Cong",
+        "Zhao Lijian",
+        "Lau T K",
+        "Jiang Fuman",
+        "Wang Wei"
+      ],
+      "journal": "Reproductive sciences (Thousand Oaks, Calif.)",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Validation Study"
+      ],
+      "abstract": "OBJECTIVE: To study factors that influence the concentration of cell-free fetal DNA (fetal fraction) using a large clinical data set of pregnancies with male fetus. METHOD: A retrospective analysis of 23 067 pregnancies that received noninvasive prenatal testing from January 2012 to October 2013, including 22 650 normal singleton pregnancies (control group) and 417 pregnancies with aneuploidy, twin pregnancy, or various maternal conditions including preexisting hypertension, preexisting diabetes, hyperthyroidism, and carrier of the surface antigen of the hepatitis B virus (HBsAg; study group). Multiples of the median (MoM) analysis was performed in the control group to derive gestation and body mass index (BMI)-corrected fetal fraction. The effects of study group conditions on fetal fraction were examined by calculating the ratio of MoM (RMoM) values. RESULTS: Fetal fraction showed a positive correlation with gestational age (r(2) = .10, P < .001) and increased rapidly after the 21 weeks of gestation (r(2) = .26, P < .001). Negative association with maternal BMI was found with fetal fraction (r(2) = .04, P < .001). In study group, fetal fraction was higher among pregnant women with a trisomy 21 fetus (RMoM = 1.24, P < .001) and lower among trisomy 18 (RMoM = 0.84, P < .001). A 1.6-fold incensement of fetal fraction was observed in twin fetuses comparing to singleton pregnancy (RMoM = 1.62, P < .001). Women with preexisting hypertension had significantly lower fetal fraction (RMoM = 0.85, P = .02). Preexisting diabetes, hyperthyroidism, or carrier of HBsAg did not affect fetal fraction. CONCLUSION: The fetal fraction was affected by fetal aneuploidy, maternal BMI, and the number of gestation. Maternal preexisting of hypertension appeared to reduce fetal fraction.",
+      "abstract_sections": {
+        "OBJECTIVE": "To study factors that influence the concentration of cell-free fetal DNA (fetal fraction) using a large clinical data set of pregnancies with male fetus.",
+        "METHOD": "A retrospective analysis of 23 067 pregnancies that received noninvasive prenatal testing from January 2012 to October 2013, including 22 650 normal singleton pregnancies (control group) and 417 pregnancies with aneuploidy, twin pregnancy, or various maternal conditions including preexisting hypertension, preexisting diabetes, hyperthyroidism, and carrier of the surface antigen of the hepatitis B virus (HBsAg; study group). Multiples of the median (MoM) analysis was performed in the control group to derive gestation and body mass index (BMI)-corrected fetal fraction. The effects of study group conditions on fetal fraction were examined by calculating the ratio of MoM (RMoM) values.",
+        "RESULTS": "Fetal fraction showed a positive correlation with gestational age (r(2) = .10, P < .001) and increased rapidly after the 21 weeks of gestation (r(2) = .26, P < .001). Negative association with maternal BMI was found with fetal fraction (r(2) = .04, P < .001). In study group, fetal fraction was higher among pregnant women with a trisomy 21 fetus (RMoM = 1.24, P < .001) and lower among trisomy 18 (RMoM = 0.84, P < .001). A 1.6-fold incensement of fetal fraction was observed in twin fetuses comparing to singleton pregnancy (RMoM = 1.62, P < .001). Women with preexisting hypertension had significantly lower fetal fraction (RMoM = 0.85, P = .02). Preexisting diabetes, hyperthyroidism, or carrier of HBsAg did not affect fetal fraction.",
+        "CONCLUSION": "The fetal fraction was affected by fetal aneuploidy, maternal BMI, and the number of gestation. Maternal preexisting of hypertension appeared to reduce fetal fraction."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Aneuploidy",
+        "Body Mass Index",
+        "DNA",
+        "Female",
+        "Fetus",
+        "Genetic Markers",
+        "Genetic Testing",
+        "Gestational Age",
+        "Humans",
+        "Hypertension",
+        "Male",
+        "Middle Aged",
+        "Predictive Value of Tests",
+        "Pregnancy",
+        "Pregnancy, Twin",
+        "Prenatal Diagnosis",
+        "Retrospective Studies",
+        "Young Adult"
+      ],
+      "keywords": [
+        "body mass index",
+        "fetal fraction",
+        "gestational age",
+        "multiples of the median.",
+        "preexisting hypertension",
+        "twin pregnancy"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1177/1933719115584445"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25963912/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25963912/"
+    },
+    {
+      "pmid": "9803202",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Intrauterine growth retardation.",
+      "authors": [
+        "Vandenbosche R C",
+        "Kirchner J T"
+      ],
+      "journal": "American family physician",
+      "year": "1998",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Intrauterine growth retardation (IUGR), which is defined as less than 10 percent of predicted fetal weight for gestational age, may result in significant fetal morbidity and mortality if not properly diagnosed. The condition is most commonly caused by inadequate maternal-fetal circulation, with a resultant decrease in fetal growth. Less common causes include intrauterine infections such as cytomegalovirus and rubella, and congenital anomalies such as trisomy 21 and trisomy 18. When IUGR is recognized, it is important to attempt to correct reversible causes, although many of the conditions responsible for IUGR are not amenable to antenatal therapy. Close fetal surveillance with delivery before 38 weeks of gestation is usually recommended. Some infants born with IUGR have cognitive and medical problems, although for most infants the long-term prognosis is good.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Female",
+        "Fetal Growth Retardation",
+        "Humans",
+        "Patient Education as Topic",
+        "Population Surveillance",
+        "Pregnancy",
+        "Pregnancy Outcome",
+        "Prenatal Diagnosis",
+        "Teaching Materials",
+        "United States"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9803202/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9803202/"
+    },
+    {
+      "pmid": "40537699",
+      "doi": "10.1007/s00431-025-06274-7",
+      "pmc_id": "10653468",
+      "pmc_verify": null,
+      "title": "Outcomes of heart surgery in neonates with trisomy 13 and 18: a systematic review with metanalysis.",
+      "authors": [
+        "de Sá Bittencourt Câmara Bastos Cecilia",
+        "Vale da Cruz Ludmilla",
+        "Hirano Arruda Moraes Lucas",
+        "Jornada Krebs Vera Lúcia",
+        "de Carvalho Werther Brunow"
+      ],
+      "journal": "European journal of pediatrics",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "abstract": "This systematic review and meta-analysis aimed to evaluate the clinical outcomes of cardiac surgery in neonates with trisomy 13 (T13) or trisomy 18 (T18) compared to those managed with palliative care. A literature search was conducted in PubMed® and EMBASE®, following PRISMA guidelines, and included five retrospective cohort studies (1627 patients). Outcomes analyzed included in-hospital mortality, survival at 12 months, length of stay (LOS), hospital discharge rates, and the need for mechanical ventilation. The meta-analysis showed that cardiac surgery significantly reduced the odds of in-hospital mortality (OR 0.12, CI 95% 0.03-0.42, p < 0.01), increased survival at 12 months (OR 19.77, CI 95% 5.12-76.36, p < 0.01), and improved discharge rates (OR 12.53, CI 95% 3.63-43.22, p < 0.01). However, limited data were available on quality of life and mechanical ventilation duration. Conclusion: Despite the positive impact of cardiac surgery on survival and discharge rates, the evidence remains low quality, as the included studies were primarily retrospective cohorts with moderate risk of bias. The findings highlight the importance of involving families in the decision-making process, given their differing perspectives on quality of life. Further high-quality studies, such as randomized controlled trials, are needed to provide stronger evidence on this topic.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Infant, Newborn",
+        "Trisomy 18 Syndrome",
+        "Trisomy 13 Syndrome",
+        "Cardiac Surgical Procedures",
+        "Heart Defects, Congenital",
+        "Hospital Mortality",
+        "Palliative Care",
+        "Treatment Outcome",
+        "Length of Stay",
+        "Respiration, Artificial"
+      ],
+      "keywords": [
+        "Cardiac surgical procedures",
+        "Neonatal intensive care units",
+        "Palliative care",
+        "Treatment outcome",
+        "Trisomy 13 syndrome",
+        "Trisomy 18 syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10653468/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/10653468/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s00431-025-06274-7"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40537699/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40537699/"
+    },
+    {
+      "pmid": "40389136",
+      "doi": "10.1016/j.ajogmf.2025.101704",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Perinatal outcomes of cystic hygroma: a systematic review and meta-analysis.",
+      "authors": [
+        "Wang Michelle J",
+        "Bazan Maria",
+        "Hsieh Tina",
+        "Mita Carol",
+        "Ferrés Millie A",
+        "Oyelese Yinka"
+      ],
+      "journal": "American journal of obstetrics & gynecology MFM",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Meta-Analysis"
+      ],
+      "abstract": "OBJECTIVES: The aim of this systematic review and meta-analysis was to describe the perinatal outcomes and modifiers of antenatally diagnosed cystic hygroma (CH). DATA SOURCES: The PubMed, Embase and Web of Science Core Collection databases were searched from inception until March 18, 2024. STUDY ELIGIBILITY CRITERIA: Full-text English-language observational cohort studies reporting any pregnancy and postnatal outcomes for fetuses with a CH diagnosed on prenatal ultrasound were included in this study. METHODS: The primary outcome was the incidence of genetic diagnosis and incidence of major structural anomalies. Secondary outcomes included the incidence of perinatal loss, termination of pregnancy, CH resolution, live birth rate and normal postnatal outcomes. Stratified analyses were conducted of cases diagnosed in the first trimester as well as all cases with septations as part of diagnostic criteria. Pooled proportions were calculated for the different outcomes. RESULTS: Fifty-seven studies met inclusion criteria (including 4693 cases of CH); these were cohort studies that included any of our primary search outcomes. The pooled prevalence of genetic diagnosis (56 studies, 3837 fetuses) was 55% (95% CI, 0.51-0.58). For specific aneuploidies, the pooled prevalence was 21% for Turner syndrome, 17% for Trisomy 21, 10% for Trisomy 18, 3% for Trisomy 13, and 5% for other genetic diagnoses. The overall pooled prevalence of major structural anomalies (30 studies, 1987 fetuses) was 42%; across 16 studies (1815 fetuses), 16% of fetuses with CH and an additional structural abnormality had no identified genetic diagnosis. Furthermore, 20% of all CH regressed or resolved during the pregnancy. The findings from the studies that that defined CH by the presence of septations, as well as those focusing solely on first trimester CH were consistent with the overall outcomes. CONCLUSIONS: Our findings confirm that while CHs have a strong association with common trisomies and Turner syndrome, there is a proportion of cases with nonaneuploidy genetic diagnoses. Forty percent of cases are also associated with other structural anomalies that may be able to be elicited with a detailed first trimester anatomic ultrasound. Further studies should explore modifiers of CH outcomes to allow for more accurate and tailored patient counseling.",
+      "abstract_sections": {
+        "OBJECTIVES": "The aim of this systematic review and meta-analysis was to describe the perinatal outcomes and modifiers of antenatally diagnosed cystic hygroma (CH).",
+        "DATA SOURCES": "The PubMed, Embase and Web of Science Core Collection databases were searched from inception until March 18, 2024.",
+        "STUDY ELIGIBILITY CRITERIA": "Full-text English-language observational cohort studies reporting any pregnancy and postnatal outcomes for fetuses with a CH diagnosed on prenatal ultrasound were included in this study.",
+        "METHODS": "The primary outcome was the incidence of genetic diagnosis and incidence of major structural anomalies. Secondary outcomes included the incidence of perinatal loss, termination of pregnancy, CH resolution, live birth rate and normal postnatal outcomes. Stratified analyses were conducted of cases diagnosed in the first trimester as well as all cases with septations as part of diagnostic criteria. Pooled proportions were calculated for the different outcomes.",
+        "RESULTS": "Fifty-seven studies met inclusion criteria (including 4693 cases of CH); these were cohort studies that included any of our primary search outcomes. The pooled prevalence of genetic diagnosis (56 studies, 3837 fetuses) was 55% (95% CI, 0.51-0.58). For specific aneuploidies, the pooled prevalence was 21% for Turner syndrome, 17% for Trisomy 21, 10% for Trisomy 18, 3% for Trisomy 13, and 5% for other genetic diagnoses. The overall pooled prevalence of major structural anomalies (30 studies, 1987 fetuses) was 42%; across 16 studies (1815 fetuses), 16% of fetuses with CH and an additional structural abnormality had no identified genetic diagnosis. Furthermore, 20% of all CH regressed or resolved during the pregnancy. The findings from the studies that that defined CH by the presence of septations, as well as those focusing solely on first trimester CH were consistent with the overall outcomes.",
+        "CONCLUSIONS": "Our findings confirm that while CHs have a strong association with common trisomies and Turner syndrome, there is a proportion of cases with nonaneuploidy genetic diagnoses. Forty percent of cases are also associated with other structural anomalies that may be able to be elicited with a detailed first trimester anatomic ultrasound. Further studies should explore modifiers of CH outcomes to allow for more accurate and tailored patient counseling."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Lymphangioma, Cystic",
+        "Pregnancy",
+        "Female",
+        "Ultrasonography, Prenatal",
+        "Pregnancy Outcome",
+        "Infant, Newborn",
+        "Incidence",
+        "Prenatal Diagnosis"
+      ],
+      "keywords": [
+        "cystic hygroma",
+        "prenatal diagnosis",
+        "ultrasound"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajogmf.2025.101704"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40389136/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40389136/"
+    },
+    {
+      "pmid": "27889224",
+      "doi": "10.1016/j.jpurol.2016.09.003",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Fetal megacystis: A systematic review.",
+      "authors": [
+        "Taghavi K",
+        "Sharpe C",
+        "Stringer M D"
+      ],
+      "journal": "Journal of pediatric urology",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "UNLABELLED: Fetal megacystis is variably defined and understood. The literature on fetal megacystis was systematically reviewed, focusing on prenatal diagnosis, associations and outcomes. This yielded a total of 18 primary references and eight secondary references. Fetal megacystis has an estimated first-trimester prevalence of between 1:330 and 1:1670, with a male to female ratio of 8:1. In the first trimester, megacystis is most commonly defined as a longitudinal bladder dimension of ≥7 mm. Later in pregnancy, a sagittal dimension (in mm) greater than gestational age (in weeks) + 12 is often accepted. Megacystis can be associated with a thickened bladder wall, which has been objectively defined as >3 mm. Oligohydramnios is present in approximately half of all cases. The most common underlying diagnosis is posterior urethral valves (57%), followed by urethral atresia/stenosis (7%), prune belly syndrome (4%), megacystis-microcolon-intestinal-hypoperistalsis syndrome (MMIHS) (1%), and cloacal anomalies (0.7%). Karyotype anomalies are found in 15%, and include trisomy 18, trisomy 13 and trisomy 21. Ultrasound imaging alone is often insufficient to enable a definitive diagnosis, although it may indicate that a specific diagnosis is more likely. Overall, about 50% of reported fetuses with megacystis are terminated, but this proportion varies considerably between countries and over time. Prognostic stratification is evolving, with the most important factors being oligohydramnios, gestational age at diagnosis, degree of bladder enlargement, renal hyperechogenicity, karyotype, and sex. CONCLUSIONS: This review demonstrated some consensus on the ultrasound criteria for defining fetal megacystis, and illustrated the spectrum of pathologies and their relative frequencies that can cause this condition. It also underlined important associated karyotype anomalies. To progress understanding of the natural history of enlarged fetal bladders, more accurate diagnostics are required, and risk stratification needs to be refined to facilitate prenatal counseling.",
+      "abstract_sections": {
+        "UNLABELLED": "Fetal megacystis is variably defined and understood. The literature on fetal megacystis was systematically reviewed, focusing on prenatal diagnosis, associations and outcomes. This yielded a total of 18 primary references and eight secondary references. Fetal megacystis has an estimated first-trimester prevalence of between 1:330 and 1:1670, with a male to female ratio of 8:1. In the first trimester, megacystis is most commonly defined as a longitudinal bladder dimension of ≥7 mm. Later in pregnancy, a sagittal dimension (in mm) greater than gestational age (in weeks) + 12 is often accepted. Megacystis can be associated with a thickened bladder wall, which has been objectively defined as >3 mm. Oligohydramnios is present in approximately half of all cases. The most common underlying diagnosis is posterior urethral valves (57%), followed by urethral atresia/stenosis (7%), prune belly syndrome (4%), megacystis-microcolon-intestinal-hypoperistalsis syndrome (MMIHS) (1%), and cloacal anomalies (0.7%). Karyotype anomalies are found in 15%, and include trisomy 18, trisomy 13 and trisomy 21. Ultrasound imaging alone is often insufficient to enable a definitive diagnosis, although it may indicate that a specific diagnosis is more likely. Overall, about 50% of reported fetuses with megacystis are terminated, but this proportion varies considerably between countries and over time. Prognostic stratification is evolving, with the most important factors being oligohydramnios, gestational age at diagnosis, degree of bladder enlargement, renal hyperechogenicity, karyotype, and sex.",
+        "CONCLUSIONS": "This review demonstrated some consensus on the ultrasound criteria for defining fetal megacystis, and illustrated the spectrum of pathologies and their relative frequencies that can cause this condition. It also underlined important associated karyotype anomalies. To progress understanding of the natural history of enlarged fetal bladders, more accurate diagnostics are required, and risk stratification needs to be refined to facilitate prenatal counseling."
+      },
+      "mesh_terms": [
+        "Diagnosis, Differential",
+        "Duodenum",
+        "Female",
+        "Fetal Diseases",
+        "Gestational Age",
+        "Humans",
+        "Pregnancy",
+        "Pregnancy Trimester, First",
+        "Ultrasonography, Prenatal",
+        "Urinary Bladder"
+      ],
+      "keywords": [
+        "Fetal megacystis",
+        "Prenatal diagnosis",
+        "Urinary bladder"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jpurol.2016.09.003"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27889224/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27889224/"
+    },
+    {
+      "pmid": "27474103",
+      "doi": "10.1002/ajmg.c.31511",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "A tumor profile in Edwards syndrome (trisomy 18).",
+      "authors": [
+        "Satgé Daniel",
+        "Nishi Motoi",
+        "Sirvent Nicolas",
+        "Vekemans Michel"
+      ],
+      "journal": "American journal of medical genetics. Part C, Seminars in medical genetics",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "Constitutional trisomy 18 causes Edwards syndrome, which is characterized by intellectual disability and a particular set of malformations. Although this condition carries high mortality during prenatal and early postnatal life, some of the rare infants who survive the first months develop benign and malignant tumors. To determine the tumor profile associated with Edwards syndrome, we performed a systematic review of the literature. This review reveals a tumor profile differing from those of Down (trisomy 21) and Patau (trisomy 13) syndromes. The literature covers 45 malignancies: 29 were liver cancers, mainly hepatoblastomas found in Japanese females; 13 were kidney tumors, predominantly nephroblastomas; 1 was neuroblastoma; 1 was a Hodgkin disease; and 1 was acute myeloid leukemia in an infant with both trisomy 18 and type 1 neurofibromatosis. No instances of the most frequent malignancies of early life-cerebral tumors, germ cell tumors, or leukemia--are reported in children with pure trisomy 18. Tumor occurrence does not appear to correlate with body weight, tissue growth, or cancer genes mapping to chromosome 18. Importantly, the most recent clinical histories report successful treatment; this raises ethical concerns about cancer treatment in infants with Edwards syndrome. In conclusion, knowledge of the Edwards' syndrome tumor profile will enable better clinical surveillance in at-risk organs (i.e., liver, kidney). This knowledge also provides clues to understanding oncogenesis, including the probably reduced frequency of some neoplasms in infants and children with this genetic condition. © 2016 Wiley Periodicals, Inc.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Carcinogenesis",
+        "Child, Preschool",
+        "Chromosomes, Human, Pair 18",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Neoplasms",
+        "Trisomy",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [
+        "Edwards syndrome",
+        "cancer",
+        "cancer protection",
+        "hepatoblastoma",
+        "nephroblastoma",
+        "trisomy 18"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.c.31511"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27474103/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27474103/"
+    },
+    {
+      "pmid": "32800274",
+      "doi": "10.1016/j.mrrev.2020.108320",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Mechanisms of oocyte aneuploidy associated with advanced maternal age.",
+      "authors": [
+        "Mikwar Myy",
+        "MacFarlane Amanda J",
+        "Marchetti Francesco"
+      ],
+      "journal": "Mutation research. Reviews in mutation research",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "It is well established that maternal age is associated with a rapid decline in the production of healthy and high-quality oocytes resulting in reduced fertility in women older than 35 years of age. In particular, chromosome segregation errors during meiotic divisions are increasingly common and lead to the production of oocytes with an incorrect number of chromosomes, a condition known as aneuploidy. When an aneuploid oocyte is fertilized by a sperm it gives rise to an aneuploid embryo that, except in rare situations, will result in a spontaneous abortion. As females advance in age, they are at higher risk of infertility, miscarriage, or having a pregnancy affected by congenital birth defects such as Down syndrome (trisomy 21), Edwards syndrome (trisomy 18), and Turner syndrome (monosomy X). Here, we review the potential molecular mechanisms associated with increased chromosome segregation errors during meiosis as a function of maternal age. Our review shows that multiple exogenous and endogenous factors contribute to the age-related increase in oocyte aneuploidy. Specifically, the weight of evidence indicates that recombination failure, cohesin deterioration, spindle assembly checkpoint (SAC) disregulation, abnormalities in post-translational modification of histones and tubulin, and mitochondrial dysfunction are the leading causes of oocyte aneuploidy associated with maternal aging. There is also growing evidence that dietary and other bioactive interventions may mitigate the effect of maternal aging on oocyte quality and oocyte aneuploidy, thereby improving fertility outcomes. Maternal age is a major concern for aneuploidy and genetic disorders in the offspring in the context of an increasing proportion of mothers having children at increasingly older ages. A better understanding of the mechanisms associated with maternal aging leading to aneuploidy and of intervention strategies that may mitigate these detrimental effects and reduce its occurrence are essential for preventing abnormal reproductive outcomes in the human population.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Aneuploidy",
+        "Cell Cycle Proteins",
+        "Chromosomal Proteins, Non-Histone",
+        "Chromosome Segregation",
+        "Congenital Abnormalities",
+        "Female",
+        "Humans",
+        "M Phase Cell Cycle Checkpoints",
+        "Maternal Age",
+        "Meiosis",
+        "Mitochondria",
+        "Oocytes",
+        "Cohesins"
+      ],
+      "keywords": [
+        "Cohesin",
+        "Meiosis",
+        "Mitochondrial dysfunction",
+        "Recombination",
+        "SAC"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.mrrev.2020.108320"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32800274/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32800274/"
+    },
+    {
+      "pmid": "38007058",
+      "doi": "10.1016/j.cca.2023.117669",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Artificial intelligence for prenatal chromosome analysis.",
+      "authors": [
+        "Boddupally Kavitha",
+        "Rani Thuraka Esther"
+      ],
+      "journal": "Clinica chimica acta; international journal of clinical chemistry",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "This review article delves into the rapidly advancing domain of prenatal diagnostics, with a primary focus on the detection and management of chromosomal abnormalities such as trisomy 13 (\"Patau syndrome)\", \"trisomy 18 (Edwards syndrome)\", and \"trisomy 21 (Down syndrome)\". The objective of the study is to examine the utilization and effectiveness of novel computational methodologies, such as \"machine learning (ML)\", \"deep learning (DL)\", and data analysis, in enhancing the detection rates and accuracy of these prenatal conditions. The contribution of the article lies in its comprehensive examination of advancements in \"Non-Invasive Prenatal Testing (NIPT)\", prenatal screening, genomics, and medical imaging. It highlights the potential of these techniques for prenatal diagnosis and the contributions of ML and DL to these advancements. It highlights the application of ensemble models and transfer learning to improving model performance, especially with limited datasets. This also delves into optimal feature selection and fusion of high-dimensional features, underscoring the need for future research in these areas. The review finds that ML and DL have substantially improved the detection and management of prenatal conditions, despite limitations such as small sample sizes and issues related to model generalizability. It recognizes the promising results achieved through the use of ensemble models and transfer learning in prenatal diagnostics. The review also notes the increased importance of feature selection and high-dimensional feature fusion in the development and training of predictive models. The findings underline the crucial role of AI and machine learning techniques in early detection and improved therapeutic strategies in prenatal diagnostics, highlighting a pressing need for further research in this area.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Pregnancy",
+        "Female",
+        "Humans",
+        "Chromosome Disorders",
+        "Artificial Intelligence",
+        "Down Syndrome",
+        "Prenatal Diagnosis",
+        "Chromosome Aberrations",
+        "Trisomy 18 Syndrome",
+        "Trisomy 13 Syndrome",
+        "Chromosomes",
+        "Trisomy"
+      ],
+      "keywords": [
+        "Chromosome Abnormalities",
+        "Deep Learning",
+        "Down Syndrome",
+        "Machine Learning",
+        "NIPT"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.cca.2023.117669"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38007058/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38007058/"
+    },
+    {
+      "pmid": "10986441",
+      "doi": "10.1016/s0301-2115(00)00431-0",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Biochemical screening for Down syndrome.",
+      "authors": [
+        "Cuckle H"
+      ],
+      "journal": "European journal of obstetrics, gynecology, and reproductive biology",
+      "year": "2000",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Maternal serum screening for Down syndrome is an established practise in many countries. In the second trimester human chorionic gonadotrophin (hCG) or free beta-hCG is the marker of first choice, with alpha-fetoprotein (AFP) as the second marker and unconjugated oestriol (uE(3)) the third. Statistical models with parameters derived by meta-analysis predict that a three marker combination will yield a 67% detection rate for a 5% false-positive rate. The model prediction have been confirmed in 21 large prospective intervention studies. A fourth marker, inhibin A, increases the detection rate by 7% for the same false-positive rate. In the first trimester, similar models predict that a combination of pregnancy associated plasma protein A, free beta-hCG, AFP and uE(3) will yield a 70% detection rate. This is increased to 88% if ultrasound nuchal translucency is used as an additional marker. Screening can also be extended to Edwards' syndrome, yielding high detection rates with little increase in the false-positive rate. Abnormal marker levels are also associated with a variety of adverse outcomes of pregnancy. High quality information and decision aids are needed to minimise anxiety among screenees.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Biomarkers",
+        "Chorionic Gonadotropin, beta Subunit, Human",
+        "Down Syndrome",
+        "Estriol",
+        "Female",
+        "Humans",
+        "Maternal Age",
+        "Neural Tube Defects",
+        "Predictive Value of Tests",
+        "Pregnancy",
+        "Pregnancy Outcome",
+        "Pregnancy Trimester, First",
+        "Pregnancy Trimester, Second",
+        "Pregnancy-Associated Plasma Protein-A",
+        "Prenatal Diagnosis",
+        "Twins",
+        "Ultrasonography",
+        "alpha-Fetoproteins"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s0301-2115(00)00431-0"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10986441/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10986441/"
+    },
+    {
+      "pmid": "40929546",
+      "doi": "10.36740/Merkur202504116",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Edwards syndrome: Neurocognitive and linguistic profile, diagnosis, overlaps and treatment.",
+      "authors": [
+        "Katsarou Dimitra V",
+        "Argyriadis Alexandros",
+        "Sofologi Maria",
+        "Argyriadi Agathi",
+        "Kougioumtzis Georgios A",
+        "Megari Kalliopi",
+        "Mantsos Evangelos",
+        "Theodoratou Maria"
+      ],
+      "journal": "Polski merkuriusz lekarski : organ Polskiego Towarzystwa Lekarskiego",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "OBJECTIVE: Aim: To provide a comprehensive understanding of the profound developmental and medical challenges associated with this condition.. PATIENTS AND METHODS: Materials and Methods: Τhis study employed a narrative review methodology, drawing upon a wide range of peer-reviewed scientific literature, clinical guidelines, and case studies. The reviewed materials were selected based on their relevance to the neurocognitive, linguistic, diagnostic, and therapeutic aspects of Edwards syndrome. Databases such as PubMed, Scopus, and Google Scholar were used, with key terms including \"Edwards syndrome,\" \"trisomy 18,\" \"developmental delays,\" \"prenatal diagnosis,\" and \"palliative care.\" Comparative analysis was conducted to explore clinical overlaps with related syndromes such as trisomy 13 and Turner syndrome. CONCLUSION: Conclusions: Edwards syndrome presents significant challenges, requiring early diagnosis and multidisciplinary care to improve quality of life. Comprehensive understanding and tailored interventions can foster better outcomes and enhance family support systems.",
+      "abstract_sections": {
+        "OBJECTIVE": "Aim: To provide a comprehensive understanding of the profound developmental and medical challenges associated with this condition..",
+        "PATIENTS AND METHODS": "Materials and Methods: Τhis study employed a narrative review methodology, drawing upon a wide range of peer-reviewed scientific literature, clinical guidelines, and case studies. The reviewed materials were selected based on their relevance to the neurocognitive, linguistic, diagnostic, and therapeutic aspects of Edwards syndrome. Databases such as PubMed, Scopus, and Google Scholar were used, with key terms including \"Edwards syndrome,\" \"trisomy 18,\" \"developmental delays,\" \"prenatal diagnosis,\" and \"palliative care.\" Comparative analysis was conducted to explore clinical overlaps with related syndromes such as trisomy 13 and Turner syndrome.",
+        "CONCLUSION": "Conclusions: Edwards syndrome presents significant challenges, requiring early diagnosis and multidisciplinary care to improve quality of life. Comprehensive understanding and tailored interventions can foster better outcomes and enhance family support systems."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Trisomy 18 Syndrome",
+        "Female",
+        "Developmental Disabilities",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 22",
+        "Chromosome Disorders"
+      ],
+      "keywords": [
+        "trisomy 18",
+        "Edwards syndrome",
+        "developmental delays",
+        "linguistic impairment",
+        "neurocognitive profile",
+        "prenatal diagnosis",
+        "therapeutic interventions"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.36740/Merkur202504116"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40929546/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40929546/"
+    },
+    {
+      "pmid": "27927129",
+      "doi": "10.7748/ncyp.28.10.17.s19",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Edwards' syndrome.",
+      "authors": [
+        "Crawford Doreen",
+        "Dearmun Annette"
+      ],
+      "journal": "Nursing children and young people",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Edwards' syndrome is a serious genetic condition that affects fetal cellular functions, tissue development and organogenesis. Most infants with the syndrome are female, but there is no race predominance.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Disorders",
+        "Chromosomes, Human, Pair 18",
+        "Decision Making",
+        "Hospice and Palliative Care Nursing",
+        "Humans",
+        "Parents",
+        "Pediatric Nursing",
+        "Prognosis",
+        "Trisomy",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.7748/ncyp.28.10.17.s19"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27927129/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27927129/"
+    },
+    {
+      "pmid": "38003233",
+      "doi": "10.3390/ijms242216044",
+      "pmc_id": "PMC10671006",
+      "pmc_verify": null,
+      "title": "Trisomies Reorganize Human 3D Genome.",
+      "authors": [
+        "Zhegalova Irina V",
+        "Vasiluev Petr A",
+        "Flyamer Ilya M",
+        "Shtompel Anastasia S",
+        "Glazyrina Eugene",
+        "Shilova Nadezda",
+        "Minzhenkova Marina",
+        "Markova Zhanna",
+        "Petrova Natalia V",
+        "Dashinimaev Erdem B",
+        "Razin Sergey V",
+        "Ulianov Sergey V"
+      ],
+      "journal": "International journal of molecular sciences",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Trisomy is the presence of one extra copy of an entire chromosome or its part in a cell nucleus. In humans, autosomal trisomies are associated with severe developmental abnormalities leading to embryonic lethality, miscarriage or pronounced deviations of various organs and systems at birth. Trisomies are characterized by alterations in gene expression level, not exclusively on the trisomic chromosome, but throughout the genome. Here, we applied the high-throughput chromosome conformation capture technique (Hi-C) to study chromatin 3D structure in human chorion cells carrying either additional chromosome 13 (Patau syndrome) or chromosome 16 and in cultured fibroblasts with extra chromosome 18 (Edwards syndrome). The presence of extra chromosomes results in systematic changes of contact frequencies between small and large chromosomes. Analyzing the behavior of individual chromosomes, we found that a limited number of chromosomes change their contact patterns stochastically in trisomic cells and that it could be associated with lamina-associated domains (LAD) and gene content. For trisomy 13 and 18, but not for trisomy 16, the proportion of compacted loci on a chromosome is correlated with LAD content. We also found that regions of the genome that become more compact in trisomic cells are enriched in housekeeping genes, indicating a possible decrease in chromatin accessibility and transcription level of these genes. These results provide a framework for understanding the mechanisms of pan-genome transcription dysregulation in trisomies in the context of chromatin spatial organization.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Infant, Newborn",
+        "Humans",
+        "Trisomy",
+        "Cell Nucleus",
+        "Chromatin",
+        "Genetic Testing",
+        "Trisomy 13 Syndrome"
+      ],
+      "keywords": [
+        "Edwards syndrome",
+        "Hi-C",
+        "Patau syndrome",
+        "aneuploidy",
+        "chromatin spatial organization",
+        "nuclear lamina",
+        "nucleus structure",
+        "transcription regulation",
+        "trisomy"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10671006/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10671006/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/ijms242216044"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38003233/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38003233/"
+    },
+    {
+      "pmid": "34801142",
+      "doi": "10.1016/j.nec.2021.09.012",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Neurosurgical Evaluation and Management of Patients with Chromosomal Abnormalities.",
+      "authors": [
+        "Stadler James A"
+      ],
+      "journal": "Neurosurgery clinics of North America",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Patients with chromosomal abnormalities are at risk for numerous neurosurgical pathologies, given the broad impact and multisystem involvement of these disorders. Down syndrome (trisomy 21), Edwards syndrome (trisomy 18), Patau syndrome (trisomy 13), Klinefelter syndrome (47,XXY), and velocardiofacial or DiGeorge syndrome (22q11.2 deletion) are particularly associated with neurosurgical concerns. Given the heterogeneity of concerns and presentations, these patients benefit from multidisciplinary care provided by teams familiar with their specific syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Down Syndrome",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Trisomy",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [
+        "Atlantoaxial instability",
+        "Chromosomal abnormality",
+        "DiGeorge syndrome",
+        "Down syndrome",
+        "Edwards syndrome",
+        "Klinefelter syndrome",
+        "Patau syndrome",
+        "Trisomy"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.nec.2021.09.012"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34801142/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34801142/"
+    },
+    {
+      "pmid": "28544599",
+      "doi": "10.1002/ajmg.a.38294",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "A tumor profile in Patau syndrome (trisomy 13).",
+      "authors": [
+        "Satgé Daniel",
+        "Nishi Motoi",
+        "Sirvent Nicolas",
+        "Vekemans Michel",
+        "Chenard Marie-Pierre",
+        "Barnes Ann"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Individuals with trisomic conditions like Down syndrome and Edwards syndrome are prone to certain types of malignancy. However, for Patau syndrome (constitutional trisomy 13), which occurs in 1/10,000-1/20,000 live births, the tumor profile has not been well characterized. An awareness of susceptibility to malignancies can improve care of affected individuals, as well as further our understanding of the contribution of trisomy to carcinogenesis. Therefore, we conducted an extensive review of the literature; we found 17 malignancies reported in individuals with Patau syndrome. These comprised eight embryonic tumors, three leukemias, two malignant germ cell tumors, two carcinomas, a malignant brain tumor, and a sarcoma. Benign tumors were mainly extragonadal teratomas. The small number of reported malignant tumors suggests that there is not an increased risk of cancer in the context of trisomy 13. The tumor profile in Patau syndrome differs from that observed in Edwards syndrome (trisomy 18) and Down syndrome (trisomy 21), suggesting that the supernumerary chromosome 13 could promote particular tumor formations as it does particular malformations. No general and direct relationships of tumor occurrence with organ weight, congenital malformations, histological changes, or presence of tumor suppressor genes on chromosome 13 were observed. However, some tumors were found in tissues whose growth and development are controlled by genes mapping to chromosome 13. Recent reports of successful outcomes following surgical treatment and adapted chemotherapy indicate that treatment of cancer is possible in Patau syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Neoplasms",
+        "Trisomy",
+        "Trisomy 13 Syndrome"
+      ],
+      "keywords": [
+        "Patau syndrome",
+        "aneuploidy",
+        "cancer",
+        "cancer protection",
+        "carcinoma",
+        "teratoma",
+        "trisomy 13"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.38294"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28544599/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28544599/"
+    },
+    {
+      "pmid": "38664113",
+      "doi": "10.1016/j.tig.2024.04.006",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Assessing autosomal aneuploidy in ancient genomes.",
+      "authors": [
+        "Gresky Julia"
+      ],
+      "journal": "Trends in genetics : TIG",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Using genetic methods, aneuploidies can be detected in ancient human remains, which is so far the only way to reliably prove their existence in the past. As highlighted in recent studies by Rohrlach et al. and by Anastasiadou et al., this initial step enables a deeper exploration of the history of rare diseases, encompassing the social and historical contexts of the afflicted individuals.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Aneuploidy",
+        "DNA, Ancient",
+        "Genome, Human"
+      ],
+      "keywords": [
+        "Digital Atlas of Ancient Rare Diseases (DAARD)",
+        "Down syndrome",
+        "Edwards’ syndrome",
+        "ancient rare diseases (ARD)",
+        "paleopathology",
+        "trisomy"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.tig.2024.04.006"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38664113/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38664113/"
+    },
+    {
+      "pmid": "38884738",
+      "doi": "10.1007/978-3-031-44087-8_36",
+      "pmc_id": "3915623",
+      "pmc_verify": null,
+      "title": "Human Genetics of Tetralogy of Fallot and Double-Outlet Right Ventricle.",
+      "authors": [
+        "Dorn Cornelia",
+        "Perrot Andreas",
+        "Grunert Marcel",
+        "Rickert-Sperling Silke"
+      ],
+      "journal": "Advances in experimental medicine and biology",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Tetralogy of Fallot (TOF) and double-outlet right ventricle (DORV) are conotruncal defects resulting from disturbances of the second heart field and the neural crest, which can occur as isolated malformations or as part of multiorgan syndromes. Their etiology is multifactorial and characterized by overlapping genetic causes. In this chapter, we present the different genetic alterations underlying the two diseases, which range from chromosomal abnormalities like aneuploidies and structural mutations to rare single nucleotide variations affecting distinct genes. For example, mutations in the cardiac transcription factors NKX2-5, GATA4, and HAND2 have been identified in isolated TOF cases, while mutations of TBX5 and 22q11 deletion, leading to haploinsufficiency of TBX1, cause Holt-Oram and DiGeorge syndrome, respectively. Moreover, genes involved in signaling pathways, laterality determination, and epigenetic mechanisms have also been found mutated in TOF and/or DORV patients. Finally, genome-wide association studies identified common single nucleotide polymorphisms associated with the risk for TOF.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Tetralogy of Fallot",
+        "Double Outlet Right Ventricle",
+        "Mutation",
+        "Genome-Wide Association Study",
+        "Polymorphism, Single Nucleotide",
+        "Genetic Predisposition to Disease",
+        "Transcription Factors"
+      ],
+      "keywords": [
+        "22q11 deletion",
+        "22q11 deletion syndrome",
+        "CFC1",
+        "CHARGE syndrome",
+        "CHD7",
+        "CNVs",
+        "Cat eye syndrome",
+        "Copy number variations",
+        "Cri du chat syndrome",
+        "DORV",
+        "DiGeorge syndrome",
+        "Double-outlet right ventricle",
+        "Down syndrome",
+        "Edwards syndrome",
+        "FOG2",
+        "GATA4",
+        "GDF1",
+        "Genome-wide association studies",
+        "HAND2",
+        "Heterotaxy",
+        "Holt–Oram syndrome",
+        "JAG1",
+        "Jacobsen syndrome",
+        "LEOPARD syndrome",
+        "Laterality defects",
+        "NKX2–5",
+        "NOTCH2",
+        "Patau syndrome",
+        "SNPs",
+        "Single nucleotide polymorphisms",
+        "TBX1",
+        "TBX5",
+        "TOF",
+        "Tetralogy of Fallot",
+        "Trisomy",
+        "Velocardiofacial syndrome",
+        "Williams–Beuren syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3915623/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/3915623/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/978-3-031-44087-8_36"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38884738/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38884738/"
+    },
+    {
+      "pmid": "39062246",
+      "doi": "10.3390/children11070797",
+      "pmc_id": "PMC11274835",
+      "pmc_verify": null,
+      "title": "Prenatal and Postnatal Diagnosis and Genetic Background of Corpus Callosum Malformations and Neonatal Follow-Up.",
+      "authors": [
+        "Bartek Virág",
+        "Szabó István",
+        "Harmath Ágnes",
+        "Rudas Gábor",
+        "Steiner Tidhar",
+        "Fintha Attila",
+        "Ács Nándor",
+        "Beke Artúr"
+      ],
+      "journal": "Children (Basel, Switzerland)",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "INTRODUCTION: The corpus callosum is one of the five main cerebral commissures. It is key to combining sensory and motor functions. Its structure can be pathological (dysgenesis) or completely absent (agenesis). The corpus callosum dys- or agenesis is a rare disease (1:4000 live births), but it can have serious mental effects. METHODS: In our study, we processed the data of 64 pregnant women. They attended a prenatal diagnostic center and genetic counseling from 2005 to 2019 at the Department of Obstetrics and Gynecology at Semmelweis University. RESULTS: The pregnancies had the following outcomes: 52 ended in delivery, 1 in spontaneous abortion, and 11 in termination of pregnancy (TOP) cases (n = 64). The average time of detection with imaging tests was 25.24 gestational weeks. In 16 cases, prenatal magnetic resonance imaging (MRI) was performed. If the abnormality was detected before the 20th week, a genetic test was performed on an amniotic fluid sample obtained from a genetic amniocentesis. Karyotyping and cytogenetic tests were performed in 15 of the investigated cases. Karyotyping gave normal results in three cases (46,XX or XY). In one of these cases, postnatally chromosomal microarray (CMA) was later performed, which confirmed Aicardi syndrome (3q21.3-21.1 microdeletion). In one case, postnatally, the test found Wiedemann-Rautenstrauch syndrome. In other cases, it found X ring, Di George syndrome, 46,XY,del(13q)(q13q22) and 46,XX,del(5p)(p13) (Cri-du-chat syndrome). Edwards syndrome was diagnosed in six cases, and Patau syndrome in one case. CONCLUSIONS: We found that corpus callosum abnormalities are often linked to chromosomal problems. We recommend that a cytogenetic test be performed in all cases to rule out inherited diseases. Also, the long-term outcome does not just depend on the disease's severity and the associated other conditions, and hence proper follow-up and early development are also key. For this reason, close teamwork between neonatology, developmental neurology, and pediatric surgery is vital.",
+      "abstract_sections": {
+        "INTRODUCTION": "The corpus callosum is one of the five main cerebral commissures. It is key to combining sensory and motor functions. Its structure can be pathological (dysgenesis) or completely absent (agenesis). The corpus callosum dys- or agenesis is a rare disease (1:4000 live births), but it can have serious mental effects.",
+        "METHODS": "In our study, we processed the data of 64 pregnant women. They attended a prenatal diagnostic center and genetic counseling from 2005 to 2019 at the Department of Obstetrics and Gynecology at Semmelweis University.",
+        "RESULTS": "The pregnancies had the following outcomes: 52 ended in delivery, 1 in spontaneous abortion, and 11 in termination of pregnancy (TOP) cases (n = 64). The average time of detection with imaging tests was 25.24 gestational weeks. In 16 cases, prenatal magnetic resonance imaging (MRI) was performed. If the abnormality was detected before the 20th week, a genetic test was performed on an amniotic fluid sample obtained from a genetic amniocentesis. Karyotyping and cytogenetic tests were performed in 15 of the investigated cases. Karyotyping gave normal results in three cases (46,XX or XY). In one of these cases, postnatally chromosomal microarray (CMA) was later performed, which confirmed Aicardi syndrome (3q21.3-21.1 microdeletion). In one case, postnatally, the test found Wiedemann-Rautenstrauch syndrome. In other cases, it found X ring, Di George syndrome, 46,XY,del(13q)(q13q22) and 46,XX,del(5p)(p13) (Cri-du-chat syndrome). Edwards syndrome was diagnosed in six cases, and Patau syndrome in one case.",
+        "CONCLUSIONS": "We found that corpus callosum abnormalities are often linked to chromosomal problems. We recommend that a cytogenetic test be performed in all cases to rule out inherited diseases. Also, the long-term outcome does not just depend on the disease's severity and the associated other conditions, and hence proper follow-up and early development are also key. For this reason, close teamwork between neonatology, developmental neurology, and pediatric surgery is vital."
+      },
+      "mesh_terms": [],
+      "keywords": [
+        "corpus callosum",
+        "developmental neurology",
+        "ultrasound",
+        "ventriculomegaly"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11274835/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11274835/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/children11070797"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39062246/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39062246/"
+    },
+    {
+      "pmid": "25385231",
+      "doi": "10.3892/mmr.2014.2920",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "When Cri du chat syndrome meets Edwards syndrome.",
+      "authors": [
+        "Xie Yingjun",
+        "Zhou Yi",
+        "Wu Jianzhu",
+        "Sun Yunxia",
+        "Chen Yongzhen",
+        "Chen Baojiang"
+      ],
+      "journal": "Molecular medicine reports",
+      "year": "2015",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "It has been well established that the 5p deletion causes Cri du chat syndrome, typically characterized by a cat‑like cry, and that duplication of 18q causes Edwards syndrome; the two are rare genetic abnormalities that separately lead to physical and mental impairments. However, the severity of the clinicopathological characteristics that arise when these two aberrations occur in one patient is unknown. Here, the first case in our knowledge of a single patient (a two‑year‑old female) with 5p partial monosomy and 18q partial trisomy is described. In the present study, chromosome microarray analysis was performed, which identified the imbalance of chromosomes 5 and 18 in the patient. The chromosome aberrations were further confirmed by fluorescence in situ hybridization. By comparing the phenotypes of combined case with those of the individual syndromes, severe clinical phenotypes of the 5p (5p15.33‑p13.3) deletion were confirmed, however, the net effect of the duplication of 18q22.3‑q23 was not determined, as this duplication only appeared to have a weak effect on the patient's phenotypes. The correlation between these chromosomal aberrations and their clinical features has implications for the identification of critical regions of 5p and 18q, particularly for the functional mapping of chromosome 18.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child, Preschool",
+        "Chromosome Aberrations",
+        "Chromosomes, Human, Pair 18",
+        "Cri-du-Chat Syndrome",
+        "Female",
+        "Humans",
+        "In Situ Hybridization, Fluorescence",
+        "Oligonucleotide Array Sequence Analysis",
+        "Phenotype",
+        "Syndrome",
+        "Trisomy",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3892/mmr.2014.2920"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25385231/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25385231/"
+    },
+    {
+      "pmid": "32956340",
+      "doi": "10.5867/medwave.2020.08.8015",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prolonged survival in Edwards syndrome with congenital heart disease: a case report and literature review.",
+      "authors": [
+        "López-Ríos Valery",
+        "Grajales-Marín Estefanía",
+        "Gómez-Zambrano Valentina",
+        "Barrios-Arroyave Freddy Andrés"
+      ],
+      "journal": "Medwave",
+      "year": "2020",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Edwards syndrome or trisomy 18 is a complex entity that involves the musculoskeletal, craniofacial, cardiovascular, and neurological systems. Its genetics are varied, presenting both in a complete and mosaic type. Survival rarely exceeds the first year of life. Its phenotype characterization is not pathognomonic, so karyotype is essential for diagnosis, prenatally by amniocentesis and cordocentesis by FISH technique. We present the case of an eight-year-old girl who has survived with this condition despite presenting tetralogy of Fallot and serious cardiac malformations. Diagnosis began with prenatal screening ultrasound at 16 weeks and detailed ultrasound, with amniocentesis and amniotic fluid karyotype, with a result of 47 XX+18. She has been treated by multiple medical specialties, due to musculoskeletal, joint, neurological, metabolic, and cardiovascular complications that have limited her quality of life. The management of these patients requires a multidisciplinary medical team, and counseling for parents should include aspects related to survival, frequent complications, and risk-benefit to be evaluated before subjecting the minor to complex or corrective surgical interventions.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Amniocentesis",
+        "Child",
+        "Female",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Prenatal Diagnosis",
+        "Quality of Life",
+        "Trisomy 18 Syndrome",
+        "Ultrasonography, Prenatal"
+      ],
+      "keywords": [
+        "Abnormal Karyotype",
+        "Prenatal",
+        "Survival",
+        "Tetralogy of Fallot",
+        "Ultrasonography",
+        "Trisomy 18 Syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.5867/medwave.2020.08.8015"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32956340/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32956340/"
+    },
+    {
+      "pmid": "38674397",
+      "doi": "10.3390/genes15040463",
+      "pmc_id": "PMC11049815",
+      "pmc_verify": null,
+      "title": "Therapeutic Management and Outcomes of Hepatoblastoma in a Pediatric Patient with Mosaic Edwards Syndrome.",
+      "authors": [
+        "Sosnowska-Sienkiewicz Patrycja",
+        "Kamińska Alicja",
+        "Anderko Iwona",
+        "Telman-Kołodziejczyk Gabriela",
+        "Mańkowski Przemysław",
+        "Januszkiewicz-Lewandowska Danuta"
+      ],
+      "journal": "Genes",
+      "year": "2024",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "The mosaic form of Edwards syndrome affects 5% of all children with Edwards syndrome. The clinical phenotype is highly variable, ranging from the full spectrum of trisomy 18 to the normal phenotype. The purpose of this publication was to present the therapeutic process in an 18-month-old girl with the mosaic form of Edwards syndrome and hepatoblastoma, against the background of other cases of simultaneous occurrence of this syndrome and hepatoblastoma described so far. It appears that this particular group of patients with hepatoblastoma and Edwards syndrome can have good outcomes, provided they do not have life-threatening cardiac or other severe defects. Due to the prematurity of our patient and the defects associated with Edwards syndrome, the child required constant multidisciplinary care, but Edwards syndrome itself was not a reason to discontinue therapy for a malignant neoplasm of the liver. Regular abdominal ultrasound examination, along with AFP testing, may be helpful in the early detection of liver tumors in children with Edwards syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Hepatoblastoma",
+        "Female",
+        "Infant",
+        "Liver Neoplasms",
+        "Trisomy 18 Syndrome",
+        "Mosaicism",
+        "Trisomy",
+        "Treatment Outcome",
+        "Chromosomes, Human, Pair 18"
+      ],
+      "keywords": [
+        "child",
+        "hepatoblastoma",
+        "liver",
+        "treatment",
+        "trisomy 18"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11049815/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11049815/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/genes15040463"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38674397/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38674397/"
+    },
+    {
+      "pmid": "24478819",
+      "doi": "10.12659/AJCR.884033",
+      "pmc_id": "PMC3904774",
+      "pmc_verify": null,
+      "title": "Phenotype-genotype discordance in congenital malformations with communication disorders resembling trisomy 18 (Edwards syndrome).",
+      "authors": [
+        "Pruszewicz Antoni",
+        "Wiskirska-Woźnica Bożena",
+        "Wojnowski Waldemar",
+        "Czerniejewska Hanna",
+        "Jackowska Joanna",
+        "Jarmuż Małgorzata",
+        "Szyfter Krzysztof",
+        "Leszczyńska Małgorzata"
+      ],
+      "journal": "The American journal of case reports",
+      "year": "2014",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "PATIENT: Female, 6 FINAL DIAGNOSIS: Phenotype-genotype discordance in congenital malformations with communication disorders resembling trisomy 18 (Edwards syndrome) Symptoms: - MEDICATION: - Clinical Procedure: - Specialty: Otolaryngology. OBJECTIVE: Congenital defects. BACKGROUND: Communication process disorders are very frequent in rare cases of chromosomal aberrations (deletions, insertions, and trisomies) such as Down syndrome (trisomy 21), Turner syndrome, Edwards syndrome (trisomy 18), or Patau syndrome (trisomy 13). Sometimes phenotype may delusively correspond to the characteristic features of a given syndrome, but genotype tests do not confirm its presence. CASE REPORT: We present the case of a 6-year-old girl admitted to the Clinic of Phoniatrics and Audiology for the assessment of communication in the course of congenital malformations with phenotype characteristic for trisomy 18 (Edwards syndrome). Immediately upon birth, dysmorphic changes suggesting trisomy 18 (Edwards syndrome) were observed, but trisomy 18 was excluded after karyotype test results were normal (46, XX). CONCLUSIONS: DISTURBED ARTICULATION WAS DIAGNOSED: deformed linguo-dental and palatal sounds, interdental realization with flat tongue of the /s/, /z/, /c/, /dz/, /ś/, /ź/, /ć/, /dz/ sounds (sigmatismus interdentalis). Hearing loss was confirmed.",
+      "abstract_sections": {
+        "PATIENT": "Female, 6 FINAL DIAGNOSIS: Phenotype-genotype discordance in congenital malformations with communication disorders resembling trisomy 18 (Edwards syndrome) Symptoms: -",
+        "MEDICATION": "- Clinical Procedure: - Specialty: Otolaryngology.",
+        "OBJECTIVE": "Congenital defects.",
+        "BACKGROUND": "Communication process disorders are very frequent in rare cases of chromosomal aberrations (deletions, insertions, and trisomies) such as Down syndrome (trisomy 21), Turner syndrome, Edwards syndrome (trisomy 18), or Patau syndrome (trisomy 13). Sometimes phenotype may delusively correspond to the characteristic features of a given syndrome, but genotype tests do not confirm its presence.",
+        "CASE REPORT": "We present the case of a 6-year-old girl admitted to the Clinic of Phoniatrics and Audiology for the assessment of communication in the course of congenital malformations with phenotype characteristic for trisomy 18 (Edwards syndrome). Immediately upon birth, dysmorphic changes suggesting trisomy 18 (Edwards syndrome) were observed, but trisomy 18 was excluded after karyotype test results were normal (46, XX).",
+        "CONCLUSIONS": "DISTURBED ARTICULATION WAS DIAGNOSED: deformed linguo-dental and palatal sounds, interdental realization with flat tongue of the /s/, /z/, /c/, /dz/, /ś/, /ź/, /ć/, /dz/ sounds (sigmatismus interdentalis). Hearing loss was confirmed."
+      },
+      "mesh_terms": [],
+      "keywords": [
+        "Communication Disorders",
+        "phenotype-genotype discordance",
+        "trisomy 18 (Edwards syndrome)"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3904774/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3904774/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.12659/AJCR.884033"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24478819/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24478819/"
+    },
+    {
+      "pmid": "35392164",
+      "doi": "10.3389/fcell.2022.825345",
+      "pmc_id": "PMC8980718",
+      "pmc_verify": null,
+      "title": "Single-Cell Transcriptomics of Cultured Amniotic Fluid Cells Reveals Complex Gene Expression Alterations in Human Fetuses With Trisomy 18.",
+      "authors": [
+        "Wang Jing",
+        "Chen Zixi",
+        "He Fei",
+        "Lee Trevor",
+        "Cai Wenjie",
+        "Chen Wanhua",
+        "Miao Nan",
+        "Zeng Zhiwei",
+        "Hussain Ghulam",
+        "Yang Qingwei",
+        "Guo Qiwei",
+        "Sun Tao"
+      ],
+      "journal": "Frontiers in cell and developmental biology",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Trisomy 18, commonly known as Edwards syndrome, is the second most common autosomal trisomy among live born neonates. Multiple tissues including cardiac, abdominal, and nervous systems are affected by an extra chromosome 18. To delineate the complexity of anomalies of trisomy 18, we analyzed cultured amniotic fluid cells from two euploid and three trisomy 18 samples using single-cell transcriptomics. We identified 6 cell groups, which function in development of major tissues such as kidney, vasculature and smooth muscle, and display significant alterations in gene expression as detected by single-cell RNA-sequencing. Moreover, we demonstrated significant gene expression changes in previously proposed trisomy 18 critical regions, and identified three new regions such as 18p11.32, 18q11 and 18q21.32, which are likely associated with trisomy 18 phenotypes. Our results indicate complexity of trisomy 18 at the gene expression level and reveal genetic reasoning of diverse phenotypes in trisomy 18 patients.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "amniotic fluid cells",
+        "critical region",
+        "human fetuses",
+        "single-cell RNA-sequencing",
+        "trisomy 18"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8980718/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8980718/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3389/fcell.2022.825345"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35392164/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35392164/"
+    },
+    {
+      "pmid": "8079991",
+      "doi": "",
+      "pmc_id": "PMC1918415",
+      "pmc_verify": null,
+      "title": "Molecular mapping of the Edwards syndrome phenotype to two noncontiguous regions on chromosome 18.",
+      "authors": [
+        "Boghosian-Sell L",
+        "Mewar R",
+        "Harrison W",
+        "Shapiro R M",
+        "Zackai E H",
+        "Carey J",
+        "Davis-Keppen L",
+        "Hudgins L",
+        "Overhauser J"
+      ],
+      "journal": "American journal of human genetics",
+      "year": "1994",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S."
+      ],
+      "abstract": "In an effort to identify regions on chromosome 18 that may be critical in the appearance of the Edwards syndrome phenotype, we have analyzed six patients with partial duplication of chromosome 18. Four of the patients have duplications involving the distal half of 18q (18q21.1-qter) and are very mildly affected. The remaining two patients have most of 18q (18q12.1-qter) duplicated, are severely affected, and have been diagnosed with Edwards syndrome. We have employed FISH, using DNA probes from a chromosome 18-specific library, for the precise determination of the duplicated material in each of these patients. The clinical features and the extent of the chromosomal duplication in these patients were compared with four previously reported partial trisomy 18 patients, to identify regions of chromosome 18 that may be responsible for certain clinical features of trisomy 18. The comparative analysis confirmed that there is no single region on 18q that is sufficient to produce the trisomy 18 phenotype and identified two regions on 18q that may work in conjunction to produce the Edwards syndrome phenotype. In addition, correlative analysis indicates that duplication of 18q12.3-q22.1 may be associated with more severe mental retardation in trisomy 18 individuals.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Adult",
+        "Cell Line",
+        "Chromosome Aberrations",
+        "Chromosome Banding",
+        "Chromosome Disorders",
+        "Chromosome Mapping",
+        "Chromosomes, Human, Pair 18",
+        "DNA Mutational Analysis",
+        "Female",
+        "Humans",
+        "In Situ Hybridization, Fluorescence",
+        "Infant",
+        "Infant, Newborn",
+        "Intellectual Disability",
+        "Karyotyping",
+        "Male",
+        "Phenotype",
+        "Syndrome",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1918415/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1918415/",
+          "verified": null
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8079991/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8079991/"
+    },
+    {
+      "pmid": "34193281",
+      "doi": "10.1186/s40246-021-00338-z",
+      "pmc_id": "PMC8246660",
+      "pmc_verify": null,
+      "title": "Single-cell chromatin accessibility landscape of human umbilical cord blood in trisomy 18 syndrome.",
+      "authors": [
+        "Qiu Xiaofen",
+        "Yu Haiyan",
+        "Wu Hongwei",
+        "Hu Zhiyang",
+        "Zhou Jun",
+        "Lin Hua",
+        "Xue Wen",
+        "Cai Wanxia",
+        "Chen Jiejing",
+        "Yan Qiang",
+        "Dai Weier",
+        "Yang Ming",
+        "Tang Donge",
+        "Dai Yong"
+      ],
+      "journal": "Human genomics",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: Trisomy 18 syndrome (Edwards syndrome, ES) is a type of aneuploidy caused by the presence of an extra chromosome 18. Aneuploidy is the leading cause of early pregnancy loss, intellectual disability, and multiple congenital anomalies. The research of trisomy 18 is progressing slowly, and the molecular characteristics of the disease mechanism and phenotype are still largely unclear. RESULTS: In this study, we used the commercial Chromium platform (10× Genomics) to perform sc-ATAC-seq to measure chromatin accessibility in 11,611 single umbilical cord blood cells derived from one trisomy 18 syndrome patient and one healthy donor. We obtained 13 distinct major clusters of cells and identified them as 6 human umbilical cord blood mononuclear cell types using analysis tool. Compared with the NC group, the ES group had a lower ratio of T cells to NK cells, the ratio of monocytes/DC cell population did not change significantly, and the ratio of B cell nuclear progenitor and megakaryocyte erythroid cells was higher. The differential genes of ME-0 are enriched in Human T cell leukemia virus 1 infection pathway, and the differential peak genes of ME-1 are enriched in apopotosis pathway. We found that CCNB2 and MCM3 may be vital to the development of trisomy 18. CCNB2 and MCM3, which have been reported to be essential components of the cell cycle and chromatin. CONCLUSIONS: We have identified 6 cell populations in cord blood. Disorder in megakaryocyte erythroid cells implicates trisomy 18 in perturbing fetal hematopoiesis. We identified a pathway in which the master differential regulatory pathway in the ME-0 cell population involves human T cell leukemia virus 1 infection, a pathway that is dysregulated in patients with trisomy 18 and which may increase the risk of leukemia in patients with trisomy 18. CCNB2 and MCM3 in progenitor may be vital to the development of trisomy 18. CCNB2 and MCM3, which have been reported to be essential components of the cell cycle and chromatin, may be related to chromosomal abnormalities in trisomy 18.",
+      "abstract_sections": {
+        "BACKGROUND": "Trisomy 18 syndrome (Edwards syndrome, ES) is a type of aneuploidy caused by the presence of an extra chromosome 18. Aneuploidy is the leading cause of early pregnancy loss, intellectual disability, and multiple congenital anomalies. The research of trisomy 18 is progressing slowly, and the molecular characteristics of the disease mechanism and phenotype are still largely unclear.",
+        "RESULTS": "In this study, we used the commercial Chromium platform (10× Genomics) to perform sc-ATAC-seq to measure chromatin accessibility in 11,611 single umbilical cord blood cells derived from one trisomy 18 syndrome patient and one healthy donor. We obtained 13 distinct major clusters of cells and identified them as 6 human umbilical cord blood mononuclear cell types using analysis tool. Compared with the NC group, the ES group had a lower ratio of T cells to NK cells, the ratio of monocytes/DC cell population did not change significantly, and the ratio of B cell nuclear progenitor and megakaryocyte erythroid cells was higher. The differential genes of ME-0 are enriched in Human T cell leukemia virus 1 infection pathway, and the differential peak genes of ME-1 are enriched in apopotosis pathway. We found that CCNB2 and MCM3 may be vital to the development of trisomy 18. CCNB2 and MCM3, which have been reported to be essential components of the cell cycle and chromatin.",
+        "CONCLUSIONS": "We have identified 6 cell populations in cord blood. Disorder in megakaryocyte erythroid cells implicates trisomy 18 in perturbing fetal hematopoiesis. We identified a pathway in which the master differential regulatory pathway in the ME-0 cell population involves human T cell leukemia virus 1 infection, a pathway that is dysregulated in patients with trisomy 18 and which may increase the risk of leukemia in patients with trisomy 18. CCNB2 and MCM3 in progenitor may be vital to the development of trisomy 18. CCNB2 and MCM3, which have been reported to be essential components of the cell cycle and chromatin, may be related to chromosomal abnormalities in trisomy 18."
+      },
+      "mesh_terms": [
+        "Adult",
+        "Chromatin",
+        "Chromosome Aberrations",
+        "Cyclin B2",
+        "Female",
+        "Fetal Blood",
+        "Genomics",
+        "Hematopoiesis",
+        "Humans",
+        "Minichromosome Maintenance Complex Component 3",
+        "Pregnancy",
+        "Single-Cell Analysis",
+        "Trisomy 18 Syndrome"
+      ],
+      "keywords": [
+        "Aneuploidy",
+        "Developmental regulation",
+        "Transcription factors",
+        "Trisomy 18 syndrome",
+        "single-cell sequencing"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8246660/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8246660/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/s40246-021-00338-z"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34193281/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34193281/"
+    },
+    {
+      "pmid": "8250043",
+      "doi": "",
+      "pmc_id": "PMC1682493",
+      "pmc_verify": null,
+      "title": "Clinical and molecular evaluation of four patients with partial duplications of the long arm of chromosome 18.",
+      "authors": [
+        "Mewar R",
+        "Kline A D",
+        "Harrison W",
+        "Rojas K",
+        "Greenberg F",
+        "Overhauser J"
+      ],
+      "journal": "American journal of human genetics",
+      "year": "1993",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Review"
+      ],
+      "abstract": "Four individuals with partial duplications of the long arm of chromosome 18 were analyzed at the clinical, cytogenetic, and molecular levels. Two of the individuals had duplications of the long arm from 18q21.1-qter because of inheritance of an unbalanced translocation. Both of these individuals displayed the clinical phenotype characteristic of Edwards syndrome. Two other patients had de novo interstitial duplications of 18q but did not have a clinical diagnosis of Edwards syndrome. The extent of the duplicated material in each patient was determined initially by using cytogenetic analysis and subsequently with more detailed comparisons of the duplicated regions by using molecular probes derived from a chromosome 18-specific lambda phage library. The results demonstrated that one of the de novo interstitial duplications that did not result in the Edwards syndrome phenotype had a more proximal breakpoint than that of the partial duplications of the two patients with features of Edwards syndrome. These results suggest that a single critical region for Edwards syndrome in the proximal portion of 18q is unlikely.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Animals",
+        "Biotin",
+        "Blotting, Southern",
+        "CHO Cells",
+        "Child",
+        "Chromosome Aberrations",
+        "Chromosome Mapping",
+        "Chromosomes, Human, Pair 18",
+        "Cricetinae",
+        "DNA",
+        "DNA Probes",
+        "Female",
+        "Humans",
+        "Hybrid Cells",
+        "Infant",
+        "Infant, Newborn",
+        "Karyotyping",
+        "Male",
+        "Phenotype",
+        "Syndrome",
+        "Translocation, Genetic",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1682493/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1682493/",
+          "verified": null
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8250043/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8250043/"
+    },
+    {
+      "pmid": "38088680",
+      "doi": "10.1590/1984-0462/2024/42/2023053",
+      "pmc_id": "PMC10712940",
+      "pmc_verify": null,
+      "title": "Patau and Edwards Syndromes in a University Hospital: beyond palliative care.",
+      "authors": [
+        "Marçola Ligia",
+        "Zoboli Ivete",
+        "Polastrini Rita Tiziana Verardo",
+        "Barbosa Silvia Maria de Macedo",
+        "Falcão Mário Cícero",
+        "Gaiolla Paula de Vicenzi"
+      ],
+      "journal": "Revista paulista de pediatria : orgao oficial da Sociedade de Pediatria de Sao Paulo",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: To describe the newborn population with Patau (T13) and Edwards Syndrome (T18) with congenital heart diseases that stayed in the Intensive Care Unit (ICU) of a quaternary care hospital complex, regarding surgical and non-surgical medical procedures, palliative care, and outcomes. METHODS: Descriptive case series conducted from January/2014 to December/2018 through analysis of records of patients with positive karyotype for T13 or T18 who stayed in the ICU of a quaternary hospital. Descriptive statistics analysis was applied. RESULTS: 33 records of eligible patients were identified: 27 with T18 (82%), and 6 T13 (18%); 64% female and 36% male. Eight were preterm infants with gestational age between 30-36 weeks (24%), and only 4 among the 33 infants had a birth weight >2500 g (12%). Four patients underwent heart surgery and one of them died. Intrahospital mortality was 83% for T13, and 59% for T18. The majority had other malformations and underwent other surgical procedures. Palliative care was offered to 54% of the patients. The median hospitalization time for T18 and T13 was 29 days (range: 2-304) and 25 days (13-58), respectively. CONCLUSIONS: Patients with T13 and T18 have high morbidity and mortality, and long hospital and ICU stays. Multicentric studies are needed to allow the analysis of important aspects for creating protocols that, seeking therapeutic proportionality, may bring better quality of life for patients and their families.",
+      "abstract_sections": {
+        "OBJECTIVE": "To describe the newborn population with Patau (T13) and Edwards Syndrome (T18) with congenital heart diseases that stayed in the Intensive Care Unit (ICU) of a quaternary care hospital complex, regarding surgical and non-surgical medical procedures, palliative care, and outcomes.",
+        "METHODS": "Descriptive case series conducted from January/2014 to December/2018 through analysis of records of patients with positive karyotype for T13 or T18 who stayed in the ICU of a quaternary hospital. Descriptive statistics analysis was applied.",
+        "RESULTS": "33 records of eligible patients were identified: 27 with T18 (82%), and 6 T13 (18%); 64% female and 36% male. Eight were preterm infants with gestational age between 30-36 weeks (24%), and only 4 among the 33 infants had a birth weight >2500 g (12%). Four patients underwent heart surgery and one of them died. Intrahospital mortality was 83% for T13, and 59% for T18. The majority had other malformations and underwent other surgical procedures. Palliative care was offered to 54% of the patients. The median hospitalization time for T18 and T13 was 29 days (range: 2-304) and 25 days (13-58), respectively.",
+        "CONCLUSIONS": "Patients with T13 and T18 have high morbidity and mortality, and long hospital and ICU stays. Multicentric studies are needed to allow the analysis of important aspects for creating protocols that, seeking therapeutic proportionality, may bring better quality of life for patients and their families."
+      },
+      "mesh_terms": [
+        "Infant",
+        "Humans",
+        "Male",
+        "Infant, Newborn",
+        "Female",
+        "Trisomy 18 Syndrome",
+        "Chromosome Disorders",
+        "Trisomy 13 Syndrome",
+        "Palliative Care",
+        "Quality of Life",
+        "Infant, Premature",
+        "Hospitals",
+        "Trisomy",
+        "Retrospective Studies"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10712940/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10712940/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1590/1984-0462/2024/42/2023053"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38088680/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38088680/"
+    }
+  ],
+  "pubmed_discovery": {
+    "review": {
+      "query": "(\"Edwards syndrome\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "23088440",
+        "32800274",
+        "38007058",
+        "10986441",
+        "40929546"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Edwards syndrome\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "32800274",
+        "38884729",
+        "27927129",
+        "38003233",
+        "34801142",
+        "28544599",
+        "38664113",
+        "27474103",
+        "38884738",
+        "39062246"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Edwards syndrome\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "27474103",
+        "28544599",
+        "25385231",
+        "32956340",
+        "38674397",
+        "24478819",
+        "35392164",
+        "8079991",
+        "34193281",
+        "8250043"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Edwards syndrome\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "38884729",
+        "34801142",
+        "40929546",
+        "38088680",
+        "38884738"
+      ]
+    },
+    "general": {
+      "query": "(\"Edwards syndrome\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "23088440",
+        "32800274",
+        "38884729",
+        "27927129",
+        "31566869",
+        "38003233",
+        "34033359",
+        "38007058",
+        "10986441",
+        "40929546"
+      ]
+    }
+  },
+  "meta": {
+    "syndrome": "Edwards syndrome",
+    "collected_at": "2026-08-13T02:22:11.637440Z",
+    "work_dir": "output/Edwards_syndrome/edwards_syndrome",
+    "steps": {
+      "01_disease_info": "output/Edwards_syndrome/edwards_syndrome/01_disease_info.json",
+      "02_articles": "output/Edwards_syndrome/edwards_syndrome/02_articles.json",
+      "03_markers": "output/Edwards_syndrome/edwards_syndrome/03_markers.json"
+    },
+    "annotation_sources": {
+      "medgen": "NCBI MedGen HTML (공개)",
+      "pubmed": "NCBI PubMed ESearch+EFetch (공개)",
+      "ncbi_gene": "NCBI Gene ESearch+ESummary",
+      "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+      "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+      "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+    }
+  }
+}

@@ -277,7 +277,7 @@ def syndrome_summary_fig(
 
     # call 텍스트 표시
     call_labels = [
-        f"<b>{c}</b>" if c != "LOW_RISK" else c
+        f"<b>{c}</b>" if c != "NORMAL" else c
         for c in calls
     ]
 

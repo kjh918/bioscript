@@ -1,0 +1,324 @@
+{
+  "syndrome": "Down syndrome",
+  "definition": "Down syndrome is a chromosomal condition that is associated with intellectual disability, a characteristic facial appearance, and weak muscle tone (hypotonia) in infancy. All affected individuals experience cognitive delays, but the intellectual disability is usually mild to moderate. People with Down syndrome often have a characteristic facial appearance that includes a flattened appearance to the face, outside corners of the eyes that point upward (upslanting palpebral fissures), small ears, a short neck, and a tongue that tends to stick out of the mouth. Affected individuals may have a variety of birth defects. Many people with Down syndrome have small hands and feet and a single crease across the palms of the hands. About half of all affected children are born with a heart defect. Digestive abnormalities, such as a blockage of the intestine, are less common. Individuals with Down syndrome have an increased risk of developing several medical conditions. These include gastroesophageal reflux, which is a backflow of acidic stomach contents into the esophagus, and celiac disease, which is an intolerance of a wheat protein called gluten. About 15 percent of people with Down syndrome have an underactive thyroid gland (hypothyroidism). The thyroid gland is a butterfly-shaped organ in the lower neck that produces hormones. Individuals with Down syndrome also have an increased risk of hearing and vision problems. Additionally, a small percentage of children with Down syndrome develop cancer of blood-forming cells (leukemia). Delayed development and behavioral problems are often reported in children with Down syndrome. Affected individuals can have growth problems and their speech and language develop later and more slowly than in children without Down syndrome. Additionally, speech may be difficult to understand in individuals with Down syndrome. Behavioral issues can include attention problems, obsessive/compulsive behavior, and stubbornness or tantrums. A small percentage of people with Down syndrome are also diagnosed with developmental conditions called autism spectrum disorders, which affect communication and social interaction. People with Down syndrome often experience a gradual decline in thinking ability (cognition) as they age, usually starting around age 50. Down syndrome is also associated with an increased risk of developing Alzheimer's disease, a brain disorder that results in a gradual loss of memory, judgment, and ability to function. Approximately half of adults with Down syndrome develop Alzheimer's disease. Although Alzheimer's disease is usually a disorder that occurs in older adults, people with Down syndrome commonly develop this condition earlier, in their fifties or sixties. [from MedlinePlus Genetics]",
+  "synonyms": [
+    "DS",
+    "T21"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "737542000",
+    "MONDO": "MONDO:0008608",
+    "OMIM": "190685",
+    "Orphanet": "870"
+  },
+  "gene_locations": [],
+  "genomic_targets": [],
+  "genereview_url": null,
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "30921525",
+          "title": "Clinical Practice Guideline: Tonsillectomy in Children (Update)-Executive Summary.",
+          "authors": "Mitchell RB, Archer SM, Ishman SL, Rosenfeld RM, Coles S, Finestone SA, Friedman NR, Giordano T, Hildrew DM, Kim TW, Lloyd RM, Parikh SR, Shulman ST, Walner DL, Walsh SA, Nnacheta LC",
+          "journal": "Otolaryngol Head Neck Surg",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30921525/"
+        },
+        {
+          "pmid": "30798778",
+          "title": "Clinical Practice Guideline: Tonsillectomy in Children (Update).",
+          "authors": "Mitchell RB, Archer SM, Ishman SL, Rosenfeld RM, Coles S, Finestone SA, Friedman NR, Giordano T, Hildrew DM, Kim TW, Lloyd RM, Parikh SR, Shulman ST, Walner DL, Walsh SA, Nnacheta LC",
+          "journal": "Otolaryngol Head Neck Surg",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30798778/"
+        },
+        {
+          "pmid": "20466091",
+          "title": "Consensus statement: chromosomal microarray is a first-tier clinical diagnostic test for individuals with developmental disabilities or congenital anomalies.",
+          "authors": "Miller DT, Adam MP, Aradhya S, Biesecker LG, Brothman AR, Carter NP, Church DM, Crolla JA, Eichler EE, Epstein CJ, Faucett WA, Feuk L, Friedman JM, Hamosh A, Jackson L, Kaminsky EB, Kok K, Krantz ID, Kuhn RM, Lee C, Ostell JM, Rosenberg C, Scherer SW, Spinner NB, Stavropoulos DJ, Tepperberg JH, Thorland EC, Vermeesch JR, Waggoner DJ, Watson MS, Martin CL, Ledbetter DH",
+          "journal": "Am J Hum Genet",
+          "year": "2010",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20466091/"
+        }
+      ],
+      "see_all": {}
+    },
+    "curated": {
+      "papers": [],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "40818475",
+          "title": "Down syndrome and Alzheimer's disease: insights into biomarkers, clinical symptoms, and pathology.",
+          "authors": "Rafii MS, Schlachetzki Z, Barroeta I, Head E, Fortea J, Ances BM",
+          "journal": "Lancet Neurol",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40818475/"
+        },
+        {
+          "pmid": "33583502",
+          "title": "Neonatal Leukemia.",
+          "authors": "Brown PA",
+          "journal": "Clin Perinatol",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33583502/"
+        },
+        {
+          "pmid": "29135488",
+          "title": "Endocrine manifestations of Down syndrome.",
+          "authors": "Whooten R, Schmitt J, Schwartz A",
+          "journal": "Curr Opin Endocrinol Diabetes Obes",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29135488/"
+        },
+        {
+          "pmid": "26400113",
+          "title": "Down syndrome--genetic and nutritional aspects of accompanying disorders.",
+          "authors": "Mazurek D, Wyka J",
+          "journal": "Rocz Panstw Zakl Hig",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26400113/"
+        },
+        {
+          "pmid": "25989505",
+          "title": "Down syndrome: Cognitive and behavioral functioning across the lifespan.",
+          "authors": "Grieco J, Pulsifer M, Seligsohn K, Skotko B, Schwartz A",
+          "journal": "Am J Med Genet C Semin Med Genet",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25989505/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "32521135",
+          "title": "Down Syndrome.",
+          "authors": "Bull MJ",
+          "journal": "N Engl J Med",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32521135/"
+        },
+        {
+          "pmid": "29135488",
+          "title": "Endocrine manifestations of Down syndrome.",
+          "authors": "Whooten R, Schmitt J, Schwartz A",
+          "journal": "Curr Opin Endocrinol Diabetes Obes",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29135488/"
+        },
+        {
+          "pmid": "26062604",
+          "title": "\"Down syndrome: an insight of the disease\".",
+          "authors": "Asim A, Kumar A, Muthuswamy S, Jain S, Agarwal S",
+          "journal": "J Biomed Sci",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26062604/"
+        },
+        {
+          "pmid": "25412855",
+          "title": "Mosaicism for trisomy 21: a review.",
+          "authors": "Papavassiliou P, Charalsawadi C, Rafferty K, Jackson-Cook C",
+          "journal": "Am J Med Genet A",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25412855/"
+        },
+        {
+          "pmid": "9377191",
+          "title": "Down syndrome: a review of the literature.",
+          "authors": "Desai SS",
+          "journal": "Oral Surg Oral Med Oral Pathol Oral Radiol Endod",
+          "year": "1997",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9377191/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "38558387",
+          "title": "Effect of Pilates exercises on balance and gross motor coordination in children with Down syndrome.",
+          "authors": "Al-Nemr A, Reffat S",
+          "journal": "Acta Neurol Belg",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38558387/"
+        },
+        {
+          "pmid": "37440251",
+          "title": "Management of Down Syndrome-Associated Leukemias: A Review.",
+          "authors": "Verma A, Lupo PJ, Shah NN, Hitzler J, Rabin KR",
+          "journal": "JAMA Oncol",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37440251/"
+        },
+        {
+          "pmid": "37186034",
+          "title": "Effect of hippotherapy on balance, functional mobility, and functional independence in children with Down syndrome: randomized controlled trial.",
+          "authors": "Kaya Y, Saka S, Tuncer D",
+          "journal": "Eur J Pediatr",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37186034/"
+        },
+        {
+          "pmid": "35906275",
+          "title": "Therapeutic exercise to improve motor function among children with Down Syndrome aged 0 to 3 years: a systematic literature review and meta‑analysis.",
+          "authors": "Rodríguez-Grande EI, Buitrago-López A, Torres-Narváez MR, Serrano-Villar Y, Verdugo-Paiva F, Ávila C",
+          "journal": "Sci Rep",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35906275/"
+        },
+        {
+          "pmid": "33651090",
+          "title": "Effect of Postreinduction Therapy Consolidation With Blinatumomab vs Chemotherapy on Disease-Free Survival in Children, Adolescents, and Young Adults With First Relapse of B-Cell Acute Lymphoblastic Leukemia: A Randomized Clinical Trial.",
+          "authors": "Brown PA, Ji L, Xu X, Devidas M, Hogan LE, Borowitz MJ, Raetz EA, Zugmaier G, Sharon E, Bernhardt MB, Terezakis SA, Gore L, Whitlock JA, Pulsipher MA, Hunger SP, Loh ML",
+          "journal": "JAMA",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33651090/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "38367641",
+          "title": "Global disease burden of and risk factors for acute lower respiratory infections caused by respiratory syncytial virus in preterm infants and young children in 2019: a systematic review and meta-analysis of aggregated and individual participant data.",
+          "authors": "Wang X, Li Y, Shi T, Bont LJ, Chu HY, Zar HJ, Wahi-Singh B, Ma Y, Cong B, Sharland E, Riley RD, Deng J, Figueras-Aloy J, Heikkinen T, Jones MH, Liese JG, Markić J, Mejias A, Nunes MC, Resch B, Satav A, Yeo KT, Simões EAF, Nair H; Respiratory Virus Global Epidemiology Network; RESCEU investigators",
+          "journal": "Lancet",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38367641/"
+        },
+        {
+          "pmid": "32450124",
+          "title": "Nutritional challenges in children and adolescents with Down syndrome.",
+          "authors": "Nordstrøm M, Retterstøl K, Hope S, Kolset SO",
+          "journal": "Lancet Child Adolesc Health",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32450124/"
+        },
+        {
+          "pmid": "24690318",
+          "title": "The electrocardiogram in Down syndrome.",
+          "authors": "Caro M, Conde D, Pérez-Riera AR, de Almeida AP, Baranchuk A",
+          "journal": "Cardiol Young",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24690318/"
+        },
+        {
+          "pmid": "24295820",
+          "title": "Down syndrome.",
+          "authors": "Hobson-Rohrer WL, Samson-Fang L",
+          "journal": "Pediatr Rev",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24295820/"
+        },
+        {
+          "pmid": "23949829",
+          "title": "Atypical aging in Down syndrome.",
+          "authors": "Zigman WB",
+          "journal": "Dev Disabil Res Rev",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23949829/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "40774665",
+          "title": "Positive Predictive Value of Tissue Transglutaminase IgA for Celiac Disease.",
+          "authors": "Chang D, Wong M, Camila Cardenas M, Stahl MG, Liu E, Caplan M, Gidrewicz D, King JA, Turner JM, Leonard MM, Lee D, Cristina Pacheco M, Dickerson J, Raber C, Badalyan V, Chugh A, Setty M, Baek C, Singh A, Fahey L, Walsh CM, Silvester JA, Absah I",
+          "journal": "Pediatrics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40774665/"
+        },
+        {
+          "pmid": "16104673",
+          "title": "SURUSS in perspective.",
+          "authors": "Wald NJ, Rodeck C, Hackshaw AK, Rudnicka A",
+          "journal": "Semin Perinatol",
+          "year": "2005",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16104673/"
+        },
+        {
+          "pmid": "10986441",
+          "title": "Biochemical screening for Down syndrome.",
+          "authors": "Cuckle H",
+          "journal": "Eur J Obstet Gynecol Reprod Biol",
+          "year": "2000",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10986441/"
+        },
+        {
+          "pmid": "9463853",
+          "title": "Sample size and optimal designs for reliability studies.",
+          "authors": "Walter SD, Eliasziw M, Donner A",
+          "journal": "Stat Med",
+          "year": "1998",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9463853/"
+        },
+        {
+          "pmid": "8904471",
+          "title": "Screening for Down's syndrome.",
+          "authors": "Chard T, Macintosh MC",
+          "journal": "J Perinat Med",
+          "year": "1995",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8904471/"
+        }
+      ],
+      "see_all": {}
+    },
+    "systematic_reviews": {
+      "papers": [
+        {
+          "pmid": "38367641",
+          "title": "Global disease burden of and risk factors for acute lower respiratory infections caused by respiratory syncytial virus in preterm infants and young children in 2019: a systematic review and meta-analysis of aggregated and individual participant data.",
+          "authors": "Wang X, Li Y, Shi T, Bont LJ, Chu HY, Zar HJ, Wahi-Singh B, Ma Y, Cong B, Sharland E, Riley RD, Deng J, Figueras-Aloy J, Heikkinen T, Jones MH, Liese JG, Markić J, Mejias A, Nunes MC, Resch B, Satav A, Yeo KT, Simões EAF, Nair H; Respiratory Virus Global Epidemiology Network; RESCEU investigators",
+          "journal": "Lancet",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38367641/"
+        },
+        {
+          "pmid": "36056081",
+          "title": "Neuromuscular exercise in children with Down Syndrome: a systematic review.",
+          "authors": "Rodríguez-Grande EI, Vargas-Pinilla OC, Torres-Narvaez MR, Rodríguez-Malagón N",
+          "journal": "Sci Rep",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36056081/"
+        },
+        {
+          "pmid": "35946706",
+          "title": "Autism and Down syndrome: early identification and diagnosis.",
+          "authors": "Diniz NLF, Parlato-Oliveira E, Pimenta PGA, Araújo LA, Valadares ER",
+          "journal": "Arq Neuropsiquiatr",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35946706/"
+        },
+        {
+          "pmid": "32920658",
+          "title": "Neurologic complications of Down syndrome: a systematic review.",
+          "authors": "Santoro JD, Pagarkar D, Chu DT, Rosso M, Paulsen KC, Levitt P, Rafii MS",
+          "journal": "J Neurol",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32920658/"
+        },
+        {
+          "pmid": "30788876",
+          "title": "Physical therapy in Down syndrome: systematic review and meta-analysis.",
+          "authors": "Ruiz-González L, Lucena-Antón D, Salazar A, Martín-Valero R, Moral-Munoz JA",
+          "journal": "J Intellect Disabil Res",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30788876/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "4385",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/4385"
+}

@@ -54,10 +54,15 @@ class GeneAnnotation:
 
 @dataclass
 class SampleData:
-    id: str
+    id:  str
     sex: Sex
-    events: list[CnvEvent] = field(default_factory=list)
-    genes: list[GeneAnnotation] = field(default_factory=list)
+    events:    list[CnvEvent]       = field(default_factory=list)
+    genes:     list[GeneAnnotation] = field(default_factory=list)
+    # 임상 메타데이터 — reporter/manifest에서 사용
+    maternal:    dict = field(default_factory=dict)   # 산모정보 (이름, 주수, 체중 등)
+    qc:          dict = field(default_factory=dict)   # QC 결과 (fetal fraction, mapped reads 등)
+    institution: dict = field(default_factory=dict)   # 의뢰기관 정보
+    signatures:  dict = field(default_factory=dict)   # 서명란 (analyst, reviewer, director)
 
     @property
     def display_chroms(self) -> list[str]:

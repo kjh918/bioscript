@@ -1,0 +1,2134 @@
+{
+  "discovery": {
+    "review": {
+      "query": "(\"Trisomy 9\"[Title/Abstract] OR \"Chromosome 9, trisomy\"[Title/Abstract] OR \"Duplication 9\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "33969943",
+        "24858667",
+        "7778584",
+        "7778585",
+        "2288462"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Trisomy 9\"[Title/Abstract] OR \"Chromosome 9, trisomy\"[Title/Abstract] OR \"Duplication 9\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "24858667",
+        "35907265",
+        "39978942",
+        "18182338",
+        "39179669",
+        "15865876",
+        "37719705",
+        "40683916",
+        "32793859",
+        "39391861"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Trisomy 9\"[Title/Abstract] OR \"Chromosome 9, trisomy\"[Title/Abstract] OR \"Duplication 9\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "33969943",
+        "40130691",
+        "40202083",
+        "7778584",
+        "35907265",
+        "37719705",
+        "8010707",
+        "39612314",
+        "7825455",
+        "17515299"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Trisomy 9\"[Title/Abstract] OR \"Chromosome 9, trisomy\"[Title/Abstract] OR \"Duplication 9\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "33969943",
+        "912938",
+        "19106354",
+        "7778585",
+        "35907265"
+      ]
+    },
+    "general": {
+      "query": "(\"Trisomy 9\"[Title/Abstract] OR \"Chromosome 9, trisomy\"[Title/Abstract] OR \"Duplication 9\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "33969943",
+        "912938",
+        "24858667",
+        "40130691",
+        "4124576",
+        "19106354",
+        "37821384",
+        "852146",
+        "7778584",
+        "4714588"
+      ]
+    }
+  },
+  "pmids": [
+    "40683916",
+    "39978942",
+    "34981204",
+    "37821384",
+    "35907265",
+    "21808948",
+    "40130691",
+    "33969943",
+    "24858667",
+    "19106354",
+    "4124576",
+    "38519798",
+    "36547810",
+    "35619116",
+    "20158889",
+    "3976721",
+    "7778584",
+    "1589419",
+    "19475342",
+    "7778585",
+    "2288462",
+    "18182338",
+    "39179669",
+    "15865876",
+    "37719705",
+    "32793859",
+    "39391861",
+    "40202083",
+    "8010707",
+    "39612314",
+    "7825455",
+    "17515299",
+    "912938",
+    "852146",
+    "4714588"
+  ],
+  "articles": {
+    "40683916": {
+      "pmid": "40683916",
+      "doi": "10.1038/s41598-025-09757-7",
+      "pmc_id": "PMC12276342",
+      "pmc_verify": null,
+      "title": "Evaluation of the prenatal diagnostic value of non-invasive prenatal testing for the detection of rare fetal autosomal trisomies: a single center study of 83,842 cases.",
+      "authors": [
+        "Chen Yiming",
+        "Wu Xiaoxia",
+        "Li Huawei",
+        "Yin Yixuan",
+        "Zhang Yanzhen"
+      ],
+      "journal": "Scientific reports",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "To investigate the prenatal diagnostic value and pregnancy outcomes of rare autosomal trisomies (RATs) as indicated by non-invasive prenatal testing (NIPT), and to contribute to good childbearing. This was a retrospective and cross-sectional analysis of 83,842 pregnant women who received NIPT in our hospital. Amniotic fluid karyotype analysis and SNP-array chip detection were used to evaluate the prenatal diagnostic value and pregnancy outcomes of pregnant women at high-risk of RATs. In 83,842 pregnant women, 331 were identified to be at high-risk of RATs; the positive screening rate was 0.39% (331/83,842). Among the 331 women at high risk of RATs, 245 received invasive prenatal diagnosis, and the referral reasons for NIPT were advanced maternal age (≥ 35 years), serological borderline risk, and single serological marker median (MoM) abnormality, with the constituent ratios of 27.35% (67/245), 19.18% (47/245) and 17.55% (43/245), respectively. In these 245 pregnant women at high-risk of RATs, the most common screening-risk results were trisomy 7 (33.88%), trisomy 8 (13.47%), trisomy 20 (11.43%), trisomy 3 (7.35%), and trisomy 10 (6.12%); the rarest conditions were trisomy 6 (0.41%), trisomy 12 (0.82%), trisomy 14 (0.82%), and trisomy 4 (1.22%). Trisomy 1, 17 and 19 weren't screened. The positive predictive value (PPV) for RATs in women at high-risk was 13.06%, and the PPVs for trisomy 9, 16, 15, 10 and 2 were 42.86%, 40.00%, 25.00%, 20.00%, and 16.67%, respectively. NIPT indicated that for pregnant women at high-risk of RATs, the PPVs for trisomy 9, 16, 15 and 10 were relatively high, while the PPV for other trisomies were low. With the exception of trisomy 9, 15, 16 and 10, most RATs were associated with good pregnancy outcomes. In clinical genetic counseling for RATs, the principle of individualized medicine should be reflected, and different prenatal diagnostic measures should be adopted for different RATs to advise pregnant women on whether to continue or terminate the pregnancy.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Female",
+        "Pregnancy",
+        "Humans",
+        "Adult",
+        "Trisomy",
+        "Retrospective Studies",
+        "Cross-Sectional Studies",
+        "Prenatal Diagnosis",
+        "Pregnancy Outcome",
+        "Noninvasive Prenatal Testing",
+        "Karyotyping"
+      ],
+      "keywords": [
+        "Chromosome",
+        "Non-invasive prenatal testing",
+        "Pregnancy outcome",
+        "Prenatal diagnosis",
+        "Rare autosomal trisomies",
+        "Single-nucleotide polymorphism array"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12276342/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12276342/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41598-025-09757-7"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40683916/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40683916/"
+    },
+    "39978942": {
+      "pmid": "39978942",
+      "doi": "10.1080/14767058.2025.2468000",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prenatal diagnosis and pregnancy outcomes in fetuses with vertebral abnormalities.",
+      "authors": [
+        "Hu Jian",
+        "Zeng Ling",
+        "Wang Ting",
+        "Yi Meiqi",
+        "Song Jieping"
+      ],
+      "journal": "The journal of maternal-fetal & neonatal medicine : the official journal of the European Association of Perinatal Medicine, the Federation of Asia and Oceania Perinatal Societies, the International Society of Perinatal Obstetricians",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: To investigate the genetic risk and pregnancy outcomes of fetuses who had the sonographic diagnosis of vertebral abnormalities (VA). METHODS: Fifty-two fetuses with sonographically detected VA (excluding neural tube defects) were included in the study. Data on prenatal ultrasound scan, prenatal genetic testing by amniocentesis, and pregnancy outcomes were collected and reviewed. RESULTS: Four types of VA were identified among 52 fetuses: butterfly vertebrae (26.9%, 14/52), hemivertebrae (59.6%, 31/52), hemivertebrae combined with butterfly vertebrae (9.6%, 5/52), and block vertebrae (3.9%, 2/52). Of the 52 fetuses, 33 presented VA as the sole sonographic anomaly, while the remaining 19 had associated anomalies. The positive rate of prenatal diagnosis for fetuses with VA was 19.2% (10/52). Chromosomal analysis, including karyotyping and chromosomal microarray analysis (CMA), detected one case of mosaic trisomy 9 and six cases of (likely) pathogenic copy number variants (CNVs). Whole exome sequencing (WES) identified four likely pathogenic variants in three cases with negative CMA results, specifically c.5110-1G > A in FLNB, c.8366G > A in KMT2D, and c.1275_1283dup as well as c.870 + 2T > C in DLL3. Among the 10 cases with diagnostic genetic testing results, seven fetuses exhibited isolated VA. There was no significant difference in the diagnostic rates between the isolated VA group (21.2%, 7/33) and the non-isolated VA group (15.8%, 3/19) (odds ratio [OR] 0.696, 95% confidence interval [CI] 0.157-3.087, p = 0.910). However, the live birth rate was significantly higher in the isolated VA group (71.9%, 23/32) compared to the non-isolated VA group (38.9%, 7/18) (OR 4.016, 95% CI 1.184-13.622, p = 0.022). Among the 30 live birth cases, two underwent spinal surgery and another two were identified with additional abnormalities. Following appropriate interventions, no apparent abnormalities were observed in the growth and development of 30 live birth cases. CONCLUSION: Invasive prenatal diagnosis is recommended for all fetuses diagnosed with VA, regardless of whether associated anomalies are present. WES can enhance the diagnostic yield for fetuses with negative CMA results. Fetuses with isolated VA can have favorable pregnancy outcomes when genetic testing results are negative. However, long-term follow-up remains necessary for the assessment of the prognosis of these fetuses.",
+      "abstract_sections": {
+        "OBJECTIVE": "To investigate the genetic risk and pregnancy outcomes of fetuses who had the sonographic diagnosis of vertebral abnormalities (VA).",
+        "METHODS": "Fifty-two fetuses with sonographically detected VA (excluding neural tube defects) were included in the study. Data on prenatal ultrasound scan, prenatal genetic testing by amniocentesis, and pregnancy outcomes were collected and reviewed.",
+        "RESULTS": "Four types of VA were identified among 52 fetuses: butterfly vertebrae (26.9%, 14/52), hemivertebrae (59.6%, 31/52), hemivertebrae combined with butterfly vertebrae (9.6%, 5/52), and block vertebrae (3.9%, 2/52). Of the 52 fetuses, 33 presented VA as the sole sonographic anomaly, while the remaining 19 had associated anomalies. The positive rate of prenatal diagnosis for fetuses with VA was 19.2% (10/52). Chromosomal analysis, including karyotyping and chromosomal microarray analysis (CMA), detected one case of mosaic trisomy 9 and six cases of (likely) pathogenic copy number variants (CNVs). Whole exome sequencing (WES) identified four likely pathogenic variants in three cases with negative CMA results, specifically c.5110-1G > A in FLNB, c.8366G > A in KMT2D, and c.1275_1283dup as well as c.870 + 2T > C in DLL3. Among the 10 cases with diagnostic genetic testing results, seven fetuses exhibited isolated VA. There was no significant difference in the diagnostic rates between the isolated VA group (21.2%, 7/33) and the non-isolated VA group (15.8%, 3/19) (odds ratio [OR] 0.696, 95% confidence interval [CI] 0.157-3.087, p = 0.910). However, the live birth rate was significantly higher in the isolated VA group (71.9%, 23/32) compared to the non-isolated VA group (38.9%, 7/18) (OR 4.016, 95% CI 1.184-13.622, p = 0.022). Among the 30 live birth cases, two underwent spinal surgery and another two were identified with additional abnormalities. Following appropriate interventions, no apparent abnormalities were observed in the growth and development of 30 live birth cases.",
+        "CONCLUSION": "Invasive prenatal diagnosis is recommended for all fetuses diagnosed with VA, regardless of whether associated anomalies are present. WES can enhance the diagnostic yield for fetuses with negative CMA results. Fetuses with isolated VA can have favorable pregnancy outcomes when genetic testing results are negative. However, long-term follow-up remains necessary for the assessment of the prognosis of these fetuses."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Pregnancy",
+        "Pregnancy Outcome",
+        "Ultrasonography, Prenatal",
+        "Adult",
+        "Spine",
+        "Retrospective Studies",
+        "Amniocentesis",
+        "Genetic Testing",
+        "Prenatal Diagnosis"
+      ],
+      "keywords": [
+        "Vertebral abnormalities",
+        "butterfly vertebra",
+        "hemivertebra",
+        "pregnancy outcome",
+        "prenatal diagnosis"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/14767058.2025.2468000"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39978942/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39978942/"
+    },
+    "34981204": {
+      "pmid": "34981204",
+      "doi": "10.1007/s00404-021-06346-7",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prenatal diagnosis and postnatal outcomes of right aortic arch anomalies.",
+      "authors": [
+        "Topbas Selcuki Nura Fitnat",
+        "Senol Gokalp",
+        "Esin Didem",
+        "Ozkose Zeynep Gedik",
+        "Caypinar Sema Suzen",
+        "Bornaun Helen",
+        "Cetin Berna Arslan",
+        "Yuksel Mehmet Aytac"
+      ],
+      "journal": "Archives of gynecology and obstetrics",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "PURPOSE: To give a report on the experience of our tertiary perinatology clinic on the pre- and postnatal management of the right aortic arch (RAA) by evaluating the patients as isolated and non-isolated RAA. MATERIALS AND METHODS: Patients referred to our perinatology clinic for fetal echocardiography were evaluated retrospectively. They were assessed in two groups: isolated RAA and non-isolated RAA. The isolated RAA group consisted of patients without any additional cardiac or extracardiac anomalies. According to our routine practice, all patients received detailed prenatal ultrasonography following fetal echocardiography and genetic counseling. RESULTS: A total of 60 patients were evaluated. 38 patients (63.3%) presented with additional cardiac anomalies. 21.7% had extracardiac anomalies, including 16.7% who also had cardiac anomalies. In 2 patients (3.7%) 22q11.2 microdeletion, in 2 patients (3.7%) trisomy 21, in 1 patient (1.9%) trisomy 13 and in 1 patient (1.9%) 20p12.1p11.23 (a deletion of 2880 kbp) were reported. The most common cardiac anomaly associated with RAA was Tetralogy of Fallot (25%). Fetal growth restriction was reported in 8.3% of the cases. 18 patients had isolated RAA. 16 out of the 18 patients had normal genetic analysis. 2 of them (11.11%) presented with a 22q11.2 microdeletion. CONCLUSION: A single-center experience on the diagnosis and management of RAA has been reported in this study. The results indicate that a prenatal cardiac evaluation in 3VV is of utmost importance in all pregnancies to detect RAA and refer these patients to the appropriate perinatology clinics for further evaluation and care.",
+      "abstract_sections": {
+        "PURPOSE": "To give a report on the experience of our tertiary perinatology clinic on the pre- and postnatal management of the right aortic arch (RAA) by evaluating the patients as isolated and non-isolated RAA.",
+        "MATERIALS AND METHODS": "Patients referred to our perinatology clinic for fetal echocardiography were evaluated retrospectively. They were assessed in two groups: isolated RAA and non-isolated RAA. The isolated RAA group consisted of patients without any additional cardiac or extracardiac anomalies. According to our routine practice, all patients received detailed prenatal ultrasonography following fetal echocardiography and genetic counseling.",
+        "RESULTS": "A total of 60 patients were evaluated. 38 patients (63.3%) presented with additional cardiac anomalies. 21.7% had extracardiac anomalies, including 16.7% who also had cardiac anomalies. In 2 patients (3.7%) 22q11.2 microdeletion, in 2 patients (3.7%) trisomy 21, in 1 patient (1.9%) trisomy 13 and in 1 patient (1.9%) 20p12.1p11.23 (a deletion of 2880 kbp) were reported. The most common cardiac anomaly associated with RAA was Tetralogy of Fallot (25%). Fetal growth restriction was reported in 8.3% of the cases. 18 patients had isolated RAA. 16 out of the 18 patients had normal genetic analysis. 2 of them (11.11%) presented with a 22q11.2 microdeletion.",
+        "CONCLUSION": "A single-center experience on the diagnosis and management of RAA has been reported in this study. The results indicate that a prenatal cardiac evaluation in 3VV is of utmost importance in all pregnancies to detect RAA and refer these patients to the appropriate perinatology clinics for further evaluation and care."
+      },
+      "mesh_terms": [
+        "Aorta, Thoracic",
+        "Female",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Pregnancy",
+        "Prenatal Diagnosis",
+        "Retrospective Studies",
+        "Ultrasonography, Prenatal"
+      ],
+      "keywords": [
+        "22q11.2 microdeletion",
+        "Congenital heart disease",
+        "Fetal echocardiography",
+        "Right aortic arch"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s00404-021-06346-7"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34981204/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34981204/"
+    },
+    "37821384": {
+      "pmid": "37821384",
+      "doi": "10.5582/ddt.2023.01051",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Complete trisomy 9 detected by noninvasive prenatal testing and confirmed by amniocentesis.",
+      "authors": [
+        "Huang Feixiang",
+        "Zhou Jing",
+        "Xu Zheyun",
+        "Qi Qing",
+        "Sun Hongmei",
+        "Chen Lei",
+        "Wang Ling"
+      ],
+      "journal": "Drug discoveries & therapeutics",
+      "year": "2023",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Complete chromosome 9 trisomy (T9) is a rare and fatal chromosomal disorder. We performed non-invasive prenatal testing (NIPT) in a patient with threatened abortion symptoms and found that the fetal was at risk for complete chromosome 9 trisomy. This shows that NIPT has certain accuracy in detecting trisomy of chromosome 9, which provide options for prenatal diagnosis of rare chromosomal abnormalities.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Female",
+        "Pregnancy",
+        "Humans",
+        "Amniocentesis",
+        "Trisomy",
+        "Noninvasive Prenatal Testing",
+        "Chromosomes, Human, Pair 9"
+      ],
+      "keywords": [
+        "amniocentesis",
+        "complete trisomy 9",
+        "early threatened abortion",
+        "noninvasive prenatal testing"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.5582/ddt.2023.01051"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37821384/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37821384/"
+    },
+    "35907265": {
+      "pmid": "35907265",
+      "doi": "10.1093/ecco-jcc/jjac103",
+      "pmc_id": "PMC9880952",
+      "pmc_verify": null,
+      "title": "Chromosomal Numerical Aberrations and Rare Copy Number Variation in Patients with Inflammatory Bowel Disease.",
+      "authors": [
+        "Dirvanskyte Paulina",
+        "Gurram Bhaskar",
+        "Bolton Chrissy",
+        "Warner Neil",
+        "Jones Kelsey D J",
+        "Griffin Helen R",
+        "Genomics England Research Consortium",
+        "Park Jason Y",
+        "Keller Klaus-Michael",
+        "Gilmour Kimberly C",
+        "Hambleton Sophie",
+        "Muise Aleixo M",
+        "Wysocki Christian",
+        "Uhlig Holm H"
+      ],
+      "journal": "Journal of Crohn's & colitis",
+      "year": "2023",
+      "publication_types": [
+        "Systematic Review",
+        "Meta-Analysis",
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND AND AIMS: Inflammatory bowel diseases [IBD] have a complex polygenic aetiology. Rare genetic variants can cause monogenic intestinal inflammation. The impact of chromosomal aberrations and large structural abnormalities on IBD susceptibility is not clear. We aimed to comprehensively characterise the phenotype and prevalence of patients with IBD who possess rare numerical and structural chromosomal abnormalities. METHODS: We performed a systematic literature search of databases PubMed and Embase; and analysed gnomAD, Clinvar, the 100 000 Genomes Project, and DECIPHER databases. Further, we analysed international paediatric IBD cohorts to investigate the role of IL2RA duplications in IBD susceptibility. RESULTS: A meta-analysis suggests that monosomy X [Turner syndrome] is associated with increased expressivity of IBD that exceeds the population baseline (1.86%, 95% confidence interval [CI] 1.48 to 2.34%) and causes a younger age of IBD onset. There is little evidence that Klinefelter syndrome, Trisomy 21, Trisomy 18, mosaic Trisomy 9 and 16, or partial trisomies contribute to IBD susceptibility. Copy number analysis studies suggest inconsistent results. Monoallelic loss of X-linked or haploinsufficient genes is associated with IBD by hemizygous or heterozygous deletions, respectively. However, haploinsufficient gene deletions are detected in healthy reference populations, suggesting that the expressivity of IBD might be overestimated. One duplication that has previously been identified as potentially contributing to IBD risk involves the IL2RA/IL15R loci. Here we provide additional evidence that a microduplication of this locus may predispose to very-early-onset IBD by identifying a second case in a distinct kindred. However, the penetrance of intestinal inflammation in this genetic aberration is low [<2.6%]. CONCLUSIONS: Turner syndrome is associated with increased susceptibility to intestinal inflammation. Duplication of the IL2RA/IL15R loci may contribute to disease risk.",
+      "abstract_sections": {
+        "BACKGROUND AND AIMS": "Inflammatory bowel diseases [IBD] have a complex polygenic aetiology. Rare genetic variants can cause monogenic intestinal inflammation. The impact of chromosomal aberrations and large structural abnormalities on IBD susceptibility is not clear. We aimed to comprehensively characterise the phenotype and prevalence of patients with IBD who possess rare numerical and structural chromosomal abnormalities.",
+        "METHODS": "We performed a systematic literature search of databases PubMed and Embase; and analysed gnomAD, Clinvar, the 100 000 Genomes Project, and DECIPHER databases. Further, we analysed international paediatric IBD cohorts to investigate the role of IL2RA duplications in IBD susceptibility.",
+        "RESULTS": "A meta-analysis suggests that monosomy X [Turner syndrome] is associated with increased expressivity of IBD that exceeds the population baseline (1.86%, 95% confidence interval [CI] 1.48 to 2.34%) and causes a younger age of IBD onset. There is little evidence that Klinefelter syndrome, Trisomy 21, Trisomy 18, mosaic Trisomy 9 and 16, or partial trisomies contribute to IBD susceptibility. Copy number analysis studies suggest inconsistent results. Monoallelic loss of X-linked or haploinsufficient genes is associated with IBD by hemizygous or heterozygous deletions, respectively. However, haploinsufficient gene deletions are detected in healthy reference populations, suggesting that the expressivity of IBD might be overestimated. One duplication that has previously been identified as potentially contributing to IBD risk involves the IL2RA/IL15R loci. Here we provide additional evidence that a microduplication of this locus may predispose to very-early-onset IBD by identifying a second case in a distinct kindred. However, the penetrance of intestinal inflammation in this genetic aberration is low [<2.6%].",
+        "CONCLUSIONS": "Turner syndrome is associated with increased susceptibility to intestinal inflammation. Duplication of the IL2RA/IL15R loci may contribute to disease risk."
+      },
+      "mesh_terms": [
+        "Humans",
+        "DNA Copy Number Variations",
+        "Turner Syndrome",
+        "Inflammatory Bowel Diseases",
+        "Chromosome Aberrations",
+        "Inflammation"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9880952/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9880952/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/ecco-jcc/jjac103"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35907265/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35907265/"
+    },
+    "21808948": {
+      "pmid": "21808948",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prenatal diagnosis of trisomy 9.",
+      "authors": [
+        "Zuzarte R",
+        "Tan J V",
+        "Wee H Y",
+        "Yeo G S"
+      ],
+      "journal": "Singapore medical journal",
+      "year": "2011",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "We present a foetus affected by trisomy 9, a rare chromosomal disorder, which was diagnosed in a low-risk patient during the first trimester of pregnancy. The finding of multiple structural foetal anomalies at the first trimester screening prompted chorionic villus sampling. Evaluation of the quantitative fluorescent polymerase chain reaction was normal, but the final karyotype result revealed a diagnosis of trisomy 9. First trimester screening for detection of foetal anomalies is highly effective. Although rapid molecular methods are available for prenatal diagnosis of common autosomal and sex chromosome aneuploidies, it is essential to obtain a full karyotype in order to exclude the less commonly encountered chromosomal abnormalities.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abortion, Eugenic",
+        "Adult",
+        "Chorionic Villi Sampling",
+        "Chromosomes, Human, Pair 9",
+        "Female",
+        "Humans",
+        "Pregnancy",
+        "Pregnancy Trimester, First",
+        "Trisomy",
+        "Ultrasonography, Prenatal"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21808948/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21808948/"
+    },
+    "40130691": {
+      "pmid": "40130691",
+      "doi": "10.1111/cge.14742",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Presenting Characteristics and Medical Conditions in 67 Cases With Trisomy 9 Mosaicism.",
+      "authors": [
+        "Bruns Deborah A"
+      ],
+      "journal": "Clinical genetics",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Limited literature exists on cases diagnosed with trisomy 9 mosaicism. In addition to case studies and small \"n\" studies, the Tracking Rare Incidence Syndromes (TRIS) project has provided results for 39 cases from a parent registry. This article provides data for 67 additional cases from the TRIS project database. Results describe physical characteristics and an overview of presenting medical conditions, including cardiac anomalies along with feeding and respiratory difficulties in the immediate postnatal period. Data are largely aligned with previous findings. Future research is needed to confirm the findings. Implications are offered for collaboration for care and management with parents and caregivers.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Mosaicism",
+        "Trisomy",
+        "Female",
+        "Chromosomes, Human, Pair 9",
+        "Male",
+        "Infant",
+        "Infant, Newborn",
+        "Child, Preschool"
+      ],
+      "keywords": [
+        "medical conditions",
+        "phenotype",
+        "trisomy 9 mosaicism"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/cge.14742"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40130691/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40130691/"
+    },
+    "33969943": {
+      "pmid": "33969943",
+      "doi": "10.1002/ajmg.a.62251",
+      "pmc_id": "PMC8662755",
+      "pmc_verify": null,
+      "title": "Trisomy 9 mosaic syndrome: Sixteen additional patients with new and/or less commonly reported features, literature review, and suggested clinical guidelines.",
+      "authors": [
+        "Li Mindy",
+        "Glass Jennifer",
+        "Du Xiaoli",
+        "Dubbs Holly",
+        "Harr Margaret Horton",
+        "Falk Marni",
+        "Smolarek Teresa",
+        "Hopkin Robert J",
+        "Zackai Elaine",
+        "Sheppard Sarah E"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2021",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Trisomy 9 mosaic syndrome (T9M) is a rare condition characterized by multiorgan system involvement including craniofacial dysmorphisms, cardiac, genitourinary (GU), skeletal, and central nervous system (CNS) abnormalities. Although more than 100 cases have been reported in the literature, a comprehensive review has not been performed nor have clinical guidelines been established. Therefore, we describe the clinical features of 16 additional patients, review features of previously reported individuals, and suggest clinical guidelines. Our findings expand the clinical phenotype of T9M, including novel features of amblyopia, astigmatism, corectopia of pupil, posterior embryotoxon, and diaphragmatic eventration. Most patients had prenatal and perinatal issues, particularly from respiratory, growth, and feeding standpoints. Although small birth parameters were common, long-term growth trends varied widely. An association with advanced parental ages was also identified. The spectrum of growth and development was wide, ranging from nonverbal patients to those able to participate in educational programs with age-appropriate peers. The severity of clinical outcomes was unrelated to blood lymphocyte mosaicism levels. Microarray analysis had a higher diagnostic rate compared to standard karyotype analysis and should be utilized if this diagnosis is suspected. Future longitudinal studies will be key to monitor long-term outcomes of individuals with T9M and determine best practices for clinical management.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Brain",
+        "Child",
+        "Child, Preschool",
+        "Chromosomes, Human, Pair 9",
+        "Female",
+        "Genetic Association Studies",
+        "Genetic Predisposition to Disease",
+        "Genetic Testing",
+        "Growth Charts",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Male",
+        "Mosaicism",
+        "Phenotype",
+        "Trisomy",
+        "Uniparental Disomy",
+        "Young Adult"
+      ],
+      "keywords": [
+        "mosaic trisomy 9 syndrome",
+        "trisomy 9 mosaic syndrome",
+        "trisomy 9 mosaicism"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8662755/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8662755/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.62251"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33969943/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33969943/"
+    },
+    "24858667": {
+      "pmid": "24858667",
+      "doi": "10.1097/ANC.0000000000000082",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Mosaic trisomy 9 hematopoietic chimera.",
+      "authors": [
+        "DeLoache Kristina B",
+        "Bradshaw Wanda T"
+      ],
+      "journal": "Advances in neonatal care : official journal of the National Association of Neonatal Nurses",
+      "year": "2014",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "A 1.57-kg infant presented at a major medical center in the southeastern United States at 32 weeks of gestation with growth restriction and no major anomalies after an uncomplicated pregnancy. At 1 month of life, the infant was found to be chimeric for blood types O and A. Genetic testing revealed mosaic trisomy 9 as the cause for the 2 distinct blood types. Without phenotypic presentation of trisomy 9, the infant's genetic diagnosis was not detected until an issue arose. Genetic diagnosis and treatment and future considerations are discussed in this article. Full-text English articles from CINAHL and PubMed were analyzed for assistance in understanding the infant's condition. Book chapters, review articles, and meta-analyses were also reviewed. Implications of this case study indicate that phenotypically normal presenting infants may still have underlying issues that should be investigated genetically when they arise. This article cannot be generalized to the population because of its specific situation, but the underlying concept can be applied to any case.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Chimera",
+        "Chromosome Disorders",
+        "Chromosomes, Human, Pair 9",
+        "Female",
+        "Growth Disorders",
+        "Hematopoiesis",
+        "Humans",
+        "Infant",
+        "Male",
+        "Mosaicism",
+        "Pregnancy",
+        "Southeastern United States",
+        "Treatment Outcome",
+        "Trisomy",
+        "Uniparental Disomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/ANC.0000000000000082"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24858667/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24858667/"
+    },
+    "19106354": {
+      "pmid": "19106354",
+      "doi": "10.7863/jum.2009.28.1.39",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Sonographic findings in trisomy 9.",
+      "authors": [
+        "Schwendemann Wade D",
+        "Contag Stephen A",
+        "Wax Joseph R",
+        "Miller Richard C",
+        "Polzin William J",
+        "Koty Patrick P",
+        "Watson William J"
+      ],
+      "journal": "Journal of ultrasound in medicine : official journal of the American Institute of Ultrasound in Medicine",
+      "year": "2009",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "OBJECTIVE: The purpose of this study was to identify the most common prenatal sonographic findings in fetuses with complete trisomy 9. METHODS: A retrospective review of all cases of trisomy 9 at 5 participating institutions over a 15-year interval was conducted. Indications for referral and sonographic findings in each case were reviewed to identify characteristic fetal structural anomalies. RESULTS: Six cases of trisomy 9 are presented. Most patients were referred for abnormal sonographic findings on screening examinations (66%) or advanced maternal age (33%). Fetal heart defects and central nervous system malformations were the most frequent sonographic anomalies seen. CONCLUSIONS: Sonographic findings in trisomy 9 are similar to those found in other autosomal trisomies. Because trisomy 9 is uniformly lethal and is not included as part of the standard prenatal aneuploidy screening by fluorescence in situ hybridization analysis, clinicians should be cautious in counseling patients with structurally abnormal fetuses until the full karyotype is available.",
+      "abstract_sections": {
+        "OBJECTIVE": "The purpose of this study was to identify the most common prenatal sonographic findings in fetuses with complete trisomy 9.",
+        "METHODS": "A retrospective review of all cases of trisomy 9 at 5 participating institutions over a 15-year interval was conducted. Indications for referral and sonographic findings in each case were reviewed to identify characteristic fetal structural anomalies.",
+        "RESULTS": "Six cases of trisomy 9 are presented. Most patients were referred for abnormal sonographic findings on screening examinations (66%) or advanced maternal age (33%). Fetal heart defects and central nervous system malformations were the most frequent sonographic anomalies seen.",
+        "CONCLUSIONS": "Sonographic findings in trisomy 9 are similar to those found in other autosomal trisomies. Because trisomy 9 is uniformly lethal and is not included as part of the standard prenatal aneuploidy screening by fluorescence in situ hybridization analysis, clinicians should be cautious in counseling patients with structurally abnormal fetuses until the full karyotype is available."
+      },
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosomes, Human, Pair 9",
+        "Humans",
+        "Reproducibility of Results",
+        "Sensitivity and Specificity",
+        "Trisomy",
+        "Ultrasonography, Prenatal"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.7863/jum.2009.28.1.39"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19106354/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19106354/"
+    },
+    "4124576": {
+      "pmid": "4124576",
+      "doi": "10.1016/s0140-6736(73)93247-9",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Acquired trisomy 9.",
+      "authors": [
+        "Rowley J D"
+      ],
+      "journal": "Lancet (London, England)",
+      "year": "1973",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Aged",
+        "Chromosome Aberrations",
+        "Chromosome Disorders",
+        "Chromosomes, Human, 16-18",
+        "Chromosomes, Human, 6-12 and X",
+        "Female",
+        "Humans",
+        "Karyotyping",
+        "Male",
+        "Middle Aged",
+        "Prognosis",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s0140-6736(73)93247-9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/4124576/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/4124576/"
+    },
+    "38519798": {
+      "pmid": "38519798",
+      "doi": "10.1038/s41375-024-02221-x",
+      "pmc_id": "PMC11073968",
+      "pmc_verify": null,
+      "title": "The Eμ-Ret mouse is a novel model of hyperdiploid B-cell acute lymphoblastic leukemia.",
+      "authors": [
+        "Farrokhi Ali",
+        "Atre Tanmaya",
+        "Rever Jenna",
+        "Fidanza Mario",
+        "Duey Wendy",
+        "Salitra Samuel",
+        "Myung Junia",
+        "Guo Meiyun",
+        "Jo Sumin",
+        "Uzozie Anuli",
+        "Baharvand Fatemeh",
+        "Rolf Nina",
+        "Auer Franziska",
+        "Hauer Julia",
+        "Grupp Stephan A",
+        "Eydoux Patrice",
+        "Lange Philipp F",
+        "Seif Alix E",
+        "Maxwell Christopher A",
+        "Reid Gregor S D"
+      ],
+      "journal": "Leukemia",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "The presence of supernumerary chromosomes is the only abnormality shared by all patients diagnosed with high-hyperdiploid B cell acute lymphoblastic leukemia (HD-ALL). Despite being the most frequently diagnosed pediatric leukemia, the lack of clonal molecular lesions and complete absence of appropriate experimental models have impeded the elucidation of HD-ALL leukemogenesis. Here, we report that for 23 leukemia samples isolated from moribund Eμ-Ret mice, all were characterized by non-random chromosomal gains, involving combinations of trisomy 9, 12, 14, 15, and 17. With a median gain of three chromosomes, leukemia emerged after a prolonged latency from a preleukemic B cell precursor cell population displaying more diverse aneuploidy. Transition from preleukemia to overt disease in Eμ-Ret mice is associated with acquisition of heterogeneous genomic abnormalities affecting the expression of genes implicated in pediatric B-ALL. The development of abnormal centrosomes in parallel with aneuploidy renders both preleukemic and leukemic cells sensitive to inhibitors of centrosome clustering, enabling targeted in vivo depletion of leukemia-propagating cells. This study reveals the Eμ-Ret mouse to be a novel tool for investigating HD-ALL leukemogenesis, including supervision and selection of preleukemic aneuploid clones by the immune system and identification of vulnerabilities that could be targeted to prevent relapse.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Mice",
+        "Disease Models, Animal",
+        "Precursor B-Cell Lymphoblastic Leukemia-Lymphoma",
+        "Aneuploidy",
+        "Humans",
+        "Precursor Cell Lymphoblastic Leukemia-Lymphoma",
+        "Centrosome",
+        "Diploidy"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11073968/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11073968/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41375-024-02221-x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38519798/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38519798/"
+    },
+    "36547810": {
+      "pmid": "36547810",
+      "doi": "10.1007/s43390-022-00624-3",
+      "pmc_id": "1013014",
+      "pmc_verify": null,
+      "title": "Pitfalls and management of corrective spinal surgery in trisomy 9 mosaicism: a report of three cases.",
+      "authors": [
+        "Legister Candice S",
+        "Harding Danielle C",
+        "Morgan Sara J",
+        "Guillaume Tenner J"
+      ],
+      "journal": "Spine deformity",
+      "year": "2023",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "PURPOSE: The aim of this case series is to present the outcomes of surgical correction of hyperkyphosis, and subsequent management of complications for three patients with a rare chromosomopathy, Trisomy 9 Mosaicism (T9M). METHODS: Case series with 2 year outcomes following index surgery. RESULTS: Case 1 presented at 9 years of age with 103° of kyphosis (T3-T10), which progressed to 118° despite bracing. Case 2 presented at 7 years of age with 113° of kyphosis (T3-T11). Case 3 presented at 4 years of age with 103° of kyphosis (T1-T11). Cases 1 and 2 underwent T2-L2 posterior instrumented spinal fusion (PISF). Upon follow up, radiographs for Cases 1 and 2 revealed severe, symptomatic proximal junctional kyphosis (PJK) of 71° and 50°, respectively, requiring surgical revision proximally to the C4 level. Case 3 underwent placement of magnetically controlled growing rods given young age and growth potential. Surgical levels for Case 3 were extended from C4-pelvis in an attempt to prevent development of symptomatic PJK. Most recent radiographs for Case 3 taken 21 months postoperatively demonstrate a stable 50° of kyphosis. PJK above C4 was noted but is stable and asymptomatic. CONCLUSION: T9M often presents with progressive hyperkyphosis. Despite instrumentation above the upper end vertebra (UEV), PJK may be a common complication in this small patient population. This novel report on spine deformity correction in the T9M population may provide preliminary guidance for the treatment of hyperkyphosis in patients with T9M and help surgeons avoid common pitfalls. LEVEL OF EVIDENCE: IV.",
+      "abstract_sections": {
+        "PURPOSE": "The aim of this case series is to present the outcomes of surgical correction of hyperkyphosis, and subsequent management of complications for three patients with a rare chromosomopathy, Trisomy 9 Mosaicism (T9M).",
+        "METHODS": "Case series with 2 year outcomes following index surgery.",
+        "RESULTS": "Case 1 presented at 9 years of age with 103° of kyphosis (T3-T10), which progressed to 118° despite bracing. Case 2 presented at 7 years of age with 113° of kyphosis (T3-T11). Case 3 presented at 4 years of age with 103° of kyphosis (T1-T11). Cases 1 and 2 underwent T2-L2 posterior instrumented spinal fusion (PISF). Upon follow up, radiographs for Cases 1 and 2 revealed severe, symptomatic proximal junctional kyphosis (PJK) of 71° and 50°, respectively, requiring surgical revision proximally to the C4 level. Case 3 underwent placement of magnetically controlled growing rods given young age and growth potential. Surgical levels for Case 3 were extended from C4-pelvis in an attempt to prevent development of symptomatic PJK. Most recent radiographs for Case 3 taken 21 months postoperatively demonstrate a stable 50° of kyphosis. PJK above C4 was noted but is stable and asymptomatic.",
+        "CONCLUSION": "T9M often presents with progressive hyperkyphosis. Despite instrumentation above the upper end vertebra (UEV), PJK may be a common complication in this small patient population. This novel report on spine deformity correction in the T9M population may provide preliminary guidance for the treatment of hyperkyphosis in patients with T9M and help surgeons avoid common pitfalls.",
+        "LEVEL OF EVIDENCE": "IV."
+      },
+      "mesh_terms": [
+        "Kyphosis",
+        "Reoperation",
+        "Uniparental Disomy",
+        "Spine",
+        "Trisomy",
+        "Mosaicism",
+        "Chromosomes, Human, Pair 9",
+        "Humans"
+      ],
+      "keywords": [
+        "Hyperkyphosis",
+        "Posterior instrumented spinal fusion",
+        "Proximal junctional kyphosis",
+        "Trisomy 9 Mosaicism"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/1013014/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/1013014/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s43390-022-00624-3"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36547810/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36547810/"
+    },
+    "35619116": {
+      "pmid": "35619116",
+      "doi": "10.1186/s13256-022-03424-5",
+      "pmc_id": "PMC9137177",
+      "pmc_verify": null,
+      "title": "Congenital hydrocephalus in a trisomy 9p gained child: a case report.",
+      "authors": [
+        "Henningsen Mikkel Bak",
+        "Gulisano Helga Angela",
+        "Bjarkam Carsten Reidies"
+      ],
+      "journal": "Journal of medical case reports",
+      "year": "2022",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND: Hydrocephalus caused by excessive liquor production due to choroid plexus hyperplasia is a rare condition that may necessitate unusual treatment paradigms. It can be seen in trisomy 9p where coexisting congenital heart disease additionally may complicate the therapeutic approach as illustrated in the current case report. CASE PRESENTATION: At 20 months of age, a Caucasian girl with trisomy 9 and family history of an older brother and twin sister having the same syndrome displayed sign of congenital hydrocephalus due to increasing head circumference. Magnetic resonance imaging revealed enlarged lateral ventricles and a prominent choroid plexus, and the girl was treated with a ventriculoperitoneal shunt, which 2 days later had to be replaced with a ventriculoatrial shunt as cerebrospinal fluid formation greatly exceeded the ability of the patient's abdominal absorptive capability. At 16 years of age, the patient was diagnosed with cardiomyopathy and diminished ejection fraction. Some months later, she was admitted to the neurosurgical ward showing signs of shunt dysfunction due to a colloid cyst in the third ventricle. Cystic drainage through endoscopic puncture only helped temporarily. Revision of the shunt system showed occlusion of the ventricular drain, and replacement was merely temporary alleviating. Intracerebral pressure was significantly increased at around 30 mmHg, prompting externalization of the drain, and measurements revealed high cerebrospinal fluid production of 60-100 ml liquor per hour. Thus, endoscopic choroid plexus coagulation was performed bilaterally leading to an immediate decrease of daily cerebrospinal fluid formation to 20-30 ml liquor per hour, and these values where stabilized by pharmaceutical treatment with acetazolamide 100 mg/kg/day and furosemide 1 mg/kg/day. Subsequently a ventriculoperitoneal shunt was placed. Follow-up after 1 and 2 months displayed no signs of hydrocephalus or ascites. CONCLUSIONS: High cerebrospinal fluid volume load and coexisting heart disease in children with trisomy 9p may call for endoscopic choroid plexus coagulation and pharmacological therapy to diminish the daily cerebrospinal fluid production to volumes that allow proper ventriculoperitoneal shunting.",
+      "abstract_sections": {
+        "BACKGROUND": "Hydrocephalus caused by excessive liquor production due to choroid plexus hyperplasia is a rare condition that may necessitate unusual treatment paradigms. It can be seen in trisomy 9p where coexisting congenital heart disease additionally may complicate the therapeutic approach as illustrated in the current case report.",
+        "CASE PRESENTATION": "At 20 months of age, a Caucasian girl with trisomy 9 and family history of an older brother and twin sister having the same syndrome displayed sign of congenital hydrocephalus due to increasing head circumference. Magnetic resonance imaging revealed enlarged lateral ventricles and a prominent choroid plexus, and the girl was treated with a ventriculoperitoneal shunt, which 2 days later had to be replaced with a ventriculoatrial shunt as cerebrospinal fluid formation greatly exceeded the ability of the patient's abdominal absorptive capability. At 16 years of age, the patient was diagnosed with cardiomyopathy and diminished ejection fraction. Some months later, she was admitted to the neurosurgical ward showing signs of shunt dysfunction due to a colloid cyst in the third ventricle. Cystic drainage through endoscopic puncture only helped temporarily. Revision of the shunt system showed occlusion of the ventricular drain, and replacement was merely temporary alleviating. Intracerebral pressure was significantly increased at around 30 mmHg, prompting externalization of the drain, and measurements revealed high cerebrospinal fluid production of 60-100 ml liquor per hour. Thus, endoscopic choroid plexus coagulation was performed bilaterally leading to an immediate decrease of daily cerebrospinal fluid formation to 20-30 ml liquor per hour, and these values where stabilized by pharmaceutical treatment with acetazolamide 100 mg/kg/day and furosemide 1 mg/kg/day. Subsequently a ventriculoperitoneal shunt was placed. Follow-up after 1 and 2 months displayed no signs of hydrocephalus or ascites.",
+        "CONCLUSIONS": "High cerebrospinal fluid volume load and coexisting heart disease in children with trisomy 9p may call for endoscopic choroid plexus coagulation and pharmacological therapy to diminish the daily cerebrospinal fluid production to volumes that allow proper ventriculoperitoneal shunting."
+      },
+      "mesh_terms": [
+        "Child",
+        "Choroid Plexus",
+        "Chromosomes, Human, Pair 9",
+        "Female",
+        "Humans",
+        "Hydrocephalus",
+        "Male",
+        "Trisomy",
+        "Ventriculoperitoneal Shunt"
+      ],
+      "keywords": [
+        "Case report",
+        "Choroid plexus hyperplasia",
+        "Congenital heart disease",
+        "Endoscopy",
+        "Hydrocephalus",
+        "Trisomy 9p",
+        "VA shunt"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9137177/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9137177/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/s13256-022-03424-5"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35619116/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35619116/"
+    },
+    "20158889": {
+      "pmid": "20158889",
+      "doi": "10.1186/1471-2350-11-26",
+      "pmc_id": "PMC2850894",
+      "pmc_verify": null,
+      "title": "Adult case of partial trisomy 9q.",
+      "authors": [
+        "Tiong Keith",
+        "Cotterill Andrew",
+        "Falhammar Henrik"
+      ],
+      "journal": "BMC medical genetics",
+      "year": "2010",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND: Complete and partial trisomy 9 is the fourth most common chromosomal disorder. It is also associated with various congenital characteristics affecting the cranio-facial, skeletal, central nervous, gastrointestinal, cardiac and renal systems. Very few cases have been reported in adults. Partial trisomy 9q is also associated with short stature, poor growth and growth hormone deficiency. This is the first reported case of an extensive endocrinology investigation of short stature in trisomy 9q and the outcome of growth hormone treatment. CASE PRESENTATION: The case involves a 23-year-old female of pure partial trisomy 9q. The case involves a 23-year old female with pure partial trisomy 9q involving a duplication of 9q22.1 to q32, de novo, confirmed by genetic studies using fluorescene in situ hybridization (FISH) method. The diagnosis was at 6 years of age. She did not demonstrate all the congenital morphologies identified with trisomy 9q disorders especially in relation to multi-organ morphologies. There is also a degree of associated intellectual impairment. At prepuberty, she was referred for poor growth and was diagnosed with partial growth hormone deficiency. She responded very well to treatment with growth hormone and is currently living an independent life with some support. CONCLUSIONS: Trisomy 9q is associated with short stature and failure to thrive. Growth hormone deficiency should be identified in cases of trisomy 9q and treatment offered. This is the first reported case of response to growth hormone replacement in partial trisomy 9.",
+      "abstract_sections": {
+        "BACKGROUND": "Complete and partial trisomy 9 is the fourth most common chromosomal disorder. It is also associated with various congenital characteristics affecting the cranio-facial, skeletal, central nervous, gastrointestinal, cardiac and renal systems. Very few cases have been reported in adults. Partial trisomy 9q is also associated with short stature, poor growth and growth hormone deficiency. This is the first reported case of an extensive endocrinology investigation of short stature in trisomy 9q and the outcome of growth hormone treatment.",
+        "CASE PRESENTATION": "The case involves a 23-year-old female of pure partial trisomy 9q. The case involves a 23-year old female with pure partial trisomy 9q involving a duplication of 9q22.1 to q32, de novo, confirmed by genetic studies using fluorescene in situ hybridization (FISH) method. The diagnosis was at 6 years of age. She did not demonstrate all the congenital morphologies identified with trisomy 9q disorders especially in relation to multi-organ morphologies. There is also a degree of associated intellectual impairment. At prepuberty, she was referred for poor growth and was diagnosed with partial growth hormone deficiency. She responded very well to treatment with growth hormone and is currently living an independent life with some support.",
+        "CONCLUSIONS": "Trisomy 9q is associated with short stature and failure to thrive. Growth hormone deficiency should be identified in cases of trisomy 9q and treatment offered. This is the first reported case of response to growth hormone replacement in partial trisomy 9."
+      },
+      "mesh_terms": [
+        "Adult",
+        "Chromosomes, Human, Pair 9",
+        "Female",
+        "Human Growth Hormone",
+        "Humans",
+        "In Situ Hybridization, Fluorescence",
+        "Intellectual Disability",
+        "Karyotyping",
+        "Prognosis",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2850894/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2850894/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/1471-2350-11-26"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20158889/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20158889/"
+    },
+    "3976721": {
+      "pmid": "3976721",
+      "doi": "10.1002/ajmg.1320200211",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "The phenotypic and cytogenetic spectrum of partial trisomy 9.",
+      "authors": [
+        "Wilson G N",
+        "Raj A",
+        "Baker D"
+      ],
+      "journal": "American journal of medical genetics",
+      "year": "1985",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "A new patient with trisomy for the chromosome segment 9pter----q22 is compared to 19 previously reported cases of partial trisomy 9. Manifestations such as microcephaly, prominent nasal root, bulbous nose, and down-turned corners of the mouth are common to patients with trisomic segments extending from 9p21 to 9q13, while intra-uterine growth retardation, cleft lip/palate, skeletal anomalies, and heart defects are more common with trisomic segments extending through 9q22-9q32. A graphic method illustrates this progression in the partial trisomy 9 malformation spectrum as the triplicated chromosome region extends from bands 9p21 to 9q32. More severe and random defects are observed with complete trisomy 9 or tetrasomy 9p, suggesting an extreme excess of material greatly increases developmental variability.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosome Banding",
+        "Chromosomes, Human, 6-12 and X",
+        "Facial Bones",
+        "Female",
+        "Humans",
+        "Infant, Newborn",
+        "Intellectual Disability",
+        "Karyotyping",
+        "Phenotype",
+        "Skull",
+        "Syndrome",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.1320200211"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/3976721/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/3976721/"
+    },
+    "7778584": {
+      "pmid": "7778584",
+      "doi": "10.1002/ajmg.1320560303",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Trisomy 9: review and report of two new cases.",
+      "authors": [
+        "Arnold G L",
+        "Kirby R S",
+        "Stern T P",
+        "Sawyer J R"
+      ],
+      "journal": "American journal of medical genetics",
+      "year": "1995",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Trisomy 9 is a relatively uncommon chromosome abnormality that may sometimes be seen in the nonmosaic state. We reviewed 23 mosaic and 15 nonmosaic cases of trisomy 9, including 2 new cases, in order to better define the prognosis and phenotype of this disorder. A recognizable trisomy 9 phenotype was identified and included a \"bulbous\" nose, microphthalmia, and dislocated limbs. Other nonspecific anomalies involving various organ systems were also common. With one exception, all survivors had severe mental impairment. Mosaicism for trisomy 9 predicted longer survival, but the degree of mosaicism in lymphocytes or fibroblasts did not predict survival or degree of impairment. Parental chromosome variations were not uncommon. In contrast to prior reports, no specific prognostic finding was identified. A meiotic origin with loss of a trisomic cell line in mosaic cases is suggested.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosomes, Human, Pair 9",
+        "Female",
+        "Humans",
+        "Infant, Newborn",
+        "Karyotyping",
+        "Mosaicism",
+        "Phenotype",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.1320560303"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7778584/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7778584/"
+    },
+    "1589419": {
+      "pmid": "1589419",
+      "doi": "10.1002/pd.1970120306",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Prenatal sonography in trisomy 9.",
+      "authors": [
+        "Benacerraf B R",
+        "Pauker S",
+        "Quade B J",
+        "Bieber F R"
+      ],
+      "journal": "Prenatal diagnosis",
+      "year": "1992",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Two cases of trisomy 9 are presented with the description of the prenatal sonographic findings prompting prenatal cytogenetics evaluation. The characteristic sonographic abnormalities included structural heart defects; limb, renal, and facial anomalies; and intrauterine growth retardation. The clinical course and cytogenetic and autopsy finding are described.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Amniocentesis",
+        "Chromosomes, Human, Pair 9",
+        "Diagnosis, Differential",
+        "Face",
+        "Female",
+        "Fetal Growth Retardation",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Kidney",
+        "Limb Deformities, Congenital",
+        "Lung",
+        "Neural Tube Defects",
+        "Pregnancy",
+        "Trisomy",
+        "Ultrasonography, Prenatal"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/pd.1970120306"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1589419/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1589419/"
+    },
+    "19475342": {
+      "pmid": "19475342",
+      "doi": "10.1007/s12098-009-0158-2",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Clinical manifestations in trisomy 9.",
+      "authors": [
+        "Kannan T P",
+        "Hemlatha S",
+        "Ankathil R",
+        "Zilfalil B A"
+      ],
+      "journal": "Indian journal of pediatrics",
+      "year": "2009",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Complete trisomy 9 is a lethal diagnosis and most fetuses diagnosed thus die prenatally or during the early postnatal period and majority of such cases have been known to end in spontaneous abortion in the first trimester itself. One such rare survival of fetus ending in normal delivery and surviving until 20 days is reported here detailing the clinical manifestations of the child during the period of survival. The salient clinical features observed were small face, wide fontanel, prominent occiput, micrognathia, low set ears, upslanting palpebral fissures, high arched palate, short sternum, overlapping fingers, limited hip abduction, rocker bottom feet, heart murmurs and also webbed neck, characteristic of this trisomy 9 syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosome Aberrations",
+        "Chromosomes, Human, Pair 9",
+        "Cytogenetic Analysis",
+        "Fatal Outcome",
+        "Humans",
+        "Infant, Newborn",
+        "Male"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s12098-009-0158-2"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19475342/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19475342/"
+    },
+    "7778585": {
+      "pmid": "7778585",
+      "doi": "10.1002/ajmg.1320560304",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Trisomy 9 syndrome: report of a case with Crohn disease and review of the literature.",
+      "authors": [
+        "Wooldridge J",
+        "Zunich J"
+      ],
+      "journal": "American journal of medical genetics",
+      "year": "1995",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "We report on a 6-year-old boy with mosaic trisomy 9. The patient was born at 42 weeks of gestation to a 27-year-old G1 white woman. Birth weight was 2,820 g, length 52 cm, and Apgar scores were 4 and 6 at 1 and 5 min, respectively. The infant presented with apparently low-set ears, overfolded helices, epicanthal folds, prominent nasal bridge, high-arched palate, micrognathia, bilateral dislocated hips, left genu recurvatum, and cryptorchidism. Chromosome analysis showed an unusual karyotype: 47,XY,+inv(9qh+)/47,XY,+mar. The marker chromosome was thought to be a remnant of the inv(9qh+) chromosome. The mother's karyotype was 46,XX,inv(9qh+), while the father's was 46,XY. At age 5 months, the patient developed seizures and gastroesophageal reflux. Crohn disease was diagnosed at age 2 years, although symptoms began at age 1 year. Recurrent bouts of pneumonia have occurred since the patient's birth. Severe psychomotor retardation was also noted. Trisomy 9 syndrome was first reported in 1973. Over 30 cases have been reported since then. Of these cases reports, only 5 patients were older than 1 year. Inflammatory bowel disease has been reported in association with other chromosome abnormalities, but to our knowledge, has not been reported in trisomy 9 syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Chromosomes, Human, Pair 9",
+        "Crohn Disease",
+        "Humans",
+        "Karyotyping",
+        "Male",
+        "Mosaicism",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.1320560304"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7778585/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7778585/"
+    },
+    "2288462": {
+      "pmid": "2288462",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Trisomy 9 mosaicism in a girl with multiple malformations.",
+      "authors": [
+        "Diaz-Mares L",
+        "Molina B",
+        "Carnevale A"
+      ],
+      "journal": "Annales de genetique",
+      "year": "1990",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "A one-year-old girl with a mosaicism for an extra chromosome 9 is reported. Clinical findings included severe growth and mental retardation, frequent respiratory infections, peculiar face, skeletal and craniofacial abnormalities, seizures, spasticity, cardiopulmonary, gastrointestinal and genitourinary alterations. These findings were compared to those of the 10 other previously reported cases of trisomy 9 mosaicism. This helps to define the most constant phenotypical characteristics and most frequent major malformations which occur in trisomy 9 mosaicism. It is noteworthy that the reported percentage of trisomic cells was different in lymphocytes and in fibroblasts in each case.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosome Aberrations",
+        "Chromosome Disorders",
+        "Chromosomes, Human, Pair 9",
+        "Face",
+        "Humans",
+        "Intellectual Disability",
+        "Limb Deformities, Congenital",
+        "Mosaicism",
+        "Muscle Spasticity",
+        "Trisomy",
+        "Viscera"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/2288462/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/2288462/"
+    },
+    "18182338": {
+      "pmid": "18182338",
+      "doi": "10.1016/S1028-4559(08)60002-9",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Chromosomal abnormalities associated with neural tube defects (I): full aneuploidy.",
+      "authors": [
+        "Chen Chih-Ping"
+      ],
+      "journal": "Taiwanese journal of obstetrics & gynecology",
+      "year": "2007",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Fetuses with neural tube defects (NTDs) carry a risk of chromosomal abnormalities. The risk varies with maternal age, gestational age at diagnosis, association with other structural abnormalities, and family history of chromosome aberrations. This article provides an overview of chromosomal abnormalities associated with NTDs in embryos, fetuses, and newborn patients, and a comprehensive review of numerical chromosomal abnormalities associated with NTDs, such as trisomy 18, trisomy 13, triploidy, trisomy 9, trisomy 2, trisomy 21, trisomy 7, trisomy 8, trisomy 14, trisomy 15, trisomy 16, trisomy 5 mosaicism, trisomy 11 mosaicism, trisomy 20 mosaicism, monosomy X, and tetraploidy. NTDs may be associated with aneuploidy. Perinatal identification of NTDs should alert one to the possibility of chromosomal abnormalities and prompt a thorough cytogenetic investigation and genetic counseling.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abortion, Spontaneous",
+        "Adolescent",
+        "Adult",
+        "Aneuploidy",
+        "Female",
+        "Genetic Counseling",
+        "Humans",
+        "Middle Aged",
+        "Neural Tube Defects",
+        "Pregnancy",
+        "Prenatal Diagnosis"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/S1028-4559(08)60002-9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18182338/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18182338/"
+    },
+    "39179669": {
+      "pmid": "39179669",
+      "doi": "10.1038/s41375-024-02373-w",
+      "pmc_id": "PMC11436358",
+      "pmc_verify": null,
+      "title": "Chromosome 9p trisomy increases stem cells clonogenic potential and fosters T-cell exhaustion in JAK2-mutant myeloproliferative neoplasms.",
+      "authors": [
+        "Carretta Chiara",
+        "Parenti Sandra",
+        "Bertesi Matteo",
+        "Rontauroli Sebastiano",
+        "Badii Filippo",
+        "Tavernari Lara",
+        "Genovese Elena",
+        "Malerba Marica",
+        "Papa Elisa",
+        "Sperduti Samantha",
+        "Enzo Elena",
+        "Mirabile Margherita",
+        "Pedrazzi Francesca",
+        "Neroni Anita",
+        "Tombari Camilla",
+        "Mora Barbara",
+        "Maffioli Margherita",
+        "Mondini Marco",
+        "Brociner Marco",
+        "Maccaferri Monica",
+        "Tenedini Elena",
+        "Martinelli Silvia",
+        "Bartalucci Niccolò",
+        "Bianchi Elisa",
+        "Casarini Livio",
+        "Potenza Leonardo",
+        "Luppi Mario",
+        "Tagliafico Enrico",
+        "Guglielmelli Paola",
+        "Simoni Manuela",
+        "Passamonti Francesco",
+        "Norfo Ruggiero",
+        "Vannucchi Alessandro Maria",
+        "Manfredini Rossella",
+        "MYNERVA (Myeloid NEoplasms Research Venture AIRC)"
+      ],
+      "journal": "Leukemia",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "JAK2V617F is the most recurrent genetic mutation in Philadelphia-negative chronic Myeloproliferative Neoplasms (MPNs). Since the JAK2 locus is located on Chromosome 9, we hypothesized that Chromosome 9 copy number abnormalities may be a disease modifier in JAK2V617F-mutant MPN patients. In this study, we identified a subset of MPN patients with partial or complete Chromosome 9 trisomy (+9p patients), who differ from JAK2V617F-homozygous MPN patients as they carry three JAK2 alleles as well as three copies of all neighboring gene loci, including CD274, encoding immunosuppressive Programmed death-ligand 1 (PD-L1) protein. Investigation of the clonal hierarchy revealed that the JAK2V617F occurs first, followed by +9p. Functionally, CD34+ cells from +9p MPN patients demonstrated increased clonogenicity, generating a greater number of primitive colonies, due to high OCT4 and NANOG expression, with knock-down of these genes leading to a genotype-specific decrease in colony numbers. Moreover, our analysis revealed increased PD-L1 surface expression in malignant monocytes from +9p patients, while analysis of the T cell compartment unveiled elevated levels of exhausted cytotoxic T cells. Overall, here we identify a distinct novel subgroup of MPN patients, who feature a synergistic interplay between +9p and JAK2V617F that shapes immune escape characteristics and increased stemness in CD34+ cells.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Janus Kinase 2",
+        "Myeloproliferative Disorders",
+        "Chromosomes, Human, Pair 9",
+        "Trisomy",
+        "Mutation",
+        "T-Lymphocytes",
+        "Male",
+        "Female",
+        "Middle Aged",
+        "Aged",
+        "Adult",
+        "T-Cell Exhaustion"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11436358/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11436358/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41375-024-02373-w"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39179669/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39179669/"
+    },
+    "15865876": {
+      "pmid": "15865876",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Karyotype and molecular cytogenetic studies in polycythemia vera.",
+      "authors": [
+        "Andrieux Joris Loup",
+        "Demory Jean Loup"
+      ],
+      "journal": "Current hematology reports",
+      "year": "2005",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "A minority of patients with newly diagnosed polycythemia vera (PV) have an abnormal karyotype in their myeloid cells but no invariant chromosomal aberration has been found. The most frequent visible alteration is a 20q deletion, also characterized in other myeloproliferative diseases (MPD) and myeloid malignancies; among other chromosomal changes, trisomy 9 appears more common in PV than in other MPDs. When a myelofibrosis complicates the course of the disease, cytogenetic anomalies become quite common with a striking frequency of partial duplication 1q; an evolution towards myelodysplasia or acute leukemia is almost always associated with nonspecific chromosomal aberrations. Modern cytogenetic methods have disclosed cryptic anomalies and pointed out the high frequency of 9p alterations affecting a restricted region, thus stimulating an active search for candidate genes or specific mutations.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cells, Cultured",
+        "Chromosome Aberrations",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 13",
+        "Chromosomes, Human, Pair 20",
+        "Chromosomes, Human, Pair 8",
+        "Chromosomes, Human, Pair 9",
+        "Cytogenetic Analysis",
+        "Disease Progression",
+        "Genes",
+        "Humans",
+        "Karyotyping",
+        "Middle Aged",
+        "Myeloid Cells",
+        "Polycythemia Vera",
+        "Primary Myelofibrosis",
+        "Thrombophilia",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15865876/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15865876/"
+    },
+    "37719705": {
+      "pmid": "37719705",
+      "doi": "10.3389/fgene.2023.1241245",
+      "pmc_id": "PMC10500842",
+      "pmc_verify": null,
+      "title": "Case report: A case report and literature review of complete trisomy 9.",
+      "authors": [
+        "Xu Chenxia",
+        "Li Miaoyuan",
+        "Peng Jianming",
+        "Zhang Yanfang",
+        "Li Haijun",
+        "Zheng Guobing",
+        "Wang Degang"
+      ],
+      "journal": "Frontiers in genetics",
+      "year": "2023",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Complete trisomy 9 is a rare and lethal chromosomal anomaly characterized by multisystem dysmorphism and central nervous system (CNS) malformations. This study presents a case of complete trisomy 9 with an unusual phenotypic association and investigates the genetic pathways involved in this chromosomal abnormality. Trisomy 9 leads to a wide range of organ abnormalities, and this research contributes to a better understanding of the phenotype associated with this rare aneuploidy. The literature on the phenotypes of fetuses with various systems affected by complete trisomy 9 was reviewed and summarized. Correct diagnosis and appropriate counseling based on the characteristics of previous reports of fetuses with trisomy 9 is essential in maternity care and clinical management. To provide guidance and help for clinical diagnosis, this study aimed to explore the clinical and genetic characteristics of trisomy 9 syndrome to improve clinicians' understanding of the disease.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "aneuploid",
+        "chromosomal disorder",
+        "complete trisomy 9",
+        "genetic counseling",
+        "prenatal diagnosis"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10500842/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10500842/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3389/fgene.2023.1241245"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37719705/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37719705/"
+    },
+    "32793859": {
+      "pmid": "32793859",
+      "doi": "10.21037/acr.2020.03.07",
+      "pmc_id": "PMC7392853",
+      "pmc_verify": null,
+      "title": "9q34 & 16p13 chromosome duplications in autism.",
+      "authors": [
+        "Carlo Simon E",
+        "Martinez-Baladejo Maria T",
+        "Santiago-Cornier Alberto",
+        "Arciniegas-Medina Norma"
+      ],
+      "journal": "AME case reports",
+      "year": "2020",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Epigenetic mechanisms, genetic factors, and environment influence the diversity of phenotypes developed in various diseases. Duplications in several chromosomes are well characterized in the scientific literature, but partial duplications, in some cases, present with milder forms of a disease and are yet to be understood. Fortunately, the identification of genetic diseases has now become more feasible due to several cytogenetic techniques such as microarray analysis and karyotyping. With these tools, together with other laboratory results and clinical examination, we are able to report the first case in the medical literature of double partial trisomy of chromosome 9q34 and 16p13.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "Chromosome duplication",
+        "chromosome 16 duplication",
+        "genetic",
+        "karyotyping",
+        "microarray",
+        "trisomy 9 syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7392853/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7392853/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.21037/acr.2020.03.07"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32793859/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32793859/"
+    },
+    "39391861": {
+      "pmid": "39391861",
+      "doi": "10.1093/hropen/hoae056",
+      "pmc_id": "PMC11461285",
+      "pmc_verify": null,
+      "title": "Aligning genotyping and copy number data in single trophectoderm biopsies for aneuploidy prediction: uncovering incomplete concordance.",
+      "authors": [
+        "De Witte Lisa",
+        "Baetens Machteld",
+        "Tilleman Kelly",
+        "Vanden Meerschaut Frauke",
+        "Janssens Sandra",
+        "Van Tongerloo Ariane",
+        "Szymczak Virginie",
+        "Stoop Dominic",
+        "Dheedene Annelies",
+        "Symoens Sofie",
+        "Menten Björn"
+      ],
+      "journal": "Human reproduction open",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "STUDY QUESTION: To what extent can genotype analysis aid in the classification of (mosaic) aneuploid embryos diagnosed through copy number analysis of a trophectoderm (TE) biopsy? SUMMARY ANSWER: In a small portion of embryos, genotype analysis revealed signatures of meiotic or uniform aneuploidy in those diagnosed with intermediate copy number changes, and signatures of presumed mitotic or putative mosaic aneuploidy in those diagnosed with full copy number changes. WHAT IS KNOWN ALREADY: Comprehensive chromosome screening (CCS) for preimplantation genetic testing has provided valuable insights into the prevalence of (mosaic) chromosomal aneuploidy at the blastocyst stage. However, diagnosis of (mosaic) aneuploidy often relies solely on (intermediate) copy number analysis of a single TE biopsy. Integrating genotype information allows for independent assessment of the origin and degree of aneuploidy. Yet, studies aligning both datasets to predict (putative mosaic) aneuploidy in embryos remain scarce. STUDY DESIGN SIZE DURATION: A single TE biopsy was collected from 1560 embryos derived from 221 couples tested for a monogenic disorder (n = 218) or microdeletion-/microduplication syndrome (n = 3). TE samples were subjected to both copy number and genotyping analysis. PARTICIPANTS/MATERIALS SETTING METHODS: Copy number and SNP genotyping analysis were conducted using GENType. Unbalanced chromosomal anomalies ≥10 Mb (or ≥20 Mb for copy number calls <50%) were classified by degree, based on low-range intermediate (LR, 30-50%), high-range intermediate (HR, 50-70%) or full (>70%) copy number changes. These categories were further subjected to genotyping analysis to ascertain the origin (and/or degree) of aneuploidy. For chromosomal gains, the meiotic division of origin (meiotic I/II versus non-meiotic or presumed mitotic) was established by studying the haplotypes. The level of monosomy (uniform versus putative mosaic) in the biopsy could be ascertained from the B-allele frequencies. For segmental aneuploidies, genotyping was restricted to deletions. MAIN RESULTS AND THE ROLE OF CHANCE: Of 1479 analysed embryos, 24% (n = 356) exhibited a whole-chromosome aneuploidy, with 19% (n = 280) showing full copy number changes suggestive of uniform aneuploidy. Among 258 embryos further investigated by genotyping, 95% of trisomies with full copy number changes were identified to be of meiotic origin. For monosomies, a complete loss of heterozygosity (LOH) in the biopsy was observed in 97% of cases, yielding a 96% concordance rate at the embryo level (n = 248/258). Interestingly, 4% of embryos (n = 10/258) showed SNP signatures of non-meiotic gain or putative mosaic loss instead. Meanwhile, 5% of embryos (n = 76/1479) solely displayed HR (2.5%; n = 37) or LR (2.6%; n = 39) intermediate copy number changes, with an additional 2% showing both intermediate and full copy number changes. Among embryos with HR intermediate copy number changes where genotyping was feasible (n = 25/37), 92% (n = 23/25) showed SNP signatures consistent with putative mosaic aneuploidy. However, 8% (n = 2/25) exhibited evidence of meiotic trisomy (9%) or complete LOH in the biopsy (7%). In the LR intermediate group, 1 of 33 (3%) genotyped embryos displayed complete LOH. Furthermore, segmental aneuploidy was detected in 7% of embryos (n = 108/1479) (or 9% (n = 139) with added whole-chromosome aneuploidy). These errors were often (52%) characterized by intermediate copy number values, which closely aligned with genotyping data when examined (94-100%). LARGE SCALE DATA: N/A. LIMITATIONS REASONS FOR CAUTION: The findings were based on single TE biopsies and the true extent of mosaicism was not validated through embryo dissection. Moreover, evidence of absence of a meiotic origin for a trisomy should not be construed as definitive proof of a mitotic error. Additionally, a genotyping diagnosis was not always attainable due to the absence of a recombination event necessary to discern between meiotic II and non-meiotic trisomy, or the unavailability of DNA from both parents. WIDER IMPLICATIONS OF THE FINDINGS: Interpreting (intermediate) copy number changes of a single TE biopsy alone as evidence for (mosaic) aneuploidy in the embryo remains suboptimal. Integrating genotype information alongside the copy number status could provide a more comprehensive assessment of the embryo's genetic makeup, within and beyond the single TE biopsy. By identifying meiotic aberrations, especially in presumed mosaic embryos, we underscore the potential value of genotyping analysis as a deselection tool, ultimately striving to reduce adverse clinical outcomes. STUDY FUNDING/COMPETING INTERESTS: L.D.W. was supported by the Research Foundation Flanders (FWO; 1S74621N). M.B., K.T., F.V.M., S.J., A.V.T., V.S., D.S., A.D., and S.S. are supported by Ghent University Hospital. B.M. was funded by Ghent University. The authors have no conflicts of interest.",
+      "abstract_sections": {
+        "STUDY QUESTION": "To what extent can genotype analysis aid in the classification of (mosaic) aneuploid embryos diagnosed through copy number analysis of a trophectoderm (TE) biopsy?",
+        "SUMMARY ANSWER": "In a small portion of embryos, genotype analysis revealed signatures of meiotic or uniform aneuploidy in those diagnosed with intermediate copy number changes, and signatures of presumed mitotic or putative mosaic aneuploidy in those diagnosed with full copy number changes.",
+        "WHAT IS KNOWN ALREADY": "Comprehensive chromosome screening (CCS) for preimplantation genetic testing has provided valuable insights into the prevalence of (mosaic) chromosomal aneuploidy at the blastocyst stage. However, diagnosis of (mosaic) aneuploidy often relies solely on (intermediate) copy number analysis of a single TE biopsy. Integrating genotype information allows for independent assessment of the origin and degree of aneuploidy. Yet, studies aligning both datasets to predict (putative mosaic) aneuploidy in embryos remain scarce.",
+        "STUDY DESIGN SIZE DURATION": "A single TE biopsy was collected from 1560 embryos derived from 221 couples tested for a monogenic disorder (n = 218) or microdeletion-/microduplication syndrome (n = 3). TE samples were subjected to both copy number and genotyping analysis.",
+        "PARTICIPANTS/MATERIALS SETTING METHODS": "Copy number and SNP genotyping analysis were conducted using GENType. Unbalanced chromosomal anomalies ≥10 Mb (or ≥20 Mb for copy number calls <50%) were classified by degree, based on low-range intermediate (LR, 30-50%), high-range intermediate (HR, 50-70%) or full (>70%) copy number changes. These categories were further subjected to genotyping analysis to ascertain the origin (and/or degree) of aneuploidy. For chromosomal gains, the meiotic division of origin (meiotic I/II versus non-meiotic or presumed mitotic) was established by studying the haplotypes. The level of monosomy (uniform versus putative mosaic) in the biopsy could be ascertained from the B-allele frequencies. For segmental aneuploidies, genotyping was restricted to deletions.",
+        "MAIN RESULTS AND THE ROLE OF CHANCE": "Of 1479 analysed embryos, 24% (n = 356) exhibited a whole-chromosome aneuploidy, with 19% (n = 280) showing full copy number changes suggestive of uniform aneuploidy. Among 258 embryos further investigated by genotyping, 95% of trisomies with full copy number changes were identified to be of meiotic origin. For monosomies, a complete loss of heterozygosity (LOH) in the biopsy was observed in 97% of cases, yielding a 96% concordance rate at the embryo level (n = 248/258). Interestingly, 4% of embryos (n = 10/258) showed SNP signatures of non-meiotic gain or putative mosaic loss instead. Meanwhile, 5% of embryos (n = 76/1479) solely displayed HR (2.5%; n = 37) or LR (2.6%; n = 39) intermediate copy number changes, with an additional 2% showing both intermediate and full copy number changes. Among embryos with HR intermediate copy number changes where genotyping was feasible (n = 25/37), 92% (n = 23/25) showed SNP signatures consistent with putative mosaic aneuploidy. However, 8% (n = 2/25) exhibited evidence of meiotic trisomy (9%) or complete LOH in the biopsy (7%). In the LR intermediate group, 1 of 33 (3%) genotyped embryos displayed complete LOH. Furthermore, segmental aneuploidy was detected in 7% of embryos (n = 108/1479) (or 9% (n = 139) with added whole-chromosome aneuploidy). These errors were often (52%) characterized by intermediate copy number values, which closely aligned with genotyping data when examined (94-100%).",
+        "LARGE SCALE DATA": "N/A.",
+        "LIMITATIONS REASONS FOR CAUTION": "The findings were based on single TE biopsies and the true extent of mosaicism was not validated through embryo dissection. Moreover, evidence of absence of a meiotic origin for a trisomy should not be construed as definitive proof of a mitotic error. Additionally, a genotyping diagnosis was not always attainable due to the absence of a recombination event necessary to discern between meiotic II and non-meiotic trisomy, or the unavailability of DNA from both parents.",
+        "WIDER IMPLICATIONS OF THE FINDINGS": "Interpreting (intermediate) copy number changes of a single TE biopsy alone as evidence for (mosaic) aneuploidy in the embryo remains suboptimal. Integrating genotype information alongside the copy number status could provide a more comprehensive assessment of the embryo's genetic makeup, within and beyond the single TE biopsy. By identifying meiotic aberrations, especially in presumed mosaic embryos, we underscore the potential value of genotyping analysis as a deselection tool, ultimately striving to reduce adverse clinical outcomes.",
+        "STUDY FUNDING/COMPETING INTERESTS": "L.D.W. was supported by the Research Foundation Flanders (FWO; 1S74621N). M.B., K.T., F.V.M., S.J., A.V.T., V.S., D.S., A.D., and S.S. are supported by Ghent University Hospital. B.M. was funded by Ghent University. The authors have no conflicts of interest."
+      },
+      "mesh_terms": [],
+      "keywords": [
+        "PGT",
+        "aneuploidy",
+        "chromosomal abnormalities",
+        "chromosomal mosaicism",
+        "copy number",
+        "genotyping",
+        "meiosis",
+        "mitosis",
+        "monogenic disease",
+        "preimplantation genetic testing"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11461285/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11461285/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/hropen/hoae056"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39391861/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39391861/"
+    },
+    "40202083": {
+      "pmid": "40202083",
+      "doi": "10.1002/ajmg.a.64087",
+      "pmc_id": "PMC13110400",
+      "pmc_verify": null,
+      "title": "Non-Mosaic Trisomy 9: Further Delineation of the Clinical Phenotype.",
+      "authors": [
+        "Verscaj Courtney P",
+        "Gordon Michael",
+        "Holbrook Bradley D",
+        "Trocki Olivia Maher",
+        "Poorvu Tabitha",
+        "Miller Christina",
+        "Schwalbe Tammy",
+        "Trout Maija",
+        "Zearfoss Amy",
+        "Welker Angela",
+        "Wojcik Monica H",
+        "Elias Abdallah F"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "Non-mosaic trisomy 9 (NMTS9) is a rarely described chromosomal abnormality because most affected pregnancies result in first trimester spontaneous abortions, although survival to delivery is possible. In contrast, the phenotypic features of mosaic trisomy 9 have been well described in the literature as these individuals can survive to birth and beyond. Therefore, a better understanding of the phenotypic spectrum of NMTS9 is needed to provide appropriate perinatal counseling. The phenotype from three fetal and one neonatal case of NMTS9, as defined by chromosome analysis in multiple tissues, is consistent with the existing literature and includes narrow forehead, midface hypoplasia, microphthalmia, clouded corneas, blepharophimosis, rounded nasal tip, broad/prominent nasal bridge, low-set ears with and without malformations, short and broad neck, cerebellar abnormalities, a wide range of cardiac anomalies including ventricular and atrial septal defects as well as valve dysplasia, congenital diaphragmatic hernia, hydronephrosis, and hypoplastic genitalia, multiple contractures, multiple dislocations, and talipes equinovarus. We also report an expansion of the cardiac, genitourinary, and renal phenotypes. This combined phenotype based on prenatal imaging and fetal/postnatal autopsy further delineates the clinical phenotype of NMTS9.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Female",
+        "Humans",
+        "Infant, Newborn",
+        "Male",
+        "Pregnancy",
+        "Abnormalities, Multiple",
+        "Chromosomes, Human, Pair 9",
+        "Phenotype",
+        "Trisomy"
+      ],
+      "keywords": [
+        "fetal phenotyping",
+        "non‐mosaic trisomy 9",
+        "prenatal genetics"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13110400/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13110400/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.64087"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40202083/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40202083/"
+    },
+    "8010707": {
+      "pmid": "8010707",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Trisomy 9 mosaicism syndrome. A case report and review of the literature.",
+      "authors": [
+        "Tarani L",
+        "Colloridi F",
+        "Raguso G",
+        "Rizzuti A",
+        "Bruni L",
+        "Tozzi M C",
+        "Palermo D",
+        "Panero A",
+        "Vignetti P"
+      ],
+      "journal": "Annales de genetique",
+      "year": "1994",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "The authors report on a case of trisomy 9 mosaicism syndrome, a rare chromosome abnormality. The common features of this syndrome are growth and mental retardation, low-set malformed ears, wide sutures and fontanelles, bulbous nose, short palpebral fissures, micrognathia, microphthalmia and enophthalmos, abnormal hands and feet, hip dislocation, joint limitation, cardiovascular defects and urogenital abnormalities. Our patient presented some unusual characteristics, such as 13 pairs of ribs, a vertebral malformation, a hemivertebra and a Dandy-Walker syndrome. They compare their clinical findings with the few cases previously described and they try to contribute to the further clinical definition of the syndrome. It is possible that there is a correlation between the variability of the phenotype and the percentage of trisomic cells in the patient.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosomes, Human, Pair 9",
+        "Humans",
+        "Karyotyping",
+        "Male",
+        "Mosaicism",
+        "Syndrome",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8010707/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8010707/"
+    },
+    "39612314": {
+      "pmid": "39612314",
+      "doi": "10.1177/03000605241300093",
+      "pmc_id": "PMC11607743",
+      "pmc_verify": null,
+      "title": "An infant with trisomy 9 and partial trisomy 12 derived from maternal balanced translocation: A case report and literature review.",
+      "authors": [
+        "Ming Shengjin",
+        "Zhou Zhumei",
+        "Huang Yao",
+        "Huang Ying",
+        "Zhong Jinping",
+        "Li Yingli"
+      ],
+      "journal": "The Journal of international medical research",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Case Reports",
+        "Review"
+      ],
+      "abstract": "We present here, a case of a neonate with an unbalanced chromosomal translocation due to a maternal chromosomal translocation carriage that resulted in the presence of trisomy 9p combined with a partial trisomy 12p. Karyotype analysis was performed using conventional cytogenetic chromosomal analysis using the GTG-banding technique. The mother was a carrier of a balanced chromosomal translocation of 46, XX, t(9;12)(q13;p11.2), that resulted in an unbalanced translocation of the offspring, who had a karyotype 47, XX, +der(9)t(9;12)(q13;p11.2)dmat, featuring a combined trisomy of 9q13→9pter region and 12p11.2→12pter region. Clinical phenotype of the infant included cephalo-facial deformity, growth retardation, hypertonia, opisthotonus, laryngeal wheezing, foot deformity, and congenital heart disease.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Infant, Newborn",
+        "Chromosomes, Human, Pair 12",
+        "Chromosomes, Human, Pair 9",
+        "Karyotyping",
+        "Phenotype",
+        "Translocation, Genetic",
+        "Trisomy"
+      ],
+      "keywords": [
+        "cytogenetic analysis",
+        "partial trisomy 12p",
+        "trisomy 9p",
+        "unbalanced chromosomal translocation"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11607743/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11607743/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1177/03000605241300093"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39612314/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39612314/"
+    },
+    "7825455": {
+      "pmid": "7825455",
+      "doi": "10.1111/j.1442-200x.1994.tb03238.x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Interchange trisomy 9 due to maternal t(6;9) translocation.",
+      "authors": [
+        "Ninomiya S",
+        "Narahara K",
+        "Yokoyama Y",
+        "Tsuji K",
+        "Ito S",
+        "Akahori W",
+        "Akahori T",
+        "Seino Y"
+      ],
+      "journal": "Acta paediatrica Japonica : Overseas edition",
+      "year": "1994",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "The occurrence of interchange trisomy due to a 3:1 malsegregation has been documented in only a few cases with trisomy 21. We describe the first case of interchange trisomy 9 due to a maternal t(6:9) translocation. The patient, a boy neonate who died immediately after birth, had intra-uterine growth retardation, specific craniofacial features including microcephaly with a high forehead, low-set ears, upslanting short palpebral fissures, microphthalmia, bulbous nose and micrognathia, cryptorchidism, cystic kidney and various skeletal anomalies. His phenotype was consistent with that of the trisomy 9 syndrome. Cytogenetic analysis showed his karyotype of 47,XY,-6, + der(6), + der(9)t(6;9)(q27;q21.1)mat. The present report indicates that a very rare interchange mode of a 3:1 segregation can give rise to a live birth with full trisomy 9 in female carriers with reciprocal translocations involving the proximal long arm of chromosome 9.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Chromosomes, Human, Pair 6",
+        "Chromosomes, Human, Pair 9",
+        "Female",
+        "Humans",
+        "Infant, Newborn",
+        "Karyotyping",
+        "Male",
+        "Translocation, Genetic",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/j.1442-200x.1994.tb03238.x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7825455/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7825455/"
+    },
+    "17515299": {
+      "pmid": "17515299",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Phenotypic and cytogenetic spectrum of 9p trisomy.",
+      "authors": [
+        "Temtamy S A",
+        "Kamel A K",
+        "Ismail S",
+        "Helmy N A",
+        "Aglan M S",
+        "El Gammal M",
+        "El Ruby M",
+        "Mohamed A M"
+      ],
+      "journal": "Genetic counseling (Geneva, Switzerland)",
+      "year": "2007",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Trisomy 9p is one of the most frequent autosomal anomalies compatible with long survival rate. The spectrum of clinical severity in trisomy 9 roughly correlates with the extent of trisomic chromosome material. Trisomy 9p is a clinically well delineated syndrome and of all stigmata craniofacial dysmorphism is most specific. In this study we report five cases with de novo trisomy 9p. The study aimed at the identification of the genotype/phenotype correlations in patients with different breakpoints. GTG banding, DAPI stain, whole chromosome paint, centromere, telomere and 9p21 specific locus probes demonstrated that partial trisomy 9p in case 1 was due to isochromosome 9p with translocation of the long arm of re-arranged chromosome 9 onto the short arm of chromosome 13, cases 2 and 3 had intrachromosomal duplication of the short arm of chromosome 9 [dup(9)(p21p24)], case 4 had \"classical\" 9p trisomy and case 5 had duplication of whole short arm and part of the long arm of chromosome 9 (partial 9 trisomy). Although cases 1 to 4 had trisomy involving 9p, cases 1 and 2 exhibited the classical clinical manifestations of 9p trisomy, while cases 3 and 4 had additional features overlapping with Coffin-Siris syndrome. The present study strengthens the association of Coffin-Siris syndrome and 9p, the significance of such observations may point to possible gene location of Coffin-Siris syndrome on 9p. Case 5 had additional manifestations more than those typical of trisomy 9p which could be due to duplication of 9q21 region. Wide gap between 1st and 2nd toes, observed in the studied cases, can be added to the phenotype of this trisomy. Three of our cases had brain malformations, case 3 had dilated ventricles with hypogenesis of corpus callosum, case 4 had agenesis of corpus callosum, and case 5 had Dandy-Walker malformation. We also suggest that dosage effects of genes located in 9pter-q22 contribute to the etiology of Dandy-Walker syndrome. We recommend MRI studies as a routine in all cases with trisomy 9p.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Child",
+        "Child, Preschool",
+        "Chromosome Banding",
+        "Chromosomes, Human, Pair 9",
+        "Cytogenetic Analysis",
+        "Female",
+        "Genotype",
+        "Humans",
+        "Infant",
+        "Karyotyping",
+        "Male",
+        "Phenotype",
+        "Syndrome",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17515299/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17515299/"
+    },
+    "912938": {
+      "pmid": "912938",
+      "doi": "10.1111/j.1399-0004.1977.tb00930.x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Trisomy 9 syndrome.",
+      "authors": [
+        "Qazi Q H",
+        "Masakawa A",
+        "Madahar C",
+        "Ehrlich R"
+      ],
+      "journal": "Clinical genetics",
+      "year": "1977",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "An infant is described with multiple congenital anomalies associated with mosaic trisomy 9. Review of the three previously reported cases of trisomy 9 shows that these patients have several common features which make trisomy 9 a clinically distinct syndrome. The frequently encountered findings are: upward-slanted eyes, small palpebral fissures, enophthalmos or microphthalmos, broad base and prominent tip of the nose, microcephaly, micrognathia, low-set malformed ears, high-arched palate, congenital heart disease, skeletal and genito-urinary anomalies, abnormal palmar creases, failure to thrive, hypotonia and retardation.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Bone and Bones",
+        "Child",
+        "Chromosomes, Human, 6-12 and X",
+        "Dermatoglyphics",
+        "Face",
+        "Female",
+        "Heart Defects, Congenital",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Intellectual Disability",
+        "Male",
+        "Mosaicism",
+        "Syndrome",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/j.1399-0004.1977.tb00930.x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/912938/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/912938/"
+    },
+    "852146": {
+      "pmid": "852146",
+      "doi": "10.1111/j.1399-0004.1977.tb01317.x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Trisomy 9 mosaicism.",
+      "authors": [
+        "Lewandowski R C",
+        "Yunis J J"
+      ],
+      "journal": "Clinical genetics",
+      "year": "1977",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S."
+      ],
+      "abstract": "The first live-born female with trisomy 9 mosaicism is reported. This patient, like four others in the literature, has a characteristic face with narrowed temples, enophthalmus, large nose and pouched cheeks, as well as skeletal abnormalities of the extremities, including hip dislocation, limited joint mobility and bone hypoplasia.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosomes, Human, 6-12 and X",
+        "Female",
+        "Humans",
+        "Infant, Newborn",
+        "Mosaicism",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/j.1399-0004.1977.tb01317.x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/852146/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/852146/"
+    },
+    "4714588": {
+      "pmid": "4714588",
+      "doi": "10.1136/jmg.10.2.184",
+      "pmc_id": "PMC1013014",
+      "pmc_verify": null,
+      "title": "A case of trisomy 9.",
+      "authors": [
+        "Feingold M",
+        "Atkins L"
+      ],
+      "journal": "Journal of medical genetics",
+      "year": "1973",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "The first patient with trisomy 9, an infant who survived 28 days, is reported. Clinical findings included microcephaly, low-set malformed ears, small palpebral fissures, enophthalmos, bulbous nose, micrognathia, low hairline, congenital heart disease, skeletal abnormalities, small penis, hypoplastic scrotum, and a Dandy-Walker like deformity of the fourth ventricle.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Adult",
+        "Chromosome Aberrations",
+        "Chromosomes, Human, 6-12 and X",
+        "Diabetes Mellitus",
+        "Female",
+        "Humans",
+        "Infant, Newborn",
+        "Male",
+        "Pregnancy",
+        "Pregnancy Complications",
+        "Trisomy"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1013014/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1013014/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1136/jmg.10.2.184"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/4714588/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/4714588/"
+    }
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "syndrome": "Patau syndrome",
+  "definition": "Trisomy 13, also called Patau syndrome, is a chromosomal condition associated with severe intellectual disability and physical abnormalities in many parts of the body. Individuals with trisomy 13 often have heart defects, brain or spinal cord abnormalities, very small or poorly developed eyes (microphthalmia), extra fingers or toes, an opening in the lip (a cleft lip) with or without an opening in the roof of the mouth (a cleft palate), and weak muscle tone (hypotonia). Due to the presence of several life-threatening medical problems, many infants with trisomy 13 die within their first days or weeks of life. Only five percent to 10 percent of children with this condition live past their first year. [from MedlinePlus Genetics]",
+  "synonyms": [
+    "D trisomy syndrome (formerly)",
+    "Patau syndrome",
+    "T13",
+    "Trisomy 13"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "21111006",
+    "MONDO": "MONDO:0018068",
+    "Orphanet": "3378"
+  },
+  "gene_locations": [],
+  "genomic_targets": [
+    {
+      "type": "TargetChromosome",
+      "chromosome": "chr13",
+      "cytoband": "13",
+      "event": "gain",
+      "mechanism": "trisomy",
+      "source": "name_or_synonym"
+    }
+  ],
+  "genereview_url": null,
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "40685149",
+          "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+          "authors": "Pyle AK, George TN, Cummings JJ, Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn",
+          "journal": "Pediatrics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+        },
+        {
+          "pmid": "35315016",
+          "title": "A study on non-invasive prenatal screening for the detection of aneuploidy.",
+          "authors": "Chen Y, Yang F, Shang X, Liu S, Li M, Zhong M",
+          "journal": "Ginekol Pol",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35315016/"
+        },
+        {
+          "pmid": "28192554",
+          "title": "Using Patient-Centered Care After a Prenatal Diagnosis of Trisomy 18 or Trisomy 13: A Review.",
+          "authors": "Haug S, Goldstein M, Cummins D, Fayard E, Merritt TA",
+          "journal": "JAMA Pediatr",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28192554/"
+        }
+      ],
+      "see_all": {}
+    },
+    "curated": {
+      "papers": [],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "40685149",
+          "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+          "authors": "Pyle AK, George TN, Cummings JJ, Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn",
+          "journal": "Pediatrics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+        },
+        {
+          "pmid": "35608568",
+          "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+          "authors": "Rose NC, Barrie ES, Malinowski J, Jenkins GP, McClain MR, LaGrave D, Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net",
+          "journal": "Genet Med",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+        },
+        {
+          "pmid": "31708118",
+          "title": "TRIDENT-2: National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.",
+          "authors": "van der Meij KRM, Sistermans EA, Macville MVE, Stevens SJC, Bax CJ, Bekker MN, Bilardo CM, Boon EMJ, Boter M, Diderich KEM, de Die-Smulders CEM, Duin LK, Faas BHW, Feenstra I, Haak MC, Hoffer MJV, den Hollander NS, Hollink IHIM, Jehee FS, Knapen MFCM, Kooper AJA, van Langen IM, Lichtenbelt KD, Linskens IH, van Maarle MC, Oepkes D, Pieters MJ, Schuring-Blom GH, Sikkel E, Sikkema-Raddatz B, Smeets DFCM, Srebniak MI, Suijkerbuijk RF, Tan-Sindhunata GM, van der Ven AJEM, van Zelderen-Bhola SL, Henneman L, Galjaard RH, Van Opstal D, Weiss MM; Dutch NIPT Consortium",
+          "journal": "Am J Hum Genet",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+        },
+        {
+          "pmid": "25598039",
+          "title": "Non-invasive prenatal testing for trisomies 21, 18 and 13: clinical experience from 146,958 pregnancies.",
+          "authors": "Zhang H, Gao Y, Jiang F, Fu M, Yuan Y, Guo Y, Zhu Z, Lin M, Liu Q, Tian Z, Zhang H, Chen F, Lau TK, Zhao L, Yi X, Yin Y, Wang W",
+          "journal": "Ultrasound Obstet Gynecol",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25598039/"
+        },
+        {
+          "pmid": "25112487",
+          "title": "Noninvasive prenatal testing.",
+          "authors": "Lo JO, Cori D F, Norton ME, Caughey AB",
+          "journal": "Obstet Gynecol Surv",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25112487/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "40685149",
+          "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+          "authors": "Pyle AK, George TN, Cummings JJ, Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn",
+          "journal": "Pediatrics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+        },
+        {
+          "pmid": "36587017",
+          "title": "Trisomy 13.",
+          "authors": "Pereira EM",
+          "journal": "Pediatr Rev",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36587017/"
+        },
+        {
+          "pmid": "35608568",
+          "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+          "authors": "Rose NC, Barrie ES, Malinowski J, Jenkins GP, McClain MR, LaGrave D, Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net",
+          "journal": "Genet Med",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+        },
+        {
+          "pmid": "31566869",
+          "title": "Trisomy 13 and 18-Prevalence and mortality-A multi-registry population based analysis.",
+          "authors": "Goel N, Morris JK, Tucker D, de Walle HEK, Bakker MK, Kancherla V, Marengo L, Canfield MA, Kallen K, Lelong N, Camelo JL, Stallings EB, Jones AM, Nance A, Huynh MP, Martínez-Fernández ML, Sipek A, Pierini A, Nembhard WN, Goetz D, Rissmann A, Groisman B, Luna-Muñoz L, Szabova E, Lapchenko S, Zarante I, Hurtado-Villa P, Martinez LE, Tagliabue G, Landau D, Gatt M, Dastgiri S, Morgan M",
+          "journal": "Am J Med Genet A",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31566869/"
+        },
+        {
+          "pmid": "29437136",
+          "title": "Trisomies.",
+          "authors": "Levy PA, Marion R",
+          "journal": "Pediatr Rev",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29437136/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "40537699",
+          "title": "Outcomes of heart surgery in neonates with trisomy 13 and 18: a systematic review with metanalysis.",
+          "authors": "de Sá Bittencourt Câmara Bastos C, Vale da Cruz L, Hirano Arruda Moraes L, Jornada Krebs VL, de Carvalho WB",
+          "journal": "Eur J Pediatr",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40537699/"
+        },
+        {
+          "pmid": "35608568",
+          "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+          "authors": "Rose NC, Barrie ES, Malinowski J, Jenkins GP, McClain MR, LaGrave D, Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net",
+          "journal": "Genet Med",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+        },
+        {
+          "pmid": "34719838",
+          "title": "Direct hyperbilirubinemia and cholestasis in trisomy 13 and 18.",
+          "authors": "Kepple JW, Peeples ES",
+          "journal": "Am J Med Genet A",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34719838/"
+        },
+        {
+          "pmid": "31787159",
+          "title": "Radial Ray Malformation.",
+          "authors": "Society for Maternal-Fetal Medicine (SMFM), Gandhi M, Rac MWF, McKinney J",
+          "journal": "Am J Obstet Gynecol",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31787159/"
+        },
+        {
+          "pmid": "24340511",
+          "title": "Phenotypic variability in Patau syndrome.",
+          "authors": "Caba L, Rusu C, Butnariu L, Panzaru M, Braha E, Volosciuc M, Popescu R, Gramescu M, Bujoran C, Martiniuc V, Covic M, Gorduza EV",
+          "journal": "Rev Med Chir Soc Med Nat Iasi",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24340511/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "40685149",
+          "title": "Guidance for Caring for Infants and Children With Trisomy 13 and Trisomy 18: Clinical Report.",
+          "authors": "Pyle AK, George TN, Cummings JJ, Laventhal NT; Committee on Bioethics; Section on Neonatal-Perinatal Medicine; Committee on Fetus and Newborn",
+          "journal": "Pediatrics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40685149/"
+        },
+        {
+          "pmid": "33168217",
+          "title": "Holoprosencephaly.",
+          "authors": "Society for Maternal-Fetal Medicine (SMFM), Monteagudo A",
+          "journal": "Am J Obstet Gynecol",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33168217/"
+        },
+        {
+          "pmid": "31787158",
+          "title": "Polydactyly.",
+          "authors": "Society for Maternal-Fetal Medicine, Rac MWF, McKinney J, Gandhi M",
+          "journal": "Am J Obstet Gynecol",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31787158/"
+        },
+        {
+          "pmid": "31708118",
+          "title": "TRIDENT-2: National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.",
+          "authors": "van der Meij KRM, Sistermans EA, Macville MVE, Stevens SJC, Bax CJ, Bekker MN, Bilardo CM, Boon EMJ, Boter M, Diderich KEM, de Die-Smulders CEM, Duin LK, Faas BHW, Feenstra I, Haak MC, Hoffer MJV, den Hollander NS, Hollink IHIM, Jehee FS, Knapen MFCM, Kooper AJA, van Langen IM, Lichtenbelt KD, Linskens IH, van Maarle MC, Oepkes D, Pieters MJ, Schuring-Blom GH, Sikkel E, Sikkema-Raddatz B, Smeets DFCM, Srebniak MI, Suijkerbuijk RF, Tan-Sindhunata GM, van der Ven AJEM, van Zelderen-Bhola SL, Henneman L, Galjaard RH, Van Opstal D, Weiss MM; Dutch NIPT Consortium",
+          "journal": "Am J Hum Genet",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+        },
+        {
+          "pmid": "31566869",
+          "title": "Trisomy 13 and 18-Prevalence and mortality-A multi-registry population based analysis.",
+          "authors": "Goel N, Morris JK, Tucker D, de Walle HEK, Bakker MK, Kancherla V, Marengo L, Canfield MA, Kallen K, Lelong N, Camelo JL, Stallings EB, Jones AM, Nance A, Huynh MP, Martínez-Fernández ML, Sipek A, Pierini A, Nembhard WN, Goetz D, Rissmann A, Groisman B, Luna-Muñoz L, Szabova E, Lapchenko S, Zarante I, Hurtado-Villa P, Martinez LE, Tagliabue G, Landau D, Gatt M, Dastgiri S, Morgan M",
+          "journal": "Am J Med Genet A",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31566869/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "38007058",
+          "title": "Artificial intelligence for prenatal chromosome analysis.",
+          "authors": "Boddupally K, Rani Thuraka E",
+          "journal": "Clin Chim Acta",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38007058/"
+        },
+        {
+          "pmid": "36402594",
+          "title": "Surgical History and Outcomes in Trisomy 13 and 18: A Thirty-year Review.",
+          "authors": "Hafezi N, Jensen AR, Saenz ZM, Collings AT, Colgate CL, Inanc Salih ZN, Geddes GC, Gray BW",
+          "journal": "J Pediatr Surg",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36402594/"
+        },
+        {
+          "pmid": "32924070",
+          "title": "Cardiac Surgery in Trisomy 13 and 18: A Guide to Clinical Decision-Making.",
+          "authors": "Carvajal HG, Callahan CP, Miller JR, Rensink BL, Eghtesady P",
+          "journal": "Pediatr Cardiol",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32924070/"
+        },
+        {
+          "pmid": "31708118",
+          "title": "TRIDENT-2: National Implementation of Genome-wide Non-invasive Prenatal Testing as a First-Tier Screening Test in the Netherlands.",
+          "authors": "van der Meij KRM, Sistermans EA, Macville MVE, Stevens SJC, Bax CJ, Bekker MN, Bilardo CM, Boon EMJ, Boter M, Diderich KEM, de Die-Smulders CEM, Duin LK, Faas BHW, Feenstra I, Haak MC, Hoffer MJV, den Hollander NS, Hollink IHIM, Jehee FS, Knapen MFCM, Kooper AJA, van Langen IM, Lichtenbelt KD, Linskens IH, van Maarle MC, Oepkes D, Pieters MJ, Schuring-Blom GH, Sikkel E, Sikkema-Raddatz B, Smeets DFCM, Srebniak MI, Suijkerbuijk RF, Tan-Sindhunata GM, van der Ven AJEM, van Zelderen-Bhola SL, Henneman L, Galjaard RH, Van Opstal D, Weiss MM; Dutch NIPT Consortium",
+          "journal": "Am J Hum Genet",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31708118/"
+        },
+        {
+          "pmid": "28544599",
+          "title": "A tumor profile in Patau syndrome (trisomy 13).",
+          "authors": "Satgé D, Nishi M, Sirvent N, Vekemans M, Chenard MP, Barnes A",
+          "journal": "Am J Med Genet A",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28544599/"
+        }
+      ],
+      "see_all": {}
+    },
+    "systematic_reviews": {
+      "papers": [
+        {
+          "pmid": "40537699",
+          "title": "Outcomes of heart surgery in neonates with trisomy 13 and 18: a systematic review with metanalysis.",
+          "authors": "de Sá Bittencourt Câmara Bastos C, Vale da Cruz L, Hirano Arruda Moraes L, Jornada Krebs VL, de Carvalho WB",
+          "journal": "Eur J Pediatr",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40537699/"
+        },
+        {
+          "pmid": "37143173",
+          "title": "Association between low fetal fraction in cell-free DNA screening and fetal chromosomal aberrations: A systematic review and meta-analysis.",
+          "authors": "Becking EC, Schuit E, van Baar de Knegt SME, Sistermans EA, Henneman L, Bekker MN, Scheffer PG",
+          "journal": "Prenat Diagn",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37143173/"
+        },
+        {
+          "pmid": "35608568",
+          "title": "Systematic evidence-based review: The application of noninvasive prenatal screening using cell-free DNA in general-risk pregnancies.",
+          "authors": "Rose NC, Barrie ES, Malinowski J, Jenkins GP, McClain MR, LaGrave D, Leung ML; ACMG Professional Practice and Guidelines Committee. Electronic address: documents@acmg.net",
+          "journal": "Genet Med",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35608568/"
+        },
+        {
+          "pmid": "32166736",
+          "title": "Clinical performance of non-invasive prenatal testing for trisomies 21, 18 and 13 in twin pregnancies: A cohort study and a systematic meta-analysis.",
+          "authors": "He Y, Wang Y, Li Z, Chen H, Deng J, Huang H, He X, Zeng W, Liu M, Huang B, Chen P",
+          "journal": "Acta Obstet Gynecol Scand",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32166736/"
+        },
+        {
+          "pmid": "27779757",
+          "title": "Analysis of cell-free fetal DNA in maternal blood for detection of trisomy 21, 18 and 13 in a general pregnant population and in a high risk population - a systematic review and meta-analysis.",
+          "authors": "Iwarsson E, Jacobsson B, Dagerhamn J, Davidson T, Bernabé E, Heibert Arnlind M",
+          "journal": "Acta Obstet Gynecol Scand",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27779757/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "56261",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/56261"
+}

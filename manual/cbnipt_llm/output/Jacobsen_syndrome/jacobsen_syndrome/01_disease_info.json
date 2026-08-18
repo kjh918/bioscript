@@ -1,0 +1,285 @@
+{
+  "syndrome": "Jacobsen syndrome",
+  "definition": "Jacobsen syndrome (JBS) is a contiguous gene deletion syndrome with major clinical features of growth retardation, psychomotor retardation, trigonocephaly, divergent intermittent strabismus, epicanthus, telecanthus, broad nasal bridge, short nose with anteverted nostrils, carp-shaped upper lip, retrognathia, low-set dysmorphic ears, bilateral camptodactyly, hammertoes, and isoimmune thrombocytopenia (Fryns et al., 1986, Epstein, 1986). [from OMIM ]",
+  "synonyms": [
+    "CHROMOSOME 11q DELETION SYNDROME",
+    "Jacobsen Distal 11q Deletion Syndrome",
+    "JBS"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "715438008",
+    "MONDO": "MONDO:0007838",
+    "OMIM": "147791",
+    "Orphanet": "2308"
+  },
+  "gene_locations": [],
+  "genomic_targets": [
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr11",
+      "cytoband": "11q",
+      "event": "loss",
+      "mechanism": "deletion",
+      "source": "name_synonym_or_definition"
+    }
+  ],
+  "genereview_url": null,
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "32404571",
+          "title": "Treatment algorithm for Japanese patients with chronic lymphocytic leukemia in the era of novel targeted therapies.",
+          "authors": "Kojima K, Burger JA",
+          "journal": "J Clin Exp Hematop",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32404571/"
+        },
+        {
+          "pmid": "26285164",
+          "title": "Jacobsen syndrome: Advances in our knowledge of phenotype and genotype.",
+          "authors": "Favier R, Akshoomoff N, Mattson S, Grossfeld P",
+          "journal": "Am J Med Genet C Semin Med Genet",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26285164/"
+        },
+        {
+          "pmid": "16106622",
+          "title": "Genetic evaluation of inherited motor/sensory neuropathy.",
+          "authors": "Chance PF",
+          "journal": "Suppl Clin Neurophysiol",
+          "year": "2004",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16106622/"
+        }
+      ],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "39938357",
+          "title": "Characteristics and survival outcomes of patients with myelodysplastic syndromes with isolated 11q deletion.",
+          "authors": "Takaoka K, Komrokji R, Chien K, Montalban-Bravo G, Salman JB, Urrutia S, Bataller A, Bazinet A, Kekedjian J, Al Ali NH, Sallman D, Padron E, Xie Z, Kanagal-Shamanna R, Tang G, Yang H, Rodriguez-Sevilla JJ, Garcia-Manero G, Sasaki K",
+          "journal": "Leuk Res",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39938357/"
+        },
+        {
+          "pmid": "16106622",
+          "title": "Genetic evaluation of inherited motor/sensory neuropathy.",
+          "authors": "Chance PF",
+          "journal": "Suppl Clin Neurophysiol",
+          "year": "2004",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16106622/"
+        },
+        {
+          "pmid": "11345007",
+          "title": "Molecular basis of hereditary neuropathies.",
+          "authors": "Chance PF",
+          "journal": "Phys Med Rehabil Clin N Am",
+          "year": "2001",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11345007/"
+        },
+        {
+          "pmid": "10716658",
+          "title": "Inherited peripheral neuropathy.",
+          "authors": "Keller MP, Chance PF",
+          "journal": "Semin Neurol",
+          "year": "1999",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10716658/"
+        },
+        {
+          "pmid": "10219749",
+          "title": "Inherited neuropathies: from gene to disease.",
+          "authors": "Keller MP, Chance PF",
+          "journal": "Brain Pathol",
+          "year": "1999",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10219749/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "26285164",
+          "title": "Jacobsen syndrome: Advances in our knowledge of phenotype and genotype.",
+          "authors": "Favier R, Akshoomoff N, Mattson S, Grossfeld P",
+          "journal": "Am J Med Genet C Semin Med Genet",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26285164/"
+        },
+        {
+          "pmid": "22886561",
+          "title": "Genetics of familial forms of thrombocytopenia.",
+          "authors": "Balduini CL, Savoia A",
+          "journal": "Hum Genet",
+          "year": "2012",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22886561/"
+        },
+        {
+          "pmid": "19267933",
+          "title": "Jacobsen syndrome.",
+          "authors": "Mattina T, Perrotta CS, Grossfeld P",
+          "journal": "Orphanet J Rare Dis",
+          "year": "2009",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19267933/"
+        },
+        {
+          "pmid": "18636632",
+          "title": "Molecular mechanisms and diagnosis of chromosome 22q11.2 rearrangements.",
+          "authors": "Emanuel BS",
+          "journal": "Dev Disabil Res Rev",
+          "year": "2008",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18636632/"
+        },
+        {
+          "pmid": "11345007",
+          "title": "Molecular basis of hereditary neuropathies.",
+          "authors": "Chance PF",
+          "journal": "Phys Med Rehabil Clin N Am",
+          "year": "2001",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11345007/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "32404571",
+          "title": "Treatment algorithm for Japanese patients with chronic lymphocytic leukemia in the era of novel targeted therapies.",
+          "authors": "Kojima K, Burger JA",
+          "journal": "J Clin Exp Hematop",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32404571/"
+        },
+        {
+          "pmid": "31141631",
+          "title": "Ibrutinib and Venetoclax for First-Line Treatment of CLL.",
+          "authors": "Jain N, Keating M, Thompson P, Ferrajoli A, Burger J, Borthakur G, Takahashi K, Estrov Z, Fowler N, Kadia T, Konopleva M, Alvarado Y, Yilmaz M, DiNardo C, Bose P, Ohanian M, Pemmaraju N, Jabbour E, Sasaki K, Kanagal-Shamanna R, Patel K, Jorgensen J, Garg N, Wang X, Sondermann K, Cruz N, Wei C, Ayala A, Plunkett W, Kantarjian H, Gandhi V, Wierda W",
+          "journal": "N Engl J Med",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31141631/"
+        },
+        {
+          "pmid": "29873072",
+          "title": "Evaluation of 230 patients with relapsed/refractory deletion 17p chronic lymphocytic leukaemia treated with ibrutinib from 3 clinical trials.",
+          "authors": "Jones J, Mato A, Coutre S, Byrd JC, Furman RR, Hillmen P, Osterborg A, Tam C, Stilgenbauer S, Wierda WG, Heerema NA, Eckert K, Clow F, Zhou C, Chu AD, James DF, O'Brien SM",
+          "journal": "Br J Haematol",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29873072/"
+        },
+        {
+          "pmid": "26276669",
+          "title": "Molecular prediction of durable remission after first-line fludarabine-cyclophosphamide-rituximab in chronic lymphocytic leukemia.",
+          "authors": "Rossi D, Terzi-di-Bergamo L, De Paoli L, Cerri M, Ghilardi G, Chiarenza A, Bulian P, Visco C, Mauro FR, Morabito F, Cortelezzi A, Zaja F, Forconi F, Laurenti L, Del Giudice I, Gentile M, Vincelli I, Motta M, Coscia M, Rigolin GM, Tedeschi A, Neri A, Marasca R, Perbellini O, Moreno C, Del Poeta G, Massaia M, Zinzani PL, Montillo M, Cuneo A, Gattei V, Foà R, Gaidano G",
+          "journal": "Blood",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26276669/"
+        },
+        {
+          "pmid": "25040077",
+          "title": "A new hope: novel therapeutic approaches to treatment of chronic lymphocytic leukaemia with defects in TP53.",
+          "authors": "Shindiapina P, Brown JR, Danilov AV",
+          "journal": "Br J Haematol",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25040077/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "39938357",
+          "title": "Characteristics and survival outcomes of patients with myelodysplastic syndromes with isolated 11q deletion.",
+          "authors": "Takaoka K, Komrokji R, Chien K, Montalban-Bravo G, Salman JB, Urrutia S, Bataller A, Bazinet A, Kekedjian J, Al Ali NH, Sallman D, Padron E, Xie Z, Kanagal-Shamanna R, Tang G, Yang H, Rodriguez-Sevilla JJ, Garcia-Manero G, Sasaki K",
+          "journal": "Leuk Res",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39938357/"
+        },
+        {
+          "pmid": "36433773",
+          "title": "Richter transformation in Chronic Lymphocytic Leukemia.",
+          "authors": "Innocenti I, Benintende G, Tomasso A, Fresa A, Autore F, Larocca LM, Laurenti L",
+          "journal": "Hematol Oncol",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36433773/"
+        },
+        {
+          "pmid": "26285164",
+          "title": "Jacobsen syndrome: Advances in our knowledge of phenotype and genotype.",
+          "authors": "Favier R, Akshoomoff N, Mattson S, Grossfeld P",
+          "journal": "Am J Med Genet C Semin Med Genet",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26285164/"
+        },
+        {
+          "pmid": "23906020",
+          "title": "The role of ATM mutations and 11q deletions in disease progression in chronic lymphocytic leukemia.",
+          "authors": "Stankovic T, Skowronska A",
+          "journal": "Leuk Lymphoma",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23906020/"
+        },
+        {
+          "pmid": "16304374",
+          "title": "Molecular Pathogenesis of MDS.",
+          "authors": "Look AT",
+          "journal": "Hematology Am Soc Hematol Educ Program",
+          "year": "2005",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16304374/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "41419787",
+          "title": "Clinical and neuropsychological characterization of Jacobsen syndrome (del11q).",
+          "authors": "Garriz-Luis A, Rodríguez-Toscano E, Burdeus-Olavarrieta M, Arango C, Parellada M, Díaz-Caneja CM",
+          "journal": "J Neurodev Disord",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41419787/"
+        },
+        {
+          "pmid": "25040077",
+          "title": "A new hope: novel therapeutic approaches to treatment of chronic lymphocytic leukaemia with defects in TP53.",
+          "authors": "Shindiapina P, Brown JR, Danilov AV",
+          "journal": "Br J Haematol",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25040077/"
+        },
+        {
+          "pmid": "24677787",
+          "title": "Chromosomal-array analysis reveals partial 11q duplication and partial 12p deletion in a mildly affected case.",
+          "authors": "Tuğ E, Yirmibeş Karaoğuz M, Kayhan G, Ergün MA, Perçin FE",
+          "journal": "Am J Med Genet A",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24677787/"
+        },
+        {
+          "pmid": "14623457",
+          "title": "Abnormal constitutional karyotypes in patients with neuroblastoma: a report of four new cases and review of 47 others in the literature.",
+          "authors": "Satgé D, Moore SW, Stiller CA, Niggli FK, Pritchard-Jones K, Bown N, Bénard J, Plantaz D",
+          "journal": "Cancer Genet Cytogenet",
+          "year": "2003",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/14623457/"
+        },
+        {
+          "pmid": "1673858",
+          "title": "Cytogenetic analysis in melanoma and nevi.",
+          "authors": "Cowan JM, Francke U",
+          "journal": "Cancer Treat Res",
+          "year": "1991",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1673858/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "162878",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/162878"
+}

@@ -1,0 +1,343 @@
+{
+  "syndrome": "Williams syndrome",
+  "definition": "Williams syndrome (WS) is characterized by developmental delay, intellectual disability (usually mild), a specific cognitive profile, unique personality characteristics, cardiovascular disease (supravalvar aortic stenosis, peripheral pulmonary stenosis, hypertension), connective tissue abnormalities, growth deficiency, endocrine abnormalities (early puberty, hypercalcemia, hypercalciuria, hypothyroidism), and distinctive facies. Hypotonia and hyperextensible joints can result in delayed attainment of motor milestones. Feeding difficulties often lead to poor weight gain in infancy.",
+  "synonyms": [
+    "CHROMOSOME 7q11.23 DELETION SYNDROME, 1.5- TO 1.8-MB",
+    "WBS",
+    "WILLIAMS-BEUREN SYNDROME"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "63247009",
+    "MONDO": "MONDO:0008678",
+    "OMIM": "194050",
+    "Orphanet": "904"
+  },
+  "gene_locations": [
+    {
+      "gene_symbol": "ELN",
+      "ncbi_gene_id": "2006",
+      "cytoband": "7q11.23",
+      "source": "medgen_direct"
+    },
+    {
+      "gene_symbol": "MLXIPL",
+      "ncbi_gene_id": "51085",
+      "cytoband": "7q11.23",
+      "source": "medgen_direct"
+    }
+  ],
+  "genomic_targets": [
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr7",
+      "cytoband": "7q11.23",
+      "event": "gain",
+      "mechanism": "duplication",
+      "source": "name_synonym_or_definition"
+    }
+  ],
+  "genereview_url": "/pubmed?LinkName=medgen_pubmed_genereviews&from_uid=59799",
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "36520254",
+          "title": "Neuropsychological Genotype-Phenotype in Patients with Williams Syndrome with Atypical Deletions: A Systematic Review.",
+          "authors": "Serrano-Juárez CA, Prieto-Corona B, Rodríguez-Camacho M, Sandoval-Lira L, Villalva-Sánchez ÁF, Yáñez-Téllez MG, López MFR",
+          "journal": "Neuropsychol Rev",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36520254/"
+        },
+        {
+          "pmid": "31964759",
+          "title": "Health Care Supervision for Children With Williams Syndrome.",
+          "authors": "Morris CA, Braddock SR; COUNCIL ON GENETICS",
+          "journal": "Pediatrics",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31964759/"
+        },
+        {
+          "pmid": "28382779",
+          "title": "Peri-procedural risk stratification and management of patients with Williams syndrome.",
+          "authors": "Collins Ii RT, Collins MG, Schmitz ML, Hamrick JT",
+          "journal": "Congenit Heart Dis",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28382779/"
+        }
+      ],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "37589562",
+          "title": "Ocular features in Williams-Beuren syndrome: a review of the literature.",
+          "authors": "Nassisi M, Mainetti C, Aretti A, Sperti A, Nicotra V, Rinaldi B, Natacci F, Bedeschi MF, Viola F",
+          "journal": "Curr Opin Ophthalmol",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37589562/"
+        },
+        {
+          "pmid": "37037070",
+          "title": "Arrhythmias in Williams Syndrome.",
+          "authors": "Deitch AM, Giacone HM, Chubb H, Algaze CA, Lechich KM, Collins RT",
+          "journal": "Am J Cardiol",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37037070/"
+        },
+        {
+          "pmid": "33369485",
+          "title": "Psychopharmacology of Williams syndrome: safety, tolerability, and effectiveness.",
+          "authors": "Thom RP, Pober BR, McDougle CJ",
+          "journal": "Expert Opin Drug Saf",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33369485/"
+        },
+        {
+          "pmid": "31419598",
+          "title": "Mild macrocytosis in Williams-Beuren syndrome.",
+          "authors": "Yu E, Feinn R, Bona R, Brink B, Sindhar S, Kozel BA, Pober BR",
+          "journal": "Eur J Med Genet",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31419598/"
+        },
+        {
+          "pmid": "30045083",
+          "title": "Cardiovascular disease in Williams syndrome.",
+          "authors": "Collins RT 2nd",
+          "journal": "Curr Opin Pediatr",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30045083/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "34140529",
+          "title": "Williams syndrome.",
+          "authors": "Kozel BA, Barak B, Kim CA, Mervis CB, Osborne LR, Porter M, Pober BR",
+          "journal": "Nat Rev Dis Primers",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34140529/"
+        },
+        {
+          "pmid": "34140526",
+          "title": "Williams syndrome.",
+          "authors": "",
+          "journal": "Nat Rev Dis Primers",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34140526/"
+        },
+        {
+          "pmid": "31964759",
+          "title": "Health Care Supervision for Children With Williams Syndrome.",
+          "authors": "Morris CA, Braddock SR; COUNCIL ON GENETICS",
+          "journal": "Pediatrics",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31964759/"
+        },
+        {
+          "pmid": "20089974",
+          "title": "Williams-Beuren syndrome.",
+          "authors": "Pober BR",
+          "journal": "N Engl J Med",
+          "year": "2010",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20089974/"
+        },
+        {
+          "pmid": "7547491",
+          "title": "Williams syndrome.",
+          "authors": "Oncag A, Gunbay S, Parlar A",
+          "journal": "J Clin Pediatr Dent",
+          "year": "1995",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7547491/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "33369485",
+          "title": "Psychopharmacology of Williams syndrome: safety, tolerability, and effectiveness.",
+          "authors": "Thom RP, Pober BR, McDougle CJ",
+          "journal": "Expert Opin Drug Saf",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33369485/"
+        },
+        {
+          "pmid": "32127269",
+          "title": "Anesthetic Considerations for Patients With Williams Syndrome.",
+          "authors": "Staudt GE, Eagle SS",
+          "journal": "J Cardiothorac Vasc Anesth",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32127269/"
+        },
+        {
+          "pmid": "28382779",
+          "title": "Peri-procedural risk stratification and management of patients with Williams syndrome.",
+          "authors": "Collins Ii RT, Collins MG, Schmitz ML, Hamrick JT",
+          "journal": "Congenit Heart Dis",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28382779/"
+        },
+        {
+          "pmid": "26456018",
+          "title": "Risk assessment and anesthetic management of patients with Williams syndrome: a comprehensive review.",
+          "authors": "Matisoff AJ, Olivieri L, Schwartz JM, Deutsch N",
+          "journal": "Paediatr Anaesth",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26456018/"
+        },
+        {
+          "pmid": "26138838",
+          "title": "Approach to the Child with Hypercalcaemia.",
+          "authors": "Davies JH",
+          "journal": "Endocr Dev",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26138838/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "37037070",
+          "title": "Arrhythmias in Williams Syndrome.",
+          "authors": "Deitch AM, Giacone HM, Chubb H, Algaze CA, Lechich KM, Collins RT",
+          "journal": "Am J Cardiol",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37037070/"
+        },
+        {
+          "pmid": "34619410",
+          "title": "Functional Neurological Symptom Disorder in Williams Syndrome: Case Series and Review of Relevant Literature.",
+          "authors": "Thom RP, Balaj K, Keary CJ, Pober BR, McDougle CJ",
+          "journal": "J Acad Consult Liaison Psychiatry",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34619410/"
+        },
+        {
+          "pmid": "26705693",
+          "title": "Modeling psychiatric disorders with patient-derived iPSCs.",
+          "authors": "Wen Z, Christian KM, Song H, Ming GL",
+          "journal": "Curr Opin Neurobiol",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26705693/"
+        },
+        {
+          "pmid": "23539923",
+          "title": "Celiac disease.",
+          "authors": "Radlović N",
+          "journal": "Srp Arh Celok Lek",
+          "year": "2013",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23539923/"
+        },
+        {
+          "pmid": "16472876",
+          "title": "Mapping brain maturation.",
+          "authors": "Toga AW, Thompson PM, Sowell ER",
+          "journal": "Trends Neurosci",
+          "year": "2006",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16472876/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "37037070",
+          "title": "Arrhythmias in Williams Syndrome.",
+          "authors": "Deitch AM, Giacone HM, Chubb H, Algaze CA, Lechich KM, Collins RT",
+          "journal": "Am J Cardiol",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37037070/"
+        },
+        {
+          "pmid": "35416284",
+          "title": "Epigenetic aging in Williams syndrome.",
+          "authors": "Okazaki S, Kimura R, Otsuka I, Tomiwa K, Funabiki Y, Hagiwara M, Murai T, Hishimoto A",
+          "journal": "J Child Psychol Psychiatry",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35416284/"
+        },
+        {
+          "pmid": "31419598",
+          "title": "Mild macrocytosis in Williams-Beuren syndrome.",
+          "authors": "Yu E, Feinn R, Bona R, Brink B, Sindhar S, Kozel BA, Pober BR",
+          "journal": "Eur J Med Genet",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31419598/"
+        },
+        {
+          "pmid": "17562583",
+          "title": "Social phenotypes in neurogenetic syndromes.",
+          "authors": "Feinstein C, Singh S",
+          "journal": "Child Adolesc Psychiatr Clin N Am",
+          "year": "2007",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17562583/"
+        },
+        {
+          "pmid": "16472876",
+          "title": "Mapping brain maturation.",
+          "authors": "Toga AW, Thompson PM, Sowell ER",
+          "journal": "Trends Neurosci",
+          "year": "2006",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16472876/"
+        }
+      ],
+      "see_all": {}
+    },
+    "systematic_reviews": {
+      "papers": [
+        {
+          "pmid": "36007813",
+          "title": "Systematic Review: Emotion Dysregulation in Syndromic Causes of Intellectual and Developmental Disabilities.",
+          "authors": "Shaffer RC, Reisinger DL, Schmitt LM, Lamy M, Dominick KC, Smith EG, Coffman MC, Esbensen AJ",
+          "journal": "J Am Acad Child Adolesc Psychiatry",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36007813/"
+        },
+        {
+          "pmid": "32157657",
+          "title": "Growth assessment in children with Williams-Beuren syndrome: a systematic review.",
+          "authors": "de Sousa Lima Strafacci A, Fernandes Camargo J, Bertapelli F, Guerra Júnior G",
+          "journal": "J Appl Genet",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32157657/"
+        },
+        {
+          "pmid": "32087508",
+          "title": "Mathematical development in Williams syndrome: A systematic review.",
+          "authors": "Van Herwegen J, Simms V",
+          "journal": "Res Dev Disabil",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32087508/"
+        },
+        {
+          "pmid": "31336213",
+          "title": "Ameloblastoma associated with syndromes: A systematic review.",
+          "authors": "Atarbashi-Moghadam S, Atarbashi-Moghadam F, Sijanivandi S, Mokhtari S",
+          "journal": "J Stomatol Oral Maxillofac Surg",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31336213/"
+        },
+        {
+          "pmid": "30231111",
+          "title": "Characteristics of auditory evaluation in Williams syndrome: a systematic review.",
+          "authors": "Silva LAF, Kim CA, Matas CG",
+          "journal": "Codas",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30231111/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "59799",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/59799"
+}

@@ -1,0 +1,275 @@
+{
+  "syndrome": "Chromosome 1p36 Deletion syndrome",
+  "definition": "The constitutional deletion of chromosome 1p36 results in a syndrome with multiple congenital anomalies and mental retardation (Shapira et al., 1997). Monosomy 1p36 is the most common terminal deletion syndrome in humans, occurring in 1 in 5,000 births (Shaffer and Lupski, 2000; Heilstedt et al., 2003). See also neurodevelopmental disorder with or without anomalies of the brain, eye, or heart (NEDBEH; 616975), which shows overlapping features and is caused by heterozygous mutation in the RERE gene (605226) on proximal chromosome 1p36. See also Radio-Tartaglia syndrome (RATARS; 619312), caused by mutation in the SPEN gene (613484) on chromosome 1p36, which shows overlapping features. [from OMIM ]",
+  "synonyms": [
+    "1p36",
+    "1p36 microdeletion syndrome",
+    "1p36.33 deletion",
+    "Monosomy 1p36 syndrome"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "699306003",
+    "MONDO": "MONDO:0011929",
+    "OMIM": "607872",
+    "Orphanet": "1606"
+  },
+  "gene_locations": [],
+  "genomic_targets": [
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr1",
+      "cytoband": "1p36",
+      "event": "loss",
+      "mechanism": "deletion",
+      "source": "name_synonym_or_definition"
+    },
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr1",
+      "cytoband": "1p36.33",
+      "event": "loss",
+      "mechanism": "deletion",
+      "source": "name_synonym_or_definition"
+    }
+  ],
+  "genereview_url": null,
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "41327254",
+          "title": "Prenatally diagnosed chromosome 1p36 deletions: a retrospective case series, literature review, and genotype-phenotype correlations.",
+          "authors": "Liu N, Liu Z, Yi S, Li M, Cai H",
+          "journal": "BMC Med Genomics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41327254/"
+        }
+      ],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "41327254",
+          "title": "Prenatally diagnosed chromosome 1p36 deletions: a retrospective case series, literature review, and genotype-phenotype correlations.",
+          "authors": "Liu N, Liu Z, Yi S, Li M, Cai H",
+          "journal": "BMC Med Genomics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41327254/"
+        },
+        {
+          "pmid": "40285432",
+          "title": "Ultrasound Phenotype, Genetic Analysis, and Pregnancy Outcomes of Fetuses With 1p36 Deletion Syndrome.",
+          "authors": "Cai M, Lin N, Chen X, Huang H, Guo N, Lin J, Xu L",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40285432/"
+        },
+        {
+          "pmid": "37395136",
+          "title": "PRDM16 Deletion Is Associated With Sex-dependent Cardiomyopathy and Cardiac Mortality: A Translational, Multi-Institutional Cohort Study.",
+          "authors": "Kramer RJ, Fatahian AN, Chan A, Mortenson J, Osher J, Sun B, Parker LE, Rosamilia MB, Potter KB, Moore K, Atkins SL, Rosenfeld JA, Birjiniuk A, Jones E, Howard TS, Kim JJ, Scott DA, Lalani S, Rouzbehani OMT, Kaplan S, Hathaway MA, Cohen JL, Asaki SY, Martinez HR, Boudina S, Landstrom AP",
+          "journal": "Circ Genom Precis Med",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37395136/"
+        },
+        {
+          "pmid": "31172545",
+          "title": "Prenatal findings in 1p36 deletion syndrome: New cases and a literature review.",
+          "authors": "Guterman S, Beneteau C, Redon S, Dupont C, Missirian C, Jaeger P, Herve B, Jacquin C, Douet-Guilbert N, Till M, Tabet AC, Moradkhani K, Malan V, Doco-Fenzy M, Vialard F",
+          "journal": "Prenat Diagn",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31172545/"
+        },
+        {
+          "pmid": "25044719",
+          "title": "Delineating the phenotype of 1p36 deletion in adolescents and adults.",
+          "authors": "Brazil A, Stanford K, Smolarek T, Hopkin R",
+          "journal": "Am J Med Genet A",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25044719/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "41327254",
+          "title": "Prenatally diagnosed chromosome 1p36 deletions: a retrospective case series, literature review, and genotype-phenotype correlations.",
+          "authors": "Liu N, Liu Z, Yi S, Li M, Cai H",
+          "journal": "BMC Med Genomics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41327254/"
+        },
+        {
+          "pmid": "31207089",
+          "title": "Perinatal distress in 1p36 deletion syndrome can mimic hypoxic ischemic encephalopathy.",
+          "authors": "Carter LB, Battaglia A, Cherry A, Manning MA, Ruzhnikov MR, Bird LM, Dowsett L, Graham JM Jr, Alkuraya FS, Hashem M, Dinulos MB, Vallee S, Adam MP, Glass I, Beck AE, Stevens CA, Zackai E, McDougall C, Keena B, Peron A, Vignoli A, Seaver LH, Slavin TP, Hudgins L",
+          "journal": "Am J Med Genet A",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31207089/"
+        },
+        {
+          "pmid": "31172545",
+          "title": "Prenatal findings in 1p36 deletion syndrome: New cases and a literature review.",
+          "authors": "Guterman S, Beneteau C, Redon S, Dupont C, Missirian C, Jaeger P, Herve B, Jacquin C, Douet-Guilbert N, Till M, Tabet AC, Moradkhani K, Malan V, Doco-Fenzy M, Vialard F",
+          "journal": "Prenat Diagn",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31172545/"
+        },
+        {
+          "pmid": "29212048",
+          "title": "Electroclinical features of epilepsy associated with 1p36 deletion syndrome: A review.",
+          "authors": "Greco M, Ferrara P, Farello G, Striano P, Verrotti A",
+          "journal": "Epilepsy Res",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29212048/"
+        },
+        {
+          "pmid": "26910004",
+          "title": "Mini-Review: Monosomy 1p36 syndrome: reviewing the correlation between deletion sizes and phenotypes.",
+          "authors": "Rocha CF, Vasques RB, Santos SR, Paiva CL",
+          "journal": "Genet Mol Res",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26910004/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "31940489",
+          "title": "Large 1p36 Deletions Affecting Arid1a Locus Facilitate Mycn-Driven Oncogenesis in Neuroblastoma.",
+          "authors": "García-López J, Wallace K, Otero JH, Olsen R, Wang YD, Finkelstein D, Gudenas BL, Rehg JE, Northcott P, Davidoff AM, Freeman KW",
+          "journal": "Cell Rep",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31940489/"
+        },
+        {
+          "pmid": "28791793",
+          "title": "Early transition from insulin to sulfonylureas in neonatal diabetes and follow-up: Experience from China.",
+          "authors": "Li X, Xu A, Sheng H, Ting TH, Mao X, Huang X, Jiang M, Cheng J, Liu L",
+          "journal": "Pediatr Diabetes",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28791793/"
+        },
+        {
+          "pmid": "21268052",
+          "title": "Multivariate meta-analysis: potential and promise.",
+          "authors": "Jackson D, Riley R, White IR",
+          "journal": "Stat Med",
+          "year": "2011",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21268052/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "40285432",
+          "title": "Ultrasound Phenotype, Genetic Analysis, and Pregnancy Outcomes of Fetuses With 1p36 Deletion Syndrome.",
+          "authors": "Cai M, Lin N, Chen X, Huang H, Guo N, Lin J, Xu L",
+          "journal": "Mol Genet Genomic Med",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40285432/"
+        },
+        {
+          "pmid": "37395136",
+          "title": "PRDM16 Deletion Is Associated With Sex-dependent Cardiomyopathy and Cardiac Mortality: A Translational, Multi-Institutional Cohort Study.",
+          "authors": "Kramer RJ, Fatahian AN, Chan A, Mortenson J, Osher J, Sun B, Parker LE, Rosamilia MB, Potter KB, Moore K, Atkins SL, Rosenfeld JA, Birjiniuk A, Jones E, Howard TS, Kim JJ, Scott DA, Lalani S, Rouzbehani OMT, Kaplan S, Hathaway MA, Cohen JL, Asaki SY, Martinez HR, Boudina S, Landstrom AP",
+          "journal": "Circ Genom Precis Med",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37395136/"
+        },
+        {
+          "pmid": "32845907",
+          "title": "Non-invasive prenatal testing (NIPT) by low coverage genomic sequencing: Detection limits of screened chromosomal microdeletions.",
+          "authors": "Kucharik M, Gnip A, Hyblova M, Budis J, Strieskova L, Harsanyova M, Pös O, Kubiritova Z, Radvanszky J, Minarik G, Szemes T",
+          "journal": "PLoS One",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32845907/"
+        },
+        {
+          "pmid": "30109707",
+          "title": "Electroclinical features of epilepsy monosomy 1p36 syndrome and their implications.",
+          "authors": "Verrotti A, Greco M, Varriale G, Tamborino A, Savasta S, Carotenuto M, Elia M, Operto F, Margari L, Belcastro V, Selicorni A, Freri E, Matricardi S, Granata T, Ragona F, Capovilla G, Spalice A, Coppola G, Striano P",
+          "journal": "Acta Neurol Scand",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30109707/"
+        },
+        {
+          "pmid": "25044719",
+          "title": "Delineating the phenotype of 1p36 deletion in adolescents and adults.",
+          "authors": "Brazil A, Stanford K, Smolarek T, Hopkin R",
+          "journal": "Am J Med Genet A",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25044719/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "41327254",
+          "title": "Prenatally diagnosed chromosome 1p36 deletions: a retrospective case series, literature review, and genotype-phenotype correlations.",
+          "authors": "Liu N, Liu Z, Yi S, Li M, Cai H",
+          "journal": "BMC Med Genomics",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41327254/"
+        },
+        {
+          "pmid": "31446820",
+          "title": "Prenatal detection of 1p36 deletion syndrome: ultrasound findings and microarray testing results.",
+          "authors": "Zhang X, He P, Han J, Pan M, Yang X, Zhen L, Liao C, Li DZ",
+          "journal": "J Matern Fetal Neonatal Med",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31446820/"
+        },
+        {
+          "pmid": "31172545",
+          "title": "Prenatal findings in 1p36 deletion syndrome: New cases and a literature review.",
+          "authors": "Guterman S, Beneteau C, Redon S, Dupont C, Missirian C, Jaeger P, Herve B, Jacquin C, Douet-Guilbert N, Till M, Tabet AC, Moradkhani K, Malan V, Doco-Fenzy M, Vialard F",
+          "journal": "Prenat Diagn",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31172545/"
+        },
+        {
+          "pmid": "29212048",
+          "title": "Electroclinical features of epilepsy associated with 1p36 deletion syndrome: A review.",
+          "authors": "Greco M, Ferrara P, Farello G, Striano P, Verrotti A",
+          "journal": "Epilepsy Res",
+          "year": "2018",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29212048/"
+        },
+        {
+          "pmid": "24750553",
+          "title": "Growth patterns of patients with 1p36 deletion syndrome.",
+          "authors": "Sangu N, Shimojima K, Shimada S, Ando T, Yamamoto T",
+          "journal": "Congenit Anom (Kyoto)",
+          "year": "2014",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24750553/"
+        }
+      ],
+      "see_all": {}
+    },
+    "systematic_reviews": {
+      "papers": [
+        {
+          "pmid": "37395136",
+          "title": "PRDM16 Deletion Is Associated With Sex-dependent Cardiomyopathy and Cardiac Mortality: A Translational, Multi-Institutional Cohort Study.",
+          "authors": "Kramer RJ, Fatahian AN, Chan A, Mortenson J, Osher J, Sun B, Parker LE, Rosamilia MB, Potter KB, Moore K, Atkins SL, Rosenfeld JA, Birjiniuk A, Jones E, Howard TS, Kim JJ, Scott DA, Lalani S, Rouzbehani OMT, Kaplan S, Hathaway MA, Cohen JL, Asaki SY, Martinez HR, Boudina S, Landstrom AP",
+          "journal": "Circ Genom Precis Med",
+          "year": "2023",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/37395136/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "334629",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/334629"
+}

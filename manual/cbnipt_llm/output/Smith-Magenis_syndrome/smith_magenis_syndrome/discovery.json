@@ -1,0 +1,2774 @@
+{
+  "disease_info": {
+    "syndrome": "Smith-Magenis syndrome",
+    "definition": "Smith-Magenis syndrome (SMS) is characterized by distinctive physical features (particularly coarse facial features that progress with age), developmental delay, cognitive impairment, behavioral abnormalities, sleep disturbances, and childhood-onset abdominal obesity. Infants have feeding difficulties, failure to thrive, hypotonia, hyporeflexia, prolonged napping or need to be awakened for feeds, and generalized lethargy. Most individuals function in the mild-to-moderate range of intellectual disability. Behavioral manifestations, including significant sleep disturbances, stereotypies, and maladaptive and self-injurious behaviors, are generally not recognized until age 18 months or older and continue to change until adulthood. Sensory issues are frequently noted, including avoidant behavior and repetitive seeking of specific textures, sounds, and experiences. Significant anxiety is common as are problems with executive function, including inattention, distractibility, hyperactivity, and impulsivity. Maladaptive behaviors include frequent outbursts / temper tantrums, attention-seeking behaviors, opposition, aggression, and self-injurious behaviors including self-hitting, self-biting, skin picking, inserting foreign objects into body orifices (polyembolokoilamania), and yanking fingernails and/or toenails (onychotillomania). Among the stereotypic behaviors described, the spasmodic upper body squeeze or \"self-hug\" seems to be highly associated with SMS. An underlying developmental asynchrony, specifically emotional maturity delayed beyond intellectual functioning, may also contribute to maladaptive behaviors in people with SMS.",
+    "synonyms": [
+      "CHROMOSOME 17p11.2 DELETION SYNDROME",
+      "SMS"
+    ],
+    "db_ids": {
+      "SNOMED-CT": "401315004",
+      "MONDO": "MONDO:0008434",
+      "OMIM": "182290",
+      "Orphanet": "819"
+    },
+    "gene_locations": [
+      {
+        "gene_symbol": "RAI1",
+        "ncbi_gene_id": "10743",
+        "cytoband": "17p11.2",
+        "source": "medgen_direct"
+      }
+    ],
+    "genomic_targets": [
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr17",
+        "cytoband": "17p11.2",
+        "event": "loss",
+        "mechanism": "deletion",
+        "source": "name_synonym_or_definition"
+      }
+    ],
+    "genereview_url": "/pubmed?LinkName=medgen_pubmed_genereviews&from_uid=162881",
+    "literature": {
+      "pubmed": {
+        "papers": [
+          {
+            "pmid": "32495322",
+            "title": "Management of Sleep Disturbances Associated with Smith-Magenis Syndrome.",
+            "authors": "Kaplan KA, Elsea SH, Potocki L",
+            "journal": "CNS Drugs",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32495322/"
+          },
+          {
+            "pmid": "26055866",
+            "title": "Melatonin Treatment in Children with Developmental Disabilities.",
+            "authors": "Schwichtenberg AJ, Malow BA",
+            "journal": "Sleep Med Clin",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26055866/"
+          },
+          {
+            "pmid": "25685859",
+            "title": "Tasimelteon for the treatment of non-24-hour sleep-wake disorder.",
+            "authors": "Neubauer DN",
+            "journal": "Drugs Today (Barc)",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25685859/"
+          }
+        ],
+        "see_all": {}
+      },
+      "etiology": {
+        "papers": [
+          {
+            "pmid": "38637764",
+            "title": "Exploring an objective measure of overactivity in children with rare genetic syndromes.",
+            "authors": "O'Sullivan R, Bissell S, Agar G, Spiller J, Surtees A, Heald M, Clarkson E, Khan A, Oliver C, Bagshaw AP, Richards C",
+            "journal": "J Neurodev Disord",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38637764/"
+          },
+          {
+            "pmid": "35779287",
+            "title": "Sleep disturbances and behavior in Smith-Magenis syndrome.",
+            "authors": "Garayzábal E, Hidalgo I, Miranda de Souza ALD, da Silva NC, Giacheti CM, Pinato L",
+            "journal": "Res Dev Disabil",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35779287/"
+          },
+          {
+            "pmid": "31838315",
+            "title": "Sleep disorders in children with Angelman and Smith-Magenis syndromes: The assessment of potential causes of disrupted settling and night time waking.",
+            "authors": "Agar G, Oliver C, Trickett J, Licence L, Richards C",
+            "journal": "Res Dev Disabil",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/31838315/"
+          },
+          {
+            "pmid": "28384694",
+            "title": "Auditory Phenotype of Smith-Magenis Syndrome.",
+            "authors": "Brendal MA, King KA, Zalewski CK, Finucane BM, Introne W, Brewer CC, Smith ACM",
+            "journal": "J Speech Lang Hear Res",
+            "year": "2017",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28384694/"
+          },
+          {
+            "pmid": "26055866",
+            "title": "Melatonin Treatment in Children with Developmental Disabilities.",
+            "authors": "Schwichtenberg AJ, Malow BA",
+            "journal": "Sleep Med Clin",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26055866/"
+          }
+        ],
+        "see_all": {}
+      },
+      "diagnosis": {
+        "papers": [
+          {
+            "pmid": "35205380",
+            "title": "Smith-Magenis Syndrome-Clinical Review, Biological Background and Related Disorders.",
+            "authors": "Rinaldi B, Villa R, Sironi A, Garavelli L, Finelli P, Bedeschi MF",
+            "journal": "Genes (Basel)",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35205380/"
+          },
+          {
+            "pmid": "30819258",
+            "title": "De novo and inherited TCF20 pathogenic variants are associated with intellectual disability, dysmorphic features, hypotonia, and neurological impairments with similarities to Smith-Magenis syndrome.",
+            "authors": "Vetrini F, McKee S, Rosenfeld JA, Suri M, Lewis AM, Nugent KM, Roeder E, Littlejohn RO, Holder S, Zhu W, Alaimo JT, Graham B, Harris JM, Gibson JB, Pastore M, McBride KL, Komara M, Al-Gazali L, Al Shamsi A, Fanning EA, Wierenga KJ, Scott DA, Ben-Neriah Z, Meiner V, Cassuto H, Elpeleg O, Holder JL Jr, Burrage LC, Seaver LH, Van Maldergem L, Mahida S, Soul JS, Marlatt M, Matyakhina L, Vogt J, Gold JA, Park SM, Varghese V, Lampe AK, Kumar A, Lees M, Holder-Espinasse M, McConnell V, Bernhard B, Blair E, Harrison V; DDD study, Muzny DM, Gibbs RA, Elsea SH, Posey JE, Bi W, Lalani S, Xia F, Yang Y, Eng CM, Lupski JR, Liu P",
+            "journal": "Genome Med",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30819258/"
+          },
+          {
+            "pmid": "30557269",
+            "title": "Behavior and sleep disturbance in Smith-Magenis syndrome.",
+            "authors": "Shayota BJ, Elsea SH",
+            "journal": "Curr Opin Psychiatry",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30557269/"
+          },
+          {
+            "pmid": "18231123",
+            "title": "Smith-Magenis syndrome.",
+            "authors": "Elsea SH, Girirajan S",
+            "journal": "Eur J Hum Genet",
+            "year": "2008",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18231123/"
+          },
+          {
+            "pmid": "8684798",
+            "title": "Ophthalmic manifestations of Smith-Magenis syndrome.",
+            "authors": "Chen RM, Lupski JR, Greenberg F, Lewis RA",
+            "journal": "Ophthalmology",
+            "year": "1996",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/8684798/"
+          }
+        ],
+        "see_all": {}
+      },
+      "therapy": {
+        "papers": [
+          {
+            "pmid": "32495322",
+            "title": "Management of Sleep Disturbances Associated with Smith-Magenis Syndrome.",
+            "authors": "Kaplan KA, Elsea SH, Potocki L",
+            "journal": "CNS Drugs",
+            "year": "2020",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32495322/"
+          },
+          {
+            "pmid": "29096777",
+            "title": "Efficacy and Safety of Pediatric Prolonged-Release Melatonin for Insomnia in Children With Autism Spectrum Disorder.",
+            "authors": "Gringras P, Nir T, Breddy J, Frydman-Marom A, Findling RL",
+            "journal": "J Am Acad Child Adolesc Psychiatry",
+            "year": "2017",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29096777/"
+          },
+          {
+            "pmid": "27913471",
+            "title": "Sequencing of chronic lymphocytic leukemia therapies.",
+            "authors": "Barrientos JC",
+            "journal": "Hematology Am Soc Hematol Educ Program",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/27913471/"
+          },
+          {
+            "pmid": "26055866",
+            "title": "Melatonin Treatment in Children with Developmental Disabilities.",
+            "authors": "Schwichtenberg AJ, Malow BA",
+            "journal": "Sleep Med Clin",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26055866/"
+          },
+          {
+            "pmid": "22057962",
+            "title": "Smith-Magenis syndrome: clinical evaluation in seven Brazilian patients.",
+            "authors": "Gamba BF, Vieira GH, Souza DH, Monteiro FF, Lorenzini JJ, Carvalho DR, Morreti-Ferreira D",
+            "journal": "Genet Mol Res",
+            "year": "2011",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22057962/"
+          }
+        ],
+        "see_all": {}
+      },
+      "prognosis": {
+        "papers": [
+          {
+            "pmid": "41465172",
+            "title": "17q12 Recurrent Deletion Syndrome in Childhood.",
+            "authors": "Ceravolo G, Mollica S, Cavallaro M, Ceravolo I, Sica G, Granata F, Houlden H, Chimenz R",
+            "journal": "Genes (Basel)",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41465172/"
+          },
+          {
+            "pmid": "33632309",
+            "title": "Sleep disorders in rare genetic syndromes: a meta-analysis of prevalence and profile.",
+            "authors": "Agar G, Brown C, Sutherland D, Coulborn S, Oliver C, Richards C",
+            "journal": "Mol Autism",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33632309/"
+          },
+          {
+            "pmid": "30557269",
+            "title": "Behavior and sleep disturbance in Smith-Magenis syndrome.",
+            "authors": "Shayota BJ, Elsea SH",
+            "journal": "Curr Opin Psychiatry",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30557269/"
+          },
+          {
+            "pmid": "29222277",
+            "title": "How should we sequence and combine novel therapies in CLL?",
+            "authors": "Davids MS",
+            "journal": "Hematology Am Soc Hematol Educ Program",
+            "year": "2017",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29222277/"
+          },
+          {
+            "pmid": "25836705",
+            "title": "Common genetic and epigenetic syndromes.",
+            "authors": "Adams DJ, Clark DA",
+            "journal": "Pediatr Clin North Am",
+            "year": "2015",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25836705/"
+          }
+        ],
+        "see_all": {}
+      },
+      "clinical_prediction": {
+        "papers": [
+          {
+            "pmid": "35779287",
+            "title": "Sleep disturbances and behavior in Smith-Magenis syndrome.",
+            "authors": "Garayzábal E, Hidalgo I, Miranda de Souza ALD, da Silva NC, Giacheti CM, Pinato L",
+            "journal": "Res Dev Disabil",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/35779287/"
+          },
+          {
+            "pmid": "30819258",
+            "title": "De novo and inherited TCF20 pathogenic variants are associated with intellectual disability, dysmorphic features, hypotonia, and neurological impairments with similarities to Smith-Magenis syndrome.",
+            "authors": "Vetrini F, McKee S, Rosenfeld JA, Suri M, Lewis AM, Nugent KM, Roeder E, Littlejohn RO, Holder S, Zhu W, Alaimo JT, Graham B, Harris JM, Gibson JB, Pastore M, McBride KL, Komara M, Al-Gazali L, Al Shamsi A, Fanning EA, Wierenga KJ, Scott DA, Ben-Neriah Z, Meiner V, Cassuto H, Elpeleg O, Holder JL Jr, Burrage LC, Seaver LH, Van Maldergem L, Mahida S, Soul JS, Marlatt M, Matyakhina L, Vogt J, Gold JA, Park SM, Varghese V, Lampe AK, Kumar A, Lees M, Holder-Espinasse M, McConnell V, Bernhard B, Blair E, Harrison V; DDD study, Muzny DM, Gibbs RA, Elsea SH, Posey JE, Bi W, Lalani S, Xia F, Yang Y, Eng CM, Lupski JR, Liu P",
+            "journal": "Genome Med",
+            "year": "2019",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30819258/"
+          },
+          {
+            "pmid": "17562583",
+            "title": "Social phenotypes in neurogenetic syndromes.",
+            "authors": "Feinstein C, Singh S",
+            "journal": "Child Adolesc Psychiatr Clin N Am",
+            "year": "2007",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17562583/"
+          },
+          {
+            "pmid": "16647992",
+            "title": "Neurologic and developmental features of the Smith-Magenis syndrome (del 17p11.2).",
+            "authors": "Gropman AL, Duncan WC, Smith AC",
+            "journal": "Pediatr Neurol",
+            "year": "2006",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16647992/"
+          },
+          {
+            "pmid": "8684798",
+            "title": "Ophthalmic manifestations of Smith-Magenis syndrome.",
+            "authors": "Chen RM, Lupski JR, Greenberg F, Lewis RA",
+            "journal": "Ophthalmology",
+            "year": "1996",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/8684798/"
+          }
+        ],
+        "see_all": {}
+      },
+      "systematic_reviews": {
+        "papers": [
+          {
+            "pmid": "42226112",
+            "title": "The prevalence of neurodevelopmental disorders in Smith-Magenis Syndrome: a PRISMA compliant systematic review.",
+            "authors": "Boiroux P, Babinet MN, Chesnoy G, Belhouchat P, Demily C",
+            "journal": "J Neurodev Disord",
+            "year": "2026",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42226112/"
+          },
+          {
+            "pmid": "40437981",
+            "title": "Retinoic Acid-Induced 1 Gene and Neuropsychiatric Diseases: A Systematic Review.",
+            "authors": "Yang T, Pang D, Li C, Shang H",
+            "journal": "Expert Rev Mol Med",
+            "year": "2025",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40437981/"
+          },
+          {
+            "pmid": "34919300",
+            "title": "Eyelash trichomegaly: a systematic review of acquired and congenital aetiologies of lengthened lashes.",
+            "authors": "Hutchison DM, Duffens A, Yale K, Park A, Cardenas K, Mesinkovska NA",
+            "journal": "J Eur Acad Dermatol Venereol",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/34919300/"
+          },
+          {
+            "pmid": "33599294",
+            "title": "Hidradenitis suppurativa and chromosomal abnormalities: a case report and systematic review of the literature.",
+            "authors": "Shah M, Sachdeva M, Melendez-Gonzalez M, Piguet V, Sayed C",
+            "journal": "Int J Dermatol",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33599294/"
+          },
+          {
+            "pmid": "33561678",
+            "title": "Endogenous melatonin and sleep in individuals with Rare Genetic Neurodevelopmental Disorders (RGND): A systematic review.",
+            "authors": "Woodford EC, McLay L, France KG, Blampied NM, Gibbs R, Swan CE, Eggleston M",
+            "journal": "Sleep Med Rev",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33561678/"
+          }
+        ],
+        "see_all": {}
+      }
+    },
+    "medgen_uid": "162881",
+    "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/162881"
+  },
+  "db_ids": {
+    "SNOMED-CT": "401315004",
+    "MONDO": "MONDO:0008434",
+    "OMIM": "182290",
+    "Orphanet": "819"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "RAI1",
+      "chromosome": "chr17",
+      "cytoband": "17p11.2",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "ClinGen",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "hi_score": "3",
+        "hi_score_label": "Sufficient evidence for dosage pathogenicity",
+        "hi_disease": "15565467",
+        "ts_score": "No evidence available",
+        "hi_pmids": [],
+        "hgnc_id": null,
+        "gencc_classification": "Definitive",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "PanelApp Australia",
+          "G2P",
+          "Orphanet",
+          "Ambry Genetics",
+          "ClinGen",
+          "Labcorp Genetics (formerly Invitae)"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0033151",
+            "hpo_name": "Abnormal pharynx morphology"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0000248",
+            "hpo_name": "Brachycephaly"
+          },
+          {
+            "hpo_id": "HP:0000248",
+            "hpo_name": "Brachycephaly"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000303",
+            "hpo_name": "Mandibular prognathia"
+          },
+          {
+            "hpo_id": "HP:0000389",
+            "hpo_name": "Chronic otitis media"
+          },
+          {
+            "hpo_id": "HP:0000358",
+            "hpo_name": "Posteriorly rotated ears"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          }
+        ],
+        "ncbi_gene_id": "10743"
+      }
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "17p11.2",
+      "chromosome": "chr17",
+      "cytoband": "17p11.2",
+      "genomic_pos": null,
+      "event": "loss",
+      "mechanism": "deletion",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    }
+  ],
+  "evidence_literature": [
+    {
+      "pmid": "32495322",
+      "doi": "10.1007/s40263-020-00733-5",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Management of Sleep Disturbances Associated with Smith-Magenis Syndrome.",
+      "authors": [
+        "Kaplan Kevin A",
+        "Elsea Sarah H",
+        "Potocki Lorraine"
+      ],
+      "journal": "CNS drugs",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Smith-Magenis syndrome is a genetic disorder caused by a microdeletion involving the retinoic acid-induced 1 (RAI1) gene that maps on the short arm of chromosome 17p11.2 or a pathogenic mutation of RAI1. Smith-Magenis syndrome affects patients through numerous congenital anomalies, intellectual disabilities, behavioral challenges, and sleep disturbances. The sleep abnormalities associated with Smith-Magenis syndrome can include frequent nocturnal arousals, early morning awakenings, and sleep attacks during the day. The sleep problems associated with Smith-Magenis syndrome are attributed to haploinsufficiency of the RAI1 gene. One consequence of reduced function of RAI1, and characteristic of Smith-Magenis syndrome, is an inversion of melatonin secretion resulting in a diurnal rather than nocturnal pattern. Treatment of sleep problems in people with Smith-Magenis syndrome generally involves a combination of sleep hygiene techniques, supplemental melatonin, and/or other medications, such as melatonin receptor agonists, β1-adrenergic antagonists, and stimulant medications, to improve sleep outcomes. Improvement in sleep has been shown to improve behavioral outcomes, which in turn improves the quality of life for both patients and their caregivers.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Humans",
+        "Melatonin",
+        "Mutation",
+        "Quality of Life",
+        "Sleep",
+        "Sleep Wake Disorders",
+        "Smith-Magenis Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s40263-020-00733-5"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32495322/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32495322/"
+    },
+    {
+      "pmid": "26055866",
+      "doi": "10.1016/j.jsmc.2015.02.008",
+      "pmc_id": "PMC4461836",
+      "pmc_verify": null,
+      "title": "Melatonin Treatment in Children with Developmental Disabilities.",
+      "authors": [
+        "Schwichtenberg A J",
+        "Malow Beth A"
+      ],
+      "journal": "Sleep medicine clinics",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Review"
+      ],
+      "abstract": "Melatonin is commonly recommended to treat sleep problems in children with developmental disabilities. However, few studies document the efficacy and safety of melatonin in these populations. This article reviews recent studies of melatonin efficacy in developmental disabilities. Overall, short treatment trials were associated with a significant decrease in sleep onset latency time for each of the disorders reviewed, with 1 notable exception-tuberous sclerosis. Reported side effects were uncommon and mild. Across disorders, additional research is needed to draw disability-specific conclusions. However, studies to date provide positive support for future trials that include larger groups of children with specific disabilities/syndromes.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Child",
+        "Developmental Disabilities",
+        "Humans",
+        "Hypnotics and Sedatives",
+        "Melatonin",
+        "Randomized Controlled Trials as Topic",
+        "Sleep",
+        "Sleep Wake Disorders"
+      ],
+      "keywords": [
+        "Angelman syndrome",
+        "Autism",
+        "Developmental disabilities",
+        "Melatonin",
+        "Sleep",
+        "Smith–Magenis syndrome"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4461836/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4461836/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jsmc.2015.02.008"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26055866/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26055866/"
+    },
+    {
+      "pmid": "25685859",
+      "doi": "10.1358/dot.2015.51.1.2258364",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Tasimelteon for the treatment of non-24-hour sleep-wake disorder.",
+      "authors": [
+        "Neubauer D N"
+      ],
+      "journal": "Drugs of today (Barcelona, Spain : 1998)",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Tasimelteon (Hetlioz®), a melatonin receptor agonist, is the first, and, at the time of the publication, the only drug to be approved by the U.S. Food and Drug Administration (FDA) for the treatment of non-24-hour sleep-wake disorder (non-24). This circadian rhythm disorder occurs most commonly in blind individuals without light perception, and it results from their inability to entrain to the 24-hour photoperiod, although the indication does not specify a particular patient population. Non-24 is characterized by a persistent cycle of nighttime insomnia and daytime sleepiness, alternating with asymptomatic periods depending on an individual's degree of circadian rhythm synchronization with the photoperiod at any particular time. Phase II clinical trials in healthy individuals confirmed the circadian phase-shifting potential of tasimelteon. Phase III trials in totally blind subjects diagnosed with non-24 demonstrated the efficacy of tasimelteon in reducing both nighttime wakefulness and daytime napping. Physiologic monitoring revealed that tasimelteon resulted in a higher proportion of individuals becoming entrained to the 24-hour cycle compared with placebo. Safety assessments indicated that tasimelteon is well tolerated, with the most common adverse events being headache, alanine aminotransferase elevation, nightmares or unusual dreams, and upper respiratory or urinary tract infections. Tasimelteon is available as a capsule in a single 20-mg dose and it must be obtained through Vanda Pharmaceutical's HetliozSolutions program with dispensing through a specialty pharmacy. Safety studies in blind individuals diagnosed with non-24 are ongoing and a future clinical trial with Smith-Magenis syndrome patients is planned.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Activity Cycles",
+        "Animals",
+        "Benzofurans",
+        "Blindness",
+        "Cyclopropanes",
+        "Drug Interactions",
+        "Humans",
+        "Receptors, Melatonin",
+        "Signal Transduction",
+        "Sleep",
+        "Sleep Disorders, Circadian Rhythm",
+        "Time Factors",
+        "Treatment Outcome",
+        "Wakefulness"
+      ],
+      "keywords": [
+        "Circadian rhythm",
+        "Melatonin",
+        "Non-24-hour sleep-wake disorder",
+        "Tasimelteon"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1358/dot.2015.51.1.2258364"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25685859/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25685859/"
+    },
+    {
+      "pmid": "38637764",
+      "doi": "10.1186/s11689-024-09535-y",
+      "pmc_id": "PMC11025271",
+      "pmc_verify": null,
+      "title": "Exploring an objective measure of overactivity in children with rare genetic syndromes.",
+      "authors": [
+        "O'Sullivan Rory",
+        "Bissell Stacey",
+        "Agar Georgie",
+        "Spiller Jayne",
+        "Surtees Andrew",
+        "Heald Mary",
+        "Clarkson Emma",
+        "Khan Aamina",
+        "Oliver Christopher",
+        "Bagshaw Andrew P",
+        "Richards Caroline"
+      ],
+      "journal": "Journal of neurodevelopmental disorders",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: Overactivity is prevalent in several rare genetic neurodevelopmental syndromes, including Smith-Magenis syndrome, Angelman syndrome, and tuberous sclerosis complex, although has been predominantly assessed using questionnaire techniques. Threats to the precision and validity of questionnaire data may undermine existing insights into this behaviour. Previous research indicates objective measures, namely actigraphy, can effectively differentiate non-overactive children from those with attention-deficit hyperactivity disorder. This study is the first to examine the sensitivity of actigraphy to overactivity across rare genetic syndromes associated with intellectual disability, through comparisons with typically-developing peers and questionnaire overactivity estimates. METHODS: A secondary analysis of actigraphy data and overactivity estimates from The Activity Questionnaire (TAQ) was conducted for children aged 4-15 years with Smith-Magenis syndrome (N=20), Angelman syndrome (N=26), tuberous sclerosis complex (N=16), and typically-developing children (N=61). Actigraphy data were summarized using the M10 non-parametric circadian rhythm variable, and 24-hour activity profiles were modelled via functional linear modelling. Associations between actigraphy data and TAQ overactivity estimates were explored. Differences in actigraphy-defined activity were also examined between syndrome and typically-developing groups, and between children with high and low TAQ overactivity scores within syndromes. RESULTS: M10 and TAQ overactivity scores were strongly positively correlated for children with Angelman syndrome and Smith-Magenis syndrome. M10 did not substantially differ between the syndrome and typically-developing groups. Higher early morning activity and lower evening activity was observed across all syndrome groups relative to typically-developing peers. High and low TAQ group comparisons revealed syndrome-specific profiles of overactivity, persisting throughout the day in Angelman syndrome, occurring during the early morning and early afternoon in Smith-Magenis syndrome, and manifesting briefly in the evening in tuberous sclerosis complex. DISCUSSION: These findings provide some support for the sensitivity of actigraphy to overactivity in children with rare genetic syndromes, and offer syndrome-specific temporal descriptions of overactivity. The findings advance existing descriptions of overactivity, provided by questionnaire techniques, in children with rare genetic syndromes and have implications for the measurement of overactivity. Future studies should examine the impact of syndrome-related characteristics on actigraphy-defined activity and overactivity estimates from actigraphy and questionnaire techniques.",
+      "abstract_sections": {
+        "BACKGROUND": "Overactivity is prevalent in several rare genetic neurodevelopmental syndromes, including Smith-Magenis syndrome, Angelman syndrome, and tuberous sclerosis complex, although has been predominantly assessed using questionnaire techniques. Threats to the precision and validity of questionnaire data may undermine existing insights into this behaviour. Previous research indicates objective measures, namely actigraphy, can effectively differentiate non-overactive children from those with attention-deficit hyperactivity disorder. This study is the first to examine the sensitivity of actigraphy to overactivity across rare genetic syndromes associated with intellectual disability, through comparisons with typically-developing peers and questionnaire overactivity estimates.",
+        "METHODS": "A secondary analysis of actigraphy data and overactivity estimates from The Activity Questionnaire (TAQ) was conducted for children aged 4-15 years with Smith-Magenis syndrome (N=20), Angelman syndrome (N=26), tuberous sclerosis complex (N=16), and typically-developing children (N=61). Actigraphy data were summarized using the M10 non-parametric circadian rhythm variable, and 24-hour activity profiles were modelled via functional linear modelling. Associations between actigraphy data and TAQ overactivity estimates were explored. Differences in actigraphy-defined activity were also examined between syndrome and typically-developing groups, and between children with high and low TAQ overactivity scores within syndromes.",
+        "RESULTS": "M10 and TAQ overactivity scores were strongly positively correlated for children with Angelman syndrome and Smith-Magenis syndrome. M10 did not substantially differ between the syndrome and typically-developing groups. Higher early morning activity and lower evening activity was observed across all syndrome groups relative to typically-developing peers. High and low TAQ group comparisons revealed syndrome-specific profiles of overactivity, persisting throughout the day in Angelman syndrome, occurring during the early morning and early afternoon in Smith-Magenis syndrome, and manifesting briefly in the evening in tuberous sclerosis complex.",
+        "DISCUSSION": "These findings provide some support for the sensitivity of actigraphy to overactivity in children with rare genetic syndromes, and offer syndrome-specific temporal descriptions of overactivity. The findings advance existing descriptions of overactivity, provided by questionnaire techniques, in children with rare genetic syndromes and have implications for the measurement of overactivity. Future studies should examine the impact of syndrome-related characteristics on actigraphy-defined activity and overactivity estimates from actigraphy and questionnaire techniques."
+      },
+      "mesh_terms": [
+        "Child",
+        "Humans",
+        "Smith-Magenis Syndrome",
+        "Angelman Syndrome",
+        "Tuberous Sclerosis",
+        "Intellectual Disability"
+      ],
+      "keywords": [
+        "Actigraphy",
+        "Angelman syndrome",
+        "Children",
+        "Hyperactivity",
+        "Objective",
+        "Overactivity",
+        "Questionnaire",
+        "Rare genetic syndromes",
+        "Smith-Magenis syndrome",
+        "Tuberous sclerosis complex"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11025271/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11025271/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/s11689-024-09535-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38637764/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38637764/"
+    },
+    {
+      "pmid": "35779287",
+      "doi": "10.1016/j.ridd.2022.104286",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Sleep disturbances and behavior in Smith-Magenis syndrome.",
+      "authors": [
+        "Garayzábal Elena",
+        "Hidalgo Irene",
+        "Miranda de Souza Ana Luiza Decanini",
+        "da Silva Nathani Cristina",
+        "Giacheti Celia Maria",
+        "Pinato Luciana"
+      ],
+      "journal": "Research in developmental disabilities",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND: The Smith-Magenis syndrome (SMS) shows a collection of neurodevelopmental problems including mild to moderate intellectual disability, change-related anxiety, impulsivity, speech delay, Attention-Deficit/Hyperactivity Disorder (ADH) and sleep disturbances. Sleep disorders, when present, have been treated in several populations with consecutive improvements in cognitive and behavioral aspects. AIMS: To better understand the existing relationships between sleep disturbances and behavioral problems in SMS syndrome this study describes the sleep and behavior problems in the SMS and explores the possible relation between both. METHODS AND PROCEDURES: 17 individuals with SMS (50% males; 11.2 ± 4.9 years old) and 12 individuals with typical development (50% male; 11.1 ± 4.4 years old) were investigated using the Sleep Disturbance Scale for Children and the Child Behavior Checklist. RESULTS: A high percentage (60%) of individuals with SMS have an indication of sleep disorders, being the most frequent disorders the sleep-wake transition disorders, and disorders of initiating and maintaining sleep with sleep latency higher than acceptable and total sleep time below acceptable. More than 94% of the SMS group presented clinical or borderline scores on the total behavioral problems scale. The most common behavioral problems were Externalizing Problems, Thought and Attention, ADH and Aggressive problems. There was a positive correlation between disorders of initiating and maintaining sleep, sleep-wake transition disorders, disorders of arousal, disorders of excessive somnolence and behavioral problems. CONCLUSIONS AND IMPLICATIONS: The worse the sleep disturbances investigated, the more severe the behavioral problems characteristics reinforcing the importance to address the sleep problems in the treatment of SMS individuals.",
+      "abstract_sections": {
+        "BACKGROUND": "The Smith-Magenis syndrome (SMS) shows a collection of neurodevelopmental problems including mild to moderate intellectual disability, change-related anxiety, impulsivity, speech delay, Attention-Deficit/Hyperactivity Disorder (ADH) and sleep disturbances. Sleep disorders, when present, have been treated in several populations with consecutive improvements in cognitive and behavioral aspects.",
+        "AIMS": "To better understand the existing relationships between sleep disturbances and behavioral problems in SMS syndrome this study describes the sleep and behavior problems in the SMS and explores the possible relation between both.",
+        "METHODS AND PROCEDURES": "17 individuals with SMS (50% males; 11.2 ± 4.9 years old) and 12 individuals with typical development (50% male; 11.1 ± 4.4 years old) were investigated using the Sleep Disturbance Scale for Children and the Child Behavior Checklist.",
+        "RESULTS": "A high percentage (60%) of individuals with SMS have an indication of sleep disorders, being the most frequent disorders the sleep-wake transition disorders, and disorders of initiating and maintaining sleep with sleep latency higher than acceptable and total sleep time below acceptable. More than 94% of the SMS group presented clinical or borderline scores on the total behavioral problems scale. The most common behavioral problems were Externalizing Problems, Thought and Attention, ADH and Aggressive problems. There was a positive correlation between disorders of initiating and maintaining sleep, sleep-wake transition disorders, disorders of arousal, disorders of excessive somnolence and behavioral problems.",
+        "CONCLUSIONS AND IMPLICATIONS": "The worse the sleep disturbances investigated, the more severe the behavioral problems characteristics reinforcing the importance to address the sleep problems in the treatment of SMS individuals."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Female",
+        "Humans",
+        "Male",
+        "Sleep",
+        "Sleep Initiation and Maintenance Disorders",
+        "Sleep Wake Disorders",
+        "Sleep-Wake Transition Disorders",
+        "Smith-Magenis Syndrome"
+      ],
+      "keywords": [
+        "Behavior",
+        "Neurodevelopmental disorder",
+        "Sleep",
+        "Smith Magenis syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ridd.2022.104286"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35779287/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35779287/"
+    },
+    {
+      "pmid": "31838315",
+      "doi": "10.1016/j.ridd.2019.103555",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Sleep disorders in children with Angelman and Smith-Magenis syndromes: The assessment of potential causes of disrupted settling and night time waking.",
+      "authors": [
+        "Agar Georgie",
+        "Oliver Chris",
+        "Trickett Jayne",
+        "Licence Lucy",
+        "Richards Caroline"
+      ],
+      "journal": "Research in developmental disabilities",
+      "year": "2020",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND: Sleep problems are common in Smith-Magenis (SMS) and Angelman syndromes (AS). Effectiveness of interventions depends on appropriate assessment, complicated by compromised self-report and health and behaviour difficulties. Studying settling and waking in these syndromes could inform assessment. AIMS: To describe settling and waking behaviours in children at high-risk of sleep and health problems, using direct observation. METHODS AND PROCEDURES: Video and actigraphy data were collected for 12 participants with AS (Mean age = 8.02, SD = 2.81) and 11 with SMS (Mean age = 8.80, SD = 2.18). Settling (30 min prior to sleep onset) and night waking were coded for nineteen behaviours relating to pain, challenging behaviour and caregiver interaction. Lag sequential analyses were conducted for pain-related behaviours. OUTCOMES AND RESULTS: Percentage of time spent in behaviours was calculated. Parent-child interactions (0.00-9.93 %) and challenging behaviours (0 %) were rare at settling and waking in both groups. In the AS group, pain-related behaviours were more likely to occur before waking than by chance (p < 0.001). CONCLUSIONS AND IMPLICATIONS: Findings highlight the importance of considering pain as a cause of sleep problems in AS. The principle and methodology could be extended to individuals with ID experiencing sleep problems.",
+      "abstract_sections": {
+        "BACKGROUND": "Sleep problems are common in Smith-Magenis (SMS) and Angelman syndromes (AS). Effectiveness of interventions depends on appropriate assessment, complicated by compromised self-report and health and behaviour difficulties. Studying settling and waking in these syndromes could inform assessment.",
+        "AIMS": "To describe settling and waking behaviours in children at high-risk of sleep and health problems, using direct observation.",
+        "METHODS AND PROCEDURES": "Video and actigraphy data were collected for 12 participants with AS (Mean age = 8.02, SD = 2.81) and 11 with SMS (Mean age = 8.80, SD = 2.18). Settling (30 min prior to sleep onset) and night waking were coded for nineteen behaviours relating to pain, challenging behaviour and caregiver interaction. Lag sequential analyses were conducted for pain-related behaviours.",
+        "OUTCOMES AND RESULTS": "Percentage of time spent in behaviours was calculated. Parent-child interactions (0.00-9.93 %) and challenging behaviours (0 %) were rare at settling and waking in both groups. In the AS group, pain-related behaviours were more likely to occur before waking than by chance (p < 0.001).",
+        "CONCLUSIONS AND IMPLICATIONS": "Findings highlight the importance of considering pain as a cause of sleep problems in AS. The principle and methodology could be extended to individuals with ID experiencing sleep problems."
+      },
+      "mesh_terms": [
+        "Actigraphy",
+        "Adolescent",
+        "Aggression",
+        "Angelman Syndrome",
+        "Child",
+        "Child Behavior",
+        "Child, Preschool",
+        "Communication",
+        "Female",
+        "Humans",
+        "Male",
+        "Nonverbal Communication",
+        "Pain",
+        "Play and Playthings",
+        "Self-Injurious Behavior",
+        "Sleep Initiation and Maintenance Disorders",
+        "Smith-Magenis Syndrome",
+        "Video Recording"
+      ],
+      "keywords": [
+        "Actigraphy",
+        "Angelman syndrome",
+        "Pain",
+        "Sleep",
+        "Smith-Magenis syndrome",
+        "Video coding"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ridd.2019.103555"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31838315/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/31838315/"
+    },
+    {
+      "pmid": "28384694",
+      "doi": "10.1044/2016_JSLHR-H-16-0024",
+      "pmc_id": "PMC5548078",
+      "pmc_verify": null,
+      "title": "Auditory Phenotype of Smith-Magenis Syndrome.",
+      "authors": [
+        "Brendal Megan A",
+        "King Kelly A",
+        "Zalewski Christopher K",
+        "Finucane Brenda M",
+        "Introne Wendy",
+        "Brewer Carmen C",
+        "Smith Ann C M"
+      ],
+      "journal": "Journal of speech, language, and hearing research : JSLHR",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, N.I.H., Intramural"
+      ],
+      "abstract": "PURPOSE: The purpose of this study was to describe the auditory phenotype of a large cohort with Smith-Magenis syndrome (SMS), a rare disorder including physical anomalies, cognitive deficits, sleep disturbances, and a distinct behavioral phenotype. METHOD: Hearing-related data were collected for 133 individuals with SMS aged 1-49 years. Audiogram data (97 participants) were used for cross-sectional and longitudinal analyses. Caregivers completed a sound sensitivity survey for 98 individuals with SMS and a control group of 24 unaffected siblings. RESULTS: Nearly 80% of participants with interpretable audiograms (n = 76) had hearing loss, which was typically slight to mild in degree. When hearing loss type could be determined (40 participants), sensorineural hearing loss (48.1%) occurred most often in participants aged 11-49 years. Conductive hearing loss (35.2%) was typically observed in children aged 1-10 years. A pattern of fluctuating and progressive hearing decline was documented. Hyperacusis was reported in 73.5% of participants with SMS compared with 12.5% of unaffected siblings. CONCLUSIONS: This study offers the most comprehensive characterization of the auditory phenotype of SMS to date. The auditory profile in SMS is multifaceted and can include a previously unreported manifestation of hyperacusis. Routine audiologic surveillance is recommended as part of standard clinical care.",
+      "abstract_sections": {
+        "PURPOSE": "The purpose of this study was to describe the auditory phenotype of a large cohort with Smith-Magenis syndrome (SMS), a rare disorder including physical anomalies, cognitive deficits, sleep disturbances, and a distinct behavioral phenotype.",
+        "METHOD": "Hearing-related data were collected for 133 individuals with SMS aged 1-49 years. Audiogram data (97 participants) were used for cross-sectional and longitudinal analyses. Caregivers completed a sound sensitivity survey for 98 individuals with SMS and a control group of 24 unaffected siblings.",
+        "RESULTS": "Nearly 80% of participants with interpretable audiograms (n = 76) had hearing loss, which was typically slight to mild in degree. When hearing loss type could be determined (40 participants), sensorineural hearing loss (48.1%) occurred most often in participants aged 11-49 years. Conductive hearing loss (35.2%) was typically observed in children aged 1-10 years. A pattern of fluctuating and progressive hearing decline was documented. Hyperacusis was reported in 73.5% of participants with SMS compared with 12.5% of unaffected siblings.",
+        "CONCLUSIONS": "This study offers the most comprehensive characterization of the auditory phenotype of SMS to date. The auditory profile in SMS is multifaceted and can include a previously unreported manifestation of hyperacusis. Routine audiologic surveillance is recommended as part of standard clinical care."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Audiometry",
+        "Child",
+        "Child, Preschool",
+        "Cross-Sectional Studies",
+        "Female",
+        "Hearing",
+        "Hearing Loss",
+        "Humans",
+        "Hyperacusis",
+        "Infant",
+        "Longitudinal Studies",
+        "Male",
+        "Middle Aged",
+        "Phenotype",
+        "Prospective Studies",
+        "Retrospective Studies",
+        "Siblings",
+        "Smith-Magenis Syndrome",
+        "Surveys and Questionnaires",
+        "Young Adult"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5548078/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5548078/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1044/2016_JSLHR-H-16-0024"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28384694/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28384694/"
+    },
+    {
+      "pmid": "35205380",
+      "doi": "10.3390/genes13020335",
+      "pmc_id": "PMC8872351",
+      "pmc_verify": null,
+      "title": "Smith-Magenis Syndrome-Clinical Review, Biological Background and Related Disorders.",
+      "authors": [
+        "Rinaldi Berardo",
+        "Villa Roberta",
+        "Sironi Alessandra",
+        "Garavelli Livia",
+        "Finelli Palma",
+        "Bedeschi Maria Francesca"
+      ],
+      "journal": "Genes",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Smith-Magenis syndrome (SMS) is a complex genetic disorder characterized by distinctive physical features, developmental delay, cognitive impairment, and a typical behavioral phenotype. SMS is caused by interstitial 17p11.2 deletions (90%), encompassing multiple genes and including the retinoic acid-induced 1 gene (RAI1), or by pathogenic variants in RAI1 itself (10%). RAI1 is a dosage-sensitive gene expressed in many tissues and acting as transcriptional regulator. The majority of individuals exhibit a mild-to-moderate range of intellectual disability. The behavioral phenotype includes significant sleep disturbance, stereotypes, maladaptive and self-injurious behaviors. In this review, we summarize current clinical knowledge and therapeutic approaches. We further discuss the common biological background shared with other conditions commonly retained in differential diagnosis.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Intellectual Disability",
+        "Smith-Magenis Syndrome",
+        "Trans-Activators",
+        "Transcription Factors"
+      ],
+      "keywords": [
+        "17p11.2 deletion syndrome",
+        "RAI1",
+        "SMS",
+        "Smith-Magenis",
+        "sleep disorders"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8872351/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8872351/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/genes13020335"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35205380/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35205380/"
+    },
+    {
+      "pmid": "30819258",
+      "doi": "10.1186/s13073-019-0623-0",
+      "pmc_id": "PMC6393995",
+      "pmc_verify": null,
+      "title": "De novo and inherited TCF20 pathogenic variants are associated with intellectual disability, dysmorphic features, hypotonia, and neurological impairments with similarities to Smith-Magenis syndrome.",
+      "authors": [
+        "Vetrini Francesco",
+        "McKee Shane",
+        "Rosenfeld Jill A",
+        "Suri Mohnish",
+        "Lewis Andrea M",
+        "Nugent Kimberly Margaret",
+        "Roeder Elizabeth",
+        "Littlejohn Rebecca O",
+        "Holder Sue",
+        "Zhu Wenmiao",
+        "Alaimo Joseph T",
+        "Graham Brett",
+        "Harris Jill M",
+        "Gibson James B",
+        "Pastore Matthew",
+        "McBride Kim L",
+        "Komara Makanko",
+        "Al-Gazali Lihadh",
+        "Al Shamsi Aisha",
+        "Fanning Elizabeth A",
+        "Wierenga Klaas J",
+        "Scott Daryl A",
+        "Ben-Neriah Ziva",
+        "Meiner Vardiella",
+        "Cassuto Hanoch",
+        "Elpeleg Orly",
+        "Holder J Lloyd",
+        "Burrage Lindsay C",
+        "Seaver Laurie H",
+        "Van Maldergem Lionel",
+        "Mahida Sonal",
+        "Soul Janet S",
+        "Marlatt Margaret",
+        "Matyakhina Ludmila",
+        "Vogt Julie",
+        "Gold June-Anne",
+        "Park Soo-Mi",
+        "Varghese Vinod",
+        "Lampe Anne K",
+        "Kumar Ajith",
+        "Lees Melissa",
+        "Holder-Espinasse Muriel",
+        "McConnell Vivienne",
+        "Bernhard Birgitta",
+        "Blair Ed",
+        "Harrison Victoria",
+        "DDD study",
+        "Muzny Donna M",
+        "Gibbs Richard A",
+        "Elsea Sarah H",
+        "Posey Jennifer E",
+        "Bi Weimin",
+        "Lalani Seema",
+        "Xia Fan",
+        "Yang Yaping",
+        "Eng Christine M",
+        "Lupski James R",
+        "Liu Pengfei"
+      ],
+      "journal": "Genome medicine",
+      "year": "2019",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: Neurodevelopmental disorders are genetically and phenotypically heterogeneous encompassing developmental delay (DD), intellectual disability (ID), autism spectrum disorders (ASDs), structural brain abnormalities, and neurological manifestations with variants in a large number of genes (hundreds) associated. To date, a few de novo mutations potentially disrupting TCF20 function in patients with ID, ASD, and hypotonia have been reported. TCF20 encodes a transcriptional co-regulator structurally related to RAI1, the dosage-sensitive gene responsible for Smith-Magenis syndrome (deletion/haploinsufficiency) and Potocki-Lupski syndrome (duplication/triplosensitivity). METHODS: Genome-wide analyses by exome sequencing (ES) and chromosomal microarray analysis (CMA) identified individuals with heterozygous, likely damaging, loss-of-function alleles in TCF20. We implemented further molecular and clinical analyses to determine the inheritance of the pathogenic variant alleles and studied the spectrum of phenotypes. RESULTS: We report 25 unique inactivating single nucleotide variants/indels (1 missense, 1 canonical splice-site variant, 18 frameshift, and 5 nonsense) and 4 deletions of TCF20. The pathogenic variants were detected in 32 patients and 4 affected parents from 31 unrelated families. Among cases with available parental samples, the variants were de novo in 20 instances and inherited from 4 symptomatic parents in 5, including in one set of monozygotic twins. Two pathogenic loss-of-function variants were recurrent in unrelated families. Patients presented with a phenotype characterized by developmental delay, intellectual disability, hypotonia, variable dysmorphic features, movement disorders, and sleep disturbances. CONCLUSIONS: TCF20 pathogenic variants are associated with a novel syndrome manifesting clinical characteristics similar to those observed in Smith-Magenis syndrome. Together with previously described cases, the clinical entity of TCF20-associated neurodevelopmental disorders (TAND) emerges from a genotype-driven perspective.",
+      "abstract_sections": {
+        "BACKGROUND": "Neurodevelopmental disorders are genetically and phenotypically heterogeneous encompassing developmental delay (DD), intellectual disability (ID), autism spectrum disorders (ASDs), structural brain abnormalities, and neurological manifestations with variants in a large number of genes (hundreds) associated. To date, a few de novo mutations potentially disrupting TCF20 function in patients with ID, ASD, and hypotonia have been reported. TCF20 encodes a transcriptional co-regulator structurally related to RAI1, the dosage-sensitive gene responsible for Smith-Magenis syndrome (deletion/haploinsufficiency) and Potocki-Lupski syndrome (duplication/triplosensitivity).",
+        "METHODS": "Genome-wide analyses by exome sequencing (ES) and chromosomal microarray analysis (CMA) identified individuals with heterozygous, likely damaging, loss-of-function alleles in TCF20. We implemented further molecular and clinical analyses to determine the inheritance of the pathogenic variant alleles and studied the spectrum of phenotypes.",
+        "RESULTS": "We report 25 unique inactivating single nucleotide variants/indels (1 missense, 1 canonical splice-site variant, 18 frameshift, and 5 nonsense) and 4 deletions of TCF20. The pathogenic variants were detected in 32 patients and 4 affected parents from 31 unrelated families. Among cases with available parental samples, the variants were de novo in 20 instances and inherited from 4 symptomatic parents in 5, including in one set of monozygotic twins. Two pathogenic loss-of-function variants were recurrent in unrelated families. Patients presented with a phenotype characterized by developmental delay, intellectual disability, hypotonia, variable dysmorphic features, movement disorders, and sleep disturbances.",
+        "CONCLUSIONS": "TCF20 pathogenic variants are associated with a novel syndrome manifesting clinical characteristics similar to those observed in Smith-Magenis syndrome. Together with previously described cases, the clinical entity of TCF20-associated neurodevelopmental disorders (TAND) emerges from a genotype-driven perspective."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Child",
+        "Child, Preschool",
+        "Craniofacial Abnormalities",
+        "Developmental Disabilities",
+        "Female",
+        "Humans",
+        "INDEL Mutation",
+        "Infant",
+        "Intellectual Disability",
+        "Male",
+        "Muscle Hypotonia",
+        "Smith-Magenis Syndrome",
+        "Transcription Factors",
+        "Young Adult"
+      ],
+      "keywords": [
+        "22q13",
+        "Deletions",
+        "Haploinsufficiency",
+        "Loss-of-function variants",
+        "Neurodevelopmental disorders",
+        "Smith–Magenis syndrome",
+        "TCF20"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6393995/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6393995/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/s13073-019-0623-0"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30819258/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30819258/"
+    },
+    {
+      "pmid": "30557269",
+      "doi": "10.1097/YCO.0000000000000474",
+      "pmc_id": "PMC6362978",
+      "pmc_verify": null,
+      "title": "Behavior and sleep disturbance in Smith-Magenis syndrome.",
+      "authors": [
+        "Shayota Brian J",
+        "Elsea Sarah H"
+      ],
+      "journal": "Current opinion in psychiatry",
+      "year": "2019",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: To provide an update of the most recent studies on Smith-Magenis syndrome (SMS) with a focus on the unique pattern of behavioral and sleep disturbances associated with the condition. RECENT FINDINGS: The recent literature on SMS has focused on the characteristic severe behavioral and sleep disturbances. A better understanding of the underlying pathophysiological mechanisms and common clinical course has helped further characterize SMS, while much is left to be discovered in regard to effective treatment/management. SUMMARY: SMS is a difficult to manage genetic condition defined by pervasive and progressive behavioral and sleep disturbances with a unique pattern that can often be easily discerned from other neurodevelopmental disorders. Common behavioral features include maladaptive/self-injurious, aggressive, stereotypic, and the newly appreciated food seeking behaviors associated with SMS. In addition, there is a sleep disturbance defined by an altered circadian rhythm with frequent nighttime waking and daytime sleepiness, causing patients and families significant distress. Small studies have suggested some treatment/management approaches to the behavioral and sleep disturbances, however, much remains to be discovered.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "To provide an update of the most recent studies on Smith-Magenis syndrome (SMS) with a focus on the unique pattern of behavioral and sleep disturbances associated with the condition.",
+        "RECENT FINDINGS": "The recent literature on SMS has focused on the characteristic severe behavioral and sleep disturbances. A better understanding of the underlying pathophysiological mechanisms and common clinical course has helped further characterize SMS, while much is left to be discovered in regard to effective treatment/management.",
+        "SUMMARY": "SMS is a difficult to manage genetic condition defined by pervasive and progressive behavioral and sleep disturbances with a unique pattern that can often be easily discerned from other neurodevelopmental disorders. Common behavioral features include maladaptive/self-injurious, aggressive, stereotypic, and the newly appreciated food seeking behaviors associated with SMS. In addition, there is a sleep disturbance defined by an altered circadian rhythm with frequent nighttime waking and daytime sleepiness, causing patients and families significant distress. Small studies have suggested some treatment/management approaches to the behavioral and sleep disturbances, however, much remains to be discovered."
+      },
+      "mesh_terms": [
+        "Aggression",
+        "Disease Progression",
+        "Female",
+        "Humans",
+        "Male",
+        "Psychopathology",
+        "Sleep Disorders, Circadian Rhythm",
+        "Smith-Magenis Syndrome",
+        "Somnambulism",
+        "Stereotyped Behavior"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6362978/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6362978/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/YCO.0000000000000474"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30557269/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30557269/"
+    },
+    {
+      "pmid": "18231123",
+      "doi": "10.1038/sj.ejhg.5202009",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Smith-Magenis syndrome.",
+      "authors": [
+        "Elsea Sarah H",
+        "Girirajan Santhosh"
+      ],
+      "journal": "European journal of human genetics : EJHG",
+      "year": "2008",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "Smith-Magenis syndrome (SMS) is a complex neurobehavioral disorder caused by haploinsufficiency of the retinoic acid-induced 1 (RAI1) gene on chromosome 17p11.2. Diagnostic strategies include molecular identification of a 17p11.2 microdeletion encompassing RAI1 or a mutation in RAI1. G-banding and fluorescent in situ hybridization (FISH) are the classical methods used to detect the SMS deletions, while multiplex ligation-dependent probe amplification (MLPA) and real-time quantitative PCR are the newer, cost-effective, and high-throughput technologies. Most SMS features are due to RAI1 haploinsufficiency, while the variability and severity of the disorder are modified by other genes in the 17p11.2 region. The functional role for RAI1 is not completely understood, but it is likely involved in transcription, based on homology and preliminary studies. Management of SMS is primarily a multidisciplinary approach and involves treatment for sleep disturbance, speech and occupational therapies, minor medical interventions, and management of behaviors.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosomes, Human, Pair 17",
+        "Craniofacial Abnormalities",
+        "Humans",
+        "Intellectual Disability",
+        "Syndrome",
+        "Trans-Activators",
+        "Transcription Factors"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/sj.ejhg.5202009"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18231123/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18231123/"
+    },
+    {
+      "pmid": "8684798",
+      "doi": "10.1016/s0161-6420(96)30563-0",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Ophthalmic manifestations of Smith-Magenis syndrome.",
+      "authors": [
+        "Chen R M",
+        "Lupski J R",
+        "Greenberg F",
+        "Lewis R A"
+      ],
+      "journal": "Ophthalmology",
+      "year": "1996",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Review"
+      ],
+      "abstract": "PURPOSE: The Smith-Magenis syndrome (SMS) is a multiple-anomaly, mental retardation syndrome associated with deletions of a contiguous region of chromosome 17p11.2. Prior reports have described ophthalmic anomalies with SMS, including telecanthus, ptosis, strabismus, myopia, iris anomalies, cataracts, optic nerve hypoplasia, and retinal detachment. This report defines the ophthalmic spectrum in 28 individuals with SMS subjected to a multidisciplinary clinical and molecular survey. METHODS: Individuals with deletion of chromosome 17p11.2 detected by high-resolution cytogenetic analysis underwent complete ophthalmologic evaluation comprised of ophthalmic history, visual acuity, cycloplegic refraction, motility, and biomicroscopic and ophthalmoscopic examination. RESULTS: Among the 28 subjects, ranging in age from 0.8 to 29.3 years, the most frequent ocular findings were iris anomalies (68%), microcornea (50%), myopia (42%), and strabismus (32%). Bilateral microphthalmos with uveal and retinal coloboma was observed in one individual. No subject had cataract or retinal detachment. CONCLUSIONS: This is the largest single-center series of subjects with SMS that includes ophthalmic evaluation. As in prior reports, iris anomalies and strabismus were observed, but microcornea had not been noted previously. The absolute refractive error was hypermetropic in half of these subjects. Cataract, ptosis, and retinal pathology, including detachment, were not observed in any subject. All individuals with SMS should be evaluated by an ophthalmologist, with special attention to strabismus, microcornea, iris anomalies, and refractive errors.",
+      "abstract_sections": {
+        "PURPOSE": "The Smith-Magenis syndrome (SMS) is a multiple-anomaly, mental retardation syndrome associated with deletions of a contiguous region of chromosome 17p11.2. Prior reports have described ophthalmic anomalies with SMS, including telecanthus, ptosis, strabismus, myopia, iris anomalies, cataracts, optic nerve hypoplasia, and retinal detachment. This report defines the ophthalmic spectrum in 28 individuals with SMS subjected to a multidisciplinary clinical and molecular survey.",
+        "METHODS": "Individuals with deletion of chromosome 17p11.2 detected by high-resolution cytogenetic analysis underwent complete ophthalmologic evaluation comprised of ophthalmic history, visual acuity, cycloplegic refraction, motility, and biomicroscopic and ophthalmoscopic examination.",
+        "RESULTS": "Among the 28 subjects, ranging in age from 0.8 to 29.3 years, the most frequent ocular findings were iris anomalies (68%), microcornea (50%), myopia (42%), and strabismus (32%). Bilateral microphthalmos with uveal and retinal coloboma was observed in one individual. No subject had cataract or retinal detachment.",
+        "CONCLUSIONS": "This is the largest single-center series of subjects with SMS that includes ophthalmic evaluation. As in prior reports, iris anomalies and strabismus were observed, but microcornea had not been noted previously. The absolute refractive error was hypermetropic in half of these subjects. Cataract, ptosis, and retinal pathology, including detachment, were not observed in any subject. All individuals with SMS should be evaluated by an ophthalmologist, with special attention to strabismus, microcornea, iris anomalies, and refractive errors."
+      },
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Adolescent",
+        "Adult",
+        "Child",
+        "Child, Preschool",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 17",
+        "Corneal Diseases",
+        "Eye Diseases",
+        "Female",
+        "Humans",
+        "Infant",
+        "Intellectual Disability",
+        "Iris Diseases",
+        "Karyotyping",
+        "Male",
+        "Myopia",
+        "Strabismus",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s0161-6420(96)30563-0"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8684798/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8684798/"
+    },
+    {
+      "pmid": "29096777",
+      "doi": "10.1016/j.jaac.2017.09.414",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Efficacy and Safety of Pediatric Prolonged-Release Melatonin for Insomnia in Children With Autism Spectrum Disorder.",
+      "authors": [
+        "Gringras Paul",
+        "Nir Tali",
+        "Breddy John",
+        "Frydman-Marom Anat",
+        "Findling Robert L"
+      ],
+      "journal": "Journal of the American Academy of Child and Adolescent Psychiatry",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ],
+      "abstract": "OBJECTIVE: To assess the efficacy and safety of novel pediatric-appropriate, prolonged-release melatonin minitablets (PedPRM) versus placebo for insomnia in children and adolescents with autism spectrum disorder (ASD), with or without attention-deficit/hyperactivity disorder (ADHD) comorbidity, and neurogenetic disorders (NGD). METHOD: A total of 125 children and adolescents (2-17.5 years of age; 96.8% ASD, 3.2% Smith-Magenis syndrome [SMS]) whose sleep failed to improve on behavioral intervention alone were randomized (1:1 ratio), double-blind, to receive PedPRM (2 mg escalated to 5 mg) or placebo for 13 weeks. Sleep measures included the validated caregivers' Sleep and Nap Diary (SND) and Composite Sleep Disturbance Index (CSDI). The a priori primary endpoint was SND-reported total sleep time (TST) after 13 weeks of treatment. RESULTS: The study met the primary endpoint: after 13 weeks of double-blind treatment, participants slept on average 57.5 minutes longer at night with PedPRM compared to 9.14 minutes with placebo (adjusted mean treatment difference PedPRM-placebo -32.43 minutes; p = .034). Sleep latency (SL) decreased by 39.6 minutes on average with PedPRM and 12.5 minutes with placebo (adjusted mean treatment difference -25.30 minutes; p = .011) without causing earlier wakeup time. The rate of participants attaining clinically meaningful responses in TST and/or SL was significantly higher with PedPRM than with placebo (68.9% versus 39.3% respectively; p = .001) corresponding to a number needed to treat (NNT) of 3.38. Overall sleep disturbance (CSDI) tended to decrease. PedPRM was generally safe; somnolence was more commonly reported with PedPRM than placebo. CONCLUSION: PedPRM was efficacious and safe for treatment of insomnia in children and adolescents with ASD with/without ADHD and NGD. The acceptability of this pediatric formulation in a population who usually experience significant difficulties in swallowing was remarkably high. Clinical trial registration information-Efficacy and Safety of Circadin in the Treatment of Sleep Disturbances in Children With Neurodevelopment Disabilities; http://clinicaltrials.gov/; NCT01906866.",
+      "abstract_sections": {
+        "OBJECTIVE": "To assess the efficacy and safety of novel pediatric-appropriate, prolonged-release melatonin minitablets (PedPRM) versus placebo for insomnia in children and adolescents with autism spectrum disorder (ASD), with or without attention-deficit/hyperactivity disorder (ADHD) comorbidity, and neurogenetic disorders (NGD).",
+        "METHOD": "A total of 125 children and adolescents (2-17.5 years of age; 96.8% ASD, 3.2% Smith-Magenis syndrome [SMS]) whose sleep failed to improve on behavioral intervention alone were randomized (1:1 ratio), double-blind, to receive PedPRM (2 mg escalated to 5 mg) or placebo for 13 weeks. Sleep measures included the validated caregivers' Sleep and Nap Diary (SND) and Composite Sleep Disturbance Index (CSDI). The a priori primary endpoint was SND-reported total sleep time (TST) after 13 weeks of treatment.",
+        "RESULTS": "The study met the primary endpoint: after 13 weeks of double-blind treatment, participants slept on average 57.5 minutes longer at night with PedPRM compared to 9.14 minutes with placebo (adjusted mean treatment difference PedPRM-placebo -32.43 minutes; p = .034). Sleep latency (SL) decreased by 39.6 minutes on average with PedPRM and 12.5 minutes with placebo (adjusted mean treatment difference -25.30 minutes; p = .011) without causing earlier wakeup time. The rate of participants attaining clinically meaningful responses in TST and/or SL was significantly higher with PedPRM than with placebo (68.9% versus 39.3% respectively; p = .001) corresponding to a number needed to treat (NNT) of 3.38. Overall sleep disturbance (CSDI) tended to decrease. PedPRM was generally safe; somnolence was more commonly reported with PedPRM than placebo.",
+        "CONCLUSION": "PedPRM was efficacious and safe for treatment of insomnia in children and adolescents with ASD with/without ADHD and NGD. The acceptability of this pediatric formulation in a population who usually experience significant difficulties in swallowing was remarkably high. Clinical trial registration information-Efficacy and Safety of Circadin in the Treatment of Sleep Disturbances in Children With Neurodevelopment Disabilities; http://clinicaltrials.gov/; NCT01906866."
+      },
+      "mesh_terms": [
+        "Adolescent",
+        "Attention Deficit Disorder with Hyperactivity",
+        "Autism Spectrum Disorder",
+        "Central Nervous System Depressants",
+        "Child",
+        "Child, Preschool",
+        "Delayed-Action Preparations",
+        "Female",
+        "Humans",
+        "Male",
+        "Melatonin",
+        "Outcome Assessment, Health Care",
+        "Sleep Initiation and Maintenance Disorders"
+      ],
+      "keywords": [
+        "autism",
+        "melatonin",
+        "neurogenetic",
+        "pediatric",
+        "sleep"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.jaac.2017.09.414"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29096777/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29096777/"
+    },
+    {
+      "pmid": "27913471",
+      "doi": "10.1182/asheducation-2016.1.128",
+      "pmc_id": "PMC6142523",
+      "pmc_verify": null,
+      "title": "Sequencing of chronic lymphocytic leukemia therapies.",
+      "authors": [
+        "Barrientos Jacqueline C"
+      ],
+      "journal": "Hematology. American Society of Hematology. Education Program",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "It is an unprecedented time for the treatment of patients with chronic lymphocytic leukemia (CLL) with the recent approval of several targeted agents for use in frontline, relapsed, refractory, and high-risk disease. Traditionally, frontline management of CLL has been a combination of chemotherapy (fludarabine, cyclophosphamide, bendamustine, or chlorambucil) with an anti-CD20 monoclonal antibody (rituximab, ofatumumab, obinutuzumab). The current landscape is rapidly evolving with the advent of therapies that demonstrate selective inhibition of important pathways necessary for CLL proliferation and survival. Despite considerable progress, much is still unknown and optimal treatment selection and sequence is still debatable. None of the new agents have been compared against each other and the impact of adding an additional agent to monotherapy is not yet fully elucidated. In routine clinical practice, the choice of therapy is based on nonrandomized comparisons, presence of comorbidities, and toxicity considerations. These recently approved drugs (ibrutinib, idelalisib, and venetoclax) are reporting excellent outcomes, including patients with high-risk disease such as 17p deletion (17p-) or TP53 mutations (TP53mut). Ibrutinib and venetoclax have been approved for use in 17p- patients (frontline and relapsed, respectively). Ibrutinib is currently moving into the frontline space given recent regulatory approvals. This review will summarize and interpret the limited therapeutic sequencing data available, highlighting the need for additional studies to optimize combination strategies and treatments after failure or discontinuation of these novel agents.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Alanine",
+        "Antibodies, Monoclonal",
+        "Antibodies, Monoclonal, Humanized",
+        "Antineoplastic Combined Chemotherapy Protocols",
+        "Bendamustine Hydrochloride",
+        "Cell Proliferation",
+        "Chlorambucil",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 17",
+        "Cyclophosphamide",
+        "DNA Mutational Analysis",
+        "Disease-Free Survival",
+        "High-Throughput Nucleotide Sequencing",
+        "Humans",
+        "Leukemia, Myelogenous, Chronic, BCR-ABL Positive",
+        "Rituximab",
+        "Smith-Magenis Syndrome",
+        "Tumor Suppressor Protein p53"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6142523/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6142523/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1182/asheducation-2016.1.128"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27913471/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27913471/"
+    },
+    {
+      "pmid": "22057962",
+      "doi": "10.4238/2011.October.31.17",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Smith-Magenis syndrome: clinical evaluation in seven Brazilian patients.",
+      "authors": [
+        "Gamba B F",
+        "Vieira G H",
+        "Souza D H",
+        "Monteiro F F",
+        "Lorenzini J J",
+        "Carvalho D R",
+        "Morreti-Ferreira D"
+      ],
+      "journal": "Genetics and molecular research : GMR",
+      "year": "2011",
+      "publication_types": [
+        "Clinical Trial",
+        "Journal Article",
+        "Meta-Analysis",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Smith-Magenis syndrome (SMS) is a complex congenital anomaly characterized by craniofacial anomalies, neurological and behavioral disorders. SMS is caused by a deletion in region 17p11.2, which includes the RAI1 gene (90% of cases), or by point mutation in the RAI1 gene (10% of cases). Laboratory diagnosis is through cytogenetic analysis by GTG banding and molecular cytogenetic analysis by FISH. We carried out an active search for patients in Associations of Parents and Friends of Exceptional Children (APAE) of São Paulo and genetic centers in Brazil. Forty-eight patients were screened for mental retardation, craniofacial abnormalities and stereotyped behavior with a diagnosis of SMS. In seven of them, chromosome banding at high resolution demonstrated chromosome 17p11.2 deletions, confirmed by FISH. We also made a meta-analysis of 165 cases reported between 1982 and 2010 to compare with the clinical data of our sample. We demonstrated differences between the frequencies of clinical signs among the cases reported and seven Brazilian cases of this study, such as dental anomalies, strabismus, ear infections, deep hoarse voice, hearing loss, and cardiac defects. Although the gold standard for diagnosis of SMS is FISH, we found that the GTG banding technique developed to evaluate chromosome 17 can be used for the SMS diagnosis in areas where the FISH technique is not available.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Brazil",
+        "Child",
+        "Chromosome Banding",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 17",
+        "Female",
+        "Humans",
+        "Male",
+        "Point Mutation",
+        "Smith-Magenis Syndrome",
+        "Trans-Activators",
+        "Transcription Factors"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.4238/2011.October.31.17"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22057962/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22057962/"
+    },
+    {
+      "pmid": "41465172",
+      "doi": "10.3390/genes16121499",
+      "pmc_id": "PMC12733229",
+      "pmc_verify": null,
+      "title": "17q12 Recurrent Deletion Syndrome in Childhood.",
+      "authors": [
+        "Ceravolo Giorgia",
+        "Mollica Salvatore",
+        "Cavallaro Marco",
+        "Ceravolo Ida",
+        "Sica Giovanni",
+        "Granata Francesca",
+        "Houlden Henry",
+        "Chimenz Roberto"
+      ],
+      "journal": "Genes",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Review",
+        "Case Reports"
+      ],
+      "abstract": "BACKGROUND: The 17q12 recurrent deletion syndrome is a genomic disorder encompassing a 1.4 to 1.5 Mb region that includes the HNF1B gene, and it manifests with remarkable phenotypic variability. Renal anomalies, endocrine and metabolic disturbances, and neurodevelopmental or psychiatric disorders are recurrent features, although penetrance and severity differ widely between patients. METHODS: We reviewed the literature on the molecular basis, clinical presentation, diagnostic approaches, and management of 17q12 deletion syndrome, and we illustrate the variability of this condition through two contrasting paediatric cases. RESULTS: The cases concern three siblings harbouring the same familial deletion, who nevertheless exhibited striking intrafamilial variability, ranging from renal and neurodevelopmental features to multisystemic involvement. These cases exemplify both extremes of the syndrome and highlight the challenges of clinical prognostication. CONCLUSIONS: The review and cases emphasise the importance of early genetic testing in paediatric renal anomalies, the necessity of multidisciplinary surveillance even in asymptomatic individuals, and the relevance of 17q12 deletion as a model of variable expressivity in genomic medicine.",
+      "abstract_sections": {
+        "BACKGROUND": "The 17q12 recurrent deletion syndrome is a genomic disorder encompassing a 1.4 to 1.5 Mb region that includes the HNF1B gene, and it manifests with remarkable phenotypic variability. Renal anomalies, endocrine and metabolic disturbances, and neurodevelopmental or psychiatric disorders are recurrent features, although penetrance and severity differ widely between patients.",
+        "METHODS": "We reviewed the literature on the molecular basis, clinical presentation, diagnostic approaches, and management of 17q12 deletion syndrome, and we illustrate the variability of this condition through two contrasting paediatric cases.",
+        "RESULTS": "The cases concern three siblings harbouring the same familial deletion, who nevertheless exhibited striking intrafamilial variability, ranging from renal and neurodevelopmental features to multisystemic involvement. These cases exemplify both extremes of the syndrome and highlight the challenges of clinical prognostication.",
+        "CONCLUSIONS": "The review and cases emphasise the importance of early genetic testing in paediatric renal anomalies, the necessity of multidisciplinary surveillance even in asymptomatic individuals, and the relevance of 17q12 deletion as a model of variable expressivity in genomic medicine."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Chromosomes, Human, Pair 17",
+        "Chromosome Deletion",
+        "Child",
+        "Male",
+        "Female",
+        "Hepatocyte Nuclear Factor 1-beta",
+        "Child, Preschool",
+        "Chromosome Disorders",
+        "Phenotype",
+        "Smith-Magenis Syndrome"
+      ],
+      "keywords": [
+        "17q12 recurrent deletion",
+        "HNF1B",
+        "MODY5",
+        "chromosomal microarray",
+        "congenital anomalies of the kidney and urinary tract (CAKUT)",
+        "intrafamilial variability",
+        "neurodevelopmental disorders",
+        "paediatric nephrology"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12733229/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12733229/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3390/genes16121499"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41465172/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41465172/"
+    },
+    {
+      "pmid": "33632309",
+      "doi": "10.1186/s13229-021-00426-w",
+      "pmc_id": "PMC7908701",
+      "pmc_verify": null,
+      "title": "Sleep disorders in rare genetic syndromes: a meta-analysis of prevalence and profile.",
+      "authors": [
+        "Agar Georgie",
+        "Brown Chloe",
+        "Sutherland Daniel",
+        "Coulborn Sean",
+        "Oliver Chris",
+        "Richards Caroline"
+      ],
+      "journal": "Molecular autism",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Meta-Analysis",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "BACKGROUND: Sleep disorders are common in people with intellectual disability (ID) and autism, with growing evidence of diverse sleep profiles across ID associated genetic syndromes. Documenting the prevalence and profile of specific sleep disorders in syndromes will quantify syndrome-driven 'risk', inform prognosis and enhance understanding of aetiology of sleep disorders. METHOD: Following PRISMA guidelines for meta-analysis, we searched Ovid PsycINFO, Ovid MEDLINE, Ovid Embase, Web of Science and PubMed Central with use of syndrome-specific keywords and 60 sleep-related search terms. We screened and extracted papers that reported sleep disorder prevalence data for five or more individuals within a genetic syndrome, and applied quality criteria to produce a quality-effects prevalence model of six types of sleep disorder across nineteen syndromes. Relative risk estimates were calculated for the prevalence of each sleep disorder in each syndrome. RESULTS: Two hundred and seventy three papers were identified, generating 463 prevalence estimates for Angelman, CHARGE, Cornelia de Lange, Down, fragile X, Prader-Willi, Rett, Smith-Magenis and Williams syndromes, mucopolysaccharidoses (MPS disorders), neurofibromatosis and tuberous sclerosis complex. Prevalence estimates were higher in genetic syndromes than published equivalents for typically developing individuals, with few exceptions. Between-syndrome differences for some disorders were evident; sleep-disordered breathing was most prevalent in MPS disorders (72-77%), while excessive daytime sleepiness was highest in Smith-Magenis syndrome (60%). Conversely, insomnia, which was reported at a higher rate than TD estimates in all syndromes except fragile X, was not associated with specific genetic risk. This suggests insomnia could emerge because of the individual's environment or associated developmental delay, rather than any specific genetic syndromes. LIMITATIONS: Due to the broad scope of the meta-analysis, only syndromes previously identified as reporting preliminary sleep research were included. Other syndromes may also experience elevated prevalence rates of specific types of sleep disorder. Only English language papers were included. CONCLUSIONS: Differing prevalence rates between types of sleep disorder suggest differing causal mechanisms, such as cranio-facial morphology in Down and Prader-Willi syndromes and the build-up of mucopolysaccharides in MPS disorders. Priorities for clinical assessment and intervention for sleep disorders are discussed.",
+      "abstract_sections": {
+        "BACKGROUND": "Sleep disorders are common in people with intellectual disability (ID) and autism, with growing evidence of diverse sleep profiles across ID associated genetic syndromes. Documenting the prevalence and profile of specific sleep disorders in syndromes will quantify syndrome-driven 'risk', inform prognosis and enhance understanding of aetiology of sleep disorders.",
+        "METHOD": "Following PRISMA guidelines for meta-analysis, we searched Ovid PsycINFO, Ovid MEDLINE, Ovid Embase, Web of Science and PubMed Central with use of syndrome-specific keywords and 60 sleep-related search terms. We screened and extracted papers that reported sleep disorder prevalence data for five or more individuals within a genetic syndrome, and applied quality criteria to produce a quality-effects prevalence model of six types of sleep disorder across nineteen syndromes. Relative risk estimates were calculated for the prevalence of each sleep disorder in each syndrome.",
+        "RESULTS": "Two hundred and seventy three papers were identified, generating 463 prevalence estimates for Angelman, CHARGE, Cornelia de Lange, Down, fragile X, Prader-Willi, Rett, Smith-Magenis and Williams syndromes, mucopolysaccharidoses (MPS disorders), neurofibromatosis and tuberous sclerosis complex. Prevalence estimates were higher in genetic syndromes than published equivalents for typically developing individuals, with few exceptions. Between-syndrome differences for some disorders were evident; sleep-disordered breathing was most prevalent in MPS disorders (72-77%), while excessive daytime sleepiness was highest in Smith-Magenis syndrome (60%). Conversely, insomnia, which was reported at a higher rate than TD estimates in all syndromes except fragile X, was not associated with specific genetic risk. This suggests insomnia could emerge because of the individual's environment or associated developmental delay, rather than any specific genetic syndromes.",
+        "LIMITATIONS": "Due to the broad scope of the meta-analysis, only syndromes previously identified as reporting preliminary sleep research were included. Other syndromes may also experience elevated prevalence rates of specific types of sleep disorder. Only English language papers were included.",
+        "CONCLUSIONS": "Differing prevalence rates between types of sleep disorder suggest differing causal mechanisms, such as cranio-facial morphology in Down and Prader-Willi syndromes and the build-up of mucopolysaccharides in MPS disorders. Priorities for clinical assessment and intervention for sleep disorders are discussed."
+      },
+      "mesh_terms": [
+        "Congenital Abnormalities",
+        "Humans",
+        "Prevalence",
+        "Sleep Wake Disorders",
+        "Syndrome"
+      ],
+      "keywords": [
+        "Genetic syndromes",
+        "Intellectual disability",
+        "Meta-analysis",
+        "Prevalence",
+        "Sleep disorders",
+        "Sleep profile"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7908701/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7908701/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/s13229-021-00426-w"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33632309/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33632309/"
+    },
+    {
+      "pmid": "29222277",
+      "doi": "10.1182/asheducation-2017.1.346",
+      "pmc_id": "PMC6142575",
+      "pmc_verify": null,
+      "title": "How should we sequence and combine novel therapies in CLL?",
+      "authors": [
+        "Davids Matthew S"
+      ],
+      "journal": "Hematology. American Society of Hematology. Education Program",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "With the recent approval of several effective and well-tolerated novel agents (NAs), including ibrutinib, idelalisib, venetoclax, and obinutuzumab, patients with chronic lymphocytic leukemia (CLL) have more therapeutic options than ever before. The availability of these agents is both an important advance for patients but also a challenge for practicing hematologist/oncologists to learn how best to sequence NAs, both with respect to chemoimmunotherapy (CIT) and to other NAs. The sequencing of NAs in clinical practice should be guided both by an individual patient's prognostic markers, such as FISH and immunoglobulin heavy chain variable region (IGHV)-mutation status, as well as the patient's medical comorbidities and goals of care. For older, frailer patients with lower-risk CLL prognostic markers, NA monotherapy may remain a mainstay of CLL treatment for years to come. For younger, fitter patients and those with higher-risk CLL, such as del(17p) or unmutated IGHV, combination approaches may prove to be more valuable than NA monotherapy. Trials are currently evaluating the efficacy of several such combination approaches, including NA plus anti-CD20 monoclonal antibody, NA plus NA (with or without anti-CD20 monoclonal antibody), and NA plus CIT. Given the tremendous efficacy of the already approved NAs, as well as the promising data for next generation NAs, the development of well-tolerated, highly effective combination strategies with curative potential for patients with CLL has become a realistic goal.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adenine",
+        "Antibodies, Monoclonal, Humanized",
+        "Antineoplastic Agents",
+        "Biomarkers, Tumor",
+        "Bridged Bicyclo Compounds, Heterocyclic",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 17",
+        "Humans",
+        "Leukemia, Lymphocytic, Chronic, B-Cell",
+        "Piperidines",
+        "Purines",
+        "Pyrazoles",
+        "Pyrimidines",
+        "Quinazolinones",
+        "Smith-Magenis Syndrome",
+        "Sulfonamides"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6142575/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6142575/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1182/asheducation-2017.1.346"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29222277/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29222277/"
+    },
+    {
+      "pmid": "25836705",
+      "doi": "10.1016/j.pcl.2014.11.005",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Common genetic and epigenetic syndromes.",
+      "authors": [
+        "Adams Darius J",
+        "Clark David A"
+      ],
+      "journal": "Pediatric clinics of North America",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Cytogenetic anomalies should be considered in individuals with multiple congenital anomalies. DNA methylation analysis is the most sensitive initial test in evaluating for Prader-Willi and Angelman syndromes. The timely identification of cytogenetic anomalies allows for prompt initiation of early intervention services to maximize the potential of every individual as they grow older. Although many of these conditions are rare, keeping them in mind can have a profound impact on the clinical course of affected individuals. This article reviews some of the more common genetic syndromes.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Alagille Syndrome",
+        "Angelman Syndrome",
+        "Beckwith-Wiedemann Syndrome",
+        "Chromosome Deletion",
+        "Chromosome Disorders",
+        "Chromosomes, Human, Pair 13",
+        "Chromosomes, Human, Pair 18",
+        "Classical Lissencephalies and Subcortical Band Heterotopias",
+        "DNA Methylation",
+        "DiGeorge Syndrome",
+        "Down Syndrome",
+        "Epigenesis, Genetic",
+        "Genetic Counseling",
+        "Humans",
+        "Klinefelter Syndrome",
+        "Prader-Willi Syndrome",
+        "Smith-Magenis Syndrome",
+        "Trisomy",
+        "Trisomy 13 Syndrome",
+        "Trisomy 18 Syndrome",
+        "Turner Syndrome",
+        "WAGR Syndrome",
+        "Williams Syndrome"
+      ],
+      "keywords": [
+        "Epigenetic",
+        "Genetic",
+        "Imprinting",
+        "Microdeletion",
+        "Syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.pcl.2014.11.005"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25836705/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25836705/"
+    },
+    {
+      "pmid": "17562583",
+      "doi": "10.1016/j.chc.2007.03.006",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Social phenotypes in neurogenetic syndromes.",
+      "authors": [
+        "Feinstein Carl",
+        "Singh Sonia"
+      ],
+      "journal": "Child and adolescent psychiatric clinics of North America",
+      "year": "2007",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Many of the known genetically based neurodevelopmental disorders are associated with a distinctive behavioral phenotype. As these behavioral phenotypes have been elucidated by clinical research, distinctive profiles of social traits have emerged as prominent syndromic features. This article reviews social phenotypic findings for fragile X syndrome, Down syndrome, Prader-Willi syndrome, Smith-Magenis syndrome, Turner syndrome, Williams syndrome, and velocardiofacial syndrome. An analysis of these social profiles raises several questions regarding the relationship between identified social impairments and autism and the relationship between social impairments in neurodevelopmental disorders and those found in normative child populations. The unique profile of certain of the known behavioral phenotypes also serves to distinguish several dimensions of sociability that are not readily observed in typical populations.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "DiGeorge Syndrome",
+        "Down Syndrome",
+        "Fragile X Syndrome",
+        "Humans",
+        "Phenotype",
+        "Prader-Willi Syndrome",
+        "Social Behavior",
+        "Turner Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.chc.2007.03.006"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17562583/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17562583/"
+    },
+    {
+      "pmid": "16647992",
+      "doi": "10.1016/j.pediatrneurol.2005.08.018",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Neurologic and developmental features of the Smith-Magenis syndrome (del 17p11.2).",
+      "authors": [
+        "Gropman Andrea L",
+        "Duncan Wallace C",
+        "Smith Ann C M"
+      ],
+      "journal": "Pediatric neurology",
+      "year": "2006",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Intramural",
+        "Review"
+      ],
+      "abstract": "The Smith-Magenis syndrome is a rare, complex multisystemic disorder featuring, mental retardation and multiple congenital anomalies caused by a heterozygous interstitial deletion of chromosome 17p11.2. The phenotype of Smith-Magenis syndrome is characterized by a distinct pattern of features including infantile hypotonia, generalized complacency and lethargy in infancy, minor skeletal (brachycephaly, brachydactyly) and craniofacial features, ocular abnormalities, middle ear and laryngeal abnormalities including hoarse voice, as well as marked early expressive speech and language delays, psychomotor and growth retardation, and a 24-hour sleep disturbance. A striking neurobehavioral pattern of stereotypies, hyperactivity, polyembolokoilamania, onychotillomania, maladaptive and self-injurious and aggressive behavior is observed with increasing age. The diagnosis of Smith-Magenis syndrome is based upon the clinical recognition of a constellation of physical, developmental, and behavioral features in combination with a sleep disorder characterized by inverted circadian rhythm of melatonin secretion. Many of the features of Smith-Magenis syndrome are subtle in infancy and early childhood, and become more recognizable with advancing age. Infants are described as looking \"cherubic\" with a Down syndrome-like appearance, whereas with age the facial appearance is that of relative prognathism. Early diagnosis requires awareness of the often subtle clinical and neurobehavioral phenotype of the infant period. Speech delay with or without hearing loss is common. Most children are diagnosed in mid-childhood when the features of the disorder are most recognizable and striking. While improvements in cytogenetic analysis help to bring cases to clinical recognition at an earlier age, this review seeks to increase clinical awareness about Smith-Magenis syndrome by presenting the salient features observed at different ages including descriptions of the neurologic and behavioral features. Detailed review of the circadian rhythm disturbance unique to Smith-Magenis syndrome is presented. Suggestions for management of the behavioral and sleep difficulties are discussed in the context of the authors' personal experience in the setting of an ongoing Smith-Magenis syndrome natural history study.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Child",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 17",
+        "Humans",
+        "Intellectual Disability",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.pediatrneurol.2005.08.018"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16647992/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16647992/"
+    },
+    {
+      "pmid": "42226112",
+      "doi": "10.1186/s11689-026-09707-y",
+      "pmc_id": "PMC13435750",
+      "pmc_verify": null,
+      "title": "The prevalence of neurodevelopmental disorders in Smith-Magenis Syndrome: a PRISMA compliant systematic review.",
+      "authors": [
+        "Boiroux Pauline",
+        "Babinet Marie-Noëlle",
+        "Chesnoy Gabrielle",
+        "Belhouchat Paul",
+        "Demily Caroline"
+      ],
+      "journal": "Journal of neurodevelopmental disorders",
+      "year": "2026",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Review"
+      ],
+      "abstract": "BACKGROUND: Smith Magenis Syndrome is either due to a deletion in 17p11.2 locus or to a pathogenic variant in RAI1 gene and is associated with a higher risk of neurodevelopmental disorder. We performed a systematic review to assess the prevalence of neurodevelopmental disorders (autism spectrum disorder, attention deficit hyperactivity disorder, intellectual developmental disorder, specific learning disabilities) in Smith Magenis Syndrome as a main outcome. We described the methods used to identify a neurodevelopmental disorder in this population and assessed a phenotype-genotype correlation as secondary outcomes. METHODS & RESULTS: Main electronic databases were searched on January 31st, 2024. We considered original articles published in peer-reviewed journals. We selected studies with data concerning the prevalence of neurodevelopmental disorders in people with Smith-Magenis Syndrome. Quality was assessed based on sample identification, confirmation of syndrome, assessment of neurodevelopmental disorders and data coverage. 1941 articles were identified and 14 were included in this review. Data were synthesized and displayed as descriptive tables. No meta-analysis was performed due to the paucity of studies. In total, 451 patients presenting with Smith Magenis syndrome were assessed for neurodevelopmental disorders. 6 studies (n=220 patients) assessed autism spectrum disorder characteristics with prevalence ranging from 14% to 95%, and mean prevalence of 43% and 80% for deletion and RAI1 samples respectively. 6 studies assessed attention deficit hyperactivity disorder characteristics (n= 174 patients). Only one study assessed ADHD using standardized clinical criteria, reporting 100% prevalence. Other studies assessed impulsivity, hyperactivity, attention deficit with mean proportions of 78%, 76% and 96% respectively. 9 studies reported IDD prevalence, ranging from 67% to 100%. For deletion carriers, pooled prevalence was 93%, mostly moderate (43%), while 80% was reported for RAI1 carriers, mostly mild (69%). Specific learning disabilities were described for 9% of deletion 17p11.2 patients. Methods of assessment were very heterogeneous, consisting in the main limit of this study along with the paucity of articles included. CONCLUSIONS: In addition to IDD, ASD and ADHD phenotypes are often observed in Smith Magenis syndrome, with RAI1 carriers affected even more frequently despite a higher cognitive level. This systematic review highlights the need to systematically screen people with Smith Magenis syndrome for attention deficit hyperactivity disorder and autism spectrum disorder in addition to cognitive functions. Smith Magenis syndrome is a relevant model to further study physiopathology of neurodevelopmental disorder. TRIAL REGISTRATION: (PROSPERO no.: CRD42024512675).",
+      "abstract_sections": {
+        "BACKGROUND": "Smith Magenis Syndrome is either due to a deletion in 17p11.2 locus or to a pathogenic variant in RAI1 gene and is associated with a higher risk of neurodevelopmental disorder. We performed a systematic review to assess the prevalence of neurodevelopmental disorders (autism spectrum disorder, attention deficit hyperactivity disorder, intellectual developmental disorder, specific learning disabilities) in Smith Magenis Syndrome as a main outcome. We described the methods used to identify a neurodevelopmental disorder in this population and assessed a phenotype-genotype correlation as secondary outcomes.",
+        "METHODS & RESULTS": "Main electronic databases were searched on January 31st, 2024. We considered original articles published in peer-reviewed journals. We selected studies with data concerning the prevalence of neurodevelopmental disorders in people with Smith-Magenis Syndrome. Quality was assessed based on sample identification, confirmation of syndrome, assessment of neurodevelopmental disorders and data coverage. 1941 articles were identified and 14 were included in this review. Data were synthesized and displayed as descriptive tables. No meta-analysis was performed due to the paucity of studies. In total, 451 patients presenting with Smith Magenis syndrome were assessed for neurodevelopmental disorders. 6 studies (n=220 patients) assessed autism spectrum disorder characteristics with prevalence ranging from 14% to 95%, and mean prevalence of 43% and 80% for deletion and RAI1 samples respectively. 6 studies assessed attention deficit hyperactivity disorder characteristics (n= 174 patients). Only one study assessed ADHD using standardized clinical criteria, reporting 100% prevalence. Other studies assessed impulsivity, hyperactivity, attention deficit with mean proportions of 78%, 76% and 96% respectively. 9 studies reported IDD prevalence, ranging from 67% to 100%. For deletion carriers, pooled prevalence was 93%, mostly moderate (43%), while 80% was reported for RAI1 carriers, mostly mild (69%). Specific learning disabilities were described for 9% of deletion 17p11.2 patients. Methods of assessment were very heterogeneous, consisting in the main limit of this study along with the paucity of articles included.",
+        "CONCLUSIONS": "In addition to IDD, ASD and ADHD phenotypes are often observed in Smith Magenis syndrome, with RAI1 carriers affected even more frequently despite a higher cognitive level. This systematic review highlights the need to systematically screen people with Smith Magenis syndrome for attention deficit hyperactivity disorder and autism spectrum disorder in addition to cognitive functions. Smith Magenis syndrome is a relevant model to further study physiopathology of neurodevelopmental disorder.",
+        "TRIAL REGISTRATION": "(PROSPERO no.: CRD42024512675)."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Smith-Magenis Syndrome",
+        "Neurodevelopmental Disorders",
+        "Prevalence",
+        "Attention Deficit Disorder with Hyperactivity"
+      ],
+      "keywords": [
+        "Attention Deficit Hyperactivity Disorder",
+        "Autism Spectrum Disorder",
+        "Intellectual Developmental Disorder",
+        "Neurodevelopmental Disorders",
+        "Prevalence",
+        "Smith Magenis Syndrome",
+        "Systematic Review"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13435750/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13435750/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/s11689-026-09707-y"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42226112/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42226112/"
+    },
+    {
+      "pmid": "40437981",
+      "doi": "10.1017/erm.2025.12",
+      "pmc_id": "PMC12133160",
+      "pmc_verify": null,
+      "title": "Retinoic Acid-Induced 1 Gene and Neuropsychiatric Diseases: A Systematic Review.",
+      "authors": [
+        "Yang Tianmi",
+        "Pang Dejiang",
+        "Li Chunyu",
+        "Shang Huifang"
+      ],
+      "journal": "Expert reviews in molecular medicine",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "BACKGROUND: Retinoic acid-induced 1 (RAI1) is a dosage-sensitive gene implicated in a range of rare neuropsychiatric diseases. METHODS: This review provides a comprehensive overview of RAI1's role, integrating both clinical and basic research on Smith-Magenis syndrome (SMS) and Potocki-Lupski syndrome (PTLS) while also summarising research progress on its involvement in spinocerebellar ataxia (SCA), autism spectrum disorder (ASD), schizophrenia, bipolar disorder and major depression. A systematic review of the literature was conducted using PubMed and EMBASE, following the PRISMA guidelines, with the protocol registered in PROSPERO (CRD42023474165). RESULTS: A total of 99 eligible studies on RAI1 were included. We presented detailed characterisations of SMS and PTLS patients, emphasising the crucial role of RAI1 haploinsufficiency and overexpression in their pathogenesis. Additionally, we summarised research progress on RAI1 in SCA, ASD, schizophrenia, bipolar disorder and major depression. Integrating findings from animal studies, particularly those examining the regulatory mechanisms of RAI1 in critical phenotypes, such as body weight, sleep and epilepsy, underscores the precise regulation of RAI1 expression in maintaining various nervous system functions. CONCLUSIONS: Overall, this review contributes to the identification of RAI1-related neuropsychiatric diseases, with a particular emphasis on enhancing clinical diagnosis of SMS and PTLS in developing countries.",
+      "abstract_sections": {
+        "BACKGROUND": "Retinoic acid-induced 1 (RAI1) is a dosage-sensitive gene implicated in a range of rare neuropsychiatric diseases.",
+        "METHODS": "This review provides a comprehensive overview of RAI1's role, integrating both clinical and basic research on Smith-Magenis syndrome (SMS) and Potocki-Lupski syndrome (PTLS) while also summarising research progress on its involvement in spinocerebellar ataxia (SCA), autism spectrum disorder (ASD), schizophrenia, bipolar disorder and major depression. A systematic review of the literature was conducted using PubMed and EMBASE, following the PRISMA guidelines, with the protocol registered in PROSPERO (CRD42023474165).",
+        "RESULTS": "A total of 99 eligible studies on RAI1 were included. We presented detailed characterisations of SMS and PTLS patients, emphasising the crucial role of RAI1 haploinsufficiency and overexpression in their pathogenesis. Additionally, we summarised research progress on RAI1 in SCA, ASD, schizophrenia, bipolar disorder and major depression. Integrating findings from animal studies, particularly those examining the regulatory mechanisms of RAI1 in critical phenotypes, such as body weight, sleep and epilepsy, underscores the precise regulation of RAI1 expression in maintaining various nervous system functions.",
+        "CONCLUSIONS": "Overall, this review contributes to the identification of RAI1-related neuropsychiatric diseases, with a particular emphasis on enhancing clinical diagnosis of SMS and PTLS in developing countries."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Animals",
+        "Mental Disorders",
+        "Transcription Factors",
+        "Genetic Predisposition to Disease",
+        "Smith-Magenis Syndrome",
+        "Trans-Activators"
+      ],
+      "keywords": [
+        "Potocki–Lupski syndrome",
+        "RAI1",
+        "Smith–Magenis syndrome",
+        "neuropsychiatric diseases",
+        "retinoic acid-induced 1",
+        "systematic review"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12133160/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12133160/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1017/erm.2025.12"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40437981/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40437981/"
+    },
+    {
+      "pmid": "34919300",
+      "doi": "10.1111/jdv.17877",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Eyelash trichomegaly: a systematic review of acquired and congenital aetiologies of lengthened lashes.",
+      "authors": [
+        "Hutchison D M",
+        "Duffens A",
+        "Yale K",
+        "Park A",
+        "Cardenas K",
+        "Mesinkovska N A"
+      ],
+      "journal": "Journal of the European Academy of Dermatology and Venereology : JEADV",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "Long eyelashes have been popularized and many commercially available products exist to achieve eyelash growth as a desired cosmetic effect. Eyelash trichomegaly may be induced by medications, procedures, or be related to medical conditions; however, the exact mechanisms that govern eyelash growth are not well elucidated. This study aims to identify and summarize aetiologies associated with eyelash trichomegaly. We report a systematic review of 148 clinical trials, prospective and retrospective studies, and case reports describing all evidence-based potential aetiologies of eyelash trichomegaly obtained from the Medline/PubMed and Cochrane Library through January 2021. Inclusion criteria were defined as (i) human studies involving congenital and acquired diseases in which eyelash trichomegaly is a characteristic or (ii) assessment of trichomegaly as an adverse or desired effect of a medication or procedure. Exclusion criteria included: animal studies, articles not available in English, outcomes unrelated to eyelash trichomegaly, and secondary review articles. Pharmacologic agents associated with eyelash trichomegaly included prostaglandin analogues (15-keto fluprostenol isopropyl ester, bimatoprost, latanoprost, and travoprost), epidermal growth factor receptor inhibitors (cetuximab, erlotinib, and panitumumab), interferon-alpha, and calcineurin inhibitors (tacrolimus and cyclosporine). Surgical procedures of the eyelid, as well as allergic rhinitis, atopic dermatitis, HIV, ichthyosis vulgaris (IV), uveitis, and vernal keratoconjunctivitis were also associated with increased eyelash growth. Congenital disorders associated with lengthened eyelashes included Cantú syndrome, CHOPS syndrome, Coffin-Siris syndrome, congenital heart disease, Cornelia de Lange syndrome, Costello syndrome, familial trichomegaly, Floating Harbor syndrome, Hermansky-Pudlak syndrome, Kabuki-Makeup syndrome, KBG syndrome, Oliver-McFarlane syndrome, Rubinstein-Taybi syndrome, and Smith-Magenis syndrome. While the most common cause of eyelash trichomegaly is topical bimatoprost use, better understanding of pathways implicated in eyelash trichomegaly may lead to the discovery of additional medications to stimulate eyelash growth and create avenues for future therapeutic interventions.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Animals",
+        "Bone Diseases, Developmental",
+        "Facies",
+        "Humans",
+        "Intellectual Disability",
+        "Prospective Studies",
+        "Retrospective Studies",
+        "Tooth Abnormalities"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/jdv.17877"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34919300/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34919300/"
+    },
+    {
+      "pmid": "33599294",
+      "doi": "10.1111/ijd.15111",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Hidradenitis suppurativa and chromosomal abnormalities: a case report and systematic review of the literature.",
+      "authors": [
+        "Shah Monica",
+        "Sachdeva Muskaan",
+        "Melendez-Gonzalez Maria",
+        "Piguet Vincent",
+        "Sayed Christopher"
+      ],
+      "journal": "International journal of dermatology",
+      "year": "2021",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "Hidradenitis suppurativa (HS) is a chronic inflammatory follicular disorder that involves painful nodules, abscesses, and tunnels of intertriginous sites. Although the etiology has not been fully elucidated, recent studies have highlighted its association with chromosomal abnormalities.We present a rare case of HS in a patient with Trisomy 1q;13 and systematically summarize the association between HS and chromosomal abnormalities. A search was conducted using MEDLINE and EMBASE in OVID database. Original studies reporting HS among human subjects with chromosomal abnormalities were included. Patient demographics, disease symptomology, clinical features, and treatment histories were extracted and summarized.Thirteen studies describing 428 cases met the inclusion criteria. Of the 13 articles, nine studies reported patients with HS and Down syndrome (DS), one article investigated HS and Smith-Magenis syndrome (SMS), and three articles analyzed HS and Patau syndrome (PS). While increased prevalence of HS was found in populations with DS, with suggested mechanisms involving amyloid precursor protein cleavage product, keratinocyte proliferation, and follicular plugging, the associations between HS and both SMS and PS remain inconclusive because of limited studies with small sample size.Although evidence suggests that the genetic regulation of chromosome 21 may be implicated in the association between HS and DS, this association may be confounded by additional factors that increase the risk of HS. Further research with larger sample sizes must be conducted to strengthen our understanding of the association between HS and chromosomal abnormalities.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosome Aberrations",
+        "Down Syndrome",
+        "Hidradenitis Suppurativa",
+        "Humans",
+        "Prevalence"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/ijd.15111"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33599294/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33599294/"
+    },
+    {
+      "pmid": "33561678",
+      "doi": "10.1016/j.smrv.2021.101433",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Endogenous melatonin and sleep in individuals with Rare Genetic Neurodevelopmental Disorders (RGND): A systematic review.",
+      "authors": [
+        "Woodford Emma C",
+        "McLay Laurie",
+        "France Karyn G",
+        "Blampied Neville M",
+        "Gibbs Rosina",
+        "Swan Catherine E",
+        "Eggleston Matt"
+      ],
+      "journal": "Sleep medicine reviews",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Systematic Review"
+      ],
+      "abstract": "Individuals with Rare Genetic Neurodevelopmental Disorders (RGND) present with significant sleep problems and circadian rhythm abnormalities of uncertain aetiology. Abnormal melatonin secretion may play a role in sleep disturbance in individuals with higher incidence developmental disabilities, however, RGND research is limited. This review compared the melatonin profiles in a range of RGND with that of the general population and considered the impact of any differences on sleep. A systematic search identified 19 studies that met inclusion criteria. Each study was examined to extract data relating to the study design, participant characteristics, objectives, sleep measures and results, and melatonin measures and findings. Studies were evaluated using the BIOCROSS quality appraisal tool. Nine studies focussed on Smith-Magenis syndrome (SMS), the rest included individuals with Angelman (AS), Fragile-X (FXS), Prader-Willi (PWS), septo-optic dysplasia, PAX6/WAGR and Williams (WS) syndromes (N = 349). Individuals with RGND present with a range of sleep problems, particularly dyssomnias. The melatonin profile varied within and between RGND, with low nocturnal melatonin levels commonly reported. Understanding the relationship between specific sleep and melatonin parameters within RGND may help inform sleep intervention.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Melatonin",
+        "Neurodevelopmental Disorders",
+        "Sleep",
+        "Sleep Wake Disorders",
+        "Smith-Magenis Syndrome"
+      ],
+      "keywords": [
+        "Melatonin",
+        "Neurodevelopmental disorders",
+        "Rare genetic disorders",
+        "Sleep"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.smrv.2021.101433"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33561678/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33561678/"
+    },
+    {
+      "pmid": "23622179",
+      "doi": "10.1016/B978-0-444-52891-9.00034-8",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Smith-Magenis syndrome.",
+      "authors": [
+        "De Leersnyder H"
+      ],
+      "journal": "Handbook of clinical neurology",
+      "year": "2013",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Smith-Magenis syndrome (SMS) is a mental retardation syndrome with distinctive behavioral characteristics, dysmorphic features, and congenital anomalies ascribed to an interstitial deletion of chromosome 17p11.2. Severe sleep disturbances and maladaptive daytime behavior have been linked to an abnormal circadian rhythm of melatonin with a diurnal instead of nocturnal secretion of this hormone. SMS provides a demonstration of a biological basis for sleep disorder in a genetic disease. Considering that clock genes mediate the generation of circadian rhythm, haploinsufficiency for a circadian system gene, mapping to chromosome 17p11.2, may cause the inversion of the melatonin circadian rhythm in SMS. The disorder of circadian timing in SMS may also affect entrainment pathway (retinohypothalamic tract), pacemaker functions (suprachiasmatic nuclei), or synthesis and release of melatonin by the pineal gland. Elucidating pathophysiological mechanisms of behavioral phenotypes in genetic disease can provide an original therapeutic approach in SMS: blockade of endogenous melatonin production during the day combined with exogenous melatonin administration in the evening.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Child",
+        "Humans",
+        "Male",
+        "Sleep Wake Disorders",
+        "Smith-Magenis Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/B978-0-444-52891-9.00034-8"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/23622179/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23622179/"
+    },
+    {
+      "pmid": "28694012",
+      "doi": "10.1016/j.neubiorev.2017.02.027",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Self-injurious behavior.",
+      "authors": [
+        "Huisman Sylvia",
+        "Mulder Paul",
+        "Kuijk Janneke",
+        "Kerstholt Myrthe",
+        "van Eeghen Agnies",
+        "Leenders Arnold",
+        "van Balkom Ingrid",
+        "Oliver Chris",
+        "Piening Sigrid",
+        "Hennekam Raoul"
+      ],
+      "journal": "Neuroscience and biobehavioral reviews",
+      "year": "2018",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Self-injurious behavior (SIB) is a relatively common behavior in individuals with intellectual disabilities (ID). Severe SIB can be devastating and potentially life-threatening. There is increasing attention for somatic substrates of behavior in genetic syndromes, and growing evidence of an association between pain and discomfort with SIB in people with ID and genetic syndromes. In this review on SIB phenomenology in people with ID in general and in twelve genetic syndromes, we summarize different SIB characteristics across these etiologically distinct entities and identify influencing factors. We demonstrate that the prevalence of SIB in several well-known genetic intellectual disability syndromes is noticeably higher than in individuals with ID in general, and that characteristics such as age of onset and topographies differ widely across syndromes. Each syndrome is caused by a mutation in a different gene, and this allows detection of several pathways that lead to SIB. Studying these with the behavioral consequences as specific aim will be an important step toward targeted early interventions and prevention.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Genetic Diseases, Inborn",
+        "Genetic Predisposition to Disease",
+        "Humans",
+        "Intellectual Disability",
+        "Self-Injurious Behavior"
+      ],
+      "keywords": [
+        "Angelman syndrome",
+        "Cornelia de Lange Syndrome",
+        "Cri du Chat Syndrome",
+        "Down syndrome",
+        "Fragile X syndrome",
+        "Genes",
+        "Genetic syndromes",
+        "Intellectual disability",
+        "Interdisciplinary study",
+        "Lesch-Nyhan syndrome",
+        "Lowe syndrome",
+        "Pain",
+        "Prader-Willi syndrome",
+        "Rett syndrome",
+        "Self-injurious behavior",
+        "Smith-Magenis syndrome",
+        "Somatic factors",
+        "Tuberous Sclerosis Syndrome",
+        "Williams-Beuren syndrome"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.neubiorev.2017.02.027"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28694012/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28694012/"
+    },
+    {
+      "pmid": "29138588",
+      "doi": "10.2147/TACG.S128455",
+      "pmc_id": "PMC5680963",
+      "pmc_verify": null,
+      "title": "RAI1 gene mutations: mechanisms of Smith-Magenis syndrome.",
+      "authors": [
+        "Falco Mariateresa",
+        "Amabile Sonia",
+        "Acquaviva Fabio"
+      ],
+      "journal": "The application of clinical genetics",
+      "year": "2017",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Smith-Magenis syndrome (SMS; OMIM #182290) is a complex genetic disorder characterized by distinctive physical features, developmental delay, cognitive impairment, and a typical behavioral phenotype. SMS is caused by interstitial 17p11.2 deletions, encompassing multiple genes and including the retinoic acid-induced 1 gene (RAI1), or by mutations in RAI1 itself. About 10% of all the SMS patients, in fact, carry an RAI1 mutation responsible for the phenotype. RAI1 (OMIM *607642) is a dosage-sensitive gene expressed in many tissues and highly conserved among species. Over the years, several studies have demonstrated that RAI1 (or its homologs in animal models) acts as a transcriptional factor implicated in embryonic neurodevelopment, neuronal differentiation, cell growth and cell cycle regulation, bone and skeletal development, lipid and glucose metabolisms, behavioral functions, and circadian activity. Patients with RAI1 pathogenic variants show some phenotypic differences when compared to those carrying the typical deletion. They usually have lower incidence of hypotonia and less cognitive impairment than those with 17p11.2 deletions but more frequently show the behavioral characteristics of the syndrome and overeating issues. These differences reflect the primary pathogenetic role of RAI1 without the pathogenetic contribution of the other genes included in the typical 17p11.2 deletion. The better comprehension of physiological roles of RAI1, its molecular co-workers and interactors, and its contribution in determining the typical SMS phenotype will certainly open a new path for therapeutic interventions.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "17p11.2",
+        "craniofacial abnormalities",
+        "neurogenesis",
+        "sleep disorders",
+        "syndromic obesity"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5680963/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5680963/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2147/TACG.S128455"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29138588/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29138588/"
+    },
+    {
+      "pmid": "17351481",
+      "doi": "10.1097/WCO.0b013e3280895dba",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "New developments in Smith-Magenis syndrome (del 17p11.2).",
+      "authors": [
+        "Gropman Andrea L",
+        "Elsea Sarah",
+        "Duncan Wallace C",
+        "Smith Ann C M"
+      ],
+      "journal": "Current opinion in neurology",
+      "year": "2007",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Intramural",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: Recent clinical, neuroimaging, sleep, and molecular cytogenetic studies have provided new insights into the mechanisms leading to the Smith-Magenis phenotype and are summarized in this review. RECENT FINDINGS: Cross sectional studies of patients with Smith-Magenis syndrome have found evidence for central and peripheral nervous system abnormalities, neurobehavioral disturbances, and an inverted pattern of melatonin secretion leading to circadian rhythm disturbance. A common chromosome 17p11.2 deletion interval spanning approximately 3.5 Mb is identified in about 70% of individuals with chromosome deletion. Recently heterozygous point mutations in the RAI1 gene within the Smith-Magenis syndrome critical region have been reported in Smith-Magenis syndrome patients without detectable deletion by fluorescent in-situ hybridization. Patients with intragenic mutations in RAI1 as well as those with deletions share most but not all aspects of the phenotype. SUMMARY: Findings from molecular cytogenetic analysis suggest that other genes or genetic background may play a role in altering the functional availability of RAI1 for downstream effects. Further research into additional genes in the Smith-Magenis syndrome critical region will help define the role they play in modifying features or severity of the Smith-Magenis syndrome phenotype. More research is needed to translate advances in clinical research into new treatment options to address the sleep and neurobehavioral problems in this disorder.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "Recent clinical, neuroimaging, sleep, and molecular cytogenetic studies have provided new insights into the mechanisms leading to the Smith-Magenis phenotype and are summarized in this review.",
+        "RECENT FINDINGS": "Cross sectional studies of patients with Smith-Magenis syndrome have found evidence for central and peripheral nervous system abnormalities, neurobehavioral disturbances, and an inverted pattern of melatonin secretion leading to circadian rhythm disturbance. A common chromosome 17p11.2 deletion interval spanning approximately 3.5 Mb is identified in about 70% of individuals with chromosome deletion. Recently heterozygous point mutations in the RAI1 gene within the Smith-Magenis syndrome critical region have been reported in Smith-Magenis syndrome patients without detectable deletion by fluorescent in-situ hybridization. Patients with intragenic mutations in RAI1 as well as those with deletions share most but not all aspects of the phenotype.",
+        "SUMMARY": "Findings from molecular cytogenetic analysis suggest that other genes or genetic background may play a role in altering the functional availability of RAI1 for downstream effects. Further research into additional genes in the Smith-Magenis syndrome critical region will help define the role they play in modifying features or severity of the Smith-Magenis syndrome phenotype. More research is needed to translate advances in clinical research into new treatment options to address the sleep and neurobehavioral problems in this disorder."
+      },
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Chromosomes, Human, Pair 17",
+        "Humans",
+        "Intellectual Disability",
+        "Mutation",
+        "Trans-Activators",
+        "Transcription Factors"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/WCO.0b013e3280895dba"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17351481/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17351481/"
+    },
+    {
+      "pmid": "36256819",
+      "doi": "10.1073/pnas.2210122119",
+      "pmc_id": "PMC9618093",
+      "pmc_verify": null,
+      "title": "Loss of Rai1 enhances hippocampal excitability and epileptogenesis in mouse models of Smith-Magenis syndrome.",
+      "authors": [
+        "Chang Ya-Ting",
+        "Kowalczyk Max",
+        "Fogerson P Michelle",
+        "Lee Yu-Ju",
+        "Haque Minza",
+        "Adams Eliza L",
+        "Wang David C",
+        "DeNardo Laura A",
+        "Tessier-Lavigne Marc",
+        "Huguenard John R",
+        "Luo Liqun",
+        "Huang Wei-Hsiang"
+      ],
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Hyperexcitability of brain circuits is a common feature of autism spectrum disorders (ASDs). Genetic deletion of a chromatin-binding protein, retinoic acid induced 1 (RAI1), causes Smith-Magenis syndrome (SMS). SMS is a syndromic ASD associated with intellectual disability, autistic features, maladaptive behaviors, overt seizures, and abnormal electroencephalogram (EEG) patterns. The molecular and neural mechanisms underlying abnormal brain activity in SMS remain unclear. Here we show that panneural Rai1 deletions in mice result in increased seizure susceptibility and prolonged hippocampal seizure duration in vivo and increased dentate gyrus population spikes ex vivo. Brain-wide mapping of neuronal activity pinpointed selective cell types within the limbic system, including the hippocampal dentate gyrus granule cells (dGCs) that are hyperactivated by chemoconvulsant administration or sensory experience in Rai1-deficient brains. Deletion of Rai1 from glutamatergic neurons, but not from gamma-aminobutyric acidergic (GABAergic) neurons, was responsible for increased seizure susceptibility. Deleting Rai1 from the Emx1Cre-lineage glutamatergic neurons resulted in abnormal dGC properties, including increased excitatory synaptic transmission and increased intrinsic excitability. Our work uncovers the mechanism of neuronal hyperexcitability in SMS by identifying Rai1 as a negative regulator of dGC intrinsic and synaptic excitability.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Mice",
+        "Animals",
+        "Smith-Magenis Syndrome",
+        "Trans-Activators",
+        "Phenotype",
+        "Disease Models, Animal",
+        "Chromatin",
+        "Hippocampus",
+        "Seizures",
+        "Tretinoin"
+      ],
+      "keywords": [
+        "Smith–Magenis syndrome",
+        "autism spectrum disorders",
+        "dentate gyrus",
+        "neuronal excitability",
+        "whole-brain clearing and imaging"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9618093/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9618093/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1073/pnas.2210122119"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36256819/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36256819/"
+    },
+    {
+      "pmid": "9613859",
+      "doi": "10.1002/(sici)1096-8628(19980328)81:2<179::aid-ajmg10>3.0.co;2-e",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Behavioral phenotype of Smith-Magenis syndrome (del 17p11.2).",
+      "authors": [
+        "Smith A C",
+        "Dykens E",
+        "Greenberg F"
+      ],
+      "journal": "American journal of medical genetics",
+      "year": "1998",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Smith-Magenis syndrome (SMS) is a distinct and clinically recognizable multiple congenital anomaly (MCA) and mental retardation syndrome caused by an interstitial deletion of chromosome 17 p11.2. The phenotype of SMS has been well described and includes: a characteristic pattern of physical features; a hoarse, deep voice; speech delay with or without associated hearing loss; signs of peripheral neuropathy; variable levels of mental retardation; and neurobehavioral problems. Although self-injury and sleep disturbance are major problems in SMS, studies are limited on the behavioral phenotype of SMS. This report reviews the current state of knowledge about SMS and presents new data based on syndrome-specific observations by the authors' longitudinal experience working with SMS, specifically related to the behavioral aspects of SMS. This information should have relevance for parents, clinicians, geneticists, and educators involved in the care of individuals with SMS.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Abnormalities, Multiple",
+        "Behavior Therapy",
+        "Behavioral Symptoms",
+        "Child",
+        "Chromosomes, Human, Pair 17",
+        "Gene Deletion",
+        "Humans",
+        "Intellectual Disability",
+        "Phenotype",
+        "Self-Injurious Behavior",
+        "Sleep Wake Disorders",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/(sici)1096-8628(19980328)81:2<179::aid-ajmg10>3.0.co;2-e"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9613859/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9613859/"
+    },
+    {
+      "pmid": "16354942",
+      "doi": "",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Overview of Smith-Magenis syndrome.",
+      "authors": [
+        "Smith Ann C M",
+        "Magenis R Ellen",
+        "Elsea Sarah H"
+      ],
+      "journal": "Journal of the Association of Genetic Technologists",
+      "year": "2005",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Increased awareness of the phenotype associated with SMS permits early diagnosis and optimal management and intervention. From a management standpoint, the unique constellation of behavioral dysfunction and sleep disturbances has a significant impact on the parents, siblings and relatives of individuals with SMS as well as the professionals involved in their care. Support groups for families of persons with SMS like PRISMS in the US [http://www.prisms.org], provide families with up-to-date information, as well as emotional and peer support, enabling them to better care for their child.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16354942/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16354942/"
+    },
+    {
+      "pmid": "41028553",
+      "doi": "10.1038/s41431-025-01956-0",
+      "pmc_id": "PMC12816734",
+      "pmc_verify": null,
+      "title": "DNA methylation episignature for Smith-Magenis and Potocki-Lupski syndromes: a mirror perspective.",
+      "authors": [
+        "van der Laan Liselot",
+        "Karimi Karim",
+        "Rooney Kathleen",
+        "Alders Mariëlle",
+        "Brusco Alfredo",
+        "Lasa-Aranzasti Amaia",
+        "Brunetti-Pierri Nicola",
+        "Cueto-Gonzalez Anna M",
+        "DuPont Barbara R",
+        "Cappuccio Gerarda",
+        "Dubourg Christele",
+        "Everman David",
+        "Gatinois Vincent",
+        "Ganne Benjamin",
+        "Genevieve David",
+        "Ferrero Giovanni Battista",
+        "Kempers Marlies",
+        "Levy Michael A",
+        "Niceta Marcello",
+        "Novelli Antonio",
+        "Orlando Valeria",
+        "Odent Sylvie",
+        "Patterson Wesley G",
+        "Polstra Abeltje M",
+        "Roscioli Tony",
+        "Ruiz-Pallares Nathalie",
+        "Sabbagh Quentin",
+        "Trajkova Slavica",
+        "Tartaglia Marco",
+        "Tedder Matthew A",
+        "Toutain Annick",
+        "Koehler Udo",
+        "Valenzuela Irena",
+        "van Hagen Johanna M",
+        "van der Kevie-Kersemaekers Anne-Marie",
+        "Henneman Peter",
+        "Mannens Marcel M A M",
+        "Sadikovic Bekim",
+        "van Haelst Mieke M"
+      ],
+      "journal": "European journal of human genetics : EJHG",
+      "year": "2026",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Smith-Magenis syndrome (SMS) and Potocki-Lupski syndrome (PTLS) are reciprocal genomic disorders caused by deletions and duplications of the 17p11.2 chromosomal region, respectively. This study aimed to identify and validate DNA methylation episignatures specific to SMS and PTLS, and to investigate their reciprocal relationship and shared molecular features with other neurodevelopmental disorders. Genome-wide DNA methylation was analyzed in individuals with an SMS (n = 26) or PTLS (n = 27) phenotype associated with copy number variation, and SMS patients with RAI1 sequence variants using the Infinium EPIC array. Differentially methylated CpG sites were identified and used to develop support vector machine (SVM)-based classifiers, which demonstrated high sensitivity and specificity for both syndromes. The analysis revealed a mirror-like episignature, with SMS showing predominant hypomethylation and PTLS displaying hypermethylation at shared loci. Functional correlation with other neurodevelopmental disorders highlighted significant overlap with known episignatures, including those associated with MEF2C-related disorders. Notably, individuals with RAI1 sequence variants did not exhibit the same DNA methylation patterns, suggesting that the epigenetic alterations are primarily driven by copy number changes. These findings establish SMS and PTLS as distinct yet interconnected epigenetic entities, offering valuable diagnostic biomarkers and insights into the molecular pathophysiology of 17p11.2-associated neurodevelopmental disorders.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "DNA Methylation",
+        "Smith-Magenis Syndrome",
+        "Male",
+        "Female",
+        "DNA Copy Number Variations",
+        "Transcription Factors",
+        "CpG Islands",
+        "Chromosomes, Human, Pair 17",
+        "Chromosome Disorders",
+        "Epigenesis, Genetic",
+        "Trans-Activators",
+        "Abnormalities, Multiple",
+        "Chromosome Duplication"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12816734/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12816734/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41431-025-01956-0"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41028553/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41028553/"
+    },
+    {
+      "pmid": "25684097",
+      "doi": "10.1111/pde.12517",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Dermatologic features of Smith-Magenis syndrome.",
+      "authors": [
+        "Guérin-Moreau Morgane",
+        "Colin Estelle",
+        "Nguyen Sylvie",
+        "Andrieux Joris",
+        "de Leersnyder Hélène",
+        "Bonneau Dominique",
+        "Martin Ludovic"
+      ],
+      "journal": "Pediatric dermatology",
+      "year": "2015",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Smith-Magenis syndrome (SMS) is characterized by distinctive facial and skeletal features, developmental delay, cognitive impairment, and behavioral abnormalities, including self-injurious behaviors. We aimed to investigate whether cutaneous features are common in SMS. We performed a complete skin examination in 20 young SMS patients. Skin features secondary to self-injurious behavior, such as bites, abrasions, dystrophic scars, limited spots of hyperkeratosis, anomalies of the nails, and whitlows, were found in the majority of patients. Acral pachydermia and fissured plantar keratoderma were common. Xerosis was constant and associated with extensive keratosis pilaris in the majority of patients. Dermatofibromas were frequent in older patients. The hair was dense and shiny, with an unusual hairline. Eyelash trichomegaly and heavy brows were common, as well as folliculitis on the back. The skin features of SMS have rarely been reported in the literature. Some of these are the consequence of neurobehavioral features, but some cutaneous features and abnormalities of appendages have not been reported in other related syndromes. Skin manifestations of SMS are varied, sometimes induced by self-injurious behavior and sometimes more specific. It remains to be determined whether the combination of the two kinds of signs could contribute to early diagnosis of the syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adolescent",
+        "Adult",
+        "Child",
+        "Child, Preschool",
+        "Diagnosis, Differential",
+        "Female",
+        "Humans",
+        "Interviews as Topic",
+        "Male",
+        "Skin",
+        "Skin Diseases",
+        "Smith-Magenis Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1111/pde.12517"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25684097/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25684097/"
+    },
+    {
+      "pmid": "35165244",
+      "doi": "10.1097/YCO.0000000000000790",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Children with neurodevelopmental disorders: how do they sleep?",
+      "authors": [
+        "Belli Arianna",
+        "Breda Maria",
+        "Di Maggio Chiara",
+        "Esposito Dario",
+        "Marcucci Lavinia",
+        "Bruni Oliviero"
+      ],
+      "journal": "Current opinion in psychiatry",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: In this review we summarized the available evidence on sleep disorders in children with neurodevelopmental disorders (NDDs) in particular: intellectual disability (including some genetic conditions such as Prader-Willi Syndrome, Smith-Magenis Syndrome), Autism spectrum disorder, attention-deficit/hyperactivity disorder (ADHD), Developmental Coordination Disorder, language disorders, and specific learning disorders. RECENT FINDINGS: Children with NDDs frequently suffer from sleep disturbances, with a higher prevalence than that of the general pediatric population. SUMMARY: These problems tend to be chronic and may cause additional cognitive and behavioral difficulties, often affecting the whole family's well-being. Sleep behaviors are also related to other important developmental skills, such as attention and listening. Investigating sleep disorders in children with NDDs is therefore crucial in clinical practice. For a systematic approach in clinical practice, we propose the use of a short and easy to remember sleep screening tool.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "In this review we summarized the available evidence on sleep disorders in children with neurodevelopmental disorders (NDDs) in particular: intellectual disability (including some genetic conditions such as Prader-Willi Syndrome, Smith-Magenis Syndrome), Autism spectrum disorder, attention-deficit/hyperactivity disorder (ADHD), Developmental Coordination Disorder, language disorders, and specific learning disorders.",
+        "RECENT FINDINGS": "Children with NDDs frequently suffer from sleep disturbances, with a higher prevalence than that of the general pediatric population.",
+        "SUMMARY": "These problems tend to be chronic and may cause additional cognitive and behavioral difficulties, often affecting the whole family's well-being. Sleep behaviors are also related to other important developmental skills, such as attention and listening. Investigating sleep disorders in children with NDDs is therefore crucial in clinical practice. For a systematic approach in clinical practice, we propose the use of a short and easy to remember sleep screening tool."
+      },
+      "mesh_terms": [
+        "Attention Deficit Disorder with Hyperactivity",
+        "Autism Spectrum Disorder",
+        "Child",
+        "Humans",
+        "Neurodevelopmental Disorders",
+        "Sleep",
+        "Sleep Wake Disorders",
+        "Smith-Magenis Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/YCO.0000000000000790"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35165244/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/35165244/"
+    }
+  ],
+  "pubmed_discovery": {
+    "review": {
+      "query": "(\"Smith-Magenis syndrome\"[Title/Abstract] OR \"CHROMOSOME 17p11.2 DELETION SYNDROME\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "35205380",
+        "20301487",
+        "18231123",
+        "23622179",
+        "28694012"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Smith-Magenis syndrome\"[Title/Abstract] OR \"CHROMOSOME 17p11.2 DELETION SYNDROME\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "35205380",
+        "20301487",
+        "23622179",
+        "18231123",
+        "28694012",
+        "30819258",
+        "8684798",
+        "30557269",
+        "29138588",
+        "17351481"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Smith-Magenis syndrome\"[Title/Abstract] OR \"CHROMOSOME 17p11.2 DELETION SYNDROME\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "35205380",
+        "23622179",
+        "30819258",
+        "17351481",
+        "29138588",
+        "36256819",
+        "9613859",
+        "16647992",
+        "16354942",
+        "41028553"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Smith-Magenis syndrome\"[Title/Abstract] OR \"CHROMOSOME 17p11.2 DELETION SYNDROME\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "30819258",
+        "30557269",
+        "25684097",
+        "17351481",
+        "29138588"
+      ]
+    },
+    "general": {
+      "query": "(\"Smith-Magenis syndrome\"[Title/Abstract] OR \"CHROMOSOME 17p11.2 DELETION SYNDROME\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "35205380",
+        "20301487",
+        "18231123",
+        "23622179",
+        "28694012",
+        "29096777",
+        "30819258",
+        "8684798",
+        "30557269",
+        "35165244"
+      ]
+    }
+  },
+  "meta": {
+    "syndrome": "Smith-Magenis syndrome",
+    "collected_at": "2026-08-13T02:19:07.421768Z",
+    "work_dir": "output/Smith-Magenis_syndrome/smith_magenis_syndrome",
+    "steps": {
+      "01_disease_info": "output/Smith-Magenis_syndrome/smith_magenis_syndrome/01_disease_info.json",
+      "02_articles": "output/Smith-Magenis_syndrome/smith_magenis_syndrome/02_articles.json",
+      "03_markers": "output/Smith-Magenis_syndrome/smith_magenis_syndrome/03_markers.json"
+    },
+    "annotation_sources": {
+      "medgen": "NCBI MedGen HTML (공개)",
+      "pubmed": "NCBI PubMed ESearch+EFetch (공개)",
+      "ncbi_gene": "NCBI Gene ESearch+ESummary",
+      "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+      "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+      "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+    }
+  }
+}

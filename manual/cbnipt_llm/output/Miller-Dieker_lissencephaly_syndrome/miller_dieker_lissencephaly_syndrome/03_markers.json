@@ -1,0 +1,163 @@
+{
+  "db_sources": {
+    "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+    "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+    "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "7q22",
+      "chromosome": "chr7",
+      "cytoband": "7q22",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "16p13",
+      "chromosome": "chr16",
+      "cytoband": "16p13",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "7q31",
+      "chromosome": "chr7",
+      "cytoband": "7q31",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "16q21",
+      "chromosome": "chr16",
+      "cytoband": "16q21",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "7q36",
+      "chromosome": "chr7",
+      "cytoband": "7q36",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "12q21",
+      "chromosome": "chr12",
+      "cytoband": "12q21",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "1p34",
+      "chromosome": "chr1",
+      "cytoband": "1p34",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "6q22",
+      "chromosome": "chr6",
+      "cytoband": "6q22",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "Xq23",
+      "chromosome": "chrX",
+      "cytoband": "Xq23",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "Xp21",
+      "chromosome": "chrX",
+      "cytoband": "Xp21",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "17p13",
+      "chromosome": "chr17",
+      "cytoband": "17p13",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    }
+  ]
+}

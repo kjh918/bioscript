@@ -12,7 +12,7 @@ SECTION_FOOTER = """
             border-radius:var(--r);padding:12px 16px;margin-bottom:1rem;font-size:11px;
             color:var(--text-muted);line-height:1.7;">
   <strong style="color:var(--text-sub);">※ 본 검사 결과의 해석에 관한 주의사항</strong><br>
-  본 검사는 임산부 혈액에서 분리한 cfDNA를 이용한 선별검사로, 확진 검사가 아닙니다.
+  본 검사는 임산부 혈액에서 분리한 순환태아세포를 이용한 선별검사로, 확진 검사가 아닙니다.
   양성 결과 시 반드시 양수 검사 또는 융모막 검사 등 확진 검사를 시행하여야 합니다.
   본 검사 결과는 임상 증상 및 기타 검사 결과와 종합하여 해석하여야 하며,
   검사 결과 해석에 대한 최종 책임은 의뢰 의사에게 있습니다.
@@ -48,8 +48,6 @@ SECTION_FOOTER = """
 <div class="footer">
   <div>
     <span id="ft-institution">Genecurix Inc.</span>
-    &nbsp;·&nbsp;임상유전체연구소
-    &nbsp;·&nbsp;<span id="ft-contact"></span>
   </div>
   <div id="ft-right" style="text-align:right;"></div>
 </div>

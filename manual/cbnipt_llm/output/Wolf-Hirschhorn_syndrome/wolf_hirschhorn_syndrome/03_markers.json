@@ -1,0 +1,478 @@
+{
+  "db_sources": {
+    "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+    "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+    "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "CPLX1",
+      "chromosome": "chr4",
+      "cytoband": "4p16.3",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "gencc_classification": "Strong",
+        "gencc_moi": "Autosomal recessive",
+        "gencc_submitters": [
+          "Labcorp Genetics (formerly Invitae)"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000587",
+            "hpo_name": "Abnormal optic nerve morphology"
+          },
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0000599",
+            "hpo_name": "Abnormality of the frontal hairline"
+          },
+          {
+            "hpo_id": "HP:0007957",
+            "hpo_name": "Corneal opacity"
+          },
+          {
+            "hpo_id": "HP:0000238",
+            "hpo_name": "Hydrocephalus"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0000389",
+            "hpo_name": "Chronic otitis media"
+          },
+          {
+            "hpo_id": "HP:0000358",
+            "hpo_name": "Posteriorly rotated ears"
+          },
+          {
+            "hpo_id": "HP:0000407",
+            "hpo_name": "Sensorineural hearing impairment"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011443",
+            "hpo_name": "Abnormality of coordination"
+          }
+        ],
+        "ncbi_gene_id": "10815"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "CTBP1",
+      "chromosome": "chr4",
+      "cytoband": "4p16.3",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "gencc_classification": "Strong",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "Labcorp Genetics (formerly Invitae)",
+          "Broad Center for Mendelian Genomics",
+          "Illumina",
+          "G2P"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000587",
+            "hpo_name": "Abnormal optic nerve morphology"
+          },
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0000599",
+            "hpo_name": "Abnormality of the frontal hairline"
+          },
+          {
+            "hpo_id": "HP:0007957",
+            "hpo_name": "Corneal opacity"
+          },
+          {
+            "hpo_id": "HP:0000238",
+            "hpo_name": "Hydrocephalus"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0000389",
+            "hpo_name": "Chronic otitis media"
+          },
+          {
+            "hpo_id": "HP:3000050",
+            "hpo_name": "Abnormal odontoid tissue morphology"
+          },
+          {
+            "hpo_id": "HP:0000358",
+            "hpo_name": "Posteriorly rotated ears"
+          },
+          {
+            "hpo_id": "HP:0000407",
+            "hpo_name": "Sensorineural hearing impairment"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          }
+        ],
+        "ncbi_gene_id": "1487"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "FGFRL1",
+      "chromosome": "chr4",
+      "cytoband": "4p16.3",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "ClinGen",
+        "HPO"
+      ],
+      "annotation": {
+        "hi_score": "0",
+        "hi_score_label": "No evidence available",
+        "hi_disease": null,
+        "ts_score": "No evidence available",
+        "hi_pmids": [],
+        "hgnc_id": null,
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0000238",
+            "hpo_name": "Hydrocephalus"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0000407",
+            "hpo_name": "Sensorineural hearing impairment"
+          },
+          {
+            "hpo_id": "HP:0011446",
+            "hpo_name": "Abnormality of mental function"
+          },
+          {
+            "hpo_id": "HP:0004467",
+            "hpo_name": "Preauricular pit"
+          },
+          {
+            "hpo_id": "HP:0011452",
+            "hpo_name": "Functional abnormality of the middle ear"
+          },
+          {
+            "hpo_id": "HP:0000365",
+            "hpo_name": "Hearing impairment"
+          },
+          {
+            "hpo_id": "HP:0000377",
+            "hpo_name": "Abnormal pinna morphology"
+          },
+          {
+            "hpo_id": "HP:0000384",
+            "hpo_name": "Preauricular skin tag"
+          },
+          {
+            "hpo_id": "HP:0000405",
+            "hpo_name": "Conductive hearing impairment"
+          },
+          {
+            "hpo_id": "HP:0000612",
+            "hpo_name": "Iris coloboma"
+          },
+          {
+            "hpo_id": "HP:0000615",
+            "hpo_name": "Abnormal pupil morphology"
+          },
+          {
+            "hpo_id": "HP:0000286",
+            "hpo_name": "Epicanthus"
+          }
+        ],
+        "ncbi_gene_id": "53834"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "LETM1",
+      "chromosome": "chr4",
+      "cytoband": "4p16.3",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "ClinGen",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "hi_score": "0",
+        "hi_score_label": "No evidence available",
+        "hi_disease": null,
+        "ts_score": "No evidence available",
+        "hi_pmids": [],
+        "hgnc_id": null,
+        "gencc_classification": "Strong",
+        "gencc_moi": "Autosomal recessive",
+        "gencc_submitters": [
+          "Labcorp Genetics (formerly Invitae)",
+          "G2P",
+          "PanelApp Australia",
+          "Ambry Genetics"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000587",
+            "hpo_name": "Abnormal optic nerve morphology"
+          },
+          {
+            "hpo_id": "HP:0000587",
+            "hpo_name": "Abnormal optic nerve morphology"
+          },
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0000599",
+            "hpo_name": "Abnormality of the frontal hairline"
+          },
+          {
+            "hpo_id": "HP:0007957",
+            "hpo_name": "Corneal opacity"
+          },
+          {
+            "hpo_id": "HP:0000238",
+            "hpo_name": "Hydrocephalus"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0000389",
+            "hpo_name": "Chronic otitis media"
+          },
+          {
+            "hpo_id": "HP:0008619",
+            "hpo_name": "Bilateral sensorineural hearing impairment"
+          },
+          {
+            "hpo_id": "HP:0000358",
+            "hpo_name": "Posteriorly rotated ears"
+          },
+          {
+            "hpo_id": "HP:0000407",
+            "hpo_name": "Sensorineural hearing impairment"
+          },
+          {
+            "hpo_id": "HP:0011442",
+            "hpo_name": "Abnormal central motor function"
+          }
+        ],
+        "ncbi_gene_id": "3954"
+      }
+    },
+    {
+      "feature_type": "CoreGene",
+      "feature_name": "NSD2",
+      "chromosome": "chr4",
+      "cytoband": "4p16.3",
+      "genomic_pos": null,
+      "event": null,
+      "mechanism": null,
+      "confidence": "high",
+      "source": [
+        "medgen_direct",
+        "ClinGen",
+        "GenCC",
+        "HPO"
+      ],
+      "annotation": {
+        "hi_score": "3",
+        "hi_score_label": "Sufficient evidence for dosage pathogenicity",
+        "hi_disease": "30345613",
+        "ts_score": "No evidence available",
+        "hi_pmids": [
+          "29892088",
+          "33941880",
+          "35550183"
+        ],
+        "hgnc_id": null,
+        "gencc_classification": "Definitive",
+        "gencc_moi": "Autosomal dominant",
+        "gencc_submitters": [
+          "Labcorp Genetics (formerly Invitae)",
+          "Illumina",
+          "G2P",
+          "PanelApp Australia",
+          "ClinGen",
+          "Ambry Genetics"
+        ],
+        "hpo_terms": [
+          {
+            "hpo_id": "HP:0000582",
+            "hpo_name": "Upslanted palpebral fissure"
+          },
+          {
+            "hpo_id": "HP:0000587",
+            "hpo_name": "Abnormal optic nerve morphology"
+          },
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000589",
+            "hpo_name": "Coloboma"
+          },
+          {
+            "hpo_id": "HP:0000598",
+            "hpo_name": "Abnormality of the ear"
+          },
+          {
+            "hpo_id": "HP:0000599",
+            "hpo_name": "Abnormality of the frontal hairline"
+          },
+          {
+            "hpo_id": "HP:3000022",
+            "hpo_name": "Abnormal external ear cartilage morphology"
+          },
+          {
+            "hpo_id": "HP:0007957",
+            "hpo_name": "Corneal opacity"
+          },
+          {
+            "hpo_id": "HP:0000238",
+            "hpo_name": "Hydrocephalus"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0002553",
+            "hpo_name": "Highly arched eyebrow"
+          },
+          {
+            "hpo_id": "HP:0000389",
+            "hpo_name": "Chronic otitis media"
+          },
+          {
+            "hpo_id": "HP:0011420",
+            "hpo_name": "Age of death"
+          },
+          {
+            "hpo_id": "HP:0000358",
+            "hpo_name": "Posteriorly rotated ears"
+          }
+        ],
+        "ncbi_gene_id": "7468"
+      }
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "4p16.3",
+      "chromosome": "chr4",
+      "cytoband": "4p16.3",
+      "genomic_pos": null,
+      "event": "loss",
+      "mechanism": "deletion",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    }
+  ]
+}

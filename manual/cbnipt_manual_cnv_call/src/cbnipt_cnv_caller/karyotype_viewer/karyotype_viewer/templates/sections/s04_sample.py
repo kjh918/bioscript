@@ -1,58 +1,78 @@
 """
-S04 — 검사 결과 요약
-성별, 종합 판정, ISCN — 선명하게 강조
-JS: renderSampleInfo()
+S04 — 검체 / 분석 정보 + QC
+Sample ID, 성별, ISCN, Fetal Sex
+QC: 회수된 세포 수(mapped reads), Fetal Fraction, 분석 파이프라인
+JS: renderSampleInfo()  ← MANIFEST.sample + MANIFEST.qc
 """
 
 SECTION_SAMPLE = """
-<!-- ═══════════════════════════════════════════════════════ S04 RESULT SUMMARY -->
-<div class="card" id="result-summary-card" style="margin-bottom:0.75rem;">
-  <div class="ch" id="result-summary-ch">
-    <span class="ct">검사 결과 요약</span>
-    <span style="font-size:10px;color:var(--text-muted);">Analysis Result Summary</span>
-  </div>
+<!-- ═══════════════════════════════════════════════════════ S04 SAMPLE & QC -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
 
-  <div style="padding:18px 22px;display:grid;
-              grid-template-columns:130px 1px 1fr 1px 240px;
-              gap:24px;align-items:center;">
-
-    <!-- 태아 성별 -->
-    <div style="text-align:center;">
-      <div style="font-size:10px;color:var(--text-muted);margin-bottom:6px;
-                  letter-spacing:.08em;text-transform:uppercase;">태아 성별 / Fetal Sex</div>
-      <div id="s-sex-icon" style="font-size:52px;line-height:1;">—</div>
-      <div id="s-fetal-sex" style="font-size:13px;font-weight:700;margin-top:8px;">—</div>
+  <!-- 검체 정보 -->
+  <div class="card" style="margin-bottom:0;">
+    <div class="ch">
+      <span class="ct">검체 / 분석 정보</span>
+      <span style="font-size:10px;color:var(--text-muted);">Sample Information</span>
     </div>
-
-    <div style="background:var(--border);width:1px;height:80px;align-self:center;"></div>
-
-    <!-- 종합 판정 -->
-    <div style="text-align:center;">
-      <div style="font-size:10px;color:var(--text-muted);margin-bottom:10px;
-                  letter-spacing:.08em;text-transform:uppercase;">종합 판정 / Overall Call</div>
-      <div id="s-call-badge"
-           style="display:inline-flex;align-items:center;gap:8px;
-                  padding:8px 28px;border-radius:99px;margin-bottom:10px;
-                  border:2px solid var(--border);">
-        <span id="s-call-icon" style="font-size:18px;"></span>
-        <span id="s-call-text" style="font-size:22px;font-weight:800;">—</span>
+    <div class="igrid" id="sample-grid">
+      <div class="iitem">
+        <div class="il">Sample ID</div>
+        <div class="iv" id="s-id" style="font-family:var(--mono);font-size:12px;">—</div>
       </div>
-      <div id="s-events-count" style="font-size:12px;color:var(--text-sub);"></div>
+      <div class="iitem">
+        <div class="il">태아 성별 (Fetal Sex)</div>
+        <div class="iv" id="s-fetal-sex">—</div>
+      </div>
+      <div class="iitem" style="grid-column:1/-1;">
+        <div class="il">핵형 (ISCN)</div>
+        <div class="iv" id="s-iscn"
+             style="font-family:var(--mono);font-size:11px;word-break:break-all;">—</div>
+      </div>
+      <div class="iitem">
+        <div class="il">이상 소견 수</div>
+        <div class="iv" id="s-events">—</div>
+      </div>
+      <div class="iitem">
+        <div class="il">분석 파이프라인</div>
+        <div class="iv" id="s-pipeline">cbNIPT v2</div>
+      </div>
     </div>
-
-    <div style="background:var(--border);width:1px;height:80px;align-self:center;"></div>
-
-    <!-- ISCN -->
-    <div>
-      <div style="font-size:10px;color:var(--text-muted);margin-bottom:6px;
-                  letter-spacing:.08em;text-transform:uppercase;">핵형 / ISCN</div>
-      <div id="s-iscn"
-           style="font-family:var(--mono);font-size:12px;font-weight:700;
-                  color:var(--navy);background:var(--navy-l);
-                  padding:6px 10px;border-radius:6px;margin-bottom:6px;
-                  word-break:break-all;display:inline-block;max-width:100%;">—</div>
-    </div>
-
   </div>
+
+  <!-- QC 정보 -->
+  <div class="card" style="margin-bottom:0;">
+    <div class="ch">
+      <span class="ct">QC 정보</span>
+      <span style="font-size:10px;color:var(--text-muted);">Quality Control</span>
+    </div>
+    <div class="igrid" id="qc-grid">
+      <div class="iitem">
+        <div class="il">회수된 세포 수 (Mapped Reads)</div>
+        <div class="iv" id="qc-mapped-reads">—</div>
+      </div>
+      <div class="iitem">
+        <div class="il">태아 분율 (Fetal Fraction)</div>
+        <div class="iv" id="qc-fetal-fraction">—</div>
+      </div>
+      <div class="iitem">
+        <div class="il">GC Bias</div>
+        <div class="iv" id="qc-gc-bias">—</div>
+      </div>
+      <div class="iitem">
+        <div class="il">QC 결과</div>
+        <div class="iv" id="qc-pass">—</div>
+      </div>
+      <div class="iitem">
+        <div class="il">중앙값 NCV</div>
+        <div class="iv" id="qc-ncv">—</div>
+      </div>
+      <div class="iitem">
+        <div class="il">분석일</div>
+        <div class="iv" id="qc-analysis-date">—</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 """

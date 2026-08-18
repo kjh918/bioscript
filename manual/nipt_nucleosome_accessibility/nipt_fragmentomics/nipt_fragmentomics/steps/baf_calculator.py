@@ -263,6 +263,15 @@ def _empty_row(chrom: str, start: int, end: int) -> dict:
 
 
 # ─────────────────────────────────────────────────────────────────────
+# 모듈 레벨 worker (ProcessPoolExecutor pickle 호환)
+# ─────────────────────────────────────────────────────────────────────
+def _baf_chrom_worker(chrom, bins, bam_path, vcf_path,
+                      min_mapq, min_baseq, min_depth, af_min, af_max):
+    return _calc_chrom_baf(chrom, bins, bam_path, vcf_path,
+                           min_mapq, min_baseq, min_depth, af_min, af_max)
+
+
+# ─────────────────────────────────────────────────────────────────────
 # 공개 인터페이스
 # ─────────────────────────────────────────────────────────────────────
 def run(
@@ -296,16 +305,14 @@ def run(
     }
     log.info("BAF 계산: %d bins, %d chroms", len(bin_df), len(chrom_groups))
 
-    def _worker(chrom, bins):
-        return _calc_chrom_baf(
-            chrom, bins, bam_path, vcf_path,
-            min_mapq, min_baseq, min_depth, af_min, af_max,
-        )
-
     all_rows: list[dict] = []
     with ProcessPoolExecutor(max_workers=n_jobs) as ex:
-        futures = {ex.submit(_worker, c, b): c
-                   for c, b in chrom_groups.items()}
+        futures = {
+            ex.submit(_baf_chrom_worker, c, b,
+                      bam_path, vcf_path,
+                      min_mapq, min_baseq, min_depth, af_min, af_max): c
+            for c, b in chrom_groups.items()
+        }
         for fut in as_completed(futures):
             chrom = futures[fut]
             try:

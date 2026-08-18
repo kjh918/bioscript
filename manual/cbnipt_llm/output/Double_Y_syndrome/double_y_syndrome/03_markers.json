@@ -1,0 +1,29 @@
+{
+  "db_sources": {
+    "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+    "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+    "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+  },
+  "markers": [
+    {
+      "feature_type": "TargetChromosome",
+      "feature_name": "chrY",
+      "chromosome": "chrY",
+      "cytoband": "Y",
+      "genomic_pos": {
+        "chromosome": "chrY",
+        "start": 1,
+        "end": 57227415,
+        "assembly": "GRCh38"
+      },
+      "event": "gain",
+      "mechanism": "trisomy",
+      "confidence": "medium",
+      "source": [
+        "karyotype_notation",
+        "hg38_chromosome"
+      ],
+      "annotation": null
+    }
+  ]
+}

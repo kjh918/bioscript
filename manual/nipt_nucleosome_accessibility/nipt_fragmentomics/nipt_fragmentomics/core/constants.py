@@ -43,6 +43,7 @@ FNAME = {
     "bins_corrected": "bins_corrected.parquet",
     "wps_peaks":      "wps_peaks.parquet",
     "marker_wps":     "marker_wps_summary.parquet",
+    "marker_stats":   "marker_stats.parquet",
     "fetal_fraction": "fetal_fraction.json",
     "bins_baf":       "bins_baf.parquet",
     "cnv_calls":      "cnv_calls.parquet",

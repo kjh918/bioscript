@@ -122,7 +122,7 @@ SECTION_PATIENT = """
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);">
       <div class="iitem" style="text-align:center;border-bottom:none;">
-        <div class="il" style="text-align:center;">CFC 회수</div>
+        <div class="il" style="text-align:center;">cfDNA 품질</div>
         <div class="iv" id="qc-cfdna" style="text-align:center;font-size:12px;">—</div>
       </div>
       <div class="iitem" style="text-align:center;border-bottom:none;">

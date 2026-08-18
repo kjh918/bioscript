@@ -142,30 +142,30 @@ def diagnose_clinical_markers(marker_df, bin_df, cnv_df, sex_tag="Unknown"):
 
         if rule_type == "AMP":
             if not np.isnan(median_cn) and median_cn >= rule["pos_min"]:
-                diagnosis = "POSITIVE"
+                diagnosis = "HIGH_RISK"
                 reason.append(f"Gain (CN:{median_cn:.2f})")
                 if has_amp:
                     reason.append("Segment AMP overlap")
             elif not np.isnan(median_cn) and median_cn >= rule["sus_min"]:
                 if has_amp:
-                    diagnosis = "POSITIVE"
+                    diagnosis = "HIGH_RISK"
                     reason.append(f"Gain (segment overlap + marginal CN:{median_cn:.2f})")
                 else:
-                    diagnosis = "SUSPICIOUS"
+                    diagnosis = "SUSPECTED"
                     reason.append(f"Marginal Gain (CN:{median_cn:.2f})")
 
         elif rule_type == "DEL":
             if not np.isnan(median_cn) and median_cn <= rule["pos_max"]:
-                diagnosis = "POSITIVE"
+                diagnosis = "HIGH_RISK"
                 reason.append(f"Loss (CN:{median_cn:.2f})")
                 if has_del:
                     reason.append("Segment DEL overlap")
             elif not np.isnan(median_cn) and median_cn <= rule["sus_max"]:
                 if has_del:
-                    diagnosis = "POSITIVE"
+                    diagnosis = "HIGH_RISK"
                     reason.append(f"Loss (segment overlap + marginal CN:{median_cn:.2f})")
                 else:
-                    diagnosis = "SUSPICIOUS"
+                    diagnosis = "SUSPECTED"
                     reason.append(f"Marginal Loss (CN:{median_cn:.2f})")
             # median_cn 이 sus_max 초과면 has_del 여부와 무관하게 NEGATIVE 유지
 
@@ -180,18 +180,54 @@ def diagnose_clinical_markers(marker_df, bin_df, cnv_df, sex_tag="Unknown"):
                 expected_pattern = CFG["SEX_ANEUPLOIDY"].get(expected_key, {}).get("pattern_name")
 
                 if sex_call is not None and sex_call["pattern_name"] == expected_pattern:
-                    diagnosis = "POSITIVE"
+                    diagnosis = "HIGH_RISK"
                     reason.append(f"{sex_call['pattern_name']} detected (X:{global_x_cn:.2f}, Y:{global_y_cn:.2f})")
                 else:
                     # 마커 정의 범위엔 못 미치지만, 겹치는 CNV segment 상 부분적 증가/감소가
                     # 관측된 경우의 보조 신호 (기존 로직 그대로 유지)
                     cfg_rule = CFG["SEX_ANEUPLOIDY"].get(expected_key, {})
-                    if has_amp and cfg_rule.get("x_min", 2.0) > 2.0 and chrom == "chrX":
-                        diagnosis = "SUSPICIOUS"
-                        reason.append("Partial X Gain")
-                    elif has_del and cfg_rule.get("x_max", 2.0) < 2.0 and chrom == "chrX":
-                        diagnosis = "SUSPICIOUS"
-                        reason.append("Partial X Loss")
+                    y_male_min = CFG["y_male_min_cn"]
+                    y_present = (
+                        np.isfinite(global_y_cn)
+                        and global_y_cn >= y_male_min
+                    )
+                    # ---------------------------------------------------------
+                    # X gain 보조 신호
+                    # Triple-X 등 X 증가형 질환
+                    # ---------------------------------------------------------
+                    if (
+                        chrom == "chrX"
+                        and has_amp
+                        and cfg_rule.get("x_min", 2.0) > 2.0
+                    ):
+                        diagnosis = "SUSPECTED"
+                        reason.append(
+                            f"Partial X Gain "
+                            f"(X:{global_x_cn:.2f}, Y:{global_y_cn:.2f})"
+                        )
+
+                    # ---------------------------------------------------------
+                    # Turner syndrome의 X loss 보조 신호
+                    #
+                    # 정상 XY:
+                    #     X ~= 1, Y ~= 1
+                    #     -> X=1은 정상 baseline이므로 Partial X Loss 금지
+                    #
+                    # Turner 후보:
+                    #     X ~= 1, Y ~= 0
+                    #     -> Y가 부재할 때만 X loss 보조신호 허용
+                    # ---------------------------------------------------------
+                    elif (
+                        expected_key == "turner"
+                        and chrom == "chrX"
+                        and has_del
+                        and not y_present
+                    ):
+                        diagnosis = "SUSPECTED"
+                        reason.append(
+                            f"Partial X Loss with absent Y "
+                            f"(X:{global_x_cn:.2f}, Y:{global_y_cn:.2f})"
+                        )
 
         # [D] 정상 성별 판별 룰 (NIPT_SEX 마커)
         elif rule_type == "FETAL_SEX":
@@ -215,7 +251,7 @@ def diagnose_clinical_markers(marker_df, bin_df, cnv_df, sex_tag="Unknown"):
             "HOMO_RATE": mean_homo,
             "DETECTED_CNV": ",".join(seg_calls) if seg_calls else "None",
             "DIAGNOSIS": diagnosis,
-            "EVIDENCE": " & ".join(reason) if reason else "Normal",
+            "EVIDENCE": " & ".join(reason) if reason else "LOW_RISK",
             # [신규] bin 수가 적어 median_cn 신뢰도가 낮은 경우 표시.
             # CoreGene처럼 물리적으로 작은 영역(수십kb)은 겹치는 bin이 1~2개뿐일 수
             # 있어 이 값이 True 인 결과는 확인검사(ddPCR 등)를 권장합니다.
@@ -236,8 +272,8 @@ def get_diagnosis_summary(report_df):
     summary = []
 
     for syndrome, group in report_df.groupby("SYNDROME"):
-        pos_features = group[group["DIAGNOSIS"] == "POSITIVE"]
-        sus_features = group[group["DIAGNOSIS"] == "SUSPICIOUS"]
+        pos_features = group[group["DIAGNOSIS"] == "HIGH_RISK"]
+        sus_features = group[group["DIAGNOSIS"] == "SUSPECTED"]
 
         # 성별 판독 행 처리 (NIPT_SEX)
         if syndrome == "NIPT_SEX":
@@ -252,9 +288,9 @@ def get_diagnosis_summary(report_df):
 
         final_call = "NEGATIVE"
         if len(pos_features) > 0:
-            final_call = "POSITIVE"
+            final_call = "HIGH_RISK"
         elif len(sus_features) > 0:
-            final_call = "SUSPICIOUS"
+            final_call = "SUSPECTED"
 
         critical_hits = pos_features[pos_features["FEAT_RANK"] >= 4]["FEATURE_NAME"].tolist()
 

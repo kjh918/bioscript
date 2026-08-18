@@ -10,7 +10,7 @@ SECTION_HEADER = """
   <div>
     <div class="hdr-brand" id="hdr-brand">GENECURIX</div>
     <h1 id="hdr-title">순환태아세포 기반 염색체 이상 선별검사 결과보고서</h1>
-    <div class="hdr-sub" id="hdr-sub">cbNIPT · Cell-based Non-Invasive Prenatal Testing</div>
+    <div class="hdr-sub" id="hdr-sub">cbNIPT · Cell Based Non-Invasive Prenatal Testing</div>
   </div>
   <div class="hdr-right">
     <div class="hdr-lbl">Report No.</div>

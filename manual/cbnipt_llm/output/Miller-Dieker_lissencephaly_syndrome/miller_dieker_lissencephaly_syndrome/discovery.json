@@ -1,0 +1,2546 @@
+{
+  "disease_info": {
+    "syndrome": "Miller-Dieker lissencephaly syndrome",
+    "definition": "Lissencephaly (LIS), literally meaning smooth brain, is characterized by smooth or nearly smooth cerebral surface and a paucity of gyral and sulcal development, encompassing a spectrum of brain surface malformations ranging from complete agyria to subcortical band heterotopia (SBH). Classic lissencephaly is associated with an abnormally thick cortex, reduced or abnormal lamination, and diffuse neuronal heterotopia. SBH consists of circumferential bands of heterotopic neurons located just beneath the cortex and separated from it by a thin band of white matter. SBH represents the less severe end of the lissencephaly spectrum of malformations (Pilz et al., 1999, summary by Kato and Dobyns, 2003). Agyria, i.e., brain without convolutions or gyri, was considered a rare malformation until recent progress in neuroradiology (Bordarier et al., 1986). With this technical advantage, a number of lissencephaly syndromes have been distinguished. Classic lissencephaly (formerly type I) is a brain malformation caused by abnormal neuronal migration at 9 to 13 weeks' gestation, resulting in a spectrum of agyria, mixed agyria/pachygyria, and pachygyria. It is characterized by an abnormally thick and poorly organized cortex with 4 primitive layers, diffuse neuronal heterotopia, enlarged and dysmorphic ventricles, and often hypoplasia of the corpus callosum (Lo Nigro et al., 1997). Kato and Dobyns (2003) presented a classification system for neuronal migration disorders based on brain imaging findings and molecular analysis. The authors also reviewed the contributions and interactions of the 5 genes then known to cause human lissencephaly: LIS1 (PAFAH1B1), 14-3-3-epsilon (YWHAE), DCX, RELN, and ARX. Genetic Heterogeneity of Lissencephaly Lissencephaly is a genetically heterogeneous disorder. See also LIS2 (257320), caused by mutation in the RELN gene (600514) on chromosome 7q22; LIS4 (614019), caused by mutation in the NDE1 gene (609449) on chromosome 16p13; LIS5 (615191), caused by mutation in the LAMB1 gene (150240) on chromosome 7q31; LIS6 (616212), caused by mutation in the KATNB1 gene (602703) on chromosome 16q21; LIS7 (616342), caused by mutation in the CDK5 gene (123831) on chromosome 7q36; LIS8 (617255), caused by mutation in the TMTC3 gene (617218) on chromosome 12q21; LIS9 (618325), caused by mutation in the MACF1 gene (608271) on chromosome 1p34; and LIS10 (618873), caused by mutation in the CEP85L gene (618865) on chromosome 6q22. X-linked forms include LISX1 (300067), caused by mutation in the DCX gene (300121) on chromosome Xq23, and LISX2 (300215), caused by mutation in the ARX gene (300382) on chromosome Xp21. LIS3 has been reclassified as complex cortical dysplasia with other brain malformations-16 (CDCBM16; 611603). See also Miller-Dieker lissencephaly syndrome (MDLS; 247200), a contiguous gene microdeletion syndrome involving chromosome 17p13 and including the PAFAH1B1 and YWHAE (605066) genes. Lissencephaly caused by mutations in the PAFAH1B1 gene is also called 'isolated' lissencephaly to distinguish it from the accompanying features of MDLS. [from OMIM ]",
+    "synonyms": [
+      "Type I lissencephaly"
+    ],
+    "db_ids": {
+      "SNOMED-CT": "253147000",
+      "MONDO": "MONDO:0015146",
+      "OMIM": "601545",
+      "Orphanet": "102009"
+    },
+    "gene_locations": [],
+    "genomic_targets": [
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr7",
+        "cytoband": "7q22",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr16",
+        "cytoband": "16p13",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr7",
+        "cytoband": "7q31",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr16",
+        "cytoband": "16q21",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr7",
+        "cytoband": "7q36",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr12",
+        "cytoband": "12q21",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr1",
+        "cytoband": "1p34",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr6",
+        "cytoband": "6q22",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chrX",
+        "cytoband": "Xq23",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chrX",
+        "cytoband": "Xp21",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      },
+      {
+        "type": "CoreRegion",
+        "chromosome": "chr17",
+        "cytoband": "17p13",
+        "event": "unknown",
+        "mechanism": "duplication",
+        "source": "name_synonym_or_definition"
+      }
+    ],
+    "genereview_url": null,
+    "literature": {
+      "pubmed": {
+        "papers": [
+          {
+            "pmid": "15921231",
+            "title": "Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.",
+            "authors": "Leventer RJ",
+            "journal": "J Child Neurol",
+            "year": "2005",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15921231/"
+          }
+        ],
+        "see_all": {}
+      },
+      "etiology": {
+        "papers": [
+          {
+            "pmid": "39214127",
+            "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+            "authors": "Proepper CR, Schuetz SM, Schwarz LM, Au KV, Bast T, Beaud N, Borggraefe I, Bosch F, Budde J, Busse M, Chung J, Debus O, Diepold K, Fries T, Gersdorff GV, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+            "journal": "Neuropediatrics",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+          },
+          {
+            "pmid": "36283405",
+            "title": "Bi-allelic CAMSAP1 variants cause a clinically recognizable neuronal migration disorder.",
+            "authors": "Khalaf-Nazzal R, Fasham J, Inskeep KA, Blizzard LE, Leslie JS, Wakeling MN, Ubeyratna N, Mitani T, Griffith JL, Baker W, Al-Hijawi F, Keough KC, Gezdirici A, Pena L, Spaeth CG, Turnpenny PD, Walsh JR, Ray R, Neilson A, Kouranova E, Cui X, Curiel DT, Pehlivan D, Akdemir ZC, Posey JE, Lupski JR, Dobyns WB, Stottmann RW, Crosby AH, Baple EL",
+            "journal": "Am J Hum Genet",
+            "year": "2022",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36283405/"
+          },
+          {
+            "pmid": "26494205",
+            "title": "LIS1-associated classic lissencephaly: A retrospective, multicenter survey of the epileptogenic phenotype and response to antiepileptic drugs.",
+            "authors": "Herbst SM, Proepper CR, Geis T, Borggraefe I, Hahn A, Debus O, Haeussler M, von Gersdorff G, Kurlemann G, Ensslen M, Beaud N, Budde J, Gilbert M, Heiming R, Morgner R, Philippi H, Ross S, Strobl-Wildemann G, Muelleder K, Vosschulte P, Morris-Rosendahl DJ, Schuierer G, Hehr U",
+            "journal": "Brain Dev",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26494205/"
+          },
+          {
+            "pmid": "20036930",
+            "title": "Lissencephalic syndromes: brain and beyond.",
+            "authors": "Pavone L, Corsello G, Pavone P, Iannetti P",
+            "journal": "Front Biosci (Schol Ed)",
+            "year": "2010",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20036930/"
+          },
+          {
+            "pmid": "15007136",
+            "title": "Mutation screening in a cohort of patients with lissencephaly and subcortical band heterotopia.",
+            "authors": "Torres FR, Montenegro MA, Marques-De-Faria AP, Guerreiro MM, Cendes F, Lopes-Cendes I",
+            "journal": "Neurology",
+            "year": "2004",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15007136/"
+          }
+        ],
+        "see_all": {}
+      },
+      "diagnosis": {
+        "papers": [
+          {
+            "pmid": "42177523",
+            "title": "Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.",
+            "authors": "Proepper CR, Schwarz LM, Schuetz SM, von Au K, Bast T, Beaud N, Borggraefe I, Bosch F, Busse M, Chung J, Debus O, Diepold K, Fries T, von Gersdorff G, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2026",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42177523/"
+          },
+          {
+            "pmid": "39214127",
+            "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+            "authors": "Proepper CR, Schuetz SM, Schwarz LM, Au KV, Bast T, Beaud N, Borggraefe I, Bosch F, Budde J, Busse M, Chung J, Debus O, Diepold K, Fries T, Gersdorff GV, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+            "journal": "Neuropediatrics",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+          },
+          {
+            "pmid": "29048727",
+            "title": "Mutations of KIF5C cause a neurodevelopmental disorder of infantile-onset epilepsy, absent language, and distinctive malformations of cortical development.",
+            "authors": "Michels S, Foss K, Park K, Golden-Grant K, Saneto R, Lopez J, Mirzaa GM",
+            "journal": "Am J Med Genet A",
+            "year": "2017",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/29048727/"
+          },
+          {
+            "pmid": "10788746",
+            "title": "99Tc-HmPAO SPECT in 13 patients with classic lissencephaly.",
+            "authors": "Yilmaz Y, Ozmen M, Adalet I, Calişkan M, Unal S, Aydinli N, Minareci O",
+            "journal": "Pediatr Neurol",
+            "year": "2000",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10788746/"
+          }
+        ],
+        "see_all": {}
+      },
+      "therapy": {
+        "papers": [
+          {
+            "pmid": "39214127",
+            "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+            "authors": "Proepper CR, Schuetz SM, Schwarz LM, Au KV, Bast T, Beaud N, Borggraefe I, Bosch F, Budde J, Busse M, Chung J, Debus O, Diepold K, Fries T, Gersdorff GV, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+            "journal": "Neuropediatrics",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+          },
+          {
+            "pmid": "26494205",
+            "title": "LIS1-associated classic lissencephaly: A retrospective, multicenter survey of the epileptogenic phenotype and response to antiepileptic drugs.",
+            "authors": "Herbst SM, Proepper CR, Geis T, Borggraefe I, Hahn A, Debus O, Haeussler M, von Gersdorff G, Kurlemann G, Ensslen M, Beaud N, Budde J, Gilbert M, Heiming R, Morgner R, Philippi H, Ross S, Strobl-Wildemann G, Muelleder K, Vosschulte P, Morris-Rosendahl DJ, Schuierer G, Hehr U",
+            "journal": "Brain Dev",
+            "year": "2016",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26494205/"
+          }
+        ],
+        "see_all": {}
+      },
+      "prognosis": {
+        "papers": [
+          {
+            "pmid": "42177523",
+            "title": "Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.",
+            "authors": "Proepper CR, Schwarz LM, Schuetz SM, von Au K, Bast T, Beaud N, Borggraefe I, Bosch F, Busse M, Chung J, Debus O, Diepold K, Fries T, von Gersdorff G, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2026",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42177523/"
+          },
+          {
+            "pmid": "39214127",
+            "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+            "authors": "Proepper CR, Schuetz SM, Schwarz LM, Au KV, Bast T, Beaud N, Borggraefe I, Bosch F, Budde J, Busse M, Chung J, Debus O, Diepold K, Fries T, Gersdorff GV, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+            "journal": "Neuropediatrics",
+            "year": "2024",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+          },
+          {
+            "pmid": "15921231",
+            "title": "Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.",
+            "authors": "Leventer RJ",
+            "journal": "J Child Neurol",
+            "year": "2005",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15921231/"
+          }
+        ],
+        "see_all": {}
+      },
+      "clinical_prediction": {
+        "papers": [
+          {
+            "pmid": "42177523",
+            "title": "Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.",
+            "authors": "Proepper CR, Schwarz LM, Schuetz SM, von Au K, Bast T, Beaud N, Borggraefe I, Bosch F, Busse M, Chung J, Debus O, Diepold K, Fries T, von Gersdorff G, Haeussler M, Hahn A, Hartlieb T, Heiming R, Herkenrath P, Kluger G, Kreth JH, Kurlemann G, Moeller P, Morris-Rosendahl DJ, Panzer A, Philippi H, Ruegner S, Toepfer C, Vieker S, Wiemer-Kruel A, Winter A, Schuierer G, Hehr U, Geis T",
+            "journal": "Orphanet J Rare Dis",
+            "year": "2026",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/42177523/"
+          },
+          {
+            "pmid": "33565082",
+            "title": "Human cytomegalovirus infection is associated with increased expression of the lissencephaly gene PAFAH1B1 encoding LIS1 in neural stem cells and congenitally infected brains.",
+            "authors": "Rolland M, Martin H, Bergamelli M, Sellier Y, Bessières B, Aziza J, Benchoua A, Leruez-Ville M, Gonzalez-Dunia D, Chavanas S",
+            "journal": "J Pathol",
+            "year": "2021",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/33565082/"
+          },
+          {
+            "pmid": "15921231",
+            "title": "Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.",
+            "authors": "Leventer RJ",
+            "journal": "J Child Neurol",
+            "year": "2005",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15921231/"
+          },
+          {
+            "pmid": "10788746",
+            "title": "99Tc-HmPAO SPECT in 13 patients with classic lissencephaly.",
+            "authors": "Yilmaz Y, Ozmen M, Adalet I, Calişkan M, Unal S, Aydinli N, Minareci O",
+            "journal": "Pediatr Neurol",
+            "year": "2000",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10788746/"
+          }
+        ],
+        "see_all": {}
+      }
+    },
+    "medgen_uid": "98463",
+    "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/98463"
+  },
+  "db_ids": {
+    "SNOMED-CT": "253147000",
+    "MONDO": "MONDO:0015146",
+    "OMIM": "601545",
+    "Orphanet": "102009"
+  },
+  "markers": [
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "7q22",
+      "chromosome": "chr7",
+      "cytoband": "7q22",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "16p13",
+      "chromosome": "chr16",
+      "cytoband": "16p13",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "7q31",
+      "chromosome": "chr7",
+      "cytoband": "7q31",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "16q21",
+      "chromosome": "chr16",
+      "cytoband": "16q21",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "7q36",
+      "chromosome": "chr7",
+      "cytoband": "7q36",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "12q21",
+      "chromosome": "chr12",
+      "cytoband": "12q21",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "1p34",
+      "chromosome": "chr1",
+      "cytoband": "1p34",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "6q22",
+      "chromosome": "chr6",
+      "cytoband": "6q22",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "Xq23",
+      "chromosome": "chrX",
+      "cytoband": "Xq23",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "Xp21",
+      "chromosome": "chrX",
+      "cytoband": "Xp21",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    },
+    {
+      "feature_type": "CoreRegion",
+      "feature_name": "17p13",
+      "chromosome": "chr17",
+      "cytoband": "17p13",
+      "genomic_pos": null,
+      "event": "unknown",
+      "mechanism": "duplication",
+      "confidence": "medium",
+      "source": [
+        "name_synonym_or_definition"
+      ],
+      "annotation": null
+    }
+  ],
+  "evidence_literature": [
+    {
+      "pmid": "15921231",
+      "doi": "10.1177/08830738050200040701",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Genotype-phenotype correlation in lissencephaly and subcortical band heterotopia: the key questions answered.",
+      "authors": [
+        "Leventer Richard Jacob"
+      ],
+      "journal": "Journal of child neurology",
+      "year": "2005",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Lissencephaly and subcortical band heterotopia are closely related cortical malformations and are true disorders of neuronal migration. The genetic basis of approximately 70% of classic lissencephaly and 80% of typical subcortical band heterotopia is known. Most are due to abnormalities within the LIS1 or DCX genes, with abnormalities ranging from single basepair substitutions to contiguous gene deletions. Understanding the genetic basis of these disorders has led to the elucidation of the molecular and developmental mechanisms that are adversely affected. There is a robust correlation between many of the clinical aspects of lissencephaly or subcortical band heterotopia and the type and location of mutations in the affected gene. Using this knowledge, the clinician can predict with some accuracy which gene is likely to be affected based on the clinical and imaging features. This review answers some of the key questions regarding the genotype-phenotype correlation for lissencephaly and subcortical band heterotopia.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Cerebral Cortex",
+        "Doublecortin Domain Proteins",
+        "Doublecortin Protein",
+        "Female",
+        "Genotype",
+        "Humans",
+        "Male",
+        "Microtubule-Associated Proteins",
+        "Mutation",
+        "Nervous System Malformations",
+        "Neuropeptides",
+        "Phenotype",
+        "Severity of Illness Index"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1177/08830738050200040701"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15921231/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15921231/"
+    },
+    {
+      "pmid": "39214127",
+      "doi": "10.1055/s-0044-1789014",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Characterization of the Epileptogenic Phenotype and Response to Antiseizure Medications in Lissencephaly Patients.",
+      "authors": [
+        "Proepper Christiane R",
+        "Schuetz Sofia M",
+        "Schwarz Lisa-Maria",
+        "Au Katja von",
+        "Bast Thomas",
+        "Beaud Nathalie",
+        "Borggraefe Ingo",
+        "Bosch Friedrich",
+        "Budde Joerg",
+        "Busse Melanie",
+        "Chung Jena",
+        "Debus Otfried",
+        "Diepold Katharina",
+        "Fries Thomas",
+        "Gersdorff Gero von",
+        "Haeussler Martin",
+        "Hahn Andreas",
+        "Hartlieb Till",
+        "Heiming Ralf",
+        "Herkenrath Peter",
+        "Kluger Gerhard",
+        "Kreth Jonas H",
+        "Kurlemann Gerhard",
+        "Moeller Peter",
+        "Morris-Rosendahl Deborah J",
+        "Panzer Axel",
+        "Philippi Heike",
+        "Ruegner Sophia",
+        "Toepfer Carolina",
+        "Vieker Silvia",
+        "Wiemer-Kruel Adelheid",
+        "Winter Anika",
+        "Schuierer Gerhard",
+        "Hehr Ute",
+        "Geis Tobias"
+      ],
+      "journal": "Neuropediatrics",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND: Patients with lissencephaly typically present with severe psychomotor retardation and drug-resistant seizures. The aim of this study was to characterize the epileptic phenotype in a genotypically and radiologically well-defined patient cohort and to evaluate the response to antiseizure medication (ASM). Therefore, we retrospectively evaluated 47 patients of five genetic forms (LIS1/PAFAH1B1, DCX, DYNC1H1, TUBA1A, TUBG1) using family questionnaires, standardized neuropediatric assessments, and patients' medical reports. RESULTS: All but two patients were diagnosed with epilepsy. Median age at seizure onset was 6 months (range: 2.1-42.0), starting with epileptic spasms in 70%. Standard treatment protocols with hormonal therapy (ACTH or corticosteroids) and/or vigabatrin were the most effective approach for epileptic spasms, leading to seizure control in 47%. Seizures later in the disease course were most effectively treated with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, resulting in seizure freedom in 20%. Regarding psychomotor development, lissencephaly patients presenting without epileptic spasms were significantly more likely to reach various developmental milestones compared to patients with spasms. CONCLUSION: Classic lissencephaly is highly associated with drug-resistant epilepsy starting with epileptic spasms in most patients. The standard treatment protocols for infantile epileptic spasms syndrome lead to freedom from seizures in around half of the patients. Due to the association of epileptic spasms with an unfavorable course of psychomotor development, early and reliable diagnosis and treatment of spasms should be pursued. For epilepsies occurring later in childhood, ASM with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, appears to be most effective.",
+      "abstract_sections": {
+        "BACKGROUND": "Patients with lissencephaly typically present with severe psychomotor retardation and drug-resistant seizures. The aim of this study was to characterize the epileptic phenotype in a genotypically and radiologically well-defined patient cohort and to evaluate the response to antiseizure medication (ASM). Therefore, we retrospectively evaluated 47 patients of five genetic forms (LIS1/PAFAH1B1, DCX, DYNC1H1, TUBA1A, TUBG1) using family questionnaires, standardized neuropediatric assessments, and patients' medical reports.",
+        "RESULTS": "All but two patients were diagnosed with epilepsy. Median age at seizure onset was 6 months (range: 2.1-42.0), starting with epileptic spasms in 70%. Standard treatment protocols with hormonal therapy (ACTH or corticosteroids) and/or vigabatrin were the most effective approach for epileptic spasms, leading to seizure control in 47%. Seizures later in the disease course were most effectively treated with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, resulting in seizure freedom in 20%. Regarding psychomotor development, lissencephaly patients presenting without epileptic spasms were significantly more likely to reach various developmental milestones compared to patients with spasms.",
+        "CONCLUSION": "Classic lissencephaly is highly associated with drug-resistant epilepsy starting with epileptic spasms in most patients. The standard treatment protocols for infantile epileptic spasms syndrome lead to freedom from seizures in around half of the patients. Due to the association of epileptic spasms with an unfavorable course of psychomotor development, early and reliable diagnosis and treatment of spasms should be pursued. For epilepsies occurring later in childhood, ASM with valproic acid and lamotrigine, followed by vigabatrin and phenobarbital, appears to be most effective."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Anticonvulsants",
+        "Female",
+        "Male",
+        "Infant",
+        "Phenotype",
+        "Child, Preschool",
+        "Retrospective Studies",
+        "Lissencephaly",
+        "Child",
+        "Doublecortin Protein",
+        "Epilepsy",
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Adolescent",
+        "Adult",
+        "Vigabatrin",
+        "Microtubule-Associated Proteins",
+        "Young Adult"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1055/s-0044-1789014"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39214127/"
+    },
+    {
+      "pmid": "36283405",
+      "doi": "10.1016/j.ajhg.2022.09.012",
+      "pmc_id": "PMC9674946",
+      "pmc_verify": null,
+      "title": "Bi-allelic CAMSAP1 variants cause a clinically recognizable neuronal migration disorder.",
+      "authors": [
+        "Khalaf-Nazzal Reham",
+        "Fasham James",
+        "Inskeep Katherine A",
+        "Blizzard Lauren E",
+        "Leslie Joseph S",
+        "Wakeling Matthew N",
+        "Ubeyratna Nishanka",
+        "Mitani Tadahiro",
+        "Griffith Jennifer L",
+        "Baker Wisam",
+        "Al-Hijawi Fida'",
+        "Keough Karen C",
+        "Gezdirici Alper",
+        "Pena Loren",
+        "Spaeth Christine G",
+        "Turnpenny Peter D",
+        "Walsh Joseph R",
+        "Ray Randall",
+        "Neilson Amber",
+        "Kouranova Evguenia",
+        "Cui Xiaoxia",
+        "Curiel David T",
+        "Pehlivan Davut",
+        "Akdemir Zeynep Coban",
+        "Posey Jennifer E",
+        "Lupski James R",
+        "Dobyns William B",
+        "Stottmann Rolf W",
+        "Crosby Andrew H",
+        "Baple Emma L"
+      ],
+      "journal": "American journal of human genetics",
+      "year": "2022",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, N.I.H., Extramural"
+      ],
+      "abstract": "Non-centrosomal microtubules are essential cytoskeletal filaments that are important for neurite formation, axonal transport, and neuronal migration. They require stabilization by microtubule minus-end-targeting proteins including the CAMSAP family of molecules. Using exome sequencing on samples from five unrelated families, we show that bi-allelic CAMSAP1 loss-of-function variants cause a clinically recognizable, syndromic neuronal migration disorder. The cardinal clinical features of the syndrome include a characteristic craniofacial appearance, primary microcephaly, severe neurodevelopmental delay, cortical visual impairment, and seizures. The neuroradiological phenotype comprises a highly recognizable combination of classic lissencephaly with a posterior more severe than anterior gradient similar to PAFAH1B1(LIS1)-related lissencephaly and severe hypoplasia or absence of the corpus callosum; dysplasia of the basal ganglia, hippocampus, and midbrain; and cerebellar hypodysplasia, similar to the tubulinopathies, a group of monogenic tubulin-associated disorders of cortical dysgenesis. Neural cell rosette lineages derived from affected individuals displayed findings consistent with these phenotypes, including abnormal morphology, decreased cell proliferation, and neuronal differentiation. Camsap1-null mice displayed increased perinatal mortality, and RNAScope studies identified high expression levels in the brain throughout neurogenesis and in facial structures, consistent with the mouse and human neurodevelopmental and craniofacial phenotypes. Together our findings confirm a fundamental role of CAMSAP1 in neuronal migration and brain development and define bi-allelic variants as a cause of a clinically distinct neurodevelopmental disorder in humans and mice.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "Animals",
+        "Mice",
+        "Lissencephaly",
+        "Alleles",
+        "Tubulin",
+        "Phenotype",
+        "Nervous System Malformations",
+        "Classical Lissencephalies and Subcortical Band Heterotopias",
+        "Mice, Knockout",
+        "Microtubule-Associated Proteins"
+      ],
+      "keywords": [
+        "MARK2",
+        "agyria",
+        "autosomal recessive",
+        "lissencephaly",
+        "neurodevelopmental disorder",
+        "pachygyria",
+        "patronin",
+        "tubulinopathy"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9674946/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9674946/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.ajhg.2022.09.012"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/36283405/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36283405/"
+    },
+    {
+      "pmid": "26494205",
+      "doi": "10.1016/j.braindev.2015.10.001",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "LIS1-associated classic lissencephaly: A retrospective, multicenter survey of the epileptogenic phenotype and response to antiepileptic drugs.",
+      "authors": [
+        "Herbst Saskia M",
+        "Proepper Christiane R",
+        "Geis Tobias",
+        "Borggraefe Ingo",
+        "Hahn Andreas",
+        "Debus Otfried",
+        "Haeussler Martin",
+        "von Gersdorff Gero",
+        "Kurlemann Gerhard",
+        "Ensslen Matthias",
+        "Beaud Nathalie",
+        "Budde Joerg",
+        "Gilbert Michael",
+        "Heiming Ralf",
+        "Morgner Rita",
+        "Philippi Heike",
+        "Ross Sophia",
+        "Strobl-Wildemann Gertrud",
+        "Muelleder Kerstin",
+        "Vosschulte Paul",
+        "Morris-Rosendahl Deborah J",
+        "Schuierer Gerhard",
+        "Hehr Ute"
+      ],
+      "journal": "Brain & development",
+      "year": "2016",
+      "publication_types": [
+        "Journal Article",
+        "Multicenter Study"
+      ],
+      "abstract": "BACKGROUND: Patients with LIS1-associated classic lissencephaly typically present with severe psychomotor retardation and drug-resistant epilepsy within the first year. AIM: To analyze the epileptogenic phenotype and response to antiepileptic therapy in LIS1-associated classic lissencephaly. METHOD: Retrospective evaluation of 22 patients (8 months-24 years) with genetically and radiologically confirmed LIS1-associated classic lissencephaly in 16 study centers. RESULTS: All patients in our cohort developed drug-resistant epilepsy. In 82% onset of seizures was noted within the first six months of life, most frequently with infantile spasms. Later in infancy the epileptogentic phenotype became more variable and included different forms of focal seizures as well generalized as tonic-clonic seizures, with generalized tonic-clonic seizures being the predominant type. Lamotrigine and valproate were rated most successful with good or partial response rates in 88-100% of the patients. Both were evaluated significantly better than levetiracetam (p<0.05) and sulthiame (p<0.01) in the neuropediatric assessment and better than levetiracetam, sulthiame (p<0.05) and topiramate (p<0.01) in the family survey. Phenobarbital and vigabatrin achieved good or partial response in 62-83% of the patients. CONCLUSION: Our findings suggest that patients with LIS1-associated lissencephaly might benefit most from lamotrigine, valproate, vigabatrin or phenobarbital.",
+      "abstract_sections": {
+        "BACKGROUND": "Patients with LIS1-associated classic lissencephaly typically present with severe psychomotor retardation and drug-resistant epilepsy within the first year.",
+        "AIM": "To analyze the epileptogenic phenotype and response to antiepileptic therapy in LIS1-associated classic lissencephaly.",
+        "METHOD": "Retrospective evaluation of 22 patients (8 months-24 years) with genetically and radiologically confirmed LIS1-associated classic lissencephaly in 16 study centers.",
+        "RESULTS": "All patients in our cohort developed drug-resistant epilepsy. In 82% onset of seizures was noted within the first six months of life, most frequently with infantile spasms. Later in infancy the epileptogentic phenotype became more variable and included different forms of focal seizures as well generalized as tonic-clonic seizures, with generalized tonic-clonic seizures being the predominant type. Lamotrigine and valproate were rated most successful with good or partial response rates in 88-100% of the patients. Both were evaluated significantly better than levetiracetam (p<0.05) and sulthiame (p<0.01) in the neuropediatric assessment and better than levetiracetam, sulthiame (p<0.05) and topiramate (p<0.01) in the family survey. Phenobarbital and vigabatrin achieved good or partial response in 62-83% of the patients.",
+        "CONCLUSION": "Our findings suggest that patients with LIS1-associated lissencephaly might benefit most from lamotrigine, valproate, vigabatrin or phenobarbital."
+      },
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Adolescent",
+        "Adult",
+        "Anticonvulsants",
+        "Brain",
+        "Child",
+        "Child, Preschool",
+        "Classical Lissencephalies and Subcortical Band Heterotopias",
+        "Drug Resistant Epilepsy",
+        "Electroencephalography",
+        "Female",
+        "Humans",
+        "Infant",
+        "Lamotrigine",
+        "Male",
+        "Microtubule-Associated Proteins",
+        "Phenobarbital",
+        "Phenotype",
+        "Retrospective Studies",
+        "Treatment Outcome",
+        "Triazines",
+        "Valproic Acid",
+        "Vigabatrin",
+        "Young Adult"
+      ],
+      "keywords": [
+        "Brain malformation",
+        "Epilepsy",
+        "Genotype-phenotype relationship",
+        "LIS1",
+        "Lissencephaly",
+        "Treatment"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.braindev.2015.10.001"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26494205/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26494205/"
+    },
+    {
+      "pmid": "20036930",
+      "doi": "10.2741/s47",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Lissencephalic syndromes: brain and beyond.",
+      "authors": [
+        "Pavone Lorenzo",
+        "Corsello Giovanni",
+        "Pavone Piero",
+        "Iannetti Paola"
+      ],
+      "journal": "Frontiers in bioscience (Scholar edition)",
+      "year": "2010",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Lissencephaly has been long maintained a malformation involving only the brain. Classic lissencephaly includes agyria and pachygyria and it is the most severe form of malformations derived from abnormal neuronal migration. It is defined as a smooth or nearly smooth cerebral surface with absence of normal sulci and gyria. It encompasses a group of syndromes which show many different clinical conditions. Four groups are actually distinguished: classic lissencephaly variants, other lissencephalies including forms with unknown pathogenesis, microlissencephaly spectrum and Cobblestone cortical malformations. Several genes and proteins are involved in this syndromic spectrum and each year new molecular data are reported in the literature: classifications in this sense are always in progress. Lissencephaly now is recognised to involve not only the brain but also several other organs and districts including eyes, face, muscles, genital organs, heart and bones. Mental retardation and different form of epilepsies usually drug-resistant are the main clinical signs. The Authors in this topic discuss on this subject, underlying the different forms of lissencephaly their wide heterogeneity and the complex involvement of several organs.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain",
+        "Cell Movement",
+        "Cerebral Cortex",
+        "Humans",
+        "Lissencephaly",
+        "Neurons",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.2741/s47"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20036930/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20036930/"
+    },
+    {
+      "pmid": "15007136",
+      "doi": "10.1212/01.wnl.0000113725.46254.fd",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Mutation screening in a cohort of patients with lissencephaly and subcortical band heterotopia.",
+      "authors": [
+        "Torres F R",
+        "Montenegro M A",
+        "Marques-De-Faria A P",
+        "Guerreiro M M",
+        "Cendes F",
+        "Lopes-Cendes I"
+      ],
+      "journal": "Neurology",
+      "year": "2004",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "The authors describe clinical, neuroimaging and molecular findings in a group of 15 patients with classic lissencephaly (LIS) and subcortical band heterotopia (SBH). A 1385A-->C mutation was found in the LIS1 gene in one patient with LIS more severe than expected for individuals with missense mutations in LIS1. The authors believe that the site of the mutation, present in a functionally critical region of the protein, could explain the unusual severe phenotype found in this patient.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Adolescent",
+        "Adult",
+        "Cerebral Cortex",
+        "Child",
+        "Child, Preschool",
+        "Cohort Studies",
+        "DNA Mutational Analysis",
+        "Female",
+        "Humans",
+        "Infant",
+        "Male",
+        "Microtubule-Associated Proteins",
+        "Mutation, Missense",
+        "Nervous System Malformations",
+        "Phenotype"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1212/01.wnl.0000113725.46254.fd"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15007136/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15007136/"
+    },
+    {
+      "pmid": "42177523",
+      "doi": "10.1186/s13023-026-04398-z",
+      "pmc_id": "PMC13202861",
+      "pmc_verify": null,
+      "title": "Gene-specific long-term course, neurodevelopmental outcome and quality of life in patients with LIS1/PAFAH1B1-, DCX-, DYNC1H1-, TUBA1A- and TUBG1-related lissencephaly.",
+      "authors": [
+        "Proepper Christiane R",
+        "Schwarz Lisa-Maria",
+        "Schuetz Sofia M",
+        "von Au Katja",
+        "Bast Thomas",
+        "Beaud Nathalie",
+        "Borggraefe Ingo",
+        "Bosch Friedrich",
+        "Busse Melanie",
+        "Chung Jena",
+        "Debus Otfried",
+        "Diepold Katharina",
+        "Fries Thomas",
+        "von Gersdorff Gero",
+        "Haeussler Martin",
+        "Hahn Andreas",
+        "Hartlieb Till",
+        "Heiming Ralf",
+        "Herkenrath Peter",
+        "Kluger Gerhard",
+        "Kreth Jonas H",
+        "Kurlemann Gerhard",
+        "Moeller Peter",
+        "Morris-Rosendahl Deborah J",
+        "Panzer Axel",
+        "Philippi Heike",
+        "Ruegner Sophia",
+        "Toepfer Carolina",
+        "Vieker Silvia",
+        "Wiemer-Kruel Adelheid",
+        "Winter Anika",
+        "Schuierer Gerhard",
+        "Hehr Ute",
+        "Geis Tobias"
+      ],
+      "journal": "Orphanet journal of rare diseases",
+      "year": "2026",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "BACKGROUND: Classic lissencephaly is a malformation of cortical development that includes agyria and pachygyria. The major clinical symptoms are developmental impairment, muscular hypotonia, and drug-resistant epilepsy. The severity of the clinical phenotype depends on the associated gene and mutation. This study aimed to systematically investigate the genotype-specific course of the disease including neurodevelopmental outcome, medical complications, use of non-pharmacological supportive therapies, and its impact on the quality of life of the affected families. METHODS: 47 patients with genetically and radiologically confirmed lissencephaly were included with mutation in LIS1/PAFAH1B1 (n = 38), DCX (n = 5 males), DYNC1H1 (n = 2), TUBA1A (n = 1) and TUBG1 (n = 1) genes. Standardized questionnaires were completed by families and treating pediatricians. Quality of life was assessed with the PedsQL™ Family Impact Module. RESULTS: Prenatal abnormalities, most commonly microcephaly, were observed in 14/37 (38%) of LIS1/PAFAH1B1 patients and 2/5 (40%) of DCX patients. Early symptoms included microcephaly, developmental delay, muscular hypotonia, and epileptic seizures. The median age at suspected diagnosis was 5 months for LIS1/PAFAH1B1 patients and 9 months for DCX patients. Compared to LIS1/PAFAH1B1, DCX-related lissencephaly patients showed significantly better neurodevelopmental outcome in reaching more advanced milestones such as walking unassisted (z=-2.23, p = 0.026) and speaking sentences (z=-2.53, p = 0.011). Frequent medical complications included recurrent respiratory infections (14/38 (37%) of LIS1/PAFAH1B1 patients; 1/4 (25%) of DCX patients) and dysphagia/ vomiting (23/37 (62%); 2/4 (50%)), which may require tube feeding (15/38 (40%); 1/5 (20%)). A median of eight different supportive therapies was used per patient (range 1-17), with physiotherapy and respiratory therapy considered the most effective. The scores obtained for health-related quality of life (HRQL) were low (parental HRQL mean 61.23; SD 16.79). CONCLUSIONS: Our study confirms the severely impaired developmental potential and frequent neurological and medical complications in lissencephaly patients from an early age. The psychomotor prognosis in LIS1/PAFAH1B1-related lissencephaly is significantly worse compared to DCX-related lissencephaly. Supportive therapies are used intensively and are considered to be very effective. The disease puts a high burden on caregivers and the entire family. This emphasizes the need for appropriate epilepsy treatment, personalized care for patients and professional support for their families.",
+      "abstract_sections": {
+        "BACKGROUND": "Classic lissencephaly is a malformation of cortical development that includes agyria and pachygyria. The major clinical symptoms are developmental impairment, muscular hypotonia, and drug-resistant epilepsy. The severity of the clinical phenotype depends on the associated gene and mutation. This study aimed to systematically investigate the genotype-specific course of the disease including neurodevelopmental outcome, medical complications, use of non-pharmacological supportive therapies, and its impact on the quality of life of the affected families.",
+        "METHODS": "47 patients with genetically and radiologically confirmed lissencephaly were included with mutation in LIS1/PAFAH1B1 (n = 38), DCX (n = 5 males), DYNC1H1 (n = 2), TUBA1A (n = 1) and TUBG1 (n = 1) genes. Standardized questionnaires were completed by families and treating pediatricians. Quality of life was assessed with the PedsQL™ Family Impact Module.",
+        "RESULTS": "Prenatal abnormalities, most commonly microcephaly, were observed in 14/37 (38%) of LIS1/PAFAH1B1 patients and 2/5 (40%) of DCX patients. Early symptoms included microcephaly, developmental delay, muscular hypotonia, and epileptic seizures. The median age at suspected diagnosis was 5 months for LIS1/PAFAH1B1 patients and 9 months for DCX patients. Compared to LIS1/PAFAH1B1, DCX-related lissencephaly patients showed significantly better neurodevelopmental outcome in reaching more advanced milestones such as walking unassisted (z=-2.23, p = 0.026) and speaking sentences (z=-2.53, p = 0.011). Frequent medical complications included recurrent respiratory infections (14/38 (37%) of LIS1/PAFAH1B1 patients; 1/4 (25%) of DCX patients) and dysphagia/ vomiting (23/37 (62%); 2/4 (50%)), which may require tube feeding (15/38 (40%); 1/5 (20%)). A median of eight different supportive therapies was used per patient (range 1-17), with physiotherapy and respiratory therapy considered the most effective. The scores obtained for health-related quality of life (HRQL) were low (parental HRQL mean 61.23; SD 16.79).",
+        "CONCLUSIONS": "Our study confirms the severely impaired developmental potential and frequent neurological and medical complications in lissencephaly patients from an early age. The psychomotor prognosis in LIS1/PAFAH1B1-related lissencephaly is significantly worse compared to DCX-related lissencephaly. Supportive therapies are used intensively and are considered to be very effective. The disease puts a high burden on caregivers and the entire family. This emphasizes the need for appropriate epilepsy treatment, personalized care for patients and professional support for their families."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Female",
+        "Male",
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Microtubule-Associated Proteins",
+        "Quality of Life",
+        "Lissencephaly",
+        "Child",
+        "Child, Preschool",
+        "Doublecortin Protein",
+        "Infant",
+        "Tubulin",
+        "Doublecortin Domain Proteins",
+        "Cytoplasmic Dyneins",
+        "Adolescent",
+        "Neuropeptides",
+        "Dyneins",
+        "Mutation",
+        "Adult"
+      ],
+      "keywords": [
+        "DCX",
+        "DYNC1H1",
+        "LIS1/PAFAH1B1",
+        "TUBA1A",
+        "TUBG1",
+        "Epidemiology",
+        "Lissencephaly",
+        "Neurodevelopmental outcome",
+        "Quality of Life",
+        "Supportive therapies"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13202861/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13202861/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1186/s13023-026-04398-z"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42177523/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/42177523/"
+    },
+    {
+      "pmid": "29048727",
+      "doi": "10.1002/ajmg.a.38496",
+      "pmc_id": "PMC5687290",
+      "pmc_verify": null,
+      "title": "Mutations of KIF5C cause a neurodevelopmental disorder of infantile-onset epilepsy, absent language, and distinctive malformations of cortical development.",
+      "authors": [
+        "Michels Savannah",
+        "Foss Kimberly",
+        "Park Kaylee",
+        "Golden-Grant Katie",
+        "Saneto Russell",
+        "Lopez Jonathan",
+        "Mirzaa Ghayda M"
+      ],
+      "journal": "American journal of medical genetics. Part A",
+      "year": "2017",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "The clinical diagnosis of malformations of cortical development (MCDs) is often challenging due to the complexity of the brain malformation by neuroimaging, the rarity of individual malformation syndromes, and the rapidly evolving genetic landscape of these disorders facilitated with the use of Next Generation Sequencing (NGS) methods. While the clinical and molecular diagnosis of severe cortical malformations, such as classic lissencephaly, is often straightforward, the diagnosis of more subtle and complex types of cortical malformations, such as pachygyria and polymicrogyria (PMG), can be more challenging due to limited knowledge regarding their genetic etiologies. Here, we report two individuals with the same de novo KIF5C mutation who present with subtle MCDs, early onset epilepsy and significant neurodevelopmental and behavioral issues including absent language. Our data, combined with the limited literature on KIF5C mutations, to date, support that KIF5C mutations are associated with a neurodevelopmental disorder characterized by infantile onset epilepsy, and subtle but recognizable types of brain malformations. We also show that the spectrum of KIF5C mutations is narrow, as five out of the six identified individuals have mutations affecting amino acid Glu237. Therefore, the identification of the clinical and neuroimaging features of this disorder may strongly facilitate rapid and efficient molecular diagnosis.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cerebral Cortex",
+        "Epilepsy",
+        "Female",
+        "High-Throughput Nucleotide Sequencing",
+        "Humans",
+        "Infant",
+        "Intellectual Disability",
+        "Kinesins",
+        "Language",
+        "Lissencephaly",
+        "Male",
+        "Malformations of Cortical Development",
+        "Mutation",
+        "Neurodevelopmental Disorders",
+        "Polymicrogyria"
+      ],
+      "keywords": [
+        "KIF5C",
+        "cortical dysplasia",
+        "epilepsy",
+        "intellectual disability"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5687290/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5687290/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/ajmg.a.38496"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29048727/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/29048727/"
+    },
+    {
+      "pmid": "10788746",
+      "doi": "10.1016/s0887-8994(00)00121-1",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "99Tc-HmPAO SPECT in 13 patients with classic lissencephaly.",
+      "authors": [
+        "Yilmaz Y",
+        "Ozmen M",
+        "Adalet I",
+        "Calişkan M",
+        "Unal S",
+        "Aydinli N",
+        "Minareci O"
+      ],
+      "journal": "Pediatric neurology",
+      "year": "2000",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "In this study, technetium-99 ((99)Tc)-hexamethylpropyleneamine-oxine single-photon emission computed tomography (SPECT) was performed on 13 children with classic lissencephaly (nine with epileptic seizures, four without seizures). Focal or multifocal hypoperfusions were observed in 12 patients. The hypoperfused areas observed on SPECT scanning did not correlate with the localization of agyric-pachygyric regions in all patients. The distribution of perfusion abnormalities by SPECT and the localization of agyria-pachygyria as detected by magnetic resonance imaging did not correlate strongly. All nine patients with seizures and three of the four patients without seizures had focal or multifocal cerebral blood flow abnormalities on the SPECT scans. The presence of brain perfusion abnormalities detected by SPECT and the occurrence of epileptic seizures did not have a significant relationship. These results suggest that the role of SPECT studies in classic lissencephaly is not clearly defined. More sophisticated methods are needed to clarify the correlation between structural and functional abnormalities of patients diagnosed with lissencephaly.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain",
+        "Brain Diseases",
+        "Child, Preschool",
+        "Electroencephalography",
+        "Female",
+        "Humans",
+        "Infant",
+        "Magnetic Resonance Imaging",
+        "Male",
+        "Technetium Tc 99m Exametazime",
+        "Tomography, Emission-Computed, Single-Photon"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s0887-8994(00)00121-1"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10788746/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10788746/"
+    },
+    {
+      "pmid": "33565082",
+      "doi": "10.1002/path.5640",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Human cytomegalovirus infection is associated with increased expression of the lissencephaly gene PAFAH1B1 encoding LIS1 in neural stem cells and congenitally infected brains.",
+      "authors": [
+        "Rolland Maude",
+        "Martin Hélène",
+        "Bergamelli Mathilde",
+        "Sellier Yann",
+        "Bessières Bettina",
+        "Aziza Jacqueline",
+        "Benchoua Alexandra",
+        "Leruez-Ville Marianne",
+        "Gonzalez-Dunia Daniel",
+        "Chavanas Stéphane"
+      ],
+      "journal": "The Journal of pathology",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Congenital infection of the central nervous system by human cytomegalovirus (HCMV) is a leading cause of permanent sequelae, including mental retardation or neurodevelopmental abnormalities. The most severe complications include smooth brain or polymicrogyria, which are both indicative of abnormal migration of neural cells, although the underlying mechanisms remain to be determined. To gain better insight on the pathogenesis of such sequelae, we assessed the expression levels of a set of neurogenesis-related genes, using HCMV-infected human neural stem cells derived from embryonic stem cells (NSCs). Among the 84 genes tested, we found dramatically increased expression of the gene PAFAH1B1, encoding LIS1 (lissencephaly-1), in HCMV-infected versus uninfected NSCs. Consistent with these findings, western blotting and immunofluorescence analyses confirmed the increased levels of LIS1 in HCMV-infected NSCs at the protein level. We next assessed the migratory abilities of HCMV-infected NSCs and observed that infection strongly impaired the migration of NSCs, without detectable effect on their proliferation. Moreover, we observed increased immunostaining for LIS1 in brains of congenitally infected fetuses, but not in control samples, highlighting the clinical relevance of our findings. Of note, PAFAH1B1 mutations (resulting in either haploinsufficiency or gain of function) are primary causes of hereditary neurodevelopmental diseases. Notably, mutations resulting in PAFAH1B1 haploinsufficiency cause classic lissencephaly. Taken together, our findings suggest that PAFAH1B1 is a critical target of HCMV infection. They also shine a new light on the pathophysiological basis of the neurological outcomes of congenital HCMV infection, by suggesting that defective neural cell migration might contribute to the pathogenesis of the neurodevelopmental sequelae of infection. © 2021 The Pathological Society of Great Britain and Ireland. Published by John Wiley & Sons, Ltd.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Brain",
+        "Cytomegalovirus Infections",
+        "Humans",
+        "Microtubule-Associated Proteins",
+        "Neural Stem Cells"
+      ],
+      "keywords": [
+        "DCX",
+        "LIS1",
+        "PAFAH1B1",
+        "congenital infection",
+        "cytomegalovirus",
+        "neuronal migration"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1002/path.5640"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33565082/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/33565082/"
+    },
+    {
+      "pmid": "17099359",
+      "doi": "10.1097/MOP.0b013e328010542d",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cerebral developmental disorders.",
+      "authors": [
+        "Lian Gewei",
+        "Sheen Volney"
+      ],
+      "journal": "Current opinion in pediatrics",
+      "year": "2006",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: The development of the cerebral cortex progresses through defined stages including neural proliferation, neuroblast migration and neuronal differentiation. Disruptions in each of these developmental stages can lead to characteristic cerebral cortical malformations. This review provides an overview of the known genetic causes of human cerebral developmental disorders and discusses the potential molecular mechanisms that contribute to these malformations. RECENT FINDINGS: Mutations in genes that are involved in neural proliferation give rise to microcephaly (small brain). Mutations in genes that direct the onset of neuroblast migration give rise to periventricular heterotopia (clusters of neurons along the ventricles of the brain). Mutations in genes that are required for neuroblast migration cause type I lissencephaly (smooth brain) and subcortical band heterotopia (smooth brain with a band of neurons beneath the cortex). Mutations in genes that direct migratory neurons to arrest in the cortex lead to type II lissencephaly (smooth brain with clusters of neurons along the surface of the brain). SUMMARY: The identification of causative genes involved in the formation of the cerebral cortex now allows for a rational approach with which to interpret the underlying mechanistic basis for many of these disorders.",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "The development of the cerebral cortex progresses through defined stages including neural proliferation, neuroblast migration and neuronal differentiation. Disruptions in each of these developmental stages can lead to characteristic cerebral cortical malformations. This review provides an overview of the known genetic causes of human cerebral developmental disorders and discusses the potential molecular mechanisms that contribute to these malformations.",
+        "RECENT FINDINGS": "Mutations in genes that are involved in neural proliferation give rise to microcephaly (small brain). Mutations in genes that direct the onset of neuroblast migration give rise to periventricular heterotopia (clusters of neurons along the ventricles of the brain). Mutations in genes that are required for neuroblast migration cause type I lissencephaly (smooth brain) and subcortical band heterotopia (smooth brain with a band of neurons beneath the cortex). Mutations in genes that direct migratory neurons to arrest in the cortex lead to type II lissencephaly (smooth brain with clusters of neurons along the surface of the brain).",
+        "SUMMARY": "The identification of causative genes involved in the formation of the cerebral cortex now allows for a rational approach with which to interpret the underlying mechanistic basis for many of these disorders."
+      },
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Adolescent",
+        "Brain Diseases",
+        "Cerebral Cortex",
+        "Child",
+        "Child, Preschool",
+        "Contractile Proteins",
+        "Developmental Disabilities",
+        "Epilepsy",
+        "Fetal Development",
+        "Filamins",
+        "Humans",
+        "Infant",
+        "Microfilament Proteins",
+        "Microtubule-Associated Proteins"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/MOP.0b013e328010542d"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17099359/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17099359/"
+    },
+    {
+      "pmid": "11983068",
+      "doi": "10.1093/oxfordjournals.jbchem.a003145",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Platelet-activating factor acetylhydrolase (PAF-AH).",
+      "authors": [
+        "Arai Hiroyuki",
+        "Koizumi Hiroyuki",
+        "Aoki Junken",
+        "Inoue Keizo"
+      ],
+      "journal": "Journal of biochemistry",
+      "year": "2002",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Platelet-activating factor (PAF) is one of the most potent lipid messengers involved in a variety of physiological events. The acetyl group at the sn-2 position of its glycerol backbone is essential for its biological activity, and its deacetylation induces loss of activity. The deacetylation reaction is catalyzed by PAF-acetylhydrolase (PAF-AH). A series of biochemical and enzymological evaluations revealed that at least three types of PAF-AH exist in mammals, namely the intracellular types I and II and a plasma type. Type I PAF-AH is a G-protein-like complex consisting of two catalytic subunits (alpha1 and alpha2) and a regulatory beta subunit. The beta subunit is a product of the LIS1 gene, mutations of which cause type I lissencephaly. Recent studies indicate that LIS1/beta is important in cellular functions such as induction of nuclear movement and control of microtubule organization. Although substantial evidence is accumulating supporting the idea that the catalytic subunits are also involved in microtubule function, it is still unknown what role PAF plays in the process and whether PAF is an endogenous substrate of this enzyme. Type II PAF-AH is a single polypeptide and shows significant sequence homology with plasma PAF-AH. Type II PAF-AH is myristoylated at the N-terminus and like other N-myristoylated proteins is distributed in both the cytosol and membranes. Plasma PAF-AH is also a single polypeptide and exists in association with plasma lipoproteins. Type II PAF-AH as well as plasma PAF-AH may play a role as a scavenger of oxidized phospholipids which are thought to be involved in diverse pathological processes, including disorganization of membrane structure and PAF-like proinflammatory action. In this review, we will focus on the structures and possible biological functions of intracellular PAF-AHs.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Animals",
+        "Catalytic Domain",
+        "Humans",
+        "Lymphoma",
+        "Microtubule-Associated Proteins",
+        "Models, Molecular",
+        "Phospholipases A",
+        "Substrate Specificity"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1093/oxfordjournals.jbchem.a003145"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11983068/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11983068/"
+    },
+    {
+      "pmid": "41979906",
+      "doi": "10.1080/87565641.2026.2658672",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Miller-Dieker Syndrome: Genetic Etiology, Neurocognitive Impact, and Clinical Implications in a Neuronal Migration Disorder.",
+      "authors": [
+        "Prada Rodriguez Eduin Alexander",
+        "Romero Briceño Albeiro"
+      ],
+      "journal": "Developmental neuropsychology",
+      "year": "2026",
+      "publication_types": [
+        "Journal Article",
+        "Systematic Review"
+      ],
+      "abstract": "Miller-Dieker Syndrome (MDS) is a rare neurodevelopmental disorder caused by a deletion on chromosome 17p13.3, notably affecting the PAFAH1B1 (LIS1) gene. This genetic alteration disrupts neuronal migration, resulting in type I lissencephaly and profound neurocognitive impairments. To critically analyze the genetic basis and neurocognitive profile associated with MDS and examine its clinical relevance through a systematic literature review. A descriptive and retrospective literature review was conducted following PRISMA guidelines. Searches were conducted across major scientific databases using terms using terms such as \"Miller-DiekerSyndrome,\" \"neuronal migration disorder,\" \"genetic deletion 17p13.3,\" and \"neurocognition.\" Studies reviewed consistently associate the 17p13.3 deletion with pathogenic variants in PAFAH1B1, YWHAE, RELN, and ARX. These genes are critical for neuronal migration and brain cortical structure. Although the clinical profiles were not uniformly described, the literature supports links between these genetic pathogenic variants and developmental delay, epilepsy, and intellectual disability. Neuroimaging is a fundamental tool for the diagnosis and structural characterization of MDS. However, this review primarily focused on the genetic and neurocognitive dimensions. While some studies mentioned imaging findings, detailed neuroanatomical data were not systematically or consistently reported across the literature, which limited their inclusion in the comparative analysis presented in this manuscript. MDS exemplifies a severe genetic disorder of neuronal migration. Genetic and neurocognitive evaluation is key for early diagnosis and management. Future research should focus on integrative neurodevelopmental models and potential molecular therapies.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Cell Movement",
+        "Chromosomes, Human, Pair 17",
+        "Classical Lissencephalies and Subcortical Band Heterotopias",
+        "Microtubule-Associated Proteins",
+        "Reelin Protein",
+        "14-3-3 Proteins"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1080/87565641.2026.2658672"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41979906/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41979906/"
+    },
+    {
+      "pmid": "12432911",
+      "doi": "10.1016/s0090-6980(02)00023-0",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Platelet-activating factor acetylhydrolase.",
+      "authors": [
+        "Arai Hiroyuki"
+      ],
+      "journal": "Prostaglandins & other lipid mediators",
+      "year": "2002",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Platelet-activating factor (PAF) is one of the most potent lipid mediators and is involved in a variety of physiological events. The acetyl group at the sn-2 position of its glycerol backbone is required for its biological activity, and deacetylation of PAF induces loss of activity. The deacetylation reaction is catalyzed by PAF-acetylhydrolase (PAF-AH). A series of biochemical and enzymological studies have revealed that there are at least three types of PAF-AH in mammals, namely the intracellular type I and II and plasma type. Type I PAF-AH is a G-protein-like complex of two catalytic subunits (alpha1 and alpha2) and a regulatory beta subunit. The beta subunit is a product of the LIS1 gene, mutations of which cause type I lissencephaly. Recent studies indicate that LIS1/beta is important in cellular functions such as induction of nuclear movement and control of microtubule organization. Although circumstantial evidence is accumulating supporting the idea that the catalytic subunits are also involved in microtubule function, it is still not known what role PAF plays in the process and whether PAF is a native endogenous substrate of this enzyme. Type II PAF-AH is a single polypeptide and shows significant sequence homology with plasma PAF-AH. Type II PAF-AH is myristoylated at the N-terminus and like other N-myristoylated proteins, is distributed in both the cytosol and membranes. Plasma PAF-AH is also a single polypeptide and exists in association with plasma lipoproteins. Type II PAF-AH as well as plasma PAF-AH may play roles as scavengers of oxidized phospholipids which are thought to be involved in diverse pathological processes, including disorganization of membrane structure and PAF-like proinflammatory actions. In this chapter, author focuses on the structures and possible biological functions of intracellular PAF-AHs.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Animals",
+        "Brain",
+        "Catalytic Domain",
+        "Dimerization",
+        "Humans",
+        "Isoenzymes",
+        "Lymphoma",
+        "Microtubule-Associated Proteins",
+        "Phospholipases A",
+        "Platelet Activating Factor",
+        "Protein Structure, Tertiary",
+        "Protein Subunits",
+        "Substrate Specificity"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s0090-6980(02)00023-0"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/12432911/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12432911/"
+    },
+    {
+      "pmid": "16538086",
+      "doi": "10.1097/01.wco.0000218228.73678.e1",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Pathogenesis of migration disorders.",
+      "authors": [
+        "Gressens Pierre"
+      ],
+      "journal": "Current opinion in neurology",
+      "year": "2006",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't",
+        "Review"
+      ],
+      "abstract": "PURPOSE OF REVIEW: Neocortical neurons have to migrate from their site of production in the periventricular germinative zone or in the ganglionic eminence towards the cortical plate. Our understanding of the underlying molecular mechanisms has advanced considerably in recent years due to the identification of genes involved in human migration disorders and experimental studies. This review will highlight some of the most recent findings in the deciphering of the molecular machinery controlling neuronal migration. RECENT FINDINGS: Neuronal migration is a complex process which involves cytoskeletal molecules controlling the initiation of migration, leading edge extension and nucleokinesis; signalling molecules (the reelin pathway playing a central role) integrating external signals and linking them to the cytoskeleton; stop signals; and other molecular players including neurotrophins, glutamate receptors and peroxisome-derived factors. Emerging evidence supports the existence of cross-talk between these pathways. SUMMARY: Identifying these mechanisms has shed light on typical human neuronal migration disorders such as periventricular heterotopias (disorder of migration initiation linked to filamin), type I lissencephaly (cytoskeletal abnormality linked to Lis1, a microtubule-associated protein), double cortex syndrome (cytoskeletal abnormality linked to doublecortin, a microtubule-associated protein), or lissencephaly plus cerebellar hypoplasia (reelin defect).",
+      "abstract_sections": {
+        "PURPOSE OF REVIEW": "Neocortical neurons have to migrate from their site of production in the periventricular germinative zone or in the ganglionic eminence towards the cortical plate. Our understanding of the underlying molecular mechanisms has advanced considerably in recent years due to the identification of genes involved in human migration disorders and experimental studies. This review will highlight some of the most recent findings in the deciphering of the molecular machinery controlling neuronal migration.",
+        "RECENT FINDINGS": "Neuronal migration is a complex process which involves cytoskeletal molecules controlling the initiation of migration, leading edge extension and nucleokinesis; signalling molecules (the reelin pathway playing a central role) integrating external signals and linking them to the cytoskeleton; stop signals; and other molecular players including neurotrophins, glutamate receptors and peroxisome-derived factors. Emerging evidence supports the existence of cross-talk between these pathways.",
+        "SUMMARY": "Identifying these mechanisms has shed light on typical human neuronal migration disorders such as periventricular heterotopias (disorder of migration initiation linked to filamin), type I lissencephaly (cytoskeletal abnormality linked to Lis1, a microtubule-associated protein), double cortex syndrome (cytoskeletal abnormality linked to doublecortin, a microtubule-associated protein), or lissencephaly plus cerebellar hypoplasia (reelin defect)."
+      },
+      "mesh_terms": [
+        "Animals",
+        "Arginase",
+        "Brain Diseases",
+        "Cell Movement",
+        "Cocaine",
+        "Cytoskeleton",
+        "Glycosylation",
+        "Humans",
+        "Models, Biological",
+        "Neocortex",
+        "Neurons",
+        "Peroxisomes",
+        "Reelin Protein",
+        "Signal Transduction"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1097/01.wco.0000218228.73678.e1"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16538086/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16538086/"
+    },
+    {
+      "pmid": "39743596",
+      "doi": "10.1038/s41586-024-08341-9",
+      "pmc_id": "PMC11798849",
+      "pmc_verify": null,
+      "title": "Dysregulation of mTOR signalling is a converging mechanism in lissencephaly.",
+      "authors": [
+        "Zhang Ce",
+        "Liang Dan",
+        "Ercan-Sencicek A Gulhan",
+        "Bulut Aybike S",
+        "Cortes Joelly",
+        "Cheng Iris Q",
+        "Henegariu Octavian",
+        "Nishimura Sayoko",
+        "Wang Xinyuan",
+        "Peksen A Buket",
+        "Takeo Yutaka",
+        "Caglar Caner",
+        "Lam TuKiet T",
+        "Koroglu Merve Nur",
+        "Narayanan Anand",
+        "Lopez-Giraldez Francesc",
+        "Miyagishima Danielle F",
+        "Mishra-Gorur Ketu",
+        "Barak Tanyeri",
+        "Yasuno Katsuhito",
+        "Erson-Omay E Zeynep",
+        "Yalcinkaya Cengiz",
+        "Wang Guilin",
+        "Mane Shrikant",
+        "Kaymakcalan Hande",
+        "Guzel Aslan",
+        "Caglayan A Okay",
+        "Tuysuz Beyhan",
+        "Sestan Nenad",
+        "Gunel Murat",
+        "Louvi Angeliki",
+        "Bilguvar Kaya"
+      ],
+      "journal": "Nature",
+      "year": "2025",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Intramural"
+      ],
+      "abstract": "Cerebral cortex development in humans is a highly complex and orchestrated process that is under tight genetic regulation. Rare mutations that alter gene expression or function can disrupt the structure of the cerebral cortex, resulting in a range of neurological conditions1. Lissencephaly ('smooth brain') spectrum disorders comprise a group of rare, genetically heterogeneous congenital brain malformations commonly associated with epilepsy and intellectual disability2. However, the molecular mechanisms underlying disease pathogenesis remain unknown. Here we establish hypoactivity of the mTOR pathway as a clinically relevant molecular mechanism in lissencephaly spectrum disorders. We characterized two types of cerebral organoid derived from individuals with genetically distinct lissencephalies with a recessive mutation in p53-induced death domain protein 1 (PIDD1) or a heterozygous chromosome 17p13.3 microdeletion leading to Miller-Dieker lissencephaly syndrome (MDLS). PIDD1-mutant organoids and MDLS organoids recapitulated the thickened cortex typical of human lissencephaly and demonstrated dysregulation of protein translation, metabolism and the mTOR pathway. A brain-selective activator of mTOR complex 1 prevented and reversed cellular and molecular defects in the lissencephaly organoids. Our findings show that a converging molecular mechanism contributes to two genetically distinct lissencephaly spectrum disorders.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Humans",
+        "TOR Serine-Threonine Kinases",
+        "Signal Transduction",
+        "Organoids",
+        "Chromosomes, Human, Pair 17",
+        "Classical Lissencephalies and Subcortical Band Heterotopias",
+        "Male",
+        "Female",
+        "Mutation",
+        "Cerebral Cortex",
+        "Mechanistic Target of Rapamycin Complex 1"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11798849/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11798849/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1038/s41586-024-08341-9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39743596/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39743596/"
+    },
+    {
+      "pmid": "17389182",
+      "doi": "10.1016/S1028-4559(08)60099-6",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Chromosomal abnormalities associated with omphalocele.",
+      "authors": [
+        "Chen Chih-Ping"
+      ],
+      "journal": "Taiwanese journal of obstetrics & gynecology",
+      "year": "2007",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Fetuses with omphalocele have an increased risk for chromosomal abnormalities. The risk varies with maternal age, gestational age at diagnosis, association with umbilical cord cysts, complexity of associated anomalies, and the contents of omphalocele. There is considerable evidence that genetics contributes to the etiology of omphalocele. This article provides an overview of chromosomal abnormalities associated with omphalocele and a comprehensive review of associated full aneuploidy such as trisomy 18, trisomy 13, triploidy, trisomy 21, 45,X, 47,XXY, and 47,XXX, partial aneuploidy such as dup (3q), dup (11p), inv (11), dup (1q), del (1q), dup (4q), dup (5p), dup (6q), del (9p), dup (15q), dup(17q), Pallister-Killian syndrome with mosaic tetrasomy 12p and Miller-Dieker lissencephaly syndrome with deletion of 17p13.3, and uniparental disomy (UPD) such as UPD 11 and UPD 14. Omphalocele is a prominent marker for chromosomal abnormalities. Perinatal identification of omphalocele should alert chromosomal abnormalities and familial unbalanced translocations, and prompt thorough cytogenetic investigations and genetic counseling.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Aneuploidy",
+        "Chromosome Aberrations",
+        "Female",
+        "Global Health",
+        "Hernia, Umbilical",
+        "Humans",
+        "Male",
+        "Uniparental Disomy"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/S1028-4559(08)60099-6"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17389182/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17389182/"
+    },
+    {
+      "pmid": "11298998",
+      "doi": "10.1046/j.0305-1846.2001.00307.x",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Cell migration and cerebral cortical development.",
+      "authors": [
+        "Golden J A"
+      ],
+      "journal": "Neuropathology and applied neurobiology",
+      "year": "2001",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "This annotation describes the clinical and pathological features of several conditions believed to result from a primary defect in cell migration which include the lissencephalies, pachygria, polymicrogyrias, and focal cortical dysplasia. A variety of factors must be considered in pathogeneses, including cellular proliferation, cell death, post-migrational intracortical growth and development, axonogenesis and dendritogenesis. At least two distinct types of lissencephaly exist. Classic (also known as Type I) lissencephaly is the prototypic pattern being seen in autosomal dominant Miller-Dieker syndrome, in addition to autosomal recessive and X-linked forms. The Miller-Dieker syndrome locus (LIS-1) encodes the platelet activating factor acetylhydrolase-1, beta1 subunit. The gene for an X-linked form of lissencephaly (XLIS) encodes a protein called doublecortin. Cobblestone (type II) lissencephaly is most commonly seen in patients with the Walker-Warburg syndrome, and also occurs in a group of disorders associated with congenital muscular dystrophy, including Finnish 'muscle-eye-brain' disease and Fukuyama muscular dystrophy. Controversy exits as to whether polymicrogyria is a malformation or a disruption of development. The answer is likely both. Polymicrogyria is believed to arise from defects occurring between 17 and 25 or 26 weeks gestation. Heterotopia can be sporadic, inherited as a simple Mendelian trait, or may be part of a more complex syndrome being characterized by collections of disorganized grey matter in inappropriate places. X-linked periventricular heterotopia syndrome is caused by mutations in filamin-1. In addition to those described above, many other syndromes show lissencephaly, pachygyria and polymicrogyria and many cases are not easily classified into any particular syndrome.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain Diseases",
+        "Cell Movement",
+        "Cerebral Cortex",
+        "Cerebral Ventricles",
+        "Choristoma",
+        "Diagnosis, Differential",
+        "Genes, Dominant",
+        "Neurons",
+        "Syndrome",
+        "X Chromosome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1046/j.0305-1846.2001.00307.x"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11298998/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11298998/"
+    },
+    {
+      "pmid": "21046408",
+      "doi": "10.1007/s00401-010-0768-9",
+      "pmc_id": "PMC3037170",
+      "pmc_verify": null,
+      "title": "Role of cytoskeletal abnormalities in the neuropathology and pathophysiology of type I lissencephaly.",
+      "authors": [
+        "Friocourt Gaëlle",
+        "Marcorelles Pascale",
+        "Saugier-Veber Pascale",
+        "Quille Marie-Lise",
+        "Marret Stephane",
+        "Laquerrière Annie"
+      ],
+      "journal": "Acta neuropathologica",
+      "year": "2011",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Type I lissencephaly or agyria-pachygyria is a rare developmental disorder which results from a defect of neuronal migration. It is characterized by the absence of gyri and a thickening of the cerebral cortex and can be associated with other brain and visceral anomalies. Since the discovery of the first genetic cause (deletion of chromosome 17p13.3), six additional genes have been found to be responsible for agyria-pachygyria. In this review, we summarize the current knowledge concerning these genetic disorders including clinical, neuropathological and molecular results. Genetic alterations of LIS1, DCX, ARX, TUBA1A, VLDLR, RELN and more recently WDR62 genes cause migrational abnormalities along with more complex and subtle anomalies affecting cell proliferation and differentiation, i.e., neurite outgrowth, axonal pathfinding, axonal transport, connectivity and even myelination. The number and heterogeneity of clinical, neuropathological and radiological defects suggest that type I lissencephaly now includes several forms of cerebral malformations. In vitro experiments and mutant animal studies, along with neuropathological abnormalities in humans are of invaluable interest for the understanding of pathophysiological mechanisms, highlighting the central role of cytoskeletal dynamics required for a proper achievement of cell proliferation, neuronal migration and differentiation.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Brain",
+        "Cell Cycle Proteins",
+        "Cell Movement",
+        "Cell Proliferation",
+        "Classical Lissencephalies and Subcortical Band Heterotopias",
+        "Cytoskeleton",
+        "Diagnostic Imaging",
+        "Doublecortin Domain Proteins",
+        "Doublecortin Protein",
+        "Female",
+        "Homeodomain Proteins",
+        "Humans",
+        "Male",
+        "Microtubule-Associated Proteins",
+        "Models, Biological",
+        "Mutation",
+        "Nerve Tissue Proteins",
+        "Neurons",
+        "Neuropeptides",
+        "Reelin Protein",
+        "Transcription Factors",
+        "Tubulin"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3037170/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3037170/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/s00401-010-0768-9"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21046408/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21046408/"
+    },
+    {
+      "pmid": "8306358",
+      "doi": "10.1007/BF00306195",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Genetic factors in lissencephaly syndromes: a review.",
+      "authors": [
+        "Miny P",
+        "Holzgreve W",
+        "Horst J"
+      ],
+      "journal": "Child's nervous system : ChNS : official journal of the International Society for Pediatric Neurosurgery",
+      "year": "1993",
+      "publication_types": [
+        "Journal Article",
+        "Review"
+      ],
+      "abstract": "Lissencephaly is a sign of various genetic and non-genetic conditions and a constant feature in the so-called lissencephaly syndromes. Type I lissencephaly in the Miller-Dieker syndrome (MDS) and the isolated lissencephaly sequence (ILS) is differentiated from type II lissencephaly in the Walker-Warburg (hydrocephalus, agyria, retinal dysplasia with or without encephalocele, HARD +/- E) syndrome and related conditions (e.g. muscle-eye-brain syndrome). In about 90% of patients with MDS structural defects have been confirmed in the short arm of chromosome 17 (p13.3), detectable by classical cytogenetic methods, fluorescence in situ hybridisation (FISH), or molecular genetic techniques. The identification of unbalanced inversions and translocations is of particular importance because of the risk of their recurrence, while deletions and ring chromosomes are mainly sporadic. Recently, submicroscopic deletions have also been reported in ILS, providing evidence that lissencephaly in MDS and ILS is caused by deletions of the same gene(s) in 17p13.3 and that MDS may be considered to be a \"contiguous gene syndrome.\" Syndromes featuring lissencephaly type II (HARD +/- E and related conditions) are most probably autosomal-recessively inherited. Neither the location of the genes involved nor the nature of the mutations are known at present. It is also unknown whether HARD +/- E and muscle-eye-brain syndrome are allelic.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain",
+        "Chromosome Aberrations",
+        "Chromosome Disorders",
+        "Family",
+        "Fetal Diseases",
+        "Genetic Counseling",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Magnetic Resonance Imaging",
+        "Male",
+        "Prenatal Diagnosis",
+        "Syndrome",
+        "Tomography, X-Ray Computed"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/BF00306195"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8306358/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8306358/"
+    },
+    {
+      "pmid": "15921227",
+      "doi": "10.1177/08830738050200040301",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Neuronal migration in developmental disorders.",
+      "authors": [
+        "McManus Matthew F",
+        "Golden Jeffrey A"
+      ],
+      "journal": "Journal of child neurology",
+      "year": "2005",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Review"
+      ],
+      "abstract": "Normal central nervous system development is dependent on extensive cell migration. Cells born in the proliferative ventricular zone migrate radially along specialized glial processes to their final locations. In contrast, most inhibitory interneurons found in the adult mammalian cerebral cortex and some other structures migrate along a nonradial pathway and on substrates only recently defined. Defects in radial cell migration have been implicated in several distinct human syndromes in which patients often present with epilepsy and mental retardation and have characteristic cerebral abnormalities. The identification of several genes responsible for human neural cell migration defects has led to a better understanding of the cellular and molecular interactions necessary for normal migration and the pathogenesis of these disorders. The prototypic cell migration disorder in humans is type I lissencephaly. Although type 1 lissencephaly is clearly a defect in radial cell migration, recent data from two model systems (Lis1 and ARX mutant mice) indicate that a defect in non-radial cell migration also exists. Thus, the result of a LIS1 mutation appears to have broader implications than a radial cell migration defect alone. Furthermore, it is likely that the observed defect in non-radial cell migration contributes to the clinical phenotype observed in these patients. Herein we discuss the role of normal non-radial cell migration in cortical development, as well as how perturbations in both radial and nonradial migration result in developmental anomalies.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain Diseases",
+        "Cell Differentiation",
+        "Cell Movement",
+        "Cerebral Cortex",
+        "Humans",
+        "Neuroglia",
+        "Neurons",
+        "Organogenesis"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1177/08830738050200040301"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15921227/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15921227/"
+    },
+    {
+      "pmid": "1671808",
+      "doi": "",
+      "pmc_id": "PMC1682996",
+      "pmc_verify": null,
+      "title": "Clinical and molecular diagnosis of Miller-Dieker syndrome.",
+      "authors": [
+        "Dobyns W B",
+        "Curry C J",
+        "Hoyme H E",
+        "Turlington L",
+        "Ledbetter D H"
+      ],
+      "journal": "American journal of human genetics",
+      "year": "1991",
+      "publication_types": [
+        "Comparative Study",
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S."
+      ],
+      "abstract": "We report results of clinical, cytogenetic, and molecular studies in 27 patients with Miller-Dieker syndrome (MDS) from 25 families. All had severe type I lissencephaly with grossly normal cerebellum and a distinctive facial appearance consisting of prominent forehead, bitemporal hollowing, short nose with upturned nares, protuberant upper lip, thin vermilion border, and small jaw. Several other abnormalities, especially growth deficiency, were frequent but not constant. Chromosome analysis showed deletion of band 17p13 in 14 of 25 MDS probands. RFLP and somatic cell hybrid studies using probes from the 17p13.3 region including pYNZ22 (D17S5), pYNH37 (D17S28), and p144-D6 (D17S34) detected deletions in 19 of 25 probands tested including seven in whom chromosome analysis was normal. When the cytogenetic and molecular data are combined, deletions were detected in 21 of 25 probands. Parental origin of de novo deletions was determined in 11 patients. Paternal origin occurred in seven and maternal origin in four. Our demonstration of cytogenetic or molecular deletions in 21 of 25 MDS probands proves that deletion of a \"critical region\" comprising two or more genetic loci within band 17p13.3 is the cause of the MDS phenotype. We suspect that the remaining patients have smaller deletions involving the proposed critical region which are not detected with currently available probes.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain",
+        "Cell Line",
+        "Chromosome Banding",
+        "Chromosome Deletion",
+        "Chromosomes, Human, Pair 17",
+        "Facial Expression",
+        "Humans",
+        "Infant, Newborn",
+        "Phenotype",
+        "Polymorphism, Restriction Fragment Length",
+        "Radionuclide Imaging",
+        "Tomography, X-Ray Computed"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1682996/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1682996/",
+          "verified": null
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1671808/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1671808/"
+    },
+    {
+      "pmid": "1620349",
+      "doi": "10.1212/wnl.42.7.1375",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Causal heterogeneity in isolated lissencephaly.",
+      "authors": [
+        "Dobyns W B",
+        "Elias E R",
+        "Newlin A C",
+        "Pagon R A",
+        "Ledbetter D H"
+      ],
+      "journal": "Neurology",
+      "year": "1992",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S."
+      ],
+      "abstract": "We report clinical, cytogenetic, and molecular studies in 65 patients with isolated lissencephaly sequence (ILS). All had type I lissencephaly of varying severity and a grossly normal cerebellum. Some had additional brain abnormalities. Facial appearance was essentially normal. All had severe to profound mental retardation, seizures, hypotonia that evolved into spasticity, and feeding difficulties. Clinical and laboratory studies demonstrated etiologic heterogeneity. Molecular studies detected microdeletions in chromosome band 17p13.3 in six of 44 patients tested, confirming that deletion of all or part of this \"critical region\" is the cause of ILS in some cases. There were slightly larger deletions in the same region in a majority of patients with Miller-Dieker syndrome. One patient had an apparently balanced, de novo reciprocal translocation with breakpoints at Xq22 and 2p25. Four sibs from two families had a new, autosomal recessive syndrome of ILS with neonatal death. Other causes supported by clinical observations include autosomal recessive inheritance, intrauterine infection, and intrauterine perfusion failure. Those ILS probands in whom no etiology could be established had 41 sibs of whom three were affected, giving an empiric recurrence risk of 7%.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain",
+        "Child, Preschool",
+        "Congenital Abnormalities",
+        "Female",
+        "Growth Disorders",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Karyotyping",
+        "Magnetic Resonance Imaging",
+        "Male",
+        "Tomography, X-Ray Computed"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1212/wnl.42.7.1375"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/1620349/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1620349/"
+    },
+    {
+      "pmid": "9436647",
+      "doi": "10.1016/s0168-0102(97)00088-6",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "A novel neurological mutant mouse, yotari, which exhibits reeler-like phenotype but expresses CR-50 antigen/reelin.",
+      "authors": [
+        "Yoneshima H",
+        "Nagata E",
+        "Matsumoto M",
+        "Yamada M",
+        "Nakajima K",
+        "Miyata T",
+        "Ogawa M",
+        "Mikoshiba K"
+      ],
+      "journal": "Neuroscience research",
+      "year": "1997",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "We present yotari, a novel neurological mutant mouse whose mutation is transmitted in an autosomal recessive manner. The phenotype of yotari is very similar to that of reeler. yotari mutants are recognizable by their unstable gait and tremor and by their early deaths at around the time of weaning. The cerebella of homozygous yotari are hypoplastic and have no foliation. A molecular and a granular cell layer can be identified, but Purkinje cells are scattered throughout both the granular layer and white matter. The laminar structure of the cerebral cortex and the hippocampal formation are also distorted. To test whether the mutated gene in yotari is the reeler gene, reelin, yotari heterozygotes were mated with reeler homozygotes or heterozygotes. The absence of abnormal offspring indicated that the yotari gene is distinct from reelin. Furthermore, expression of mRNA and protein of reelin was verified by Northern blotting and immunohistochemistry using a CR-50 monoclonal antibody (mAb) which is specific to Reelin, the reelin gene product. Although the mutation of several genes, including cyclin-dependent kinase 5 (Cdk 5), p35 and LIS1, 45 kDa subunits of platelet-activating factor acetylhydrolase (PAF-AH) Ib, in Miller-Dieker lissencephaly syndrome (MDS) has been reported to cause abnormal laminar structure in the brain, no abnormality was found in yotari by Western blotting with antibodies (Ab's) against these molecules. The close similarity of the phenotypes of yotari and reeler and the expression of reelin in yotari may suggest that the gene mutated in yotari encodes a molecule that is on the same signaling pathway as Reelin, the product of reelin. yotari will provide valuable clues to explore the molecular mechanism of neuronal migration and orderly laminar structure formation of the brain.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Animals",
+        "Antibodies, Monoclonal",
+        "Brain",
+        "Cell Adhesion Molecules, Neuronal",
+        "Cerebellum",
+        "Extracellular Matrix Proteins",
+        "Genes, Recessive",
+        "Genetic Complementation Test",
+        "Mice",
+        "Mice, Neurologic Mutants",
+        "Nerve Tissue Proteins",
+        "Neurons",
+        "Organ Specificity",
+        "Phenotype",
+        "Polymerase Chain Reaction",
+        "Reelin Protein",
+        "Serine Endopeptidases",
+        "Species Specificity"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/s0168-0102(97)00088-6"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/9436647/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9436647/"
+    },
+    {
+      "pmid": "38364333",
+      "doi": "10.1016/j.seizure.2024.01.020",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Clinical analysis of PAFAH1B1 gene variants in pediatric patients with epilepsy.",
+      "authors": [
+        "Feng Wei-Xing",
+        "Wang Xiao-Fei",
+        "Wu Yun",
+        "Li Xing-Meng",
+        "Chen Shu-Hua",
+        "Wang Xiao-Hui",
+        "Wang Zi-Han",
+        "Fang Fang",
+        "Chen Chun-Hong"
+      ],
+      "journal": "Seizure",
+      "year": "2024",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "PURPOSE: PAFAH1B1, also known as LIS1, is associated with type I lissencephaly in humans, which is a severe developmental brain disorder believed to result from abnormal neuronal migration. Our objective was to characterize the genotypes and phenotypes of PAFAH1B1-related epilepsy. METHODS: We conducted a comprehensive analysis of the medical histories, magnetic resonance imaging findings, and video-electroencephalogram recordings of 11 patients with PAFAH1B1 variants at the Neurology Department of Beijing Children's Hospital from June 2017 to November 2022. RESULTS: The age of onset of epilepsy ranged from 2 months to 4 years, with a median onset age of 5 months. Among these 11 patients (comprising 6 boys and 5 girls), all were diagnosed with lissencephaly type 1. Predominantly, generalized tonic-clonic and spasm seizures characterized PAFAH1B1-related epilepsy. Additionally, 10 out of the 11 patients exhibited severe developmental disorders. All patients exhibited de novo variants, with three individuals displaying 17p13.3 deletions linked to haploinsufficiency of PAFAH1B1. Four variants were previously unreported. Notably, three patients with 17p13.3 deletions displayed developmental delay and drug resistant epilepsy, whereas the single patient with mild developmental delay, Intelligence Quotient (IQ) 57 and well-controlled seizures had a splicing-site variant. CONCLUSION: The severity of the phenotype in patients with PAFAH1B1 variants ranged from drug-responsive seizures to severe epileptic encephalopathy. These observations underscore the clinical heterogeneity of PAFAH1B1-related disorders, with most patients exhibiting developmental disorders. Moreover, the severity of epilepsy appears to be linked to genetic variations.",
+      "abstract_sections": {
+        "PURPOSE": "PAFAH1B1, also known as LIS1, is associated with type I lissencephaly in humans, which is a severe developmental brain disorder believed to result from abnormal neuronal migration. Our objective was to characterize the genotypes and phenotypes of PAFAH1B1-related epilepsy.",
+        "METHODS": "We conducted a comprehensive analysis of the medical histories, magnetic resonance imaging findings, and video-electroencephalogram recordings of 11 patients with PAFAH1B1 variants at the Neurology Department of Beijing Children's Hospital from June 2017 to November 2022.",
+        "RESULTS": "The age of onset of epilepsy ranged from 2 months to 4 years, with a median onset age of 5 months. Among these 11 patients (comprising 6 boys and 5 girls), all were diagnosed with lissencephaly type 1. Predominantly, generalized tonic-clonic and spasm seizures characterized PAFAH1B1-related epilepsy. Additionally, 10 out of the 11 patients exhibited severe developmental disorders. All patients exhibited de novo variants, with three individuals displaying 17p13.3 deletions linked to haploinsufficiency of PAFAH1B1. Four variants were previously unreported. Notably, three patients with 17p13.3 deletions displayed developmental delay and drug resistant epilepsy, whereas the single patient with mild developmental delay, Intelligence Quotient (IQ) 57 and well-controlled seizures had a splicing-site variant.",
+        "CONCLUSION": "The severity of the phenotype in patients with PAFAH1B1 variants ranged from drug-responsive seizures to severe epileptic encephalopathy. These observations underscore the clinical heterogeneity of PAFAH1B1-related disorders, with most patients exhibiting developmental disorders. Moreover, the severity of epilepsy appears to be linked to genetic variations."
+      },
+      "mesh_terms": [
+        "Humans",
+        "Male",
+        "Female",
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Child, Preschool",
+        "Infant",
+        "Epilepsy",
+        "Electroencephalography",
+        "Phenotype",
+        "Magnetic Resonance Imaging",
+        "Developmental Disabilities",
+        "Child",
+        "Microtubule-Associated Proteins"
+      ],
+      "keywords": [
+        "Developmental disability",
+        "Epilepsy",
+        "PAFAH1B1",
+        "Phenotype",
+        "Seizure"
+      ],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.seizure.2024.01.020"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38364333/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38364333/"
+    },
+    {
+      "pmid": "10828595",
+      "doi": "10.1159/000015556",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Expression map of human chromosome region 17p13.3, spanning the RP13 dominant retinitis pigmentosa locus, the Miller-Dieker lissencephaly syndrome (MDLS) region, and a putative tumour suppressor locus.",
+      "authors": [
+        "McHale J C",
+        "McKie A B",
+        "Tarttelin E E",
+        "Inglehearn C F"
+      ],
+      "journal": "Cytogenetics and cell genetics",
+      "year": "2000",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Chromosome region 17p13.3 is rich in genes, with 223 expressed sequence tags (ESTs) within the last 15 cM (7 Mb) of chromosome 17p in the GeneMap database. Loci for dominant retinitis pigmentosa (RP13), central areolar choroidal dystrophy (CACD), anterior polar cataract (CTAA2), Miller-Dieker lissencephaly syndrome (MDLS), and a region of tumour loss of heterozygosity (LOH) distinct from TP53 all map into the region adjacent to the 17p telomere. To date, however, there is no physical map of the region, which has resisted the efforts of the CEPH and Whitehead physical mapping programmes to generate contiguous clones across it. We have created a physical map covering approximately 3.5 Mb (6 cM)in this region, spanning the RP13 interval and extending distally to the gene MDCR (formerly, LIS1), which, when deleted, leads to the MDLS phenotype. The region covered is also the point of maximum LOH in lung cancer and has been implicated in the pathogenesis of many other human cancers. The map orders 47 sequence tagged sites, including 32 genes or ESTs, nine genetic markers, four anonymous sequences, and two YAC end clones, and highlights new candidate ESTs for involvement in RP13, MDLS, CTAA2, and a tumour-susceptibility gene.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Chromosomes, Artificial, Yeast",
+        "Chromosomes, Human, Pair 17",
+        "Contig Mapping",
+        "Expressed Sequence Tags",
+        "Gene Expression",
+        "Genes, Dominant",
+        "Genes, Tumor Suppressor",
+        "Genetic Markers",
+        "Humans",
+        "Loss of Heterozygosity",
+        "Polymerase Chain Reaction",
+        "Retinitis Pigmentosa",
+        "Sequence Tagged Sites",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1159/000015556"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10828595/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10828595/"
+    },
+    {
+      "pmid": "15331402",
+      "doi": "10.1016/S0002-9440(10)63340-8",
+      "pmc_id": "PMC2336110",
+      "pmc_verify": null,
+      "title": "Lis1 is necessary for normal non-radial migration of inhibitory interneurons.",
+      "authors": [
+        "McManus Matthew F",
+        "Nasrallah Ilya M",
+        "Pancoast MacLean M",
+        "Wynshaw-Boris Anthony",
+        "Golden Jeffrey A"
+      ],
+      "journal": "The American journal of pathology",
+      "year": "2004",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, U.S. Gov't, P.H.S."
+      ],
+      "abstract": "Type I lissencephaly is a central nervous system (CNS) malformation characterized by mental retardation and epilepsy. These clinical features suggest a deficit in inhibitory neurons may, in part, underlie the pathogenesis of this disorder. Mutations in, or deletions of, LIS1 are the most commonly recognized genetic anomaly associated with type I lissencephaly. The pathogenesis of type I lissencephaly is believed to be a defect in radial neuronal migration, a process requiring LIS1. In contrast the inhibitory neurons migrate non-radially from the basal forebrain to the neocortex and hippocampus. Given that Lis1 is expressed in all neurons, we hypothesized that Lis1 also functions in non-radial migrating inhibitory neurons. To test this hypothesis we used a combination of in vivo and in vitro studies with Lis1 mutant mice and found non-radial cell migration is also affected. Our data indicate Lis1 is required for normal non-radial neural migration and that the Lis1 requirement is primarily cell autonomous, although a small cell non-autonomous effect could not be excluded. These data indicate inhibitory neuron migration is slowed but not absent, similar to that found for radial cell migration. We propose that the defect in non-radial cell migration is likely to contribute to the clinical phenotype observed in individuals with a LIS1 mutation.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Animals",
+        "Cell Movement",
+        "Embryo, Mammalian",
+        "Female",
+        "Heterozygote",
+        "Interneurons",
+        "Mice",
+        "Mice, Knockout",
+        "Microtubule-Associated Proteins",
+        "Neural Inhibition",
+        "Pregnancy",
+        "Pregnancy, Animal"
+      ],
+      "keywords": [],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2336110/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2336110/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/S0002-9440(10)63340-8"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/15331402/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15331402/"
+    },
+    {
+      "pmid": "34327202",
+      "doi": "10.3389/fcell.2021.693919",
+      "pmc_id": "PMC8313859",
+      "pmc_verify": null,
+      "title": "Interneuron Heterotopia in the Lis1 Mutant Mouse Cortex Underlies a Structural and Functional Schizophrenia-Like Phenotype.",
+      "authors": [
+        "Garcia-Lopez Raquel",
+        "Pombero Ana",
+        "Estirado Alicia",
+        "Geijo-Barrientos Emilio",
+        "Martinez Salvador"
+      ],
+      "journal": "Frontiers in cell and developmental biology",
+      "year": "2021",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "LIS1 is one of the principal genes related to Type I lissencephaly, a severe human brain malformation characterized by an abnormal neuronal migration in the cortex during embryonic development. This is clinically associated with epilepsy and cerebral palsy in severe cases, as well as a predisposition to developing mental disorders, in cases with a mild phenotype. Although genetic variations in the LIS1 gene have been associated with the development of schizophrenia, little is known about the underlying neurobiological mechanisms. We have studied how the Lis1 gene might cause deficits associated with the pathophysiology of schizophrenia using the Lis1/sLis1 murine model, which involves the deletion of the first coding exon of the Lis1 gene. Homozygous mice are not viable, but heterozygous animals present abnormal neuronal morphology, cortical dysplasia, and enhanced cortical excitability. We have observed reduced number of cells expressing GABA-synthesizing enzyme glutamic acid decarboxylase 67 (GAD67) in the hippocampus and the anterior cingulate area, as well as fewer parvalbumin-expressing cells in the anterior cingulate cortex in Lis1/sLis1 mutants compared to control mice. The cFOS protein expression (indicative of neuronal activity) in Lis1/sLis1 mice was higher in the medial prefrontal (mPFC), perirhinal (PERI), entorhinal (ENT), ectorhinal (ECT) cortices, and hippocampus compared to control mice. Our results suggest that deleting the first coding exon of the Lis1 gene might cause cortical anomalies associated with the pathophysiology of schizophrenia.",
+      "abstract_sections": null,
+      "mesh_terms": [],
+      "keywords": [
+        "GABAergic system",
+        "LIS1 gene",
+        "c-fos",
+        "hippocampus",
+        "interneurons",
+        "mPFC",
+        "schizophrenia"
+      ],
+      "full_text_available": true,
+      "pdf_links": [
+        {
+          "source": "PMC",
+          "type": "pdf",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8313859/pdf/",
+          "verified": null
+        },
+        {
+          "source": "PMC",
+          "type": "html",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8313859/",
+          "verified": null
+        },
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.3389/fcell.2021.693919"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34327202/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34327202/"
+    },
+    {
+      "pmid": "2299140",
+      "doi": "10.1177/088307389000500113",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Isolated lissencephaly: report of four patients from two unrelated families.",
+      "authors": [
+        "Pavone L",
+        "Gullotta F",
+        "Incorpora G",
+        "Grasso S",
+        "Dobyns W B"
+      ],
+      "journal": "Journal of child neurology",
+      "year": "1990",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "Lissencephaly is a brain malformation manifested by a smooth cerebral surface and caused by incomplete neuronal migration. Clinical sequellae include minor craniofacial changes (bitemporal hollowing, small jaw), severe mental retardation, and other neurological abnormalities. Patients with classical or type I lissencephaly and its sequellae but no other significant anomalies are classified as having isolated lissencephaly sequence. Possible causes of isolated lissencephaly sequence include ischemia or viral infection during the time of neuronal migration, microdeletion within the Miller-Dieker syndrome critical region in chromosome band 17p13.3, and Mendelian inheritance. The last is based on a report of a single family with three affected children in 1933. We report four patients with isolated lissencephaly sequence from two unrelated families who provide further support for autosomal (or possibly X-linked) recessive inheritance. In the first family, three brothers were affected. In the second, the parents are first cousins.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Brain",
+        "Child, Preschool",
+        "Congenital Abnormalities",
+        "Female",
+        "Humans",
+        "Infant",
+        "Male",
+        "Radiography",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1177/088307389000500113"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/2299140/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/2299140/"
+    },
+    {
+      "pmid": "13129914",
+      "doi": "10.1074/jbc.M309583200",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Inactivation of a testis-specific Lis1 transcript in mice prevents spermatid differentiation and causes male infertility.",
+      "authors": [
+        "Nayernia Karim",
+        "Vauti Franz",
+        "Meinhardt Andreas",
+        "Cadenas Christina",
+        "Schweyer Stephan",
+        "Meyer Barbara I",
+        "Schwandt Iris",
+        "Chowdhury Kamal",
+        "Engel Wolfgang",
+        "Arnold Hans-Henning"
+      ],
+      "journal": "The Journal of biological chemistry",
+      "year": "2003",
+      "publication_types": [
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "abstract": "Lis1 protein is the non-catalytic component of platelet-activating factor acetylhydrolase 1b (PAF-AH 1B) and associated with microtubular structures. Hemizygous mutations of the LIS1 gene cause type I lissencephaly, a brain abnormality with developmental defects of neuronal migration. Lis1 is also expressed in testis, but its function there has not been determined. We have generated a mouse mutant (LIS1GT/GT) by gene trap integration leading to selective disruption of a Lis1 splicing variant in testis. Homozygous mutant males are infertile with no other apparent phenotype. We demonstrate that Lis1 is predominantly expressed in spermatids, and spermiogenesis is blocked when Lis1 is absent. Mutant spermatids fail to form correct acrosomes and nuclei appear distorted in size and shape. The tissue architecture in mutant testis appears severely disturbed displaying collapsed seminiferous tubules, mislocated germ cells, and increased apoptosis. These results provide evidence for an essential and hitherto uncharacterized role of the Lis1 protein in spermatogenesis, particularly in the differentiation of spermatids into spermatozoa.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Acrosome",
+        "Animals",
+        "Apoptosis",
+        "Blotting, Northern",
+        "Blotting, Western",
+        "Cell Differentiation",
+        "Cell Nucleus",
+        "DNA Fragmentation",
+        "Disease Models, Animal",
+        "Dyneins",
+        "Exons",
+        "Female",
+        "Gene Library",
+        "Genotype",
+        "Homozygote",
+        "Immunohistochemistry",
+        "Infertility, Male",
+        "Male",
+        "Mice",
+        "Mice, Transgenic",
+        "Microscopy, Electron",
+        "Microtubule-Associated Proteins",
+        "Models, Genetic",
+        "Mutation",
+        "Phenotype",
+        "Reverse Transcriptase Polymerase Chain Reaction",
+        "Spermatids",
+        "Spermatogenesis",
+        "Testis",
+        "Tubulin"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1074/jbc.M309583200"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/13129914/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/13129914/"
+    },
+    {
+      "pmid": "8306353",
+      "doi": "10.1007/BF00306190",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Neuroimaging in lissencephalies.",
+      "authors": [
+        "Schuierer G",
+        "Kurlemann G",
+        "von Lengerke H J"
+      ],
+      "journal": "Child's nervous system : ChNS : official journal of the International Society for Pediatric Neurosurgery",
+      "year": "1993",
+      "publication_types": [
+        "Journal Article"
+      ],
+      "abstract": "Based on the published literature and on our own experiences in the imaging of lissencephalies with ultrasound (US), computed tomography (CT) and magnetic resonance imaging (MRI) we propose a strategy for the use of the different methods depending on the clinical symptoms and the age of the patient. In newborns and babies with suspected lissencephaly ultrasound should be used as the first method. If there is a cortical malformation and a more thorough examination seems necessary, CT can be used in type I lissencephaly. However, due to its excellent grey-white matter contrast MRI is the best method for imaging of lissencephalies. Especially in the diagnosis of type II lissencephaly, MRI is definitely superior to CT and US, and so it should be used in all patients with Walker-Warburg syndrome and other congenital muscular dystrophies as well as in all doubtful cases. It must always be remembered that the extent of the cortical dysplasias is quite variable, as is the presence of further malformations.",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Cerebral Cortex",
+        "Child, Preschool",
+        "Diagnostic Imaging",
+        "Electroencephalography",
+        "Humans",
+        "Infant",
+        "Infant, Newborn",
+        "Magnetic Resonance Imaging",
+        "Retrospective Studies",
+        "Syndrome",
+        "Tomography, X-Ray Computed",
+        "Ultrasonography"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/BF00306190"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8306353/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8306353/"
+    },
+    {
+      "pmid": "8306354",
+      "doi": "10.1007/BF00306191",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Neuropathology of lissencephalies.",
+      "authors": [
+        "Kuchelmeister K",
+        "Bergmann M",
+        "Gullotta F"
+      ],
+      "journal": "Child's nervous system : ChNS : official journal of the International Society for Pediatric Neurosurgery",
+      "year": "1993",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "The neuropathological findings at autopsy in four cases of type I and three of type II lissencephaly are presented. Type I lissencephaly is characterized by agyriapachygyria with a markedly thickened cerebral cortex with four coarse histological layers. The normally myelinated white matter, often with neuronal heterotopias, is very narrow, and the gray-to-white matter ratio is inverted (about 4:1); there are no white-gray interdigitations. Claustrum and capsula extrema are absent. Ventricular dilatation is present, especially of the occipital horns. In the hypoplastic brain stem large olivary heterotopias can often be observed. Severe cerebellar malformations, obstructive hydrocephalus, severe eye abnormalities, and congenital muscular dystrophy are not seen. Clinically, type I lissencephaly presents as \"isolated lissencephaly sequence\" or as \"Miller-Dieker syndrome\" with characteristic facial dysmorphism. The long survival of 20 years achieved by one of our patients is very uncommon. Type II lissencephaly is characterized by widespread agyria. Usually, obstructive hydrocephalus is present with a thin cerebral mantle showing a slightly thickened cortex and a narrow, hypomyelinated white matter often with neuronal heterotopias (gray-to-white matter ratio about 1:1). The border between gray and white matter is blurred. Claustrum and capsula extrema are absent. Histologically, the cortex appears disorganized without layering; widespread leptomeningeal gliomesenchymal proliferations and glioneuronal heterotopias are present.(ABSTRACT TRUNCATED AT 250 WORDS)",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "Adult",
+        "Biopsy",
+        "Brain Stem",
+        "Cerebral Cortex",
+        "Corpus Callosum",
+        "Eye Abnormalities",
+        "Female",
+        "Humans",
+        "Infant",
+        "Male",
+        "Microcephaly",
+        "Muscles",
+        "Syndrome"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1007/BF00306191"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8306354/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/8306354/"
+    },
+    {
+      "pmid": "19302951",
+      "doi": "10.1016/j.pediatrneurol.2008.11.008",
+      "pmc_id": "",
+      "pmc_verify": null,
+      "title": "Classical (type I) lissencephaly and Miller-Dieker syndrome.",
+      "authors": [
+        "Matarese Christine A",
+        "Renaud Deborah L"
+      ],
+      "journal": "Pediatric neurology",
+      "year": "2009",
+      "publication_types": [
+        "Case Reports",
+        "Journal Article"
+      ],
+      "abstract": "",
+      "abstract_sections": null,
+      "mesh_terms": [
+        "1-Alkyl-2-acetylglycerophosphocholine Esterase",
+        "Brain",
+        "Child, Preschool",
+        "Classical Lissencephalies and Subcortical Band Heterotopias",
+        "Electroencephalography",
+        "Epilepsy, Complex Partial",
+        "Female",
+        "Humans",
+        "Magnetic Resonance Imaging",
+        "Microtubule-Associated Proteins"
+      ],
+      "keywords": [],
+      "full_text_available": false,
+      "pdf_links": [
+        {
+          "source": "DOI",
+          "type": "publisher",
+          "url": "https://doi.org/10.1016/j.pediatrneurol.2008.11.008"
+        },
+        {
+          "source": "PubMed",
+          "type": "abstract",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19302951/"
+        }
+      ],
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19302951/"
+    }
+  ],
+  "pubmed_discovery": {
+    "review": {
+      "query": "(\"Miller-Dieker lissencephaly syndrome\"[Title/Abstract] OR \"Type I lissencephaly\"[Title/Abstract]) AND (review[pt] OR systematic review[pt]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "17099359",
+        "11983068",
+        "41979906",
+        "12432911",
+        "16538086"
+      ]
+    },
+    "genetics": {
+      "query": "(\"Miller-Dieker lissencephaly syndrome\"[Title/Abstract] OR \"Type I lissencephaly\"[Title/Abstract]) AND (gene[Title/Abstract] OR genes[Title/Abstract] OR genetic[Title/Abstract] OR haploinsufficiency[Title/Abstract] OR deletion[Title/Abstract] OR duplication[Title/Abstract] OR \"copy number\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "39743596",
+        "17099359",
+        "41979906",
+        "12432911",
+        "16538086",
+        "11983068",
+        "17389182",
+        "11298998",
+        "21046408",
+        "8306358"
+      ]
+    },
+    "genotype_phenotype": {
+      "query": "(\"Miller-Dieker lissencephaly syndrome\"[Title/Abstract] OR \"Type I lissencephaly\"[Title/Abstract]) AND (\"genotype-phenotype\"[Title/Abstract] OR \"critical region\"[Title/Abstract] OR mapping[Title/Abstract] OR phenotype[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "15921227",
+        "1671808",
+        "1620349",
+        "9436647",
+        "38364333",
+        "10828595",
+        "15331402",
+        "34327202",
+        "2299140",
+        "13129914"
+      ]
+    },
+    "cohort": {
+      "query": "(\"Miller-Dieker lissencephaly syndrome\"[Title/Abstract] OR \"Type I lissencephaly\"[Title/Abstract]) AND (cohort[Title/Abstract] OR patients[Title/Abstract] OR \"case series\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "8306353",
+        "8306354",
+        "11298998",
+        "15921227",
+        "8306358"
+      ]
+    },
+    "general": {
+      "query": "(\"Miller-Dieker lissencephaly syndrome\"[Title/Abstract] OR \"Type I lissencephaly\"[Title/Abstract]) AND English[lang] NOT comment[pt] NOT letter[pt]",
+      "pmids": [
+        "39743596",
+        "17099359",
+        "41979906",
+        "12432911",
+        "11983068",
+        "16538086",
+        "8306353",
+        "19302951",
+        "8306354",
+        "11298998"
+      ]
+    }
+  },
+  "meta": {
+    "syndrome": "Miller-Dieker lissencephaly syndrome",
+    "collected_at": "2026-08-13T02:20:08.724010Z",
+    "work_dir": "output/Miller-Dieker_lissencephaly_syndrome/miller_dieker_lissencephaly_syndrome",
+    "steps": {
+      "01_disease_info": "output/Miller-Dieker_lissencephaly_syndrome/miller_dieker_lissencephaly_syndrome/01_disease_info.json",
+      "02_articles": "output/Miller-Dieker_lissencephaly_syndrome/miller_dieker_lissencephaly_syndrome/02_articles.json",
+      "03_markers": "output/Miller-Dieker_lissencephaly_syndrome/miller_dieker_lissencephaly_syndrome/03_markers.json"
+    },
+    "annotation_sources": {
+      "medgen": "NCBI MedGen HTML (공개)",
+      "pubmed": "NCBI PubMed ESearch+EFetch (공개)",
+      "ncbi_gene": "NCBI Gene ESearch+ESummary",
+      "clingen": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/ClinGen_gene_curation_list_GRCh38.tsv",
+      "gencc": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/gencc_submissions.tsv",
+      "hpo": "/storage/home/jhkim/Projects/cbNIPT/260427-GCX-cbNIPT-LLM/Resources/temp/phenotype_to_genes.txt"
+    }
+  }
+}

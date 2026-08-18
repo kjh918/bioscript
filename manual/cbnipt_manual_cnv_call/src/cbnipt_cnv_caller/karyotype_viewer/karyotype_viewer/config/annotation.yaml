@@ -1,0 +1,30 @@
+# karyotype_viewer annotation config
+# GRCh38 기준 NIPT target region 좌표
+features:
+  # ── Autosome ─────────────────────────────────────────────
+  "13":   {chrom: chr13, start:       1, end:  114364328}
+  "18":   {chrom: chr18, start:       1, end:   80373285}
+  "21":   {chrom: chr21, start:       1, end:   46709983}
+
+  # ── Sex chromosome ────────────────────────────────────────
+  "X":    {chrom: chrX,  start:       1, end:  156040895}
+  "Y":    {chrom: chrY,  start:       1, end:   57227415}
+
+  # ── Micro deletion ────────────────────────────────────────
+  "1p36":               {chrom: chr1,  start:       1, end:  27000000}
+  "1p36.33-p36.32":     {chrom: chr1,  start:       1, end:   8000000}
+  "1p36.32-p36.22":     {chrom: chr1,  start:    8000000, end: 17000000}
+  "1p36.33-p36.13":     {chrom: chr1,  start:       1, end:  27000000}
+  "4p16":               {chrom: chr4,  start:       1, end:   8000000}
+  "4p16.3":             {chrom: chr4,  start:       1, end:   4000000}
+  "5p15":               {chrom: chr5,  start:       1, end:  15000000}
+  "5p15.2":             {chrom: chr5,  start: 10000000, end:  15000000}
+  "7q11.23":            {chrom: chr7,  start: 72700000, end:  74200000}
+  "8p23":               {chrom: chr8,  start:       1, end:  11600000}
+  "8p23.1":             {chrom: chr8,  start:  6500000, end:  11600000}
+  "11q24":              {chrom: chr11, start: 121700000, end: 134946516}
+  "15q11":              {chrom: chr15, start: 22800000, end:  28600000}
+  "15q11-q13":          {chrom: chr15, start: 22800000, end:  33100000}
+  "15q12":              {chrom: chr15, start: 25200000, end:  28600000}
+  "22q11":              {chrom: chr22, start: 18700000, end:  21800000}
+  "22q11.2":            {chrom: chr22, start: 18700000, end:  21800000}

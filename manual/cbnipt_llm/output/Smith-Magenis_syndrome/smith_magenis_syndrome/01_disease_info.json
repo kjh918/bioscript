@@ -1,0 +1,336 @@
+{
+  "syndrome": "Smith-Magenis syndrome",
+  "definition": "Smith-Magenis syndrome (SMS) is characterized by distinctive physical features (particularly coarse facial features that progress with age), developmental delay, cognitive impairment, behavioral abnormalities, sleep disturbances, and childhood-onset abdominal obesity. Infants have feeding difficulties, failure to thrive, hypotonia, hyporeflexia, prolonged napping or need to be awakened for feeds, and generalized lethargy. Most individuals function in the mild-to-moderate range of intellectual disability. Behavioral manifestations, including significant sleep disturbances, stereotypies, and maladaptive and self-injurious behaviors, are generally not recognized until age 18 months or older and continue to change until adulthood. Sensory issues are frequently noted, including avoidant behavior and repetitive seeking of specific textures, sounds, and experiences. Significant anxiety is common as are problems with executive function, including inattention, distractibility, hyperactivity, and impulsivity. Maladaptive behaviors include frequent outbursts / temper tantrums, attention-seeking behaviors, opposition, aggression, and self-injurious behaviors including self-hitting, self-biting, skin picking, inserting foreign objects into body orifices (polyembolokoilamania), and yanking fingernails and/or toenails (onychotillomania). Among the stereotypic behaviors described, the spasmodic upper body squeeze or \"self-hug\" seems to be highly associated with SMS. An underlying developmental asynchrony, specifically emotional maturity delayed beyond intellectual functioning, may also contribute to maladaptive behaviors in people with SMS.",
+  "synonyms": [
+    "CHROMOSOME 17p11.2 DELETION SYNDROME",
+    "SMS"
+  ],
+  "db_ids": {
+    "SNOMED-CT": "401315004",
+    "MONDO": "MONDO:0008434",
+    "OMIM": "182290",
+    "Orphanet": "819"
+  },
+  "gene_locations": [
+    {
+      "gene_symbol": "RAI1",
+      "ncbi_gene_id": "10743",
+      "cytoband": "17p11.2",
+      "source": "medgen_direct"
+    }
+  ],
+  "genomic_targets": [
+    {
+      "type": "CoreRegion",
+      "chromosome": "chr17",
+      "cytoband": "17p11.2",
+      "event": "loss",
+      "mechanism": "deletion",
+      "source": "name_synonym_or_definition"
+    }
+  ],
+  "genereview_url": "/pubmed?LinkName=medgen_pubmed_genereviews&from_uid=162881",
+  "literature": {
+    "pubmed": {
+      "papers": [
+        {
+          "pmid": "32495322",
+          "title": "Management of Sleep Disturbances Associated with Smith-Magenis Syndrome.",
+          "authors": "Kaplan KA, Elsea SH, Potocki L",
+          "journal": "CNS Drugs",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32495322/"
+        },
+        {
+          "pmid": "26055866",
+          "title": "Melatonin Treatment in Children with Developmental Disabilities.",
+          "authors": "Schwichtenberg AJ, Malow BA",
+          "journal": "Sleep Med Clin",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26055866/"
+        },
+        {
+          "pmid": "25685859",
+          "title": "Tasimelteon for the treatment of non-24-hour sleep-wake disorder.",
+          "authors": "Neubauer DN",
+          "journal": "Drugs Today (Barc)",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25685859/"
+        }
+      ],
+      "see_all": {}
+    },
+    "etiology": {
+      "papers": [
+        {
+          "pmid": "38637764",
+          "title": "Exploring an objective measure of overactivity in children with rare genetic syndromes.",
+          "authors": "O'Sullivan R, Bissell S, Agar G, Spiller J, Surtees A, Heald M, Clarkson E, Khan A, Oliver C, Bagshaw AP, Richards C",
+          "journal": "J Neurodev Disord",
+          "year": "2024",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38637764/"
+        },
+        {
+          "pmid": "35779287",
+          "title": "Sleep disturbances and behavior in Smith-Magenis syndrome.",
+          "authors": "Garayzábal E, Hidalgo I, Miranda de Souza ALD, da Silva NC, Giacheti CM, Pinato L",
+          "journal": "Res Dev Disabil",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35779287/"
+        },
+        {
+          "pmid": "31838315",
+          "title": "Sleep disorders in children with Angelman and Smith-Magenis syndromes: The assessment of potential causes of disrupted settling and night time waking.",
+          "authors": "Agar G, Oliver C, Trickett J, Licence L, Richards C",
+          "journal": "Res Dev Disabil",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/31838315/"
+        },
+        {
+          "pmid": "28384694",
+          "title": "Auditory Phenotype of Smith-Magenis Syndrome.",
+          "authors": "Brendal MA, King KA, Zalewski CK, Finucane BM, Introne W, Brewer CC, Smith ACM",
+          "journal": "J Speech Lang Hear Res",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28384694/"
+        },
+        {
+          "pmid": "26055866",
+          "title": "Melatonin Treatment in Children with Developmental Disabilities.",
+          "authors": "Schwichtenberg AJ, Malow BA",
+          "journal": "Sleep Med Clin",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26055866/"
+        }
+      ],
+      "see_all": {}
+    },
+    "diagnosis": {
+      "papers": [
+        {
+          "pmid": "35205380",
+          "title": "Smith-Magenis Syndrome-Clinical Review, Biological Background and Related Disorders.",
+          "authors": "Rinaldi B, Villa R, Sironi A, Garavelli L, Finelli P, Bedeschi MF",
+          "journal": "Genes (Basel)",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35205380/"
+        },
+        {
+          "pmid": "30819258",
+          "title": "De novo and inherited TCF20 pathogenic variants are associated with intellectual disability, dysmorphic features, hypotonia, and neurological impairments with similarities to Smith-Magenis syndrome.",
+          "authors": "Vetrini F, McKee S, Rosenfeld JA, Suri M, Lewis AM, Nugent KM, Roeder E, Littlejohn RO, Holder S, Zhu W, Alaimo JT, Graham B, Harris JM, Gibson JB, Pastore M, McBride KL, Komara M, Al-Gazali L, Al Shamsi A, Fanning EA, Wierenga KJ, Scott DA, Ben-Neriah Z, Meiner V, Cassuto H, Elpeleg O, Holder JL Jr, Burrage LC, Seaver LH, Van Maldergem L, Mahida S, Soul JS, Marlatt M, Matyakhina L, Vogt J, Gold JA, Park SM, Varghese V, Lampe AK, Kumar A, Lees M, Holder-Espinasse M, McConnell V, Bernhard B, Blair E, Harrison V; DDD study, Muzny DM, Gibbs RA, Elsea SH, Posey JE, Bi W, Lalani S, Xia F, Yang Y, Eng CM, Lupski JR, Liu P",
+          "journal": "Genome Med",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30819258/"
+        },
+        {
+          "pmid": "30557269",
+          "title": "Behavior and sleep disturbance in Smith-Magenis syndrome.",
+          "authors": "Shayota BJ, Elsea SH",
+          "journal": "Curr Opin Psychiatry",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30557269/"
+        },
+        {
+          "pmid": "18231123",
+          "title": "Smith-Magenis syndrome.",
+          "authors": "Elsea SH, Girirajan S",
+          "journal": "Eur J Hum Genet",
+          "year": "2008",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/18231123/"
+        },
+        {
+          "pmid": "8684798",
+          "title": "Ophthalmic manifestations of Smith-Magenis syndrome.",
+          "authors": "Chen RM, Lupski JR, Greenberg F, Lewis RA",
+          "journal": "Ophthalmology",
+          "year": "1996",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8684798/"
+        }
+      ],
+      "see_all": {}
+    },
+    "therapy": {
+      "papers": [
+        {
+          "pmid": "32495322",
+          "title": "Management of Sleep Disturbances Associated with Smith-Magenis Syndrome.",
+          "authors": "Kaplan KA, Elsea SH, Potocki L",
+          "journal": "CNS Drugs",
+          "year": "2020",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32495322/"
+        },
+        {
+          "pmid": "29096777",
+          "title": "Efficacy and Safety of Pediatric Prolonged-Release Melatonin for Insomnia in Children With Autism Spectrum Disorder.",
+          "authors": "Gringras P, Nir T, Breddy J, Frydman-Marom A, Findling RL",
+          "journal": "J Am Acad Child Adolesc Psychiatry",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29096777/"
+        },
+        {
+          "pmid": "27913471",
+          "title": "Sequencing of chronic lymphocytic leukemia therapies.",
+          "authors": "Barrientos JC",
+          "journal": "Hematology Am Soc Hematol Educ Program",
+          "year": "2016",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27913471/"
+        },
+        {
+          "pmid": "26055866",
+          "title": "Melatonin Treatment in Children with Developmental Disabilities.",
+          "authors": "Schwichtenberg AJ, Malow BA",
+          "journal": "Sleep Med Clin",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26055866/"
+        },
+        {
+          "pmid": "22057962",
+          "title": "Smith-Magenis syndrome: clinical evaluation in seven Brazilian patients.",
+          "authors": "Gamba BF, Vieira GH, Souza DH, Monteiro FF, Lorenzini JJ, Carvalho DR, Morreti-Ferreira D",
+          "journal": "Genet Mol Res",
+          "year": "2011",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22057962/"
+        }
+      ],
+      "see_all": {}
+    },
+    "prognosis": {
+      "papers": [
+        {
+          "pmid": "41465172",
+          "title": "17q12 Recurrent Deletion Syndrome in Childhood.",
+          "authors": "Ceravolo G, Mollica S, Cavallaro M, Ceravolo I, Sica G, Granata F, Houlden H, Chimenz R",
+          "journal": "Genes (Basel)",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/41465172/"
+        },
+        {
+          "pmid": "33632309",
+          "title": "Sleep disorders in rare genetic syndromes: a meta-analysis of prevalence and profile.",
+          "authors": "Agar G, Brown C, Sutherland D, Coulborn S, Oliver C, Richards C",
+          "journal": "Mol Autism",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33632309/"
+        },
+        {
+          "pmid": "30557269",
+          "title": "Behavior and sleep disturbance in Smith-Magenis syndrome.",
+          "authors": "Shayota BJ, Elsea SH",
+          "journal": "Curr Opin Psychiatry",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30557269/"
+        },
+        {
+          "pmid": "29222277",
+          "title": "How should we sequence and combine novel therapies in CLL?",
+          "authors": "Davids MS",
+          "journal": "Hematology Am Soc Hematol Educ Program",
+          "year": "2017",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/29222277/"
+        },
+        {
+          "pmid": "25836705",
+          "title": "Common genetic and epigenetic syndromes.",
+          "authors": "Adams DJ, Clark DA",
+          "journal": "Pediatr Clin North Am",
+          "year": "2015",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25836705/"
+        }
+      ],
+      "see_all": {}
+    },
+    "clinical_prediction": {
+      "papers": [
+        {
+          "pmid": "35779287",
+          "title": "Sleep disturbances and behavior in Smith-Magenis syndrome.",
+          "authors": "Garayzábal E, Hidalgo I, Miranda de Souza ALD, da Silva NC, Giacheti CM, Pinato L",
+          "journal": "Res Dev Disabil",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35779287/"
+        },
+        {
+          "pmid": "30819258",
+          "title": "De novo and inherited TCF20 pathogenic variants are associated with intellectual disability, dysmorphic features, hypotonia, and neurological impairments with similarities to Smith-Magenis syndrome.",
+          "authors": "Vetrini F, McKee S, Rosenfeld JA, Suri M, Lewis AM, Nugent KM, Roeder E, Littlejohn RO, Holder S, Zhu W, Alaimo JT, Graham B, Harris JM, Gibson JB, Pastore M, McBride KL, Komara M, Al-Gazali L, Al Shamsi A, Fanning EA, Wierenga KJ, Scott DA, Ben-Neriah Z, Meiner V, Cassuto H, Elpeleg O, Holder JL Jr, Burrage LC, Seaver LH, Van Maldergem L, Mahida S, Soul JS, Marlatt M, Matyakhina L, Vogt J, Gold JA, Park SM, Varghese V, Lampe AK, Kumar A, Lees M, Holder-Espinasse M, McConnell V, Bernhard B, Blair E, Harrison V; DDD study, Muzny DM, Gibbs RA, Elsea SH, Posey JE, Bi W, Lalani S, Xia F, Yang Y, Eng CM, Lupski JR, Liu P",
+          "journal": "Genome Med",
+          "year": "2019",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/30819258/"
+        },
+        {
+          "pmid": "17562583",
+          "title": "Social phenotypes in neurogenetic syndromes.",
+          "authors": "Feinstein C, Singh S",
+          "journal": "Child Adolesc Psychiatr Clin N Am",
+          "year": "2007",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17562583/"
+        },
+        {
+          "pmid": "16647992",
+          "title": "Neurologic and developmental features of the Smith-Magenis syndrome (del 17p11.2).",
+          "authors": "Gropman AL, Duncan WC, Smith AC",
+          "journal": "Pediatr Neurol",
+          "year": "2006",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/16647992/"
+        },
+        {
+          "pmid": "8684798",
+          "title": "Ophthalmic manifestations of Smith-Magenis syndrome.",
+          "authors": "Chen RM, Lupski JR, Greenberg F, Lewis RA",
+          "journal": "Ophthalmology",
+          "year": "1996",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/8684798/"
+        }
+      ],
+      "see_all": {}
+    },
+    "systematic_reviews": {
+      "papers": [
+        {
+          "pmid": "42226112",
+          "title": "The prevalence of neurodevelopmental disorders in Smith-Magenis Syndrome: a PRISMA compliant systematic review.",
+          "authors": "Boiroux P, Babinet MN, Chesnoy G, Belhouchat P, Demily C",
+          "journal": "J Neurodev Disord",
+          "year": "2026",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42226112/"
+        },
+        {
+          "pmid": "40437981",
+          "title": "Retinoic Acid-Induced 1 Gene and Neuropsychiatric Diseases: A Systematic Review.",
+          "authors": "Yang T, Pang D, Li C, Shang H",
+          "journal": "Expert Rev Mol Med",
+          "year": "2025",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40437981/"
+        },
+        {
+          "pmid": "34919300",
+          "title": "Eyelash trichomegaly: a systematic review of acquired and congenital aetiologies of lengthened lashes.",
+          "authors": "Hutchison DM, Duffens A, Yale K, Park A, Cardenas K, Mesinkovska NA",
+          "journal": "J Eur Acad Dermatol Venereol",
+          "year": "2022",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34919300/"
+        },
+        {
+          "pmid": "33599294",
+          "title": "Hidradenitis suppurativa and chromosomal abnormalities: a case report and systematic review of the literature.",
+          "authors": "Shah M, Sachdeva M, Melendez-Gonzalez M, Piguet V, Sayed C",
+          "journal": "Int J Dermatol",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33599294/"
+        },
+        {
+          "pmid": "33561678",
+          "title": "Endogenous melatonin and sleep in individuals with Rare Genetic Neurodevelopmental Disorders (RGND): A systematic review.",
+          "authors": "Woodford EC, McLay L, France KG, Blampied NM, Gibbs R, Swan CE, Eggleston M",
+          "journal": "Sleep Med Rev",
+          "year": "2021",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33561678/"
+        }
+      ],
+      "see_all": {}
+    }
+  },
+  "medgen_uid": "162881",
+  "medgen_url": "https://www.ncbi.nlm.nih.gov/medgen/162881"
+}
