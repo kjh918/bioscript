@@ -14,6 +14,8 @@ qc_dashboard.py
 """
 
 from __future__ import annotations
+import logging
+log = logging.getLogger(__name__)
 
 import json
 from pathlib import Path
@@ -193,4 +195,13 @@ def plot_qc_dashboard(
 
     if out_html:
         fig.write_html(out_html)
+        base = out_html.rsplit(".", 1)[0]
+        try:
+            fig.write_image(f"{base}.png", width=1600, height=900, scale=2)
+        except Exception as e:
+            log.warning("PNG 저장 실패 (kaleido 미설치 가능): %s", e)
+        try:
+            fig.write_image(f"{base}.pdf")
+        except Exception as e:
+            log.warning("PDF 저장 실패: %s", e)
     return fig

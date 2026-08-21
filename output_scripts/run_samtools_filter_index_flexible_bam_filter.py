@@ -67,20 +67,20 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if filtered_bam:
-        _tgt = os.path.dirname(filtered_bam) if os.path.splitext(filtered_bam)[1] else filtered_bam
+    if analysis_ready_bai:
+        _tgt = os.path.dirname(analysis_ready_bai) if os.path.splitext(analysis_ready_bai)[1] else analysis_ready_bai
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if analysis_ready_bam:
         _tgt = os.path.dirname(analysis_ready_bam) if os.path.splitext(analysis_ready_bam)[1] else analysis_ready_bam
         if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if filtered_bai:
+        _tgt = os.path.dirname(filtered_bai) if os.path.splitext(filtered_bai)[1] else filtered_bai
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if analysis_ready_bai:
-        _tgt = os.path.dirname(analysis_ready_bai) if os.path.splitext(analysis_ready_bai)[1] else analysis_ready_bai
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if filtered_bai:
-        _tgt = os.path.dirname(filtered_bai) if os.path.splitext(filtered_bai)[1] else filtered_bai
+    if filtered_bam:
+        _tgt = os.path.dirname(filtered_bam) if os.path.splitext(filtered_bam)[1] else filtered_bam
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

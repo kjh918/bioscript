@@ -73,14 +73,14 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if primary_bam:
-        _tgt = os.path.dirname(primary_bam) if os.path.splitext(primary_bam)[1] else primary_bam
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if TrimFastqDir:
         _tgt = os.path.dirname(TrimFastqDir) if os.path.splitext(TrimFastqDir)[1] else TrimFastqDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if primary_bam:
+        _tgt = os.path.dirname(primary_bam) if os.path.splitext(primary_bam)[1] else primary_bam
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

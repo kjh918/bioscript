@@ -73,26 +73,26 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if global_dist_txt:
-        _tgt = os.path.dirname(global_dist_txt) if os.path.splitext(global_dist_txt)[1] else global_dist_txt
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if regions_bed_gz:
         _tgt = os.path.dirname(regions_bed_gz) if os.path.splitext(regions_bed_gz)[1] else regions_bed_gz
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+    if global_dist_txt:
+        _tgt = os.path.dirname(global_dist_txt) if os.path.splitext(global_dist_txt)[1] else global_dist_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if prefix:
+        _tgt = os.path.dirname(prefix) if os.path.splitext(prefix)[1] else prefix
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if summary_txt:
         _tgt = os.path.dirname(summary_txt) if os.path.splitext(summary_txt)[1] else summary_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if regions_bed_gz_csi:
         _tgt = os.path.dirname(regions_bed_gz_csi) if os.path.splitext(regions_bed_gz_csi)[1] else regions_bed_gz_csi
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if prefix:
-        _tgt = os.path.dirname(prefix) if os.path.splitext(prefix)[1] else prefix
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

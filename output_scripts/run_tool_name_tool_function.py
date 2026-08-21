@@ -53,17 +53,17 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if InputFileDir:
-        _tgt = os.path.dirname(InputFileDir) if os.path.splitext(InputFileDir)[1] else InputFileDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if OutputDir:
-        _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if OutputSummary:
         _tgt = os.path.dirname(OutputSummary) if os.path.splitext(OutputSummary)[1] else OutputSummary
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if qcResDir:
         _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if InputFileDir:
+        _tgt = os.path.dirname(InputFileDir) if os.path.splitext(InputFileDir)[1] else InputFileDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if OutputDir:
+        _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

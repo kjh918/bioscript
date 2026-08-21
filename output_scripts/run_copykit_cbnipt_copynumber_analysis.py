@@ -58,11 +58,11 @@ def main():
     if NGS_DataBaseDir:
         _tgt = os.path.dirname(NGS_DataBaseDir) if os.path.splitext(NGS_DataBaseDir)[1] else NGS_DataBaseDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if ResultBaseDir:
-        _tgt = os.path.dirname(ResultBaseDir) if os.path.splitext(ResultBaseDir)[1] else ResultBaseDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if AnalysisRunDir:
         _tgt = os.path.dirname(AnalysisRunDir) if os.path.splitext(AnalysisRunDir)[1] else AnalysisRunDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if ResultBaseDir:
+        _tgt = os.path.dirname(ResultBaseDir) if os.path.splitext(ResultBaseDir)[1] else ResultBaseDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

@@ -57,11 +57,11 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if hs_metrics:
-        _tgt = os.path.dirname(hs_metrics) if os.path.splitext(hs_metrics)[1] else hs_metrics
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if hs_metrics:
+        _tgt = os.path.dirname(hs_metrics) if os.path.splitext(hs_metrics)[1] else hs_metrics
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if qcResDir:
         _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir

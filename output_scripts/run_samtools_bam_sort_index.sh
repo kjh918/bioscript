@@ -68,11 +68,11 @@ cmd="${samtools_bin} sort -@ ${Threads} -o ${sorted_bam} ${BamDir}/${SeqID}.bam 
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${BamDir:-}" ]]; then
-  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
-fi
 if [[ -n "${sorted_bam:-}" ]]; then
   if [[ "${sorted_bam}" == *.* ]]; then mkdir -p "$(dirname "${sorted_bam}")"; else mkdir -p "${sorted_bam}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
 if [[ -n "${sorted_bai:-}" ]]; then
   if [[ "${sorted_bai}" == *.* ]]; then mkdir -p "$(dirname "${sorted_bai}")"; else mkdir -p "${sorted_bai}"; fi

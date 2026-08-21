@@ -91,20 +91,20 @@ cmd="${samtools_bin} view -b -h -q ${min_mapq} -f ${include_flag} -F ${exclude_f
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${filtered_bam:-}" ]]; then
-  if [[ "${filtered_bam}" == *.* ]]; then mkdir -p "$(dirname "${filtered_bam}")"; else mkdir -p "${filtered_bam}"; fi
+if [[ -n "${analysis_ready_bai:-}" ]]; then
+  if [[ "${analysis_ready_bai}" == *.* ]]; then mkdir -p "$(dirname "${analysis_ready_bai}")"; else mkdir -p "${analysis_ready_bai}"; fi
 fi
 if [[ -n "${analysis_ready_bam:-}" ]]; then
   if [[ "${analysis_ready_bam}" == *.* ]]; then mkdir -p "$(dirname "${analysis_ready_bam}")"; else mkdir -p "${analysis_ready_bam}"; fi
 fi
+if [[ -n "${filtered_bai:-}" ]]; then
+  if [[ "${filtered_bai}" == *.* ]]; then mkdir -p "$(dirname "${filtered_bai}")"; else mkdir -p "${filtered_bai}"; fi
+fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
-if [[ -n "${analysis_ready_bai:-}" ]]; then
-  if [[ "${analysis_ready_bai}" == *.* ]]; then mkdir -p "$(dirname "${analysis_ready_bai}")"; else mkdir -p "${analysis_ready_bai}"; fi
-fi
-if [[ -n "${filtered_bai:-}" ]]; then
-  if [[ "${filtered_bai}" == *.* ]]; then mkdir -p "$(dirname "${filtered_bai}")"; else mkdir -p "${filtered_bai}"; fi
+if [[ -n "${filtered_bam:-}" ]]; then
+  if [[ "${filtered_bam}" == *.* ]]; then mkdir -p "$(dirname "${filtered_bam}")"; else mkdir -p "${filtered_bam}"; fi
 fi
 
 eval "$cmd"

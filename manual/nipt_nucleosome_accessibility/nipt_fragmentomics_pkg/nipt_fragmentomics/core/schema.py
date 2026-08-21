@@ -39,21 +39,33 @@ class FragmentScore:
     mapq:       int
 
     @classmethod
-    def from_read(cls, read) -> "FragmentScore | None":
+    def from_read(cls, read, max_frag_len: int = 1000) -> "FragmentScore | None":
         """
         pysam AlignedSegment 로부터 FragmentScore 를 생성합니다.
-        paired-end: template_length 사용 / single-end: query_length fallback.
-        유효하지 않은 read 는 None 반환.
+
+        Parameters
+        ----------
+        max_frag_len : 허용 최대 fragment 길이 (bp).
+                       비정상 template_length (수백만 bp) 필터링.
+                       cfDNA 분석에서 1000bp 이상은 일반적으로 비정상.
         """
         if read.is_paired and read.template_length != 0:
-            frag_start = read.reference_start
-            frag_end   = frag_start + abs(read.template_length)
+            tlen = abs(read.template_length)
+            # 비정상 template_length 필터: read 길이보다 작거나 너무 큰 경우
+            # next_reference_start 기반으로 실제 insert size 재계산
+            if tlen > max_frag_len or tlen < (read.query_length or 0):
+                # template_length 를 신뢰할 수 없으면 reference_end 사용
+                frag_start = read.reference_start
+                frag_end   = read.reference_end
+            else:
+                frag_start = read.reference_start
+                frag_end   = frag_start + tlen
         else:
             frag_start = read.reference_start
             frag_end   = read.reference_end
 
         frag_len = frag_end - frag_start
-        if frag_len <= 0:
+        if frag_len <= 0 or frag_len > max_frag_len:
             return None
 
         return cls(

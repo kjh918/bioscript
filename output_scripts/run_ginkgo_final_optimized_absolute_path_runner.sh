@@ -115,26 +115,11 @@ ${ProcessR} ${GinkgoHomeDir}/genomes/${Genome}/original ${WorkDir} ${R_Args_Base
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${ReclustR:-}" ]]; then
-  if [[ "${ReclustR}" == *.* ]]; then mkdir -p "$(dirname "${ReclustR}")"; else mkdir -p "${ReclustR}"; fi
-fi
-if [[ -n "${GinkgoHomeDir:-}" ]]; then
-  if [[ "${GinkgoHomeDir}" == *.* ]]; then mkdir -p "$(dirname "${GinkgoHomeDir}")"; else mkdir -p "${GinkgoHomeDir}"; fi
-fi
-if [[ -n "${WorkDir:-}" ]]; then
-  if [[ "${WorkDir}" == *.* ]]; then mkdir -p "$(dirname "${WorkDir}")"; else mkdir -p "${WorkDir}"; fi
-fi
-if [[ -n "${NormalDir:-}" ]]; then
-  if [[ "${NormalDir}" == *.* ]]; then mkdir -p "$(dirname "${NormalDir}")"; else mkdir -p "${NormalDir}"; fi
-fi
-if [[ -n "${BinFile:-}" ]]; then
-  if [[ "${BinFile}" == *.* ]]; then mkdir -p "$(dirname "${BinFile}")"; else mkdir -p "${BinFile}"; fi
-fi
 if [[ -n "${CNVCaller:-}" ]]; then
   if [[ "${CNVCaller}" == *.* ]]; then mkdir -p "$(dirname "${CNVCaller}")"; else mkdir -p "${CNVCaller}"; fi
 fi
-if [[ -n "${BamToBedDir:-}" ]]; then
-  if [[ "${BamToBedDir}" == *.* ]]; then mkdir -p "$(dirname "${BamToBedDir}")"; else mkdir -p "${BamToBedDir}"; fi
+if [[ -n "${BinCount:-}" ]]; then
+  if [[ "${BinCount}" == *.* ]]; then mkdir -p "$(dirname "${BinCount}")"; else mkdir -p "${BinCount}"; fi
 fi
 if [[ -n "${ProcessR:-}" ]]; then
   if [[ "${ProcessR}" == *.* ]]; then mkdir -p "$(dirname "${ProcessR}")"; else mkdir -p "${ProcessR}"; fi
@@ -142,14 +127,29 @@ fi
 if [[ -n "${BinMeth:-}" ]]; then
   if [[ "${BinMeth}" == *.* ]]; then mkdir -p "$(dirname "${BinMeth}")"; else mkdir -p "${BinMeth}"; fi
 fi
+if [[ -n "${ResultBaseDir:-}" ]]; then
+  if [[ "${ResultBaseDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultBaseDir}")"; else mkdir -p "${ResultBaseDir}"; fi
+fi
+if [[ -n "${ReclustR:-}" ]]; then
+  if [[ "${ReclustR}" == *.* ]]; then mkdir -p "$(dirname "${ReclustR}")"; else mkdir -p "${ReclustR}"; fi
+fi
+if [[ -n "${NormalDir:-}" ]]; then
+  if [[ "${NormalDir}" == *.* ]]; then mkdir -p "$(dirname "${NormalDir}")"; else mkdir -p "${NormalDir}"; fi
+fi
+if [[ -n "${BamToBedDir:-}" ]]; then
+  if [[ "${BamToBedDir}" == *.* ]]; then mkdir -p "$(dirname "${BamToBedDir}")"; else mkdir -p "${BamToBedDir}"; fi
+fi
+if [[ -n "${WorkDir:-}" ]]; then
+  if [[ "${WorkDir}" == *.* ]]; then mkdir -p "$(dirname "${WorkDir}")"; else mkdir -p "${WorkDir}"; fi
+fi
+if [[ -n "${GinkgoHomeDir:-}" ]]; then
+  if [[ "${GinkgoHomeDir}" == *.* ]]; then mkdir -p "$(dirname "${GinkgoHomeDir}")"; else mkdir -p "${GinkgoHomeDir}"; fi
+fi
 if [[ -n "${BinUnsorted:-}" ]]; then
   if [[ "${BinUnsorted}" == *.* ]]; then mkdir -p "$(dirname "${BinUnsorted}")"; else mkdir -p "${BinUnsorted}"; fi
 fi
-if [[ -n "${BinCount:-}" ]]; then
-  if [[ "${BinCount}" == *.* ]]; then mkdir -p "$(dirname "${BinCount}")"; else mkdir -p "${BinCount}"; fi
-fi
-if [[ -n "${ResultBaseDir:-}" ]]; then
-  if [[ "${ResultBaseDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultBaseDir}")"; else mkdir -p "${ResultBaseDir}"; fi
+if [[ -n "${BinFile:-}" ]]; then
+  if [[ "${BinFile}" == *.* ]]; then mkdir -p "$(dirname "${BinFile}")"; else mkdir -p "${BinFile}"; fi
 fi
 
 eval "$cmd"

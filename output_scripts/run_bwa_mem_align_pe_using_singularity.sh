@@ -112,14 +112,14 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${bwa_bin} mem  ${mark_short_spli
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${primary_bam:-}" ]]; then
-  if [[ "${primary_bam}" == *.* ]]; then mkdir -p "$(dirname "${primary_bam}")"; else mkdir -p "${primary_bam}"; fi
-fi
 if [[ -n "${TrimFastqDir:-}" ]]; then
   if [[ "${TrimFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${TrimFastqDir}")"; else mkdir -p "${TrimFastqDir}"; fi
 fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${primary_bam:-}" ]]; then
+  if [[ "${primary_bam}" == *.* ]]; then mkdir -p "$(dirname "${primary_bam}")"; else mkdir -p "${primary_bam}"; fi
 fi
 
 eval "$cmd"

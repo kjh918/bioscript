@@ -61,20 +61,20 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if chr_map_stats:
         _tgt = os.path.dirname(chr_map_stats) if os.path.splitext(chr_map_stats)[1] else chr_map_stats
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if target_coverage:
         _tgt = os.path.dirname(target_coverage) if os.path.splitext(target_coverage)[1] else target_coverage
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if alfred_raw_tsv:
         _tgt = os.path.dirname(alfred_raw_tsv) if os.path.splitext(alfred_raw_tsv)[1] else alfred_raw_tsv
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if BamDir:
-        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

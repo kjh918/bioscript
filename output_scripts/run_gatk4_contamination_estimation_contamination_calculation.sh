@@ -93,17 +93,17 @@ cmd="${singularity_bin} exec -B ${bind} ${gatk4_sif} gatk GetPileupSummaries --j
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
-fi
-if [[ -n "${pileup_table:-}" ]]; then
-  if [[ "${pileup_table}" == *.* ]]; then mkdir -p "$(dirname "${pileup_table}")"; else mkdir -p "${pileup_table}"; fi
 fi
 if [[ -n "${contamination_table:-}" ]]; then
   if [[ "${contamination_table}" == *.* ]]; then mkdir -p "$(dirname "${contamination_table}")"; else mkdir -p "${contamination_table}"; fi
 fi
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+if [[ -n "${pileup_table:-}" ]]; then
+  if [[ "${pileup_table}" == *.* ]]; then mkdir -p "$(dirname "${pileup_table}")"; else mkdir -p "${pileup_table}"; fi
 fi
 
 eval "$cmd"

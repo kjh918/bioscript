@@ -99,26 +99,26 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${mosdepth_bin} --threads ${Threa
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${global_dist_txt:-}" ]]; then
-  if [[ "${global_dist_txt}" == *.* ]]; then mkdir -p "$(dirname "${global_dist_txt}")"; else mkdir -p "${global_dist_txt}"; fi
-fi
 if [[ -n "${regions_bed_gz:-}" ]]; then
   if [[ "${regions_bed_gz}" == *.* ]]; then mkdir -p "$(dirname "${regions_bed_gz}")"; else mkdir -p "${regions_bed_gz}"; fi
 fi
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+if [[ -n "${global_dist_txt:-}" ]]; then
+  if [[ "${global_dist_txt}" == *.* ]]; then mkdir -p "$(dirname "${global_dist_txt}")"; else mkdir -p "${global_dist_txt}"; fi
+fi
+if [[ -n "${prefix:-}" ]]; then
+  if [[ "${prefix}" == *.* ]]; then mkdir -p "$(dirname "${prefix}")"; else mkdir -p "${prefix}"; fi
 fi
 if [[ -n "${summary_txt:-}" ]]; then
   if [[ "${summary_txt}" == *.* ]]; then mkdir -p "$(dirname "${summary_txt}")"; else mkdir -p "${summary_txt}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
 if [[ -n "${regions_bed_gz_csi:-}" ]]; then
   if [[ "${regions_bed_gz_csi}" == *.* ]]; then mkdir -p "$(dirname "${regions_bed_gz_csi}")"; else mkdir -p "${regions_bed_gz_csi}"; fi
 fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
-fi
-if [[ -n "${prefix:-}" ]]; then
-  if [[ "${prefix}" == *.* ]]; then mkdir -p "$(dirname "${prefix}")"; else mkdir -p "${prefix}"; fi
 fi
 
 eval "$cmd"

@@ -117,20 +117,20 @@ echo -e "\\n[RUNNING]\\n$cmd\\n"
 if [[ -n "${mutect_stats:-}" ]]; then
   if [[ "${mutect_stats}" == *.* ]]; then mkdir -p "$(dirname "${mutect_stats}")"; else mkdir -p "${mutect_stats}"; fi
 fi
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
-fi
-if [[ -n "${f1r2_tar_gz:-}" ]]; then
-  if [[ "${f1r2_tar_gz}" == *.* ]]; then mkdir -p "$(dirname "${f1r2_tar_gz}")"; else mkdir -p "${f1r2_tar_gz}"; fi
-fi
-if [[ -n "${vcfDir:-}" ]]; then
-  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
-fi
 if [[ -n "${raw_vcf:-}" ]]; then
   if [[ "${raw_vcf}" == *.* ]]; then mkdir -p "$(dirname "${raw_vcf}")"; else mkdir -p "${raw_vcf}"; fi
 fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${f1r2_tar_gz:-}" ]]; then
+  if [[ "${f1r2_tar_gz}" == *.* ]]; then mkdir -p "$(dirname "${f1r2_tar_gz}")"; else mkdir -p "${f1r2_tar_gz}"; fi
 fi
 
 eval "$cmd"

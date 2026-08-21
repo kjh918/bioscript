@@ -65,17 +65,17 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if raw_vcf:
-        _tgt = os.path.dirname(raw_vcf) if os.path.splitext(raw_vcf)[1] else raw_vcf
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if BamDir:
-        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if ResultDir:
         _tgt = os.path.dirname(ResultDir) if os.path.splitext(ResultDir)[1] else ResultDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if ann_vcf:
         _tgt = os.path.dirname(ann_vcf) if os.path.splitext(ann_vcf)[1] else ann_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if raw_vcf:
+        _tgt = os.path.dirname(raw_vcf) if os.path.splitext(raw_vcf)[1] else raw_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

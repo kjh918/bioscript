@@ -88,20 +88,20 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${fastq_screen_bin} --aligner ${a
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
 if [[ -n "${screen_html:-}" ]]; then
   if [[ "${screen_html}" == *.* ]]; then mkdir -p "$(dirname "${screen_html}")"; else mkdir -p "${screen_html}"; fi
-fi
-if [[ -n "${screen_txt:-}" ]]; then
-  if [[ "${screen_txt}" == *.* ]]; then mkdir -p "$(dirname "${screen_txt}")"; else mkdir -p "${screen_txt}"; fi
 fi
 if [[ -n "${screen_png:-}" ]]; then
   if [[ "${screen_png}" == *.* ]]; then mkdir -p "$(dirname "${screen_png}")"; else mkdir -p "${screen_png}"; fi
 fi
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
-fi
 if [[ -n "${RawFastqDir:-}" ]]; then
   if [[ "${RawFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${RawFastqDir}")"; else mkdir -p "${RawFastqDir}"; fi
+fi
+if [[ -n "${screen_txt:-}" ]]; then
+  if [[ "${screen_txt}" == *.* ]]; then mkdir -p "$(dirname "${screen_txt}")"; else mkdir -p "${screen_txt}"; fi
 fi
 
 eval "$cmd"

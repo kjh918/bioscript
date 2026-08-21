@@ -82,17 +82,17 @@ cmd="${singularity_bin} exec -B ${bind}  ${extra_args}"
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${InputFileDir:-}" ]]; then
-  if [[ "${InputFileDir}" == *.* ]]; then mkdir -p "$(dirname "${InputFileDir}")"; else mkdir -p "${InputFileDir}"; fi
-fi
-if [[ -n "${OutputDir:-}" ]]; then
-  if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
-fi
 if [[ -n "${OutputSummary:-}" ]]; then
   if [[ "${OutputSummary}" == *.* ]]; then mkdir -p "$(dirname "${OutputSummary}")"; else mkdir -p "${OutputSummary}"; fi
 fi
 if [[ -n "${qcResDir:-}" ]]; then
   if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${InputFileDir:-}" ]]; then
+  if [[ "${InputFileDir}" == *.* ]]; then mkdir -p "$(dirname "${InputFileDir}")"; else mkdir -p "${InputFileDir}"; fi
+fi
+if [[ -n "${OutputDir:-}" ]]; then
+  if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
 fi
 
 eval "$cmd"

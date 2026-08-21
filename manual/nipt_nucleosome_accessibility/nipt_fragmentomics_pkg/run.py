@@ -6,7 +6,7 @@ run.py — nipt_fragmentomics CLI entry point.
 # 기본 (CNV + FF)
 python -m run --bam sample.bam --out-dir ./results/SID001
 
-# marker 통계 포함
+# 전체 옵션
 python -m run \\
     --bam        sample.bam \\
     --out-dir    ./results/SID001 \\
@@ -46,13 +46,12 @@ def _build_parser() -> argparse.ArgumentParser:
     ref.add_argument("--vcf",    default=None,
                      help="Population SNP VCF (BAF 계산용, .tbi 필요)")
 
-    bp = p.add_argument_group("Bin 파라미터")
-    bp.add_argument("--bin-size",     dest="bin_size",     type=int, default=100_000,
+    bp = p.add_argument_group("Bin / WPS 파라미터")
+    bp.add_argument("--bin-size", dest="bin_size", type=int, default=100_000,
                     help="CNV용 bin 크기 (bp)")
-    bp.add_argument("--wps-bin-size", dest="wps_bin_size", type=int, default=1_000,
-                    help="Genome-wide WPS bin 크기 (bp, 기본 1kb)")
-    bp.add_argument("--min-mapq",  dest="min_mapq",  type=int, default=20)
-    bp.add_argument("--min-baseq", dest="min_baseq", type=int, default=20)
+    bp.add_argument("--wps-win",  dest="wps_win",  type=int, default=1_000,
+                    help="WPS adjusted normalization windowMedian 크기 (bp, 기본 1kb)")
+    bp.add_argument("--min-mapq", dest="min_mapq", type=int, default=20)
     bp.add_argument("--min-mappability", dest="min_mappability",
                     type=float, default=0.75)
 
@@ -115,9 +114,8 @@ def main() -> None:
         bw_path         = args.bw,
         vcf_path        = args.vcf,
         bin_size        = args.bin_size,
-        wps_bin_size    = args.wps_bin_size,
+        wps_win         = args.wps_win,
         min_mapq        = args.min_mapq,
-        min_baseq       = args.min_baseq,
         min_mappability = args.min_mappability,
         zscore_gain     = args.zscore_gain,
         zscore_loss     = args.zscore_loss,

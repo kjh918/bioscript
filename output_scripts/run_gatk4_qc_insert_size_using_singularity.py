@@ -61,17 +61,17 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if insert_size_hist_pdf:
-        _tgt = os.path.dirname(insert_size_hist_pdf) if os.path.splitext(insert_size_hist_pdf)[1] else insert_size_hist_pdf
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if insert_size_metrics_txt:
         _tgt = os.path.dirname(insert_size_metrics_txt) if os.path.splitext(insert_size_metrics_txt)[1] else insert_size_metrics_txt
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if BamDir:
-        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if insert_size_hist_pdf:
+        _tgt = os.path.dirname(insert_size_hist_pdf) if os.path.splitext(insert_size_hist_pdf)[1] else insert_size_hist_pdf
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

@@ -99,26 +99,26 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if primary_bai:
-        _tgt = os.path.dirname(primary_bai) if os.path.splitext(primary_bai)[1] else primary_bai
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if primary_bam:
-        _tgt = os.path.dirname(primary_bam) if os.path.splitext(primary_bam)[1] else primary_bam
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if TmpDir:
-        _tgt = os.path.dirname(TmpDir) if os.path.splitext(TmpDir)[1] else TmpDir
+    if TrimFastqDir:
+        _tgt = os.path.dirname(TrimFastqDir) if os.path.splitext(TrimFastqDir)[1] else TrimFastqDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if aligned_sam:
         _tgt = os.path.dirname(aligned_sam) if os.path.splitext(aligned_sam)[1] else aligned_sam
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if TrimFastqDir:
-        _tgt = os.path.dirname(TrimFastqDir) if os.path.splitext(TrimFastqDir)[1] else TrimFastqDir
+    if TmpDir:
+        _tgt = os.path.dirname(TmpDir) if os.path.splitext(TmpDir)[1] else TmpDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if unmapped_bam:
-        _tgt = os.path.dirname(unmapped_bam) if os.path.splitext(unmapped_bam)[1] else unmapped_bam
+    if primary_bam:
+        _tgt = os.path.dirname(primary_bam) if os.path.splitext(primary_bam)[1] else primary_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if primary_bai:
+        _tgt = os.path.dirname(primary_bai) if os.path.splitext(primary_bai)[1] else primary_bai
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if unmapped_bam:
+        _tgt = os.path.dirname(unmapped_bam) if os.path.splitext(unmapped_bam)[1] else unmapped_bam
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

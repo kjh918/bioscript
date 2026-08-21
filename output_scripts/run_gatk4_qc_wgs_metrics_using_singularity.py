@@ -60,11 +60,11 @@ def main():
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if wgs_metrics_txt:
-        _tgt = os.path.dirname(wgs_metrics_txt) if os.path.splitext(wgs_metrics_txt)[1] else wgs_metrics_txt
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if qcResDir:
         _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if wgs_metrics_txt:
+        _tgt = os.path.dirname(wgs_metrics_txt) if os.path.splitext(wgs_metrics_txt)[1] else wgs_metrics_txt
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

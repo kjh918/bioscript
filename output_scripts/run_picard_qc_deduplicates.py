@@ -57,20 +57,20 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if out_bam:
-        _tgt = os.path.dirname(out_bam) if os.path.splitext(out_bam)[1] else out_bam
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if TmpDir:
-        _tgt = os.path.dirname(TmpDir) if os.path.splitext(TmpDir)[1] else TmpDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if metrics:
         _tgt = os.path.dirname(metrics) if os.path.splitext(metrics)[1] else metrics
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if out_bam:
+        _tgt = os.path.dirname(out_bam) if os.path.splitext(out_bam)[1] else out_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if TmpDir:
+        _tgt = os.path.dirname(TmpDir) if os.path.splitext(TmpDir)[1] else TmpDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

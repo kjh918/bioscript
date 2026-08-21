@@ -69,11 +69,11 @@ def main():
     if gc_bias_chart_pdf:
         _tgt = os.path.dirname(gc_bias_chart_pdf) if os.path.splitext(gc_bias_chart_pdf)[1] else gc_bias_chart_pdf
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if gc_bias_summary_txt:
-        _tgt = os.path.dirname(gc_bias_summary_txt) if os.path.splitext(gc_bias_summary_txt)[1] else gc_bias_summary_txt
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if gc_bias_metrics_txt:
         _tgt = os.path.dirname(gc_bias_metrics_txt) if os.path.splitext(gc_bias_metrics_txt)[1] else gc_bias_metrics_txt
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if gc_bias_summary_txt:
+        _tgt = os.path.dirname(gc_bias_summary_txt) if os.path.splitext(gc_bias_summary_txt)[1] else gc_bias_summary_txt
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

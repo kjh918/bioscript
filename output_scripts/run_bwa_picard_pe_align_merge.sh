@@ -146,26 +146,26 @@ cmd="${java_bin} -XX:ParallelGCThreads=${Threads} -Xmx${xmx_mb}m -jar ${picard_j
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${primary_bai:-}" ]]; then
-  if [[ "${primary_bai}" == *.* ]]; then mkdir -p "$(dirname "${primary_bai}")"; else mkdir -p "${primary_bai}"; fi
-fi
-if [[ -n "${primary_bam:-}" ]]; then
-  if [[ "${primary_bam}" == *.* ]]; then mkdir -p "$(dirname "${primary_bam}")"; else mkdir -p "${primary_bam}"; fi
-fi
-if [[ -n "${TmpDir:-}" ]]; then
-  if [[ "${TmpDir}" == *.* ]]; then mkdir -p "$(dirname "${TmpDir}")"; else mkdir -p "${TmpDir}"; fi
+if [[ -n "${TrimFastqDir:-}" ]]; then
+  if [[ "${TrimFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${TrimFastqDir}")"; else mkdir -p "${TrimFastqDir}"; fi
 fi
 if [[ -n "${aligned_sam:-}" ]]; then
   if [[ "${aligned_sam}" == *.* ]]; then mkdir -p "$(dirname "${aligned_sam}")"; else mkdir -p "${aligned_sam}"; fi
 fi
-if [[ -n "${TrimFastqDir:-}" ]]; then
-  if [[ "${TrimFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${TrimFastqDir}")"; else mkdir -p "${TrimFastqDir}"; fi
+if [[ -n "${TmpDir:-}" ]]; then
+  if [[ "${TmpDir}" == *.* ]]; then mkdir -p "$(dirname "${TmpDir}")"; else mkdir -p "${TmpDir}"; fi
 fi
-if [[ -n "${unmapped_bam:-}" ]]; then
-  if [[ "${unmapped_bam}" == *.* ]]; then mkdir -p "$(dirname "${unmapped_bam}")"; else mkdir -p "${unmapped_bam}"; fi
+if [[ -n "${primary_bam:-}" ]]; then
+  if [[ "${primary_bam}" == *.* ]]; then mkdir -p "$(dirname "${primary_bam}")"; else mkdir -p "${primary_bam}"; fi
+fi
+if [[ -n "${primary_bai:-}" ]]; then
+  if [[ "${primary_bai}" == *.* ]]; then mkdir -p "$(dirname "${primary_bai}")"; else mkdir -p "${primary_bai}"; fi
 fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${unmapped_bam:-}" ]]; then
+  if [[ "${unmapped_bam}" == *.* ]]; then mkdir -p "$(dirname "${unmapped_bam}")"; else mkdir -p "${unmapped_bam}"; fi
 fi
 
 eval "$cmd"

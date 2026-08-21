@@ -29,12 +29,14 @@ GC_CLIP         = 0.35
 # SeqFF 선형 계수 (Larsen et al. 2017 근사 — 검증 후 교체)
 SEQFF_ALPHA:          float = -0.186
 SEQFF_BETA:           float =  1.658
-Y_MALE_THRESHOLD:     float =  0.002   # chrY / autosome median > 이면 남아
+Y_MALE_THRESHOLD:     float =  1.10e-4   # ChrY% = Y_reads/total_reads 기준
+                                          # FMY hotspot 제거 후 최적값
+                                          # Kim et al. AUC=0.996, 민감도 99.53%
 
 # ── CNV 판정 ────────────────────────────────────────────────────────
 ZSCORE_GAIN:    float =  3.0
 ZSCORE_LOSS:    float = -3.0
-SEG_MIN_BINS:   int   =  3
+SEG_MIN_BINS:   int   =  4
 SEG_ALPHA:      float =  0.01
 
 # ── 출력 파일명 ──────────────────────────────────────────────────────
@@ -43,8 +45,6 @@ FNAME = {
     "bins_corrected": "bins_corrected.parquet",
     "marker_stats":   "marker_stats.parquet",
     "fetal_fraction": "fetal_fraction.json",
-    "bins_wps_raw":   "bins_wps_raw.parquet",
-    "bins_wps_norm":  "bins_wps_norm.parquet",
     "bins_baf":       "bins_baf.parquet",
     "cnv_calls":      "cnv_calls.parquet",
     "cnv_baf":        "cnv_baf.parquet",

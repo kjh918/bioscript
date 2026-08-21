@@ -92,7 +92,6 @@ def run(
     """bins_raw.parquet → bins_corrected.parquet"""
     df = pd.read_parquet(raw_path)
     log.info("bins_raw 로드: %d rows", len(df))
-
     gc = df["gc"].values.astype(np.float64)
     mp = df["mappability"].fillna(np.nan).values.astype(np.float64)
 

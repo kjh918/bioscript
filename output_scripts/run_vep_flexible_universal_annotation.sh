@@ -118,20 +118,20 @@ cmd="${singularity_bin} exec -B ${bind} ${vep_sif} vep --force_overwrite --offli
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${vepPluginDir:-}" ]]; then
-  if [[ "${vepPluginDir}" == *.* ]]; then mkdir -p "$(dirname "${vepPluginDir}")"; else mkdir -p "${vepPluginDir}"; fi
-fi
-if [[ -n "${vep_vcf:-}" ]]; then
-  if [[ "${vep_vcf}" == *.* ]]; then mkdir -p "$(dirname "${vep_vcf}")"; else mkdir -p "${vep_vcf}"; fi
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
 fi
 if [[ -n "${vep_stats:-}" ]]; then
   if [[ "${vep_stats}" == *.* ]]; then mkdir -p "$(dirname "${vep_stats}")"; else mkdir -p "${vep_stats}"; fi
 fi
-if [[ -n "${vcfDir:-}" ]]; then
-  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
-fi
 if [[ -n "${vepCacheDir:-}" ]]; then
   if [[ "${vepCacheDir}" == *.* ]]; then mkdir -p "$(dirname "${vepCacheDir}")"; else mkdir -p "${vepCacheDir}"; fi
+fi
+if [[ -n "${vep_vcf:-}" ]]; then
+  if [[ "${vep_vcf}" == *.* ]]; then mkdir -p "$(dirname "${vep_vcf}")"; else mkdir -p "${vep_vcf}"; fi
+fi
+if [[ -n "${vepPluginDir:-}" ]]; then
+  if [[ "${vepPluginDir}" == *.* ]]; then mkdir -p "$(dirname "${vepPluginDir}")"; else mkdir -p "${vepPluginDir}"; fi
 fi
 
 eval "$cmd"

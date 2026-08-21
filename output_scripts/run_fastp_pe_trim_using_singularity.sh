@@ -96,26 +96,26 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${fastp_bin} --thread ${Threads} 
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
+if [[ -n "${RawFastqDir:-}" ]]; then
+  if [[ "${RawFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${RawFastqDir}")"; else mkdir -p "${RawFastqDir}"; fi
+fi
 if [[ -n "${html:-}" ]]; then
   if [[ "${html}" == *.* ]]; then mkdir -p "$(dirname "${html}")"; else mkdir -p "${html}"; fi
-fi
-if [[ -n "${out_read1:-}" ]]; then
-  if [[ "${out_read1}" == *.* ]]; then mkdir -p "$(dirname "${out_read1}")"; else mkdir -p "${out_read1}"; fi
 fi
 if [[ -n "${qcResDir:-}" ]]; then
   if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
-if [[ -n "${json:-}" ]]; then
-  if [[ "${json}" == *.* ]]; then mkdir -p "$(dirname "${json}")"; else mkdir -p "${json}"; fi
+if [[ -n "${out_read1:-}" ]]; then
+  if [[ "${out_read1}" == *.* ]]; then mkdir -p "$(dirname "${out_read1}")"; else mkdir -p "${out_read1}"; fi
+fi
+if [[ -n "${TrimFastqDir:-}" ]]; then
+  if [[ "${TrimFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${TrimFastqDir}")"; else mkdir -p "${TrimFastqDir}"; fi
 fi
 if [[ -n "${out_read2:-}" ]]; then
   if [[ "${out_read2}" == *.* ]]; then mkdir -p "$(dirname "${out_read2}")"; else mkdir -p "${out_read2}"; fi
 fi
-if [[ -n "${RawFastqDir:-}" ]]; then
-  if [[ "${RawFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${RawFastqDir}")"; else mkdir -p "${RawFastqDir}"; fi
-fi
-if [[ -n "${TrimFastqDir:-}" ]]; then
-  if [[ "${TrimFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${TrimFastqDir}")"; else mkdir -p "${TrimFastqDir}"; fi
+if [[ -n "${json:-}" ]]; then
+  if [[ "${json}" == *.* ]]; then mkdir -p "$(dirname "${json}")"; else mkdir -p "${json}"; fi
 fi
 
 eval "$cmd"

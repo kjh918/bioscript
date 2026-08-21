@@ -77,20 +77,20 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if vepPluginDir:
-        _tgt = os.path.dirname(vepPluginDir) if os.path.splitext(vepPluginDir)[1] else vepPluginDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if vep_vcf:
-        _tgt = os.path.dirname(vep_vcf) if os.path.splitext(vep_vcf)[1] else vep_vcf
+    if vcfDir:
+        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if vep_stats:
         _tgt = os.path.dirname(vep_stats) if os.path.splitext(vep_stats)[1] else vep_stats
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if vcfDir:
-        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if vepCacheDir:
         _tgt = os.path.dirname(vepCacheDir) if os.path.splitext(vepCacheDir)[1] else vepCacheDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vep_vcf:
+        _tgt = os.path.dirname(vep_vcf) if os.path.splitext(vep_vcf)[1] else vep_vcf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vepPluginDir:
+        _tgt = os.path.dirname(vepPluginDir) if os.path.splitext(vepPluginDir)[1] else vepPluginDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

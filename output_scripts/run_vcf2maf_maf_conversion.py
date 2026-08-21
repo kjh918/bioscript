@@ -55,11 +55,11 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if vcfDir:
-        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if output_maf:
         _tgt = os.path.dirname(output_maf) if os.path.splitext(output_maf)[1] else output_maf
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vcfDir:
+        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

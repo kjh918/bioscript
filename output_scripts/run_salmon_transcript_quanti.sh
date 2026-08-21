@@ -83,11 +83,11 @@ cmd="${samlon_bin} quant -t ${SalmonIndex} --threads ${Threads} --libType ${libT
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${quant_log:-}" ]]; then
-  if [[ "${quant_log}" == *.* ]]; then mkdir -p "$(dirname "${quant_log}")"; else mkdir -p "${quant_log}"; fi
-fi
 if [[ -n "${OutputDir:-}" ]]; then
   if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
+fi
+if [[ -n "${lib_format:-}" ]]; then
+  if [[ "${lib_format}" == *.* ]]; then mkdir -p "$(dirname "${lib_format}")"; else mkdir -p "${lib_format}"; fi
 fi
 if [[ -n "${quant_sf:-}" ]]; then
   if [[ "${quant_sf}" == *.* ]]; then mkdir -p "$(dirname "${quant_sf}")"; else mkdir -p "${quant_sf}"; fi
@@ -95,8 +95,8 @@ fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
-if [[ -n "${lib_format:-}" ]]; then
-  if [[ "${lib_format}" == *.* ]]; then mkdir -p "$(dirname "${lib_format}")"; else mkdir -p "${lib_format}"; fi
+if [[ -n "${quant_log:-}" ]]; then
+  if [[ "${quant_log}" == *.* ]]; then mkdir -p "$(dirname "${quant_log}")"; else mkdir -p "${quant_log}"; fi
 fi
 
 eval "$cmd"

@@ -1,0 +1,125 @@
+#!/bin/bash
+# [METADATA]
+# TOOL_NAME = FastQC
+# VERSION = 0.12.1
+# THREADS = 8
+
+# Tool Info: FastQC (0.12.1)
+# Profile: Paired-End QC and Extract
+
+usage() {
+    echo "Usage: $0 [options]"
+    echo ""
+    echo "Required Inputs:"
+    echo "  --SeqID           Sequence identifier used to locate FASTQ files"
+    echo "  --RawFastqDir     Directory containing raw or trimmed FASTQ files"
+    echo "  --qcResDir        Directory where FastQC reports will be saved"
+    echo ""
+    echo "Optional Parameters:"
+    echo "  --r1_html         Quality report for Read 1 in HTML (Default: [qcResDir]/[SeqID]_R1_fastqc.html)"
+    echo "  --r2_html         Quality report for Read 2 in HTML (Default: [qcResDir]/[SeqID]_R2_fastqc.html)"
+    echo "  --r1_zip          Data zip file for Read 1 (Default: [qcResDir]/[SeqID]_R1_fastqc.zip)"
+    echo "  --r2_zip          Data zip file for Read 2 (Default: [qcResDir]/[SeqID]_R2_fastqc.zip)"
+    echo "  --r1_dir          Extracted report directory for Read 1 (Default: [qcResDir]/[SeqID]_R1_fastqc)"
+    echo "  --r2_dir          Extracted report directory for Read 2 (Default: [qcResDir]/[SeqID]_R2_fastqc)"
+    echo "  --InputSuffix     FASTQ file extension (e.g., .fastq.gz, .fq.gz) (Default: .fastq.gz)"
+    echo "  --singularity_bin Path to singularity executable (Default: singularity)"
+    echo "  --fastqc_bin      FastQC binary name inside container (Default: fastqc)"
+    echo "  --sif             Path to FastQC SIF image (Default: /storage/images/fastqc-0.12.1.sif)"
+    echo "  --bind            Mount paths for singularity exec (Default: /storage,/data)"
+    echo "  --Threads         Number of threads (FastQC processes files in parallel) (Default: 8)"
+    echo "  --fastqc_args     Additional FastQC flags (e.g., --extract, --nogroup) (Default: --extract)"
+    echo "  -h, --help       Show this help message"
+    exit 1
+}
+
+# --- [Default Variable Declarations] ---
+# YAML의 기본값들이 이곳에 Key="Value" 형태로 정의됩니다.
+SeqID=""
+RawFastqDir=""
+qcResDir=""
+r1_html="[qcResDir]/[SeqID]_R1_fastqc.html"
+r2_html="[qcResDir]/[SeqID]_R2_fastqc.html"
+r1_zip="[qcResDir]/[SeqID]_R1_fastqc.zip"
+r2_zip="[qcResDir]/[SeqID]_R2_fastqc.zip"
+r1_dir="[qcResDir]/[SeqID]_R1_fastqc"
+r2_dir="[qcResDir]/[SeqID]_R2_fastqc"
+InputSuffix=".fastq.gz"
+singularity_bin="singularity"
+fastqc_bin="fastqc"
+sif="/storage/images/fastqc-0.12.1.sif"
+bind="/storage,/data"
+Threads="8"
+fastqc_args="--extract"
+
+# --- [Argument Parsing] ---
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --SeqID) SeqID="$2"; shift 2 ;;
+        --RawFastqDir) RawFastqDir="$2"; shift 2 ;;
+        --qcResDir) qcResDir="$2"; shift 2 ;;
+        --r1_html) r1_html="$2"; shift 2 ;;
+        --r2_html) r2_html="$2"; shift 2 ;;
+        --r1_zip) r1_zip="$2"; shift 2 ;;
+        --r2_zip) r2_zip="$2"; shift 2 ;;
+        --r1_dir) r1_dir="$2"; shift 2 ;;
+        --r2_dir) r2_dir="$2"; shift 2 ;;
+        --InputSuffix) InputSuffix="$2"; shift 2 ;;
+        --singularity_bin) singularity_bin="$2"; shift 2 ;;
+        --fastqc_bin) fastqc_bin="$2"; shift 2 ;;
+        --sif) sif="$2"; shift 2 ;;
+        --bind) bind="$2"; shift 2 ;;
+        --Threads) Threads="$2"; shift 2 ;;
+        --fastqc_args) fastqc_args="$2"; shift 2 ;;
+        -h|--help) usage ;;
+        *) echo "Unknown argument: $1"; usage ;;
+    esac
+done
+
+# --- [Validation] ---
+# 필수 입력값(required: true)이 비어있는지 체크합니다.
+if [[ -z "${SeqID:-}" ]]; then echo "Error: --SeqID is required"; usage; fi
+if [[ -z "${RawFastqDir:-}" ]]; then echo "Error: --RawFastqDir is required"; usage; fi
+if [[ -z "${qcResDir:-}" ]]; then echo "Error: --qcResDir is required"; usage; fi
+
+# --- [Output Paths] ---
+r1_html="${qcResDir}/${SeqID}_R1_fastqc.html"
+r2_html="${qcResDir}/${SeqID}_R2_fastqc.html"
+r1_zip="${qcResDir}/${SeqID}_R1_fastqc.zip"
+r2_zip="${qcResDir}/${SeqID}_R2_fastqc.zip"
+r1_dir="${qcResDir}/${SeqID}_R1_fastqc"
+r2_dir="${qcResDir}/${SeqID}_R2_fastqc"
+
+# --- [Command Execution] ---
+# [Key]가 $Key 형태로 치환된 최종 커맨드입니다.
+cmd="${singularity_bin} exec -B ${bind} ${sif} ${fastqc_bin} ${fastqc_args} --threads ${Threads} --outdir ${qcResDir} ${RawFastqDir}/${SeqID}_R1${InputSuffix} ${RawFastqDir}/${SeqID}_R2${InputSuffix}"
+
+echo -e "\\n[RUNNING]\\n$cmd\\n"
+
+# 자동 디렉토리 생성
+if [[ -n "${r2_html:-}" ]]; then
+  if [[ "${r2_html}" == *.* ]]; then mkdir -p "$(dirname "${r2_html}")"; else mkdir -p "${r2_html}"; fi
+fi
+if [[ -n "${r2_zip:-}" ]]; then
+  if [[ "${r2_zip}" == *.* ]]; then mkdir -p "$(dirname "${r2_zip}")"; else mkdir -p "${r2_zip}"; fi
+fi
+if [[ -n "${r1_zip:-}" ]]; then
+  if [[ "${r1_zip}" == *.* ]]; then mkdir -p "$(dirname "${r1_zip}")"; else mkdir -p "${r1_zip}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${r1_dir:-}" ]]; then
+  if [[ "${r1_dir}" == *.* ]]; then mkdir -p "$(dirname "${r1_dir}")"; else mkdir -p "${r1_dir}"; fi
+fi
+if [[ -n "${r2_dir:-}" ]]; then
+  if [[ "${r2_dir}" == *.* ]]; then mkdir -p "$(dirname "${r2_dir}")"; else mkdir -p "${r2_dir}"; fi
+fi
+if [[ -n "${RawFastqDir:-}" ]]; then
+  if [[ "${RawFastqDir}" == *.* ]]; then mkdir -p "$(dirname "${RawFastqDir}")"; else mkdir -p "${RawFastqDir}"; fi
+fi
+if [[ -n "${r1_html:-}" ]]; then
+  if [[ "${r1_html}" == *.* ]]; then mkdir -p "$(dirname "${r1_html}")"; else mkdir -p "${r1_html}"; fi
+fi
+
+eval "$cmd"

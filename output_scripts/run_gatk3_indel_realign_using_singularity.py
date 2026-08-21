@@ -69,17 +69,17 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if realigned_bam:
         _tgt = os.path.dirname(realigned_bam) if os.path.splitext(realigned_bam)[1] else realigned_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if target_intervals:
+        _tgt = os.path.dirname(target_intervals) if os.path.splitext(target_intervals)[1] else target_intervals
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if target_intervals:
-        _tgt = os.path.dirname(target_intervals) if os.path.splitext(target_intervals)[1] else target_intervals
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

@@ -59,11 +59,11 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if quant_log:
-        _tgt = os.path.dirname(quant_log) if os.path.splitext(quant_log)[1] else quant_log
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if OutputDir:
         _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if lib_format:
+        _tgt = os.path.dirname(lib_format) if os.path.splitext(lib_format)[1] else lib_format
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if quant_sf:
         _tgt = os.path.dirname(quant_sf) if os.path.splitext(quant_sf)[1] else quant_sf
@@ -71,8 +71,8 @@ def main():
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if lib_format:
-        _tgt = os.path.dirname(lib_format) if os.path.splitext(lib_format)[1] else lib_format
+    if quant_log:
+        _tgt = os.path.dirname(quant_log) if os.path.splitext(quant_log)[1] else quant_log
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

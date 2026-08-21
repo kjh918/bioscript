@@ -1,0 +1,26 @@
+binning:
+  bin_size: 100000          # 100kb
+  short_long_cutoff: 150    # bp 기준 short/long 분류
+  mapq_min: 30              # 최소 mapping quality
+  mappability_threshold: 0.9 # bin 평균 mappability 하한
+
+normalization:
+  excluded_chroms:          # Z-score reference에서 제외할 염색체
+    - chr15
+    - chr18
+    - chr21
+    - chrX
+    - chrY
+  gc_correction: true       # LOESS GC correction 여부
+  gc_loess_span: 0.3        # LOESS smoothing span
+
+cnv:
+  zscore_gain_threshold: 3.0
+  zscore_loss_threshold: -3.0
+  min_bins_per_chrom: 5          # 염색체 단위 call 최소 bin 수
+
+  # PELT region CNV (microdeletion/duplication)
+  min_region_size_mb: 1.0        # GAIN/LOSS report 최소 region 크기 (Mb)
+                                  # microdeletion: 1.0, 전체 aneuploidy: 10.0
+  pelt_penalty_multiplier: 2.0   # 높을수록 보수적 (changepoint 수 감소)
+                                  # 1.0=BIC, 2.0=보수적, 0.5=민감

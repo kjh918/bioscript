@@ -80,20 +80,20 @@ def main():
     if mutect_stats:
         _tgt = os.path.dirname(mutect_stats) if os.path.splitext(mutect_stats)[1] else mutect_stats
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if f1r2_tar_gz:
-        _tgt = os.path.dirname(f1r2_tar_gz) if os.path.splitext(f1r2_tar_gz)[1] else f1r2_tar_gz
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if vcfDir:
-        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if raw_vcf:
         _tgt = os.path.dirname(raw_vcf) if os.path.splitext(raw_vcf)[1] else raw_vcf
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if vcfDir:
+        _tgt = os.path.dirname(vcfDir) if os.path.splitext(vcfDir)[1] else vcfDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if f1r2_tar_gz:
+        _tgt = os.path.dirname(f1r2_tar_gz) if os.path.splitext(f1r2_tar_gz)[1] else f1r2_tar_gz
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

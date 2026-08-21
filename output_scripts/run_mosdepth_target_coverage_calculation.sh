@@ -99,20 +99,20 @@ echo -e "\\n[RUNNING]\\n$cmd\\n"
 if [[ -n "${qcResDir:-}" ]]; then
   if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
-if [[ -n "${region_dist:-}" ]]; then
-  if [[ "${region_dist}" == *.* ]]; then mkdir -p "$(dirname "${region_dist}")"; else mkdir -p "${region_dist}"; fi
-fi
 if [[ -n "${summary_txt:-}" ]]; then
   if [[ "${summary_txt}" == *.* ]]; then mkdir -p "$(dirname "${summary_txt}")"; else mkdir -p "${summary_txt}"; fi
 fi
-if [[ -n "${BamDir:-}" ]]; then
-  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+if [[ -n "${global_dist:-}" ]]; then
+  if [[ "${global_dist}" == *.* ]]; then mkdir -p "$(dirname "${global_dist}")"; else mkdir -p "${global_dist}"; fi
 fi
 if [[ -n "${regions_bed:-}" ]]; then
   if [[ "${regions_bed}" == *.* ]]; then mkdir -p "$(dirname "${regions_bed}")"; else mkdir -p "${regions_bed}"; fi
 fi
-if [[ -n "${global_dist:-}" ]]; then
-  if [[ "${global_dist}" == *.* ]]; then mkdir -p "$(dirname "${global_dist}")"; else mkdir -p "${global_dist}"; fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${region_dist:-}" ]]; then
+  if [[ "${region_dist}" == *.* ]]; then mkdir -p "$(dirname "${region_dist}")"; else mkdir -p "${region_dist}"; fi
 fi
 
 eval "$cmd"

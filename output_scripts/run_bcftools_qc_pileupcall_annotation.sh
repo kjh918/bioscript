@@ -98,17 +98,17 @@ cmd="${bcftools_bin} mpileup -f ${ReferenceFasta} -T ${SitesVcfGz} -r ${Chromoso
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${raw_vcf:-}" ]]; then
-  if [[ "${raw_vcf}" == *.* ]]; then mkdir -p "$(dirname "${raw_vcf}")"; else mkdir -p "${raw_vcf}"; fi
-fi
-if [[ -n "${BamDir:-}" ]]; then
-  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
-fi
 if [[ -n "${ResultDir:-}" ]]; then
   if [[ "${ResultDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultDir}")"; else mkdir -p "${ResultDir}"; fi
 fi
 if [[ -n "${ann_vcf:-}" ]]; then
   if [[ "${ann_vcf}" == *.* ]]; then mkdir -p "$(dirname "${ann_vcf}")"; else mkdir -p "${ann_vcf}"; fi
+fi
+if [[ -n "${raw_vcf:-}" ]]; then
+  if [[ "${raw_vcf}" == *.* ]]; then mkdir -p "$(dirname "${raw_vcf}")"; else mkdir -p "${raw_vcf}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
 
 eval "$cmd"

@@ -86,14 +86,14 @@ cmd="${singularity_bin} exec -B ${bind} ${sob_sif} ${sob_bin}  --input-type VCF 
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${bias_filtered_vcf:-}" ]]; then
-  if [[ "${bias_filtered_vcf}" == *.* ]]; then mkdir -p "$(dirname "${bias_filtered_vcf}")"; else mkdir -p "${bias_filtered_vcf}"; fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
 if [[ -n "${vcfDir:-}" ]]; then
   if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
 fi
-if [[ -n "${BamDir:-}" ]]; then
-  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+if [[ -n "${bias_filtered_vcf:-}" ]]; then
+  if [[ "${bias_filtered_vcf}" == *.* ]]; then mkdir -p "$(dirname "${bias_filtered_vcf}")"; else mkdir -p "${bias_filtered_vcf}"; fi
 fi
 
 eval "$cmd"

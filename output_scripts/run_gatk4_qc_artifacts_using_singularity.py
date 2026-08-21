@@ -55,14 +55,14 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if artifacts_txt:
         _tgt = os.path.dirname(artifacts_txt) if os.path.splitext(artifacts_txt)[1] else artifacts_txt
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

@@ -73,11 +73,11 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${multiqc_bin} ${mqc_args} --file
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
-fi
 if [[ -n "${report_html:-}" ]]; then
   if [[ "${report_html}" == *.* ]]; then mkdir -p "$(dirname "${report_html}")"; else mkdir -p "${report_html}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
 
 eval "$cmd"

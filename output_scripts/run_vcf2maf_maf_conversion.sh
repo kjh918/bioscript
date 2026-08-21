@@ -82,11 +82,11 @@ cmd="${singularity_bin} exec -B ${bind} ${vcf2maf_sif} ${vcf2maf_bin} --inhibit-
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${vcfDir:-}" ]]; then
-  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
-fi
 if [[ -n "${output_maf:-}" ]]; then
   if [[ "${output_maf}" == *.* ]]; then mkdir -p "$(dirname "${output_maf}")"; else mkdir -p "${output_maf}"; fi
+fi
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
 fi
 
 eval "$cmd"

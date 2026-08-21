@@ -53,17 +53,17 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if non_rrna_r1:
-        _tgt = os.path.dirname(non_rrna_r1) if os.path.splitext(non_rrna_r1)[1] else non_rrna_r1
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if non_rrna_r2:
         _tgt = os.path.dirname(non_rrna_r2) if os.path.splitext(non_rrna_r2)[1] else non_rrna_r2
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if OutputDir:
-        _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
+    if non_rrna_r1:
+        _tgt = os.path.dirname(non_rrna_r1) if os.path.splitext(non_rrna_r1)[1] else non_rrna_r1
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if FastqDir:
         _tgt = os.path.dirname(FastqDir) if os.path.splitext(FastqDir)[1] else FastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if OutputDir:
+        _tgt = os.path.dirname(OutputDir) if os.path.splitext(OutputDir)[1] else OutputDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

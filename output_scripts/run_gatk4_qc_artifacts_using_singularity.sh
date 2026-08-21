@@ -81,14 +81,14 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${gatk_bin} CollectSequencingArti
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
-fi
 if [[ -n "${artifacts_txt:-}" ]]; then
   if [[ "${artifacts_txt}" == *.* ]]; then mkdir -p "$(dirname "${artifacts_txt}")"; else mkdir -p "${artifacts_txt}"; fi
 fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
 
 eval "$cmd"

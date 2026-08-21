@@ -63,20 +63,20 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if screen_html:
         _tgt = os.path.dirname(screen_html) if os.path.splitext(screen_html)[1] else screen_html
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if screen_txt:
-        _tgt = os.path.dirname(screen_txt) if os.path.splitext(screen_txt)[1] else screen_txt
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if screen_png:
         _tgt = os.path.dirname(screen_png) if os.path.splitext(screen_png)[1] else screen_png
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if RawFastqDir:
         _tgt = os.path.dirname(RawFastqDir) if os.path.splitext(RawFastqDir)[1] else RawFastqDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if screen_txt:
+        _tgt = os.path.dirname(screen_txt) if os.path.splitext(screen_txt)[1] else screen_txt
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

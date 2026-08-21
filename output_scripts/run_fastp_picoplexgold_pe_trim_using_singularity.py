@@ -77,26 +77,26 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if out_read1:
-        _tgt = os.path.dirname(out_read1) if os.path.splitext(out_read1)[1] else out_read1
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if html:
         _tgt = os.path.dirname(html) if os.path.splitext(html)[1] else html
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if json:
         _tgt = os.path.dirname(json) if os.path.splitext(json)[1] else json
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if TrimFastqDir:
-        _tgt = os.path.dirname(TrimFastqDir) if os.path.splitext(TrimFastqDir)[1] else TrimFastqDir
+    if out_read1:
+        _tgt = os.path.dirname(out_read1) if os.path.splitext(out_read1)[1] else out_read1
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if out_read2:
+        _tgt = os.path.dirname(out_read2) if os.path.splitext(out_read2)[1] else out_read2
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if RawFastqDir:
         _tgt = os.path.dirname(RawFastqDir) if os.path.splitext(RawFastqDir)[1] else RawFastqDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if out_read2:
-        _tgt = os.path.dirname(out_read2) if os.path.splitext(out_read2)[1] else out_read2
+    if TrimFastqDir:
+        _tgt = os.path.dirname(TrimFastqDir) if os.path.splitext(TrimFastqDir)[1] else TrimFastqDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

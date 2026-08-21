@@ -71,8 +71,11 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if dedup_bai:
-        _tgt = os.path.dirname(dedup_bai) if os.path.splitext(dedup_bai)[1] else dedup_bai
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if metrics_txt:
+        _tgt = os.path.dirname(metrics_txt) if os.path.splitext(metrics_txt)[1] else metrics_txt
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if dedup_bam:
         _tgt = os.path.dirname(dedup_bam) if os.path.splitext(dedup_bam)[1] else dedup_bam
@@ -80,11 +83,8 @@ def main():
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if metrics_txt:
-        _tgt = os.path.dirname(metrics_txt) if os.path.splitext(metrics_txt)[1] else metrics_txt
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+    if dedup_bai:
+        _tgt = os.path.dirname(dedup_bai) if os.path.splitext(dedup_bai)[1] else dedup_bai
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

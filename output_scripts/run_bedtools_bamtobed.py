@@ -55,17 +55,17 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if bed_gz:
-        _tgt = os.path.dirname(bed_gz) if os.path.splitext(bed_gz)[1] else bed_gz
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if final_bed:
-        _tgt = os.path.dirname(final_bed) if os.path.splitext(final_bed)[1] else final_bed
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamToBedDir:
         _tgt = os.path.dirname(BamToBedDir) if os.path.splitext(BamToBedDir)[1] else BamToBedDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if bed_gz:
+        _tgt = os.path.dirname(bed_gz) if os.path.splitext(bed_gz)[1] else bed_gz
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if final_bed:
+        _tgt = os.path.dirname(final_bed) if os.path.splitext(final_bed)[1] else final_bed
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

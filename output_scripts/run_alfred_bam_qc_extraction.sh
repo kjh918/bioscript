@@ -88,20 +88,20 @@ cmd="${singularity_bin} exec -B ${bind} ${alfred_sif} ${alfred_bin} qc --referen
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
 if [[ -n "${chr_map_stats:-}" ]]; then
   if [[ "${chr_map_stats}" == *.* ]]; then mkdir -p "$(dirname "${chr_map_stats}")"; else mkdir -p "${chr_map_stats}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
 if [[ -n "${target_coverage:-}" ]]; then
   if [[ "${target_coverage}" == *.* ]]; then mkdir -p "$(dirname "${target_coverage}")"; else mkdir -p "${target_coverage}"; fi
 fi
 if [[ -n "${alfred_raw_tsv:-}" ]]; then
   if [[ "${alfred_raw_tsv}" == *.* ]]; then mkdir -p "$(dirname "${alfred_raw_tsv}")"; else mkdir -p "${alfred_raw_tsv}"; fi
-fi
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
-fi
-if [[ -n "${BamDir:-}" ]]; then
-  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
 
 eval "$cmd"

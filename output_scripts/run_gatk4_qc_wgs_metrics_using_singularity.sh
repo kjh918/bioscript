@@ -87,11 +87,11 @@ echo -e "\\n[RUNNING]\\n$cmd\\n"
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
-if [[ -n "${wgs_metrics_txt:-}" ]]; then
-  if [[ "${wgs_metrics_txt}" == *.* ]]; then mkdir -p "$(dirname "${wgs_metrics_txt}")"; else mkdir -p "${wgs_metrics_txt}"; fi
-fi
 if [[ -n "${qcResDir:-}" ]]; then
   if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${wgs_metrics_txt:-}" ]]; then
+  if [[ "${wgs_metrics_txt}" == *.* ]]; then mkdir -p "$(dirname "${wgs_metrics_txt}")"; else mkdir -p "${wgs_metrics_txt}"; fi
 fi
 
 eval "$cmd"

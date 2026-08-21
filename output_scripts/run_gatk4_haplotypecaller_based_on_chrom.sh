@@ -101,20 +101,20 @@ ${singularity_bin} exec -B ${bind} ${sif} ${gatk_bin} --java-options '-XX:Parall
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${BamDir:-}" ]]; then
-  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+if [[ -n "${OutVcf:-}" ]]; then
+  if [[ "${OutVcf}" == *.* ]]; then mkdir -p "$(dirname "${OutVcf}")"; else mkdir -p "${OutVcf}"; fi
 fi
 if [[ -n "${TmpDir:-}" ]]; then
   if [[ "${TmpDir}" == *.* ]]; then mkdir -p "$(dirname "${TmpDir}")"; else mkdir -p "${TmpDir}"; fi
 fi
-if [[ -n "${OutVcf:-}" ]]; then
-  if [[ "${OutVcf}" == *.* ]]; then mkdir -p "$(dirname "${OutVcf}")"; else mkdir -p "${OutVcf}"; fi
+if [[ -n "${OutGvcf:-}" ]]; then
+  if [[ "${OutGvcf}" == *.* ]]; then mkdir -p "$(dirname "${OutGvcf}")"; else mkdir -p "${OutGvcf}"; fi
+fi
+if [[ -n "${BamDir:-}" ]]; then
+  if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
 if [[ -n "${ResultDir:-}" ]]; then
   if [[ "${ResultDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultDir}")"; else mkdir -p "${ResultDir}"; fi
-fi
-if [[ -n "${OutGvcf:-}" ]]; then
-  if [[ "${OutGvcf}" == *.* ]]; then mkdir -p "$(dirname "${OutGvcf}")"; else mkdir -p "${OutGvcf}"; fi
 fi
 
 eval "$cmd"

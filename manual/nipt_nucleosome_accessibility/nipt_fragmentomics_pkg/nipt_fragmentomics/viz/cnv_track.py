@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+import logging as _log
 
 _CHROM_ORDER = [f"chr{i}" for i in range(1, 23)] + ["chrX", "chrY"]
 
@@ -55,9 +56,10 @@ def _trimmed_range(
 def plot_cnv_track(
     cnv_path: str,
     out_html: str | None = None,
-    title:    str = "CNV Track",
-    height:   int = 900,
+    title:    str   = "CNV Track",
+    height:   int   = 900,
     trim_q:   float = 0.01,
+    y_fixed:  float | None = 1.5,
 ) -> go.Figure:
     df = pd.read_parquet(cnv_path)
     df = df[df["chrom"].isin(_CHROM_ORDER)].copy()
@@ -88,34 +90,71 @@ def plot_cnv_track(
 
     x, offsets = _genomic_x(df)
 
-    # y축: short_log2_norm / long_log2_norm 우선, fallback log2_corrected
-    short_col = "short_log2_norm"   if "short_log2_norm"   in df.columns else "log2_corrected_short"
-    long_col  = "long_log2_norm"    if "long_log2_norm"    in df.columns else "log2_corrected_long"
+    # y축: copy_number 우선 (정상=2.0), fallback log2_norm → log2_corrected
+    use_cn = ("short_copy_number" in df.columns and "long_copy_number" in df.columns)
+
+    if use_cn:
+        short_col  = "short_copy_number"
+        long_col   = "long_copy_number"
+        y_label    = "Copy Number"
+        y_normal   = 2.0          # 정상 diploid
+        y_gain_ref = 2.585        # trisomy ~2 + FF/2
+        y_loss_ref = 1.415        # monosomy ~2 - FF/2
+        y_fmt      = ".2f"
+        # y축 범위: copy number 기준 ±대칭 (정상=2.0 중심)
+        if y_fixed is not None:
+            y_min = 2.0 - abs(float(y_fixed))
+            y_max = 2.0 + abs(float(y_fixed))
+        else:
+            combined = np.concatenate([
+                df[short_col].dropna().values,
+                df[long_col].dropna().values,
+            ])
+            if len(combined):
+                lo = float(np.quantile(combined[np.isfinite(combined)], trim_q))
+                hi = float(np.quantile(combined[np.isfinite(combined)], 1.0 - trim_q))
+                bound = max(abs(lo - 2.0), abs(hi - 2.0)) * 1.15
+            else:
+                bound = 1.5
+            y_min, y_max = 2.0 - bound, 2.0 + bound
+    else:
+        short_col  = "short_log2_norm"   if "short_log2_norm"   in df.columns else "log2_corrected_short"
+        long_col   = "long_log2_norm"    if "long_log2_norm"    in df.columns else "log2_corrected_long"
+        y_label    = "log₂ norm"
+        y_normal   = 0.0
+        y_gain_ref =  0.585
+        y_loss_ref = -0.585
+        y_fmt      = ".3f"
+        combined = np.concatenate([
+            df[short_col].values if short_col in df.columns else np.array([]),
+            df[long_col].values  if long_col  in df.columns else np.array([]),
+        ])
+        if y_fixed is not None:
+            y_min, y_max = -abs(float(y_fixed)), abs(float(y_fixed))
+        else:
+            y_min, y_max = _trimmed_range(combined.astype(float), q=trim_q)
+        bound = max(abs(y_min), abs(y_max))
+        y_min, y_max = -bound, bound
+
     short_call = "short_cnv_call"
     long_call  = "long_cnv_call"
 
-    # short + long 합쳐서 공유 y 범위 계산
-    combined = np.concatenate([
-        df[short_col].values if short_col in df.columns else np.array([]),
-        df[long_col].values  if long_col  in df.columns else np.array([]),
-    ])
-    y_min, y_max = _trimmed_range(combined.astype(float), q=trim_q)
-
     n_rows = 3
-    # BAF 컬럼 있으면 row 추가
     has_baf = any(c in df.columns for c in
                   ["combined_baf_median","short_baf_median","long_baf_median"])
     if has_baf:
         n_rows = 4
     row_heights = ([0.30, 0.30, 0.20, 0.20] if n_rows == 4
                    else [0.42, 0.42, 0.16])[:n_rows]
-    subtitles = (["Short fragment log₂ norm (LOO)",
-                  "Long fragment log₂ norm (LOO)",
+
+    cn_label = "Copy Number" if use_cn else "log₂ norm (LOO)"
+    subtitles = ([f"Short fragment {cn_label}",
+                  f"Long fragment {cn_label}",
                   "BAF (combined)",
                   "VAF"] if n_rows == 4
-                 else ["Short fragment log₂ norm (LOO)",
-                        "Long fragment log₂ norm (LOO)",
-                        "VAF"])[:n_rows]
+                 else [f"Short fragment {cn_label}",
+                       f"Long fragment {cn_label}",
+                       "VAF"])[:n_rows]
 
     fig = make_subplots(
         rows=n_rows, cols=1, shared_xaxes=True,
@@ -124,25 +163,27 @@ def plot_cnv_track(
         subplot_titles=subtitles,
     )
 
-    for row_idx, (log2_col, call_col, label) in enumerate([
+    for row_idx, (y_col, call_col, label) in enumerate([
         (short_col, short_call, "Short"),
         (long_col,  long_call,  "Long"),
     ], start=1):
-        if log2_col not in df.columns:
+        if y_col not in df.columns:
             continue
         colors = (df[call_col].map(_CALL_COLOR).fillna(_CALL_COLOR["unknown"])
                   if call_col in df.columns
                   else [_CALL_COLOR["normal"]] * len(df))
 
+        # CN 컬럼이면 hovertemplate에 CN 표기
+        cn_or_log = "CN" if use_cn else "log₂"
         fig.add_trace(go.Scatter(
-            x=x, y=df[log2_col].values,
+            x=x, y=df[y_col].values,
             mode="markers",
             marker=dict(size=2.5, color=colors, opacity=0.75),
-            name=f"{label} log₂",
+            name=f"{label} {cn_or_log}",
             hovertemplate=(
                 "chrom=%{customdata[0]}<br>"
                 "pos=%{customdata[1]:,}<br>"
-                "log₂=%{y:.3f}<br>"
+                f"{cn_or_log}=%{{y:{y_fmt}}}<br>"
                 "call=%{customdata[2]}"
             ),
             customdata=np.column_stack([
@@ -153,13 +194,16 @@ def plot_cnv_track(
             ]),
         ), row=row_idx, col=1)
 
-        fig.update_yaxes(range=[y_min, y_max], row=row_idx, col=1)
-        fig.add_hline(y=0,      line_dash="dash",
+        fig.update_yaxes(range=[y_min, y_max], row=row_idx, col=1,
+                         title_text=y_label)
+        # 정상 기준선
+        fig.add_hline(y=y_normal,   line_dash="dash",
                       line_color="black", line_width=0.8, row=row_idx, col=1)
-        fig.add_hline(y=0.585,  line_dash="dot",
+        # gain/loss 참고선 (trisomy/monosomy 경계)
+        fig.add_hline(y=y_gain_ref, line_dash="dot",
                       line_color="rgba(220,50,50,0.4)", line_width=0.6,
                       row=row_idx, col=1)
-        fig.add_hline(y=-0.585, line_dash="dot",
+        fig.add_hline(y=y_loss_ref, line_dash="dot",
                       line_color="rgba(50,100,220,0.4)", line_width=0.6,
                       row=row_idx, col=1)
 
@@ -240,4 +284,15 @@ def plot_cnv_track(
 
     if out_html:
         fig.write_html(out_html)
+        # PNG / PDF 동시 저장
+        base = out_html.rsplit(".", 1)[0]
+        try:
+            fig.write_image(f"{base}.png", width=1800, height=900, scale=2)
+        except Exception as e:
+            _log.warning("PNG 저장 실패 (kaleido 미설치 가능): %s", e)
+        try:
+            fig.write_image(f"{base}.pdf")
+        except Exception as e:
+            _log.warning("PDF 저장 실패: %s", e)
+
     return fig

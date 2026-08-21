@@ -63,17 +63,17 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
+    if qcResDir:
+        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if pileup_table:
-        _tgt = os.path.dirname(pileup_table) if os.path.splitext(pileup_table)[1] else pileup_table
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if contamination_table:
         _tgt = os.path.dirname(contamination_table) if os.path.splitext(contamination_table)[1] else contamination_table
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if qcResDir:
-        _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
+    if pileup_table:
+        _tgt = os.path.dirname(pileup_table) if os.path.splitext(pileup_table)[1] else pileup_table
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

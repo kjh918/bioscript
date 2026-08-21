@@ -89,26 +89,11 @@ paste {WorkDir}/*_mapped > {WorkDir}/data &&
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if ReclustR:
-        _tgt = os.path.dirname(ReclustR) if os.path.splitext(ReclustR)[1] else ReclustR
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if GinkgoHomeDir:
-        _tgt = os.path.dirname(GinkgoHomeDir) if os.path.splitext(GinkgoHomeDir)[1] else GinkgoHomeDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if WorkDir:
-        _tgt = os.path.dirname(WorkDir) if os.path.splitext(WorkDir)[1] else WorkDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if NormalDir:
-        _tgt = os.path.dirname(NormalDir) if os.path.splitext(NormalDir)[1] else NormalDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if BinFile:
-        _tgt = os.path.dirname(BinFile) if os.path.splitext(BinFile)[1] else BinFile
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if CNVCaller:
         _tgt = os.path.dirname(CNVCaller) if os.path.splitext(CNVCaller)[1] else CNVCaller
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if BamToBedDir:
-        _tgt = os.path.dirname(BamToBedDir) if os.path.splitext(BamToBedDir)[1] else BamToBedDir
+    if BinCount:
+        _tgt = os.path.dirname(BinCount) if os.path.splitext(BinCount)[1] else BinCount
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if ProcessR:
         _tgt = os.path.dirname(ProcessR) if os.path.splitext(ProcessR)[1] else ProcessR
@@ -116,14 +101,29 @@ paste {WorkDir}/*_mapped > {WorkDir}/data &&
     if BinMeth:
         _tgt = os.path.dirname(BinMeth) if os.path.splitext(BinMeth)[1] else BinMeth
         if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if ResultBaseDir:
+        _tgt = os.path.dirname(ResultBaseDir) if os.path.splitext(ResultBaseDir)[1] else ResultBaseDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if ReclustR:
+        _tgt = os.path.dirname(ReclustR) if os.path.splitext(ReclustR)[1] else ReclustR
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if NormalDir:
+        _tgt = os.path.dirname(NormalDir) if os.path.splitext(NormalDir)[1] else NormalDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamToBedDir:
+        _tgt = os.path.dirname(BamToBedDir) if os.path.splitext(BamToBedDir)[1] else BamToBedDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if WorkDir:
+        _tgt = os.path.dirname(WorkDir) if os.path.splitext(WorkDir)[1] else WorkDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if GinkgoHomeDir:
+        _tgt = os.path.dirname(GinkgoHomeDir) if os.path.splitext(GinkgoHomeDir)[1] else GinkgoHomeDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BinUnsorted:
         _tgt = os.path.dirname(BinUnsorted) if os.path.splitext(BinUnsorted)[1] else BinUnsorted
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if BinCount:
-        _tgt = os.path.dirname(BinCount) if os.path.splitext(BinCount)[1] else BinCount
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if ResultBaseDir:
-        _tgt = os.path.dirname(ResultBaseDir) if os.path.splitext(ResultBaseDir)[1] else ResultBaseDir
+    if BinFile:
+        _tgt = os.path.dirname(BinFile) if os.path.splitext(BinFile)[1] else BinFile
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

@@ -49,11 +49,11 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if BamDir:
-        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if sorted_bam:
         _tgt = os.path.dirname(sorted_bam) if os.path.splitext(sorted_bam)[1] else sorted_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if BamDir:
+        _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if sorted_bai:
         _tgt = os.path.dirname(sorted_bai) if os.path.splitext(sorted_bai)[1] else sorted_bai

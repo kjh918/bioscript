@@ -83,23 +83,23 @@ cmd="sortmerna ${RefArgs} --reads ${FastqDir}/${SeqID}_1.${InputSuffix} --reads 
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${non_rrna_r1:-}" ]]; then
-  if [[ "${non_rrna_r1}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r1}")"; else mkdir -p "${non_rrna_r1}"; fi
+if [[ -n "${non_rrna_r2:-}" ]]; then
+  if [[ "${non_rrna_r2}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r2}")"; else mkdir -p "${non_rrna_r2}"; fi
 fi
 if [[ -n "${qcResDir:-}" ]]; then
   if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
+if [[ -n "${IndexDir:-}" ]]; then
+  if [[ "${IndexDir}" == *.* ]]; then mkdir -p "$(dirname "${IndexDir}")"; else mkdir -p "${IndexDir}"; fi
+fi
 if [[ -n "${FastqDir:-}" ]]; then
   if [[ "${FastqDir}" == *.* ]]; then mkdir -p "$(dirname "${FastqDir}")"; else mkdir -p "${FastqDir}"; fi
 fi
-if [[ -n "${non_rrna_r2:-}" ]]; then
-  if [[ "${non_rrna_r2}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r2}")"; else mkdir -p "${non_rrna_r2}"; fi
+if [[ -n "${non_rrna_r1:-}" ]]; then
+  if [[ "${non_rrna_r1}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r1}")"; else mkdir -p "${non_rrna_r1}"; fi
 fi
 if [[ -n "${sortmerna_log:-}" ]]; then
   if [[ "${sortmerna_log}" == *.* ]]; then mkdir -p "$(dirname "${sortmerna_log}")"; else mkdir -p "${sortmerna_log}"; fi
-fi
-if [[ -n "${IndexDir:-}" ]]; then
-  if [[ "${IndexDir}" == *.* ]]; then mkdir -p "$(dirname "${IndexDir}")"; else mkdir -p "${IndexDir}"; fi
 fi
 
 eval "$cmd"

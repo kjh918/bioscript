@@ -73,20 +73,20 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
+    if recal_table:
+        _tgt = os.path.dirname(recal_table) if os.path.splitext(recal_table)[1] else recal_table
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if recal_bam:
         _tgt = os.path.dirname(recal_bam) if os.path.splitext(recal_bam)[1] else recal_bam
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if recal_bai:
+        _tgt = os.path.dirname(recal_bai) if os.path.splitext(recal_bai)[1] else recal_bai
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if qcResDir:
         _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if recal_table:
-        _tgt = os.path.dirname(recal_table) if os.path.splitext(recal_table)[1] else recal_table
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if recal_bai:
-        _tgt = os.path.dirname(recal_bai) if os.path.splitext(recal_bai)[1] else recal_bai
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

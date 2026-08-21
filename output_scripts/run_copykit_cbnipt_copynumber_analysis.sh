@@ -83,11 +83,11 @@ echo -e "\\n[RUNNING]\\n$cmd\\n"
 if [[ -n "${NGS_DataBaseDir:-}" ]]; then
   if [[ "${NGS_DataBaseDir}" == *.* ]]; then mkdir -p "$(dirname "${NGS_DataBaseDir}")"; else mkdir -p "${NGS_DataBaseDir}"; fi
 fi
-if [[ -n "${ResultBaseDir:-}" ]]; then
-  if [[ "${ResultBaseDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultBaseDir}")"; else mkdir -p "${ResultBaseDir}"; fi
-fi
 if [[ -n "${AnalysisRunDir:-}" ]]; then
   if [[ "${AnalysisRunDir}" == *.* ]]; then mkdir -p "$(dirname "${AnalysisRunDir}")"; else mkdir -p "${AnalysisRunDir}"; fi
+fi
+if [[ -n "${ResultBaseDir:-}" ]]; then
+  if [[ "${ResultBaseDir}" == *.* ]]; then mkdir -p "$(dirname "${ResultBaseDir}")"; else mkdir -p "${ResultBaseDir}"; fi
 fi
 
 eval "$cmd"

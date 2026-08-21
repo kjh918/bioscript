@@ -108,20 +108,20 @@ cmd="${singularity_bin} exec -B ${bind} ${sif} ${gatk_bin} BaseRecalibrator --ja
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
+if [[ -n "${recal_table:-}" ]]; then
+  if [[ "${recal_table}" == *.* ]]; then mkdir -p "$(dirname "${recal_table}")"; else mkdir -p "${recal_table}"; fi
+fi
 if [[ -n "${recal_bam:-}" ]]; then
   if [[ "${recal_bam}" == *.* ]]; then mkdir -p "$(dirname "${recal_bam}")"; else mkdir -p "${recal_bam}"; fi
+fi
+if [[ -n "${recal_bai:-}" ]]; then
+  if [[ "${recal_bai}" == *.* ]]; then mkdir -p "$(dirname "${recal_bai}")"; else mkdir -p "${recal_bai}"; fi
 fi
 if [[ -n "${qcResDir:-}" ]]; then
   if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
-if [[ -n "${recal_table:-}" ]]; then
-  if [[ "${recal_table}" == *.* ]]; then mkdir -p "$(dirname "${recal_table}")"; else mkdir -p "${recal_table}"; fi
-fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
-fi
-if [[ -n "${recal_bai:-}" ]]; then
-  if [[ "${recal_bai}" == *.* ]]; then mkdir -p "$(dirname "${recal_bai}")"; else mkdir -p "${recal_bai}"; fi
 fi
 
 eval "$cmd"

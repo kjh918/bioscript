@@ -77,11 +77,14 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if aligned_transcriptome_bam:
-        _tgt = os.path.dirname(aligned_transcriptome_bam) if os.path.splitext(aligned_transcriptome_bam)[1] else aligned_transcriptome_bam
+    if gene_counts:
+        _tgt = os.path.dirname(gene_counts) if os.path.splitext(gene_counts)[1] else gene_counts
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if BamDir:
         _tgt = os.path.dirname(BamDir) if os.path.splitext(BamDir)[1] else BamDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if mapping_log:
+        _tgt = os.path.dirname(mapping_log) if os.path.splitext(mapping_log)[1] else mapping_log
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if aligned_bam:
         _tgt = os.path.dirname(aligned_bam) if os.path.splitext(aligned_bam)[1] else aligned_bam
@@ -89,11 +92,8 @@ def main():
     if FastqDir:
         _tgt = os.path.dirname(FastqDir) if os.path.splitext(FastqDir)[1] else FastqDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if mapping_log:
-        _tgt = os.path.dirname(mapping_log) if os.path.splitext(mapping_log)[1] else mapping_log
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if gene_counts:
-        _tgt = os.path.dirname(gene_counts) if os.path.splitext(gene_counts)[1] else gene_counts
+    if aligned_transcriptome_bam:
+        _tgt = os.path.dirname(aligned_transcriptome_bam) if os.path.splitext(aligned_transcriptome_bam)[1] else aligned_transcriptome_bam
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

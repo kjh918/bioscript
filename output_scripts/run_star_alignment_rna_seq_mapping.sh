@@ -108,11 +108,14 @@ cmd="${singularity_bin} exec -B ${bind} ${star_sif} STAR --runThreadN ${Threads}
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${aligned_transcriptome_bam:-}" ]]; then
-  if [[ "${aligned_transcriptome_bam}" == *.* ]]; then mkdir -p "$(dirname "${aligned_transcriptome_bam}")"; else mkdir -p "${aligned_transcriptome_bam}"; fi
+if [[ -n "${gene_counts:-}" ]]; then
+  if [[ "${gene_counts}" == *.* ]]; then mkdir -p "$(dirname "${gene_counts}")"; else mkdir -p "${gene_counts}"; fi
 fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${mapping_log:-}" ]]; then
+  if [[ "${mapping_log}" == *.* ]]; then mkdir -p "$(dirname "${mapping_log}")"; else mkdir -p "${mapping_log}"; fi
 fi
 if [[ -n "${aligned_bam:-}" ]]; then
   if [[ "${aligned_bam}" == *.* ]]; then mkdir -p "$(dirname "${aligned_bam}")"; else mkdir -p "${aligned_bam}"; fi
@@ -120,11 +123,8 @@ fi
 if [[ -n "${FastqDir:-}" ]]; then
   if [[ "${FastqDir}" == *.* ]]; then mkdir -p "$(dirname "${FastqDir}")"; else mkdir -p "${FastqDir}"; fi
 fi
-if [[ -n "${mapping_log:-}" ]]; then
-  if [[ "${mapping_log}" == *.* ]]; then mkdir -p "$(dirname "${mapping_log}")"; else mkdir -p "${mapping_log}"; fi
-fi
-if [[ -n "${gene_counts:-}" ]]; then
-  if [[ "${gene_counts}" == *.* ]]; then mkdir -p "$(dirname "${gene_counts}")"; else mkdir -p "${gene_counts}"; fi
+if [[ -n "${aligned_transcriptome_bam:-}" ]]; then
+  if [[ "${aligned_transcriptome_bam}" == *.* ]]; then mkdir -p "$(dirname "${aligned_transcriptome_bam}")"; else mkdir -p "${aligned_transcriptome_bam}"; fi
 fi
 
 eval "$cmd"

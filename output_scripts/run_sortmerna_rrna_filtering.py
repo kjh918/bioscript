@@ -59,23 +59,23 @@ def main():
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
-    if non_rrna_r1:
-        _tgt = os.path.dirname(non_rrna_r1) if os.path.splitext(non_rrna_r1)[1] else non_rrna_r1
+    if non_rrna_r2:
+        _tgt = os.path.dirname(non_rrna_r2) if os.path.splitext(non_rrna_r2)[1] else non_rrna_r2
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if qcResDir:
         _tgt = os.path.dirname(qcResDir) if os.path.splitext(qcResDir)[1] else qcResDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
+    if IndexDir:
+        _tgt = os.path.dirname(IndexDir) if os.path.splitext(IndexDir)[1] else IndexDir
+        if _tgt: os.makedirs(_tgt, exist_ok=True)
     if FastqDir:
         _tgt = os.path.dirname(FastqDir) if os.path.splitext(FastqDir)[1] else FastqDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if non_rrna_r2:
-        _tgt = os.path.dirname(non_rrna_r2) if os.path.splitext(non_rrna_r2)[1] else non_rrna_r2
+    if non_rrna_r1:
+        _tgt = os.path.dirname(non_rrna_r1) if os.path.splitext(non_rrna_r1)[1] else non_rrna_r1
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     if sortmerna_log:
         _tgt = os.path.dirname(sortmerna_log) if os.path.splitext(sortmerna_log)[1] else sortmerna_log
-        if _tgt: os.makedirs(_tgt, exist_ok=True)
-    if IndexDir:
-        _tgt = os.path.dirname(IndexDir) if os.path.splitext(IndexDir)[1] else IndexDir
         if _tgt: os.makedirs(_tgt, exist_ok=True)
     
     subprocess.run(cmd, shell=True, check=True)

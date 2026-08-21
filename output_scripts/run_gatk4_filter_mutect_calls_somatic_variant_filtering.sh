@@ -89,14 +89,14 @@ cmd="${singularity_bin} exec -B ${bind} ${gatk4_sif} gatk FilterMutectCalls --ja
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${vcfDir:-}" ]]; then
-  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
 fi
 if [[ -n "${filtered_vcf:-}" ]]; then
   if [[ "${filtered_vcf}" == *.* ]]; then mkdir -p "$(dirname "${filtered_vcf}")"; else mkdir -p "${filtered_vcf}"; fi
 fi
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+if [[ -n "${vcfDir:-}" ]]; then
+  if [[ "${vcfDir}" == *.* ]]; then mkdir -p "$(dirname "${vcfDir}")"; else mkdir -p "${vcfDir}"; fi
 fi
 
 eval "$cmd"

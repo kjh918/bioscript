@@ -1,30 +1,24 @@
 """
 wps_normalizer.py
 =================
-bins_wps_raw.parquet (1kb bin) → bins_wps_norm.parquet
+bins_wps_raw.parquet → bins_wps_norm.parquet
 
 Genome-wide WPS normalization.
 
-정규화 공식 (Snyder et al. 2016 방식)
---------------------------------------
-  adjusted_WPS = (WPS - local_median) / depth * 100
+정규화 방식
+-----------
+1. mappability 불량 bin → NaN
+2. 염색체별 독립 z-score
+   z = (WPS - median(WPS_chrom)) / MAD(WPS_chrom) * 1.4826
+   - median 차감: 로컬 baseline 제거
+   - MAD 나누기: 염색체 간 depth 차이 보정 (robust)
+3. 전체 상하위 0.5% winsorization (centromere spike 제거)
 
-  WPS       : bin 내 spanning - endpoints 배열의 median (raw)
-  local_median : 인접 bins 의 WPS median (1Mb 슬라이딩 윈도우, ±500 bins)
-  depth     : bin 내 short 또는 long coverage median (depth proxy)
-              = (short_count + long_count) / bin_len  [reads per bp]
+z-score 가 0이면 해당 염색체 중앙값 수준,
+양수면 뉴클레오솜 보호 증가, 음수면 감소를 의미합니다.
 
-  depth = 0 인 bin → NaN
-
-추가 보정
----------
-  GC bias: bins_corrected 의 gc_correction 값 재사용 가능하지만,
-           WPS 는 count 와 GC 의존성이 달라 별도 적용하지 않음.
-  mappability: mappability_pass=False bin → NaN
-
-출력 컬럼
----------
-  기존 bins_wps_raw 컬럼 모두 유지 +
+출력 추가 컬럼
+--------------
   short_wps_L_norm, long_wps_L_norm,
   short_wps_S_norm, long_wps_S_norm
 """
@@ -40,45 +34,26 @@ import pandas as pd
 from nipt_fragmentomics.core.constants import MIN_MAPPABILITY
 
 log = logging.getLogger(__name__)
-
 SEX_CHROMS = {"chrX", "chrY"}
-LOCAL_WIN   = 500   # ±500 bins = 1kb bin 기준 ±500kb
+WINSOR_Q   = 0.005   # 상하위 0.5% winsorization
 
 
-def _local_median(arr: np.ndarray, half_win: int = LOCAL_WIN) -> np.ndarray:
+def _zscore_chrom(arr: np.ndarray, quality_mask: np.ndarray) -> np.ndarray:
     """
-    각 bin 의 ±half_win 범위 median (NaN-safe).
-    전체 배열에서 슬라이딩 윈도우 median 계산.
+    염색체 단위 robust z-score.
+    quality_mask=True 인 bin 만 median/MAD 계산에 사용.
     """
-    n   = len(arr)
-    out = np.full(n, np.nan, dtype=np.float32)
-    for i in range(n):
-        lo  = max(0, i - half_win)
-        hi  = min(n, i + half_win + 1)
-        seg = arr[lo:hi]
-        fin = seg[np.isfinite(seg)]
-        if len(fin) > 0:
-            out[i] = float(np.median(fin))
-    return out
+    ref = arr[quality_mask & np.isfinite(arr)]
+    if len(ref) < 5:
+        return np.full(len(arr), np.nan, dtype=np.float32)
 
+    med   = float(np.median(ref))
+    mad   = float(np.median(np.abs(ref - med)))
+    scale = mad * 1.4826 if mad > 1e-6 else float(ref.std() or 1.0)
 
-def _normalize_wps(
-    wps:      np.ndarray,   # raw WPS (bin median)
-    depth:    np.ndarray,   # reads per bp proxy
-    half_win: int = LOCAL_WIN,
-) -> np.ndarray:
-    """
-    adjusted_WPS = (WPS - local_median) / depth * 100
-
-    depth = 0 → NaN
-    """
-    local_med = _local_median(wps, half_win)
-    adjusted  = wps - local_med
-
-    out = np.full(len(wps), np.nan, dtype=np.float32)
-    mask = np.isfinite(depth) & (depth > 0) & np.isfinite(adjusted)
-    out[mask] = (adjusted[mask] / depth[mask] * 100.0).astype(np.float32)
-
+    out = np.full(len(arr), np.nan, dtype=np.float32)
+    finite = np.isfinite(arr)
+    out[finite] = ((arr[finite] - med) / scale).astype(np.float32)
     return out
 
 
@@ -86,68 +61,73 @@ def run(
     raw_path:    str,
     out_path:    str,
     bin_len:     int   = 1000,
-    half_win:    int   = LOCAL_WIN,
     min_mappability: float = MIN_MAPPABILITY,
 ) -> pd.DataFrame:
     """
     bins_wps_raw.parquet → bins_wps_norm.parquet
 
-    Parameters
-    ----------
-    raw_path    : bin_extractor 로 생성한 1kb WPS parquet
-    bin_len     : bin 크기 (bp), depth 계산에 사용
-    half_win    : local median 윈도우 (bins)
+    WPS 컬럼: short_wps_L/S, long_wps_L/S → *_norm (z-score)
     """
     df = pd.read_parquet(raw_path)
-    log.info("bins_wps_raw 로드: %d bins (bin_len=%d bp)", len(df), bin_len)
+    log.info("bins_wps_raw 로드: %d bins", len(df))
 
-    # mappability 마스킹
-    bad = pd.Series(False, index=df.index)
-    if "mappability_pass" in df.columns:
-        bad |= ~df["mappability_pass"].astype(bool)
-    elif "mappability" in df.columns:
-        bad |= df["mappability"].fillna(0) < min_mappability
-    if "gc" in df.columns:
-        bad |= ~df["gc"].between(0.01, 0.99, inclusive="both").fillna(True)
+    wps_cols = [c for c in ["short_wps_L", "long_wps_L",
+                              "short_wps_S", "long_wps_S"]
+                if c in df.columns]
 
-    log.info("불량 bin: %d / %d", bad.sum(), len(df))
+    if not wps_cols:
+        log.error("WPS 컬럼 없음 (short_wps_L 등). "
+                  "bin_extractor 가 WPS 를 계산하는 버전인지 확인하세요.")
+        df.to_parquet(out_path, engine="pyarrow", index=False)
+        return df
 
-    # depth proxy: reads per bp
-    # short_count + long_count / bin_len
-    for frag in ("short", "long"):
-        cnt_col = f"{frag}_count"
-        if cnt_col not in df.columns:
-            log.warning("%s 컬럼 없음", cnt_col)
-            continue
+    # ── quality mask ─────────────────────────────────────────────
+    gc = df["gc"].values.astype(np.float64) if "gc" in df.columns else np.ones(len(df))
+    mp = df["mappability"].fillna(np.nan).values.astype(np.float64) \
+         if "mappability" in df.columns else np.ones(len(df))
+    is_sex = df["chrom"].isin(SEX_CHROMS).values
 
-        counts = df[cnt_col].values.astype(np.float64)
-        depth  = counts / bin_len
-        depth[bad.values] = np.nan
+    # BED 필터 컬럼 우선
+    if "is_filtered" in df.columns:
+        bad = df["is_filtered"].astype(bool).values & ~is_sex
+    elif "is_low_mappability" in df.columns:
+        bad = df["is_low_mappability"].astype(bool).values & ~is_sex
+    else:
+        bad = (~np.isnan(mp) & (mp < min_mappability) & ~is_sex)
 
-        for mode in ("L", "S"):
-            wps_col = f"{frag}_wps_{mode}"
-            if wps_col not in df.columns:
-                continue
+    bad |= (~np.isfinite(gc) | (gc <= 0))
+    quality_mask = ~bad & ~is_sex
 
-            # 염색체별 독립 normalization
-            norm_vals = np.full(len(df), np.nan, dtype=np.float32)
+    log.info("quality_pass: %d / %d bins", quality_mask.sum(), len(df))
 
-            for chrom, cdf in df.groupby("chrom"):
-                idx  = cdf.index
-                wps  = df.loc[idx, wps_col].values.astype(np.float32)
-                dep  = depth[idx.values if hasattr(idx, 'values') else idx]
+    # ── 염색체별 z-score ─────────────────────────────────────────
+    for col in wps_cols:
+        norm_vals = np.full(len(df), np.nan, dtype=np.float32)
+        wps_all   = df[col].values.astype(np.float32)
 
-                # 불량 bin → NaN 처리
-                wps[bad.loc[idx].values] = np.nan
+        for chrom, cdf in df.groupby("chrom"):
+            idx       = cdf.index
+            wps_c     = wps_all[idx]
+            qmask_c   = quality_mask[idx]
+            # 불량 bin → NaN
+            wps_c     = np.where(bad[idx], np.nan, wps_c)
 
-                norm = _normalize_wps(wps, dep, half_win=half_win)
-                norm_vals[idx] = norm
+            norm_c    = _zscore_chrom(wps_c, qmask_c)
+            norm_vals[idx] = norm_c
 
-            out_col = f"{frag}_wps_{mode}_norm"
-            df[out_col] = norm_vals.astype(np.float32)
-            log.info("  %s → %s  (finite: %d / %d)",
-                     wps_col, out_col,
-                     int(np.isfinite(norm_vals).sum()), len(df))
+        # winsorization (전체, 상하위 0.5%)
+        finite = norm_vals[np.isfinite(norm_vals)]
+        if len(finite) > 100:
+            lo = float(np.quantile(finite, WINSOR_Q))
+            hi = float(np.quantile(finite, 1.0 - WINSOR_Q))
+            norm_vals = np.clip(norm_vals, lo, hi)
+
+        out_col = f"{col}_norm"
+        df[out_col] = norm_vals
+        log.info("  %s → %s  finite=%d  range=[%.2f, %.2f]",
+                 col, out_col,
+                 int(np.isfinite(norm_vals).sum()),
+                 float(np.nanmin(norm_vals)), float(np.nanmax(norm_vals)))
 
     os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
     df.to_parquet(out_path, engine="pyarrow", index=False)

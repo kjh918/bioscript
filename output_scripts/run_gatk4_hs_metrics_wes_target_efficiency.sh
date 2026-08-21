@@ -87,11 +87,11 @@ cmd="${singularity_bin} exec -B ${bind} ${gatk4_sif} gatk CollectHsMetrics --jav
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${hs_metrics:-}" ]]; then
-  if [[ "${hs_metrics}" == *.* ]]; then mkdir -p "$(dirname "${hs_metrics}")"; else mkdir -p "${hs_metrics}"; fi
-fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${hs_metrics:-}" ]]; then
+  if [[ "${hs_metrics}" == *.* ]]; then mkdir -p "$(dirname "${hs_metrics}")"; else mkdir -p "${hs_metrics}"; fi
 fi
 if [[ -n "${qcResDir:-}" ]]; then
   if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi

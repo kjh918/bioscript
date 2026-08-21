@@ -78,17 +78,17 @@ cmd="${bedtools_bin} bamtobed -i ${BamDir}/${SeqID}.${InputSuffix}.bam > ${BamDi
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${bed_gz:-}" ]]; then
-  if [[ "${bed_gz}" == *.* ]]; then mkdir -p "$(dirname "${bed_gz}")"; else mkdir -p "${bed_gz}"; fi
-fi
-if [[ -n "${final_bed:-}" ]]; then
-  if [[ "${final_bed}" == *.* ]]; then mkdir -p "$(dirname "${final_bed}")"; else mkdir -p "${final_bed}"; fi
-fi
 if [[ -n "${BamToBedDir:-}" ]]; then
   if [[ "${BamToBedDir}" == *.* ]]; then mkdir -p "$(dirname "${BamToBedDir}")"; else mkdir -p "${BamToBedDir}"; fi
 fi
+if [[ -n "${bed_gz:-}" ]]; then
+  if [[ "${bed_gz}" == *.* ]]; then mkdir -p "$(dirname "${bed_gz}")"; else mkdir -p "${bed_gz}"; fi
+fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
+fi
+if [[ -n "${final_bed:-}" ]]; then
+  if [[ "${final_bed}" == *.* ]]; then mkdir -p "$(dirname "${final_bed}")"; else mkdir -p "${final_bed}"; fi
 fi
 
 eval "$cmd"

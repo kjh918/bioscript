@@ -94,11 +94,11 @@ fi
 if [[ -n "${gc_bias_chart_pdf:-}" ]]; then
   if [[ "${gc_bias_chart_pdf}" == *.* ]]; then mkdir -p "$(dirname "${gc_bias_chart_pdf}")"; else mkdir -p "${gc_bias_chart_pdf}"; fi
 fi
-if [[ -n "${gc_bias_summary_txt:-}" ]]; then
-  if [[ "${gc_bias_summary_txt}" == *.* ]]; then mkdir -p "$(dirname "${gc_bias_summary_txt}")"; else mkdir -p "${gc_bias_summary_txt}"; fi
-fi
 if [[ -n "${gc_bias_metrics_txt:-}" ]]; then
   if [[ "${gc_bias_metrics_txt}" == *.* ]]; then mkdir -p "$(dirname "${gc_bias_metrics_txt}")"; else mkdir -p "${gc_bias_metrics_txt}"; fi
+fi
+if [[ -n "${gc_bias_summary_txt:-}" ]]; then
+  if [[ "${gc_bias_summary_txt}" == *.* ]]; then mkdir -p "$(dirname "${gc_bias_summary_txt}")"; else mkdir -p "${gc_bias_summary_txt}"; fi
 fi
 
 eval "$cmd"

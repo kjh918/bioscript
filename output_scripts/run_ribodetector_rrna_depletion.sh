@@ -75,17 +75,17 @@ cmd="ribodetector_cpu -t ${Threads} -l ${ReadLen} -i ${FastqDir}/${SeqID}_R1.${I
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${non_rrna_r1:-}" ]]; then
-  if [[ "${non_rrna_r1}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r1}")"; else mkdir -p "${non_rrna_r1}"; fi
-fi
 if [[ -n "${non_rrna_r2:-}" ]]; then
   if [[ "${non_rrna_r2}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r2}")"; else mkdir -p "${non_rrna_r2}"; fi
 fi
-if [[ -n "${OutputDir:-}" ]]; then
-  if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
+if [[ -n "${non_rrna_r1:-}" ]]; then
+  if [[ "${non_rrna_r1}" == *.* ]]; then mkdir -p "$(dirname "${non_rrna_r1}")"; else mkdir -p "${non_rrna_r1}"; fi
 fi
 if [[ -n "${FastqDir:-}" ]]; then
   if [[ "${FastqDir}" == *.* ]]; then mkdir -p "$(dirname "${FastqDir}")"; else mkdir -p "${FastqDir}"; fi
+fi
+if [[ -n "${OutputDir:-}" ]]; then
+  if [[ "${OutputDir}" == *.* ]]; then mkdir -p "$(dirname "${OutputDir}")"; else mkdir -p "${OutputDir}"; fi
 fi
 
 eval "$cmd"

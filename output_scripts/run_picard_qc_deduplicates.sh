@@ -81,20 +81,20 @@ cmd="${java_bin} -XX:ParallelGCThreads=${Threads} -Xmx${Memory} -jar ${picard_ja
 echo -e "\\n[RUNNING]\\n$cmd\\n"
 
 # 자동 디렉토리 생성
-if [[ -n "${qcResDir:-}" ]]; then
-  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
-fi
-if [[ -n "${out_bam:-}" ]]; then
-  if [[ "${out_bam}" == *.* ]]; then mkdir -p "$(dirname "${out_bam}")"; else mkdir -p "${out_bam}"; fi
-fi
-if [[ -n "${TmpDir:-}" ]]; then
-  if [[ "${TmpDir}" == *.* ]]; then mkdir -p "$(dirname "${TmpDir}")"; else mkdir -p "${TmpDir}"; fi
-fi
 if [[ -n "${BamDir:-}" ]]; then
   if [[ "${BamDir}" == *.* ]]; then mkdir -p "$(dirname "${BamDir}")"; else mkdir -p "${BamDir}"; fi
 fi
 if [[ -n "${metrics:-}" ]]; then
   if [[ "${metrics}" == *.* ]]; then mkdir -p "$(dirname "${metrics}")"; else mkdir -p "${metrics}"; fi
+fi
+if [[ -n "${out_bam:-}" ]]; then
+  if [[ "${out_bam}" == *.* ]]; then mkdir -p "$(dirname "${out_bam}")"; else mkdir -p "${out_bam}"; fi
+fi
+if [[ -n "${qcResDir:-}" ]]; then
+  if [[ "${qcResDir}" == *.* ]]; then mkdir -p "$(dirname "${qcResDir}")"; else mkdir -p "${qcResDir}"; fi
+fi
+if [[ -n "${TmpDir:-}" ]]; then
+  if [[ "${TmpDir}" == *.* ]]; then mkdir -p "$(dirname "${TmpDir}")"; else mkdir -p "${TmpDir}"; fi
 fi
 
 eval "$cmd"
