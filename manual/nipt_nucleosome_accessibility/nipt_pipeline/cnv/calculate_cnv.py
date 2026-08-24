@@ -33,7 +33,8 @@ FIELDNAMES = [
     "chrom",
     "n_bins",
     "median_zscore_total", "median_zscore_short", "median_zscore_long",
-    "call_total", "call_short", "call_long",
+    "median_zscore_short_fraction",
+    "call_total", "call_short", "call_long", "call_short_fraction",
 ]
 
 
@@ -71,7 +72,7 @@ def run_calculate_cnv(
 
     # chrom별 Z-score 수집
     chrom_zscores: dict[str, dict[str, list[float]]] = defaultdict(
-        lambda: {"total": [], "short": [], "long": []}
+        lambda: {"total": [], "short": [], "long": [], "short_fraction": []}
     )
 
     for r in rows:
@@ -80,41 +81,52 @@ def run_calculate_cnv(
             val = r.get(f"zscore_{key}", "NA")
             if val != "NA":
                 chrom_zscores[chrom][key].append(float(val))
+        # short_fraction Z-score
+        val = r.get("zscore_short_fraction", "NA")
+        if val != "NA":
+            chrom_zscores[chrom]["short_fraction"].append(float(val))
 
     target = target_chroms or STANDARD_CHROMS
     out_rows = []
 
     for chrom in target:
-        data = chrom_zscores.get(chrom, {"total": [], "short": [], "long": []})
-        n_bins = len(data["total"])  # total 기준 (short/long도 동일 bin 수)
+        data = chrom_zscores.get(chrom, {
+            "total": [], "short": [], "long": [], "short_fraction": []
+        })
+        n_bins = len(data["total"])
 
         if n_bins < min_bins_per_chrom:
             logger.warning("%s: 유효 bin %d개 < 최소 %d → INSUFFICIENT_BINS", chrom, n_bins, min_bins_per_chrom)
             out_rows.append({
-                "chrom":                chrom,
-                "n_bins":               n_bins,
-                "median_zscore_total":  "NA",
-                "median_zscore_short":  "NA",
-                "median_zscore_long":   "NA",
-                "call_total":           CALL_INSUFFICIENT,
-                "call_short":           CALL_INSUFFICIENT,
-                "call_long":            CALL_INSUFFICIENT,
+                "chrom":                        chrom,
+                "n_bins":                       n_bins,
+                "median_zscore_total":          "NA",
+                "median_zscore_short":          "NA",
+                "median_zscore_long":           "NA",
+                "median_zscore_short_fraction": "NA",
+                "call_total":                   CALL_INSUFFICIENT,
+                "call_short":                   CALL_INSUFFICIENT,
+                "call_long":                    CALL_INSUFFICIENT,
+                "call_short_fraction":          CALL_INSUFFICIENT,
             })
             continue
 
-        med_total = float(np.median(data["total"]))
-        med_short = float(np.median(data["short"])) if data["short"] else None
-        med_long  = float(np.median(data["long"]))  if data["long"]  else None
+        med_total          = float(np.median(data["total"]))
+        med_short          = float(np.median(data["short"]))          if data["short"]          else None
+        med_long           = float(np.median(data["long"]))           if data["long"]            else None
+        med_short_fraction = float(np.median(data["short_fraction"])) if data["short_fraction"] else None
 
         out_rows.append({
-            "chrom":               chrom,
-            "n_bins":              n_bins,
-            "median_zscore_total": f"{med_total:.4f}",
-            "median_zscore_short": f"{med_short:.4f}" if med_short is not None else "NA",
-            "median_zscore_long":  f"{med_long:.4f}"  if med_long  is not None else "NA",
-            "call_total":          _call(med_total, zscore_gain_threshold, zscore_loss_threshold),
-            "call_short":          _call(med_short, zscore_gain_threshold, zscore_loss_threshold),
-            "call_long":           _call(med_long,  zscore_gain_threshold, zscore_loss_threshold),
+            "chrom":                        chrom,
+            "n_bins":                       n_bins,
+            "median_zscore_total":          f"{med_total:.4f}",
+            "median_zscore_short":          f"{med_short:.4f}"          if med_short          is not None else "NA",
+            "median_zscore_long":           f"{med_long:.4f}"           if med_long           is not None else "NA",
+            "median_zscore_short_fraction": f"{med_short_fraction:.4f}" if med_short_fraction is not None else "NA",
+            "call_total":                   _call(med_total,          zscore_gain_threshold, zscore_loss_threshold),
+            "call_short":                   _call(med_short,          zscore_gain_threshold, zscore_loss_threshold),
+            "call_long":                    _call(med_long,           zscore_gain_threshold, zscore_loss_threshold),
+            "call_short_fraction":          _call(med_short_fraction, zscore_gain_threshold, zscore_loss_threshold),
         })
 
     write_tsv(out_rows, output_path, FIELDNAMES)

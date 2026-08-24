@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import logging
 import os
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
@@ -304,16 +305,56 @@ def write_peaks_bed(peaks: list[Peak], output_path: str) -> None:
             )
 
 
+# ── multiprocessing worker ────────────────────────────────────────────
+def _call_peaks_chrom_worker(
+    chrom: str,
+    wps_dir: str,
+    prefix: str,
+    mode: str,
+) -> tuple[str, list[Peak], str | None]:
+    """
+    ProcessPoolExecutor에서 실행되는 chromosome 단위 worker.
+
+    각 process가 자신의 norm.npy를 직접 로드하므로,
+    큰 chromosome array를 parent process에서 pickle하여 전달하지 않는다.
+    """
+    try:
+        manifest = read_manifest(wps_dir, mode)
+
+        arr = load_track(
+            wps_dir=wps_dir,
+            mode=mode,
+            chrom=chrom,
+            metric="norm",
+            prefix=prefix,
+            manifest=manifest,
+        )
+
+        if arr is None:
+            return chrom, [], f"norm.npy 없음: {chrom} — skip"
+
+        # 가능한 경우 불필요한 copy 방지
+        arr = np.asarray(arr, dtype=np.float32)
+        arr = np.nan_to_num(arr, nan=0.0)
+
+        peaks = call_peaks_chrom(chrom, arr)
+        return chrom, peaks, None
+
+    except Exception as exc:
+        return chrom, [], f"{type(exc).__name__}: {exc}"
+
+
 # ── 공개 인터페이스 ────────────────────────────────────────────────────
 def run(
     wps_dir:    str,
     output_bed: str,
-    prefix:     str  = "",
+    prefix:     str = "",
     chroms:     Optional[list[str]] = None,
-    mode:       str  = "L",
+    mode:       str = "L",
+    n_jobs:     Optional[int] = None,
 ) -> list[Peak]:
     """
-    manifest NPY에서 L-WPS norm 로드 → peak calling → BED 저장
+    manifest NPY에서 L-WPS norm 로드 → chromosome 병렬 peak calling → BED 저장
 
     Parameters
     ----------
@@ -322,6 +363,9 @@ def run(
     prefix     : sample_id prefix
     chroms     : 처리할 염색체 (None이면 standard 전체)
     mode       : "L" 고정 (S-WPS peak calling은 미지원)
+    n_jobs     : 동시에 처리할 chromosome process 수.
+                 None이면 min(CPU 수, chromosome 수) 사용.
+                 메모리가 부족하면 2~4 정도로 제한 권장.
 
     Returns
     -------
@@ -330,31 +374,80 @@ def run(
     if mode != "L":
         raise ValueError("peak calling은 L-WPS 전용입니다.")
 
-    manifest = read_manifest(wps_dir, mode)
-    target   = chroms or STANDARD_CHROMS
+    target = list(chroms or STANDARD_CHROMS)
+    if not target:
+        write_peaks_bed([], output_bed)
+        return []
+
+    if n_jobs is None:
+        n_jobs = min(len(target), os.cpu_count() or 1)
+    else:
+        n_jobs = max(1, min(int(n_jobs), len(target)))
+
+    log.info(
+        "peak calling 시작: chromosomes=%d, n_jobs=%d",
+        len(target),
+        n_jobs,
+    )
+
+    # 결과를 chromosome별로 저장한 뒤 target 순서대로 합친다.
+    # as_completed 순서로 바로 append하면 BED chromosome 순서가 뒤섞일 수 있다.
+    peaks_by_chrom: dict[str, list[Peak]] = {chrom: [] for chrom in target}
+
+    if n_jobs == 1:
+        # 디버깅/저메모리 환경용 serial fallback
+        for chrom in target:
+            chrom_name, chrom_peaks, error = _call_peaks_chrom_worker(
+                chrom=chrom,
+                wps_dir=wps_dir,
+                prefix=prefix,
+                mode=mode,
+            )
+
+            if error:
+                log.warning("%s", error)
+                continue
+
+            peaks_by_chrom[chrom_name] = chrom_peaks
+            log.info("  %s: %d peaks", chrom_name, len(chrom_peaks))
+
+    else:
+        with ProcessPoolExecutor(max_workers=n_jobs) as executor:
+            future_to_chrom = {
+                executor.submit(
+                    _call_peaks_chrom_worker,
+                    chrom,
+                    wps_dir,
+                    prefix,
+                    mode,
+                ): chrom
+                for chrom in target
+            }
+
+            for future in as_completed(future_to_chrom):
+                chrom = future_to_chrom[future]
+
+                try:
+                    chrom_name, chrom_peaks, error = future.result()
+                except Exception:
+                    log.exception("  %s: worker 실패", chrom)
+                    continue
+
+                if error:
+                    log.warning("%s", error)
+                    continue
+
+                peaks_by_chrom[chrom_name] = chrom_peaks
+                log.info("  %s: %d peaks", chrom_name, len(chrom_peaks))
+
     all_peaks: list[Peak] = []
-
     for chrom in target:
-        arr = load_track(
-            wps_dir  = wps_dir,
-            mode     = mode,
-            chrom    = chrom,
-            metric   = "norm",
-            prefix   = prefix,
-            manifest = manifest,
-        )
-        if arr is None:
-            log.warning("norm.npy 없음: %s — skip", chrom)
-            continue
-
-        arr = arr.astype(np.float32)
-        # NaN → 0 처리 (segmentation에서 above-zero 판정 안 되게)
-        arr = np.nan_to_num(arr, nan=0.0)
-
-        chrom_peaks = call_peaks_chrom(chrom, arr)
-        all_peaks.extend(chrom_peaks)
-        log.info("  %s: %d peaks", chrom, len(chrom_peaks))
+        all_peaks.extend(peaks_by_chrom.get(chrom, []))
 
     write_peaks_bed(all_peaks, output_bed)
-    log.info("peak calling 완료: %d peaks → %s", len(all_peaks), output_bed)
+    log.info(
+        "peak calling 완료: %d peaks → %s",
+        len(all_peaks),
+        output_bed,
+    )
     return all_peaks

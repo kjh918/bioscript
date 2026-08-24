@@ -1,23 +1,6 @@
 #!/usr/bin/env python3
 """
 run.py  —  NIPT 통합 파이프라인 진입점
-
-subcommand
-----------
-  cnv   CNV + Fetal Fraction
-  wps   WPS compute + aggregate + plot
-  all   cnv → wps 순서 전체
-
-skip 정책 (--force 없으면 결과물 존재 시 자동 skip)
----------------------------------------------------
-  bincount.tsv    존재 → binning  skip
-  normalized.tsv  존재 → normalize skip
-  cnv.tsv         존재 → cnv call skip
-  ff json         존재 → fetal fraction skip
-  wps manifest    존재 → compute  skip  (mode별)
-  agg parquet     존재 → aggregate skip (mode별)
-
---force 지정 시 모든 단계 재실행
 """
 from __future__ import annotations
 
@@ -32,6 +15,7 @@ from cnv.binning       import run_binning
 from cnv.normalize     import run_normalize
 from cnv.calculate_cnv import run_calculate_cnv
 from cnv.region_cnv    import run_region_cnv
+from cnv.within_sample_cnv import run_within_sample_cnv
 from cnv.plotting      import plot_cnv_scatter, plot_cnv_scatter_by_chrom
 import fetal_fraction
 from wps.compute       import run as wps_compute
@@ -58,7 +42,6 @@ def _load_config(path: str | None) -> dict:
 
 
 def _skip(path: Path, label: str, force: bool) -> bool:
-    """결과물이 이미 있고 force 아니면 True(skip) 반환"""
     if not force and path.exists():
         logger.info("[SKIP] %s — 결과물 존재: %s", label, path)
         return True
@@ -67,34 +50,29 @@ def _skip(path: Path, label: str, force: bool) -> bool:
 
 # ── argparse 헬퍼 ─────────────────────────────────────────────────────
 def _add_common(p: argparse.ArgumentParser) -> None:
-    p.add_argument("--bam",    required=True, help="입력 BAM (sorted, indexed)")
-    p.add_argument("--outdir", required=True, help="출력 루트 디렉토리")
-    p.add_argument("--sample", required=True, help="샘플 ID (파일명 prefix)")
-    p.add_argument("--config", default=None,  help="YAML config 파일")
-    p.add_argument("--force",  action="store_true",
-                   help="결과물 존재해도 모든 단계 재실행")
+    p.add_argument("--bam",    required=True)
+    p.add_argument("--outdir", required=True)
+    p.add_argument("--sample", required=True)
+    p.add_argument("--config", default=None)
+    p.add_argument("--force",  action="store_true")
 
 
 def _add_cnv_args(p: argparse.ArgumentParser) -> None:
-    p.add_argument("--bw",       required=True, help="mappability bigWig")
-    p.add_argument("--fasta",    required=True, help="hg38 reference FASTA")
-    p.add_argument("--cnv-jobs", type=int, default=4, dest="cnv_jobs",
-                   help="binning 병렬 프로세스 수 (default: 4)")
-    p.add_argument("--no-plot",  action="store_true", help="CNV scatter plot 생성 안 함")
-    p.add_argument("--no-ff",    action="store_true", help="Fetal Fraction 추정 스킵")
+    p.add_argument("--bw",       required=True)
+    p.add_argument("--fasta",    required=True)
+    p.add_argument("--cnv-jobs", type=int, default=4, dest="cnv_jobs")
+    p.add_argument("--no-plot",  action="store_true")
+    p.add_argument("--no-ff",    action="store_true")
 
 
 def _add_wps_args(p: argparse.ArgumentParser) -> None:
     p.add_argument("--mode",       nargs="+", choices=["L", "S"], default=["L"])
-    p.add_argument("--marker-bed", default=None, dest="marker_bed",
-                   help="marker BED (aggregate 선택)")
+    p.add_argument("--marker-bed", default=None, dest="marker_bed")
     p.add_argument("--jobs",     type=int, default=4)
     p.add_argument("--min-mapq", type=int, default=20,   dest="min_mapq")
     p.add_argument("--win-size", type=int, default=1000, dest="win_size")
-    p.add_argument("--flank",    type=int, default=1000,
-                   help="marker aggregate ±flank bp")
-    p.add_argument("--no-wps-plot", action="store_true", dest="no_wps_plot",
-                   help="WPS plot 생성 안 함")
+    p.add_argument("--flank",    type=int, default=1000)
+    p.add_argument("--no-wps-plot", action="store_true", dest="no_wps_plot")
 
 
 # ── CNV 파이프라인 ─────────────────────────────────────────────────────
@@ -111,6 +89,7 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
     bincount_tsv   = outdir / f"{sid}.bincount.tsv"
     normalized_tsv = outdir / f"{sid}.normalized.tsv"
     cnv_tsv        = outdir / f"{sid}.cnv.tsv"
+    region_cnv_tsv = outdir / f"{sid}.region_cnv.tsv"
     ff_json        = outdir / f"{sid}.fetal_fraction.json"
     plot_short     = plot_dir / f"{sid}.cnv_short.png"
     plot_long      = plot_dir / f"{sid}.cnv_long.png"
@@ -154,30 +133,44 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
             min_bins_per_chrom    = c["min_bins_per_chrom"],
         )
 
-    # step 3-1. region CNV call (PELT segmentation, microdeletion 검출)
-    region_cnv_tsv = outdir / f"{sid}.region_cnv.tsv"
+    # FF 로드 공통
+    ff_percent = None
+    if ff_json.exists():
+        import json as _json
+        with open(ff_json) as fh:
+            ff_data = _json.load(fh)
+        ff_percent = ff_data.get("ff_chry")
+
+    # step 3-1. region CNV call (PELT — 보조)
     if not _skip(region_cnv_tsv, "region cnv call", force):
         logger.info("=== CNV : Region CNV call (PELT) ===")
-        # ff_percent: fetal_fraction.json이 있으면 로드
-        ff_percent = None
-        if ff_json.exists():
-            import json
-            with open(ff_json) as fh:
-                ff_data = json.load(fh)
-            ff_percent = ff_data.get("ff_seqff") or ff_data.get("ff_chry")
         run_region_cnv(
             norm_tsv_path         = str(normalized_tsv),
             output_path           = str(region_cnv_tsv),
             zscore_gain_threshold = c["zscore_gain_threshold"],
             zscore_loss_threshold = c["zscore_loss_threshold"],
             min_size_mb           = c.get("min_region_size_mb", 1.0),
-            penalty_multiplier    = c.get("pelt_penalty_multiplier", 2.0),
+            penalty               = c.get("pelt_penalty", 3.0),
+            ff_percent            = ff_percent,
+        )
+
+    # step 3-2. within-sample CNV call (WisecondorX 방식 — primary)
+    wss_cnv_tsv = outdir / f"{sid}.wss_cnv.tsv"
+    if not _skip(wss_cnv_tsv, "within-sample cnv call", force):
+        logger.info("=== CNV : Within-sample CNV call (WisecondorX 방식) ===")
+        run_within_sample_cnv(
+            norm_tsv_path         = str(normalized_tsv),
+            output_path           = str(wss_cnv_tsv),
+            zscore_gain_threshold = c["zscore_gain_threshold"],
+            zscore_loss_threshold = c["zscore_loss_threshold"],
+            min_size_mb           = c.get("min_region_size_mb", 1.0),
+            k_ref                 = c.get("wss_k_ref", 100),
+            cbs_alpha             = c.get("cbs_alpha", 0.01),
             ff_percent            = ff_percent,
         )
 
     # step 4. plot
     if not getattr(args, "no_plot", False):
-        # genome-wide scatter
         if not _skip(plot_short, "cnv scatter plot", force):
             logger.info("=== CNV : genome-wide scatter plot ===")
             plot_cnv_scatter(
@@ -191,7 +184,6 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
                 zscore_loss_threshold = c["zscore_loss_threshold"],
             )
 
-        # chromosome별 scatter
         chrom_plot_dir = plot_dir / "by_chrom"
         if not force and chrom_plot_dir.exists() and any(chrom_plot_dir.iterdir()):
             logger.info("[SKIP] CNV chrom plot — 결과물 존재: %s", chrom_plot_dir)
@@ -224,6 +216,7 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
         "normalized":     normalized_tsv,
         "cnv call":       cnv_tsv,
         "region cnv":     region_cnv_tsv,
+        "wss cnv":        wss_cnv_tsv,
         "ff json":        ff_json,
         "plot short":     plot_short,
         "plot long":      plot_long,
@@ -244,8 +237,8 @@ def _run_wps(args: argparse.Namespace) -> None:
         logger.info("WPS MODE: %s", mode)
         logger.info("=" * 55)
 
-        plot_dir     = wps_root / "plots"
-        agg_dir      = wps_root / "aggregate"
+        plot_dir      = wps_root / "plots"
+        agg_dir       = wps_root / "aggregate"
         manifest_path = wps_root / mode / "manifest.json"
         agg_parquet   = agg_dir / f"{sid}.{mode}.marker_stats.parquet"
         agg_profiles  = agg_dir / f"{sid}.{mode}.marker_stats_profiles.npy"
@@ -260,7 +253,7 @@ def _run_wps(args: argparse.Namespace) -> None:
                 min_mapq = args.min_mapq,
                 win_size = args.win_size,
                 n_jobs   = args.jobs,
-                resume   = False,          # skip은 manifest 기준으로 이미 처리
+                resume   = False,
                 prefix   = sid,
             )
 
@@ -280,7 +273,7 @@ def _run_wps(args: argparse.Namespace) -> None:
         else:
             logger.info("[SKIP] WPS aggregate — marker BED 미지정")
 
-        # step 3. plot
+        # step 3. plot (mode별)
         if not getattr(args, "no_wps_plot", False):
             plot_dir.mkdir(parents=True, exist_ok=True)
             agg_png = plot_dir / f"{sid}.{mode}.marker_aggregate.png"
@@ -295,14 +288,11 @@ def _run_wps(args: argparse.Namespace) -> None:
                         title_suffix = f"mode={mode}",
                     )
 
-            # group overlay plot (그룹별 개별 PNG)
-            group_dir     = agg_dir / "by_group"
+            group_dir      = agg_dir / "by_group"
             group_plot_dir = plot_dir / f"{mode}_groups"
             if getattr(args, "marker_bed", None) and group_dir.is_dir():
-                # 디렉토리 존재 + force 없으면 skip
                 if not force and group_plot_dir.exists() and any(group_plot_dir.iterdir()):
-                    logger.info("[SKIP] WPS group plot [%s] — 결과물 존재: %s",
-                                mode, group_plot_dir)
+                    logger.info("[SKIP] WPS group plot [%s] — 결과물 존재: %s", mode, group_plot_dir)
                 else:
                     logger.info("=== WPS group plot [%s] ===", mode)
                     plot_group_overlay(
@@ -317,12 +307,12 @@ def _run_wps(args: argparse.Namespace) -> None:
         if mode == "L":
             if not _skip(peaks_bed, f"WPS peak calling [{mode}]", force):
                 logger.info("=== WPS peak calling [%s] ===", mode)
-                from wps.peak_calling import run as wps_call_peaks
                 wps_call_peaks(
                     wps_dir    = str(wps_root),
                     output_bed = str(peaks_bed),
                     prefix     = sid,
                     mode       = mode,
+                    n_jobs     = 8,
                 )
 
         _log_outputs(f"WPS [{mode}]", {
@@ -332,12 +322,11 @@ def _run_wps(args: argparse.Namespace) -> None:
             "aggregate": agg_parquet,
         })
 
-    # ── genome-wide plot: L+S 통합 (mode 루프 밖에서 1회) ────────────
+    # genome-wide plot: L+S 통합 (mode 루프 밖에서 1회)
     if not getattr(args, "no_wps_plot", False):
         plot_dir = wps_root / "plots"
         plot_dir.mkdir(parents=True, exist_ok=True)
 
-        # genome-wide 통합 PNG
         gw_png = plot_dir / f"{sid}.genome_wide.png"
         if not _skip(gw_png, "WPS genome-wide plot (L+S)", force):
             logger.info("=== WPS genome-wide plot (L+S 통합) ===")
@@ -348,7 +337,6 @@ def _run_wps(args: argparse.Namespace) -> None:
                 prefix      = sid,
             )
 
-        # chromosome별 개별 PNG
         chrom_plot_dir = plot_dir / "by_chrom"
         if not force and chrom_plot_dir.exists() and any(chrom_plot_dir.iterdir()):
             logger.info("[SKIP] WPS chrom plot — 결과물 존재: %s", chrom_plot_dir)
@@ -385,13 +373,13 @@ def build_parser() -> argparse.ArgumentParser:
     sub = root.add_subparsers(dest="command", required=True)
 
     p_cnv = sub.add_parser("cnv", help="CNV + Fetal Fraction")
-    _add_common(p_cnv);  _add_cnv_args(p_cnv)
+    _add_common(p_cnv); _add_cnv_args(p_cnv)
 
     p_wps = sub.add_parser("wps", help="WPS + aggregate + plot")
-    _add_common(p_wps);  _add_wps_args(p_wps)
+    _add_common(p_wps); _add_wps_args(p_wps)
 
     p_all = sub.add_parser("all", help="CNV + FF + WPS 전체")
-    _add_common(p_all);  _add_cnv_args(p_all);  _add_wps_args(p_all)
+    _add_common(p_all); _add_cnv_args(p_all); _add_wps_args(p_all)
 
     return root
 
@@ -402,10 +390,8 @@ def main() -> None:
 
     if args.command == "cnv":
         _run_cnv(args, cfg)
-
     elif args.command == "wps":
         _run_wps(args)
-
     elif args.command == "all":
         logger.info("▶ CNV + FF")
         _run_cnv(args, cfg)

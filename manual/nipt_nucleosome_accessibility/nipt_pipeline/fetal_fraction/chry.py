@@ -107,7 +107,5 @@ def estimate(
         chry_mean_cov     = chry_mean,
         autosome_mean_cov = autosome_mean,
         chry_bin_count    = len(chry_covs),
-        ff_seqff          = None,
-        short_fraction_mean = None,
         method_note       = note,
     )

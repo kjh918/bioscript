@@ -19,8 +19,10 @@ cnv:
   zscore_loss_threshold: -3.0
   min_bins_per_chrom: 5          # 염색체 단위 call 최소 bin 수
 
-  # PELT region CNV (microdeletion/duplication)
-  min_region_size_mb: 1.0        # GAIN/LOSS report 최소 region 크기 (Mb)
-                                  # microdeletion: 1.0, 전체 aneuploidy: 10.0
-  pelt_penalty_multiplier: 2.0   # 높을수록 보수적 (changepoint 수 감소)
-                                  # 1.0=BIC, 2.0=보수적, 0.5=민감
+  # PELT region CNV (보조)
+  min_region_size_mb: 4
+  pelt_penalty: 3.0
+
+  # Within-sample CNV (WisecondorX 방식 — primary)
+  wss_k_ref: 100        # reference bin 수 (많을수록 안정, 느림)
+  cbs_alpha: 0.01       # CBS t-test 유의수준 (낮을수록 보수적)

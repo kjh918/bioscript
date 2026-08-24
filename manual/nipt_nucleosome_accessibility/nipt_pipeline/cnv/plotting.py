@@ -43,6 +43,11 @@ REGION_COLOR: dict[str, str] = {
 
 CHROM_ORDER: list[str] = STANDARD_CHROMS
 
+# call 상수
+CALL_GAIN   = "GAIN"
+CALL_LOSS   = "LOSS"
+CALL_NORMAL = "NORMAL"
+
 CALL_COLOR: dict[str, str] = {
     "GAIN":              "#D32F2F",
     "LOSS":              "#1565C0",
@@ -230,17 +235,22 @@ def _draw_genome_scatter(
 def _draw_chrom_scatter(
     ax:             plt.Axes,
     chrom:          str,
-    bins:           list[tuple[int, float]],  # (bin_start, zscore) 정렬됨
+    bins:           list[tuple[int, float]],
     call:           str,
     median_z:       Optional[float],
     gain_thr:       float,
     loss_thr:       float,
     fragment_type:  str,
     sample_id:      str,
-    regions:        Optional[list[tuple[int, int, str]]] = None,  # region CNV
+    segments:       Optional[list] = None,  # Segment 객체 리스트
 ) -> None:
     """
-    regions: [(start, end, call), ...] — region_cnv.tsv GAIN/LOSS region
+    cnv_segmentation.py 스타일 통합 플롯.
+
+    segments: region_cnv.run_region_cnv() 반환 Segment 리스트
+      - GAIN/LOSS segment → 반투명 띠 배경
+      - segment 내 bin → 진한 색 scatter
+      - segment median Z 수평선 + 라벨
     """
     ax.set_facecolor("white")
 
@@ -252,70 +262,81 @@ def _draw_chrom_scatter(
     xs = np.array([b[0] for b in bins], dtype=np.float64)
     ys = np.array([b[1] for b in bins], dtype=np.float64)
 
-    # ── region CNV 배경 하이라이트 ───────────────────────────────────
-    if regions:
-        for reg_start, reg_end, reg_call in regions:
-            rc = REGION_COLOR.get(reg_call, "#E0E0E0")
-            ax.axvspan(
-                reg_start / 1e6, reg_end / 1e6,
-                color=rc, alpha=0.18, zorder=0,
-                label=f"Region {reg_call} ({reg_start//1e6:.1f}-{reg_end//1e6:.1f}Mb)",
-            )
-            # region 경계 수직선
-            for xb in (reg_start / 1e6, reg_end / 1e6):
-                ax.axvline(xb, color=rc, linewidth=1.0,
-                           linestyle=":", alpha=0.8, zorder=2)
+    # ── segment 띠 + median 수평선 ────────────────────────────────────
+    if segments:
+        for seg in segments:
+            seg_call = seg.call_total
+            if seg_call == CALL_NORMAL:
+                continue
+            rc = REGION_COLOR.get(seg_call, "#E0E0E0")
+            s_mb = seg.start / 1e6
+            e_mb = seg.end   / 1e6
+            med  = seg.median_z_total
 
-    # ── bin scatter: region 안에 있는 bin은 진한 색으로 ──────────────
-    bin_colors = []
-    for bstart, bz in bins:
-        in_region = False
-        if regions:
-            for reg_start, reg_end, reg_call in regions:
-                if reg_start <= bstart < reg_end:
-                    bin_colors.append(REGION_COLOR.get(reg_call, CALL_COLOR["NORMAL"]))
-                    in_region = True
+            # 반투명 띠
+            ax.axvspan(s_mb, e_mb, color=rc, alpha=0.18, zorder=0)
+            # 경계 수직 점선
+            for xb in (s_mb, e_mb):
+                ax.axvline(xb, color=rc, linewidth=1.0, linestyle=":", alpha=0.8, zorder=2)
+            # segment median 수평선
+            ax.hlines(med, s_mb, e_mb, colors=rc, linewidth=2.2, alpha=0.85, zorder=4)
+            # segment 라벨
+            mid = (s_mb + e_mb) / 2
+            ax.text(mid, med + 0.3,
+                    f"{seg_call}\n(Z={med:.1f}\n{seg.size_mb:.1f}Mb)",
+                    ha="center", va="bottom", fontsize=7,
+                    color=rc, fontweight="bold", zorder=5)
+
+    # ── bin scatter: segment에 속한 bin 진한 색 ──────────────────────
+    bin_colors: list[str] = []
+    for bstart, _ in bins:
+        matched = False
+        if segments:
+            for seg in segments:
+                if seg.call_total != CALL_NORMAL and seg.start <= bstart < seg.end:
+                    bin_colors.append(REGION_COLOR.get(seg.call_total, CALL_COLOR["NORMAL"]))
+                    matched = True
                     break
-        if not in_region:
+        if not matched:
             bin_colors.append(CALL_COLOR.get(call, CALL_COLOR["NORMAL"]))
 
-    ax.scatter(xs / 1e6, ys, c=bin_colors, s=5, alpha=0.8, linewidths=0, zorder=3)
+    ax.scatter(xs / 1e6, ys, c=bin_colors, s=5, alpha=0.75, linewidths=0, zorder=3)
 
+    # 염색체 median
     if median_z is not None:
-        chrom_color = CALL_COLOR.get(call, "#555555")
-        ax.axhline(median_z, color=chrom_color, linewidth=1.5,
-                   linestyle="-", zorder=4, label=f"Chrom median Z={median_z:.2f}")
+        ax.axhline(median_z, color="#333333", linewidth=1.2,
+                   linestyle="-", alpha=0.7, zorder=3)
 
-    ax.axhline(gain_thr, color="#D32F2F", linestyle="--",
-               linewidth=0.9, alpha=0.8, zorder=5)
-    ax.axhline(loss_thr, color="#1565C0", linestyle="--",
-               linewidth=0.9, alpha=0.8, zorder=5)
-    ax.axhline(0, color="#757575", linestyle="-",
-               linewidth=0.6, alpha=0.5, zorder=1)
+    ax.axhline(gain_thr, color="#D32F2F", linestyle="--", linewidth=0.9, alpha=0.8, zorder=5)
+    ax.axhline(loss_thr, color="#1565C0", linestyle="--", linewidth=0.9, alpha=0.8, zorder=5)
+    ax.axhline(0, color="#757575", linestyle="-", linewidth=0.6, alpha=0.5, zorder=1)
 
     ax.set_xlabel(f"{chrom} position (Mbp)", fontsize=9)
     ax.set_ylabel("Z-score", fontsize=9)
-    ax.set_title(
-        f"{sample_id} — {chrom}  {fragment_type} fragment Z-score  [{call}]",
-        fontsize=10, fontweight="bold",
-        color=CALL_COLOR.get(call, "#333333"),
-    )
-    ax.xaxis.set_major_formatter(
-        mticker.FuncFormatter(lambda v, _: f"{v:.0f}")
-    )
-    ax.set_xlim(xs[0] / 1e6, xs[-1] / 1e6)
+    ax.xaxis.set_major_formatter(mticker.FuncFormatter(lambda v, _: f"{v:.0f}"))
+    if len(xs):
+        ax.set_xlim(xs[0] / 1e6, xs[-1] / 1e6)
 
     ymin, ymax = _robust_ylim(list(ys), gain_thr, loss_thr)
     ax.set_ylim(ymin, ymax)
 
-    # 범례 (region 있으면 추가)
+    # 범례
     legend_handles = _make_legend(gain_thr, loss_thr)
-    if regions:
-        legend_handles += [
-            mpatches.Patch(color=REGION_COLOR["GAIN"], alpha=0.5, label="Region GAIN"),
-            mpatches.Patch(color=REGION_COLOR["LOSS"], alpha=0.5, label="Region LOSS"),
-        ]
-    ax.legend(handles=legend_handles, fontsize=7, loc="upper right", framealpha=0.8)
+    if segments:
+        n_loss = sum(1 for s in segments if s.call_total == CALL_LOSS)
+        n_gain = sum(1 for s in segments if s.call_total == CALL_GAIN)
+        seg_info = f"Segments: {len(segments)} | DEL={n_loss} GAIN={n_gain}"
+        if n_loss:
+            legend_handles.append(
+                mpatches.Patch(color=REGION_COLOR["LOSS"], alpha=0.5, label="DEL segment"))
+        if n_gain:
+            legend_handles.append(
+                mpatches.Patch(color=REGION_COLOR["GAIN"], alpha=0.5, label="GAIN segment"))
+        ax.legend(handles=legend_handles, fontsize=7, loc="upper right",
+                  framealpha=0.8, title=seg_info, title_fontsize=7)
+    else:
+        ax.legend(handles=legend_handles, fontsize=7, loc="upper right", framealpha=0.8)
+
     ax.tick_params(labelsize=8)
     ax.spines[["top", "right"]].set_visible(False)
 
@@ -362,19 +383,22 @@ def plot_cnv_scatter(
         plt.close(fig)
         logger.info("저장 완료 → %s", output_path)
 
-    # ── 3-panel 합친 PNG (total / short / long) ───────────────────────
-    logger.info("combined 3-panel scatter → %s", output_combined)
+    # ── 4-panel 합친 PNG (total / short / long / short_fraction) ────────
+    logger.info("combined 4-panel scatter → %s", output_combined)
 
     panels = [
-        ("Total",  "zscore_total", "call_total", "median_zscore_total"),
-        ("Short",  "zscore_short", "call_short", "median_zscore_short"),
-        ("Long",   "zscore_long",  "call_long",  "median_zscore_long"),
+        ("Total",           "zscore_total",          "call_total",          "median_zscore_total"),
+        ("Short (count)",   "zscore_short",          "call_short",          "median_zscore_short"),
+        ("Long (count)",    "zscore_long",           "call_long",           "median_zscore_long"),
+        ("Short fraction",  "zscore_short_fraction", "call_short_fraction", "median_zscore_short_fraction"),
     ]
 
-    fig, axes = plt.subplots(3, 1, figsize=(18, 10), sharex=True)
+    fig, axes = plt.subplots(4, 1, figsize=(18, 13), sharex=True)
     fig.subplots_adjust(hspace=0.08)
-    fig.suptitle(f"{sample_id} — CNV Z-score  (Total / Short / Long)",
-                 fontsize=11, fontweight="bold", y=0.98)
+    fig.suptitle(
+        f"{sample_id} — CNV Z-score  (Total / Short count / Long count / Short fraction)",
+        fontsize=11, fontweight="bold", y=0.99,
+    )
 
     for ax, (frag_type, zscore_col, call_col, median_col) in zip(axes, panels):
         bin_data       = _load_bin_data(norm_tsv_path, zscore_col)
@@ -385,11 +409,8 @@ def plot_cnv_scatter(
             zscore_gain_threshold, zscore_loss_threshold,
             frag_type, sample_id,
         )
-        # 합친 그림에서는 타이틀 대신 Y축 레이블로 구분
         ax.set_title("")
-        ax.set_ylabel(f"{frag_type}
-Z-score", fontsize=8)
-        # X축 레이블은 마지막 패널만
+        ax.set_ylabel(f"{frag_type}\nZ-score", fontsize=8)
         if ax is not axes[-1]:
             ax.set_xlabel("")
 
@@ -418,13 +439,36 @@ def plot_cnv_scatter_by_chrom(
     out.mkdir(parents=True, exist_ok=True)
     saved: list[str] = []
 
-    # region CNV 로드
-    region_map = _load_region_cnv(region_cnv_path, call_col="call_total")
+    # region CNV 로드 → SimpleNamespace로 래핑 (import 없이 사용)
+    region_map: dict[str, list] = {}
+    if region_cnv_path and Path(region_cnv_path).exists():
+        from types import SimpleNamespace
+        for r in read_tsv(region_cnv_path):
+            chrom_r = r.get("chrom", "")
+            try:
+                seg = SimpleNamespace(
+                    chrom          = chrom_r,
+                    start          = int(r["start"]),
+                    end            = int(r["end"]),
+                    n_bins         = int(r.get("n_bins", 0)),
+                    size_mb        = float(r.get("size_mb", 0)),
+                    median_z_total = float(r.get("median_zscore_total", 0)),
+                    median_z_short = float(r.get("median_zscore_short", 0)),
+                    median_z_long  = float(r.get("median_zscore_long",  0)),
+                    call_total     = r.get("call_total", "NORMAL"),
+                    call_short     = r.get("call_short", "NORMAL"),
+                    call_long      = r.get("call_long",  "NORMAL"),
+                    ff_corrected   = float(r.get("ff_corrected_zscore_total", 0)),
+                )
+                region_map.setdefault(chrom_r, []).append(seg)
+            except (KeyError, ValueError):
+                continue
 
     panels = [
-        ("Total", "zscore_total", "call_total", "median_zscore_total"),
-        ("Short", "zscore_short", "call_short", "median_zscore_short"),
-        ("Long",  "zscore_long",  "call_long",  "median_zscore_long"),
+        ("Total",          "zscore_total",          "call_total",          "median_zscore_total"),
+        ("Short (count)",  "zscore_short",          "call_short",          "median_zscore_short"),
+        ("Long (count)",   "zscore_long",           "call_long",           "median_zscore_long"),
+        ("Short fraction", "zscore_short_fraction", "call_short_fraction", "median_zscore_short_fraction"),
     ]
 
     # 데이터 사전 로드 (chrom 루프마다 TSV 재읽기 방지)
@@ -440,7 +484,7 @@ def plot_cnv_scatter_by_chrom(
         regions    = region_map.get(chrom)
         call_total = all_cnv_calls["Total"].get(chrom, "NORMAL")
 
-        fig, axes = plt.subplots(3, 1, figsize=(12, 9), sharex=True)
+        fig, axes = plt.subplots(4, 1, figsize=(12, 12), sharex=True)
         fig.subplots_adjust(hspace=0.08)
 
         for ax, (frag_type, _, _, _) in zip(axes, panels):
@@ -452,7 +496,7 @@ def plot_cnv_scatter_by_chrom(
                 ax, chrom, bins, call, med_z,
                 zscore_gain_threshold, zscore_loss_threshold,
                 frag_type, sample_id,
-                regions=regions,
+                segments=regions,
             )
             ax.set_title("")
             ax.set_ylabel(f"{frag_type}\nZ-score", fontsize=8)
@@ -463,8 +507,8 @@ def plot_cnv_scatter_by_chrom(
         region_str = ""
         if regions:
             region_str = "  |  " + "  ".join(
-                f"{c}:{s//1_000_000:.1f}-{e//1_000_000:.1f}Mb"
-                for s, e, c in regions
+                f"{seg.call_total}:{seg.start//1_000_000:.1f}-{seg.end//1_000_000:.1f}Mb"
+                for seg in regions
             )
 
         fig.suptitle(

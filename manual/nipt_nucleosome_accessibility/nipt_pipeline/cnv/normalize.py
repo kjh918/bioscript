@@ -33,7 +33,9 @@ FIELDNAMES = [
     "chrom", "bin_start", "bin_end", "gc", "mappability",
     "total_raw", "short_raw", "long_raw",
     "total_gc",  "short_gc",  "long_gc",
+    "short_fraction_gc",
     "zscore_total", "zscore_short", "zscore_long",
+    "zscore_short_fraction",
 ]
 
 
@@ -216,20 +218,6 @@ def run_normalize(
         short_gc = short_raw.copy()
         long_gc  = long_raw.copy()
 
-    # chr19 GC 보정 후 임의 가중치 적용
-    # chr19는 GC content ~48%로 LOESS correction 후 과도하게 낮아지는 경향
-    # 30% 상향 가중치로 보정
-    chr19_mask = chroms == "chr19"
-    if chr19_mask.any():
-        CHR19_WEIGHT = 1.30
-        total_gc[chr19_mask] *= CHR19_WEIGHT
-        short_gc[chr19_mask] *= CHR19_WEIGHT
-        long_gc[chr19_mask]  *= CHR19_WEIGHT
-        logger.info(
-            "chr19 GC 가중치 적용 (×%.2f, bins=%d)",
-            CHR19_WEIGHT, int(chr19_mask.sum()),
-        )
-
     # reference bin mask: 제외 염색체 외의 bin
     ref_mask = np.array([c not in excluded for c in chroms])
     logger.info(
@@ -242,10 +230,45 @@ def run_normalize(
     zscore_short = _zscore(short_gc, ref_mask)
     zscore_long  = _zscore(long_gc,  ref_mask)
 
-    # Z-score 이상치 clamp: GC correction 잔여 이상치 bin 제거
-    # MAD 기반 Z-score 이므로 ±10 초과는 실질적으로 의미 없는 이상치
+    # short_fraction_gc: raw fraction → GC correction 순서
+    #
+    # 왜 raw fraction에 GC correction을 적용하는가:
+    #   short / total 각각 독립 LOESS → 보정 배율이 달라짐
+    #   → fraction이 원래 값에서 왜곡됨
+    #   올바른 방법: raw fraction 자체에 GC bias를 직접 보정
+    #
+    # 계산:
+    #   1. short_fraction_raw = short_raw / total_raw  (per bin, GC bias 포함)
+    #   2. LOESS(short_fraction_raw, gc)               (GC bias 제거)
+    #   → short_fraction_gc
+
+    safe_total_raw    = np.where(total_raw > 0, total_raw, np.nan)
+    short_fraction_raw = short_raw / safe_total_raw   # total=0 → NaN
+
+    # NaN bin 제외하고 LOESS GC correction
+    valid_frac = np.isfinite(short_fraction_raw)
+    if valid_frac.sum() >= 10:
+        short_fraction_gc = _loess_gc_correct(
+            np.where(valid_frac, short_fraction_raw, 0.0),
+            gc,
+            frac              = gc_loess_span,
+            max_correction_ratio = 2.0,   # fraction은 더 엄격하게
+        )
+        # total_raw=0 bin은 다시 NaN으로 복원
+        short_fraction_gc = np.where(valid_frac, short_fraction_gc, np.nan)
+    else:
+        logger.warning("short_fraction GC correction 적용 불가 — raw 사용")
+        short_fraction_gc = short_fraction_raw.copy()
+
+    # Z-score: NaN bin은 ref_mask에서도 제외
+    frac_for_zscore = np.nan_to_num(short_fraction_gc, nan=0.0)
+    # ref_mask에서 NaN bin 추가 제외
+    frac_ref_mask   = ref_mask & valid_frac
+    zscore_short_fraction = _zscore(frac_for_zscore, frac_ref_mask)
+
+    # Z-score 이상치 clamp (±10)
     _ZSCORE_CLAMP = 10.0
-    for arr in (zscore_total, zscore_short, zscore_long):
+    for arr in (zscore_total, zscore_short, zscore_long, zscore_short_fraction):
         np.clip(arr, -_ZSCORE_CLAMP, _ZSCORE_CLAMP, out=arr)
 
     # 결과 조립
@@ -263,9 +286,11 @@ def run_normalize(
             "total_gc":     f"{total_gc[i]:.4f}",
             "short_gc":     f"{short_gc[i]:.4f}",
             "long_gc":      f"{long_gc[i]:.4f}",
-            "zscore_total": f"{zscore_total[i]:.4f}" if not np.isnan(zscore_total[i]) else "NA",
-            "zscore_short": f"{zscore_short[i]:.4f}" if not np.isnan(zscore_short[i]) else "NA",
-            "zscore_long":  f"{zscore_long[i]:.4f}"  if not np.isnan(zscore_long[i])  else "NA",
+            "short_fraction_gc":    f"{short_fraction_gc[i]:.6f}" if not np.isnan(short_fraction_gc[i]) else "NA",
+            "zscore_total":         f"{zscore_total[i]:.4f}"        if not np.isnan(zscore_total[i])        else "NA",
+            "zscore_short":         f"{zscore_short[i]:.4f}"        if not np.isnan(zscore_short[i])        else "NA",
+            "zscore_long":          f"{zscore_long[i]:.4f}"         if not np.isnan(zscore_long[i])         else "NA",
+            "zscore_short_fraction": f"{zscore_short_fraction[i]:.4f}" if not np.isnan(zscore_short_fraction[i]) else "NA",
         })
 
     write_tsv(out_rows, output_path, FIELDNAMES)

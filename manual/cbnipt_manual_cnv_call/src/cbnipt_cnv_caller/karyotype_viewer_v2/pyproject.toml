@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name            = "karyotype-viewer"
+version         = "0.1.0"
+description     = "Interactive clinical karyotype report viewer (FastAPI + Dash-Bio)"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.111",
+    "uvicorn[standard]>=0.29",
+    "dash>=2.17",
+    "dash-bio>=1.0",
+    "plotly>=5.22",
+    "pandas>=2.0",
+    "numpy>=1.26",
+]
+
+[project.scripts]
+karyotype-viewer = "karyotype_viewer.main:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["karyotype_viewer*"]

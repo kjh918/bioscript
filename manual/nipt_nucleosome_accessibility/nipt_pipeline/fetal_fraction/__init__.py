@@ -1,93 +1,71 @@
 """
 fetal_fraction/__init__.py
 ==========================
-두 FF 방법을 병합하여 단일 FetalFractionResult로 반환하는
-run() 함수 제공
+chrY 기반 FF 추정 (SeqFF 제거)
+
+SeqFF 제거 근거:
+- Kim 2015 SeqFF는 single-end sequencing 기반 multivariate regression
+- 현재 데이터는 paired-end → chrY coverage 기반이 더 적합
+- female fetus는 chrY FF=None으로 반환 (한계 명시)
 """
 from __future__ import annotations
 
 import logging
 from typing import Optional
 
-from .chry     import estimate as _chry_estimate
-from .seqff    import estimate as _seqff_estimate
-from .utils    import FetalFractionResult, write_json
-from .plotting import plot_ff_correlation
+from .chry  import estimate as _chry_estimate
+from .utils import FetalFractionResult, write_json
 
 log = logging.getLogger(__name__)
 
 
 def run(
     bincount_tsv:   str,
-    normalized_tsv: str,
+    normalized_tsv: str,        # 시그니처 호환 유지 (미사용)
     output_json:    str,
-    sample_id:      str            = "",
-    seqff_intercept: Optional[float] = None,
-    seqff_slope:     Optional[float] = None,
-    plot_path:       Optional[str]   = None,   # FF correlation plot PNG 경로
+    sample_id:      str          = "",
+    plot_path:      Optional[str] = None,
+    **kwargs,                   # 구버전 호환 (seqff_intercept 등 무시)
 ) -> FetalFractionResult:
     """
-    chrY + SeqFF 두 방법 모두 실행 후 결과 병합 → JSON 저장
+    chrY 기반 FF 추정 → JSON 저장
 
     Parameters
     ----------
-    bincount_tsv    : run_binning 출력 (chrY FF 입력)
-    normalized_tsv  : run_normalize 출력 (SeqFF 입력)
-    output_json     : 결과 JSON 저장 경로
-    sample_id       : 샘플 ID
-    seqff_intercept : SeqFF 절편 오버라이드 (None이면 기본값)
-    seqff_slope     : SeqFF 기울기 오버라이드 (None이면 기본값)
-    plot_path       : FF correlation plot PNG 경로 (None이면 plot 스킵)
+    bincount_tsv   : run_binning 출력 TSV (chrY coverage 기반)
+    normalized_tsv : 미사용 (인터페이스 호환용)
+    output_json    : 결과 JSON 저장 경로
+    sample_id      : 샘플 ID
+    plot_path      : FF correlation plot (normalized_tsv 필요 시 사용)
 
     Returns
     -------
-    두 방법 필드가 합쳐진 FetalFractionResult
+    FetalFractionResult
+      - male fetus:   ff_chry = 추정값 (%)
+      - female fetus: ff_chry = None (chrY coverage 없음)
     """
-    from .seqff import _DEFAULT_INTERCEPT, _DEFAULT_SLOPE
+    log.info("=== Fetal Fraction 추정 (chrY 기반): %s ===", sample_id)
 
-    log.info("=== Fetal Fraction 추정 시작: %s ===", sample_id)
+    result = _chry_estimate(bincount_tsv, sample_id)
+    write_json(result, output_json)
 
-    # chrY 기반
-    chry_result = _chry_estimate(bincount_tsv, sample_id)
+    if result.ff_chry is not None:
+        log.info("FF (chrY): %.2f%%", result.ff_chry)
+    else:
+        log.info("FF (chrY): None (female fetus 또는 chrY coverage 없음)")
 
-    # SeqFF 기반
-    intercept    = seqff_intercept if seqff_intercept is not None else _DEFAULT_INTERCEPT
-    slope        = seqff_slope     if seqff_slope     is not None else _DEFAULT_SLOPE
-    seqff_result = _seqff_estimate(normalized_tsv, sample_id, intercept, slope)
+    # FF correlation plot (short/long count 기반, normalized_tsv 필요)
+    if plot_path and normalized_tsv:
+        try:
+            from .plotting import plot_ff_correlation
+            plot_ff_correlation(
+                normalized_tsv = normalized_tsv,
+                output_path    = plot_path,
+                sample_id      = sample_id,
+                ff_seqff       = None,
+                ff_chry        = result.ff_chry,
+            )
+        except Exception as e:
+            log.warning("FF correlation plot 실패: %s", e)
 
-    # 두 결과 병합
-    merged = FetalFractionResult(
-        sample_id           = sample_id,
-        ff_chry             = chry_result.ff_chry,
-        chry_mean_cov       = chry_result.chry_mean_cov,
-        autosome_mean_cov   = chry_result.autosome_mean_cov,
-        chry_bin_count      = chry_result.chry_bin_count,
-        ff_seqff            = seqff_result.ff_seqff,
-        short_fraction_mean = seqff_result.short_fraction_mean,
-        seqff_intercept     = seqff_result.seqff_intercept,
-        seqff_slope         = seqff_result.seqff_slope,
-        method_note         = (
-            f"chrY={chry_result.method_note} | "
-            f"SeqFF={seqff_result.method_note}"
-        ),
-    )
-
-    write_json(merged, output_json)
-    log.info(
-        "FF 결과: ff_chry=%.2f%% ff_seqff=%.2f%% → %s",
-        merged.ff_chry  or 0.0,
-        merged.ff_seqff or 0.0,
-        output_json,
-    )
-
-    # FF correlation plot
-    if plot_path:
-        plot_ff_correlation(
-            normalized_tsv = normalized_tsv,
-            output_path    = plot_path,
-            sample_id      = sample_id,
-            ff_seqff       = merged.ff_seqff,
-            ff_chry        = merged.ff_chry,
-        )
-
-    return merged
+    return result

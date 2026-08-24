@@ -1,29 +1,25 @@
 """
 cnv/region_cnv.py
 =================
-PELT (Pruned Exact Linear Time) changepoint detection 기반
-region-level CNV call
+ruptures PELT (l2 모델) 기반 region-level CNV segmentation + call
 
-논문 근거 (Chen et al. 2022, Front. Genet.)
-------------------------------------------
-- bin size 100kb, Z-score threshold ±3
-- Z < -3 연속 region → microdeletion
-- Z > +3 연속 region → microduplication
-- Sliding window 대신 PELT로 changepoint 탐지 → region 경계 정확도 향상
+판정 기준
+---------
+FF가 있을 때: ff_corrected_zscore 기준
+  ff_corrected_z = median_z / (FF% / 200)
+  이유: FF=10% 샘플에서 deletion signal = FF/2 = 5%
+        raw Z-score 기준으로는 threshold 미달이어도
+        FF로 나누면 실제 copy number 변화에 비례한 Z가 됨
 
-흐름
-----
-normalized.tsv (bin-level Z-score)
-  → chromosome별 PELT segmentation
-  → segment mean Z-score 계산
-  → size / Z-score threshold 필터
-  → region CNV call TSV 출력
+FF가 없을 때 (female fetus): raw Z-score 기준
 
 출력 컬럼
 ---------
 chrom, start, end, size_mb, n_bins,
-mean_zscore_total, mean_zscore_short, mean_zscore_long,
-call (GAIN/LOSS/NORMAL), ff_corrected_zscore
+median_zscore_total, median_zscore_short, median_zscore_long,
+median_zscore_short_fraction,
+call_total, call_short, call_long, call_short_fraction,
+ff_corrected_zscore_total, call_ff_corrected
 """
 from __future__ import annotations
 
@@ -38,112 +34,94 @@ from .utils import read_tsv, write_tsv, STANDARD_CHROMS
 
 log = logging.getLogger(__name__)
 
-# ── 상수 ──────────────────────────────────────────────────────────────
 CALL_GAIN   = "GAIN"
 CALL_LOSS   = "LOSS"
 CALL_NORMAL = "NORMAL"
 
 FIELDNAMES = [
     "chrom", "start", "end", "size_mb", "n_bins",
-    "mean_zscore_total", "mean_zscore_short", "mean_zscore_long",
-    "call_total", "call_short", "call_long",
-    "ff_corrected_zscore_total",
+    "median_zscore_total", "median_zscore_short", "median_zscore_long",
+    "median_zscore_short_fraction",
+    "call_total", "call_short", "call_long", "call_short_fraction",
+    "ff_corrected_zscore_total", "call_ff_corrected",
 ]
 
 
-# ── PELT 구현 ─────────────────────────────────────────────────────────
-def _pelt_changepoints(
+# ── PELT ─────────────────────────────────────────────────────────────
+def _pelt_ruptures(
     signal:   np.ndarray,
-    penalty:  float,
-    min_size: int = 2,
+    penalty:  float = 3.0,
+    min_size: int   = 3,
+    jump:     int   = 3,
 ) -> list[int]:
-    """
-    PELT (Pruned Exact Linear Time) changepoint detection.
-    비용함수: 구간 내 잔차제곱합 (RSS) — 정규분포 가정.
+    """ruptures PELT l2 모델 — O(n), 빠름"""
+    try:
+        import ruptures as rpt
+        model = rpt.Pelt(model="l2", min_size=min_size, jump=jump)
+        model.fit(signal.reshape(-1, 1))
+        return model.predict(pen=penalty)
+    except ImportError:
+        log.warning("ruptures 없음 → RSS fallback")
+        return _pelt_rss_fallback(signal, penalty, min_size)
+    except Exception as e:
+        log.warning("ruptures 오류 (%s) → RSS fallback", e)
+        return _pelt_rss_fallback(signal, penalty, min_size)
 
-    Parameters
-    ----------
-    signal  : 1-D float array (bin Z-score)
-    penalty : BIC-based penalty = log(n) * sigma^2
-              높을수록 changepoint 수 감소
-    min_size: 최소 segment 크기 (bin 수)
 
-    Returns
-    -------
-    changepoint 인덱스 리스트 (0-based, exclusive end)
-    마지막 원소는 항상 len(signal)
-    """
-    n = len(signal)
-    if n < min_size * 2:
-        return [n]
-
-    # 누적합 / 누적 제곱합 (RSS 빠른 계산용)
+def _pelt_rss_fallback(signal: np.ndarray, penalty: float, min_size: int) -> list[int]:
+    n   = len(signal)
     cs  = np.concatenate([[0.0], np.cumsum(signal)])
     cs2 = np.concatenate([[0.0], np.cumsum(signal ** 2)])
 
     def rss(s: int, e: int) -> float:
-        """구간 [s, e) 의 RSS"""
         length = e - s
         if length <= 0:
             return 0.0
-        sum_x  = cs[e]  - cs[s]
-        sum_x2 = cs2[e] - cs2[s]
-        return sum_x2 - (sum_x ** 2) / length
+        return cs2[e] - cs2[s] - (cs[e] - cs[s]) ** 2 / length
 
-    # DP
-    F   = np.full(n + 1, np.inf)
+    F    = np.full(n + 1, np.inf)
     F[0] = -penalty
-    last = np.zeros(n + 1, dtype=int)  # 이전 changepoint 추적
-
-    # admissible set
-    admissible = [0]
+    last = np.zeros(n + 1, dtype=int)
+    adm  = [0]
 
     for t in range(min_size, n + 1):
-        candidates = [
-            (F[s] + rss(s, t) + penalty, s)
-            for s in admissible
-            if t - s >= min_size
-        ]
-        if not candidates:
-            F[t]    = F[t - 1]
-            last[t] = last[t - 1]
+        cands = [(F[s] + rss(s, t) + penalty, s)
+                 for s in adm if t - s >= min_size]
+        if not cands:
+            F[t] = F[t - 1]; last[t] = last[t - 1]
             continue
+        best_cost, best_s = min(cands)
+        F[t] = best_cost; last[t] = best_s
+        adm  = [s for s in adm if F[s] + penalty <= F[t]]
+        adm.append(t)
 
-        best_cost, best_s = min(candidates, key=lambda x: x[0])
-        F[t]    = best_cost
-        last[t] = best_s
-
-        # PELT 가지치기: F[s] + penalty >= F[t] 이면 s 제거
-        admissible = [
-            s for s in admissible
-            if F[s] + penalty <= F[t]
-        ]
-        admissible.append(t)
-
-    # changepoint 역추적
     cps: list[int] = []
     t = n
     while t > 0:
-        cps.append(t)
-        t = last[t]
+        cps.append(t); t = last[t]
     cps.reverse()
     return cps
 
 
-# ── segment → region 변환 ─────────────────────────────────────────────
+# ── Segment ───────────────────────────────────────────────────────────
 @dataclass
-class CnvRegion:
-    chrom:                  str
-    start:                  int
-    end:                    int
-    n_bins:                 int
-    mean_zscore_total:      float
-    mean_zscore_short:      float
-    mean_zscore_long:       float
-    call_total:             str
-    call_short:             str
-    call_long:              str
-    ff_corrected_zscore:    float  # FF 보정 Z-score (total 기준)
+class Segment:
+    chrom:                   str
+    start:                   int
+    end:                     int
+    n_bins:                  int
+    start_idx:               int
+    end_idx:                 int
+    median_z_total:          float
+    median_z_short:          float
+    median_z_long:           float
+    median_z_short_fraction: float
+    call_total:              str
+    call_short:              str
+    call_long:               str
+    call_short_fraction:     str
+    ff_corrected:            float
+    call_ff_corrected:       str
 
     @property
     def size_mb(self) -> float:
@@ -151,215 +129,243 @@ class CnvRegion:
 
     def to_dict(self) -> dict:
         return {
-            "chrom":                    self.chrom,
-            "start":                    self.start,
-            "end":                      self.end,
-            "size_mb":                  self.size_mb,
-            "n_bins":                   self.n_bins,
-            "mean_zscore_total":        f"{self.mean_zscore_total:.4f}",
-            "mean_zscore_short":        f"{self.mean_zscore_short:.4f}",
-            "mean_zscore_long":         f"{self.mean_zscore_long:.4f}",
-            "call_total":               self.call_total,
-            "call_short":               self.call_short,
-            "call_long":                self.call_long,
-            "ff_corrected_zscore_total": f"{self.ff_corrected_zscore:.4f}",
+            "chrom":                        self.chrom,
+            "start":                        self.start,
+            "end":                          self.end,
+            "size_mb":                      self.size_mb,
+            "n_bins":                       self.n_bins,
+            "median_zscore_total":          f"{self.median_z_total:.4f}",
+            "median_zscore_short":          f"{self.median_z_short:.4f}",
+            "median_zscore_long":           f"{self.median_z_long:.4f}",
+            "median_zscore_short_fraction": f"{self.median_z_short_fraction:.4f}",
+            "call_total":                   self.call_total,
+            "call_short":                   self.call_short,
+            "call_long":                    self.call_long,
+            "call_short_fraction":          self.call_short_fraction,
+            "ff_corrected_zscore_total":    f"{self.ff_corrected:.4f}",
+            "call_ff_corrected":            self.call_ff_corrected,
         }
 
 
 def _call(z: float, gain_thr: float, loss_thr: float) -> str:
-    if z >= gain_thr:
-        return CALL_GAIN
-    if z <= loss_thr:
-        return CALL_LOSS
+    if z >= gain_thr: return CALL_GAIN
+    if z <= loss_thr: return CALL_LOSS
     return CALL_NORMAL
 
 
-def _penalty(signal: np.ndarray, multiplier: float = 1.0) -> float:
+def _ff_corrected_zscore(median_z: float, ff_percent: Optional[float]) -> tuple[float, bool]:
     """
-    BIC-based penalty: log(n) × σ²
-    multiplier로 sensitivity 조정 (높을수록 changepoint 감소)
+    FF 보정 Z-score 계산.
+
+    원리:
+      태아 heterozygous deletion/duplication의 경우
+      expected signal = FF / 2 (copy number 변화 × fetal fraction)
+      ff_corrected_z = median_z / (FF% / 200)
+
+    Returns
+    -------
+    (ff_corrected_z, ff_used)
+      ff_used: True면 FF 보정 적용, False면 raw Z 그대로
     """
-    n     = len(signal)
-    sigma = float(np.std(signal, ddof=1)) if n > 1 else 1.0
-    return multiplier * np.log(n) * (sigma ** 2)
+    if ff_percent and ff_percent > 0:
+        expected_signal = ff_percent / 200.0  # FF%/2/100
+        if expected_signal > 0:
+            return median_z / expected_signal, True
+    return median_z, False
 
 
-def _segment_chrom(
+def _make_segments(
     chrom:       str,
     bins:        list[dict],
+    bkps:        list[int],
     gain_thr:    float,
     loss_thr:    float,
     min_size_mb: float,
-    bin_size:    int,
-    penalty_mul: float,
     ff:          Optional[float],
-    zscore_col:  str,
-) -> list[CnvRegion]:
-    """
-    단일 염색체 bin 리스트 → PELT segmentation → CnvRegion 리스트
-    """
-    if not bins:
-        return []
+) -> list[Segment]:
+    segs: list[Segment] = []
+    prev = 0
 
-    zvals = np.array([
-        float(r[zscore_col]) if r.get(zscore_col, "NA") != "NA" else 0.0
-        for r in bins
-    ], dtype=np.float64)
-
-    pen    = _penalty(zvals, penalty_mul)
-    cps    = _pelt_changepoints(zvals, pen, min_size=1)
-
-    regions: list[CnvRegion] = []
-    prev    = 0
-
-    for cp in cps:
-        seg_bins = bins[prev:cp]
+    for bkp in bkps:
+        seg_bins = bins[prev:bkp]
         if not seg_bins:
-            prev = cp
-            continue
+            prev = bkp; continue
 
-        seg_z_total = np.array([
-            float(r["zscore_total"]) if r.get("zscore_total", "NA") != "NA" else 0.0
-            for r in seg_bins
-        ])
-        seg_z_short = np.array([
-            float(r["zscore_short"]) if r.get("zscore_short", "NA") != "NA" else 0.0
-            for r in seg_bins
-        ])
-        seg_z_long  = np.array([
-            float(r["zscore_long"])  if r.get("zscore_long",  "NA") != "NA" else 0.0
-            for r in seg_bins
-        ])
+        def _z(key: str) -> np.ndarray:
+            return np.array([
+                float(r[key]) if r.get(key, "NA") != "NA" else 0.0
+                for r in seg_bins
+            ])
 
-        mean_total = float(np.mean(seg_z_total))
-        mean_short = float(np.mean(seg_z_short))
-        mean_long  = float(np.mean(seg_z_long))
+        z_total          = _z("zscore_total")
+        z_short          = _z("zscore_short")
+        z_long           = _z("zscore_long")
+        z_short_fraction = _z("zscore_short_fraction")
 
-        # call
-        call_total = _call(mean_total, gain_thr, loss_thr)
-        call_short = _call(mean_short, gain_thr, loss_thr)
-        call_long  = _call(mean_long,  gain_thr, loss_thr)
+        med_total          = float(np.median(z_total))
+        med_short          = float(np.median(z_short))
+        med_long           = float(np.median(z_long))
+        med_short_fraction = float(np.median(z_short_fraction))
 
-        # region 좌표
-        start = int(seg_bins[0]["bin_start"])
-        end   = int(seg_bins[-1]["bin_end"])
-        size_bp = end - start
+        # raw Z-score 기반 call (reference)
+        call_total          = _call(med_total,          gain_thr, loss_thr)
+        call_short          = _call(med_short,          gain_thr, loss_thr)
+        call_long           = _call(med_long,           gain_thr, loss_thr)
+        call_short_fraction = _call(med_short_fraction, gain_thr, loss_thr)
 
-        # FF 보정 Z-score: z_corrected = z_raw / (FF / 2)
-        # FF=10% → 태아 기여 비율 = 0.1, diploid 기준 signal = 0.5 × FF
-        ff_corrected = mean_total
-        if ff and ff > 0:
-            ff_corrected = mean_total / (ff / 200.0)  # FF는 % 단위
+        # FF 보정 Z-score 기반 call (primary)
+        ff_z, ff_used = _ff_corrected_zscore(med_total, ff)
+        call_ff = _call(ff_z, gain_thr, loss_thr)
 
-        # 크기 필터: NORMAL region은 min_size_mb 무관하게 skip 안 함
-        # GAIN/LOSS는 min_size_mb 이상만 보고
-        size_mb = size_bp / 1e6
-        if call_total in (CALL_GAIN, CALL_LOSS) and size_mb < min_size_mb:
-            prev = cp
-            continue
+        start   = int(seg_bins[0]["bin_start"])
+        end     = int(seg_bins[-1]["bin_end"])
+        size_mb = (end - start) / 1e6
 
-        regions.append(CnvRegion(
-            chrom                = chrom,
-            start                = start,
-            end                  = end,
-            n_bins               = len(seg_bins),
-            mean_zscore_total    = round(mean_total, 4),
-            mean_zscore_short    = round(mean_short, 4),
-            mean_zscore_long     = round(mean_long,  4),
-            call_total           = call_total,
-            call_short           = call_short,
-            call_long            = call_long,
-            ff_corrected_zscore  = round(ff_corrected, 4),
+        # primary call: FF 보정이 적용됐으면 ff_corrected call,
+        #               아니면 raw total call 사용
+        primary_call = call_ff if ff_used else call_total
+
+        # 크기 필터: primary call이 GAIN/LOSS이고 min_size_mb 미달이면 skip
+        if primary_call != CALL_NORMAL and size_mb < min_size_mb:
+            prev = bkp; continue
+
+        segs.append(Segment(
+            chrom                   = chrom,
+            start                   = start,
+            end                     = end,
+            n_bins                  = len(seg_bins),
+            start_idx               = prev,
+            end_idx                 = bkp,
+            median_z_total          = round(med_total,          4),
+            median_z_short          = round(med_short,          4),
+            median_z_long           = round(med_long,           4),
+            median_z_short_fraction = round(med_short_fraction, 4),
+            call_total              = call_total,
+            call_short              = call_short,
+            call_long               = call_long,
+            call_short_fraction     = call_short_fraction,
+            ff_corrected            = round(ff_z, 4),
+            call_ff_corrected       = call_ff,
         ))
-        prev = cp
+        prev = bkp
 
-    return regions
+    return segs
 
 
 # ── 공개 인터페이스 ────────────────────────────────────────────────────
 def run_region_cnv(
     norm_tsv_path:          str,
     output_path:            str,
-    zscore_gain_threshold:  float = 3.0,
-    zscore_loss_threshold:  float = -3.0,
-    min_size_mb:            float = 1.0,   # call 보고 최소 region 크기 (Mb)
-    bin_size:               int   = 100_000,
-    penalty_multiplier:     float = 2.0,   # PELT penalty 배수 (높을수록 보수적)
-    ff_percent:             Optional[float] = None,  # fetal fraction (%)
+    zscore_gain_threshold:  float         = 3.0,
+    zscore_loss_threshold:  float         = -3.0,
+    min_size_mb:            float         = 1.0,
+    penalty:                float         = 3.0,
+    ff_percent:             Optional[float] = None,
     target_chroms:          Optional[list[str]] = None,
-    report_normal:          bool  = False,  # NORMAL segment도 출력할지
-) -> list[CnvRegion]:
+    report_normal:          bool          = False,
+) -> list[Segment]:
     """
-    normalized TSV → PELT segmentation → region-level CNV call TSV
+    normalized TSV → PELT segmentation → region CNV call TSV
 
     Parameters
     ----------
-    norm_tsv_path          : run_normalize 출력 TSV
-    output_path            : region CNV call TSV 저장 경로
-    zscore_gain_threshold  : GAIN Z-score threshold
-    zscore_loss_threshold  : LOSS Z-score threshold
-    min_size_mb            : GAIN/LOSS call 최소 region 크기 (Mb)
-                             microdeletion: 1Mb, chromosome aneuploidy: 10Mb
-    bin_size               : bin 크기 (default 100kb)
-    penalty_multiplier     : PELT penalty 배수
-                             1.0 = BIC, 2.0 = 보수적, 0.5 = 민감
-    ff_percent             : fetal fraction (%), FF 보정 Z-score 계산용
-    target_chroms          : 분석할 염색체 (None이면 standard 전체)
-    report_normal          : True면 NORMAL segment도 출력
+    norm_tsv_path         : run_normalize 출력 TSV
+    output_path           : region CNV TSV 저장 경로
+    zscore_gain_threshold : GAIN Z-score threshold (FF 보정 후 적용)
+    zscore_loss_threshold : LOSS Z-score threshold (FF 보정 후 적용)
+    min_size_mb           : GAIN/LOSS report 최소 region 크기 (Mb)
+    penalty               : PELT l2 penalty (1.0=민감, 3.0=기본, 8.0=보수적)
+    ff_percent            : fetal fraction (%)
+                            있으면: ff_corrected_z = raw_z / (FF/200) 기준 판정
+                            없으면: raw Z-score 기준 판정
+    target_chroms         : 분석할 염색체 (None이면 standard 전체)
+    report_normal         : True면 NORMAL segment도 출력
 
     Returns
     -------
-    CnvRegion 리스트
+    전체 Segment 리스트 (NORMAL 포함, plot 용도)
     """
     rows = read_tsv(norm_tsv_path)
     if not rows:
         raise ValueError(f"빈 TSV: {norm_tsv_path}")
 
-    # chrom별로 bins 그룹화 (순서 유지)
+    if ff_percent:
+        log.info("FF 보정 Z-score 적용: FF=%.2f%% → expected_signal=%.4f",
+                 ff_percent, ff_percent / 200.0)
+    else:
+        log.info("FF 없음 → raw Z-score 기준 판정")
+
     target = target_chroms or STANDARD_CHROMS
     chrom_bins: dict[str, list[dict]] = {c: [] for c in target}
-
     for r in rows:
-        chrom = r.get("chrom", "")
-        if chrom in chrom_bins:
-            chrom_bins[chrom].append(r)
+        c = r.get("chrom", "")
+        if c in chrom_bins:
+            chrom_bins[c].append(r)
 
-    all_regions: list[CnvRegion] = []
+    all_segs: list[Segment] = []
 
     for chrom in target:
         bins = chrom_bins[chrom]
         if not bins:
-            log.debug("%s: bin 없음 — skip", chrom)
             continue
 
-        regions = _segment_chrom(
-            chrom       = chrom,
-            bins        = bins,
-            gain_thr    = zscore_gain_threshold,
-            loss_thr    = zscore_loss_threshold,
-            min_size_mb = min_size_mb,
-            bin_size    = bin_size,
-            penalty_mul = penalty_multiplier,
-            ff          = ff_percent,
-            zscore_col  = "zscore_total",
+        z_total = np.array([
+            float(r["zscore_total"]) if r.get("zscore_total", "NA") != "NA" else 0.0
+            for r in bins
+        ])
+        z_frac = np.array([
+            float(r.get("zscore_short_fraction", "NA"))
+            if r.get("zscore_short_fraction", "NA") != "NA" else 0.0
+            for r in bins
+        ])
+
+        # total Z-score 기반 segmentation
+        bkps_total = _pelt_ruptures(z_total, penalty=penalty, min_size=3)
+        segs_total = _make_segments(
+            chrom, bins, bkps_total,
+            zscore_gain_threshold, zscore_loss_threshold,
+            min_size_mb, ff_percent,
         )
 
-        n_abnormal = sum(1 for r in regions if r.call_total != CALL_NORMAL)
-        log.info(
-            "  %s: %d segments, %d GAIN/LOSS (≥%.1fMb)",
-            chrom, len(regions), n_abnormal, min_size_mb,
+        # short_fraction Z-score 기반 segmentation (보완적)
+        bkps_frac = _pelt_ruptures(z_frac, penalty=penalty, min_size=3)
+        segs_frac = _make_segments(
+            chrom, bins, bkps_frac,
+            zscore_gain_threshold, zscore_loss_threshold,
+            min_size_mb, ff_percent,
         )
-        all_regions.extend(regions)
 
-    # 출력: NORMAL 제외 여부
-    out_regions = all_regions if report_normal else [
-        r for r in all_regions if r.call_total != CALL_NORMAL
+        # 병합: frac에서만 잡힌 non-NORMAL region 추가
+        def _overlaps(s: Segment, existing: list[Segment]) -> bool:
+            return any(s.start < e.end and s.end > e.start for e in existing)
+
+        segs = list(segs_total)
+        for s in segs_frac:
+            if s.call_ff_corrected != CALL_NORMAL and not _overlaps(s, segs_total):
+                segs.append(s)
+                log.info("    [frac-only] %s %s:%d-%d (%.2fMb) frac_z=%.3f",
+                         s.call_ff_corrected, chrom, s.start, s.end,
+                         s.size_mb, s.median_z_short_fraction)
+
+        # 로그
+        n_ab = sum(1 for s in segs if s.call_ff_corrected != CALL_NORMAL)
+        log.info("  %s: %d segments, %d GAIN/LOSS (≥%.1fMb, FF-corrected)",
+                 chrom, len(segs), n_ab, min_size_mb)
+        for s in segs:
+            if s.call_ff_corrected != CALL_NORMAL:
+                log.info(
+                    "    %s %s:%d-%d (%.2fMb) "
+                    "raw_z=%.3f ff_corr_z=%.3f",
+                    s.call_ff_corrected, chrom, s.start, s.end, s.size_mb,
+                    s.median_z_total, s.ff_corrected,
+                )
+
+        all_segs.extend(segs)
+
+    # 출력: report_normal=False이면 FF 보정 기준 GAIN/LOSS만
+    out_segs = all_segs if report_normal else [
+        s for s in all_segs if s.call_ff_corrected != CALL_NORMAL
     ]
-
-    rows_out = [r.to_dict() for r in out_regions]
-    write_tsv(rows_out, output_path, FIELDNAMES)
-    log.info(
-        "region CNV 완료: %d regions (GAIN/LOSS) → %s",
-        len(out_regions), output_path,
-    )
-    return all_regions
+    write_tsv([s.to_dict() for s in out_segs], output_path, FIELDNAMES)
+    log.info("region CNV 완료: %d GAIN/LOSS regions → %s", len(out_segs), output_path)
+    return all_segs
