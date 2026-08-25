@@ -50,7 +50,7 @@ def run(
     write_json(result, output_json)
 
     if result.ff_chry is not None:
-        log.info("FF (chrY): %.2f%%", result.ff_chry)
+        log.info("FF (chrY): %.2f%%, FF (SF Ratio) %.2f%%", result.ff_chry, result.ff_short_fragments_ratio)
     else:
         log.info("FF (chrY): None (female fetus 또는 chrY coverage 없음)")
 

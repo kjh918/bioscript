@@ -26,6 +26,7 @@ class FetalFractionResult:
     chry_mean_cov:     Optional[float]  # chrY 평균 bin coverage
     autosome_mean_cov: Optional[float]  # autosome 평균 bin coverage
     chry_bin_count:    Optional[int]    # 사용된 chrY bin 수
+    ff_short_fragments_ratio: Optional[float]
 
     # 메타
     method_note: str = ""

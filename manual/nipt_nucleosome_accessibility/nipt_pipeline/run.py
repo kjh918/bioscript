@@ -86,15 +86,17 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
     outdir.mkdir(parents=True, exist_ok=True)
     plot_dir.mkdir(parents=True, exist_ok=True)
 
-    bincount_tsv   = outdir / f"{sid}.bincount.tsv"
-    normalized_tsv = outdir / f"{sid}.normalized.tsv"
-    cnv_tsv        = outdir / f"{sid}.cnv.tsv"
-    region_cnv_tsv = outdir / f"{sid}.region_cnv.tsv"
-    ff_json        = outdir / f"{sid}.fetal_fraction.json"
-    plot_short     = plot_dir / f"{sid}.cnv_short.png"
-    plot_long      = plot_dir / f"{sid}.cnv_long.png"
-    plot_combined  = plot_dir / f"{sid}.cnv_combined.png"
-    plot_ff_corr   = plot_dir / f"{sid}.ff_correlation.png"
+    bincount_tsv      = outdir / f"{sid}.bincount.tsv"
+    normalized_tsv    = outdir / f"{sid}.normalized.tsv"   # GC correction 결과
+    wss_norm_bins_tsv = outdir / f"{sid}.wss_cnv.normalized_bins.tsv"  # WSS bin Z-score
+    cnv_tsv           = outdir / f"{sid}.cnv.tsv"
+    region_cnv_tsv    = outdir / f"{sid}.region_cnv.tsv"
+    wss_cnv_tsv       = outdir / f"{sid}.wss_cnv.tsv"
+    ff_json           = outdir / f"{sid}.fetal_fraction.json"
+    plot_short        = plot_dir / f"{sid}.cnv_short.png"
+    plot_long         = plot_dir / f"{sid}.cnv_long.png"
+    plot_combined     = plot_dir / f"{sid}.cnv_combined.png"
+    plot_ff_corr      = plot_dir / f"{sid}.ff_correlation.png"
 
     # step 1. binning
     if not _skip(bincount_tsv, "binning", force):
@@ -108,7 +110,7 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
             short_long_cutoff     = b["short_long_cutoff"],
             mapq_min              = b["mapq_min"],
             mappability_threshold = b["mappability_threshold"],
-            n_jobs                = getattr(args, "cnv_jobs", 4),
+            n_jobs                = getattr(args, "cnv_jobs", 8),
         )
 
     # step 2. normalize
@@ -122,16 +124,25 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
             gc_loess_span   = n["gc_loess_span"],
         )
 
-    # step 3. cnv call (염색체 단위)
+    # step 3. cnv call (염색체 단위) — WSS bin Z-score 기반
+    # wss_cnv.normalized_bins.tsv가 있어야 실행 가능
+    # → within-sample CNV (step 3-2) 완료 후 재실행하거나 --force 사용
     if not _skip(cnv_tsv, "cnv call", force):
-        logger.info("=== CNV 3/3 : CNV call ===")
-        run_calculate_cnv(
-            norm_tsv_path         = str(normalized_tsv),
-            output_path           = str(cnv_tsv),
-            zscore_gain_threshold = c["zscore_gain_threshold"],
-            zscore_loss_threshold = c["zscore_loss_threshold"],
-            min_bins_per_chrom    = c["min_bins_per_chrom"],
-        )
+        if wss_norm_bins_tsv.exists():
+            logger.info("=== CNV 3/3 : CNV call (WSS bin 기반) ===")
+            run_calculate_cnv(
+                norm_tsv_path         = str(wss_norm_bins_tsv),
+                output_path           = str(cnv_tsv),
+                zscore_gain_threshold = c["zscore_gain_threshold"],
+                zscore_loss_threshold = c["zscore_loss_threshold"],
+                min_bins_per_chrom    = c["min_bins_per_chrom"],
+            )
+        else:
+            logger.warning(
+                "WSS bin TSV 없음 (%s) — cnv call 스킵. "
+                "within-sample CNV 먼저 실행 후 --force로 재시도",
+                wss_norm_bins_tsv,
+            )
 
     # FF 로드 공통
     ff_percent = None
@@ -155,27 +166,31 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
         )
 
     # step 3-2. within-sample CNV call (WisecondorX 방식 — primary)
-    wss_cnv_tsv = outdir / f"{sid}.wss_cnv.tsv"
     if not _skip(wss_cnv_tsv, "within-sample cnv call", force):
         logger.info("=== CNV : Within-sample CNV call (WisecondorX 방식) ===")
         run_within_sample_cnv(
-            norm_tsv_path         = str(normalized_tsv),
-            output_path           = str(wss_cnv_tsv),
-            zscore_gain_threshold = c["zscore_gain_threshold"],
-            zscore_loss_threshold = c["zscore_loss_threshold"],
-            min_size_mb           = c.get("min_region_size_mb", 1.0),
-            k_ref                 = c.get("wss_k_ref", 100),
-            cbs_alpha             = c.get("cbs_alpha", 0.01),
-            ff_percent            = ff_percent,
+            norm_tsv_path              = str(normalized_tsv),
+            output_path                = str(wss_cnv_tsv),
+            normalized_bin_output_path = str(wss_norm_bins_tsv),
+            zscore_gain_threshold      = c["zscore_gain_threshold"],
+            zscore_loss_threshold      = c["zscore_loss_threshold"],
+            min_size_mb                = c.get("min_region_size_mb", 1.0),
+            k_ref                      = c.get("wss_k_ref", 100),
+            cbs_alpha                  = c.get("cbs_alpha", 0.01),
+            ff_percent                 = ff_percent,
+            robust_zscore              = True,
+            gc_weight                  = c.get("wss_gc_weight",  0.7),
+            map_weight                 = c.get("wss_map_weight", 0.3),
         )
 
     # step 4. plot
     if not getattr(args, "no_plot", False):
+        # plot은 WSS bin Z-score 기반 (wss_norm_bins_tsv 우선, 없으면 normalized_tsv)
         if not _skip(plot_short, "cnv scatter plot", force):
             logger.info("=== CNV : genome-wide scatter plot ===")
             plot_cnv_scatter(
-                norm_tsv_path         = str(normalized_tsv),
-                cnv_tsv_path          = str(cnv_tsv),
+                norm_tsv_path         = str(wss_norm_bins_tsv),
+                cnv_tsv_path          = str(wss_cnv_tsv),
                 output_short          = str(plot_short),
                 output_long           = str(plot_long),
                 output_combined       = str(plot_combined),
@@ -190,13 +205,12 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
         else:
             logger.info("=== CNV : chromosome별 scatter plot ===")
             plot_cnv_scatter_by_chrom(
-                norm_tsv_path         = str(normalized_tsv),
-                cnv_tsv_path          = str(cnv_tsv),
+                norm_tsv_path         = str(wss_norm_bins_tsv),
+                cnv_tsv_path          = str(wss_cnv_tsv),
                 output_dir            = str(chrom_plot_dir),
                 sample_id             = sid,
                 zscore_gain_threshold = c["zscore_gain_threshold"],
                 zscore_loss_threshold = c["zscore_loss_threshold"],
-                region_cnv_path       = str(region_cnv_tsv) if region_cnv_tsv.exists() else None,
             )
 
     # step 5. fetal fraction
@@ -217,6 +231,7 @@ def _run_cnv(args: argparse.Namespace, cfg: dict) -> None:
         "cnv call":       cnv_tsv,
         "region cnv":     region_cnv_tsv,
         "wss cnv":        wss_cnv_tsv,
+        "wss norm bins":  wss_norm_bins_tsv,
         "ff json":        ff_json,
         "plot short":     plot_short,
         "plot long":      plot_long,
@@ -312,7 +327,6 @@ def _run_wps(args: argparse.Namespace) -> None:
                     output_bed = str(peaks_bed),
                     prefix     = sid,
                     mode       = mode,
-                    n_jobs     = 8,
                 )
 
         _log_outputs(f"WPS [{mode}]", {

@@ -118,7 +118,6 @@ def _robust_center_scale(values: np.ndarray) -> tuple[float, float]:
     """Median + MAD 기반 robust center/scale."""
     if values.size == 0:
         return 0.0, 0.0
-
     center = float(np.median(values))
     mad = float(np.median(np.abs(values - center)))
     return center, 1.4826 * mad
@@ -184,16 +183,12 @@ def _build_reference_indices(
             pos = int(pos)
             if pos < 0 or pos >= candidate_idx.size:
                 continue
-
             ref_idx = int(candidate_idx[pos])
-
             if ref_idx == i:
                 continue
             if bins[ref_idx].chrom == b.chrom:
                 continue
-
             selected.append(ref_idx)
-
             if len(selected) >= k:
                 break
 
@@ -251,7 +246,6 @@ def _compute_within_sample_z(
 
         if robust:
             center, scale = _robust_center_scale(ref_cov)
-
             if scale <= 1e-12:
                 center = float(np.mean(ref_cov))
                 scale = float(np.std(ref_cov, ddof=1))
@@ -286,7 +280,6 @@ def _save_normalized_bins(
 ) -> None:
     """bin-level within-sample normalized 값을 TSV로 저장."""
     rows = []
-
     for i, b in enumerate(bins):
         rows.append({
             "chrom": b.chrom,
@@ -325,17 +318,13 @@ def _cbs_segment(
 
     def _find_cp(left: int, right: int) -> Optional[int]:
         seg = z_scores[left:right + 1]
-
         if len(seg) < min_width * 2:
             return None
-
         mean = seg.mean()
         cumsum = np.cumsum(seg - mean)
         inner = cumsum[min_width - 1:len(seg) - min_width]
-
         if inner.size == 0:
             return None
-
         cp_local = int(np.argmax(np.abs(inner))) + min_width
         return left + cp_local
 
@@ -343,22 +332,16 @@ def _cbs_segment(
         if right - left + 1 < min_width * 2:
             segments.append((left, right))
             return
-
         cp = _find_cp(left, right)
-
         if cp is None:
             segments.append((left, right))
             return
-
         seg_l = z_scores[left:cp]
         seg_r = z_scores[cp:right + 1]
-
         if len(seg_l) < 2 or len(seg_r) < 2:
             segments.append((left, right))
             return
-
         _, pval = ttest_ind(seg_l, seg_r, equal_var=False, nan_policy="omit")
-
         if np.isfinite(pval) and pval < alpha:
             _recurse(left, cp - 1)
             _recurse(cp, right)
@@ -367,7 +350,6 @@ def _cbs_segment(
 
     _recurse(0, n - 1)
     segments.sort()
-
     return segments
 
 
@@ -382,10 +364,8 @@ def _call(z: float, gain_thr: float, loss_thr: float) -> str:
 def _ff_correct(z: float, ff_percent: Optional[float]) -> tuple[float, bool]:
     if ff_percent is not None and ff_percent > 0:
         expected = ff_percent / 200.0
-
         if expected > 0:
             return z / expected, True
-
     return z, False
 
 
@@ -412,20 +392,14 @@ def run_within_sample_cnv(
     Parameters
     ----------
     norm_tsv_path
-        기존 normalization 결과 TSV
-
+        normalize.py 출력 TSV (GC correction 결과)
     output_path
         segment-level CNV 결과 TSV
-
     normalized_bin_output_path
-        bin-level within-sample normalization 저장 경로.
-        None이면 output_path 기준 자동 생성.
-
+        bin-level WSS Z-score 저장 경로. None이면 자동 생성.
     robust_zscore
-        True이면 median/MAD 기반.
-        False이면 mean/std 기반.
+        True이면 median/MAD 기반, False이면 mean/std 기반.
     """
-
     rows = read_tsv(norm_tsv_path)
 
     if not rows:
@@ -435,90 +409,66 @@ def run_within_sample_cnv(
     log.info("입력 bins=%d", len(rows))
 
     all_bins: list[BinData] = []
-
     for r in rows:
         total_gc = float(r.get("total_gc", 0) or 0)
         short_gc = float(r.get("short_gc", 0) or 0)
-        long_gc = float(r.get("long_gc", 0) or 0)
-        short_fraction_gc = short_gc / total_gc if total_gc > 0 else 0.0
-
+        long_gc  = float(r.get("long_gc", 0) or 0)
+        sf_raw   = r.get("short_fraction_gc", "NA")
+        sf_gc    = float(sf_raw) if sf_raw not in ("NA", "", None) else (
+            short_gc / total_gc if total_gc > 0 else 0.0
+        )
         all_bins.append(BinData(
-            chrom=r["chrom"],
-            start=int(r["bin_start"]),
-            end=int(r["bin_end"]),
-            gc=float(r.get("gc", 0) or 0),
-            mappability=float(r.get("mappability", 1) or 1),
-            total_gc=total_gc,
-            short_gc=short_gc,
-            long_gc=long_gc,
-            short_fraction_gc=short_fraction_gc,
+            chrom             = r["chrom"],
+            start             = int(r["bin_start"]),
+            end               = int(r["bin_end"]),
+            gc                = float(r.get("gc", 0) or 0),
+            mappability       = float(r.get("mappability", 1) or 1),
+            total_gc          = total_gc,
+            short_gc          = short_gc,
+            long_gc           = long_gc,
+            short_fraction_gc = sf_gc,
         ))
 
     log.info("reference bin 탐색 시작")
-
     ref_indices = _build_reference_indices(
         all_bins,
-        k=k_ref,
-        gc_weight=gc_weight,
-        map_weight=map_weight,
+        k              = k_ref,
+        gc_weight      = gc_weight,
+        map_weight     = map_weight,
     )
 
     log.info("within-sample Z-score 계산 시작")
-
     z_total = _compute_within_sample_z(
-        all_bins,
-        ref_indices,
-        "total_gc",
-        robust=robust_zscore,
-        min_reference_bins=min_reference_bins,
+        all_bins, ref_indices, "total_gc",
+        robust=robust_zscore, min_reference_bins=min_reference_bins,
         exclude_zero_reference=True,
     )
-
     z_short = _compute_within_sample_z(
-        all_bins,
-        ref_indices,
-        "short_gc",
-        robust=robust_zscore,
-        min_reference_bins=min_reference_bins,
+        all_bins, ref_indices, "short_gc",
+        robust=robust_zscore, min_reference_bins=min_reference_bins,
         exclude_zero_reference=True,
     )
-
     z_long = _compute_within_sample_z(
-        all_bins,
-        ref_indices,
-        "long_gc",
-        robust=robust_zscore,
-        min_reference_bins=min_reference_bins,
+        all_bins, ref_indices, "long_gc",
+        robust=robust_zscore, min_reference_bins=min_reference_bins,
         exclude_zero_reference=True,
     )
-
     z_sfrac = _compute_within_sample_z(
-        all_bins,
-        ref_indices,
-        "short_fraction_gc",
-        robust=robust_zscore,
-        min_reference_bins=min_reference_bins,
+        all_bins, ref_indices, "short_fraction_gc",
+        robust=robust_zscore, min_reference_bins=min_reference_bins,
         exclude_zero_reference=False,
     )
 
+    # bin-level 저장
     if normalized_bin_output_path is None:
-        if output_path.endswith(".tsv"):
-            normalized_bin_output_path = output_path[:-4] + ".normalized_bins.tsv"
-        else:
-            normalized_bin_output_path = output_path + ".normalized_bins.tsv"
+        base = output_path[:-4] if output_path.endswith(".tsv") else output_path
+        normalized_bin_output_path = base + ".normalized_bins.tsv"
 
-    _save_normalized_bins(
-        all_bins,
-        z_total,
-        z_short,
-        z_long,
-        z_sfrac,
-        normalized_bin_output_path,
-    )
+    _save_normalized_bins(all_bins, z_total, z_short, z_long, z_sfrac,
+                          normalized_bin_output_path)
 
     log.info("CBS segmentation 시작")
-
-    target = target_chroms or STANDARD_CHROMS
+    target  = target_chroms or STANDARD_CHROMS
     bin_idx = {chrom: [] for chrom in target}
 
     for i, b in enumerate(all_bins):
@@ -529,7 +479,6 @@ def run_within_sample_cnv(
 
     for chrom in target:
         idxs = bin_idx[chrom]
-
         if not idxs:
             continue
 
@@ -545,67 +494,60 @@ def run_within_sample_cnv(
 
         for seg_start, seg_end in raw_segs:
             seg_idxs = idxs[seg_start:seg_end + 1]
-
             if not seg_idxs:
                 continue
 
             med_total = float(np.median(z_total[seg_idxs]))
             med_short = float(np.median(z_short[seg_idxs]))
-            med_long = float(np.median(z_long[seg_idxs]))
+            med_long  = float(np.median(z_long [seg_idxs]))
             med_sfrac = float(np.median(z_sfrac[seg_idxs]))
 
             ff_z, ff_used = _ff_correct(med_total, ff_percent)
 
-            call_total = _call(med_total, zscore_gain_threshold, zscore_loss_threshold)
-            call_short = _call(med_short, zscore_gain_threshold, zscore_loss_threshold)
-            call_long = _call(med_long, zscore_gain_threshold, zscore_loss_threshold)
-            call_sfrac = _call(med_sfrac, zscore_gain_threshold, zscore_loss_threshold)
-            call_ff = _call(ff_z, zscore_gain_threshold, zscore_loss_threshold)
+            call_total  = _call(med_total, zscore_gain_threshold, zscore_loss_threshold)
+            call_short  = _call(med_short, zscore_gain_threshold, zscore_loss_threshold)
+            call_long   = _call(med_long,  zscore_gain_threshold, zscore_loss_threshold)
+            call_sfrac  = _call(med_sfrac, zscore_gain_threshold, zscore_loss_threshold)
+            call_ff     = _call(ff_z,      zscore_gain_threshold, zscore_loss_threshold)
 
             primary_call = call_ff if ff_used else call_total
 
             s_start = all_bins[seg_idxs[0]].start
-            s_end = all_bins[seg_idxs[-1]].end
+            s_end   = all_bins[seg_idxs[-1]].end
             size_mb = (s_end - s_start) / 1e6
 
             if primary_call != CALL_NORMAL and size_mb < min_size_mb:
                 continue
 
             seg = WSSSegment(
-                chrom=chrom,
-                start=s_start,
-                end=s_end,
-                n_bins=len(seg_idxs),
-                median_z_total=round(med_total, 4),
-                median_z_short=round(med_short, 4),
-                median_z_long=round(med_long, 4),
-                median_z_short_fraction=round(med_sfrac, 4),
-                call_total=call_total,
-                call_short=call_short,
-                call_long=call_long,
-                call_short_fraction=call_sfrac,
-                ff_corrected=round(ff_z, 4),
-                call_ff_corrected=call_ff,
+                chrom                   = chrom,
+                start                   = s_start,
+                end                     = s_end,
+                n_bins                  = len(seg_idxs),
+                median_z_total          = round(med_total, 4),
+                median_z_short          = round(med_short, 4),
+                median_z_long           = round(med_long,  4),
+                median_z_short_fraction = round(med_sfrac, 4),
+                call_total              = call_total,
+                call_short              = call_short,
+                call_long               = call_long,
+                call_short_fraction     = call_sfrac,
+                ff_corrected            = round(ff_z, 4),
+                call_ff_corrected       = call_ff,
             )
-
             all_segs.append(seg)
 
             if primary_call != CALL_NORMAL:
                 chrom_abnormal += 1
                 log.info(
                     "  %s %s:%d-%d %.2fMb n=%d z=%.3f ff_z=%.3f",
-                    primary_call,
-                    chrom,
-                    s_start,
-                    s_end,
-                    size_mb,
-                    len(seg_idxs),
-                    med_total,
-                    ff_z,
+                    primary_call, chrom, s_start, s_end,
+                    size_mb, len(seg_idxs), med_total, ff_z,
                 )
 
         log.info("%s: %d abnormal segments", chrom, chrom_abnormal)
 
+    # 출력 필터
     if report_normal:
         out_segs = all_segs
     elif ff_percent is not None and ff_percent > 0:
@@ -614,13 +556,10 @@ def run_within_sample_cnv(
         out_segs = [s for s in all_segs if s.call_total != CALL_NORMAL]
 
     write_tsv([s.to_dict() for s in out_segs], output_path, FIELDNAMES)
-
     log.info(
         "within-sample CNV 완료: segments=%d output=%d -> %s",
-        len(all_segs),
-        len(out_segs),
-        output_path,
+        len(all_segs), len(out_segs), output_path,
     )
-    log.info("bin normalized 결과 -> %s", normalized_bin_output_path)
+    log.info("bin normalized -> %s", normalized_bin_output_path)
 
     return all_segs
