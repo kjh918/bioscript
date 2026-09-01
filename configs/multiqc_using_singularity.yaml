@@ -4,35 +4,66 @@
 #  - Uses a custom configuration for specific report layout
 #  - Singularity-based execution for environment consistency
 # =========================================================
+info:
+  user: WRITER_NAME
+  date: DATE
+  logs: |
+    - Initial creation for cbNIPT QC aggregation via MultiQC
+    - Covers FastQC, fastp, Picard (AlignmentSummary / InsertSize / MarkDuplicates), GATK BQSR
+
 tool:
-  name: multiqc
-  version: "1.16"
-  profile: "report_using_singularity"
+  name: MultiQC
+  version: "1.21"
+  profile: cbNIPT QC Aggregation
+  description: |
+    cbNIPT 파이프라인의 qc/ 디렉토리 내 QC 결과물을 MultiQC로 통합 집계합니다.
+    - FastQC (R1/R2 zip)
+    - fastp (json)
+    - Picard CollectAlignmentSummaryMetrics
+    - Picard CollectInsertSizeMetrics
+    - Picard MarkDuplicates
+    - GATK BaseRecalibrator (recal_table)
+    Picard Artifact metrics 및 .intervals 파일은 MultiQC 미지원으로 수집 대상에서 제외합니다.
+  setup: |
+    pip install multiqc==1.21
+    # 또는: conda install -c bioconda multiqc=1.21
 
 io:
   inputs:
-    SeqID:    { required: true, help: "Sequence identifier used for the report filename" }
-    qcResDir: { required: true, help: "Directory containing all QC data and target output directory" }
+    SeqID:  { required: true,  type: str, help: "분석 고유 ID (Sample ID)" }
+    QCDir:  { required: true,  type: str, help: "qc/ 결과물이 위치한 디렉토리 경로" }
+    OutDir: { required: true,  type: str, help: "MultiQC 보고서가 저장될 디렉토리" }
 
   outputs:
-    # MultiQC가 생성하는 최종 HTML 리포트
-    report_html: { default: "[qcResDir]/[SeqID].QC.Results.html", help: "Final aggregated MultiQC HTML report" }
+    report_html: { required: false, type: str, default: "[OutDir]/multiqc_report.html",   help: "MultiQC 통합 HTML 보고서" }
+    report_data: { required: false, type: str, default: "[OutDir]/multiqc_data/",         help: "MultiQC 파싱 데이터 디렉토리" }
 
 params:
-  # --- [Binaries & Container] ---
   singularity_bin: { type: str, default: "singularity", help: "Path to singularity executable" }
   multiqc_bin:     { type: str, default: "multiqc",     help: "MultiQC binary name inside container" }
   sif:             { type: str, default: "/storage/images/multiqc-1.16.sif", help: "MultiQC SIF image path" }
-  bind:            { type: str, default: "/storage,/data", help: "Mount paths for singularity" }
+  report_title: { required: false, type: str, default: "[SeqID] cbNIPT QC Report", help: "보고서 상단 제목" }
+  report_name:  { required: false, type: str, default: "multiqc_report", help: "출력 HTML 파일명 (확장자 제외)" }
+  # MultiQC가 파싱하지 못하는 파일 패턴을 무시
+  ignore_patterns:
+    - "*.bait_bias_detail_metrics.txt"
+    - "*.bait_bias_summary_metrics.txt"
+    - "*.pre_adapter_detail_metrics.txt"
+    - "*.pre_adapter_summary_metrics.txt"
+    - "*.error_summary_metrics.txt"
+    - "*.realign_target.intervals"
 
-  # --- [MultiQC Options] ---
-  mqc_config:      { type: str, default: "/storage/home/kangsm/runScripts/NGS_config.MultiQC_Custom.yaml", help: "Path to custom MultiQC config file" }
-  mqc_filename:    { type: str, default: "[SeqID].QC.Results", help: "Base name for the output report file" }
-  mqc_args:        { type: str, default: "--force --data-dir", help: "Additional MultiQC flags" }
-
+# --ignore 플래그로 미지원 파일을 제외하고 수집
 cmd_line: >
-  [singularity_bin] exec -B [bind] [sif] [multiqc_bin] [mqc_args]
-  --filename [mqc_filename]
-  --outdir [qcResDir]
-  --config [mqc_config]
-  [qcResDir]
+  [singularity_bin] exec -B [bind] [sif]
+    [QCDir]
+    --title "[report_title]"
+    --filename [report_name]
+    --outdir [OutDir]
+    --ignore "*.bait_bias_detail_metrics.txt"
+    --ignore "*.bait_bias_summary_metrics.txt"
+    --ignore "*.pre_adapter_detail_metrics.txt"
+    --ignore "*.pre_adapter_summary_metrics.txt"
+    --ignore "*.error_summary_metrics.txt"
+    --ignore "*.realign_target.intervals"
+    --force
