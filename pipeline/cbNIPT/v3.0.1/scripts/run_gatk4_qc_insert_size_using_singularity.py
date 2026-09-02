@@ -47,11 +47,11 @@ def main():
     xmx_mb = args.xmx_mb
 
     # --- [Output Paths] ---
-    insert_size_metrics_txt = f"{qcResDir}/{SeqID}.insert_size.metrics.txt"
-    insert_size_hist_pdf = f"{qcResDir}/{SeqID}.insert_size.histogram.pdf"
+    insert_size_metrics_txt = f"{qcResDir}/{SeqID}{InputSuffix}.insert_size.metrics.txt"
+    insert_size_hist_pdf = f"{qcResDir}/{SeqID}{InputSuffix}.insert_size.histogram.pdf"
 
     # --- [Command Execution] ---
-    cmd = f"{singularity_bin} exec -B {bind} {sif} {java_bin} -XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m -jar {gatk_jar} CollectInsertSizeMetrics --INPUT {BamDir}/{SeqID}.{InputSuffix}.bam --OUTPUT {insert_size_metrics_txt} --Histogram_FILE {insert_size_hist_pdf} --REFERENCE_SEQUENCE {ReferenceFasta}"
+    cmd = f"{singularity_bin} exec -B {bind} {sif} {java_bin} -XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m -jar {gatk_jar} CollectInsertSizeMetrics --INPUT {BamDir}/{SeqID}{InputSuffix}.bam --OUTPUT {insert_size_metrics_txt} --Histogram_FILE {insert_size_hist_pdf} --REFERENCE_SEQUENCE {ReferenceFasta}"
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     

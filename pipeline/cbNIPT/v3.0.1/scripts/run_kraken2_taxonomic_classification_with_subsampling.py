@@ -57,17 +57,17 @@ def main():
     Threads = args.Threads
 
     # --- [Output Paths] ---
-    if not sub_r1:
-        sub_r1 = f"{OutDir}/{SeqID}.trimmed_sub_R1.fastq.gz"
-    if not sub_r2:
-        sub_r2 = f"{OutDir}/{SeqID}.trimmed_sub_R2.fastq.gz"
-    if not kraken_out:
-        kraken_out = f"{OutDir}/{SeqID}.kraken"
-    if not report_out:
-        report_out = f"{OutDir}/{SeqID}.kreport"
-    if not plot_out:
-        plot_out = f"{OutDir}/{SeqID}_krona.html"
-
+    #if not sub_r1:
+    sub_r1 = f"{OutDir}/{SeqID}.trimmed_sub_R1.fastq.gz"
+    #if not sub_r2:
+    sub_r2 = f"{OutDir}/{SeqID}.trimmed_sub_R2.fastq.gz"
+    #if not kraken_out:
+    kraken_out = f"{OutDir}/{SeqID}.kraken"
+    #if not report_out:
+    report_out = f"{OutDir}/{SeqID}.kreport"
+    #if not plot_out:
+    plot_out = f"{OutDir}/{SeqID}_krona.html"
+    
     # --- [Command Execution] ---
     cmd = f"{seqkit_bin} sample -s {SampleSeed} -n {SampleNum} {TrimFastqDir}/{SeqID}{R1_suffix} | gzip > {sub_r1} && {seqkit_bin} sample -s {SampleSeed} -n {SampleNum} {TrimFastqDir}/{SeqID}{R2_suffix} | gzip > {sub_r2} && {kraken2_bin} --db {KrakenDB} --threads {Threads} --report {report_out} --paired {sub_r1} {sub_r2} > {kraken_out} && {krona_bin} -m 4 -t 3 {kraken_out} -o {plot_out}"
     

@@ -21,7 +21,7 @@ def main():
     parser.add_argument('--BamDir', required=True, default='', help='Directory containing the BAM file to be analyzed (Default: )')
     parser.add_argument('--qcResDir', required=True, default='', help='Output directory for alignment summary metrics (Default: )')
     parser.add_argument('--ReferenceFasta', required=True, default='', help='Path to the reference genome FASTA file (Default: )')
-    parser.add_argument('--InputSuffix', required=False, default='analysisReady', help='Suffix of the input BAM (e.g., analysisReady, recal, sorted) (Default: analysisReady)')
+    parser.add_argument('--InputSuffix', required=False, default='sorted', help='Suffix of the input BAM (e.g., analysisReady, recal, sorted) (Default: analysisReady)')
     parser.add_argument('--singularity_bin', required=False, default='singularity', help='Path to singularity executable (Default: singularity)')
     parser.add_argument('--java_bin', required=False, default='java', help='Path to java executable inside container (Default: java)')
     parser.add_argument('--gatk_jar', required=False, default='/gatk/gatk-package-4.4.0.0-local.jar', help='Path to GATK local jar inside container (Default: /gatk/gatk-package-4.4.0.0-local.jar)')
@@ -47,10 +47,10 @@ def main():
     xmx_mb = args.xmx_mb
 
     # --- [Output Paths] ---
-    alignment_summary_metrics_txt = f"{qcResDir}/{SeqID}.{InputSuffix}.alignment_summary_metrics.txt"
+    alignment_summary_metrics_txt = f"{qcResDir}/{SeqID}{InputSuffix}.alignment_summary_metrics.txt"
 
     # --- [Command Execution] ---
-    cmd = f"{singularity_bin} exec -B {bind} {sif} {java_bin} -XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m -jar {gatk_jar} CollectAlignmentSummaryMetrics --INPUT {BamDir}/{SeqID}.{InputSuffix}.bam --OUTPUT {alignment_summary_metrics_txt} --REFERENCE_SEQUENCE {ReferenceFasta}"
+    cmd = f"{singularity_bin} exec -B {bind} {sif} {java_bin} -XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m -jar {gatk_jar} CollectAlignmentSummaryMetrics --INPUT {BamDir}/{SeqID}{InputSuffix}.bam --OUTPUT {alignment_summary_metrics_txt} --REFERENCE_SEQUENCE {ReferenceFasta}"
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     

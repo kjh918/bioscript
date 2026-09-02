@@ -47,14 +47,14 @@ def main():
     mosdepth_args = args.mosdepth_args
 
     # --- [Output Paths] ---
-    prefix = f"{qcResDir}/{SeqID}.{InputSuffix}"
+    prefix = f"{qcResDir}/{SeqID}{InputSuffix}"
     regions_bed_gz = f"{prefix}.regions.bed.gz"
     regions_bed_gz_csi = f"{prefix}.regions.bed.gz.csi"
     summary_txt = f"{prefix}.mosdepth.summary.txt"
     global_dist_txt = f"{prefix}.global.dist.txt"
 
     # --- [Command Execution] ---
-    cmd = f"{singularity_bin} exec -B {bind} {sif} {mosdepth_bin} --threads {Threads} {mosdepth_args} --by {bin} --mapq {mapq} {prefix} {BamDir}/{SeqID}.{InputSuffix}.bam"
+    cmd = f"{singularity_bin} exec -B {bind} {sif} {mosdepth_bin} --threads {Threads} {mosdepth_args} --by {bin} --mapq {mapq} {prefix} {BamDir}/{SeqID}{InputSuffix}.bam"
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     

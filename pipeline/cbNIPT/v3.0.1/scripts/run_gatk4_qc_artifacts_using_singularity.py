@@ -45,10 +45,10 @@ def main():
     xmx_mb = args.xmx_mb
 
     # --- [Output Paths] ---
-    artifacts_txt = f"{qcResDir}/{SeqID}.artifacts.txt"
+    artifacts_txt = f"{qcResDir}/{SeqID}"
 
     # --- [Command Execution] ---
-    cmd = f"{singularity_bin} exec -B {bind} {sif} {gatk_bin} CollectSequencingArtifactMetrics --java-options '-XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m' --INPUT {BamDir}/{SeqID}.{InputSuffix}.bam --OUTPUT {artifacts_txt} --FILE_EXTENSION .txt --REFERENCE_SEQUENCE {ReferenceFasta}"
+    cmd = f"{singularity_bin} exec -B {bind} {sif} {gatk_bin} CollectSequencingArtifactMetrics --java-options '-XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m' --INPUT {BamDir}/{SeqID}{InputSuffix}.bam --OUTPUT {artifacts_txt} --FILE_EXTENSION .txt --REFERENCE_SEQUENCE {ReferenceFasta}"
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     

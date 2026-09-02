@@ -27,6 +27,7 @@ def main():
     parser.add_argument('--mqc_config', required=False, default='/storage/home/kangsm/runScripts/NGS_config.MultiQC_Custom.yaml', help='Path to custom MultiQC config file (Default: /storage/home/kangsm/runScripts/NGS_config.MultiQC_Custom.yaml)')
     parser.add_argument('--mqc_filename', required=False, default='[SeqID].QC.Results', help='Base name for the output report file (Default: [SeqID].QC.Results)')
     parser.add_argument('--mqc_args', required=False, default='--force --data-dir', help='Additional MultiQC flags (Default: --force --data-dir)')
+    parser.add_argument('--Threads', required=False, default='1', help='Number of threads for MultiQC (Default: 1)')
     
     args = parser.parse_args()
 
@@ -41,10 +42,10 @@ def main():
     mqc_config = args.mqc_config
     mqc_filename = args.mqc_filename
     mqc_args = args.mqc_args
-
+    Threads = args.Threads
     # --- [Output Paths] ---
-    if not report_html:
-        report_html = f"{qcResDir}/{SeqID}.QC.Results.html"
+    
+    report_html = f"{qcResDir}/{SeqID}.QC.Results.html"
 
     # --- [Command Execution] ---
     cmd = f"{singularity_bin} exec -B {bind} {sif} {multiqc_bin} {mqc_args} --filename {mqc_filename} --outdir {qcResDir} --config {mqc_config} {qcResDir}"

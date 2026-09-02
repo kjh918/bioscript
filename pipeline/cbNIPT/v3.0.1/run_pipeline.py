@@ -34,8 +34,6 @@ def get_parser():
     parser.add_argument("--mappability_bw", default="/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Resources/reference/hg38.100mer.bw", help="Mappability Bwig file 경로")
     parser.add_argument("--kvaf_vcf", default="/storage/home/jhkim/Projects/cbNIPT/260423-GCX-cbNIPT-ManualMethod/Resources/reference/KOVA_v7/kova_sites_vcf/KOVA_v7_merged.vcf.gz", help="Mappability Bwig file 경로")
     
-
-
     return parser
 
 if __name__ == "__main__":
@@ -126,6 +124,7 @@ if __name__ == "__main__":
                         "Threads": 4,
                     }
                 ),
+                ## validation ## 
                 Task(
                     name="karken2_check_contamination",
                     runner_path= scripts / "run_kraken2_taxonomic_classification_with_subsampling.py", # Standard 스크립트로 변경 필요 시 수정
@@ -217,6 +216,70 @@ if __name__ == "__main__":
                 }
             ),
             Task(
+                name="samtools_bam_flagstats_sorted_bam",
+                runner_path= scripts / "run_samtools_flagstats_summary_flagstats.py",  # 신규 스크립트
+                log_path = work_dir / sid / "logs" / "03a_flagstat_sorted_bam",
+                spec = {
+                    'SeqID': sid,
+                    'BamDir': work_dir / sid / "bam",
+                    'QcDir': work_dir / sid / "qc",
+                    'InputSuffix': '.sorted',  # raw sorted BAM 대상
+                    "Threads": 2,
+                }
+            ),
+            Task(
+                name="gatk4_singularity_qc_alignment_summary",
+                runner_path= scripts / "run_gatk4_qc_alignment_summary_using_singularity.py",
+                log_path = work_dir / sid / "logs" / "03b_gatk4_singularity_qc_alignment_summary", 
+                spec = {
+                    'SeqID': sid,
+                    'BamDir': work_dir / sid / "bam",
+                    'qcResDir': work_dir / sid / "qc",
+                    'InputSuffix': '.sorted',  # raw sorted BAM 대상
+                    'ReferenceFasta': ReferenceFasta,
+                    "Threads": 8,
+                }
+            ),
+            Task(
+                name="gatk4_singularity_qc_insert_size",
+                runner_path= scripts / "run_gatk4_qc_insert_size_using_singularity.py",
+                log_path = work_dir / sid / "logs" / "03c_gatk4_singularity_qc_insert_size", 
+                spec = {
+                    'SeqID': sid,
+                    'BamDir': work_dir / sid / "bam",
+                    'qcResDir': work_dir / sid / "qc",
+                    'InputSuffix': '.sorted',  # raw sorted BAM 대상
+                    'ReferenceFasta': ReferenceFasta,
+                    "Threads": 8,
+                }
+            ),
+            Task(
+                name="gatk4_singularity_qc_wgs_metrics",
+                runner_path= scripts / "runs_gatk4_qc_wgs_metrics_using_singularity.py",
+                log_path = work_dir / sid / "logs" / "03d_gatk4_singularity_qc_wgs_metrics", 
+                spec = {
+                    'SeqID': sid,
+                    'BamDir': work_dir / sid / "bam",
+                    'qcResDir': work_dir / sid / "qc",
+                    'InputSuffix': '.sorted',  # raw sorted BAM 대상
+                    'ReferenceFasta': ReferenceFasta,
+                    "Threads": 8,
+                }
+            ),
+            Task(
+                name="mosdepth_singularity_coverage_100kb",
+                runner_path= scripts / "run_mosdepth_singularity_coverage.py",
+                log_path = work_dir / sid / "logs" / "03e_mosdepth_coverage_100kb_sorted_bam", 
+                spec = {
+                    'SeqID': sid,
+                    'BamDir': work_dir / sid /"bam",
+                    'qcResDir': work_dir / sid / "qc",
+                    'bin': 100000,
+                    'InputSuffix': '.sorted',  # raw sorted BAM 대상
+                    "Threads": 8,
+                }
+            ),
+            Task(
                 name="gatk4_singularity_dedup",
                 runner_path= scripts / "run_gatk4_dedup_using_singularity.py",
                 log_path = work_dir / sid / "logs" / "04_gatk4_singularity_dedup", 
@@ -225,6 +288,18 @@ if __name__ == "__main__":
                     'BamDir': work_dir / sid / "bam",
                     'qcResDir': work_dir / sid / "qc",
                     "Threads": 8,
+                }
+            ),
+            Task(
+                name="samtools_bam_flagstats_dedup_bam",
+                runner_path= scripts / "run_samtools_flagstats_summary_flagstats.py",  # 신규 스크립트
+                log_path = work_dir / sid / "logs" / "04a_flagstat_dedup_bam",
+                spec = {
+                    'SeqID': sid,
+                    'BamDir': work_dir / sid / "bam",
+                    'QcDir': work_dir / sid / "qc",
+                    'InputSuffix': '.dedup',  # raw sorted BAM 대상
+                    "Threads": 2,
                 }
             ),
             Task(
@@ -279,6 +354,18 @@ if __name__ == "__main__":
                 }
             ),
             Task(
+                name="samtools_bam_flagstats_analysisready_bam",
+                runner_path= scripts / "run_samtools_flagstats_summary_flagstats.py",  # 신규 스크립트
+                log_path = work_dir / sid / "logs" / "08a_flagstat_analysisready_bam",
+                spec = {
+                    'SeqID': sid,
+                    'BamDir': work_dir / sid / "bam",
+                    'QcDir': work_dir / sid / "qc",
+                    'InputSuffix': '.analysisReady',  # raw sorted BAM 대상
+                    "Threads": 2,
+                }
+            ),
+            Task(
                 name="gatk4_singularity_qc_alignment_summary",
                 runner_path= scripts / "run_gatk4_qc_alignment_summary_using_singularity.py",
                 log_path = work_dir / sid / "logs" / "09_gatk4_singularity_qc_alignment_summary", 
@@ -291,45 +378,22 @@ if __name__ == "__main__":
                 }
             ),
             Task(
-                name="gatk4_singularity_qc_insert_size",
-                runner_path= scripts / "run_gatk4_qc_insert_size_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "10_gatk4_singularity_qc_insert_size", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
-                    "Threads": 8,
-                }
-            ),
-            Task(
-                name="gatk4_singularity_qc_wgs_metrics",
-                runner_path= scripts / "runs_gatk4_qc_wgs_metrics_using_singularity.py",
-                log_path = work_dir / sid / "logs" / "11_gatk4_singularity_qc_wgs_metrics", 
-                spec = {
-                    'SeqID': sid,
-                    'BamDir': work_dir / sid / "bam",
-                    'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
-                    "Threads": 8,
-                }
-            ),
-            Task(
                 name="mosdepth_singularity_coverage_100kb",
                 runner_path= scripts / "run_mosdepth_singularity_coverage.py",
-                log_path = work_dir / sid / "logs" / "12_mosdepth_singularity_coverage_100kb", 
+                log_path = work_dir / sid / "logs" / "10_mosdepth_singularity_coverage_100kb", 
                 spec = {
                     'SeqID': sid,
                     'BamDir': work_dir / sid /"bam",
                     'qcResDir': work_dir / sid / "qc",
-                    'ReferenceFasta': ReferenceFasta,
+                    'InputSuffix': '.analysisReady',  # raw sorted BAM 대상
+                    'bin': 100000,
                     "Threads": 8,
                 }
             ),
             Task(
                 name="copykit",
                 runner_path= scripts / "run_copykit_cbnipt_copynumber_analysis.py",
-                log_path = work_dir / sid / "logs" / "13_copykit_cbnipt_copynumber_analysis", 
+                log_path = work_dir / sid / "logs" / "11_copykit_cbnipt_copynumber_analysis", 
                 spec = {
                     'SeqID': sid,
                     'NGS_DataBaseDir': work_dir / sid / "bam",
@@ -341,7 +405,7 @@ if __name__ == "__main__":
             Task(
                 name="cbNIPT_CNVCall",
                 runner_path = scripts / "run_cbNIPT_callcnv_calculate_cnv_and_variant_profile.py", # 적절한 스크립트로 변경 필요
-                log_path = work_dir / sid / "logs" / "14_cnv_manual_call", 
+                log_path = work_dir / sid / "logs" / "12_cnv_manual_call", 
                 spec = {
                     "script_path":scripts / "cli.py",
                     'SeqID': sid,
@@ -349,8 +413,7 @@ if __name__ == "__main__":
                     'BamPath': work_dir / sid / 'bam' / f"{sid}.analysisReady.bam",
                     'VcfFile': KvafVcf,
                     'AnnotatedBins': work_dir / "Binning" / "hg38.fa.bin_100.0K.bed.gz",
-                    'OutDir': work_dir / sid,
-                    
+                    'OutDir': work_dir / sid / "cnv_manual_call",
                     "Threads": 4
                 }
             ),
@@ -361,6 +424,7 @@ if __name__ == "__main__":
                 spec = {
                     'SeqID': sid,
                     'qcResDir':work_dir / sid / 'qc',
+                    'mqc_filename': f"{sid}.QC.Results",
                     "Threads": 2
                 }
             )

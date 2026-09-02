@@ -47,10 +47,10 @@ def main():
     xmx_mb = args.xmx_mb
 
     # --- [Output Paths] ---
-    wgs_metrics_txt = f"{qcResDir}/{SeqID}.collect_wgs_metrics.txt"
+    wgs_metrics_txt = f"{qcResDir}/{SeqID}{InputSuffix}.collect_wgs_metrics.txt"
 
     # --- [Command Execution] ---
-    cmd = f"{singularity_bin} exec -B {bind} {sif} {java_bin} -XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m -jar {gatk_jar} CollectWgsMetrics --INPUT {BamDir}/{SeqID}.{InputSuffix}.bam --OUTPUT {wgs_metrics_txt} --REFERENCE_SEQUENCE {ReferenceFasta}"
+    cmd = f"{singularity_bin} exec -B {bind} {sif} {java_bin} -XX:ParallelGCThreads={Threads} -Xmx{xmx_mb}m -jar {gatk_jar} CollectWgsMetrics --INPUT {BamDir}/{SeqID}{InputSuffix}.bam --OUTPUT {wgs_metrics_txt} --REFERENCE_SEQUENCE {ReferenceFasta}"
     
     print(f"\\n[RUNNING]\\n{cmd}\\n")
     
