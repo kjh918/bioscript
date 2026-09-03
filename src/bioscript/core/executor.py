@@ -14,6 +14,9 @@ class SunGridExecutor:
         self.run_id = time.strftime("%Y%m%d_%H%M%S")
         self.session_dir = self.log_root / self.run_id
         self.session_dir.mkdir(parents=True, exist_ok=True)
+        
+        self.active_jids = set()
+        
 
     def _get_node_status(self) -> tuple[int, int]:
         """해당 노드(Queue)의 (실제 사용 중인 슬롯, 전체 슬롯) 반환"""

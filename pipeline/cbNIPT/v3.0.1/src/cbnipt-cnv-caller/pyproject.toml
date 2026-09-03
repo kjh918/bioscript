@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cbnipt-cnv-caller"
+version = "0.1.0"
+description = "cbNIPT manual-method CNV & variant-profile caller"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.0",
+    "pyyaml>=6",
+    "pysam>=0.22",
+    "pyBigWig>=0.3.22",
+    "pyfaidx>=0.7",
+    "ruptures>=1.1.9",
+    "statsmodels>=0.14",
+    "pyarrow>=15",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+]
+
+[project.scripts]
+cbnipt-cnv-caller = "cbnipt_cnv_caller.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cbnipt_cnv_caller"]
+# config.yaml and resources/*.tsv live inside the package dir and ship with the wheel.
