@@ -25,9 +25,7 @@ def main():
     parser.add_argument('--MinGC', required=False, default='0.3', help='최소 GC 함량 필터 (Default: 0.3)')
     parser.add_argument('--MaxGC', required=False, default='0.7', help='최대 GC 함량 필터 (Default: 0.7)')
     parser.add_argument('--IncludeSexChrom', required=False, default='--IncludeSexChrom', help='성염색체 포함 여부 플래그 (제외 시 빈 문자열) (Default: --IncludeSexChrom)')
-    parser.add_argument('--python_bin', required=False, default='/storage/home/jhkim/Apps/Python-3.11.13/python', help='Python executable (Default: python)')
-    parser.add_argument('--script_path', required=True, default='/storage/home/jhkim/scripts/bioscript/manual/cbnipt_manual_cnv_call/scripts/cli.py', help='Path to the CNV analyzer script (Default: )')
-    parser.add_argument('--Threads', required=False, default='1', help='Threads')
+    parser.add_argument('--Threads', required=False, default='4', help='Threads')
     
     args = parser.parse_args()
 
@@ -40,16 +38,52 @@ def main():
     MinGC = args.MinGC
     MaxGC = args.MaxGC
     IncludeSexChrom = args.IncludeSexChrom
-    python_bin = args.python_bin
-    script_path = args.script_path
-
+    Threads = args.Threads
+    
     # --- [Output Paths] ---
 
     # --- [Command Execution] ---
-    cmd = f"{python_bin} {script_path} make-bins --ReferenceFasta {ReferenceFasta} --MappabilityBW {MappabilityBW} --OutBinFile {OutBinFile} --BinSize {BinSize} --MinMappability {MinMappability} --MinGC {MinGC} --MaxGC {MaxGC} {IncludeSexChrom}"
-    
-    print(f"\\n[RUNNING]\\n{cmd}\\n")
-    
+    _script_dir = os.path.dirname(os.path.abspath(__file__))
+    _package_path = os.path.normpath(
+        os.path.join(_script_dir, "..", "src", "cbnipt-cnv-caller")
+    )
+    _venv_python = os.path.join(_package_path, ".venv", "bin", "python")
+    _uv_candidates = [
+        os.path.expanduser("~/.local/bin/uv"),
+        "/usr/local/bin/uv",
+        "/usr/bin/uv",
+    ]
+
+    if os.path.exists(_venv_python):
+        cmd = (
+            f"{_venv_python} -m cbnipt_cnv_caller.cli make-bins "
+            f"--ReferenceFasta {ReferenceFasta} "
+            f"--MappabilityBW {MappabilityBW} "
+            f"--OutBinFile {OutBinFile} "
+            f"--BinSize {BinSize} "
+            f"--MinMappability {MinMappability} "
+            f"--MinGC {MinGC} "
+            f"--MaxGC {MaxGC} "
+            f"{IncludeSexChrom}"
+        )
+    else:
+        uv_bin = next((p for p in _uv_candidates if os.path.exists(p)), "uv")
+        cmd = (
+            f"{uv_bin} run --project {_package_path} "
+            f"python -m cbnipt_cnv_caller.cli make-bins "
+            f"--ReferenceFasta {ReferenceFasta} "
+            f"--MappabilityBW {MappabilityBW} "
+            f"--OutBinFile {OutBinFile} "
+            f"--BinSize {BinSize} "
+            f"--MinMappability {MinMappability} "
+            f"--MinGC {MinGC} "
+            f"--MaxGC {MaxGC} "
+            f"{IncludeSexChrom}"
+        )
+
+    print(f"[INFO] package_path: {_package_path}")
+    print(f"[INFO] venv_python: {_venv_python} ({'found' if os.path.exists(_venv_python) else 'not found, using uv'})")
+
     if OutBinFile:
         _tgt = os.path.dirname(OutBinFile) if os.path.splitext(OutBinFile)[1] else OutBinFile
         if _tgt: os.makedirs(_tgt, exist_ok=True)
