@@ -1,0 +1,103 @@
+# META-INFOs
+
+```r
+library(plyr)
+library(dplyr)
+library(data.table)
+library(setwidth)
+
+meta <- fread("GSE151334_SraRunTable.csv")
+
+meta_human <- meta %>% filter( Organism == "Homo sapiens")
+
+sinfo_human <- meta_human %>% dplyr::select(c(
+    "SRR_ID"="Run","Cell"="cell_line","GSM"="Sample Name","SeqType"="LibraryLayout"
+))
+sinfo_human[which(sinfo_human$Cell == "HEK293T"),      "Cell"] <- "HEK293_PE"
+sinfo_human[which(sinfo_human$Cell == "HEK293T Cell"), "Cell"] <- "HEK293_SE"
+sinfo_human[which(sinfo_human$Cell == "HEK293T cell"), "Cell"] <- "HEK293_SE"
+sinfo_human[which(sinfo_human$Cell == "primary cell"), "Cell"] <- "HDFn_SE"
+sinfo_human[which(sinfo_human$Cell == "MCF7 cell"),    "Cell"] <- "MCF7_SE"
+sinfo_human$SeqID <- paste0("CCL", formatC(1:nrow(sinfo_human), digit=0, flag="0", width=4))
+
+process_config_human <- sinfo_human %>% mutate(
+    SeqLibType = case_when(
+        SeqType == "SINGLE" ~ "False",
+        TRUE ~ "True"
+    ),
+    SeqPlatform="SmartSeq2",
+    GenomeAssembly="hg38_ercc.plus"
+
+) %>% dplyr::select(c(
+    "SeqPlatform","SeqID","GenomeAssembly","Paired"="SeqLibType"
+))
+
+meta_data_output <- sinfo_human %>% mutate(
+    SeqPlatform="SmartSeq2",
+    GenomeAssembly="hg38_ercc.plus",
+    Tissue = case_when(
+        Cell == "HEK293_PE" ~ "kidney",
+        Cell == "HEK293_SE" ~ "kidney",
+        Cell == "HDFn_SE" ~ "skin",
+        Cell == "MCF7_SE" ~ "breast"
+    )
+)
+
+sra_download_list <- meta_data_output %>% mutate(
+    Paired = case_when(
+        SeqType == "SINGLE" ~ "False",
+        TRUE ~ "True"
+    )
+) %>% dplyr::select(c(
+    "SRR_ID","SeqID","Paired"="Paired"
+))
+
+out_dir="/data/scRNAseq/02.Public-Datasets/004.GSE151334.PRJNA635600.cell-line-smartseq2/meta"
+
+write.table(process_config_human, sprintf("%s/processing.SmartSeq2.list", out_dir), quote=F, col.names=T, row.names=F, sep=" ")
+write.table(meta_data_output, sprintf("%s/metadata_SmartSeq2.tsv", out_dir), quote=F, col.names=T, row.names=F, sep="\t")
+write.table(sra_download_list, sprintf("%s/sra.download.list", out_dir), quote=F, col.names=T, row.names=F, sep=" ")
+
+```
+
+
+# SRA-Download
+
+```bash
+
+    SRA_ACCESSION="/data/scRNAseq/02.Public-Datasets/004.GSE151334.PRJNA635600.cell-line-smartseq2/meta/sra.download.list"
+    FastqDir="/data/scRNAseq/02.Public-Datasets/004.GSE151334.PRJNA635600.cell-line-smartseq2/fastq/SmartSeq2"
+
+    PrefetchDir=${FastqDir}/sra_cache
+    mkdir -p ${PrefetchDir}
+    
+    AccessionList=$(tail -n +2 ${SRA_ACCESSION} | awk '{print $1}' )
+    parallel -j 15 -k "/storage/apps/sratoolkit.3.0.10/bin/prefetch --max-size 500G -O ${PrefetchDir} -p {}" ::: ${AccessionList}
+   
+
+    #SRA_ACCESSION_INFO=/data/wgs/wgs_pon_1kg_10samples/meta/wgs.pon.1000g.sample.list
+    Threads=24
+
+    for TASK in $(seq 391 $(cat $SRA_ACCESSION | wc -l))
+    do
+        fqinfo=$(sed -n -e "${TASK} p" ${SRA_ACCESSION})
+        SRA_ID=$(echo ${fqinfo} | awk '{print $1}')
+        SeqID=$(echo ${fqinfo} | awk '{print $2}')
+        Paired=$(echo ${fqinfo} | awk '{print $3}')
+
+        if [[ "${Paired}" = "True" ]]; then
+            /storage/apps/sratoolkit.3.0.10/bin/fasterq-dump ${PrefetchDir}/${SRA_ID}/${SRA_ID}.sra -e ${Threads} --split-files --skip-technical -p -O ${FastqDir}
+            bgzip -@ ${Threads} ${FastqDir}/${SRA_ID}_1.fastq
+            bgzip -@ ${Threads} ${FastqDir}/${SRA_ID}_2.fastq
+            mv ${FastqDir}/${SRA_ID}_1.fastq.gz ${FastqDir}/${SeqID}_R1.fastq.gz
+            mv ${FastqDir}/${SRA_ID}_2.fastq.gz ${FastqDir}/${SeqID}_R2.fastq.gz
+            
+        else
+            /storage/apps/sratoolkit.3.0.10/bin/fasterq-dump ${PrefetchDir}/${SRA_ID}/${SRA_ID}.sra -e ${Threads} --skip-technical -p -O ${FastqDir}
+            bgzip -@ ${Threads} ${FastqDir}/${SRA_ID}.fastq
+            mv ${FastqDir}/${SRA_ID}.fastq.gz ${FastqDir}/${SeqID}.fastq.gz
+        fi         
+        echo " ${SRA_ID} -> ${SeqID} fastq convert done."       
+    done
+```
+

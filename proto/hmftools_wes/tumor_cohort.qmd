@@ -1,0 +1,61 @@
+
+# Tumor cohort processing
+
+- Target WES-Library : Twist-exome-2.0
+- Reference Version : hg19
+
+# Twist-Exome-2.0 + Tumor-Tisse Sample List
+
+```r
+    library(RMySQL)
+    library(dplyr)
+    library(Hmisc)
+    dbCon = dbConnect(dbDriver("MySQL"), host='192.168.0.34', user='gcx', port=3306, password='gencurix!!', db='gcx_ngs_service' )
+    sinfo = dbGetQuery(dbCon, "SELECT * FROM seqid_info WHERE panel ='WES' AND sample_origin = 'TS'")
+    sinfo = sinfo %>% filter( seq_folder %nin% c("23WES01","23WES02", "WESA_24_04","WES_25_09","WES_25_10")) %>% 
+        filter(ngs_facility_id %in% c('1','10','22'))
+    dbDisconnect(dbCon)
+
+    hmftools_wes_sinfo = sinfo[,c("seq_folder","flowcell_id","seq_id","depth","sample_name","sample_tissue")] %>% unique()
+    hmftools_wes_sinfo$SampleName <- paste0("WES-T-TE2-" ,formatC(1:nrow(hmftools_wes_sinfo), digits=0, flag="0", width=3))
+
+    write.table(hmftools_wes_sinfo, "/storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/01.preprocess/sample.list.info.tsv", quote=F, col.names=T, row.names=F, sep="\t")
+
+    processing_sample_list <- hmftools_wes_sinfo[,c(1,7,2,3)] %>% dplyr::rename(BatchID=1, SeqID=2, ReadGroupID=3, Prev_SeqID=4)
+    write.table(processing_sample_list, "/storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/01.preprocess/sample.list.tsv", quote=F, col.names=T, row.names=F, sep="\t")
+    write.table(processing_sample_list, "/storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/01.preprocess/sample.list", quote=F, col.names=F, row.names=F, sep=" ")
+
+
+    TargetFastqDir <- "/storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/02.data_processing/fastq_trimmed"
+
+    processing_sample_list$fq_copied = ""
+
+    PSL=processing_sample_list
+
+    for( j in 1:nrow(PSL)){
+
+        cat(sprintf("-->> %s/%s fastq copy... ", j, nrow(PSL)))
+
+        SourceFqR1 <- sprintf("/data/wes/%s/%s/fastq/%s.trimmed_R1.fastq.gz", PSL[j,1],PSL[j,4],PSL[j,4])
+        SourceFqR2 <- sprintf("/data/wes/%s/%s/fastq/%s.trimmed_R2.fastq.gz", PSL[j,1],PSL[j,4],PSL[j,4])
+
+        if( file.exists(SourceFqR1) && file.exists(SourceFqR2) ){
+            system(sprintf("cp %s %s/%s.trimmed_R1.fastq.gz",  SourceFqR1, TargetFastqDir, PSL[j,2]))
+            system(sprintf("cp %s %s/%s.trimmed_R2.fastq.gz",  SourceFqR2, TargetFastqDir, PSL[j,2]))
+            PSL[j,5] <- '1'
+            message("copied.")
+        }else{
+            PSL[j,5] <- '0'
+            message("no fastq.")
+        }
+    }
+```
+
+# Tumor cohort Pre-Processing
+
+```bash
+
+    qsub -q all.q@ngsnode1 /storage/home/kangsm/runScripts/00_Pipeline_Development/hmftools_wes/hmftools_wes_tumor_cohort_processing.sh
+
+```
+

@@ -1,0 +1,307 @@
+
+
+Rscript /storage/home/kangsm/runScripts/WES_run.CNV_superFreq.R \
+    --baseDir "/storage/home/kangsm/analysis/cnv_seqc2" \
+    --seqFolder "hg38" \
+    --tumorSeqID "FD2_T" \
+    --normalSeqID "FD2_N" \
+    --setID "FD2_N.T" \
+    --genomeAssembly "hg38" \
+    --wesLibKit "sureselect.v6" \
+    --mode "exome" \
+    --threads 30 
+
+
+TUMOR_SEQ_ID=NV1_T2
+NORMAL_SEQ_ID=NV2_N
+Rscript /storage/home/kangsm/runScripts/WES_run.CNV_superFreq_rev.R \
+    --baseDir "/storage/home/kangsm/analysis/cnv_seqc2" \
+    --seqFolder "hg38" \
+    --tumorSeqID ${TUMOR_SEQ_ID} \
+    --setID "NV1_T2" \
+    --genomeAssembly "hg38" \
+    --wesLibKit "sureselect.v6" \
+    --mode "exome" \
+    --threads 30 
+
+BASE_DIR="/storage/home/kangsm/analysis/cnv_seqc2"
+SEQ_FOLDER="hg38"
+WES_LIB_KIT="sureselect.v6" 
+GENOME_ASSEMBLY="hg38"
+RUN_SCRIPT=/storage/home/kangsm/runScripts
+THREADS=20
+
+#------------------------------------------------------------------------------#
+TUMOR_SEQ_ID="NV1_T2"
+SET_ID="Results_NV1_T2.mutect2"
+VCF_TAG="mutect2.filtered"
+
+Rscript ${RUN_SCRIPT}/WES_run.CNV_superFreq_rev.R \
+    --baseDir ${BASE_DIR} \
+    --seqFolder ${SEQ_FOLDER} \
+    --tumorSeqID ${TUMOR_SEQ_ID} \
+    --setID ${SET_ID} \
+    --genomeAssembly ${GENOME_ASSEMBLY} \
+    --wesLibKit ${WES_LIB_KIT} \
+    --mode "exome" \
+    --threads ${THREADS} \
+    --vcfTag ${VCF_TAG}
+#------------------------------------------------------------------------------#
+
+TUMOR_SEQ_ID="NV1_T2"
+SET_ID="Results_NV1_T2.mutect2.keep.germline"
+VCF_TAG="mutect2.keep.germline.filtered"
+
+Rscript ${RUN_SCRIPT}/WES_run.CNV_superFreq_rev.R \
+    --baseDir ${BASE_DIR} \
+    --seqFolder ${SEQ_FOLDER} \
+    --tumorSeqID ${TUMOR_SEQ_ID} \
+    --setID ${SET_ID} \
+    --genomeAssembly ${GENOME_ASSEMBLY} \
+    --wesLibKit ${WES_LIB_KIT} \
+    --mode "exome" \
+    --threads ${THREADS} \
+    --vcfTag ${VCF_TAG}
+#------------------------------------------------------------------------------#
+
+TUMOR_SEQ_ID="NV1_T2"
+NORMAL_SEQ_ID="NV2_N"
+SET_ID="Results_NV1_T2_NT.mutect2.keep.germline"
+VCF_TAG="mutect2.keep.germline.filtered"
+
+Rscript ${RUN_SCRIPT}/WES_run.CNV_superFreq_rev.R \
+    --baseDir ${BASE_DIR} \
+    --seqFolder ${SEQ_FOLDER} \
+    --tumorSeqID ${TUMOR_SEQ_ID} \
+    --normalSeqID ${NORMAL_SEQ_ID} \
+    --setID ${SET_ID} \
+    --genomeAssembly ${GENOME_ASSEMBLY} \
+    --wesLibKit ${WES_LIB_KIT} \
+    --mode "exome" \
+    --threads ${THREADS} \
+    --vcfTag ${VCF_TAG}
+#------------------------------------------------------------------------------#
+
+TUMOR_SEQ_ID="NV1_T2"
+NORMAL_SEQ_ID="NV2_N"
+SET_ID="Results_NV1_T2_NT.mutect2"
+VCF_TAG="mutect2.filtered"
+
+Rscript ${RUN_SCRIPT}/WES_run.CNV_superFreq_rev.R \
+    --baseDir ${BASE_DIR} \
+    --seqFolder ${SEQ_FOLDER} \
+    --tumorSeqID ${TUMOR_SEQ_ID} \
+    --normalSeqID ${NORMAL_SEQ_ID} \
+    --setID ${SET_ID} \
+    --genomeAssembly ${GENOME_ASSEMBLY} \
+    --wesLibKit ${WES_LIB_KIT} \
+    --mode "exome" \
+    --threads ${THREADS} \
+    --vcfTag ${VCF_TAG}
+#------------------------------------------------------------------------------#
+
+BASE_DIR="/storage/home/kangsm/analysis/cnv_seqc2"
+SEQ_FOLDER="hg38"
+DATA_DIR = sprintf("%s/%s", BASE_DIR, SEQ_FOLDER)
+RUN_DIR = sprintf("%s/%s/cnv/superfreq", DATA_DIR, TUMOR_SEQ_ID)
+
+PLOIDY_DATA_DIR = sprintf("%s/%s/%s/data", RUN_DIR, SET_ID, SET_ID)
+#--------------------------------------------------------------------------#
+SuperFreqRes <- data.frame(NAME=c(TUMOR_SEQ_ID,NORMAL_SEQ_ID), PLOIDY=NA, PLOIDY_INT=NA)
+for( n in 1:nrow(SuperFreqRes) )
+{
+    SegRes <- read.delim(sprintf("%s/CNAsegments_%s.tsv", PLOIDY_DATA_DIR, SuperFreqRes[n,"NAME"]))
+    ploidy <- Calculate.superFreq.Ploidy( SegRes )
+    SuperFreqRes[n, "PLOIDY"]     = round(ploidy, 3)
+    SuperFreqRes[n, "PLOIDY_INT"] = round(ploidy + 0.1, 0)
+}
+#--------------------------------------------------------------------------#
+load(sprintf("%s/%s/fit.Rdata", RUN_DIR, SET_ID)) # fit
+sex_res          <- fit$fit$sex
+names(sex_res)   <- gsub("\\-normal", "", names(sex_res))
+SuperFreqRes$SEX <- sex_res[ SuperFreqRes$NAME ]
+#--------------------------------------------------------------------------#
+load(sprintf("%s/%s/stories.Rdata", RUN_DIR, SET_ID)) # stories
+PR                  <- stories$stories[[SET_ID]]$clusters$cloneStories %>% filter( call != "germline" ) 
+purity              <- apply(PR$stories, 2, function(y) max(y))
+SuperFreqRes$PURITY <- round(purity[ SuperFreqRes$NAME ], 4)
+#--------------------------------------------------------------------------#
+SuperFreqRes$LOGRATIO_SHIFT <- sapply( SuperFreqRes$PLOIDY_INT, function(PI)
+{
+    if( PI >= 3 ){ LS = -0.4 }else{ LS = 0 }
+    return(LS)
+})
+#--------------------------------------------------------------------------#
+write.table(SuperFreqRes, sprintf("%s/%s_ploidy_sex_purity.txt", RUN_DIR, SET_ID), quote=F, col.names=F, row.names=F, sep=" ")
+write.table(SuperFreqRes, sprintf("%s/%s_ploidy_sex_purity.tsv", RUN_DIR, SET_ID), quote=F, col.names=T, row.names=F, sep="\t")
+
+
+#--------------------------------------------------------------------------------------------------#
+
+### 2024-04-16 : CRC5 ASCAT
+
+BASE_DIR=/storage/home/kangsm/analysis
+SEQ_FOLDER="crc.nto.5samples"
+INPUT_LIST_FILE=${BASE_DIR}/${SEQ_FOLDER}/meta/NT_matching.list
+THREADS=20
+GENOME_ASSEMBLY="hg19"
+RUN_SCRIPT=/storage/home/kangsm/runScripts
+BED_PREFIX=/storage/references_and_index/hg19/bed/Agilent_SureSelect_v6/GRCh37_sureselect.v6
+SEQ_DEPTH=200
+
+for SGE_TASK_ID in $(seq 1 10)
+do
+    SEQ_INFO=$(sed -n -e "${SGE_TASK_ID} p" ${INPUT_LIST_FILE})
+    TUMOR_SEQ_ID=$(echo ${SEQ_INFO} | awk '{print $2}')
+    NORMAL_SEQ_ID=$(echo ${SEQ_INFO} | awk '{print $1}')
+
+    Rscript /storage/home/kangsm/runScripts/WES_run.CNV_ASCAT.R \
+        --baseDir ${BASE_DIR} \
+        --seqFolder ${SEQ_FOLDER} \
+        --tumorSeqID ${TUMOR_SEQ_ID} \
+        --normalSeqID ${NORMAL_SEQ_ID} \
+        --bed ${BED_PREFIX}.target.bed \
+        --assembly ${GENOME_ASSEMBLY} \
+        --threads ${THREADS}
+done
+
+
+BASE_DIR=/storage/home/kangsm/analysis/cnv_seqc2
+SEQ_FOLDER=hg38
+N_TYPE=TS_N
+
+    TUMOR_SEQ_ID=FD1_T
+    NORMAL_SEQ_ID=NV1_N
+
+    CNV_RES_DIR=${BASE_DIR}/${SEQ_FOLDER}/${TUMOR_SEQ_ID}/cnv
+    CNVKIT_RES_DIR=${CNV_RES_DIR}/cnvkit
+
+    SUPERFREQ_RES_FILE=${BASE_DIR}/${SEQ_FOLDER}/${TUMOR_SEQ_ID}/cnv/superfreq/${TUMOR_SEQ_ID}.Tonly_ploidy_sex_purity.txt
+    SUPERFREQ_DATA=$(cat ${SUPERFREQ_RES_FILE})
+    SEX=$(echo $SUPERFREQ_DATA | awk '{print $4}')
+
+    CNVKIT_VCF=${BASE_DIR}/${SEQ_FOLDER}/${TUMOR_SEQ_ID}/vcf/${TUMOR_SEQ_ID}.mutect2.NT.cnvkit.vcf
+
+    ASCAT_DIR=${BASE_DIR}/${SEQ_FOLDER}/${TUMOR_SEQ_ID}/cnv/ascat
+    ln -s ${ASCAT_DIR}/${TUMOR_SEQ_ID}.ASCAT.purity.sex.ploidy.txt ${ASCAT_DIR}/${TUMOR_SEQ_ID}.TS_N.ASCAT.purity.sex.ploidy.txt
+    ASCAT_DATA=$(cat ${ASCAT_DIR}/${TUMOR_SEQ_ID}.TS_N.ASCAT.purity.sex.ploidy.txt)
+    PURITY=$(echo $ASCAT_DATA | awk '{print $2}')
+    PLOIDY=$(echo $ASCAT_DATA | awk '{print $4}')
+    PLOIDY_INT=$(echo $ASCAT_DATA | awk '{print $5}')
+
+    ${RUN_CNVKIT} call \
+        --output ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.ASCAT.call.cns \
+        --sample-id ${TUMOR_SEQ_ID} \
+        --normal-id ${NORMAL_SEQ_ID} \
+        --vcf ${CNVKIT_VCF} \
+        --purity ${PURITY} \
+        --sample-sex ${SEX} \
+        ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.cns
+
+    echo -e "ID\tPLOIDY\tPLOIDY_INT\tPURITY\tSEX" > ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.ASCAT.params
+    echo -e "${TUMOR_SEQ_ID}\t${PLOIDY}\t${PLOIDY_INT}\t${PURITY}\t${SEX}" >>${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.ASCAT.params
+
+    PURECN_NT=${BASE_DIR}/${SEQ_FOLDER}/${TUMOR_SEQ_ID}/cnv/purecn/TumorOnly_mode/${TUMOR_SEQ_ID}.csv
+    cat ${PURECN_NT}
+
+    PLOIDY=2
+    PLOIDY_INT=2
+    PURITY=0.33
+
+    ${RUN_CNVKIT} call \
+        --output ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.PureCN.Tonly.call.cns \
+        --sample-id ${TUMOR_SEQ_ID} \
+        --normal-id ${NORMAL_SEQ_ID} \
+        --vcf ${CNVKIT_VCF} \
+        --purity ${PURITY} \
+        --sample-sex ${SEX} \
+        ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.cns
+
+    echo -e "ID\tPLOIDY\tPLOIDY_INT\tPURITY\tSEX" > ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.PureCN.Tonly.params
+    echo -e "${TUMOR_SEQ_ID}\t${PLOIDY}\t${PLOIDY_INT}\t${PURITY}\t${SEX}" >>${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.PureCN.Tonly.params
+
+
+
+    ASCAT_DIR=${BASE_DIR}/${SEQ_FOLDER}/${TUMOR_SEQ_ID}/cnv/ascat
+    ln -s ${ASCAT_DIR}/${TUMOR_SEQ_ID}.ASCAT.purity.sex.ploidy.txt ${ASCAT_DIR}/${TUMOR_SEQ_ID}.TS_N.ASCAT.purity.sex.ploidy.txt
+    ASCAT_DATA=$(cat ${ASCAT_DIR}/${TUMOR_SEQ_ID}.TS_N.ASCAT.purity.sex.ploidy.txt)
+    PURITY=$(echo $ASCAT_DATA | awk '{print $2}')
+    PLOIDY_INT=$(echo $ASCAT_DATA | awk '{print $5}')
+
+    ${RUN_CNVKIT} call \
+        --output ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.ASCAT.call.cns \
+        --sample-id ${TUMOR_SEQ_ID} \
+        --normal-id ${NORMAL_SEQ_ID} \
+        --vcf ${CNVKIT_VCF} \
+        --purity ${PURITY} \
+        --sample-sex ${SEX} \
+        ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.cns
+
+    echo -e "ID\tPLOIDY\tPLOIDY_INT\tPURITY\tSEX" > ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.ASCAT.params
+    echo -e "${TUMOR_SEQ_ID}\t${PLOIDY}\t${PLOIDY_INT}\t${PURITY}\t${SEX}" >>${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.ASCAT.params
+
+            ${RUN_CNVKIT} segment \
+                --output ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.cns \
+                --dataframe ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.cbs.txt \
+                --method cbs \
+                --smooth-cbs \
+                --drop-low-coverage \
+                --drop-outliers 4 \
+                --processes ${THREADS} \
+                --vcf ${CNVKIT_VCF} \
+                --sample-id ${TUMOR_SEQ_ID} \
+                --normal-id ${NORMAL_SEQ_ID} \
+                ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.cnr
+
+
+    TUMOR_SEQ_ID=NV3_T
+    CNV_RES_DIR=${BASE_DIR}/${SEQ_FOLDER}/${TUMOR_SEQ_ID}/cnv
+    CNVKIT_RES_DIR=${CNV_RES_DIR}/cnvkit
+
+    cp ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.ASCAT.call.cns ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.cns
+    cp ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.ASCAT.params ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.call.params
+    cp ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.cnr ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.cnr
+    cp ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.cns ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.cns
+
+    ${RUN_CNVKIT} segmetrics \
+        --segments ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.cns \
+        --output ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.segmetrics.txt \
+        --drop-low-coverage \
+        --mean --median --mode --mse --ci --smooth-bootstrap \
+        ${CNVKIT_RES_DIR}/${TUMOR_SEQ_ID}.NT.${N_TYPE}_N.cnr
+
+#--------------------------------------------------------------------------------------------------#
+
+
+
+BASE_DIR=/storage/home/kangsm/analysis/cnv_seqc2
+SEQ_FOLDER=hg38
+N_TYPE=TS_N
+RUN_SINGULARITY="singularity exec -B /storage,/data /storage/images"
+RUN_CNVKIT="${RUN_SINGULARITY}/cnvkit-0.9.10.sif cnvkit.py"
+RUN_SCRIPT=/storage/home/kangsm/runScripts
+
+
+for TUMOR_SEQ_ID in FD1_T FD2_T FD3_T NV1_T NV2_T NV3_T NV1_T2
+do
+    CNV_RES_DIR=${BASE_DIR}/${SEQ_FOLDER}/${TUMOR_SEQ_ID}/cnv
+    CNVKIT_RES_DIR=${CNV_RES_DIR}/cnvkit
+
+    Rscript /storage/home/kangsm/runScripts/WES_run.CNV_CNVkit_Recall_and_Summary.R \
+        --BASE_DIR "/storage/home/kangsm/analysis/cnv_seqc2" \
+        --SEQ_FOLDER "hg38" \
+        --SEQ_ID ${TUMOR_SEQ_ID} \
+        --ASSEMBLY "hg38" \
+        --THREADS 15 \
+        --CNVKIT_RUN_MODE "nt" \
+        --VCF_TAG "mutect2.NT" 
+done
+
+
+
+
+
+
+
+
+

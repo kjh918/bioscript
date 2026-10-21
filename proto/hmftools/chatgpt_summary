@@ -1,0 +1,348 @@
+
+1) 먼저 공통으로 깔아둘 것
+
+SIF가 이미 있으니 공통 셋업은 사실상 세 가지입니다.
+
+A. 공통 디렉터리
+
+이렇게 나누는 걸 권합니다.
+
+/storage/db/hmftools/
+  ref/
+  resources/
+  output/
+  tmp/
+  panel/
+  ensembl/
+
+운영상은 아래처럼 더 구체화하면 좋습니다.
+
+ref/GRCh38/ : FASTA, FAI, dict, BWA index
+
+resources/dna/38/ : HMF DNA pipeline resource tar를 푼 디렉터리
+
+resources/orange/38/ : ORANGE 전용 리소스
+
+resources/chord/ : CHORD 모델/리소스
+
+resources/cuppa/ : CUPPA 모델/리소스
+
+panel/ : hotspot/panel BED, high-confidence BED
+
+output/<sample>/ : 샘플별 산출물
+
+WGS README는 DNA resource bundle과 reference genome을 별도로 받는 구성을 설명하고, ORANGE README도 별도 리소스 파일이 필요하다고 명시합니다.
+
+B. 공통 reference
+
+보통은 GRCh38 no-alt 기준으로 통일하는 게 운영이 편합니다.
+특히 LILAC는 GRCh37/hg19/hg38을 지원하지만, hg38 ALT contig 정렬 BAM이면 HLA 관련 fragment를 no-alt genome으로 재정렬해야 한다고 이슈에서 명확히 언급합니다.
+
+즉, 가능하면:
+
+BAM/CRAM 정렬 기준
+
+리소스 버전
+
+PURPLE/LILAC/ORANGE 입력 기준
+
+을 모두 같은 reference 체계로 맞추는 게 좋습니다.
+
+C. 컨테이너 실행 래퍼
+
+SIF를 직접 일일이 치기보다, 각 툴별 wrapper를 하나 두는 게 좋습니다.
+
+예:
+
+hmfexec() {
+  singularity exec \
+    --bind /storage:/storage \
+    --bind /data:/data \
+    "$1" "${@:2}"
+}
+
+그 다음:
+
+hmfexec ~/sif_images/hmftools-purple-v4.3.sif java -jar /app/purple.jar ...
+
+처럼 쓰면 됩니다.
+
+2) 사용처별로 어떻게 묶어 쓰면 되나
+A. 암 WGS tumor-normal 표준 분석
+
+이게 HMFTools의 중심 축입니다.
+
+추천 조합
+
+amber
+
+cobalt
+
+sage
+
+esvee
+
+purple
+
+linx
+
+lilac
+
+선택: chord, cuppa, orange
+
+역할
+
+AMBER: likely heterozygous SNP에서 BAF 계산, PURPLE 입력 생성
+
+COBALT: read depth ratio 계산, PURPLE 입력 생성
+
+SAGE: somatic SNV/indel caller, tumor-normal 모드 예시가 README에 있음
+
+ESVEE: SV caller
+
+PURPLE: purity/ploidy/copy number 추정, AMBER/COBALT/SV/somatic variant를 결합
+
+LINX: SV event grouping, chaining, fusion/disruption annotation
+
+LILAC: HLA typing, HLA-A/B/C 변이와 copy number까지 활용 가능
+
+CHORD: HRD classification 도구로 메인 README에 포함
+
+CUPPA: tissue-of-origin prediction
+
+ORANGE: WGS 결과를 PDF/JSON 보고서로 통합, 여러 HMF 알고리즘 출력과 리소스 필요
+
+권장 순서
+
+AMBER + COBALT + SAGE + ESVEE → PURPLE → LINX + LILAC → CHORD/CUPPA → ORANGE
+
+이게 가장 자연스럽습니다. PURPLE가 copy number 중심 허브 역할을 하고, LINX/LILAC/ORANGE가 그 위 결과를 소비합니다.
+
+셋업 포인트
+
+tumor BAM/CRAM
+
+normal BAM/CRAM
+
+reference FASTA + index
+
+known hotspot VCF
+
+high-confidence BED
+
+Ensembl cache
+
+HMF DNA resource bundle
+
+SAGE README 예시에도 hotspot VCF, high-confidence BED, ensembl cache, driver gene panel 등이 등장합니다.
+
+B. SNV/indel만 빨리 보고 싶을 때
+추천 조합
+
+sage
+
+pave
+
+선택: orange
+
+역할
+
+SAGE: 변이 호출
+
+PAVE: point mutation annotation/impact
+
+ORANGE: 후속 요약 보고
+
+메인 README에서 PAVE는 point mutation annotation, SAGE는 point mutation variant calling으로 설명됩니다.
+
+언제 좋나
+
+panel/WES 유사 데이터에서 작은 변이만 빨리 볼 때
+
+CN/SV까지 풀셋업할 시간 없을 때
+
+다만 ORANGE는 원래 다양한 HMF 알고리즘 출력을 요구하므로, 작은 subset만 넣으면 정보가 제한될 수 있습니다. ORANGE README도 여러 Hartwig 알고리즘의 출력과 추가 리소스가 필요하다고 적습니다.
+
+C. CNV / purity / ploidy 중심
+추천 조합
+
+amber
+
+cobalt
+
+purple
+
+이 3개가 copy number 축입니다.
+AMBER가 BAF, COBALT가 depth ratio, PURPLE가 purity/ploidy/CN fit을 담당합니다.
+
+셋업 포인트
+
+paired normal이 있으면 훨씬 좋음
+
+heterozygous SNP resource 필요
+
+WGS에서 가장 잘 맞음
+
+AMBER README도 paired normal/tumor 모드를 기본 권장으로 설명합니다.
+
+D. SV / fusion / rearrangement 중심
+추천 조합
+
+esvee
+
+linx
+
+선택: purple
+
+ESVEE가 SV를 찾고, LINX가 이를 이벤트 단위로 묶고 fusion/disruption까지 해석합니다. PURPLE copy number가 같이 있으면 훨씬 해석력이 올라갑니다.
+
+언제 좋나
+
+complex rearrangement
+
+gene fusion
+
+chromothripsis / BFB / amplification event 해석
+
+E. HLA / 면역 관련
+추천 조합
+
+lilac
+
+선택: neo
+
+LILAC는 HLA typing과 HLA 변이/LOH 쪽, NEO는 LILAC 출력과 somatic variant, LINX fusion 결과를 받아 neoepitope를 예측합니다. NEO README는 입력으로 PURPLE somatic VCF, LINX candidate fusion neoepitopes, LILAC output을 사용한다고 설명합니다.
+
+중요한 주의
+
+hg38 ALT contig 정렬이면 LILAC 앞에서 HLA 관련 read 재정렬 이슈를 꼭 확인해야 합니다.
+
+F. RNA / transcriptome
+추천 조합
+
+isofox
+
+메인 README는 Isofox를 WTS transcript abundance, fusion, novel splice junction 분석 도구로 설명합니다.
+
+언제 쓰나
+
+RNA-seq에서 expression, fusion, splice event 보고 싶을 때
+
+DNA 결과와 ORANGE/NEO 등과 연결할 때
+
+G. 해석 / 보고 / 분류
+추천 조합
+
+orange
+
+chord
+
+cuppa
+
+wisp
+
+역할은 대략 이렇습니다.
+
+ORANGE: 임상 보고용 PDF/JSON 통합 출력
+
+CHORD: HRD status 추정
+
+CUPPA: tissue of origin prediction
+
+WISP: longitudinal purity 측정
+
+즉 분석 본체라기보다 downstream interpretation layer로 보면 됩니다.
+
+3) 실제 운영 구조 추천
+추천 1: WGS 풀세트
+
+샘플 단위 디렉터리 예시
+
+/sample/COLO320DM/
+  bam/
+  amber/
+  cobalt/
+  sage/
+  esvee/
+  purple/
+  linx/
+  lilac/
+  chord/
+  cuppa/
+  orange/
+  logs/
+
+이 구조가 제일 관리하기 쉽습니다.
+
+추천 2: 모듈형 배치 실행
+
+각 SIF별로 bash wrapper를 하나씩 둡니다.
+
+예:
+
+run_sage.sh
+run_amber.sh
+run_cobalt.sh
+run_purple.sh
+run_esvee.sh
+run_linx.sh
+run_lilac.sh
+run_orange.sh
+
+이렇게 해두면 tool version pinning과 input path 관리가 편합니다.
+
+4) 지금 가진 SIF 기준 우선순위
+
+지금 보유 목록 기준으로, 실무 우선순위는 보통 이렇습니다.
+
+가장 먼저 쓸 가능성 높은 핵심
+
+amber
+
+cobalt
+
+sage
+
+esvee
+
+purple
+
+linx
+
+lilac
+
+해석/리포팅
+
+orange
+
+chord
+
+cuppa
+
+특수 상황
+
+isofox
+
+wisp
+
+bamtools
+
+gene-utils
+
+redux
+
+즉, DNA WGS 주력 파이프라인은 이미 거의 다 갖추신 상태입니다. 메인 README의 현재 도구 분류도 이 구조와 같습니다.
+
+5) 제일 먼저 준비할 resource bundle
+
+사용처별로 따로 관리하지 말고, 아래 4개만 먼저 갖추면 대부분 풀립니다.
+
+GRCh38 reference
+
+HMF DNA pipeline resources (38)
+
+Ensembl cache
+
+ORANGE resources
+
+WGS README는 DNA resource bundle과 reference genome이 필요하다고 하고, ORANGE README도 doid/cohort distributions/driver genes/known fusions/ensembl cache를 요구합니다.

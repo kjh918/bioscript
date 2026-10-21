@@ -1,0 +1,27 @@
+
+
+# meta data for processing
+
+### 1. Bulk-RNAseq or SmartSeq2
+
+| Column | Description |
+|:---:|:---|
+| BaseDir | data base dir |
+| BatchID | analysis batch id |
+| SeqPlatform | sequencing platform : BulkRNAseq, SmartSeq2 |
+| SeqID | sample id ( gcx-id ) |
+| GenomeAssembly | reference genome version |
+| IndivID | individual ID (required) |
+
+### 2. scRNAseq
+
+| Column | Description |
+|:---:|:---|
+| BaseDir | data base dir |
+| BatchID | analysis batch id |
+| SeqPlatform | sequencing platform : scRNAseq |
+| SeqBatchID | sequencing batch id |
+| GenomeAssembly | reference genome version |
+| IndivID | individual ID (optional) | 
+
+

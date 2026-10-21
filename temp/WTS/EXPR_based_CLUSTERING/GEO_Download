@@ -1,0 +1,148 @@
+
+# srr.list
+GSE69405 GSM1702642 SRR2049394 LUAD_PDX
+GSE69405 GSM1702587 SRR2049339 CELL_LINE
+CLIN_CANCER_RES 2017_23_3230 SRR3668902	LUNG_CANCER_PDX
+CLIN_CANCER_RES 2017_23_3230 SRR3668903	LUNG_CANCER_PDX
+CLIN_CANCER_RES 2017_23_3230 SRR3668904	LUNG_CANCER_PDX
+CLIN_CANCER_RES 2017_23_3230 SRR3668905	LUNG_CANCER_PDX
+
+#
+cd /storage/home/kangsm/analysis/gcx.rnaseq.based.clustering/GEO_TESTSET/SRR
+
+SRR_ID_LIST=$(cat /storage/home/kangsm/analysis/gcx.rnaseq.based.clustering/GEO_TESTSET/SRR/srr.list | awk '{print $3}')
+
+for SRR_ID in $SRR_ID_LIST
+do
+    /storage/apps/sratoolkit.3.0.10/bin/fastq-dump \
+        --split-3 \
+        --outdir /storage/home/kangsm/analysis/gcx.rnaseq.based.clustering/GEO_TESTSET/SRR \
+        --accession $SRR_ID
+done
+
+# GEO DATA PROCESSING
+
+    BASE_DIR="/storage/home/kangsm/analysis/gcx.rnaseq.based.clustering/GEO_TESTSET"
+    SEQ_FOLDER="LUNG_PDX"
+    THREADS=20
+    SAMPLE_LIST_FILE=${BASE_DIR}/${SEQ_FOLDER}/meta/sample.list
+
+    for SGE_TASK_ID in 1 2 3 4 5 6
+    do
+        
+        SEQ_INFO=$(sed -n -e "${SGE_TASK_ID} p" ${SAMPLE_LIST_FILE})
+        SEQ_ID=$(echo ${SEQ_INFO} | awk '{print $1}')
+        READ_LENGTH=$(echo ${SEQ_INFO} | awk '{print $2}')
+        FLOWCELL_ID=$(echo ${SEQ_INFO} | awk '{print $3}')
+        
+        echo -e "RNASEQ PROCESSING : $SEQ_ID START -----------------------------"
+        # SETUP
+            RAW_FQ_DIR="/storage/home/kangsm/analysis/gcx.rnaseq.based.clustering/GEO_TESTSET/SRR"
+            DATA_DIR=${BASE_DIR}/${SEQ_FOLDER}
+            FASTQ_DIR=${DATA_DIR}/${SEQ_ID}/fastq
+            BAM_DIR=${DATA_DIR}/${SEQ_ID}/bam
+            QC_DIR=${DATA_DIR}/${SEQ_ID}/qcfiles
+            TMP_DIR=${DATA_DIR}/${SEQ_ID}/tmp
+            LOG_DIR=${DATA_DIR}/${SEQ_ID}/log
+            QUANT_DIR=${DATA_DIR}/${SEQ_ID}/quant/rsem
+
+            if [ ! -d ${FASTQ_DIR} ]; then mkdir -p ${FASTQ_DIR}; fi
+            if [ ! -d ${BAM_DIR} ]; then mkdir -p ${BAM_DIR}; fi
+            if [ ! -d ${TMP_DIR} ]; then mkdir -p ${TMP_DIR}; fi
+            if [ ! -d ${LOG_DIR} ]; then mkdir -p ${LOG_DIR}; fi
+            if [ ! -d ${QC_DIR} ]; then 
+                mkdir -p ${QC_DIR}
+                mkdir -p ${QC_DIR}/qc_res
+            fi
+            if [ ! -d ${QUANT_DIR} ]; then mkdir -p ${QUANT_DIR}; fi
+        #    
+        # SW RUN
+            RUN_SINGULARITY="singularity exec -B /storage,/data /storage/images"
+            RUN_STAR="${RUN_SINGULARITY}/star-2.7.11.sif STAR"
+            RUN_SAMTOOLS="${RUN_SINGULARITY}/samtools-1.18.sif samtools"
+            RUN_RSEM="${RUN_SINGULARITY}/rsem-1.3.3.sif rsem-calculate-expression"
+        #
+        # REFERENCE & INDEX 
+            STAR_RSEM_INDEX="/storage/references_and_index/hg38/rsem_index_star_pe100/gencode_v22"
+            GTF_FILE="/storage/home/kangsm/myDB/gtf/hg38/gencode.v22.annotation.gtf"
+            RSEM_INDEX=${STAR_RSEM_INDEX}/GCX.Gencode.v22
+        #
+        # FASTQ-QC
+            # ${RUN_SINGULARITY}/fastqc-0.12.1.sif fastqc --extract \
+            #     --threads ${THREADS} \
+            #     --outdir ${QC_DIR} \
+            #     ${RAW_FQ_DIR}/${SEQ_ID}_*.fastq.gz
+        #
+        # FASTP
+            # LENGTH_CUTOFF=$(echo $READ_LENGTH | awk '$1 {print $1*.7}')
+            # ${RUN_SINGULARITY}/fastp-0.23.4.sif fastp \
+            #     --in1 ${RAW_FQ_DIR}/${SEQ_ID}_R1.fastq.gz --in2 ${RAW_FQ_DIR}/${SEQ_ID}_R2.fastq.gz \
+            #     --json ${QC_DIR}/${SEQ_ID}.fastp.json \
+            #     --html ${FASTQ_DIR}/${SEQ_ID}.fastp.html \
+            #     --length_required ${LENGTH_CUTOFF} \
+            #     --qualified_quality_phred 20 \
+            #     --thread ${THREADS} \
+            #     --trim_poly_g \
+            #     --detect_adapter_for_pe \
+            #     --out1 ${FASTQ_DIR}/${SEQ_ID}.trimmed_R1.fastq.gz --out2 ${FASTQ_DIR}/${SEQ_ID}.trimmed_R2.fastq.gz
+        #
+        # STAR
+            # MAX_MISMATCH=10
+            # ${RUN_STAR} \
+            #     --genomeDir ${STAR_RSEM_INDEX} \
+            #     --readFilesIn ${FASTQ_DIR}/${SEQ_ID}.trimmed_R1.fastq.gz ${FASTQ_DIR}/${SEQ_ID}.trimmed_R2.fastq.gz \
+            #     --outFileNamePrefix ${BAM_DIR}/${SEQ_ID}. \
+            #     --sjdbGTFfile ${GTF_FILE} \
+            #     --readFilesCommand zcat \
+            #     --quantMode TranscriptomeSAM \
+            #     --twopassMode Basic \
+            #     --genomeLoad NoSharedMemory \
+            #     --runThreadN ${THREADS} \
+            #     --outFilterMatchNminOverLread 0.33 \
+            #     --outFilterScoreMinOverLread 0.33 \
+            #     --readQualityScoreBase 20 \
+            #     --outFilterMismatchNmax ${MAX_MISMATCH} \
+            #     --outSAMtype BAM Unsorted \
+            #     --outSAMunmapped Within \
+            #     --chimSegmentMin 10 \
+            #     --chimJunctionOverhangMin 10 \
+            #     --alignSJstitchMismatchNmax 5 -1 5 5 \
+            #     --chimScoreJunctionNonGTAG 0 \
+            #     --chimMultimapNmax 50 \
+            #     --peOverlapNbasesMin 10 \
+            #     --alignSplicedMateMapLminOverLmate 0.5 \
+            #     --outBAMcompression 0 \
+            #     --outFilterMultimapNmax 50 \
+            #     --chimOutType WithinBAM HardClip \
+            #     --chimScoreDropMax 30 \
+            #     --chimScoreSeparation 1 \
+            #     --chimSegmentReadGapMax 3  
+            # ${RUN_SAMTOOLS} sort -@ ${THREADS} \
+            #     -o ${BAM_DIR}/${SEQ_ID}.Aligned.out.Sorted.bam \
+            #     ${BAM_DIR}/${SEQ_ID}.Aligned.out.bam
+        #
+        # POST-PROCESSING
+            # CREATE INDEX
+            # ${RUN_SAMTOOLS} index  -@ ${THREADS} -b ${BAM_DIR}/${SEQ_ID}.Aligned.out.Sorted.bam 
+            # QC FILES
+            # cp ${BAM_DIR}/${SEQ_ID}.Log.final.out ${QC_DIR}/
+            # cp ${BAM_DIR}/${SEQ_ID}.SJ.out.tab ${QC_DIR}/
+        #
+        # RSEM QUANTIFICATION
+            STRAND_OPTION="NONE"
+            #
+            ${RUN_RSEM} \
+                --paired-end --no-bam-output --estimate-rspd \
+                --strandedness ${STRAND_OPTION} \
+                --num-threads ${THREADS} \
+                --alignments ${BAM_DIR}/${SEQ_ID}.Aligned.toTranscriptome.out.bam \
+                ${RSEM_INDEX} \
+                ${QUANT_DIR}/${SEQ_ID}     
+        # 
+        echo -e "RNASEQ PROCESSING : $SEQ_ID FINISHED --------------------------"
+    done
+
+
+ 
+
+

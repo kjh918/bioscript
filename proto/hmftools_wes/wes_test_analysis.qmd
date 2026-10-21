@@ -1,0 +1,144 @@
+
+## SAMPLE LIST
+
+- /storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/01.preprocess/sample.list
+```bash 
+
+WES_24_02_09 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-002 TUMOR TISSE 
+WES_24_02_11 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-002 TUMOR ORGANOID
+WES_24_02_10 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-002 NORMAL TISSUE
+WES_24_02_13 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-003 TUMOR TISSUE
+WES_24_02_15 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-003 TUMOR ORGANOID
+WES_24_02_14 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-003 NORMAL TISSUE
+WES_24_02_05 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-22-003 TUMOR TISSUE
+WES_24_02_07 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-22-003 TUMOR ORGANOID
+WES_24_02_06 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-22-003 NORMAL TISSUE
+WES_24_02_17 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-009 TUMOR TISSUE
+WES_24_02_19 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-009 TUMOR ORGANOID
+WES_24_02_18 BH773FDRX5 WES_24_02 twist.exome.2.0 hGC-23-009 NORMAL TISSUE
+WESA_24_04_03 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-018 TUMOR TISSUE
+WESA_24_04_21 HNJKCDSXC WESA_24_04 sureselect.v6 hGC-018 TUMOR ORGANOID
+WESA_24_04_02 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-018 NORMAL TISSUE
+WESA_24_04_07 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-022 TUMOR TISSUE
+WESA_24_04_16 HNTJJDSXC WESA_24_04 sureselect.v6 hGC-022 TUMOR ORGANOID
+WESA_24_04_06 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-022 NORMAL TISSUE
+WESA_24_04_11 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-027 TUMOR TISSUE
+WESA_24_04_18 HNTJJDSXC WESA_24_04 sureselect.v6 hGC-027 TUMOR ORGANOID
+WESA_24_04_10 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-027 NORMAL TISSUE
+WESA_24_04_13 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-028 TUMOR TISSUE
+WESA_24_04_19 HNTJJDSXC WESA_24_04 sureselect.v6 hGC-028 TUMOR ORGANOID
+WESA_24_04_12 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-028 NORMAL TISSUE
+WESA_24_04_15 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-029 TUMOR TISSUE
+WESA_24_04_20 HNTJJDSXC WESA_24_04 sureselect.v6 hGC-029 TUMOR ORGANOID
+WESA_24_04_14 HNNMFDSXC WESA_24_04 sureselect.v6 hGC-029 NORMAL TISSUE
+```
+
+### sample processing for hmftools
+```bash
+
+qsub -q all.q@ngsnode1 /storage/home/kangsm/runScripts/00_Pipeline_Development/hmftools_wes/SGE_hmftools_wes_preprocessing.sh
+
+```
+### Matched-analysis list
+
+- /storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/01.preprocess/analysis.list
+
+```bash
+WES_24_02_09 WES_24_02_10 WES_24_02 twist.exome.2.0 hGC-23-002 TUMOR TISSE      ..NT-ok...Tonly-ok
+WES_24_02_11 WES_24_02_10 WES_24_02 twist.exome.2.0 hGC-23-002 TUMOR ORGANOID   ..NT-ok...Tonly-ok
+WES_24_02_13 WES_24_02_14 WES_24_02 twist.exome.2.0 hGC-23-003 TUMOR TISSUE     ..NT-ok...Tonly-ok
+WES_24_02_15 WES_24_02_14 WES_24_02 twist.exome.2.0 hGC-23-003 TUMOR ORGANOID   ..NT-ok...Tonly-ok
+WES_24_02_05 WES_24_02_06 WES_24_02 twist.exome.2.0 hGC-22-003 TUMOR TISSUE     ..NT-ok...Tonly-ok
+WES_24_02_07 WES_24_02_06 WES_24_02 twist.exome.2.0 hGC-22-003 TUMOR ORGANOID   ..NT-ok...Tonly-ok
+WES_24_02_17 WES_24_02_18 WES_24_02 twist.exome.2.0 hGC-23-009 TUMOR TISSUE     ..NT-ok...Tonly-ok
+WES_24_02_19 WES_24_02_18 WES_24_02 twist.exome.2.0 hGC-23-009 TUMOR ORGANOID   ..NT-ok...Tonly-ok
+WESA_24_04_03 WESA_24_04_02 WESA_24_04 sureselect.v6 hGC-018 TUMOR TISSUE       ..NT-ok...Tonly-ok
+WESA_24_04_21 WESA_24_04_02 WESA_24_04 sureselect.v6 hGC-018 TUMOR ORGANOID     ..NT-ok...Tonly-ok
+WESA_24_04_07 WESA_24_04_06 WESA_24_04 sureselect.v6 hGC-022 TUMOR TISSUE       ..NT-ok...Tonly-ok
+WESA_24_04_16 WESA_24_04_06 WESA_24_04 sureselect.v6 hGC-022 TUMOR ORGANOID     ..NT-ok...Tonly-ok
+WESA_24_04_11 WESA_24_04_10 WESA_24_04 sureselect.v6 hGC-027 TUMOR TISSUE       ..NT-ok...Tonly-ok
+WESA_24_04_18 WESA_24_04_10 WESA_24_04 sureselect.v6 hGC-027 TUMOR ORGANOID     ..NT-ok...Tonly-ok
+WESA_24_04_13 WESA_24_04_12 WESA_24_04 sureselect.v6 hGC-028 TUMOR TISSUE       ..NT-ok...Tonly-ok
+WESA_24_04_19 WESA_24_04_12 WESA_24_04 sureselect.v6 hGC-028 TUMOR ORGANOID     ..NT-ok...Tonly-ok
+WESA_24_04_15 WESA_24_04_14 WESA_24_04 sureselect.v6 hGC-029 TUMOR TISSUE       ..NT-ok...Tonly-ok
+WESA_24_04_20 WESA_24_04_14 WESA_24_04 sureselect.v6 hGC-029 TUMOR ORGANOID     ..NT-ok...Tonly-ok
+```
+
+### Run Matched-Analysis 
+
+```bash 
+
+    qsub -q all.q@ngsnode1 /storage/home/kangsm/runScripts/00_Pipeline_Development/hmftools_wes/SGE_hmftools_wes_matched_analysis.sh
+
+```
+
+##### fix NT result file name
+
+```bash
+SampleListFile="/storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/01.preprocess/analysis.list"
+    
+for TASK in $(seq 2 $(cat "${SampleListFile}" | wc -l))
+do
+    
+    RunInfo=$(sed -n -e "${TASK} p" ${SampleListFile})
+    BatchID=$(echo ${RunInfo} | awk '{print $3}')
+    TumorSeqID=$(echo ${RunInfo} | awk '{print $1}')
+
+    echo -e -n "${TumorSeqID}...."
+
+    DataDir=${BaseDir}/${BatchID}
+    TumorVcfDir=${DataDir}/${TumorSeqID}/vcf
+    MutectDir_NT=${TumorVcfDir}/mutect2_matched_normal
+    SomaticseqDir=${TumorVcfDir}/somaticseq_matched_normal
+    PurecnVcfPrepDir=${TumorVcfDir}/purecn_input_matched_normal
+    PurecnDir=${DataDir}/${TumorSeqID}/cnv/purecn/matched_normal
+    PrefixTag="NT"
+    OutputPrefix_Mutect_VCF=${MutectDir_NT}/${TumorSeqID}.${PrefixTag}.mutect2
+    SomaticSeqInput_MUTECT2=${OutputPrefix_Mutect_VCF}.filtered.norm.vcf.gz
+
+    bcftools annotate -a ${PurecnDir}/${TumorSeqID}.${PrefixTag}.variants.purecn.vcf.gz \
+        -c FMT/GT,FMT/DP,FMT/AD,INFO/PureCN.PS,INFO/PureCN.ML.SOMATIC,INFO/PureCN.ML.C,INFO/PureCN.CS,INFO/PureCN.ML.LOH,INFO/PureCN.GHOMOZYGOUS,INFO/PureCN.LR,INFO/PureCN.CF,INFO/PureCN.ML.M \
+        -Oz -o ${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.vcf.gz \
+        ${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.pass.vcf.gz
+    
+    tabix -p vcf ${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.vcf.gz
+
+    echo '##INFO=<ID=MUTECT2_FILTER,Number=1,Type=String,Description="Mutect2 VCF FILTER">' > ${PurecnVcfPrepDir}/mutect2.filter.header
+    bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%FILTER\n' "${SomaticSeqInput_MUTECT2}" \
+        | sort -k1,1V -k2,2n  | bgzip -c > "${PurecnVcfPrepDir}/mutect2.filter.tsv.gz"
+    tabix -s 1 -b 2 -e 2 "${PurecnVcfPrepDir}/mutect2.filter.tsv.gz"
+
+    mv "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.filtered.vcf.gz" "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.vcf.gz"
+    mv "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.filtered.vcf.gz.tbi" "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.vcf.gz.tbi"
+
+    bcftools annotate -a "${PurecnVcfPrepDir}/mutect2.filter.tsv.gz" \
+        -h "${PurecnVcfPrepDir}/mutect2.filter.header" \
+        -c CHROM,POS,REF,ALT,INFO/MUTECT2_FILTER \
+        -Oz -o "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.mutect2.filter.added.vcf.gz" \
+        "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.vcf.gz"
+    tabix -p vcf "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.mutect2.filter.added.vcf.gz"
+
+    ln -Tsf "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.mutect2.filter.added.vcf.gz" ${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.VARIANTS.vcf.gz
+    ln -Tsf "${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.somaticseq.consensus.purecn.mutect2.filter.added.vcf.gz.tbi" ${TumorVcfDir}/${TumorSeqID}.${PrefixTag}.VARIANTS.vcf.gz.tbi
+
+    echo "DONE"
+done
+
+```
+
+
+### Run TumorOnly-Analysis 
+
+```bash
+
+    qsub -q all.q@ngsnode1 /storage/home/kangsm/runScripts/00_Pipeline_Development/hmftools_wes/SGE_hmftools_wes_tumor_only_analysis.sh
+
+```
+
+### WES HMFTOOLS
+
+```bash
+
+    qsub -q all.q@ngsnode1 /storage/home/kangsm/runScripts/00_Pipeline_Development/hmftools_wes/SGE_WES_HMFTOOLS_ANALYSIS.sh
+    qsub -q all.q@ngsnode1 /storage/home/kangsm/runScripts/00_Pipeline_Development/hmftools_wes/SGE_hmftools_wes_matched_analysis.sh
+```

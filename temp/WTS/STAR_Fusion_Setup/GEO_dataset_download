@@ -1,0 +1,31 @@
+
+
+SRR_FILE=/storage/home/kangsm/analysis/star-fusion/star_fusion_geo_dataset_01.list
+
+TMP_DIR=/storage/home/kangsm/analysis/star-fusion/geo/tmp
+
+
+    for SRR in $(cat $SRR_FILE)
+    do
+        fastq-dump --split-3 --outdir ${TMP_DIR} ${SRR} 
+    done
+
+SampleList=/storage/home/kangsm/analysis/star-fusion/star-fusion-geo-dataset.list
+
+GEO_DIR=/storage/home/kangsm/analysis/star-fusion/geo
+
+for TASK_ID in $(seq 1 $(cat ${SampleList} | wc -l))
+do
+    SampleInfo=$(sed -n -e "${TASK_ID} p" ${SampleList})
+    SRR=$(echo ${SampleInfo} | awk '{print $1}')
+    GSE=$(echo ${SampleInfo} | awk '{print $2}')
+    ID=$(echo ${SampleInfo} | awk '{print $3}')
+
+    mv ${GEO_DIR}/tmp/${SRR}_1.fastq ${GEO_DIR}/${GSE}/${ID}_R1.fastq
+    mv ${GEO_DIR}/tmp/${SRR}_2.fastq ${GEO_DIR}/${GSE}/${ID}_R2.fastq
+    gzip ${GEO_DIR}/${GSE}/${ID}_R1.fastq
+    gzip ${GEO_DIR}/${GSE}/${ID}_R2.fastq
+
+    echo "${SRR} to ${ID} Done."
+done
+

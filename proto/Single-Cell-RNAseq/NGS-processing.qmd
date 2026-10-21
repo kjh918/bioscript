@@ -1,0 +1,206 @@
+
+# NGS DATA PROCESSING
+
+```bash
+    BaseDir="/data/scRNAseq/02.Public-Datasets"
+    BatchID="002.Tabula-Muris-Senis-SmartSeq2"
+    SeqPlatform="BulkRNAseq" # BulkRNAseq scRNAseq SmartSeq2   
+```
+
+- processing.config
+    - `Seqplatform` : sequencing platform. enable values : BulkRNAseq, scRNAseq, SmartSeq2
+    - `SeqID` : sample-id
+    - `ReferenceType` : mm39_ercc_plus (SmartSeq2), mm39(scRNAseq, BulkRNAseq)
+
+## meta info 
+
+
+
+```r
+    META_DIR="/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis/meta"
+
+    sinfo_list = readRDS("/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis/meta/GCX.Pipeline.Setup.Dataset.Info.RDS" )
+
+    sinfo_bulk <- sinfo_list[["BulkRNAseq"]]
+    sinfo_bulk_out <- data.frame(
+        BaseDir=BaseDir,
+        BatchID=BatchID,
+        SeqPlatform="BulkRNAseq",
+        SeqID=sinfo_bulk$GCX_ID,
+        GenomeAssembly="mm39",
+        IndivID=sinfo_bulk$Mouse_ID
+    )
+    write.table(sinfo_bulk_out, sprintf("%s/processing.BulkRNAseq.list", META_DIR ), quote=F, col.names=T, row.names=F, sep=" ")
+
+    sinfo_scrnaseq <- sinfo_list[[ "scRNAseq" ]]
+    sinfo_scrnaseq_out <- data.frame(
+        BaseDir=BaseDir,
+        BatchID=BatchID,
+        SeqPlatform = "scRNAseq",
+        SeqBatchID       = sinfo_scrnaseq$fastq_batch,
+        GenomeAssembly   = "mm39",
+        IndivID = sinfo_scrnaseq$mouse.id
+    )
+    write.table(sinfo_scrnaseq, sprintf("%s/processing.scRNAseq.list", META_DIR ), quote=F, col.names=F, row.names=F, sep=" ")
+
+    sinfo_smartseq2 <- sinfo_list[[ "SmartSeq2" ]]
+    sinfo_smartseq2 <- data.frame(
+        SeqPlatform = "SmartSeq2",
+        SeqID       = sinfo_smartseq2$GCX_ID,
+        Reference   = "mm39_ercc.plus"
+    )
+    write.table(sinfo_smartseq2, sprintf("%s/processing.SmartSeq2.list", META_DIR ), quote=F, col.names=F, row.names=F, sep=" ")
+```
+
+## SGE NGS processing
+
+```bash
+    BaseDir="/data/scRNAseq/02.Public-Datasets"
+    BatchID="002.Tabula-Muris-Senis"
+    
+    ScriptDir="/storage/home/kangsm/runScripts/00_Pipeline_Development/Single-Cell-RNAseq"
+    SGE_RUN_SCRIPT="SGE-Single-Cell-RNAseq-Processing.sh"
+
+
+
+```
+```bash
+    /storage/home/kangsm/runScripts/00_Pipeline_Development/Single-Cell-RNAseq/Single-Cell-RNAseq-NGS-Processing.sh \
+        --BASE_DIR "/data/scRNAseq/02.Public-Datasets" \
+        --BATCH_ID "002.Tabula-Muris-Senis" \
+        --SEQ_PLATFORM "scRNAseq" \
+        --SEQ_ID "10X_P4_7" \
+        --THREADS 16 \
+        --GENOME_ASSEMBLY "mm39"
+```
+
+
+
+
+
+## FASTQ QC
+
+```bash    
+
+    BaseDir="/data/scRNAseq/02.Public-Datasets"
+    BatchID="002.Tabula-Muris-Senis-SmartSeq2"
+    SeqPlatform="BulkRNAseq" # BulkRNAseq scRNAseq SmartSeq2   
+    SeqPlatform="scRNAseq" # BulkRNAseq scRNAseq SmartSeq2   
+    SeqPlatform="SmartSeq2" # BulkRNAseq scRNAseq SmartSeq2   
+
+    ProcessingListFile=${BaseDir}/${BatchID}/meta/processing.${SeqPlatform}.list
+
+    RunInfo=$(sed -n -e "${SGE_TASK_ID} p" ${ProcessingListFile})
+    SeqPlatform=$(echo ${RunInfo} | awk '{print $1}')
+    SeqID=$(echo ${RunInfo} | awk '{print $2}')
+    GenomeAssembly=$(echo ${RunInfo} | awk '{print $3}')
+
+
+    RunFastqc="singularity exec -B/storage,/data /storage/images/fastqc-0.12.1.sif fastqc"
+    RunFastp="singularity exec -B/storage,/data /storage/images/fastp-0.24.0.sif fastp"
+
+    RawFastqDir="${BaseDir}/${BatchID}/fastq/${SeqPlatform}"
+    QcDir="${BaseDir}/${BatchID}/${SeqPlatform}/${SeqID}/qcfiles"
+    mkdir -p ${QcDir}
+    export LC_ALL=C
+    export LANG=C
+    if [[ ! -f "${QcDir}/FASTQC.Done" ]]; then
+        ${RunFastqc} --extract --threads 2 --outdir ${QcDir} ${RawFastqDir}/${SeqID}_R1.fastq.gz ${RawFastqDir}/${SeqID}_R2.fastq.gz
+        touch "${QcDir}/FASTQC.Done"
+    fi
+
+    TrimFastqDir="${BaseDir}/${BatchID}/${SeqPlatform}/${SeqID}/fastq"
+    mkdir -p "${TrimFastqDir}"
+    if [[ ! -f "${QcDir}/${SeqID}.fastp.json" ]]; then 
+        FASTP_ARGS=("--trim_poly_g")
+        FASTP_ARGS+=("--length_required 20")
+        FASTP_ARGS+=("--thread 6")
+        FASTP_ARGS+=("--in1 ${RawFastqDir}/${SeqID}_R1.fastq.gz")
+        FASTP_ARGS+=("--in2 ${RawFastqDir}/${SeqID}_R2.fastq.gz")
+        FASTP_ARGS+=("--out1 ${TrimFastqDir}/${SeqID}.trimmed_R1.fastq.gz")
+        FASTP_ARGS+=("--out2 ${TrimFastqDir}/${SeqID}.trimmed_R2.fastq.gz")
+        FASTP_ARGS+=("--json ${QcDir}/${SeqID}.fastp.json")
+        FASTP_ARGS+=("--html ${QcDir}/${SeqID}.fastp.html")
+
+        ${RunFastp} ${FASTP_ARGS[@]}
+    fi
+```
+
+## Bulk
+```bash 
+    RunStar="singularity exec -B /storage,/data /storage/images/star-2.7.11.sif  STAR"
+    RunStrandCheck="python3 /storage/apps/RSeQC-5.0.1/scripts/infer_experiment.py"
+    
+    ResourceDir="/storage/references_and_index/scRNAseq"
+    StarIndex="${ResourceDir}/${GenomeAssembly}/star"
+    GtfGile="${ResourceDir}/${GenomeAssembly}/genes/genes.gtf"
+    Threads=16
+
+    TrimFastqDir="${BaseDir}/${BatchID}/${SeqPlatform}/${SeqID}/fastq"
+    BamDir="${BaseDir}/${BatchID}/${SeqPlatform}/${SeqID}/bam"
+    mkdir -p ${BamDir}
+
+    if [[ "${SeqPlatform}" = "BulkRNAseq" ]]; then
+        STAR_ARGS=("--genomeDir ${StarIndex}")
+        STAR_ARGS+=("--sjdbGTFfile ${GtfGile}")
+        STAR_ARGS+=("--runThreadN ${Threads}")
+        STAR_ARGS+=("--readFilesIn ${TrimFastqDir}/${SeqID}.trimmed_R1.fastq.gz ${TrimFastqDir}/${SeqID}.trimmed_R2.fastq.gz")
+        STAR_ARGS+=("--readFilesCommand zcat")
+        STAR_ARGS+=("--quantMode TranscriptomeSAM")
+        STAR_ARGS+=("--genomeLoad NoSharedMemory")
+        STAR_ARGS+=("--twopassMode Basic")
+        STAR_ARGS+=("--outSAMtype BAM SortedByCoordinate")
+        STAR_ARGS+=("--outFileNamePrefix ${BamDir}/${SeqID}.")
+
+        ${RunStar} ${STAR_ARGS[@]}
+
+
+        ${RunStrandCheck} -i "${BamDir}/${SeqID}.Aligned.sortedByCoord.out.bam" -r "${GeneModelBed}" > ${QcDir}/infer_strand_result.txt
+        Rscript /storage/apps/RSeQC-5.0.1/scripts/infer_result_to_config.R ${QcDir}/infer_strand_result.txt
+        strand_info=$(cat ${QcDir}/stranded_config.txt)      
+        FeatureCountStrandParam=$(echo ${strand_info} | awk '{print $1}')
+        SalmonLibraryType=$(echo ${strand_info} | awk '{print $2}')
+    fi
+
+```
+
+## scRNAseq (Droplet)
+
+```bash
+    RunStar="singularity exec -B /storage,/data /storage/images/star-2.7.11.sif  STAR"
+    ResourceDir="/storage/references_and_index/scRNAseq"
+    StarIndex="${ResourceDir}/${GenomeAssembly}/star"
+    GtfGile="${ResourceDir}/${GenomeAssembly}/genes/genes.gtf"
+    Threads=8
+
+    TrimFastqDir="${BaseDir}/${BatchID}/${SeqPlatform}/${SeqID}/fastq"
+    BamDir="${BaseDir}/${BatchID}/${SeqPlatform}/${SeqID}/bam"
+    mkdir -p ${BamDir}
+
+    if [[ "${SeqPlatform}" = "scRNAseq" ]]; then
+        STAR_ARGS=("--genomeDir ${StarIndex}")
+        STAR_ARGS+=("--sjdbGTFfile ${GtfGile}")
+        STAR_ARGS+=("--runThreadN ${Threads}")
+        STAR_ARGS+=("--readFilesIn ${TrimFastqDir}/${SeqID}.trimmed_R1.fastq.gz ${TrimFastqDir}/${SeqID}.trimmed_R2.fastq.gz")
+        STAR_ARGS+=("--readFilesCommand zcat")
+        STAR_ARGS+=("--quantMode TranscriptomeSAM")
+        STAR_ARGS+=("--genomeLoad NoSharedMemory")
+        STAR_ARGS+=("--outSAMtype BAM SortedByCoordinate")
+        STAR_ARGS+=("--outFileNamePrefix ${BamDir}/${SeqID}.")
+
+        ${RunStar} ${STAR_ARGS[@]}
+
+        FeatureCountStrandParam="0"
+        SalmonLibraryType="IU"
+    fi
+
+
+
+
+```
+
+
+
+
+
+## SmartSeq2 (FACS)

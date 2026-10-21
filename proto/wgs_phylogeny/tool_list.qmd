@@ -1,0 +1,44 @@
+
+# clonal composition
+DPClust --> R package : installed
+PhyloWGS --> installed as sif
+
+# phylogeny and evolution
+PhylogicNDT --> installed as sif (https://hub.docker.com/r/jakeconway/phylogicndt)
+Lichee --> 
+Canu --> 얘도 뭔가 잘못찾아준듯 (보류)
+pairtree
+
+
+medicc2
+  - openfst=1.8.4       conda-forge
+  - numpy=1.26.4        conda-forge
+  - pyyaml>=5.4.1       conda-forge
+  - pandas=2.0.3        conda-forge
+  - joblib>=1.0.1       conda-forge  
+  - biopython>=1.78     conda-forge
+  - scipy>=1.7
+  - matplotlib>=3.3.4   conda-forge
+  - cython==3.1.2
+  - python=3.10
+
+    conda install -c conda-forge openfst=1.8.4 numpy=1.26.4 pyyaml>=5.4.1 pandas=2.0.3 joblib>=1.0.1 biopython>=1.78 scipy>=1.7 matplotlib>=3.3.4 cython==3.1.2
+
+
+EvoTraceR
+
+CloMu 
+
+machina
+
+MOBSTER
+
+CloneSig
+
+TrackSig
+
+Palimpsest
+
+# Selection pressure
+dndscv --> R package : installed
+cancereffectsizeR --> R package : installed

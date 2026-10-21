@@ -1,0 +1,73 @@
+
+```r
+work_dir = "/storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/03.analysis"
+
+data_dir = "/storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/02.data_processing"
+
+samplelist=list.files(data_dir, pattern="WES-T" )
+samplegroup1=sapply(samplelist, function(y) paste0(unlist(strsplit(y, "\\-"))[1:3], collapse="-") )
+
+SAMPLE_SHEET = data.frame()
+
+for( j in 1:length(samplelist) ){
+    
+    sinfo = rbind(
+        data.frame( 
+            group_id=sprintf("PATIENT%s", j),
+            subject_id=sprintf("PATIENT%s", j),
+            sample_id=samplelist[j],
+            sample_type="tumor",
+            sequence_type="dna",
+            filetype="bam",
+            filepath=sprintf("%s/%s/bam/%s.hmftools.bwa.mem2.bam",data_dir,samplelist[j],samplelist[j])
+        ),
+        data.frame( 
+            group_id=sprintf("PATIENT%s", j),
+            subject_id=sprintf("PATIENT%s", j),
+            sample_id=samplelist[j],
+            sample_type="tumor",
+            sequence_type="dna",
+            filetype="bai",
+            filepath=sprintf("%s/%s/bam/%s.hmftools.bwa.mem2.bam.bai",data_dir,samplelist[j],samplelist[j])
+        )
+    )
+
+    SAMPLE_SHEET = rbind(SAMPLE_SHEET, sinfo)
+}
+```
+
+## reference_data.config
+params {
+    genomes {
+        GRCh37_hmf {
+            fasta         = "/storage/references_and_index/hg19/hmftools/Homo_sapiens.GRCh37.GATK.illumina.fasta"
+            fai           = "/storage/references_and_index/hg19/hmftools/Homo_sapiens.GRCh37.GATK.illumina.fasta.fai"
+            dict          = "/storage/references_and_index/hg19/hmftools/Homo_sapiens.GRCh37.GATK.illumina.fasta.dict"
+            img           = "/storage/references_and_index/hg19/hmftools/Homo_sapiens.GRCh37.GATK.illumina.fasta.img"
+            bwamem2_index = "/storage/references_and_index/hg19/hmftools/bwa-mem2_index-2.2.1/"
+            gridss_index  = "/storage/references_and_index/hg19/hmftools/gridss_index-2.13.2/"
+            star_index    = "/storage/references_and_index/hg19/hmftools/star_index-gencode_19-2.7.3a/"
+        }
+    }
+    ref_data_hmf_data_path = "/storage/references_and_index/hg19/hmftools/hmf_pipeline_resources.37_v2.3.0--2/"
+}
+
+
+
+
+```bash
+
+nextflow run nf-core/oncoanalyser \
+  -revision 2.3.0 \
+  -config /storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/03.analysis/reference.local.config \
+  -profile singularity  \
+  --mode panel_resource_creation \
+  --genome GRCh37_hmf \
+  --input /storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/03.analysis/samplesheet.csv \
+  --driver_gene_panel /storage/references_and_index/hg19/hmftools/hmf_pipeline_resources.37_v2.3.0--2/common/DriverGenePanel.37.tsv \
+  --target_regions_bed /storage/references_and_index/hg19/hmftools/resources_wes_twist.exome.2.0/Target.Region.bed.gz \
+  --outdir /storage/home/kangsm/analysis/gcx.pipeline.use.hmftools.in.wes/03.analysis/panel_resources/
+
+```
+
+

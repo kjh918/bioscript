@@ -1,0 +1,91 @@
+
+### SEQC2 Download
+### sample list 
+### 100X Cell 
+WES_FD_N_1 SRR7890880
+WES_FD_N_2 SRR7890881
+WES_FD_N_3 SRR7890878
+WES_FD_T_1 SRR7890879
+WES_FD_T_2 SRR7890876
+WES_FD_T_3 SRR7890877
+### 400X Cell
+WES_NV_N_1 SRR7890847
+WES_NV_N_2 SRR7890846
+WES_NV_N_3 SRR7890853
+WES_NV_T_1 SRR7890852
+WES_NV_T_2 SRR7890830
+WES_NV_T_3 SRR7890831
+
+#------------------------------------------------------------------------------#
+
+### Download Script and submit
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/seqc2_download.sh
+
+#------------------------------------------------------------------------------#
+
+### hg19 smaple.level.pipeline >>> submitted (2024-03-22, 14:10) 
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.SampleLevelAnalysis_hg19.sh
+
+
+### hg19 paired.analysis.pipeline >>> submitted (2024-03-23, 21:30) 
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg19.sh
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg19.sh
+
+
+### hg38 smaple.level.pipeline >>> submitted (2024-03-22, 14:15) 
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.SampleLevelAnalysis_hg38.sh
+
+
+### hg38 spaired.analysis.pipeline1 >>> submitte (2024-03-23 21:30)
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh #1-3
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh  #4-6
+
+### hg38 spaired.analysis.pipeline2 >>> submitte (2024-03-23 22:30)
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh
+
+#------------------------------------------------------------------------------#
+
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.SampleLevelAnalysis_hg19.sh
+
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg19.sh
+
+### 2024-03-25 : PureCN re-run (Coverage_rev.R 적용)
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg19.sh
+
+### 2024-03-27 : CNV GATK re-run (hg38)
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh
+
+
+### 2024-04-01 : cnvkit re-run
+
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh
+
+### 2024-04-04 : CNVkit re-run
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg19.sh
+
+
+### 2024-04-05 : Mutect2 T-Only re-run : keep germline variants mode
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.SampleLevelAnalysis_hg38.sh
+
+### 2024-04-06 : Run superFreq Single Mode
+qsub -q all.q@ngsmaster /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh
+
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.NormalOnlyAnalysis_hg38.sh
+
+### 2024-04-07 : Run Mutect2 T-only on Normals 
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.SampleLevelAnalysis_hg38.sh
+
+### 2024-04-11 : Run ASCAT paired mode  
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38.sh
+
+### 2024-04-11 : RE-RUN CNV
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.SampleLevelAnalysis_hg38_CNV.sh
+
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.SampleLevelAnalysis_hg38_CNV.sh
+qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38_CNV.sh
+
+### 2024-04-19
+
+>>> qsub -q all.q@ngsnode1 /storage/home/kangsm/myScripts/WES/CNV_SEQC2/CNV_SEQC2_pipeline.PairedAnalysis_hg38_CNV.sh

@@ -1,0 +1,220 @@
+
+# SMART-SEQ DATASETS for SET-UP
+
+### 1. Lun 416B Smart-seq2 dataset
+- ArrayExpress / BioStudies accession: E-MTAB-5522
+- ENA secondary accession: ERP022251
+- ENA run range: ERR1897928–ERR1898311
+
+
+```r
+library(scRNAseq)
+library(SingleCellExperiment)
+
+sce <- LunSpikeInData(which = "416b")
+
+sce
+colData(sce)
+rowData(sce)
+```
+
+
+### 2. Tabula Muris / Tabula Muris Senis Smart-seq2
+- PRJNA544748 /GSE132040
+- 공식 웹사이트 기반 아마존 클라우드 데이터 다운로드
+- amazon s3 : aws s3 ls --no-sign-request s3://czb-tabula-muris-senis/
+- 3 month, Liver(96), Pancreas(96), Lung(48+48) 를 셋업 데이터세트로 사용 (mouse-id : 3_10_M, 3_11_M)
+- https://github.com/czbiohub-sf/tabula-muris
+
+```r
+BiocManager::install("TabulaMurisSenisData")
+library(TabulaMurisSenisData)
+```
+
+```r
+    library(data.table)
+    library(plyr)
+    library(dplyr)
+    library(Hmisc)
+
+    meta_info_dir <- "/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis-SmartSeq2/meta"
+    # meta-info
+    meta_sinfo <- read.csv(sprintf("%s/tabula-muris-senis-full-metadata.csv", meta_info_dir))
+    # smartseq-data info
+    files_smart <- read.csv(sprintf("%s/plate_seq_3_month_fastqs_read1_read2.csv", meta_info_dir))
+    sinfo_smart <- read.csv(sprintf("%s/plate_seq_3_month_fastqs_annotated.csv", meta_info_dir))
+    # bulk-rnaseq-data info
+    sinfo_bulk <- read.csv(sprintf("%s/MACA_Bulk_metadata.csv", meta_info_dir))
+    files_bulk <- read.delim(sprintf("%s/Bulk-RNAseq-File-List.txt", meta_info_dir))
+
+    set.seed(42)
+    sample_balanced_celltypes <- function(df, n_total) {
+        df <- df %>% filter(!is.na(cell_ontology_class)) %>% mutate(.row_id_for_sampling = row_number())
+        if (nrow(df) == 0) { return(df) }
+        celltypes <- unique(df$cell_ontology_class)
+        per_type  <- max(1, floor(n_total / length(celltypes)))
+        picked <- df %>% group_by(cell_ontology_class) %>% group_modify(~ {
+            n_take <- min(per_type, nrow(.x))
+            slice_sample(.x, n = n_take)
+        }) %>% ungroup()
+        if (nrow(picked) < n_total) {
+            remaining <- df %>% filter(!.row_id_for_sampling %in% picked$.row_id_for_sampling)
+            n_extra   <- min(n_total - nrow(picked), nrow(remaining))
+            if (n_extra > 0) {
+                extra  <- remaining %>% slice_sample(n = n_extra)
+                picked <- bind_rows(picked, extra)
+            }
+        }
+        if (nrow(picked) > n_total) { picked <- picked %>% slice_sample(n = n_total) }
+        picked %>% select(-.row_id_for_sampling)
+    }
+
+    ## 10X Tissue-MouseID
+    # 3-M-8    Spleen 2493 -> 96
+    # 3-M-7/8  Lung   1662 -> 96
+    # 3-M-8/9  Liver  460  -> 96
+
+    ## FACS Tissue-MouseID
+    # 3_10_M lung 48 
+    # 3_11_M lung 48
+    # 3_10_M spleen 48
+    # 3_11_M spleen 48
+    # 3_11_M liver 96 
+ 
+    ## scRNAseq
+    dinfo_10x <- bind_rows(
+        meta_sinfo %>% filter( mouse.id == "3-M-8", tissue == "Spleen", method == "droplet") %>% sample_balanced_celltypes(96),
+        meta_sinfo %>% filter( mouse.id == "3-M-7/8", tissue == "Lung", method == "droplet") %>% sample_balanced_celltypes(96),
+        meta_sinfo %>% filter( mouse.id == "3-M-8/9", tissue == "Liver", method == "droplet") %>% sample_balanced_celltypes(96)
+    )
+    dinfo_10x$fastq_batch <- sapply( dinfo_10x$cell, function(y) paste0(unlist(strsplit(y, "_"))[1:3], collapse="_") )
+    amazon_path_10x <- "s3://czb-tabula-muris-senis/10x/FASTQs"
+    dinfo_10x$amazon_fastq_dir <- paste0(amazon_path_10x, "/", dinfo_10x$fastq_batch, "/")
+    dinfo_10x <- as.data.frame(dinfo_10x)
+
+    ## SmartSeq2
+    dinfo_facs <- bind_rows(
+        sinfo_smart %>% filter( mouse.id == "3_10_M", tissue == "Lung" ) %>% sample_balanced_celltypes(48),
+        sinfo_smart %>% filter( mouse.id == "3_11_M", tissue == "Lung" ) %>% sample_balanced_celltypes(48),
+        sinfo_smart %>% filter( mouse.id == "3_10_M", tissue == "Spleen" ) %>% sample_balanced_celltypes(48),
+        sinfo_smart %>% filter( mouse.id == "3_11_M", tissue == "Spleen" ) %>% sample_balanced_celltypes(48),
+        sinfo_smart %>% filter( mouse.id == "3_11_M", tissue == "Liver"  ) %>% sample_balanced_celltypes(96)
+    ) %>% mutate( GCX_ID=paste0("GCX_TMS_SmartSeq2_", formatC(1:nrow(.), digits=0, flag='0', width=3)) ) %>% as.data.frame()
+    
+    ## BulkRNAseq
+    dinfo_bulk <- sinfo_bulk %>% filter( Organ %in% c("Lung","Liver","Spleen") ) %>% filter( Sex=="m", Age == '3')
+    amazon_path_bulk <- "s3://czb-tabula-muris-senis/Bulk/190214_A00111_0269_AHH3J3DSXX__190214_A00111_0270_BHHMFWDSXX/fastqs/"
+    for( j in 1:nrow(dinfo_bulk) ){
+        fqfiles <- files_bulk[grepl(dinfo_bulk$Sample_Name[j], files_bulk[,1]), 1]
+        fqR1 <- fqfiles[grepl("R1", fqfiles)]
+        fqR2 <- fqfiles[grepl("R2", fqfiles)]
+        dinfo_bulk[j, "R1"] =  paste0(amazon_path_bulk, fqR1)
+        dinfo_bulk[j, "R2"] =  paste0(amazon_path_bulk, fqR2)
+    }
+    dinfo_bulk <- dinfo_bulk %>% mutate( GCX_ID = paste0("GCX_TMS_BulkRNAseq_", Organ, "_0", 1:4) )
+
+    saveRDS(
+        list(BulkRNAseq=dinfo_bulk, SmartSeq2=dinfo_facs, scRNAseq=dinfo_10x),
+        file="/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis-SmartSeq2/meta/GCX.Pipeline.Setup.Dataset.Info.RDS"
+    )
+
+    #### DOWNLOAD
+    dinfo_list <- readRDS("/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis-SmartSeq2/meta/GCX.Pipeline.Setup.Dataset.Info.RDS")
+    data_dir   <- "/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis-SmartSeq2/fastq"
+
+    ## BulkRNAseq
+    dinfo_bulk <- dinfo_list$BulkRNAseq
+    fastq_dir_bulk <- sprintf("%s/BulkRNAseq", data_dir )
+    system(sprintf("mkdir -p %s", fastq_dir_bulk))  
+    for( i in 1:nrow(dinfo_bulk) ){
+        cmd_r1 <- sprintf("aws s3 cp --no-sign-request %s %s/%s_R1.fastq.gz", dinfo_bulk[i, "R1"], fastq_dir_bulk, dinfo_bulk[i, "GCX_ID"])
+        cmd_r2 <- sprintf("aws s3 cp --no-sign-request %s %s/%s_R2.fastq.gz", dinfo_bulk[i, "R2"], fastq_dir_bulk, dinfo_bulk[i, "GCX_ID"])
+        system(cmd_r1)
+        system(cmd_r2)
+    }
+
+    ## scRNAseq
+    dinfo_10x <-dinfo_list$scRNAseq
+    fastq_dir_10x <- sprintf("%s/scRNAseq", data_dir )
+    system(sprintf("mkdir -p %s", fastq_dir_10x))  
+    BatchID="10X_P4_7"
+    amazon_path_10x <- "s3://czb-tabula-muris-senis/10x/FASTQs"
+    for( BatchID in c("10X_P4_7","10X_P8_13","10X_P4_2"))
+    {
+        cmd_10x <- sprintf("aws s3 cp --recursive --no-sign-request %s/%s/ %s/%s/", amazon_path_10x, BatchID, fastq_dir_10x, BatchID)
+        system(cmd_10x)
+    }
+    # <bash code>
+    # for BatchID in "10X_P8_13" "10X_P4_2"
+    # do
+    #     aws s3 cp --recursive --no-sign-request s3://czb-tabula-muris-senis/10x/FASTQs/${BatchID}/ /data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis-SmartSeq2/fastq/scRNAseq/${BatchID}/
+    # done
+
+    ## SmartSeq2
+    dinfo_facs <- dinfo_list$SmartSeq2
+    fastq_dir_facs <- sprintf("%s/SmartSeq2", data_dir )
+    system(sprintf("mkdir -p %s", fastq_dir_facs)) 
+    setwd(fastq_dir_facs) 
+    for( i in 1:nrow(dinfo_facs) ){
+        cmd_r1 <- sprintf("aws s3 cp --no-sign-request %s %s/%s", gsub("maca","tabula-muris-senis", dinfo_facs[i, "R1"]), fastq_dir_facs, tail(unlist(strsplit(dinfo_facs[i, "R1"], "/")), 1))
+        cmd_r2 <- sprintf("aws s3 cp --no-sign-request %s %s/%s", gsub("maca","tabula-muris-senis", dinfo_facs[i, "R2"]), fastq_dir_facs, tail(unlist(strsplit(dinfo_facs[i, "R2"], "/")), 1))
+        system(cmd_r1)
+        system(cmd_r2)
+        system(sprintf("ln -Tsf %s %s_R1.fastq.gz", tail(unlist(strsplit(dinfo_facs[i, "R1"], "/")), 1), dinfo_facs[i, "GCX_ID"]))
+        system(sprintf("ln -Tsf %s %s_R2.fastq.gz", tail(unlist(strsplit(dinfo_facs[i, "R2"], "/")), 1), dinfo_facs[i, "GCX_ID"]))
+    }
+
+    ## SampleList For Processing
+    process_config_bulk <- data.frame(
+        BaseDir        = "/data/scRNAseq/02.Public-Datasets",
+        BatchID        = "002.Tabula-Muris-Senis",
+        SeqPlatform    = "BulkRNAseq",
+        SeqID          = dinfo_bulk$GCX_ID,
+        GenomeAssembly = "mm39"
+    )
+
+    process_config_scrnaseq <- data.frame(
+        BaseDir        = "/data/scRNAseq/02.Public-Datasets",
+        BatchID        = "002.Tabula-Muris-Senis",
+        SeqPlatform    = "scRNAseq",
+        SampleID       = unique(dinfo_10x$fastq_batch),
+        GenomeAssembly = "mm39"
+    )
+
+    process_config_smartseq <- data.frame(
+        BaseDir        = "/data/scRNAseq/02.Public-Datasets",
+        BatchID        = "002.Tabula-Muris-Senis",
+        SeqPlatform    = "SmartSeq2",
+        SeqID          = dinfo_facs$GCX_ID,
+        GenomeAssembly = "mm39_ercc.plus"
+    )
+    
+    write.table( process_config_bulk, 
+        "/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis/meta/processing.BulkRNAseq.list",
+        quote=F, col.names=T, row.name=F, sep=" "
+    )
+    write.table( process_config_scrnaseq, 
+        "/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis/meta/processing.scRNAseq.list",
+        quote=F, col.names=T, row.name=F, sep=" "
+    )
+    write.table( process_config_smartseq, 
+        "/data/scRNAseq/02.Public-Datasets/002.Tabula-Muris-Senis/meta/processing.SmartSeq2.list",
+        quote=F, col.names=T, row.name=F, sep=" "
+    )
+
+
+
+
+```
+   
+
+
+### 3. GSE49321
+
+
+
+### 4. Human pancreas Smart-seq2 / Fluidigm C1 계열
+
+### 5. Human hematopoietic progenitor Smart-seq2 / BLUEPRINT 계열
+- GSE87195
+- 

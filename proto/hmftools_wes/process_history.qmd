@@ -1,0 +1,169 @@
+
+## RESOURCE FOLDER
+
+```bash
+
+    # genome version
+    GenomeVersion="hg19"
+    # WES capture library
+    WES_LIB="twist.exome.2.0"
+
+    # wes resource folder
+    PonResourceDir="/storage/references_and_index/${GenomeVersion}/hmftools/resources_wes_${WES_LIB}"
+    PonSageVcfDir="${PonResourceDir}/pon_sage_germline_vcfs"
+    PonSampleList=$(cat /data/pon/WES-panel.of.normals-${GenomeVersion}-${WES_LIB}/meta/sample.list)
+    PonDataDir="/data/pon/WES-panel.of.normals-${GenomeVersion}-${WES_LIB}"
+    mkdir -p ${PonSageVcfDir}
+
+    # wes library targe target bed
+    TARGET_BED=/storage/references_and_index/${GenomeVersion}/bed/${WES_LIB}/${GenomeVersion}_${WES_LIB}.target.bed
+    INTVAL_MERGED_BED=${PonResourceDir}/${GenomeVersion}.interval.merged.target.bed
+    bedtools sort -i ${TARGET_BED} | bedtools merge -i - > ${INTVAL_MERGED_BED}
+
+```
+
+## SAGE Germline VCF 생성
+
+```bash
+    qsub -q all.q@ngsnode1 /storage/home/kangsm/runScripts/00_Pipeline_Development/hmftools_wes/SGE_hmftools_wes_pon_preprocessing.sh
+```
+
+```bash
+
+    # genome version
+    GenomeVersion="hg19"
+    # WES capture library
+    WES_LIB="twist.exome.2.0"
+
+    # wes resource folder
+    PonResourceDir="/storage/references_and_index/${GenomeVersion}/hmftools/resources_wes_${WES_LIB}"
+    PonSageVcfDir="${PonResourceDir}/pon_sage_germline_vcfs"
+    PonSampleList=$(cat /data/pon/WES-panel.of.normals-${GenomeVersion}-${WES_LIB}/meta/sample.list)
+    PonDataDir="/data/pon/WES-panel.of.normals-${GenomeVersion}-${WES_LIB}"
+
+    SampleListFile=/data/pon/WES-panel.of.normals-hg19-twist.exome.2.0/meta/sample.list
+    DataDir=/data/pon/WES-panel.of.normals-hg19-twist.exome.2.0
+    for SID in $(cat ${SampleListFile} | awk '{print $1}')
+    do
+        ln -Tsf ${DataDir}/${SID}/hmftools/sage/${SID}.sage.germline.vcf.gz ${PonSageVcfDir}/${SID}.sage.germline.vcf.gz
+    done
+
+
+    # vcf list
+    VCF_LIST=${PonResourceDir}/sage.vcf.list
+    ls ${PonSageVcfDir} | grep -v tbi > ${VCF_LIST}
+
+    # genome fasta (hg19)
+    HMF_GENOME_FASTA="/storage/references_and_index/hg19/hmftools/Homo_sapiens.GRCh37.GATK.illumina.fasta"
+
+    cd ${PonSageVcfDir}
+    # vcf to tsv 
+    for INPUT_VCF in $(cat ${VCF_LIST})
+    do
+        OUTPUT_TSV=${INPUT_VCF/sage.germline.vcf.gz/sage.germline.pon.raw.tsv}
+        bcftools norm -f "${HMF_GENOME_FASTA}" -m -any --keep-sum AD "${INPUT_VCF}" -Ou \
+            | bcftools view -f PASS -m2 -M2 -v snps,indels -Ou \
+            | bcftools query -f '%CHROM\t%POS\t%REF\t%ALT[\t%AD]\n' > ${OUTPUT_TSV}
+    done
+```
+
+```r
+    GenomeVersion="hg19"
+    WesLib="twist.exome.2.0"
+
+    library(plyr)
+    library(dplyr)
+    sid_list=list.files(sprintf("/data/pon/WES-panel.of.normals-%s-%s", GenomeVersion, WesLib))
+    
+    WORK_DIR=sprintf("/storage/references_and_index/%s/hmftools/resources_wes_%s/pon_sage_germline_vcfs", GenomeVersion, WesLib)
+    setwd(WORK_DIR)
+    
+    sage_pon_pooled = data.frame()
+
+    for( sid in sid_list ){
+        sage_tsv <- read.delim(sprintf("%s.sage.germline.pon.raw.tsv", sid),header=F) 
+        colnames(sage_tsv) = c("CHROM","POS","REF","ALT","AD")
+        sage_tsv$REF_COUNT = sapply(sage_tsv$AD, function(y) as.numeric(unlist(strsplit(y, ","))[1]) )
+        sage_tsv$ALT_COUNT = sapply(sage_tsv$AD, function(y) sum(as.numeric(unlist(strsplit(y, ","))[-1])) )
+        sage_tsv <- sage_tsv %>% mutate(
+            VKEY=paste0(CHROM,"_",POS, "_",REF, "_", ALT),
+            SAMPLE_ID=sid
+        )
+        sage_pon_pooled=rbind(sage_pon_pooled, sage_tsv)
+        message(sprintf("%s done.",sid))
+    }
+
+    sage_pon_pooled %>% filter( ALT_COUNT > 0 ) %>% group_by(VKEY) %>% reframe(
+        Chromosome=unique(CHROM),
+        Position=unique(POS),
+        Ref=unique(REF),
+        Alt=unique(ALT),
+        SamplesCount = length(SAMPLE_ID),
+        MaxSampleReads = max(ALT_COUNT),
+        TotalReads=sum(ALT_COUNT)
+    ) %>% as.data.frame() -> SAGE_PON_TSV
+
+    SAGE_PON_TSV = SAGE_PON_TSV %>% filter( SamplesCount >= 2)
+    
+    OUTPUT_FILE = sprintf("/storage/references_and_index/%s/hmftools/resources_wes_%s/WES_PANEL_OF_NORMALS.tsv", GenomeVersion, WesLib)
+    write.table( SAGE_PON_TSV, OUTPUT_FILE, quote=F, col.names=T, row.names=F, sep="\t")
+
+```
+
+
+### GNOMAD STRIPPED VCF
+
+- 한번만 작업후 공통 사용 (WES Capture Library 상관없음)
+
+```bash
+    # gnomAD 원본에서 필요한 필드(AF, AC, AN 등)만 남기고 압축 해제/재압축
+    bcftools annotate -x ^INFO/AF,INFO/AC,INFO/AN,INFO/nhomalt gnomad.exomes.r2.1.1.sites.vcf.bgz \
+    | bcftools annotate --rename-chrs chr_map.txt \
+    | bcftools view -e 'INFO/AF < 0.0001' -Oz -o hg19.gnomad.v2.1.1.stripped.vcf.gz
+
+    echo "Chromosome,Position,Ref,Alt,Frequency" > WES_GNOMAD.csv
+    bcftools query -i 'INFO/AF != "."' -f '%CHROM,%POS,%REF,%ALT,%INFO/AF\n' hg19.gnomad.v2.1.1.stripped.vcf.gz >> WES_GNOMAD.csv
+    bgzip -c WES_GNOMAD.csv > WES_GNOMAD.csv.gz
+    
+```
+
+### AMBER LOCI
+
+```r
+    library(GenomicRanges)
+    library(data.table)
+    GenomeVersion="hg19"
+    WesLib="twist.exome.2.0"
+    WORK_DIR=sprintf("/storage/references_and_index/%s/hmftools/resources_wes_%s", GenomeVersion, WesLib)
+    HMF_AMBER_LOCI_FILE = sprintf("/storage/references_and_index/%s/hmftools/resources_links/AMBER-GERMLINE-SITES.tsv.gz", GenomeVersion)
+    NGS_LIB_TARGET_BED  = sprintf("%s/%s.interval.merged.target.bed", WORK_DIR, GenomeVersion)
+
+    amber_resource = read.delim(gzfile(HMF_AMBER_LOCI_FILE))
+    wes_regions    = read.delim(NGS_LIB_TARGET_BED, header=F)
+
+    amber_GR = GRanges(amber_resource$Chromosome, IRanges(start=amber_resource$Position, end=amber_resource$Position) )
+    wes_GR   = GRanges(wes_regions[,1], IRanges(start=wes_regions[,2], end=wes_regions[,3]))
+
+    IntersectRegion = findOverlaps(amber_GR, wes_GR)
+
+    wes_amber_region = amber_resource[queryHits(IntersectRegion), ]
+
+    OUTPUT_FILE = sprintf("/storage/references_and_index/%s/hmftools/resources_wes_%s/WES_AMBER_LOCI.tsv", GenomeVersion, WesLib)
+    write.table( wes_amber_region, OUTPUT_FILE, quote=F, col.names=T, row.names=F, sep="\t")
+
+```
+
+### COBALT diploid bed
+```bash 
+    GenomeVersion="hg19"
+    WES_LIB="twist.exome.2.0"
+
+    PonResourceDir="/storage/references_and_index/${GenomeVersion}/hmftools/resources_wes_${WES_LIB}"
+    HMF_DIPLOID_BED=/storage/references_and_index/${GenomeVersion}/hmftools/resources_links/DIPLOID-REGIONS.bed.gz
+    WES_TARGET_BED=${PonResourceDir}/${GenomeVersion}.interval.merged.target.bed
+    
+    bedtools intersect -a ${HMF_DIPLOID_BED} -b ${WES_TARGET_BED} -wa \
+        | sort -k1,1V -k2,2n > DIPLOID_REGION.bed
+
+```
+
